@@ -1,6 +1,6 @@
 /**
  */
-package uk.ac.man.cs.mdsd.waf.provider;
+package uk.ac.man.cs.mdsd.orm.provider;
 
 
 import java.util.Collection;
@@ -8,24 +8,40 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.common.util.ResourceLocator;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
+import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
+import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import uk.ac.man.cs.mdsd.waf.WafPackage;
+import org.eclipse.emf.edit.provider.IItemPropertySource;
+import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
+import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemProviderAdapter;
+import uk.ac.man.cs.mdsd.orm.OrmPackage;
 
 /**
- * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.waf.ModelLabelAssociation} object.
+ * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.orm.EntityFeature} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ModelLabelAssociationItemProvider extends ModelLabelFeatureItemProvider {
+public class EntityFeatureItemProvider 
+	extends ItemProviderAdapter
+	implements
+		IEditingDomainItemProvider,
+		IStructuredItemContentProvider,
+		ITreeItemContentProvider,
+		IItemLabelProvider,
+		IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ModelLabelAssociationItemProvider(AdapterFactory adapterFactory) {
+	public EntityFeatureItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -40,65 +56,31 @@ public class ModelLabelAssociationItemProvider extends ModelLabelFeatureItemProv
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addServiceFeaturePropertyDescriptor(object);
-			addDynamicLabelPropertyDescriptor(object);
+			addParentEntityPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Service Feature feature.
+	 * This adds a property descriptor for the Parent Entity feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addServiceFeaturePropertyDescriptor(Object object) {
+	protected void addParentEntityPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ModelLabelAssociation_serviceFeature_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ModelLabelAssociation_serviceFeature_feature", "_UI_ModelLabelAssociation_type"),
-				 WafPackage.Literals.MODEL_LABEL_ASSOCIATION__SERVICE_FEATURE,
+				 getString("_UI_EntityFeature_parentEntity_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EntityFeature_parentEntity_feature", "_UI_EntityFeature_type"),
+				 OrmPackage.Literals.ENTITY_FEATURE__PARENT_ENTITY,
 				 true,
 				 false,
 				 true,
 				 null,
 				 null,
 				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Dynamic Label feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addDynamicLabelPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ModelLabelAssociation_dynamicLabel_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ModelLabelAssociation_dynamicLabel_feature", "_UI_ModelLabelAssociation_type"),
-				 WafPackage.Literals.MODEL_LABEL_ASSOCIATION__DYNAMIC_LABEL,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This returns ModelLabelAssociation.gif.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/ModelLabelAssociation"));
 	}
 
 	/**
@@ -109,7 +91,7 @@ public class ModelLabelAssociationItemProvider extends ModelLabelFeatureItemProv
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_ModelLabelAssociation_type");
+		return getString("_UI_EntityFeature_type");
 	}
 	
 
@@ -136,6 +118,17 @@ public class ModelLabelAssociationItemProvider extends ModelLabelFeatureItemProv
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+	}
+
+	/**
+	 * Return the resource locator for this item provider's resources.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ResourceLocator getResourceLocator() {
+		return OrmEditPlugin.INSTANCE;
 	}
 
 }

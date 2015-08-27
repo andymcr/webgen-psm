@@ -15,19 +15,19 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import uk.ac.man.cs.mdsd.waf.WafPackage;
 
 /**
- * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.waf.ModelLabelElement} object.
+ * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.waf.ModelLabelAssociationX} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ModelLabelElementItemProvider extends ModelLabelFeatureItemProvider {
+public class ModelLabelAssociationXItemProvider extends ModelLabelFeatureXItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ModelLabelElementItemProvider(AdapterFactory adapterFactory) {
+	public ModelLabelAssociationXItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -43,6 +43,7 @@ public class ModelLabelElementItemProvider extends ModelLabelFeatureItemProvider
 			super.getPropertyDescriptors(object);
 
 			addServiceFeaturePropertyDescriptor(object);
+			addDynamicLabelPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -58,9 +59,9 @@ public class ModelLabelElementItemProvider extends ModelLabelFeatureItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ModelLabelElement_serviceFeature_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ModelLabelElement_serviceFeature_feature", "_UI_ModelLabelElement_type"),
-				 WafPackage.Literals.MODEL_LABEL_ELEMENT__SERVICE_FEATURE,
+				 getString("_UI_ModelLabelAssociationX_serviceFeature_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ModelLabelAssociationX_serviceFeature_feature", "_UI_ModelLabelAssociationX_type"),
+				 WafPackage.Literals.MODEL_LABEL_ASSOCIATION_X__SERVICE_FEATURE,
 				 true,
 				 false,
 				 true,
@@ -70,14 +71,36 @@ public class ModelLabelElementItemProvider extends ModelLabelFeatureItemProvider
 	}
 
 	/**
-	 * This returns ModelLabelElement.gif.
+	 * This adds a property descriptor for the Dynamic Label feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDynamicLabelPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ModelLabelAssociationX_dynamicLabel_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ModelLabelAssociationX_dynamicLabel_feature", "_UI_ModelLabelAssociationX_type"),
+				 WafPackage.Literals.MODEL_LABEL_ASSOCIATION_X__DYNAMIC_LABEL,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This returns ModelLabelAssociationX.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/ModelLabelElement"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/ModelLabelAssociationX"));
 	}
 
 	/**
@@ -88,7 +111,7 @@ public class ModelLabelElementItemProvider extends ModelLabelFeatureItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_ModelLabelElement_type");
+		return getString("_UI_ModelLabelAssociationX_type");
 	}
 	
 

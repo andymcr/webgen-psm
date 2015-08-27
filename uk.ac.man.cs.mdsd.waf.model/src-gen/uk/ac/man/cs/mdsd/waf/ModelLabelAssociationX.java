@@ -5,22 +5,22 @@ package uk.ac.man.cs.mdsd.waf;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Model Label Association</b></em>'.
+ * A representation of the model object '<em><b>Model Label Association X</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.ModelLabelAssociation#getServiceFeature <em>Service Feature</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.ModelLabelAssociation#getDynamicLabel <em>Dynamic Label</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.ModelLabelAssociationX#getServiceFeature <em>Service Feature</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.ModelLabelAssociationX#getDynamicLabel <em>Dynamic Label</em>}</li>
  * </ul>
  *
- * @see uk.ac.man.cs.mdsd.waf.WafPackage#getModelLabelAssociation()
+ * @see uk.ac.man.cs.mdsd.waf.WafPackage#getModelLabelAssociationX()
  * @model
  * @generated
  */
-public interface ModelLabelAssociation extends ModelLabelFeature {
+public interface ModelLabelAssociationX extends ModelLabelFeatureX {
 	/**
 	 * Returns the value of the '<em><b>Service Feature</b></em>' reference.
 	 * <!-- begin-user-doc -->
@@ -31,14 +31,14 @@ public interface ModelLabelAssociation extends ModelLabelFeature {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Service Feature</em>' reference.
 	 * @see #setServiceFeature(ServiceAssociation)
-	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getModelLabelAssociation_ServiceFeature()
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getModelLabelAssociationX_ServiceFeature()
 	 * @model required="true"
 	 * @generated
 	 */
 	ServiceAssociation getServiceFeature();
 
 	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.ModelLabelAssociation#getServiceFeature <em>Service Feature</em>}' reference.
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.ModelLabelAssociationX#getServiceFeature <em>Service Feature</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Service Feature</em>' reference.
@@ -56,21 +56,21 @@ public interface ModelLabelAssociation extends ModelLabelFeature {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Dynamic Label</em>' reference.
-	 * @see #setDynamicLabel(ModelLabel)
-	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getModelLabelAssociation_DynamicLabel()
+	 * @see #setDynamicLabel(ModelLabelX)
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getModelLabelAssociationX_DynamicLabel()
 	 * @model
 	 * @generated
 	 */
-	ModelLabel getDynamicLabel();
+	ModelLabelX getDynamicLabel();
 
 	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.ModelLabelAssociation#getDynamicLabel <em>Dynamic Label</em>}' reference.
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.ModelLabelAssociationX#getDynamicLabel <em>Dynamic Label</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Dynamic Label</em>' reference.
 	 * @see #getDynamicLabel()
 	 * @generated
 	 */
-	void setDynamicLabel(ModelLabel value);
+	void setDynamicLabel(ModelLabelX value);
 
-} // ModelLabelAssociation
+} // ModelLabelAssociationX

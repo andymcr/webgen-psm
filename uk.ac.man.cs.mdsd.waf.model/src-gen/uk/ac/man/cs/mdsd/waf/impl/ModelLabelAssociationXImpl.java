@@ -9,26 +9,26 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import uk.ac.man.cs.mdsd.waf.ModelLabel;
-import uk.ac.man.cs.mdsd.waf.ModelLabelAssociation;
+import uk.ac.man.cs.mdsd.waf.ModelLabelAssociationX;
+import uk.ac.man.cs.mdsd.waf.ModelLabelX;
 import uk.ac.man.cs.mdsd.waf.ServiceAssociation;
 import uk.ac.man.cs.mdsd.waf.WafPackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Model Label Association</b></em>'.
+ * An implementation of the model object '<em><b>Model Label Association X</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ModelLabelAssociationImpl#getServiceFeature <em>Service Feature</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ModelLabelAssociationImpl#getDynamicLabel <em>Dynamic Label</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ModelLabelAssociationXImpl#getServiceFeature <em>Service Feature</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ModelLabelAssociationXImpl#getDynamicLabel <em>Dynamic Label</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ModelLabelAssociationImpl extends ModelLabelFeatureImpl implements ModelLabelAssociation {
+public class ModelLabelAssociationXImpl extends ModelLabelFeatureXImpl implements ModelLabelAssociationX {
 	/**
 	 * The cached value of the '{@link #getServiceFeature() <em>Service Feature</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -47,14 +47,14 @@ public class ModelLabelAssociationImpl extends ModelLabelFeatureImpl implements 
 	 * @generated
 	 * @ordered
 	 */
-	protected ModelLabel dynamicLabel;
+	protected ModelLabelX dynamicLabel;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ModelLabelAssociationImpl() {
+	protected ModelLabelAssociationXImpl() {
 		super();
 	}
 
@@ -65,7 +65,7 @@ public class ModelLabelAssociationImpl extends ModelLabelFeatureImpl implements 
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return WafPackage.Literals.MODEL_LABEL_ASSOCIATION;
+		return WafPackage.Literals.MODEL_LABEL_ASSOCIATION_X;
 	}
 
 	/**
@@ -79,7 +79,7 @@ public class ModelLabelAssociationImpl extends ModelLabelFeatureImpl implements 
 			serviceFeature = (ServiceAssociation)eResolveProxy(oldServiceFeature);
 			if (serviceFeature != oldServiceFeature) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WafPackage.MODEL_LABEL_ASSOCIATION__SERVICE_FEATURE, oldServiceFeature, serviceFeature));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WafPackage.MODEL_LABEL_ASSOCIATION_X__SERVICE_FEATURE, oldServiceFeature, serviceFeature));
 			}
 		}
 		return serviceFeature;
@@ -103,7 +103,7 @@ public class ModelLabelAssociationImpl extends ModelLabelFeatureImpl implements 
 		ServiceAssociation oldServiceFeature = serviceFeature;
 		serviceFeature = newServiceFeature;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.MODEL_LABEL_ASSOCIATION__SERVICE_FEATURE, oldServiceFeature, serviceFeature));
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.MODEL_LABEL_ASSOCIATION_X__SERVICE_FEATURE, oldServiceFeature, serviceFeature));
 	}
 
 	/**
@@ -111,13 +111,13 @@ public class ModelLabelAssociationImpl extends ModelLabelFeatureImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ModelLabel getDynamicLabel() {
+	public ModelLabelX getDynamicLabel() {
 		if (dynamicLabel != null && dynamicLabel.eIsProxy()) {
 			InternalEObject oldDynamicLabel = (InternalEObject)dynamicLabel;
-			dynamicLabel = (ModelLabel)eResolveProxy(oldDynamicLabel);
+			dynamicLabel = (ModelLabelX)eResolveProxy(oldDynamicLabel);
 			if (dynamicLabel != oldDynamicLabel) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WafPackage.MODEL_LABEL_ASSOCIATION__DYNAMIC_LABEL, oldDynamicLabel, dynamicLabel));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WafPackage.MODEL_LABEL_ASSOCIATION_X__DYNAMIC_LABEL, oldDynamicLabel, dynamicLabel));
 			}
 		}
 		return dynamicLabel;
@@ -128,7 +128,7 @@ public class ModelLabelAssociationImpl extends ModelLabelFeatureImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ModelLabel basicGetDynamicLabel() {
+	public ModelLabelX basicGetDynamicLabel() {
 		return dynamicLabel;
 	}
 
@@ -137,11 +137,11 @@ public class ModelLabelAssociationImpl extends ModelLabelFeatureImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setDynamicLabel(ModelLabel newDynamicLabel) {
-		ModelLabel oldDynamicLabel = dynamicLabel;
+	public void setDynamicLabel(ModelLabelX newDynamicLabel) {
+		ModelLabelX oldDynamicLabel = dynamicLabel;
 		dynamicLabel = newDynamicLabel;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.MODEL_LABEL_ASSOCIATION__DYNAMIC_LABEL, oldDynamicLabel, dynamicLabel));
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.MODEL_LABEL_ASSOCIATION_X__DYNAMIC_LABEL, oldDynamicLabel, dynamicLabel));
 	}
 
 	/**
@@ -152,10 +152,10 @@ public class ModelLabelAssociationImpl extends ModelLabelFeatureImpl implements 
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case WafPackage.MODEL_LABEL_ASSOCIATION__SERVICE_FEATURE:
+			case WafPackage.MODEL_LABEL_ASSOCIATION_X__SERVICE_FEATURE:
 				if (resolve) return getServiceFeature();
 				return basicGetServiceFeature();
-			case WafPackage.MODEL_LABEL_ASSOCIATION__DYNAMIC_LABEL:
+			case WafPackage.MODEL_LABEL_ASSOCIATION_X__DYNAMIC_LABEL:
 				if (resolve) return getDynamicLabel();
 				return basicGetDynamicLabel();
 		}
@@ -170,11 +170,11 @@ public class ModelLabelAssociationImpl extends ModelLabelFeatureImpl implements 
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case WafPackage.MODEL_LABEL_ASSOCIATION__SERVICE_FEATURE:
+			case WafPackage.MODEL_LABEL_ASSOCIATION_X__SERVICE_FEATURE:
 				setServiceFeature((ServiceAssociation)newValue);
 				return;
-			case WafPackage.MODEL_LABEL_ASSOCIATION__DYNAMIC_LABEL:
-				setDynamicLabel((ModelLabel)newValue);
+			case WafPackage.MODEL_LABEL_ASSOCIATION_X__DYNAMIC_LABEL:
+				setDynamicLabel((ModelLabelX)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -188,11 +188,11 @@ public class ModelLabelAssociationImpl extends ModelLabelFeatureImpl implements 
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case WafPackage.MODEL_LABEL_ASSOCIATION__SERVICE_FEATURE:
+			case WafPackage.MODEL_LABEL_ASSOCIATION_X__SERVICE_FEATURE:
 				setServiceFeature((ServiceAssociation)null);
 				return;
-			case WafPackage.MODEL_LABEL_ASSOCIATION__DYNAMIC_LABEL:
-				setDynamicLabel((ModelLabel)null);
+			case WafPackage.MODEL_LABEL_ASSOCIATION_X__DYNAMIC_LABEL:
+				setDynamicLabel((ModelLabelX)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -206,12 +206,12 @@ public class ModelLabelAssociationImpl extends ModelLabelFeatureImpl implements 
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case WafPackage.MODEL_LABEL_ASSOCIATION__SERVICE_FEATURE:
+			case WafPackage.MODEL_LABEL_ASSOCIATION_X__SERVICE_FEATURE:
 				return serviceFeature != null;
-			case WafPackage.MODEL_LABEL_ASSOCIATION__DYNAMIC_LABEL:
+			case WafPackage.MODEL_LABEL_ASSOCIATION_X__DYNAMIC_LABEL:
 				return dynamicLabel != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //ModelLabelAssociationImpl
+} //ModelLabelAssociationXImpl
