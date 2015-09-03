@@ -14,33 +14,43 @@ import uk.ac.man.cs.mdsd.criteria.Expression;
 
 import uk.ac.man.cs.mdsd.orm.Attribute;
 
-import uk.ac.man.cs.mdsd.waf.IncludedElement;
-import uk.ac.man.cs.mdsd.waf.ServiceEntityElement;
+import uk.ac.man.cs.mdsd.waf.IncludedAttribute;
+import uk.ac.man.cs.mdsd.waf.ServiceAttribute;
 import uk.ac.man.cs.mdsd.waf.UnitTitle;
 import uk.ac.man.cs.mdsd.waf.WafPackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Service Entity Element</b></em>'.
+ * An implementation of the model object '<em><b>Service Attribute</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ServiceEntityElementImpl#isObfuscateFormFields <em>Obfuscate Form Fields</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ServiceEntityElementImpl#getDefaultValue <em>Default Value</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ServiceEntityElementImpl#getFeature <em>Feature</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ServiceEntityElementImpl#isCaseInsensitive <em>Case Insensitive</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ServiceEntityElementImpl#isEncrypt <em>Encrypt</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ServiceEntityElementImpl#getInterfaceType <em>Interface Type</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ServiceEntityElementImpl#getPlaceholder <em>Placeholder</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ServiceEntityElementImpl#getValidationPattern <em>Validation Pattern</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ServiceEntityElementImpl#getDateFormat <em>Date Format</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ServiceAttributeImpl#getAttribute <em>Attribute</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ServiceAttributeImpl#isObfuscateFormFields <em>Obfuscate Form Fields</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ServiceAttributeImpl#getDefaultValue <em>Default Value</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ServiceAttributeImpl#isCaseInsensitive <em>Case Insensitive</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ServiceAttributeImpl#isEncrypt <em>Encrypt</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ServiceAttributeImpl#getInterfaceType <em>Interface Type</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ServiceAttributeImpl#getPlaceholder <em>Placeholder</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ServiceAttributeImpl#getValidationPattern <em>Validation Pattern</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ServiceAttributeImpl#getDateFormat <em>Date Format</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ServiceEntityElementImpl extends ServiceEntityFeatureImpl implements ServiceEntityElement {
+public class ServiceAttributeImpl extends ServiceFeatureImpl implements ServiceAttribute {
+	/**
+	 * The cached value of the '{@link #getAttribute() <em>Attribute</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAttribute()
+	 * @generated
+	 * @ordered
+	 */
+	protected Attribute attribute;
+
 	/**
 	 * The default value of the '{@link #isObfuscateFormFields() <em>Obfuscate Form Fields</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -70,16 +80,6 @@ public class ServiceEntityElementImpl extends ServiceEntityFeatureImpl implement
 	 * @ordered
 	 */
 	protected Expression defaultValue;
-
-	/**
-	 * The cached value of the '{@link #getFeature() <em>Feature</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFeature()
-	 * @generated
-	 * @ordered
-	 */
-	protected Attribute feature;
 
 	/**
 	 * The default value of the '{@link #isCaseInsensitive() <em>Case Insensitive</em>}' attribute.
@@ -206,7 +206,7 @@ public class ServiceEntityElementImpl extends ServiceEntityFeatureImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ServiceEntityElementImpl() {
+	protected ServiceAttributeImpl() {
 		super();
 	}
 
@@ -217,7 +217,45 @@ public class ServiceEntityElementImpl extends ServiceEntityFeatureImpl implement
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return WafPackage.Literals.SERVICE_ENTITY_ELEMENT;
+		return WafPackage.Literals.SERVICE_ATTRIBUTE;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Attribute getAttribute() {
+		if (attribute != null && attribute.eIsProxy()) {
+			InternalEObject oldAttribute = (InternalEObject)attribute;
+			attribute = (Attribute)eResolveProxy(oldAttribute);
+			if (attribute != oldAttribute) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WafPackage.SERVICE_ATTRIBUTE__ATTRIBUTE, oldAttribute, attribute));
+			}
+		}
+		return attribute;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Attribute basicGetAttribute() {
+		return attribute;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setAttribute(Attribute newAttribute) {
+		Attribute oldAttribute = attribute;
+		attribute = newAttribute;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.SERVICE_ATTRIBUTE__ATTRIBUTE, oldAttribute, attribute));
 	}
 
 	/**
@@ -238,7 +276,7 @@ public class ServiceEntityElementImpl extends ServiceEntityFeatureImpl implement
 		boolean oldObfuscateFormFields = obfuscateFormFields;
 		obfuscateFormFields = newObfuscateFormFields;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.SERVICE_ENTITY_ELEMENT__OBFUSCATE_FORM_FIELDS, oldObfuscateFormFields, obfuscateFormFields));
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.SERVICE_ATTRIBUTE__OBFUSCATE_FORM_FIELDS, oldObfuscateFormFields, obfuscateFormFields));
 	}
 
 	/**
@@ -259,7 +297,7 @@ public class ServiceEntityElementImpl extends ServiceEntityFeatureImpl implement
 		Expression oldDefaultValue = defaultValue;
 		defaultValue = newDefaultValue;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WafPackage.SERVICE_ENTITY_ELEMENT__DEFAULT_VALUE, oldDefaultValue, newDefaultValue);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WafPackage.SERVICE_ATTRIBUTE__DEFAULT_VALUE, oldDefaultValue, newDefaultValue);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -274,52 +312,14 @@ public class ServiceEntityElementImpl extends ServiceEntityFeatureImpl implement
 		if (newDefaultValue != defaultValue) {
 			NotificationChain msgs = null;
 			if (defaultValue != null)
-				msgs = ((InternalEObject)defaultValue).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WafPackage.SERVICE_ENTITY_ELEMENT__DEFAULT_VALUE, null, msgs);
+				msgs = ((InternalEObject)defaultValue).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WafPackage.SERVICE_ATTRIBUTE__DEFAULT_VALUE, null, msgs);
 			if (newDefaultValue != null)
-				msgs = ((InternalEObject)newDefaultValue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WafPackage.SERVICE_ENTITY_ELEMENT__DEFAULT_VALUE, null, msgs);
+				msgs = ((InternalEObject)newDefaultValue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WafPackage.SERVICE_ATTRIBUTE__DEFAULT_VALUE, null, msgs);
 			msgs = basicSetDefaultValue(newDefaultValue, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.SERVICE_ENTITY_ELEMENT__DEFAULT_VALUE, newDefaultValue, newDefaultValue));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Attribute getFeature() {
-		if (feature != null && feature.eIsProxy()) {
-			InternalEObject oldFeature = (InternalEObject)feature;
-			feature = (Attribute)eResolveProxy(oldFeature);
-			if (feature != oldFeature) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WafPackage.SERVICE_ENTITY_ELEMENT__FEATURE, oldFeature, feature));
-			}
-		}
-		return feature;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Attribute basicGetFeature() {
-		return feature;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setFeature(Attribute newFeature) {
-		Attribute oldFeature = feature;
-		feature = newFeature;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.SERVICE_ENTITY_ELEMENT__FEATURE, oldFeature, feature));
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.SERVICE_ATTRIBUTE__DEFAULT_VALUE, newDefaultValue, newDefaultValue));
 	}
 
 	/**
@@ -340,7 +340,7 @@ public class ServiceEntityElementImpl extends ServiceEntityFeatureImpl implement
 		boolean oldCaseInsensitive = caseInsensitive;
 		caseInsensitive = newCaseInsensitive;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.SERVICE_ENTITY_ELEMENT__CASE_INSENSITIVE, oldCaseInsensitive, caseInsensitive));
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.SERVICE_ATTRIBUTE__CASE_INSENSITIVE, oldCaseInsensitive, caseInsensitive));
 	}
 
 	/**
@@ -361,7 +361,7 @@ public class ServiceEntityElementImpl extends ServiceEntityFeatureImpl implement
 		boolean oldEncrypt = encrypt;
 		encrypt = newEncrypt;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.SERVICE_ENTITY_ELEMENT__ENCRYPT, oldEncrypt, encrypt));
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.SERVICE_ATTRIBUTE__ENCRYPT, oldEncrypt, encrypt));
 	}
 
 	/**
@@ -382,7 +382,7 @@ public class ServiceEntityElementImpl extends ServiceEntityFeatureImpl implement
 		String oldInterfaceType = interfaceType;
 		interfaceType = newInterfaceType;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.SERVICE_ENTITY_ELEMENT__INTERFACE_TYPE, oldInterfaceType, interfaceType));
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.SERVICE_ATTRIBUTE__INTERFACE_TYPE, oldInterfaceType, interfaceType));
 	}
 
 	/**
@@ -403,7 +403,7 @@ public class ServiceEntityElementImpl extends ServiceEntityFeatureImpl implement
 		String oldPlaceholder = placeholder;
 		placeholder = newPlaceholder;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.SERVICE_ENTITY_ELEMENT__PLACEHOLDER, oldPlaceholder, placeholder));
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.SERVICE_ATTRIBUTE__PLACEHOLDER, oldPlaceholder, placeholder));
 	}
 
 	/**
@@ -424,7 +424,7 @@ public class ServiceEntityElementImpl extends ServiceEntityFeatureImpl implement
 		String oldValidationPattern = validationPattern;
 		validationPattern = newValidationPattern;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.SERVICE_ENTITY_ELEMENT__VALIDATION_PATTERN, oldValidationPattern, validationPattern));
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.SERVICE_ATTRIBUTE__VALIDATION_PATTERN, oldValidationPattern, validationPattern));
 	}
 
 	/**
@@ -445,7 +445,7 @@ public class ServiceEntityElementImpl extends ServiceEntityFeatureImpl implement
 		String oldDateFormat = dateFormat;
 		dateFormat = newDateFormat;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.SERVICE_ENTITY_ELEMENT__DATE_FORMAT, oldDateFormat, dateFormat));
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.SERVICE_ATTRIBUTE__DATE_FORMAT, oldDateFormat, dateFormat));
 	}
 
 	/**
@@ -456,7 +456,7 @@ public class ServiceEntityElementImpl extends ServiceEntityFeatureImpl implement
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case WafPackage.SERVICE_ENTITY_ELEMENT__DEFAULT_VALUE:
+			case WafPackage.SERVICE_ATTRIBUTE__DEFAULT_VALUE:
 				return basicSetDefaultValue(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -470,24 +470,24 @@ public class ServiceEntityElementImpl extends ServiceEntityFeatureImpl implement
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case WafPackage.SERVICE_ENTITY_ELEMENT__OBFUSCATE_FORM_FIELDS:
+			case WafPackage.SERVICE_ATTRIBUTE__ATTRIBUTE:
+				if (resolve) return getAttribute();
+				return basicGetAttribute();
+			case WafPackage.SERVICE_ATTRIBUTE__OBFUSCATE_FORM_FIELDS:
 				return isObfuscateFormFields();
-			case WafPackage.SERVICE_ENTITY_ELEMENT__DEFAULT_VALUE:
+			case WafPackage.SERVICE_ATTRIBUTE__DEFAULT_VALUE:
 				return getDefaultValue();
-			case WafPackage.SERVICE_ENTITY_ELEMENT__FEATURE:
-				if (resolve) return getFeature();
-				return basicGetFeature();
-			case WafPackage.SERVICE_ENTITY_ELEMENT__CASE_INSENSITIVE:
+			case WafPackage.SERVICE_ATTRIBUTE__CASE_INSENSITIVE:
 				return isCaseInsensitive();
-			case WafPackage.SERVICE_ENTITY_ELEMENT__ENCRYPT:
+			case WafPackage.SERVICE_ATTRIBUTE__ENCRYPT:
 				return isEncrypt();
-			case WafPackage.SERVICE_ENTITY_ELEMENT__INTERFACE_TYPE:
+			case WafPackage.SERVICE_ATTRIBUTE__INTERFACE_TYPE:
 				return getInterfaceType();
-			case WafPackage.SERVICE_ENTITY_ELEMENT__PLACEHOLDER:
+			case WafPackage.SERVICE_ATTRIBUTE__PLACEHOLDER:
 				return getPlaceholder();
-			case WafPackage.SERVICE_ENTITY_ELEMENT__VALIDATION_PATTERN:
+			case WafPackage.SERVICE_ATTRIBUTE__VALIDATION_PATTERN:
 				return getValidationPattern();
-			case WafPackage.SERVICE_ENTITY_ELEMENT__DATE_FORMAT:
+			case WafPackage.SERVICE_ATTRIBUTE__DATE_FORMAT:
 				return getDateFormat();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -501,31 +501,31 @@ public class ServiceEntityElementImpl extends ServiceEntityFeatureImpl implement
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case WafPackage.SERVICE_ENTITY_ELEMENT__OBFUSCATE_FORM_FIELDS:
+			case WafPackage.SERVICE_ATTRIBUTE__ATTRIBUTE:
+				setAttribute((Attribute)newValue);
+				return;
+			case WafPackage.SERVICE_ATTRIBUTE__OBFUSCATE_FORM_FIELDS:
 				setObfuscateFormFields((Boolean)newValue);
 				return;
-			case WafPackage.SERVICE_ENTITY_ELEMENT__DEFAULT_VALUE:
+			case WafPackage.SERVICE_ATTRIBUTE__DEFAULT_VALUE:
 				setDefaultValue((Expression)newValue);
 				return;
-			case WafPackage.SERVICE_ENTITY_ELEMENT__FEATURE:
-				setFeature((Attribute)newValue);
-				return;
-			case WafPackage.SERVICE_ENTITY_ELEMENT__CASE_INSENSITIVE:
+			case WafPackage.SERVICE_ATTRIBUTE__CASE_INSENSITIVE:
 				setCaseInsensitive((Boolean)newValue);
 				return;
-			case WafPackage.SERVICE_ENTITY_ELEMENT__ENCRYPT:
+			case WafPackage.SERVICE_ATTRIBUTE__ENCRYPT:
 				setEncrypt((Boolean)newValue);
 				return;
-			case WafPackage.SERVICE_ENTITY_ELEMENT__INTERFACE_TYPE:
+			case WafPackage.SERVICE_ATTRIBUTE__INTERFACE_TYPE:
 				setInterfaceType((String)newValue);
 				return;
-			case WafPackage.SERVICE_ENTITY_ELEMENT__PLACEHOLDER:
+			case WafPackage.SERVICE_ATTRIBUTE__PLACEHOLDER:
 				setPlaceholder((String)newValue);
 				return;
-			case WafPackage.SERVICE_ENTITY_ELEMENT__VALIDATION_PATTERN:
+			case WafPackage.SERVICE_ATTRIBUTE__VALIDATION_PATTERN:
 				setValidationPattern((String)newValue);
 				return;
-			case WafPackage.SERVICE_ENTITY_ELEMENT__DATE_FORMAT:
+			case WafPackage.SERVICE_ATTRIBUTE__DATE_FORMAT:
 				setDateFormat((String)newValue);
 				return;
 		}
@@ -540,31 +540,31 @@ public class ServiceEntityElementImpl extends ServiceEntityFeatureImpl implement
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case WafPackage.SERVICE_ENTITY_ELEMENT__OBFUSCATE_FORM_FIELDS:
+			case WafPackage.SERVICE_ATTRIBUTE__ATTRIBUTE:
+				setAttribute((Attribute)null);
+				return;
+			case WafPackage.SERVICE_ATTRIBUTE__OBFUSCATE_FORM_FIELDS:
 				setObfuscateFormFields(OBFUSCATE_FORM_FIELDS_EDEFAULT);
 				return;
-			case WafPackage.SERVICE_ENTITY_ELEMENT__DEFAULT_VALUE:
+			case WafPackage.SERVICE_ATTRIBUTE__DEFAULT_VALUE:
 				setDefaultValue((Expression)null);
 				return;
-			case WafPackage.SERVICE_ENTITY_ELEMENT__FEATURE:
-				setFeature((Attribute)null);
-				return;
-			case WafPackage.SERVICE_ENTITY_ELEMENT__CASE_INSENSITIVE:
+			case WafPackage.SERVICE_ATTRIBUTE__CASE_INSENSITIVE:
 				setCaseInsensitive(CASE_INSENSITIVE_EDEFAULT);
 				return;
-			case WafPackage.SERVICE_ENTITY_ELEMENT__ENCRYPT:
+			case WafPackage.SERVICE_ATTRIBUTE__ENCRYPT:
 				setEncrypt(ENCRYPT_EDEFAULT);
 				return;
-			case WafPackage.SERVICE_ENTITY_ELEMENT__INTERFACE_TYPE:
+			case WafPackage.SERVICE_ATTRIBUTE__INTERFACE_TYPE:
 				setInterfaceType(INTERFACE_TYPE_EDEFAULT);
 				return;
-			case WafPackage.SERVICE_ENTITY_ELEMENT__PLACEHOLDER:
+			case WafPackage.SERVICE_ATTRIBUTE__PLACEHOLDER:
 				setPlaceholder(PLACEHOLDER_EDEFAULT);
 				return;
-			case WafPackage.SERVICE_ENTITY_ELEMENT__VALIDATION_PATTERN:
+			case WafPackage.SERVICE_ATTRIBUTE__VALIDATION_PATTERN:
 				setValidationPattern(VALIDATION_PATTERN_EDEFAULT);
 				return;
-			case WafPackage.SERVICE_ENTITY_ELEMENT__DATE_FORMAT:
+			case WafPackage.SERVICE_ATTRIBUTE__DATE_FORMAT:
 				setDateFormat(DATE_FORMAT_EDEFAULT);
 				return;
 		}
@@ -579,23 +579,23 @@ public class ServiceEntityElementImpl extends ServiceEntityFeatureImpl implement
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case WafPackage.SERVICE_ENTITY_ELEMENT__OBFUSCATE_FORM_FIELDS:
+			case WafPackage.SERVICE_ATTRIBUTE__ATTRIBUTE:
+				return attribute != null;
+			case WafPackage.SERVICE_ATTRIBUTE__OBFUSCATE_FORM_FIELDS:
 				return obfuscateFormFields != OBFUSCATE_FORM_FIELDS_EDEFAULT;
-			case WafPackage.SERVICE_ENTITY_ELEMENT__DEFAULT_VALUE:
+			case WafPackage.SERVICE_ATTRIBUTE__DEFAULT_VALUE:
 				return defaultValue != null;
-			case WafPackage.SERVICE_ENTITY_ELEMENT__FEATURE:
-				return feature != null;
-			case WafPackage.SERVICE_ENTITY_ELEMENT__CASE_INSENSITIVE:
+			case WafPackage.SERVICE_ATTRIBUTE__CASE_INSENSITIVE:
 				return caseInsensitive != CASE_INSENSITIVE_EDEFAULT;
-			case WafPackage.SERVICE_ENTITY_ELEMENT__ENCRYPT:
+			case WafPackage.SERVICE_ATTRIBUTE__ENCRYPT:
 				return encrypt != ENCRYPT_EDEFAULT;
-			case WafPackage.SERVICE_ENTITY_ELEMENT__INTERFACE_TYPE:
+			case WafPackage.SERVICE_ATTRIBUTE__INTERFACE_TYPE:
 				return INTERFACE_TYPE_EDEFAULT == null ? interfaceType != null : !INTERFACE_TYPE_EDEFAULT.equals(interfaceType);
-			case WafPackage.SERVICE_ENTITY_ELEMENT__PLACEHOLDER:
+			case WafPackage.SERVICE_ATTRIBUTE__PLACEHOLDER:
 				return PLACEHOLDER_EDEFAULT == null ? placeholder != null : !PLACEHOLDER_EDEFAULT.equals(placeholder);
-			case WafPackage.SERVICE_ENTITY_ELEMENT__VALIDATION_PATTERN:
+			case WafPackage.SERVICE_ATTRIBUTE__VALIDATION_PATTERN:
 				return VALIDATION_PATTERN_EDEFAULT == null ? validationPattern != null : !VALIDATION_PATTERN_EDEFAULT.equals(validationPattern);
-			case WafPackage.SERVICE_ENTITY_ELEMENT__DATE_FORMAT:
+			case WafPackage.SERVICE_ATTRIBUTE__DATE_FORMAT:
 				return DATE_FORMAT_EDEFAULT == null ? dateFormat != null : !DATE_FORMAT_EDEFAULT.equals(dateFormat);
 		}
 		return super.eIsSet(featureID);
@@ -608,10 +608,11 @@ public class ServiceEntityElementImpl extends ServiceEntityFeatureImpl implement
 	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == IncludedElement.class) {
+		if (baseClass == IncludedAttribute.class) {
 			switch (derivedFeatureID) {
-				case WafPackage.SERVICE_ENTITY_ELEMENT__OBFUSCATE_FORM_FIELDS: return WafPackage.INCLUDED_ELEMENT__OBFUSCATE_FORM_FIELDS;
-				case WafPackage.SERVICE_ENTITY_ELEMENT__DEFAULT_VALUE: return WafPackage.INCLUDED_ELEMENT__DEFAULT_VALUE;
+				case WafPackage.SERVICE_ATTRIBUTE__ATTRIBUTE: return WafPackage.INCLUDED_ATTRIBUTE__ATTRIBUTE;
+				case WafPackage.SERVICE_ATTRIBUTE__OBFUSCATE_FORM_FIELDS: return WafPackage.INCLUDED_ATTRIBUTE__OBFUSCATE_FORM_FIELDS;
+				case WafPackage.SERVICE_ATTRIBUTE__DEFAULT_VALUE: return WafPackage.INCLUDED_ATTRIBUTE__DEFAULT_VALUE;
 				default: return -1;
 			}
 		}
@@ -630,10 +631,11 @@ public class ServiceEntityElementImpl extends ServiceEntityFeatureImpl implement
 	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == IncludedElement.class) {
+		if (baseClass == IncludedAttribute.class) {
 			switch (baseFeatureID) {
-				case WafPackage.INCLUDED_ELEMENT__OBFUSCATE_FORM_FIELDS: return WafPackage.SERVICE_ENTITY_ELEMENT__OBFUSCATE_FORM_FIELDS;
-				case WafPackage.INCLUDED_ELEMENT__DEFAULT_VALUE: return WafPackage.SERVICE_ENTITY_ELEMENT__DEFAULT_VALUE;
+				case WafPackage.INCLUDED_ATTRIBUTE__ATTRIBUTE: return WafPackage.SERVICE_ATTRIBUTE__ATTRIBUTE;
+				case WafPackage.INCLUDED_ATTRIBUTE__OBFUSCATE_FORM_FIELDS: return WafPackage.SERVICE_ATTRIBUTE__OBFUSCATE_FORM_FIELDS;
+				case WafPackage.INCLUDED_ATTRIBUTE__DEFAULT_VALUE: return WafPackage.SERVICE_ATTRIBUTE__DEFAULT_VALUE;
 				default: return -1;
 			}
 		}
@@ -673,4 +675,4 @@ public class ServiceEntityElementImpl extends ServiceEntityFeatureImpl implement
 		return result.toString();
 	}
 
-} //ServiceEntityElementImpl
+} //ServiceAttributeImpl

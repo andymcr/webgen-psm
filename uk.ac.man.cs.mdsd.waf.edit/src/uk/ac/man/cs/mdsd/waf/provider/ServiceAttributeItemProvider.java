@@ -5,46 +5,35 @@ package uk.ac.man.cs.mdsd.waf.provider;
 
 import java.util.Collection;
 import java.util.List;
+
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EStructuralFeature;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+
 import uk.ac.man.cs.mdsd.criteria.CriteriaFactory;
-import uk.ac.man.cs.mdsd.waf.WafPackage;
-import uk.ac.man.cs.mdsd.waf.ServiceEntityFeature;
+import uk.ac.man.cs.mdsd.waf.ServiceAttribute;
 import uk.ac.man.cs.mdsd.waf.WafFactory;
+import uk.ac.man.cs.mdsd.waf.WafPackage;
 
 /**
- * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.waf.ServiceEntityFeature} object.
+ * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.waf.ServiceAttribute} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ServiceEntityFeatureItemProvider
-	extends ItemProviderAdapter
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+public class ServiceAttributeItemProvider extends ServiceFeatureItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ServiceEntityFeatureItemProvider(AdapterFactory adapterFactory) {
+	public ServiceAttributeItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -59,34 +48,54 @@ public class ServiceEntityFeatureItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addIncludedByPropertyDescriptor(object);
-			addCardinalityPropertyDescriptor(object);
-			addDisplayLabelPropertyDescriptor(object);
-			addFooterPropertyDescriptor(object);
-			addHeaderClassPropertyDescriptor(object);
-			addInputClassPropertyDescriptor(object);
-			addDisplayClassPropertyDescriptor(object);
-			addFooterClassPropertyDescriptor(object);
-			addViewColumnNamePropertyDescriptor(object);
+			addAttributePropertyDescriptor(object);
+			addObfuscateFormFieldsPropertyDescriptor(object);
+			addCaseInsensitivePropertyDescriptor(object);
+			addEncryptPropertyDescriptor(object);
+			addInterfaceTypePropertyDescriptor(object);
+			addPlaceholderPropertyDescriptor(object);
+			addValidationPatternPropertyDescriptor(object);
+			addDateFormatPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Included By feature.
+	 * This adds a property descriptor for the Obfuscate Form Fields feature.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  protected void addIncludedByPropertyDescriptor(Object object)
-  {
+	protected void addObfuscateFormFieldsPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ServiceFeature_includedBy_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ServiceFeature_includedBy_feature", "_UI_ServiceFeature_type"),
-				 WafPackage.Literals.SERVICE_FEATURE__INCLUDED_BY,
+				 getString("_UI_IncludedAttribute_obfuscateFormFields_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_IncludedAttribute_obfuscateFormFields_feature", "_UI_IncludedAttribute_type"),
+				 WafPackage.Literals.INCLUDED_ATTRIBUTE__OBFUSCATE_FORM_FIELDS,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Attribute feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAttributePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_IncludedAttribute_attribute_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_IncludedAttribute_attribute_feature", "_UI_IncludedAttribute_type"),
+				 WafPackage.Literals.INCLUDED_ATTRIBUTE__ATTRIBUTE,
 				 true,
 				 false,
 				 true,
@@ -95,20 +104,64 @@ public class ServiceEntityFeatureItemProvider
 				 null));
 	}
 
-  /**
-	 * This adds a property descriptor for the Display Label feature.
+	/**
+	 * This adds a property descriptor for the Case Insensitive feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addDisplayLabelPropertyDescriptor(Object object) {
+	protected void addCaseInsensitivePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_IncludedFeature_displayLabel_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_IncludedFeature_displayLabel_feature", "_UI_IncludedFeature_type"),
-				 WafPackage.Literals.INCLUDED_FEATURE__DISPLAY_LABEL,
+				 getString("_UI_ServiceAttribute_caseInsensitive_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ServiceAttribute_caseInsensitive_feature", "_UI_ServiceAttribute_type"),
+				 WafPackage.Literals.SERVICE_ATTRIBUTE__CASE_INSENSITIVE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Encrypt feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addEncryptPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ServiceAttribute_encrypt_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ServiceAttribute_encrypt_feature", "_UI_ServiceAttribute_type"),
+				 WafPackage.Literals.SERVICE_ATTRIBUTE__ENCRYPT,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Interface Type feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addInterfaceTypePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ServiceAttribute_interfaceType_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ServiceAttribute_interfaceType_feature", "_UI_ServiceAttribute_type"),
+				 WafPackage.Literals.SERVICE_ATTRIBUTE__INTERFACE_TYPE,
 				 true,
 				 false,
 				 false,
@@ -118,19 +171,19 @@ public class ServiceEntityFeatureItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Footer feature.
+	 * This adds a property descriptor for the Placeholder feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addFooterPropertyDescriptor(Object object) {
+	protected void addPlaceholderPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_IncludedFeature_footer_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_IncludedFeature_footer_feature", "_UI_IncludedFeature_type"),
-				 WafPackage.Literals.INCLUDED_FEATURE__FOOTER,
+				 getString("_UI_ServiceAttribute_placeholder_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ServiceAttribute_placeholder_feature", "_UI_ServiceAttribute_type"),
+				 WafPackage.Literals.SERVICE_ATTRIBUTE__PLACEHOLDER,
 				 true,
 				 false,
 				 false,
@@ -140,19 +193,19 @@ public class ServiceEntityFeatureItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the View Column Name feature.
+	 * This adds a property descriptor for the Validation Pattern feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addViewColumnNamePropertyDescriptor(Object object) {
+	protected void addValidationPatternPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ServiceEntityFeature_viewColumnName_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ServiceEntityFeature_viewColumnName_feature", "_UI_ServiceEntityFeature_type"),
-				 WafPackage.Literals.SERVICE_ENTITY_FEATURE__VIEW_COLUMN_NAME,
+				 getString("_UI_ServiceAttribute_validationPattern_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ServiceAttribute_validationPattern_feature", "_UI_ServiceAttribute_type"),
+				 WafPackage.Literals.SERVICE_ATTRIBUTE__VALIDATION_PATTERN,
 				 true,
 				 false,
 				 false,
@@ -162,107 +215,19 @@ public class ServiceEntityFeatureItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Header Class feature.
+	 * This adds a property descriptor for the Date Format feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addHeaderClassPropertyDescriptor(Object object) {
+	protected void addDateFormatPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_IncludedFeature_headerClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_IncludedFeature_headerClass_feature", "_UI_IncludedFeature_type"),
-				 WafPackage.Literals.INCLUDED_FEATURE__HEADER_CLASS,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Input Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addInputClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_IncludedFeature_inputClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_IncludedFeature_inputClass_feature", "_UI_IncludedFeature_type"),
-				 WafPackage.Literals.INCLUDED_FEATURE__INPUT_CLASS,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Display Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addDisplayClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_IncludedFeature_displayClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_IncludedFeature_displayClass_feature", "_UI_IncludedFeature_type"),
-				 WafPackage.Literals.INCLUDED_FEATURE__DISPLAY_CLASS,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Footer Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addFooterClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_IncludedFeature_footerClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_IncludedFeature_footerClass_feature", "_UI_IncludedFeature_type"),
-				 WafPackage.Literals.INCLUDED_FEATURE__FOOTER_CLASS,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Cardinality feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addCardinalityPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ServiceFeature_cardinality_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ServiceFeature_cardinality_feature", "_UI_ServiceFeature_type"),
-				 WafPackage.Literals.SERVICE_FEATURE__CARDINALITY,
+				 getString("_UI_ServiceAttribute_dateFormat_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ServiceAttribute_dateFormat_feature", "_UI_ServiceAttribute_type"),
+				 WafPackage.Literals.SERVICE_ATTRIBUTE__DATE_FORMAT,
 				 true,
 				 false,
 				 false,
@@ -283,7 +248,7 @@ public class ServiceEntityFeatureItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(WafPackage.Literals.INCLUDED_FEATURE__FORCED_VALUE);
+			childrenFeatures.add(WafPackage.Literals.INCLUDED_ATTRIBUTE__DEFAULT_VALUE);
 		}
 		return childrenFeatures;
 	}
@@ -302,6 +267,17 @@ public class ServiceEntityFeatureItemProvider
 	}
 
 	/**
+	 * This returns ServiceAttribute.gif.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object getImage(Object object) {
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/ServiceAttribute"));
+	}
+
+	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -309,11 +285,12 @@ public class ServiceEntityFeatureItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ServiceEntityFeature)object).getName();
+		String label = ((ServiceAttribute)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_ServiceEntityFeature_type") :
-			getString("_UI_ServiceEntityFeature_type") + " " + label;
+			getString("_UI_ServiceAttribute_type") :
+			getString("_UI_ServiceAttribute_type") + " " + label;
 	}
+	
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -326,19 +303,17 @@ public class ServiceEntityFeatureItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(ServiceEntityFeature.class)) {
-			case WafPackage.SERVICE_ENTITY_FEATURE__CARDINALITY:
-			case WafPackage.SERVICE_ENTITY_FEATURE__NAME:
-			case WafPackage.SERVICE_ENTITY_FEATURE__DISPLAY_LABEL:
-			case WafPackage.SERVICE_ENTITY_FEATURE__FOOTER:
-			case WafPackage.SERVICE_ENTITY_FEATURE__HEADER_CLASS:
-			case WafPackage.SERVICE_ENTITY_FEATURE__INPUT_CLASS:
-			case WafPackage.SERVICE_ENTITY_FEATURE__DISPLAY_CLASS:
-			case WafPackage.SERVICE_ENTITY_FEATURE__FOOTER_CLASS:
-			case WafPackage.SERVICE_ENTITY_FEATURE__VIEW_COLUMN_NAME:
+		switch (notification.getFeatureID(ServiceAttribute.class)) {
+			case WafPackage.SERVICE_ATTRIBUTE__OBFUSCATE_FORM_FIELDS:
+			case WafPackage.SERVICE_ATTRIBUTE__CASE_INSENSITIVE:
+			case WafPackage.SERVICE_ATTRIBUTE__ENCRYPT:
+			case WafPackage.SERVICE_ATTRIBUTE__INTERFACE_TYPE:
+			case WafPackage.SERVICE_ATTRIBUTE__PLACEHOLDER:
+			case WafPackage.SERVICE_ATTRIBUTE__VALIDATION_PATTERN:
+			case WafPackage.SERVICE_ATTRIBUTE__DATE_FORMAT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case WafPackage.SERVICE_ENTITY_FEATURE__FORCED_VALUE:
+			case WafPackage.SERVICE_ATTRIBUTE__DEFAULT_VALUE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -358,89 +333,101 @@ public class ServiceEntityFeatureItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.INCLUDED_FEATURE__FORCED_VALUE,
+				(WafPackage.Literals.INCLUDED_ATTRIBUTE__DEFAULT_VALUE,
 				 WafFactory.eINSTANCE.createModelReference()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.INCLUDED_FEATURE__FORCED_VALUE,
+				(WafPackage.Literals.INCLUDED_ATTRIBUTE__DEFAULT_VALUE,
 				 WafFactory.eINSTANCE.createFeatureReference()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.INCLUDED_FEATURE__FORCED_VALUE,
+				(WafPackage.Literals.INCLUDED_ATTRIBUTE__DEFAULT_VALUE,
 				 WafFactory.eINSTANCE.createParameterReference()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.INCLUDED_FEATURE__FORCED_VALUE,
+				(WafPackage.Literals.INCLUDED_ATTRIBUTE__DEFAULT_VALUE,
 				 WafFactory.eINSTANCE.createCurrentUserReference()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.INCLUDED_FEATURE__FORCED_VALUE,
+				(WafPackage.Literals.INCLUDED_ATTRIBUTE__DEFAULT_VALUE,
 				 CriteriaFactory.eINSTANCE.createNullLiteral()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.INCLUDED_FEATURE__FORCED_VALUE,
+				(WafPackage.Literals.INCLUDED_ATTRIBUTE__DEFAULT_VALUE,
 				 CriteriaFactory.eINSTANCE.createIntegerLiteral()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.INCLUDED_FEATURE__FORCED_VALUE,
+				(WafPackage.Literals.INCLUDED_ATTRIBUTE__DEFAULT_VALUE,
 				 CriteriaFactory.eINSTANCE.createStringLiteral()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.INCLUDED_FEATURE__FORCED_VALUE,
+				(WafPackage.Literals.INCLUDED_ATTRIBUTE__DEFAULT_VALUE,
 				 CriteriaFactory.eINSTANCE.createCurrentTime()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.INCLUDED_FEATURE__FORCED_VALUE,
+				(WafPackage.Literals.INCLUDED_ATTRIBUTE__DEFAULT_VALUE,
 				 CriteriaFactory.eINSTANCE.createFunction()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.INCLUDED_FEATURE__FORCED_VALUE,
+				(WafPackage.Literals.INCLUDED_ATTRIBUTE__DEFAULT_VALUE,
 				 CriteriaFactory.eINSTANCE.createPredicateBooleanOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.INCLUDED_FEATURE__FORCED_VALUE,
+				(WafPackage.Literals.INCLUDED_ATTRIBUTE__DEFAULT_VALUE,
 				 CriteriaFactory.eINSTANCE.createPredicateEqualityOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.INCLUDED_FEATURE__FORCED_VALUE,
+				(WafPackage.Literals.INCLUDED_ATTRIBUTE__DEFAULT_VALUE,
 				 CriteriaFactory.eINSTANCE.createPredicateComparisonOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.INCLUDED_FEATURE__FORCED_VALUE,
+				(WafPackage.Literals.INCLUDED_ATTRIBUTE__DEFAULT_VALUE,
 				 CriteriaFactory.eINSTANCE.createPredicateIsOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.INCLUDED_FEATURE__FORCED_VALUE,
+				(WafPackage.Literals.INCLUDED_ATTRIBUTE__DEFAULT_VALUE,
 				 CriteriaFactory.eINSTANCE.createPredicateLikeOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.INCLUDED_FEATURE__FORCED_VALUE,
+				(WafPackage.Literals.INCLUDED_ATTRIBUTE__DEFAULT_VALUE,
 				 CriteriaFactory.eINSTANCE.createPredicateIsEmpty()));
 	}
 
 	/**
-	 * Return the resource locator for this item provider's resources.
+	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public ResourceLocator getResourceLocator() {
-		return WafEditPlugin.INSTANCE;
+	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
+		Object childFeature = feature;
+		Object childObject = child;
+
+		boolean qualify =
+			childFeature == WafPackage.Literals.INCLUDED_FEATURE__FORCED_VALUE ||
+			childFeature == WafPackage.Literals.INCLUDED_ATTRIBUTE__DEFAULT_VALUE;
+
+		if (qualify) {
+			return getString
+				("_UI_CreateChild_text2",
+				 new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
+		}
+		return super.getCreateChildText(owner, feature, child, selection);
 	}
 
 }

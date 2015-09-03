@@ -2,57 +2,29 @@
  */
 package uk.ac.man.cs.mdsd.waf;
 
-import uk.ac.man.cs.mdsd.orm.Attribute;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Service Entity Element</b></em>'.
+ * A representation of the model object '<em><b>Service Attribute</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.ServiceEntityElement#getFeature <em>Feature</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.ServiceEntityElement#isCaseInsensitive <em>Case Insensitive</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.ServiceEntityElement#isEncrypt <em>Encrypt</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.ServiceEntityElement#getInterfaceType <em>Interface Type</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.ServiceEntityElement#getPlaceholder <em>Placeholder</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.ServiceEntityElement#getValidationPattern <em>Validation Pattern</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.ServiceEntityElement#getDateFormat <em>Date Format</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.ServiceAttribute#isCaseInsensitive <em>Case Insensitive</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.ServiceAttribute#isEncrypt <em>Encrypt</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.ServiceAttribute#getInterfaceType <em>Interface Type</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.ServiceAttribute#getPlaceholder <em>Placeholder</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.ServiceAttribute#getValidationPattern <em>Validation Pattern</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.ServiceAttribute#getDateFormat <em>Date Format</em>}</li>
  * </ul>
  *
- * @see uk.ac.man.cs.mdsd.waf.WafPackage#getServiceEntityElement()
+ * @see uk.ac.man.cs.mdsd.waf.WafPackage#getServiceAttribute()
  * @model
  * @generated
  */
-public interface ServiceEntityElement extends ServiceEntityFeature, IncludedElement, UnitTitle {
-	/**
-	 * Returns the value of the '<em><b>Feature</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Feature</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Feature</em>' reference.
-	 * @see #setFeature(Attribute)
-	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getServiceEntityElement_Feature()
-	 * @model required="true"
-	 * @generated
-	 */
-	Attribute getFeature();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.ServiceEntityElement#getFeature <em>Feature</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Feature</em>' reference.
-	 * @see #getFeature()
-	 * @generated
-	 */
-	void setFeature(Attribute value);
-
+public interface ServiceAttribute extends ServiceFeature, IncludedAttribute, UnitTitle {
 	/**
 	 * Returns the value of the '<em><b>Case Insensitive</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -63,14 +35,14 @@ public interface ServiceEntityElement extends ServiceEntityFeature, IncludedElem
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Case Insensitive</em>' attribute.
 	 * @see #setCaseInsensitive(boolean)
-	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getServiceEntityElement_CaseInsensitive()
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getServiceAttribute_CaseInsensitive()
 	 * @model unique="false"
 	 * @generated
 	 */
 	boolean isCaseInsensitive();
 
 	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.ServiceEntityElement#isCaseInsensitive <em>Case Insensitive</em>}' attribute.
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.ServiceAttribute#isCaseInsensitive <em>Case Insensitive</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Case Insensitive</em>' attribute.
@@ -89,14 +61,14 @@ public interface ServiceEntityElement extends ServiceEntityFeature, IncludedElem
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Encrypt</em>' attribute.
 	 * @see #setEncrypt(boolean)
-	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getServiceEntityElement_Encrypt()
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getServiceAttribute_Encrypt()
 	 * @model unique="false"
 	 * @generated
 	 */
 	boolean isEncrypt();
 
 	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.ServiceEntityElement#isEncrypt <em>Encrypt</em>}' attribute.
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.ServiceAttribute#isEncrypt <em>Encrypt</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Encrypt</em>' attribute.
@@ -115,14 +87,14 @@ public interface ServiceEntityElement extends ServiceEntityFeature, IncludedElem
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Interface Type</em>' attribute.
 	 * @see #setInterfaceType(String)
-	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getServiceEntityElement_InterfaceType()
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getServiceAttribute_InterfaceType()
 	 * @model unique="false"
 	 * @generated
 	 */
 	String getInterfaceType();
 
 	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.ServiceEntityElement#getInterfaceType <em>Interface Type</em>}' attribute.
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.ServiceAttribute#getInterfaceType <em>Interface Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Interface Type</em>' attribute.
@@ -141,14 +113,14 @@ public interface ServiceEntityElement extends ServiceEntityFeature, IncludedElem
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Placeholder</em>' attribute.
 	 * @see #setPlaceholder(String)
-	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getServiceEntityElement_Placeholder()
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getServiceAttribute_Placeholder()
 	 * @model unique="false"
 	 * @generated
 	 */
 	String getPlaceholder();
 
 	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.ServiceEntityElement#getPlaceholder <em>Placeholder</em>}' attribute.
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.ServiceAttribute#getPlaceholder <em>Placeholder</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Placeholder</em>' attribute.
@@ -167,14 +139,14 @@ public interface ServiceEntityElement extends ServiceEntityFeature, IncludedElem
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Validation Pattern</em>' attribute.
 	 * @see #setValidationPattern(String)
-	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getServiceEntityElement_ValidationPattern()
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getServiceAttribute_ValidationPattern()
 	 * @model unique="false"
 	 * @generated
 	 */
 	String getValidationPattern();
 
 	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.ServiceEntityElement#getValidationPattern <em>Validation Pattern</em>}' attribute.
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.ServiceAttribute#getValidationPattern <em>Validation Pattern</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Validation Pattern</em>' attribute.
@@ -193,14 +165,14 @@ public interface ServiceEntityElement extends ServiceEntityFeature, IncludedElem
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Date Format</em>' attribute.
 	 * @see #setDateFormat(String)
-	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getServiceEntityElement_DateFormat()
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getServiceAttribute_DateFormat()
 	 * @model unique="false"
 	 * @generated
 	 */
 	String getDateFormat();
 
 	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.ServiceEntityElement#getDateFormat <em>Date Format</em>}' attribute.
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.ServiceAttribute#getDateFormat <em>Date Format</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Date Format</em>' attribute.
@@ -209,4 +181,4 @@ public interface ServiceEntityElement extends ServiceEntityFeature, IncludedElem
 	 */
 	void setDateFormat(String value);
 
-} // ServiceEntityElement
+} // ServiceAttribute
