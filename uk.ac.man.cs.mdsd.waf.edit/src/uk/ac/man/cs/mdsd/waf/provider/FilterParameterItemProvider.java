@@ -13,28 +13,28 @@ import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+
 import uk.ac.man.cs.mdsd.orm.provider.NamedElementItemProvider;
 
-import uk.ac.man.cs.mdsd.waf.QueryActual;
+import uk.ac.man.cs.mdsd.waf.FilterParameter;
 import uk.ac.man.cs.mdsd.waf.WafPackage;
 
 /**
- * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.waf.QueryActual} object.
+ * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.waf.FilterParameter} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class QueryActualItemProvider extends NamedElementItemProvider {
+public class FilterParameterItemProvider extends NamedElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public QueryActualItemProvider(AdapterFactory adapterFactory) {
+	public FilterParameterItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -49,26 +49,27 @@ public class QueryActualItemProvider extends NamedElementItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addParameterPropertyDescriptor(object);
-			addValuePropertyDescriptor(object);
+			addFormalPropertyDescriptor(object);
+			addDataTypePropertyDescriptor(object);
+			addDefaultValuePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Parameter feature.
+	 * This adds a property descriptor for the Formal feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addParameterPropertyDescriptor(Object object) {
+	protected void addFormalPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_QueryActual_parameter_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_QueryActual_parameter_feature", "_UI_QueryActual_type"),
-				 WafPackage.Literals.QUERY_ACTUAL__PARAMETER,
+				 getString("_UI_FilterParameter_formal_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_FilterParameter_formal_feature", "_UI_FilterParameter_type"),
+				 WafPackage.Literals.FILTER_PARAMETER__FORMAL,
 				 true,
 				 false,
 				 true,
@@ -78,19 +79,41 @@ public class QueryActualItemProvider extends NamedElementItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Value feature.
+	 * This adds a property descriptor for the Data Type feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addValuePropertyDescriptor(Object object) {
+	protected void addDataTypePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_QueryActual_value_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_QueryActual_value_feature", "_UI_QueryActual_type"),
-				 WafPackage.Literals.QUERY_ACTUAL__VALUE,
+				 getString("_UI_FilterParameter_dataType_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_FilterParameter_dataType_feature", "_UI_FilterParameter_type"),
+				 WafPackage.Literals.FILTER_PARAMETER__DATA_TYPE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Default Value feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDefaultValuePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_FilterParameter_defaultValue_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_FilterParameter_defaultValue_feature", "_UI_FilterParameter_type"),
+				 WafPackage.Literals.FILTER_PARAMETER__DEFAULT_VALUE,
 				 true,
 				 false,
 				 false,
@@ -100,14 +123,14 @@ public class QueryActualItemProvider extends NamedElementItemProvider {
 	}
 
 	/**
-	 * This returns QueryActual.gif.
+	 * This returns FilterParameter.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/QueryActual"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/FilterParameter"));
 	}
 
 	/**
@@ -118,10 +141,10 @@ public class QueryActualItemProvider extends NamedElementItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((QueryActual)object).getName();
+		String label = ((FilterParameter)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_QueryActual_type") :
-			getString("_UI_QueryActual_type") + " " + label;
+			getString("_UI_FilterParameter_type") :
+			getString("_UI_FilterParameter_type") + " " + label;
 	}
 	
 
@@ -136,8 +159,8 @@ public class QueryActualItemProvider extends NamedElementItemProvider {
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(QueryActual.class)) {
-			case WafPackage.QUERY_ACTUAL__VALUE:
+		switch (notification.getFeatureID(FilterParameter.class)) {
+			case WafPackage.FILTER_PARAMETER__DEFAULT_VALUE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

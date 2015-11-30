@@ -15,29 +15,28 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import uk.ac.man.cs.mdsd.orm.provider.NamedElementItemProvider;
 
-import uk.ac.man.cs.mdsd.waf.ModelLabelX;
+import uk.ac.man.cs.mdsd.waf.Filter;
 import uk.ac.man.cs.mdsd.waf.WafFactory;
 import uk.ac.man.cs.mdsd.waf.WafPackage;
 
 /**
- * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.waf.ModelLabelX} object.
+ * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.waf.Filter} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ModelLabelXItemProvider extends NamedElementItemProvider {
+public class FilterItemProvider extends NamedElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ModelLabelXItemProvider(AdapterFactory adapterFactory) {
+	public FilterItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -52,29 +51,29 @@ public class ModelLabelXItemProvider extends NamedElementItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addFormatPropertyDescriptor(object);
+			addSelectionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Format feature.
+	 * This adds a property descriptor for the Selection feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addFormatPropertyDescriptor(Object object) {
+	protected void addSelectionPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ModelLabelX_format_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ModelLabelX_format_feature", "_UI_ModelLabelX_type"),
-				 WafPackage.Literals.MODEL_LABEL_X__FORMAT,
+				 getString("_UI_Filter_selection_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Filter_selection_feature", "_UI_Filter_type"),
+				 WafPackage.Literals.FILTER__SELECTION,
 				 true,
 				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 true,
+				 null,
 				 null,
 				 null));
 	}
@@ -91,7 +90,7 @@ public class ModelLabelXItemProvider extends NamedElementItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(WafPackage.Literals.MODEL_LABEL_X__FEATURES);
+			childrenFeatures.add(WafPackage.Literals.FILTER__PARAMETERS);
 		}
 		return childrenFeatures;
 	}
@@ -110,14 +109,14 @@ public class ModelLabelXItemProvider extends NamedElementItemProvider {
 	}
 
 	/**
-	 * This returns ModelLabelX.gif.
+	 * This returns Filter.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/ModelLabelX"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Filter"));
 	}
 
 	/**
@@ -128,10 +127,10 @@ public class ModelLabelXItemProvider extends NamedElementItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ModelLabelX)object).getName();
+		String label = ((Filter)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_ModelLabelX_type") :
-			getString("_UI_ModelLabelX_type") + " " + label;
+			getString("_UI_Filter_type") :
+			getString("_UI_Filter_type") + " " + label;
 	}
 	
 
@@ -146,11 +145,8 @@ public class ModelLabelXItemProvider extends NamedElementItemProvider {
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(ModelLabelX.class)) {
-			case WafPackage.MODEL_LABEL_X__FORMAT:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-			case WafPackage.MODEL_LABEL_X__FEATURES:
+		switch (notification.getFeatureID(Filter.class)) {
+			case WafPackage.FILTER__PARAMETERS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -170,13 +166,8 @@ public class ModelLabelXItemProvider extends NamedElementItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.MODEL_LABEL_X__FEATURES,
-				 WafFactory.eINSTANCE.createModelLabelElementX()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.Literals.MODEL_LABEL_X__FEATURES,
-				 WafFactory.eINSTANCE.createModelLabelAssociationX()));
+				(WafPackage.Literals.FILTER__PARAMETERS,
+				 WafFactory.eINSTANCE.createFilterParameter()));
 	}
 
 	/**
