@@ -8,25 +8,25 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
+
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import uk.ac.man.cs.mdsd.waf.ServiceAssociation;
-import uk.ac.man.cs.mdsd.waf.WafPackage;
+
+import uk.ac.man.cs.mdsd.waf.ActionUnit;
 
 /**
- * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.waf.ServiceAssociation} object.
+ * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.waf.ActionUnit} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ServiceAssociationItemProvider extends ServiceFeatureItemProvider {
+public class ActionUnitItemProvider extends ControlUnitItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ServiceAssociationItemProvider(AdapterFactory adapterFactory) {
+	public ActionUnitItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -41,42 +41,19 @@ public class ServiceAssociationItemProvider extends ServiceFeatureItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addAssociationPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Association feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addAssociationPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ServiceAssociation_association_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ServiceAssociation_association_feature", "_UI_ServiceAssociation_type"),
-				 WafPackage.Literals.SERVICE_ASSOCIATION__ASSOCIATION,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This returns ServiceAssociation.gif.
+	 * This returns ActionUnit.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/ServiceAssociation"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/ActionUnit"));
 	}
 
 	/**
@@ -87,10 +64,10 @@ public class ServiceAssociationItemProvider extends ServiceFeatureItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ServiceAssociation)object).getName();
+		String label = ((ActionUnit)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_ServiceAssociation_type") :
-			getString("_UI_ServiceAssociation_type") + " " + label;
+			getString("_UI_ActionUnit_type") :
+			getString("_UI_ActionUnit_type") + " " + label;
 	}
 	
 
