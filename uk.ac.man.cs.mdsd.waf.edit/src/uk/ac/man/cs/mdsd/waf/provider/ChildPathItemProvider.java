@@ -11,7 +11,6 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 
-import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
@@ -20,15 +19,13 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 
-import uk.ac.man.cs.mdsd.waf.WafPackage;
-
 /**
- * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.waf.SingletonUnit} object.
+ * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.waf.ChildPath} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class SingletonUnitItemProvider 
+public class ChildPathItemProvider 
 	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
@@ -42,7 +39,7 @@ public class SingletonUnitItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SingletonUnitItemProvider(AdapterFactory adapterFactory) {
+	public ChildPathItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -57,31 +54,8 @@ public class SingletonUnitItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addContentTypePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Content Type feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addContentTypePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_SingletonUnit_contentType_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_SingletonUnit_contentType_feature", "_UI_SingletonUnit_type"),
-				 WafPackage.Literals.SINGLETON_UNIT__CONTENT_TYPE,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
 	}
 
 	/**
@@ -92,7 +66,7 @@ public class SingletonUnitItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_SingletonUnit_type");
+		return getString("_UI_ChildPath_type");
 	}
 	
 

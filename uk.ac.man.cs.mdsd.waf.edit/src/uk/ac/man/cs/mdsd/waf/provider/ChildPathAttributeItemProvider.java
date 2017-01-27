@@ -9,40 +9,28 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
-import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-import org.eclipse.emf.edit.provider.ItemProviderAdapter;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import uk.ac.man.cs.mdsd.waf.ChildPathAttribute;
 import uk.ac.man.cs.mdsd.waf.WafPackage;
 
 /**
- * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.waf.SelectableUnit} object.
+ * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.waf.ChildPathAttribute} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class SelectableUnitItemProvider 
-	extends ItemProviderAdapter
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+public class ChildPathAttributeItemProvider extends ChildPathItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SelectableUnitItemProvider(AdapterFactory adapterFactory) {
+	public ChildPathAttributeItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -57,26 +45,48 @@ public class SelectableUnitItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addSelectionTypePropertyDescriptor(object);
-			addSelectorsPropertyDescriptor(object);
+			addNamePropertyDescriptor(object);
+			addAttributePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Selection Type feature.
+	 * This adds a property descriptor for the Name feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addSelectionTypePropertyDescriptor(Object object) {
+	protected void addNamePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_SelectableUnit_selectionType_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_SelectableUnit_selectionType_feature", "_UI_SelectableUnit_type"),
-				 WafPackage.Literals.SELECTABLE_UNIT__SELECTION_TYPE,
+				 getString("_UI_ChildPathAttribute_name_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ChildPathAttribute_name_feature", "_UI_ChildPathAttribute_type"),
+				 WafPackage.Literals.CHILD_PATH_ATTRIBUTE__NAME,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Attribute feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAttributePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ChildPathAttribute_attribute_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ChildPathAttribute_attribute_feature", "_UI_ChildPathAttribute_type"),
+				 WafPackage.Literals.CHILD_PATH_ATTRIBUTE__ATTRIBUTE,
 				 true,
 				 false,
 				 true,
@@ -86,25 +96,14 @@ public class SelectableUnitItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Selectors feature.
+	 * This returns ChildPathAttribute.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addSelectorsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_SelectableUnit_selectors_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_SelectableUnit_selectors_feature", "_UI_SelectableUnit_type"),
-				 WafPackage.Literals.SELECTABLE_UNIT__SELECTORS,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+	@Override
+	public Object getImage(Object object) {
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/ChildPathAttribute"));
 	}
 
 	/**
@@ -115,7 +114,10 @@ public class SelectableUnitItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_SelectableUnit_type");
+		String label = ((ChildPathAttribute)object).getName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_ChildPathAttribute_type") :
+			getString("_UI_ChildPathAttribute_type") + " " + label;
 	}
 	
 
@@ -129,6 +131,12 @@ public class SelectableUnitItemProvider
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(ChildPathAttribute.class)) {
+			case WafPackage.CHILD_PATH_ATTRIBUTE__NAME:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 
@@ -142,17 +150,6 @@ public class SelectableUnitItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-	}
-
-	/**
-	 * Return the resource locator for this item provider's resources.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ResourceLocator getResourceLocator() {
-		return WafEditPlugin.INSTANCE;
 	}
 
 }
