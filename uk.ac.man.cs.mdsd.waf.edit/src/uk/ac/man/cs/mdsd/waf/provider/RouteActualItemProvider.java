@@ -27,16 +27,16 @@ import uk.ac.man.cs.mdsd.expression.ExpressionFactory;
 
 import uk.ac.man.cs.mdsd.service.ServiceFactory;
 
-import uk.ac.man.cs.mdsd.waf.RoutingActual;
+import uk.ac.man.cs.mdsd.waf.RouteActual;
 import uk.ac.man.cs.mdsd.waf.WafPackage;
 
 /**
- * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.waf.RoutingActual} object.
+ * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.waf.RouteActual} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class RoutingActualItemProvider 
+public class RouteActualItemProvider 
 	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
@@ -50,7 +50,7 @@ public class RoutingActualItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RoutingActualItemProvider(AdapterFactory adapterFactory) {
+	public RouteActualItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -65,25 +65,25 @@ public class RoutingActualItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addRoutingParameterPropertyDescriptor(object);
+			addRouteParameterPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Routing Parameter feature.
+	 * This adds a property descriptor for the Route Parameter feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addRoutingParameterPropertyDescriptor(Object object) {
+	protected void addRouteParameterPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_RoutingActual_routingParameter_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_RoutingActual_routingParameter_feature", "_UI_RoutingActual_type"),
-				 WafPackage.Literals.ROUTING_ACTUAL__ROUTING_PARAMETER,
+				 getString("_UI_RouteActual_routeParameter_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_RouteActual_routeParameter_feature", "_UI_RouteActual_type"),
+				 WafPackage.Literals.ROUTE_ACTUAL__ROUTE_PARAMETER,
 				 true,
 				 false,
 				 true,
@@ -104,7 +104,7 @@ public class RoutingActualItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(WafPackage.Literals.ROUTING_ACTUAL__VALUE);
+			childrenFeatures.add(WafPackage.Literals.ROUTE_ACTUAL__VALUE);
 		}
 		return childrenFeatures;
 	}
@@ -123,14 +123,14 @@ public class RoutingActualItemProvider
 	}
 
 	/**
-	 * This returns RoutingActual.gif.
+	 * This returns RouteActual.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/RoutingActual"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/RouteActual"));
 	}
 
 	/**
@@ -141,7 +141,7 @@ public class RoutingActualItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_RoutingActual_type");
+		return getString("_UI_RouteActual_type");
 	}
 	
 
@@ -156,8 +156,8 @@ public class RoutingActualItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(RoutingActual.class)) {
-			case WafPackage.ROUTING_ACTUAL__VALUE:
+		switch (notification.getFeatureID(RouteActual.class)) {
+			case WafPackage.ROUTE_ACTUAL__VALUE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -177,92 +177,92 @@ public class RoutingActualItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.ROUTING_ACTUAL__VALUE,
+				(WafPackage.Literals.ROUTE_ACTUAL__VALUE,
 				 ServiceFactory.eINSTANCE.createConstant()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.ROUTING_ACTUAL__VALUE,
+				(WafPackage.Literals.ROUTE_ACTUAL__VALUE,
 				 ServiceFactory.eINSTANCE.createFeatureReference()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.ROUTING_ACTUAL__VALUE,
+				(WafPackage.Literals.ROUTE_ACTUAL__VALUE,
 				 ServiceFactory.eINSTANCE.createParameterReference()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.ROUTING_ACTUAL__VALUE,
+				(WafPackage.Literals.ROUTE_ACTUAL__VALUE,
 				 ExpressionFactory.eINSTANCE.createNullLiteral()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.ROUTING_ACTUAL__VALUE,
+				(WafPackage.Literals.ROUTE_ACTUAL__VALUE,
 				 ExpressionFactory.eINSTANCE.createBooleanLiteral()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.ROUTING_ACTUAL__VALUE,
+				(WafPackage.Literals.ROUTE_ACTUAL__VALUE,
 				 ExpressionFactory.eINSTANCE.createIntegerLiteral()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.ROUTING_ACTUAL__VALUE,
+				(WafPackage.Literals.ROUTE_ACTUAL__VALUE,
 				 ExpressionFactory.eINSTANCE.createStringLiteral()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.ROUTING_ACTUAL__VALUE,
+				(WafPackage.Literals.ROUTE_ACTUAL__VALUE,
 				 ExpressionFactory.eINSTANCE.createTimeLiteral()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.ROUTING_ACTUAL__VALUE,
+				(WafPackage.Literals.ROUTE_ACTUAL__VALUE,
 				 ExpressionFactory.eINSTANCE.createCurrentTime()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.ROUTING_ACTUAL__VALUE,
+				(WafPackage.Literals.ROUTE_ACTUAL__VALUE,
 				 ExpressionFactory.eINSTANCE.createCurrentUser()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.ROUTING_ACTUAL__VALUE,
+				(WafPackage.Literals.ROUTE_ACTUAL__VALUE,
 				 ExpressionFactory.eINSTANCE.createPredicateBooleanOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.ROUTING_ACTUAL__VALUE,
+				(WafPackage.Literals.ROUTE_ACTUAL__VALUE,
 				 ExpressionFactory.eINSTANCE.createPredicateEqualityOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.ROUTING_ACTUAL__VALUE,
+				(WafPackage.Literals.ROUTE_ACTUAL__VALUE,
 				 ExpressionFactory.eINSTANCE.createPredicateComparisonOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.ROUTING_ACTUAL__VALUE,
+				(WafPackage.Literals.ROUTE_ACTUAL__VALUE,
 				 ExpressionFactory.eINSTANCE.createPredicateInOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.ROUTING_ACTUAL__VALUE,
+				(WafPackage.Literals.ROUTE_ACTUAL__VALUE,
 				 ExpressionFactory.eINSTANCE.createPredicateIsOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.ROUTING_ACTUAL__VALUE,
+				(WafPackage.Literals.ROUTE_ACTUAL__VALUE,
 				 ExpressionFactory.eINSTANCE.createPredicateLikeOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.ROUTING_ACTUAL__VALUE,
+				(WafPackage.Literals.ROUTE_ACTUAL__VALUE,
 				 ExpressionFactory.eINSTANCE.createPredicateIsEmpty()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.ROUTING_ACTUAL__VALUE,
+				(WafPackage.Literals.ROUTE_ACTUAL__VALUE,
 				 ExpressionFactory.eINSTANCE.createPredicateIsNull()));
 	}
 
