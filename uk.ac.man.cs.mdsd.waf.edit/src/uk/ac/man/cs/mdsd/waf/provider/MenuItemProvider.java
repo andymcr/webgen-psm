@@ -226,6 +226,11 @@ public class MenuItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.Literals.MENU__ENTRIES,
+				 WafFactory.eINSTANCE.createSubmenuEntry()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.Literals.MENU__ENTRIES,
 				 WafFactory.eINSTANCE.createActionMenuEntry()));
 
 		newChildDescriptors.add
