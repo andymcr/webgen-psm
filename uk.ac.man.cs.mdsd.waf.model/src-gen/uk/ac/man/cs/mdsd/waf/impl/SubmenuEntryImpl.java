@@ -14,28 +14,26 @@ import uk.ac.man.cs.mdsd.orm.NamedDisplayElement;
 import uk.ac.man.cs.mdsd.orm.NamedElement;
 import uk.ac.man.cs.mdsd.orm.OrmPackage;
 
-import uk.ac.man.cs.mdsd.waf.ActionMenuEntry;
-import uk.ac.man.cs.mdsd.waf.ContentUnit;
-import uk.ac.man.cs.mdsd.waf.Query;
+import uk.ac.man.cs.mdsd.waf.Menu;
+import uk.ac.man.cs.mdsd.waf.SubmenuEntry;
 import uk.ac.man.cs.mdsd.waf.WafPackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Action Menu Entry</b></em>'.
+ * An implementation of the model object '<em><b>Submenu Entry</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ActionMenuEntryImpl#getName <em>Name</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ActionMenuEntryImpl#getDisplayLabel <em>Display Label</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ActionMenuEntryImpl#getAction <em>Action</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ActionMenuEntryImpl#getQuery <em>Query</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.SubmenuEntryImpl#getName <em>Name</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.SubmenuEntryImpl#getDisplayLabel <em>Display Label</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.SubmenuEntryImpl#getSubmenu <em>Submenu</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ActionMenuEntryImpl extends MenuEntryImpl implements ActionMenuEntry {
+public class SubmenuEntryImpl extends MenuEntryImpl implements SubmenuEntry {
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -77,31 +75,21 @@ public class ActionMenuEntryImpl extends MenuEntryImpl implements ActionMenuEntr
 	protected String displayLabel = DISPLAY_LABEL_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getAction() <em>Action</em>}' reference.
+	 * The cached value of the '{@link #getSubmenu() <em>Submenu</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAction()
+	 * @see #getSubmenu()
 	 * @generated
 	 * @ordered
 	 */
-	protected ContentUnit action;
-
-	/**
-	 * The cached value of the '{@link #getQuery() <em>Query</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getQuery()
-	 * @generated
-	 * @ordered
-	 */
-	protected Query query;
+	protected Menu submenu;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ActionMenuEntryImpl() {
+	protected SubmenuEntryImpl() {
 		super();
 	}
 
@@ -112,7 +100,7 @@ public class ActionMenuEntryImpl extends MenuEntryImpl implements ActionMenuEntr
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return WafPackage.Literals.ACTION_MENU_ENTRY;
+		return WafPackage.Literals.SUBMENU_ENTRY;
 	}
 
 	/**
@@ -133,7 +121,7 @@ public class ActionMenuEntryImpl extends MenuEntryImpl implements ActionMenuEntr
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.ACTION_MENU_ENTRY__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.SUBMENU_ENTRY__NAME, oldName, name));
 	}
 
 	/**
@@ -154,7 +142,7 @@ public class ActionMenuEntryImpl extends MenuEntryImpl implements ActionMenuEntr
 		String oldDisplayLabel = displayLabel;
 		displayLabel = newDisplayLabel;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.ACTION_MENU_ENTRY__DISPLAY_LABEL, oldDisplayLabel, displayLabel));
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.SUBMENU_ENTRY__DISPLAY_LABEL, oldDisplayLabel, displayLabel));
 	}
 
 	/**
@@ -162,16 +150,8 @@ public class ActionMenuEntryImpl extends MenuEntryImpl implements ActionMenuEntr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ContentUnit getAction() {
-		if (action != null && action.eIsProxy()) {
-			InternalEObject oldAction = (InternalEObject)action;
-			action = (ContentUnit)eResolveProxy(oldAction);
-			if (action != oldAction) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WafPackage.ACTION_MENU_ENTRY__ACTION, oldAction, action));
-			}
-		}
-		return action;
+	public Menu getSubmenu() {
+		return submenu;
 	}
 
 	/**
@@ -179,41 +159,11 @@ public class ActionMenuEntryImpl extends MenuEntryImpl implements ActionMenuEntr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ContentUnit basicGetAction() {
-		return action;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setAction(ContentUnit newAction) {
-		ContentUnit oldAction = action;
-		action = newAction;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.ACTION_MENU_ENTRY__ACTION, oldAction, action));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Query getQuery() {
-		return query;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetQuery(Query newQuery, NotificationChain msgs) {
-		Query oldQuery = query;
-		query = newQuery;
+	public NotificationChain basicSetSubmenu(Menu newSubmenu, NotificationChain msgs) {
+		Menu oldSubmenu = submenu;
+		submenu = newSubmenu;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WafPackage.ACTION_MENU_ENTRY__QUERY, oldQuery, newQuery);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WafPackage.SUBMENU_ENTRY__SUBMENU, oldSubmenu, newSubmenu);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -224,18 +174,18 @@ public class ActionMenuEntryImpl extends MenuEntryImpl implements ActionMenuEntr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setQuery(Query newQuery) {
-		if (newQuery != query) {
+	public void setSubmenu(Menu newSubmenu) {
+		if (newSubmenu != submenu) {
 			NotificationChain msgs = null;
-			if (query != null)
-				msgs = ((InternalEObject)query).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WafPackage.ACTION_MENU_ENTRY__QUERY, null, msgs);
-			if (newQuery != null)
-				msgs = ((InternalEObject)newQuery).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WafPackage.ACTION_MENU_ENTRY__QUERY, null, msgs);
-			msgs = basicSetQuery(newQuery, msgs);
+			if (submenu != null)
+				msgs = ((InternalEObject)submenu).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WafPackage.SUBMENU_ENTRY__SUBMENU, null, msgs);
+			if (newSubmenu != null)
+				msgs = ((InternalEObject)newSubmenu).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WafPackage.SUBMENU_ENTRY__SUBMENU, null, msgs);
+			msgs = basicSetSubmenu(newSubmenu, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.ACTION_MENU_ENTRY__QUERY, newQuery, newQuery));
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.SUBMENU_ENTRY__SUBMENU, newSubmenu, newSubmenu));
 	}
 
 	/**
@@ -246,8 +196,8 @@ public class ActionMenuEntryImpl extends MenuEntryImpl implements ActionMenuEntr
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case WafPackage.ACTION_MENU_ENTRY__QUERY:
-				return basicSetQuery(null, msgs);
+			case WafPackage.SUBMENU_ENTRY__SUBMENU:
+				return basicSetSubmenu(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -260,15 +210,12 @@ public class ActionMenuEntryImpl extends MenuEntryImpl implements ActionMenuEntr
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case WafPackage.ACTION_MENU_ENTRY__NAME:
+			case WafPackage.SUBMENU_ENTRY__NAME:
 				return getName();
-			case WafPackage.ACTION_MENU_ENTRY__DISPLAY_LABEL:
+			case WafPackage.SUBMENU_ENTRY__DISPLAY_LABEL:
 				return getDisplayLabel();
-			case WafPackage.ACTION_MENU_ENTRY__ACTION:
-				if (resolve) return getAction();
-				return basicGetAction();
-			case WafPackage.ACTION_MENU_ENTRY__QUERY:
-				return getQuery();
+			case WafPackage.SUBMENU_ENTRY__SUBMENU:
+				return getSubmenu();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -281,17 +228,14 @@ public class ActionMenuEntryImpl extends MenuEntryImpl implements ActionMenuEntr
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case WafPackage.ACTION_MENU_ENTRY__NAME:
+			case WafPackage.SUBMENU_ENTRY__NAME:
 				setName((String)newValue);
 				return;
-			case WafPackage.ACTION_MENU_ENTRY__DISPLAY_LABEL:
+			case WafPackage.SUBMENU_ENTRY__DISPLAY_LABEL:
 				setDisplayLabel((String)newValue);
 				return;
-			case WafPackage.ACTION_MENU_ENTRY__ACTION:
-				setAction((ContentUnit)newValue);
-				return;
-			case WafPackage.ACTION_MENU_ENTRY__QUERY:
-				setQuery((Query)newValue);
+			case WafPackage.SUBMENU_ENTRY__SUBMENU:
+				setSubmenu((Menu)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -305,17 +249,14 @@ public class ActionMenuEntryImpl extends MenuEntryImpl implements ActionMenuEntr
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case WafPackage.ACTION_MENU_ENTRY__NAME:
+			case WafPackage.SUBMENU_ENTRY__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case WafPackage.ACTION_MENU_ENTRY__DISPLAY_LABEL:
+			case WafPackage.SUBMENU_ENTRY__DISPLAY_LABEL:
 				setDisplayLabel(DISPLAY_LABEL_EDEFAULT);
 				return;
-			case WafPackage.ACTION_MENU_ENTRY__ACTION:
-				setAction((ContentUnit)null);
-				return;
-			case WafPackage.ACTION_MENU_ENTRY__QUERY:
-				setQuery((Query)null);
+			case WafPackage.SUBMENU_ENTRY__SUBMENU:
+				setSubmenu((Menu)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -329,14 +270,12 @@ public class ActionMenuEntryImpl extends MenuEntryImpl implements ActionMenuEntr
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case WafPackage.ACTION_MENU_ENTRY__NAME:
+			case WafPackage.SUBMENU_ENTRY__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case WafPackage.ACTION_MENU_ENTRY__DISPLAY_LABEL:
+			case WafPackage.SUBMENU_ENTRY__DISPLAY_LABEL:
 				return DISPLAY_LABEL_EDEFAULT == null ? displayLabel != null : !DISPLAY_LABEL_EDEFAULT.equals(displayLabel);
-			case WafPackage.ACTION_MENU_ENTRY__ACTION:
-				return action != null;
-			case WafPackage.ACTION_MENU_ENTRY__QUERY:
-				return query != null;
+			case WafPackage.SUBMENU_ENTRY__SUBMENU:
+				return submenu != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -350,13 +289,13 @@ public class ActionMenuEntryImpl extends MenuEntryImpl implements ActionMenuEntr
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == NamedElement.class) {
 			switch (derivedFeatureID) {
-				case WafPackage.ACTION_MENU_ENTRY__NAME: return OrmPackage.NAMED_ELEMENT__NAME;
+				case WafPackage.SUBMENU_ENTRY__NAME: return OrmPackage.NAMED_ELEMENT__NAME;
 				default: return -1;
 			}
 		}
 		if (baseClass == NamedDisplayElement.class) {
 			switch (derivedFeatureID) {
-				case WafPackage.ACTION_MENU_ENTRY__DISPLAY_LABEL: return OrmPackage.NAMED_DISPLAY_ELEMENT__DISPLAY_LABEL;
+				case WafPackage.SUBMENU_ENTRY__DISPLAY_LABEL: return OrmPackage.NAMED_DISPLAY_ELEMENT__DISPLAY_LABEL;
 				default: return -1;
 			}
 		}
@@ -372,13 +311,13 @@ public class ActionMenuEntryImpl extends MenuEntryImpl implements ActionMenuEntr
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
 		if (baseClass == NamedElement.class) {
 			switch (baseFeatureID) {
-				case OrmPackage.NAMED_ELEMENT__NAME: return WafPackage.ACTION_MENU_ENTRY__NAME;
+				case OrmPackage.NAMED_ELEMENT__NAME: return WafPackage.SUBMENU_ENTRY__NAME;
 				default: return -1;
 			}
 		}
 		if (baseClass == NamedDisplayElement.class) {
 			switch (baseFeatureID) {
-				case OrmPackage.NAMED_DISPLAY_ELEMENT__DISPLAY_LABEL: return WafPackage.ACTION_MENU_ENTRY__DISPLAY_LABEL;
+				case OrmPackage.NAMED_DISPLAY_ELEMENT__DISPLAY_LABEL: return WafPackage.SUBMENU_ENTRY__DISPLAY_LABEL;
 				default: return -1;
 			}
 		}
@@ -403,4 +342,4 @@ public class ActionMenuEntryImpl extends MenuEntryImpl implements ActionMenuEntr
 		return result.toString();
 	}
 
-} //ActionMenuEntryImpl
+} //SubmenuEntryImpl

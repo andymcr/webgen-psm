@@ -9,35 +9,29 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
-import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.EStructuralFeature;
 
-import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import uk.ac.man.cs.mdsd.orm.provider.NamedElementItemProvider;
-
-import uk.ac.man.cs.mdsd.waf.ImageManipulation;
+import uk.ac.man.cs.mdsd.waf.SubmenuEntry;
 import uk.ac.man.cs.mdsd.waf.WafFactory;
 import uk.ac.man.cs.mdsd.waf.WafPackage;
 
 /**
- * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.waf.ImageManipulation} object.
+ * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.waf.SubmenuEntry} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ImageManipulationItemProvider extends NamedElementItemProvider {
+public class SubmenuEntryItemProvider extends MenuEntryItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ImageManipulationItemProvider(AdapterFactory adapterFactory) {
+	public SubmenuEntryItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -52,31 +46,8 @@ public class ImageManipulationItemProvider extends NamedElementItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addJpegQualityPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Jpeg Quality feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addJpegQualityPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ImageManipulation_jpegQuality_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ImageManipulation_jpegQuality_feature", "_UI_ImageManipulation_type"),
-				 WafPackage.Literals.IMAGE_MANIPULATION__JPEG_QUALITY,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
-				 null,
-				 null));
 	}
 
 	/**
@@ -91,7 +62,7 @@ public class ImageManipulationItemProvider extends NamedElementItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(WafPackage.Literals.IMAGE_MANIPULATION__FILTERS);
+			childrenFeatures.add(WafPackage.Literals.SUBMENU_ENTRY__SUBMENU);
 		}
 		return childrenFeatures;
 	}
@@ -110,14 +81,14 @@ public class ImageManipulationItemProvider extends NamedElementItemProvider {
 	}
 
 	/**
-	 * This returns ImageManipulation.gif.
+	 * This returns SubmenuEntry.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/ImageManipulation"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/SubmenuEntry"));
 	}
 
 	/**
@@ -128,10 +99,10 @@ public class ImageManipulationItemProvider extends NamedElementItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ImageManipulation)object).getName();
+		String label = ((SubmenuEntry)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_ImageManipulation_type") :
-			getString("_UI_ImageManipulation_type") + " " + label;
+			getString("_UI_SubmenuEntry_type") :
+			getString("_UI_SubmenuEntry_type") + " " + label;
 	}
 	
 
@@ -146,11 +117,12 @@ public class ImageManipulationItemProvider extends NamedElementItemProvider {
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(ImageManipulation.class)) {
-			case WafPackage.IMAGE_MANIPULATION__JPEG_QUALITY:
+		switch (notification.getFeatureID(SubmenuEntry.class)) {
+			case WafPackage.SUBMENU_ENTRY__NAME:
+			case WafPackage.SUBMENU_ENTRY__DISPLAY_LABEL:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case WafPackage.IMAGE_MANIPULATION__FILTERS:
+			case WafPackage.SUBMENU_ENTRY__SUBMENU:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -170,24 +142,13 @@ public class ImageManipulationItemProvider extends NamedElementItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.IMAGE_MANIPULATION__FILTERS,
-				 WafFactory.eINSTANCE.createBackgroundFilter()));
+				(WafPackage.Literals.SUBMENU_ENTRY__SUBMENU,
+				 WafFactory.eINSTANCE.createGlobalMenu()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.IMAGE_MANIPULATION__FILTERS,
-				 WafFactory.eINSTANCE.createThumbnailFilter()));
-	}
-
-	/**
-	 * Return the resource locator for this item provider's resources.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ResourceLocator getResourceLocator() {
-		return WafEditPlugin.INSTANCE;
+				(WafPackage.Literals.SUBMENU_ENTRY__SUBMENU,
+				 WafFactory.eINSTANCE.createDynamicMenu()));
 	}
 
 }
