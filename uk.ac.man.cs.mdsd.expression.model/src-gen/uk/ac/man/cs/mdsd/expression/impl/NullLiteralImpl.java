@@ -12,23 +12,23 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EDataTypeEList;
 
-import uk.ac.man.cs.mdsd.expression.CurrentUser;
 import uk.ac.man.cs.mdsd.expression.ExpressionPackage;
+import uk.ac.man.cs.mdsd.expression.NullLiteral;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Current User</b></em>'.
+ * An implementation of the model object '<em><b>Null Literal</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.man.cs.mdsd.expression.impl.CurrentUserImpl#getSuffixes <em>Suffixes</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.expression.impl.NullLiteralImpl#getSuffixes <em>Suffixes</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class CurrentUserImpl extends MinimalEObjectImpl.Container implements CurrentUser {
+public class NullLiteralImpl extends MinimalEObjectImpl.Container implements NullLiteral {
 	/**
 	 * The cached value of the '{@link #getSuffixes() <em>Suffixes</em>}' attribute list.
 	 * <!-- begin-user-doc -->
@@ -44,7 +44,7 @@ public class CurrentUserImpl extends MinimalEObjectImpl.Container implements Cur
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected CurrentUserImpl() {
+	protected NullLiteralImpl() {
 		super();
 	}
 
@@ -55,7 +55,7 @@ public class CurrentUserImpl extends MinimalEObjectImpl.Container implements Cur
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ExpressionPackage.Literals.CURRENT_USER;
+		return ExpressionPackage.Literals.NULL_LITERAL;
 	}
 
 	/**
@@ -65,7 +65,7 @@ public class CurrentUserImpl extends MinimalEObjectImpl.Container implements Cur
 	 */
 	public EList<String> getSuffixes() {
 		if (suffixes == null) {
-			suffixes = new EDataTypeEList<String>(String.class, this, ExpressionPackage.CURRENT_USER__SUFFIXES);
+			suffixes = new EDataTypeEList<String>(String.class, this, ExpressionPackage.NULL_LITERAL__SUFFIXES);
 		}
 		return suffixes;
 	}
@@ -78,7 +78,7 @@ public class CurrentUserImpl extends MinimalEObjectImpl.Container implements Cur
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ExpressionPackage.CURRENT_USER__SUFFIXES:
+			case ExpressionPackage.NULL_LITERAL__SUFFIXES:
 				return getSuffixes();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -93,7 +93,7 @@ public class CurrentUserImpl extends MinimalEObjectImpl.Container implements Cur
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ExpressionPackage.CURRENT_USER__SUFFIXES:
+			case ExpressionPackage.NULL_LITERAL__SUFFIXES:
 				getSuffixes().clear();
 				getSuffixes().addAll((Collection<? extends String>)newValue);
 				return;
@@ -109,7 +109,7 @@ public class CurrentUserImpl extends MinimalEObjectImpl.Container implements Cur
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ExpressionPackage.CURRENT_USER__SUFFIXES:
+			case ExpressionPackage.NULL_LITERAL__SUFFIXES:
 				getSuffixes().clear();
 				return;
 		}
@@ -124,7 +124,7 @@ public class CurrentUserImpl extends MinimalEObjectImpl.Container implements Cur
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ExpressionPackage.CURRENT_USER__SUFFIXES:
+			case ExpressionPackage.NULL_LITERAL__SUFFIXES:
 				return suffixes != null && !suffixes.isEmpty();
 		}
 		return super.eIsSet(featureID);
@@ -146,4 +146,4 @@ public class CurrentUserImpl extends MinimalEObjectImpl.Container implements Cur
 		return result.toString();
 	}
 
-} //CurrentUserImpl
+} //NullLiteralImpl
