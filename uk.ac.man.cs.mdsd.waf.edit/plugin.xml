@@ -10,7 +10,7 @@
       <!-- @generated Waf -->
       <factory
             uri="http://cs.manchester.ac.uk/mdsd/WebApplicationFramework"
-            class="uk.ac.man.cs.mdsd.waf.provider.WafItemProviderAdapterFactory"
+            class="work.andycarpenter.psms.waf.provider.WafItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider
@@ -23,13 +23,12 @@
       <!-- @generated Waf -->
       <extender
             uri="http://cs.manchester.ac.uk/mdsd/ObjectRelationalMapping"
-            class="uk.ac.man.cs.mdsd.waf.provider.WafItemProviderAdapterFactory$OrmChildCreationExtender"/>
+            class="work.andycarpenter.psms.waf.provider.WafItemProviderAdapterFactory$OrmChildCreationExtender"/>
       <extender
             uri="http://cs.manchester.ac.uk/mdsd/Service"
-            class="uk.ac.man.cs.mdsd.waf.provider.WafItemProviderAdapterFactory$ServiceChildCreationExtender"/>
+            class="work.andycarpenter.psms.waf.provider.WafItemProviderAdapterFactory$ServiceChildCreationExtender"/>
       <extender
             uri="http://cs.manchester.ac.uk/mdsd/Expression"
-            class="uk.ac.man.cs.mdsd.waf.provider.WafItemProviderAdapterFactory$ExpressionChildCreationExtender"/>
+            class="work.andycarpenter.psms.waf.provider.WafItemProviderAdapterFactory$ExpressionChildCreationExtender"/>
    </extension>
-
 </plugin>

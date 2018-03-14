@@ -3,11 +3,11 @@
 	nsPrefix="expression"
 )
 @GenModel(
-	editDirectory="/uk.ac.man.cs.mdsd.expression.edit/src",
-	editPluginID="uk.ac.man.cs.mdsd.expression.edit",
+	editDirectory="/work.andycarpenter.psms.expression.edit/src",
+	editPluginID="work.andycarpenter.psms.expression.edit",
 	extensibleProviderFactory="true"
 )
-package uk.ac.man.cs.mdsd.expression
+package work.andycarpenter.psms.expression
 
 
 enum BooleanOperator {

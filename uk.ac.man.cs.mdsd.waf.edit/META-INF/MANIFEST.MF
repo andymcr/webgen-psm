@@ -1,24 +1,24 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
-Bundle-SymbolicName: uk.ac.man.cs.mdsd.waf.edit;singleton:=true
+Bundle-SymbolicName: work.andycarpenter.psms.waf.edit;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
-Bundle-Activator: uk.ac.man.cs.mdsd.waf.provider.WafEditPlugin$Implementation
+Bundle-Activator: work.andycarpenter.psms.waf.provider.WafEditPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: uk.ac.man.cs.mdsd.waf.provider
+Export-Package: work.andycarpenter.psms.waf.provider
 Require-Bundle: org.eclipse.core.runtime,
- uk.ac.man.cs.mdsd.waf.model;visibility:=reexport,
+ work.andycarpenter.psms.waf;visibility:=reexport,
  org.eclipse.emf.edit;visibility:=reexport,
  org.eclipse.emf.ecore;visibility:=reexport,
- uk.ac.man.cs.mdsd.api.model;visibility:=reexport,
- uk.ac.man.cs.mdsd.api.edit;visibility:=reexport,
- uk.ac.man.cs.mdsd.expression.model;visibility:=reexport,
- uk.ac.man.cs.mdsd.expression.edit;visibility:=reexport,
- uk.ac.man.cs.mdsd.orm.model;visibility:=reexport,
- uk.ac.man.cs.mdsd.orm.edit;visibility:=reexport,
- uk.ac.man.cs.mdsd.service.model;visibility:=reexport,
- uk.ac.man.cs.mdsd.service.edit;visibility:=reexport
+ work.andycarpenter.psms.expression;visibility:=reexport,
+ work.andycarpenter.psms.expression.edit;visibility:=reexport,
+ work.andycarpenter.psms.orm;visibility:=reexport,
+ work.andycarpenter.psms.orm.edit;visibility:=reexport,
+ work.andycarpenter.psms.service;visibility:=reexport,
+ work.andycarpenter.psms.service.edit;visibility:=reexport,
+ work.andycarpenter.psms.api;visibility:=reexport,
+ work.andycarpenter.psms.api.edit;visibility:=reexport
 Bundle-ActivationPolicy: lazy

@@ -11,7 +11,7 @@
       <!-- @generated api -->
       <package
             uri="http://cs.manchester.ac.uk/mdsd/API"
-            class="uk.ac.man.cs.mdsd.api.ApiPackage"
+            class="work.andycarpenter.psms.api.ApiPackage"
             genModel="model/api.xcore"/>
    </extension>
 

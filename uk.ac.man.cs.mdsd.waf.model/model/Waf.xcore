@@ -3,33 +3,33 @@
 	nsPrefix="waf"
 )
 @GenModel(
-	editDirectory="/uk.ac.man.cs.mdsd.waf.edit/src",
-	editPluginID="uk.ac.man.cs.mdsd.waf.edit",
+	editDirectory="/work.andycarpenter.psms.waf.edit/src",
+	editPluginID="work.andycarpenter.psms.waf.edit",
 	childCreationExtenders="true",
-	editorDirectory="/uk.ac.man.cs.mdsd.waf.editor/src")
-package uk.ac.man.cs.mdsd.waf
+	editorDirectory="/work.andycarpenter.psms.waf.editor/src")
+package work.andycarpenter.psms.waf
 
-import uk.ac.man.cs.mdsd.expression.Expression
-import uk.ac.man.cs.mdsd.expression.Predicate
-import uk.ac.man.cs.mdsd.expression.Variable
-import uk.ac.man.cs.mdsd.orm.Association
-import uk.ac.man.cs.mdsd.orm.Attribute
-import uk.ac.man.cs.mdsd.orm.DataType
-import uk.ac.man.cs.mdsd.orm.DateDetails
-import uk.ac.man.cs.mdsd.orm.Entity
-import uk.ac.man.cs.mdsd.orm.Label
-import uk.ac.man.cs.mdsd.orm.ModelLabel
-import uk.ac.man.cs.mdsd.orm.NamedDisplayElement
-import uk.ac.man.cs.mdsd.orm.NamedElement
-import uk.ac.man.cs.mdsd.orm.OrmModel
-import uk.ac.man.cs.mdsd.orm.SingletonLocation
-import uk.ac.man.cs.mdsd.api.API
-import uk.ac.man.cs.mdsd.service.BusinessOperation
-import uk.ac.man.cs.mdsd.service.Filter
-import uk.ac.man.cs.mdsd.service.FormalParameter
-import uk.ac.man.cs.mdsd.service.Selection
-import uk.ac.man.cs.mdsd.service.Service
-import uk.ac.man.cs.mdsd.service.ServiceModel
+import work.andycarpenter.psms.expression.Expression
+import work.andycarpenter.psms.expression.Predicate
+import work.andycarpenter.psms.expression.Variable
+import work.andycarpenter.psms.orm.Association
+import work.andycarpenter.psms.orm.Attribute
+import work.andycarpenter.psms.orm.DataType
+import work.andycarpenter.psms.orm.DateDetails
+import work.andycarpenter.psms.orm.Entity
+import work.andycarpenter.psms.orm.Label
+import work.andycarpenter.psms.orm.ModelLabel
+import work.andycarpenter.psms.orm.NamedDisplayElement
+import work.andycarpenter.psms.orm.NamedElement
+import work.andycarpenter.psms.orm.OrmModel
+import work.andycarpenter.psms.orm.SingletonLocation
+import work.andycarpenter.psms.api.API
+import work.andycarpenter.psms.service.BusinessOperation
+import work.andycarpenter.psms.service.Filter
+import work.andycarpenter.psms.service.FormalParameter
+import work.andycarpenter.psms.service.Selection
+import work.andycarpenter.psms.service.Service
+import work.andycarpenter.psms.service.ServiceModel
 
 
 enum FrameworkTechnologies {

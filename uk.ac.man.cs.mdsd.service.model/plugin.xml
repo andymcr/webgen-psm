@@ -14,4 +14,12 @@
             genModel="model/Service.xcore"/>
    </extension>
 
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Service -->
+      <package
+            uri="http://cs.manchester.ac.uk/mdsd/Service"
+            class="work.andycarpenter.psms.service.ServicePackage"
+            genModel="model/Service.xcore"/>
+   </extension>
+
 </plugin>

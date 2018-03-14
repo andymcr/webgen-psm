@@ -1,20 +1,20 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
-Bundle-SymbolicName: uk.ac.man.cs.mdsd.orm.model;singleton:=true
+Bundle-SymbolicName: work.andycarpenter.psms.orm;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: uk.ac.man.cs.mdsd.orm,
- uk.ac.man.cs.mdsd.orm.impl,
- uk.ac.man.cs.mdsd.orm.util
+Export-Package: work.andycarpenter.psms.orm,
+ work.andycarpenter.psms.orm.impl,
+ work.andycarpenter.psms.orm.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.eclipse.emf.ecore.xcore.lib,
  org.eclipse.ocl.ecore;visibility:=reexport,
  org.eclipse.xtext.xbase.lib,
- uk.ac.man.cs.mdsd.expression.model;visibility:=reexport
+ work.andycarpenter.psms.expression;visibility:=reexport
 Bundle-ActivationPolicy: lazy
 

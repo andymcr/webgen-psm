@@ -3,23 +3,23 @@
 	nsPrefix="service"
 )
 @GenModel(
-	editDirectory="/uk.ac.man.cs.mdsd.service.edit/src",
-	editPluginID="uk.ac.man.cs.mdsd.service.edit",
+	editDirectory="/work.andycarpenter.psms.service.edit/src",
+	editPluginID="work.andycarpenter.psms.service.edit",
 	childCreationExtenders="true",
-	editorDirectory="/uk.ac.man.cs.mdsd.service.editor/src")
-package uk.ac.man.cs.mdsd.service
+	editorDirectory="/work.andycarpenter.psms.service.editor/src")
+package work.andycarpenter.psms.service
 
-import uk.ac.man.cs.mdsd.expression.Expression
-import uk.ac.man.cs.mdsd.expression.Predicate
-import uk.ac.man.cs.mdsd.expression.Variable
-import uk.ac.man.cs.mdsd.orm.Association
-import uk.ac.man.cs.mdsd.orm.DataType
-import uk.ac.man.cs.mdsd.orm.Entity
-import uk.ac.man.cs.mdsd.orm.EntityAssociation
-import uk.ac.man.cs.mdsd.orm.Feature
-import uk.ac.man.cs.mdsd.orm.NamedDisplayElement
-import uk.ac.man.cs.mdsd.orm.NamedElement
-import uk.ac.man.cs.mdsd.orm.OrmModel
+import work.andycarpenter.psms.expression.Expression
+import work.andycarpenter.psms.expression.Predicate
+import work.andycarpenter.psms.expression.Variable
+import work.andycarpenter.psms.orm.Association
+import work.andycarpenter.psms.orm.DataType
+import work.andycarpenter.psms.orm.Entity
+import work.andycarpenter.psms.orm.EntityAssociation
+import work.andycarpenter.psms.orm.Feature
+import work.andycarpenter.psms.orm.NamedDisplayElement
+import work.andycarpenter.psms.orm.NamedElement
+import work.andycarpenter.psms.orm.OrmModel
 
 
 interface FormalParameterList {

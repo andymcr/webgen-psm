@@ -3,13 +3,13 @@
 		nsURI="http://cs.manchester.ac.uk/mdsd/API"
 )
 @GenModel(
-	editDirectory="/uk.ac.man.cs.mdsd.api.edit/src",
-	editPluginID="uk.ac.man.cs.mdsd.api.edit")
-package uk.ac.man.cs.mdsd.api
+	editDirectory="/work.andycarpenter.psms.api.edit/src",
+	editPluginID="work.andycarpenter.psms.api.edit")
+package work.andycarpenter.psms.api
 
-import uk.ac.man.cs.mdsd.orm.SerializationGroup
-import uk.ac.man.cs.mdsd.service.Selection
-import uk.ac.man.cs.mdsd.service.Service
+import work.andycarpenter.psms.orm.SerializationGroup
+import work.andycarpenter.psms.service.Selection
+import work.andycarpenter.psms.service.Service
 
 
 class API {
@@ -20,7 +20,7 @@ class Resource {
 	container Resource parentResource opposite childResources
 	refers Service[1] service
 	derived String[1] name get {
-		if (service != null)
+		if (service !== null)
 			service.name
 	}
 	String[1] uriElement
@@ -37,7 +37,7 @@ class ResourceSelection {
 	container Resource parentResource opposite selections
 	refers Selection[1] selection
 	derived String[1] name get {
-		if (selection != null)
+		if (selection !== null)
 			selection.name
 	}
 	String[1] uriElement

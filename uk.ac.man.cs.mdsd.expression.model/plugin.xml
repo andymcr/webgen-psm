@@ -10,7 +10,7 @@
       <!-- @generated Expression -->
       <package
             uri="http://cs.manchester.ac.uk/mdsd/Expression"
-            class="uk.ac.man.cs.mdsd.expression.ExpressionPackage"
+            class="work.andycarpenter.psms.expression.ExpressionPackage"
             genModel="model/Expression.xcore"/>
    </extension>
 

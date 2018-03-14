@@ -6,13 +6,13 @@
 	validationDelegates="http://www.eclipse.org/emf/2002/Ecore/OCL"
 )
 @GenModel(
-	editDirectory="/uk.ac.man.cs.mdsd.orm.edit/src",
-	editPluginID="uk.ac.man.cs.mdsd.orm.edit",
+	editDirectory="/work.andycarpenter.psms.orm.edit/src",
+	editPluginID="work.andycarpenter.psms.orm.edit",
 	childCreationExtenders="true",
 	complianceLevel="6.0")
-package uk.ac.man.cs.mdsd.orm
+package work.andycarpenter.psms.orm
 
-import uk.ac.man.cs.mdsd.expression.Expression
+import work.andycarpenter.psms.expression.Expression
 
 annotation "http://www.eclipse.org/emf/2002/Ecore/OCL" as OCL
 
