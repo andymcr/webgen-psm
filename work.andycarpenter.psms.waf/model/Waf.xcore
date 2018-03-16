@@ -266,7 +266,9 @@ abstract class UnitFeature extends UnitField, InlineActionContainer {
 	contains Expression forcedValue
 	boolean collectionUiAllowAdd = "true"
 	boolean collectionUiAllowRemove = "true"
-	String nullDisplayValue
+	String defaultDisplayValue
+	contains Predicate displayDefaultWhen
+	String emptyDisplayValue
 	boolean autofocus
 	String footer
 	String headerClass

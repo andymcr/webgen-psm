@@ -367,7 +367,8 @@ public class UnitAssociationItemProvider extends UnitFeatureItemProvider {
 
 		boolean qualify =
 			childFeature == WafPackage.Literals.UNIT_FIELD__HIDE_WHEN ||
-			childFeature == WafPackage.Literals.UNIT_FEATURE__FORCED_VALUE;
+			childFeature == WafPackage.Literals.UNIT_FEATURE__FORCED_VALUE ||
+			childFeature == WafPackage.Literals.UNIT_FEATURE__DISPLAY_DEFAULT_WHEN;
 
 		if (qualify) {
 			return getString
