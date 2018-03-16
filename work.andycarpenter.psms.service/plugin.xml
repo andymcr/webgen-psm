@@ -10,7 +10,7 @@
       <!-- @generated Waf -->
       <package
             uri="http://cs.manchester.ac.uk/mdsd/service"
-            class="uk.ac.man.cs.mdsd.service.ServicePackage"
+            class="work.andycarpenter.psms.service.ServicePackage"
             genModel="model/Service.xcore"/>
    </extension>
 

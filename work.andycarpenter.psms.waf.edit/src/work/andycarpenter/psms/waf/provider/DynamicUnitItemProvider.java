@@ -339,6 +339,11 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.Literals.DYNAMIC_UNIT__DISPLAY_FIELDS,
+				 WafFactory.eINSTANCE.createUnitLabel()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.Literals.DYNAMIC_UNIT__DISPLAY_FIELDS,
 				 WafFactory.eINSTANCE.createDataTypeField()));
 
 		newChildDescriptors.add

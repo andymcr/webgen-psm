@@ -635,6 +635,29 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.waf.UnitLabel} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected UnitLabelItemProvider unitLabelItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link work.andycarpenter.psms.waf.UnitLabel}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createUnitLabelAdapter() {
+		if (unitLabelItemProvider == null) {
+			unitLabelItemProvider = new UnitLabelItemProvider(this);
+		}
+
+		return unitLabelItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.waf.DataTypeField} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1285,6 +1308,7 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 		if (featurePathAttributeItemProvider != null) featurePathAttributeItemProvider.dispose();
 		if (featurePathAssociationItemProvider != null) featurePathAssociationItemProvider.dispose();
 		if (featurePathLabelItemProvider != null) featurePathLabelItemProvider.dispose();
+		if (unitLabelItemProvider != null) unitLabelItemProvider.dispose();
 		if (dataTypeFieldItemProvider != null) dataTypeFieldItemProvider.dispose();
 		if (dateFieldItemProvider != null) dateFieldItemProvider.dispose();
 		if (captchaFieldItemProvider != null) captchaFieldItemProvider.dispose();

@@ -9,7 +9,7 @@
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <factory
             uri="http://www.cs.man.ac.uk/mdsd/2010/ObjectRelationalMapping"
-            class="uk.ac.man.cs.mdsd.orm.provider.OrmItemProviderAdapterFactory"
+            class="work.andycarpenter.psms.orm.provider.OrmItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider

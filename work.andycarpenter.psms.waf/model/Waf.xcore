@@ -338,6 +338,14 @@ class FeaturePathLabel extends FeaturePath {
 	refers ModelLabel[1] label
 }
 
+class UnitLabel extends UnitField {
+	refers ModelLabel[1] label
+	derived String[1] name get {
+		if (label !== null)
+			label.name
+	}
+}
+
 abstract class InterfaceField extends NamedElement, UnitField {
 	boolean required
 	contains Expression defaultValue
