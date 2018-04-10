@@ -55,6 +55,7 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 			addDisplayedOnPropertyDescriptor(object);
 			addRequiresRolePropertyDescriptor(object);
 			addTitlePropertyDescriptor(object);
+			addEscapeHTMLPropertyDescriptor(object);
 			addCollectionDisplayOptionPropertyDescriptor(object);
 			addMaximumDisplaySizePropertyDescriptor(object);
 			addTruncatePropertyDescriptor(object);
@@ -136,6 +137,28 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Escape HTML feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addEscapeHTMLPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_UnitField_escapeHTML_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_escapeHTML_feature", "_UI_UnitField_type"),
+				 WafPackage.Literals.UNIT_FIELD__ESCAPE_HTML,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -532,6 +555,7 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 		switch (notification.getFeatureID(UnitFeature.class)) {
 			case WafPackage.UNIT_FEATURE__REQUIRES_ROLE:
 			case WafPackage.UNIT_FEATURE__TITLE:
+			case WafPackage.UNIT_FEATURE__ESCAPE_HTML:
 			case WafPackage.UNIT_FEATURE__COLLECTION_DISPLAY_OPTION:
 			case WafPackage.UNIT_FEATURE__MAXIMUM_DISPLAY_SIZE:
 			case WafPackage.UNIT_FEATURE__TRUNCATE:

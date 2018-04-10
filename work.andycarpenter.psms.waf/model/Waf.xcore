@@ -255,6 +255,7 @@ interface UnitField extends DisplayElement {
 	String requiresRole = ""
 	contains Predicate hideWhen
 	String title = ""
+	boolean escapeHTML = "true"
 	CollectionDisplayOptions collectionDisplayOption
 	int maximumDisplaySize = "-1"
 	Boolean truncate
