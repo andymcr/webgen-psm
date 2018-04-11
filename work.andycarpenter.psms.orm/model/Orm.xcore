@@ -19,7 +19,7 @@ annotation "http://www.eclipse.org/emf/2002/Ecore/OCL" as OCL
 class OrmModel {
 	contains SerializationGroup[] serializationGroups
 	contains DataType[] dataTypes
-	contains EntityOrView[] entitiesAndViews opposite partOf
+	contains Entity[] entities opposite partOf
 	contains CollectionType[] collectionTypes
 	DatabaseTechnologies databaseTechnology = "MySql"
 	OrmTechnologies ormTechnology
@@ -95,8 +95,8 @@ class EnumerationLiteral extends NamedDisplayElement {
 }
 
 
-abstract class EntityOrView extends Classifier {
-	container OrmModel[1] partOf opposite entitiesAndViews
+class Entity extends Classifier {
+	container OrmModel[1] partOf opposite entities
 	String[1] singletonName
 	String[1] pluralisedName
 	contains Feature[] features opposite partOf
@@ -109,34 +109,16 @@ abstract class EntityOrView extends Classifier {
 	refers Feature[] containerUnique
 	contains ModelLabel[] labels opposite labelFor
 	boolean implementsUserInterface = "false"
+	boolean implementForumUser = "false"
 	boolean allowFormTypeCustomisation = "false"
 }
 
-
-abstract class Feature extends NamedDisplayElement {
-	container EntityOrView[1] partOf opposite features
-	boolean collectionOrmAllowAdd = "false"
-	boolean collectionOrmAllowRemove = "false"
-	boolean[1] encodeUriKey = "false"
-	refers SerializationGroup[] serializationGroups
-}
-
-abstract class Attribute extends Feature, Label {
-	contains Expression defaultValue
-	String validationPattern
-}
-
-abstract class Association extends Feature {
-	boolean pseudo
-	String placeholder
-	Integer[1] serializationMaxDepth = "1"
-}
 
 interface Label {
 }
 
 class ModelLabel extends NamedElement, Label {
-	container EntityOrView[1] labelFor opposite labels
+	container Entity[1] labelFor opposite labels
 	String[1] format
 	boolean customise
 	contains ModelLabelFeature[] features
@@ -156,34 +138,38 @@ class ModelLabelAssociation extends ModelLabelFeature {
 }
 
 
-class Entity extends EntityOrView {
-}
-
-abstract class EntityFeature extends Feature {
-	String[1] singletonName
-	String[1] pluralisedName
+abstract class Feature extends NamedDisplayElement {
+	container Entity[1] partOf opposite features
+	Cardinality cardinality
 	boolean primaryKey
 	boolean ^derived
 	boolean customiseSet
-	Cardinality cardinality
+	String[1] singletonName
+	String[1] pluralisedName
 	IsHasChoices booleanIsHasChoice
 	String[1] columnName
+	boolean[1] encodeUriKey = "false"
+	boolean collectionOrmAllowAdd = "false"
+	boolean collectionOrmAllowRemove = "false"
+	refers SerializationGroup[] serializationGroups
 }
 
-abstract class EntityAttribute extends EntityFeature, Attribute {
+abstract class Attribute extends Feature, Label {
+	contains Expression defaultValue
+	refers Attribute[] slugFields
+	String validationPattern
 	boolean hidden
 	String[1] persistentType
 	String[1] ormType
-	refers Attribute[] slugFields
 }
 
-abstract class SingletonAttribute extends EntityAttribute {
+abstract class SingletonAttribute extends Attribute {
 	boolean required
 	boolean ^unique
 	boolean containerUnique
 }
 
-abstract class CollectionAttribute extends EntityAttribute {
+abstract class CollectionAttribute extends Attribute {
 }
 
 class SingletonElement extends SingletonAttribute {
@@ -247,13 +233,16 @@ class SingletonLocation extends SingletonAttribute {
 
 @Ecore(constraints="onlyOneOwningEnd")
 @OCL(onlyOneOwningEnd="owningEnd xor opposite.owningEnd")
-abstract class EntityAssociation extends EntityFeature, Association {
-	refers EntityAssociation[1] ^opposite
+abstract class Association extends Feature {
+	refers Association[1] ^opposite
+	boolean pseudo
+	contains AssociationKey[] ^keys opposite keyFor
 	boolean[1] ^container = "false"
 	boolean[1] ^contains = "false"
 	boolean[1] owningEnd = "false"
 	boolean[1] visible = "true"
-	contains AssociationKey[] ^keys opposite keyFor
+	String placeholder
+	Integer[1] serializationMaxDepth = "1"
 	String pivotTableName
 }
 
@@ -262,7 +251,7 @@ enum SingletonAssociationRelationships {
 	ManyToOne = 1
 }
 
-class SingletonAssociation extends EntityAssociation {
+class SingletonAssociation extends Association {
 	boolean required
 	SingletonAssociationRelationships associationRelationship
 }
@@ -274,39 +263,13 @@ enum CollectionAssociationRelationships {
 
 @Ecore(constraints="x")
 @OCL(x="collectionType.elementType = opposite.parentEntity")
-class CollectionAssociation extends EntityAssociation {
+class CollectionAssociation extends Association {
 	refers CollectionType[1] collectionType
 	CollectionAssociationRelationships associationRelationship
 }
 
 class AssociationKey {
-	container EntityAssociation[1] keyFor opposite ^keys
-	refers EntityFeature[1] sourceFeature
-	refers EntityFeature targetFeature
-}
-
-
-class View extends EntityOrView {
-	refers EntityOrView[] encapsulates
-}
-
-abstract class ViewFeature extends Feature {
-}
-
-abstract class EncapsulatedFeature extends ViewFeature {
-	String[1] columnName
-}
-
-class EncapsulatedAttribute extends EncapsulatedFeature, Attribute {
-	refers Attribute[1] attribute
-}
-
-class EncapsulatedAssociation extends EncapsulatedFeature, Association {
-	refers Association[1] association
-	refers EncapsulatedAssociation encapsulatedTarget
-}
-
-class ViewAssociation extends ViewFeature, Association {
-	refers EncapsulatedAssociation[1] ^opposite
-	Cardinality cardinality
+	container Association[1] keyFor opposite ^keys
+	refers Feature[1] sourceFeature
+	refers Feature targetFeature
 }
