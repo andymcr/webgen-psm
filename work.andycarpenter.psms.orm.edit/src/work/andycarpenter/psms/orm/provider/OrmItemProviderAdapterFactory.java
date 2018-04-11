@@ -210,6 +210,29 @@ public class OrmItemProviderAdapterFactory extends OrmAdapterFactory implements 
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.orm.Entity} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected EntityItemProvider entityItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link work.andycarpenter.psms.orm.Entity}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createEntityAdapter() {
+		if (entityItemProvider == null) {
+			entityItemProvider = new EntityItemProvider(this);
+		}
+
+		return entityItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.orm.ModelLabel} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -276,29 +299,6 @@ public class OrmItemProviderAdapterFactory extends OrmAdapterFactory implements 
 		}
 
 		return modelLabelAssociationItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.orm.Entity} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected EntityItemProvider entityItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link work.andycarpenter.psms.orm.Entity}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createEntityAdapter() {
-		if (entityItemProvider == null) {
-			entityItemProvider = new EntityItemProvider(this);
-		}
-
-		return entityItemProvider;
 	}
 
 	/**
@@ -601,98 +601,6 @@ public class OrmItemProviderAdapterFactory extends OrmAdapterFactory implements 
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.orm.View} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ViewItemProvider viewItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link work.andycarpenter.psms.orm.View}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createViewAdapter() {
-		if (viewItemProvider == null) {
-			viewItemProvider = new ViewItemProvider(this);
-		}
-
-		return viewItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.orm.EncapsulatedAttribute} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected EncapsulatedAttributeItemProvider encapsulatedAttributeItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link work.andycarpenter.psms.orm.EncapsulatedAttribute}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createEncapsulatedAttributeAdapter() {
-		if (encapsulatedAttributeItemProvider == null) {
-			encapsulatedAttributeItemProvider = new EncapsulatedAttributeItemProvider(this);
-		}
-
-		return encapsulatedAttributeItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.orm.EncapsulatedAssociation} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected EncapsulatedAssociationItemProvider encapsulatedAssociationItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link work.andycarpenter.psms.orm.EncapsulatedAssociation}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createEncapsulatedAssociationAdapter() {
-		if (encapsulatedAssociationItemProvider == null) {
-			encapsulatedAssociationItemProvider = new EncapsulatedAssociationItemProvider(this);
-		}
-
-		return encapsulatedAssociationItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.orm.ViewAssociation} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ViewAssociationItemProvider viewAssociationItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link work.andycarpenter.psms.orm.ViewAssociation}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createViewAssociationAdapter() {
-		if (viewAssociationItemProvider == null) {
-			viewAssociationItemProvider = new ViewAssociationItemProvider(this);
-		}
-
-		return viewAssociationItemProvider;
-	}
-
-	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -797,10 +705,10 @@ public class OrmItemProviderAdapterFactory extends OrmAdapterFactory implements 
 		if (dataTypeItemProvider != null) dataTypeItemProvider.dispose();
 		if (enumerationTypeItemProvider != null) enumerationTypeItemProvider.dispose();
 		if (enumerationLiteralItemProvider != null) enumerationLiteralItemProvider.dispose();
+		if (entityItemProvider != null) entityItemProvider.dispose();
 		if (modelLabelItemProvider != null) modelLabelItemProvider.dispose();
 		if (modelLabelAttributeItemProvider != null) modelLabelAttributeItemProvider.dispose();
 		if (modelLabelAssociationItemProvider != null) modelLabelAssociationItemProvider.dispose();
-		if (entityItemProvider != null) entityItemProvider.dispose();
 		if (singletonElementItemProvider != null) singletonElementItemProvider.dispose();
 		if (collectionElementItemProvider != null) collectionElementItemProvider.dispose();
 		if (singletonDateItemProvider != null) singletonDateItemProvider.dispose();
@@ -814,10 +722,6 @@ public class OrmItemProviderAdapterFactory extends OrmAdapterFactory implements 
 		if (singletonAssociationItemProvider != null) singletonAssociationItemProvider.dispose();
 		if (collectionAssociationItemProvider != null) collectionAssociationItemProvider.dispose();
 		if (associationKeyItemProvider != null) associationKeyItemProvider.dispose();
-		if (viewItemProvider != null) viewItemProvider.dispose();
-		if (encapsulatedAttributeItemProvider != null) encapsulatedAttributeItemProvider.dispose();
-		if (encapsulatedAssociationItemProvider != null) encapsulatedAssociationItemProvider.dispose();
-		if (viewAssociationItemProvider != null) viewAssociationItemProvider.dispose();
 	}
 
 }

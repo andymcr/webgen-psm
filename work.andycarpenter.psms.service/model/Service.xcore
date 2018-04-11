@@ -15,7 +15,6 @@ import work.andycarpenter.psms.expression.Variable
 import work.andycarpenter.psms.orm.Association
 import work.andycarpenter.psms.orm.DataType
 import work.andycarpenter.psms.orm.Entity
-import work.andycarpenter.psms.orm.EntityAssociation
 import work.andycarpenter.psms.orm.Feature
 import work.andycarpenter.psms.orm.NamedDisplayElement
 import work.andycarpenter.psms.orm.NamedElement
@@ -64,7 +63,7 @@ class Selection extends NamedElement, FormalParameterList {
 	contains Filter[] filters opposite selection
 	contains Order[] ordering
 	int limit = "0"
-	refers EntityAssociation[] selectPath
+	refers Association[] selectPath
 	String methodName
 }
 

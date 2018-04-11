@@ -47,9 +47,35 @@ public class AttributeItemProvider extends FeatureItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addSlugFieldsPropertyDescriptor(object);
 			addValidationPatternPropertyDescriptor(object);
+			addHiddenPropertyDescriptor(object);
+			addPersistentTypePropertyDescriptor(object);
+			addOrmTypePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Slug Fields feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSlugFieldsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Attribute_slugFields_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Attribute_slugFields_feature", "_UI_Attribute_type"),
+				 OrmPackage.Literals.ATTRIBUTE__SLUG_FIELDS,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
@@ -66,6 +92,72 @@ public class AttributeItemProvider extends FeatureItemProvider {
 				 getString("_UI_Attribute_validationPattern_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Attribute_validationPattern_feature", "_UI_Attribute_type"),
 				 OrmPackage.Literals.ATTRIBUTE__VALIDATION_PATTERN,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Hidden feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHiddenPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Attribute_hidden_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Attribute_hidden_feature", "_UI_Attribute_type"),
+				 OrmPackage.Literals.ATTRIBUTE__HIDDEN,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Persistent Type feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPersistentTypePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Attribute_persistentType_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Attribute_persistentType_feature", "_UI_Attribute_type"),
+				 OrmPackage.Literals.ATTRIBUTE__PERSISTENT_TYPE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Orm Type feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addOrmTypePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Attribute_ormType_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Attribute_ormType_feature", "_UI_Attribute_type"),
+				 OrmPackage.Literals.ATTRIBUTE__ORM_TYPE,
 				 true,
 				 false,
 				 false,
@@ -132,6 +224,9 @@ public class AttributeItemProvider extends FeatureItemProvider {
 
 		switch (notification.getFeatureID(Attribute.class)) {
 			case OrmPackage.ATTRIBUTE__VALIDATION_PATTERN:
+			case OrmPackage.ATTRIBUTE__HIDDEN:
+			case OrmPackage.ATTRIBUTE__PERSISTENT_TYPE:
+			case OrmPackage.ATTRIBUTE__ORM_TYPE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case OrmPackage.ATTRIBUTE__DEFAULT_VALUE:

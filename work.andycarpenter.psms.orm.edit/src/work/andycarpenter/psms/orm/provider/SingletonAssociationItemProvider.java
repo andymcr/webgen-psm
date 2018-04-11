@@ -23,7 +23,7 @@ import work.andycarpenter.psms.orm.SingletonAssociation;
  * <!-- end-user-doc -->
  * @generated
  */
-public class SingletonAssociationItemProvider extends EntityAssociationItemProvider {
+public class SingletonAssociationItemProvider extends AssociationItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

@@ -197,7 +197,7 @@ public class OrmModelItemProvider
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(OrmPackage.Literals.ORM_MODEL__SERIALIZATION_GROUPS);
 			childrenFeatures.add(OrmPackage.Literals.ORM_MODEL__DATA_TYPES);
-			childrenFeatures.add(OrmPackage.Literals.ORM_MODEL__ENTITIES_AND_VIEWS);
+			childrenFeatures.add(OrmPackage.Literals.ORM_MODEL__ENTITIES);
 			childrenFeatures.add(OrmPackage.Literals.ORM_MODEL__COLLECTION_TYPES);
 		}
 		return childrenFeatures;
@@ -264,7 +264,7 @@ public class OrmModelItemProvider
 				return;
 			case OrmPackage.ORM_MODEL__SERIALIZATION_GROUPS:
 			case OrmPackage.ORM_MODEL__DATA_TYPES:
-			case OrmPackage.ORM_MODEL__ENTITIES_AND_VIEWS:
+			case OrmPackage.ORM_MODEL__ENTITIES:
 			case OrmPackage.ORM_MODEL__COLLECTION_TYPES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
@@ -300,13 +300,8 @@ public class OrmModelItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OrmPackage.Literals.ORM_MODEL__ENTITIES_AND_VIEWS,
+				(OrmPackage.Literals.ORM_MODEL__ENTITIES,
 				 OrmFactory.eINSTANCE.createEntity()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OrmPackage.Literals.ORM_MODEL__ENTITIES_AND_VIEWS,
-				 OrmFactory.eINSTANCE.createView()));
 
 		newChildDescriptors.add
 			(createChildParameter

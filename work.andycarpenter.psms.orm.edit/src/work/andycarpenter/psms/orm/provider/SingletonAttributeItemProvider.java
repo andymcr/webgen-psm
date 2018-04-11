@@ -23,7 +23,7 @@ import work.andycarpenter.psms.orm.SingletonAttribute;
  * <!-- end-user-doc -->
  * @generated
  */
-public class SingletonAttributeItemProvider extends EntityAttributeItemProvider {
+public class SingletonAttributeItemProvider extends AttributeItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

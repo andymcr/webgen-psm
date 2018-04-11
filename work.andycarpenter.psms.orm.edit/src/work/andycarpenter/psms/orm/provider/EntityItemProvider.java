@@ -9,9 +9,15 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ViewerNotification;
 import work.andycarpenter.psms.orm.Entity;
+import work.andycarpenter.psms.orm.OrmFactory;
+import work.andycarpenter.psms.orm.OrmPackage;
 
 /**
  * This is the item provider adapter for a {@link work.andycarpenter.psms.orm.Entity} object.
@@ -19,7 +25,7 @@ import work.andycarpenter.psms.orm.Entity;
  * <!-- end-user-doc -->
  * @generated
  */
-public class EntityItemProvider extends EntityOrViewItemProvider {
+public class EntityItemProvider extends ClassifierItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -41,8 +47,338 @@ public class EntityItemProvider extends EntityOrViewItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addPartOfPropertyDescriptor(object);
+			addSingletonNamePropertyDescriptor(object);
+			addPluralisedNamePropertyDescriptor(object);
+			addKeysPropertyDescriptor(object);
+			addTableNamePropertyDescriptor(object);
+			addAutoKeyNamePropertyDescriptor(object);
+			addAutoKeyPersistentTypePropertyDescriptor(object);
+			addAutoKeyGenerationStrategyPropertyDescriptor(object);
+			addUniquePropertyDescriptor(object);
+			addContainerUniquePropertyDescriptor(object);
+			addImplementsUserInterfacePropertyDescriptor(object);
+			addImplementForumUserPropertyDescriptor(object);
+			addAllowFormTypeCustomisationPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Part Of feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPartOfPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Entity_partOf_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Entity_partOf_feature", "_UI_Entity_type"),
+				 OrmPackage.Literals.ENTITY__PART_OF,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Singleton Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSingletonNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Entity_singletonName_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Entity_singletonName_feature", "_UI_Entity_type"),
+				 OrmPackage.Literals.ENTITY__SINGLETON_NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Pluralised Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPluralisedNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Entity_pluralisedName_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Entity_pluralisedName_feature", "_UI_Entity_type"),
+				 OrmPackage.Literals.ENTITY__PLURALISED_NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Keys feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addKeysPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Entity_keys_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Entity_keys_feature", "_UI_Entity_type"),
+				 OrmPackage.Literals.ENTITY__KEYS,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Table Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTableNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Entity_tableName_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Entity_tableName_feature", "_UI_Entity_type"),
+				 OrmPackage.Literals.ENTITY__TABLE_NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Auto Key Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAutoKeyNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Entity_autoKeyName_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Entity_autoKeyName_feature", "_UI_Entity_type"),
+				 OrmPackage.Literals.ENTITY__AUTO_KEY_NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Auto Key Persistent Type feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAutoKeyPersistentTypePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Entity_autoKeyPersistentType_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Entity_autoKeyPersistentType_feature", "_UI_Entity_type"),
+				 OrmPackage.Literals.ENTITY__AUTO_KEY_PERSISTENT_TYPE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Auto Key Generation Strategy feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAutoKeyGenerationStrategyPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Entity_autoKeyGenerationStrategy_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Entity_autoKeyGenerationStrategy_feature", "_UI_Entity_type"),
+				 OrmPackage.Literals.ENTITY__AUTO_KEY_GENERATION_STRATEGY,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Unique feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addUniquePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Entity_unique_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Entity_unique_feature", "_UI_Entity_type"),
+				 OrmPackage.Literals.ENTITY__UNIQUE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Container Unique feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addContainerUniquePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Entity_containerUnique_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Entity_containerUnique_feature", "_UI_Entity_type"),
+				 OrmPackage.Literals.ENTITY__CONTAINER_UNIQUE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Implements User Interface feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addImplementsUserInterfacePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Entity_implementsUserInterface_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Entity_implementsUserInterface_feature", "_UI_Entity_type"),
+				 OrmPackage.Literals.ENTITY__IMPLEMENTS_USER_INTERFACE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Implement Forum User feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addImplementForumUserPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Entity_implementForumUser_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Entity_implementForumUser_feature", "_UI_Entity_type"),
+				 OrmPackage.Literals.ENTITY__IMPLEMENT_FORUM_USER,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Allow Form Type Customisation feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAllowFormTypeCustomisationPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Entity_allowFormTypeCustomisation_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Entity_allowFormTypeCustomisation_feature", "_UI_Entity_type"),
+				 OrmPackage.Literals.ENTITY__ALLOW_FORM_TYPE_CUSTOMISATION,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
+	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		if (childrenFeatures == null) {
+			super.getChildrenFeatures(object);
+			childrenFeatures.add(OrmPackage.Literals.ENTITY__FEATURES);
+			childrenFeatures.add(OrmPackage.Literals.ENTITY__LABELS);
+		}
+		return childrenFeatures;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EStructuralFeature getChildFeature(Object object, Object child) {
+		// Check the type of the specified child object and return the proper feature to use for
+		// adding (see {@link AddCommand}) it as a child.
+
+		return super.getChildFeature(object, child);
 	}
 
 	/**
@@ -81,6 +417,24 @@ public class EntityItemProvider extends EntityOrViewItemProvider {
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(Entity.class)) {
+			case OrmPackage.ENTITY__SINGLETON_NAME:
+			case OrmPackage.ENTITY__PLURALISED_NAME:
+			case OrmPackage.ENTITY__TABLE_NAME:
+			case OrmPackage.ENTITY__AUTO_KEY_NAME:
+			case OrmPackage.ENTITY__AUTO_KEY_PERSISTENT_TYPE:
+			case OrmPackage.ENTITY__AUTO_KEY_GENERATION_STRATEGY:
+			case OrmPackage.ENTITY__IMPLEMENTS_USER_INTERFACE:
+			case OrmPackage.ENTITY__IMPLEMENT_FORUM_USER:
+			case OrmPackage.ENTITY__ALLOW_FORM_TYPE_CUSTOMISATION:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+			case OrmPackage.ENTITY__FEATURES:
+			case OrmPackage.ENTITY__LABELS:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 
@@ -94,6 +448,61 @@ public class EntityItemProvider extends EntityOrViewItemProvider {
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OrmPackage.Literals.ENTITY__FEATURES,
+				 OrmFactory.eINSTANCE.createSingletonElement()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OrmPackage.Literals.ENTITY__FEATURES,
+				 OrmFactory.eINSTANCE.createCollectionElement()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OrmPackage.Literals.ENTITY__FEATURES,
+				 OrmFactory.eINSTANCE.createSingletonDate()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OrmPackage.Literals.ENTITY__FEATURES,
+				 OrmFactory.eINSTANCE.createCollectionDate()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OrmPackage.Literals.ENTITY__FEATURES,
+				 OrmFactory.eINSTANCE.createSingletonURL()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OrmPackage.Literals.ENTITY__FEATURES,
+				 OrmFactory.eINSTANCE.createSingletonFile()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OrmPackage.Literals.ENTITY__FEATURES,
+				 OrmFactory.eINSTANCE.createSingletonImage()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OrmPackage.Literals.ENTITY__FEATURES,
+				 OrmFactory.eINSTANCE.createSingletonLocation()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OrmPackage.Literals.ENTITY__FEATURES,
+				 OrmFactory.eINSTANCE.createSingletonAssociation()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OrmPackage.Literals.ENTITY__FEATURES,
+				 OrmFactory.eINSTANCE.createCollectionAssociation()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OrmPackage.Literals.ENTITY__LABELS,
+				 OrmFactory.eINSTANCE.createModelLabel()));
 	}
 
 }

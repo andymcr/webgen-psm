@@ -23,7 +23,7 @@ import work.andycarpenter.psms.orm.OrmPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class CollectionAssociationItemProvider extends EntityAssociationItemProvider {
+public class CollectionAssociationItemProvider extends AssociationItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

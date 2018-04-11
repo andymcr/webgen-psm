@@ -19,7 +19,7 @@ import work.andycarpenter.psms.orm.CollectionAttribute;
  * <!-- end-user-doc -->
  * @generated
  */
-public class CollectionAttributeItemProvider extends EntityAttributeItemProvider {
+public class CollectionAttributeItemProvider extends AttributeItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
