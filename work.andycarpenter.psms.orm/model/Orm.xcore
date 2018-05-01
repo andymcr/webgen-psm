@@ -54,12 +54,10 @@ enum OrmTechnologies {
 }
 
 abstract class NamedElement {
-	@GenModel(property="None")
 	String[1] name
 }
 
 abstract class NamedDisplayElement extends NamedElement {
-	@GenModel(property="None")
 	String[1] displayLabel
 }
 
