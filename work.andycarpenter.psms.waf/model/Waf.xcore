@@ -382,6 +382,12 @@ interface SingletonUnit {
 	refers Entity[1] contentType
 }
 
+enum PaginationControlPlacements {
+	Below = 0
+	Above = 1
+	AboveAndBelow = 2
+}
+
 interface CollectionUnit extends SelectableUnit {
 	refers Entity[1..*] contentType
 	refers Selection selection
@@ -396,6 +402,7 @@ interface CollectionUnit extends SelectableUnit {
 	String emptyMessage
 	int defaultPaginationSize
 	int maximumPaginationSize
+	PaginationControlPlacements paginationControlPlacement = "Below"
 	int nextNpages
 	int previousNpages
 	String nextPageLabel = ">"
