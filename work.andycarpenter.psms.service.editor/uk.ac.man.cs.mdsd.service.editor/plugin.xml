@@ -28,7 +28,7 @@
             id="work.andycarpenter.psms.service.presentation.ServiceEditorID"
             name="%_UI_ServiceEditor_label"
             icon="icons/full/obj16/ServiceModelFile.gif"
-            extensions="business"
+            extensions="service"
             class="work.andycarpenter.psms.service.presentation.ServiceEditor"
             contributorClass="work.andycarpenter.psms.service.presentation.ServiceActionBarContributor">
       </editor>
