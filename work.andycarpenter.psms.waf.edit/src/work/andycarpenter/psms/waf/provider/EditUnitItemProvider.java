@@ -50,7 +50,6 @@ public class EditUnitItemProvider extends SingletonUnitItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addOnSaveContinueEditingPropertyDescriptor(object);
-			addTitlePropertyDescriptor(object);
 			addConfirmDestinationPropertyDescriptor(object);
 			addConfirmLabelPropertyDescriptor(object);
 			addCancelDestinationPropertyDescriptor(object);
@@ -78,28 +77,6 @@ public class EditUnitItemProvider extends SingletonUnitItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Title feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addTitlePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_EditUnit_title_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_EditUnit_title_feature", "_UI_EditUnit_type"),
-				 WafPackage.Literals.EDIT_UNIT__TITLE,
-				 true,
-				 false,
-				 true,
-				 null,
 				 null,
 				 null));
 	}

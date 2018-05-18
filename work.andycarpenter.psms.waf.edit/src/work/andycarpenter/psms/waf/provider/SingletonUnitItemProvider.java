@@ -43,6 +43,7 @@ public class SingletonUnitItemProvider extends DynamicUnitItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addTitlePropertyDescriptor(object);
 			addContentTypePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -62,6 +63,28 @@ public class SingletonUnitItemProvider extends DynamicUnitItemProvider {
 				 getString("_UI_SingletonUnit_contentType_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_SingletonUnit_contentType_feature", "_UI_SingletonUnit_type"),
 				 WafPackage.Literals.SINGLETON_UNIT__CONTENT_TYPE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Title feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTitlePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_SingletonUnit_title_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_SingletonUnit_title_feature", "_UI_SingletonUnit_type"),
+				 WafPackage.Literals.SINGLETON_UNIT__TITLE,
 				 true,
 				 false,
 				 true,

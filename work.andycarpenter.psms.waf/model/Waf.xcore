@@ -379,6 +379,7 @@ interface SelectableUnit {
 }
 
 class SingletonUnit extends DynamicUnit {
+	refers Label title
 	refers Entity[1] contentType
 }
 
@@ -389,6 +390,7 @@ enum PaginationControlPlacements {
 }
 
 class CollectionUnit extends DynamicUnit, SelectableUnit {
+	refers Label unitTitle
 	refers Entity[1..*] contentType
 	refers Selection selection
 	boolean omitContainerLoad
@@ -422,7 +424,6 @@ class CollectionUnit extends DynamicUnit, SelectableUnit {
 abstract class EditUnit extends SingletonUnit {
 	boolean onSaveContinueEditing = "false"
 	contains Predicate disableWhen
-	refers Label title
 	refers Page confirmDestination
 	String[1] confirmLabel
 	refers Page cancelDestination
@@ -449,13 +450,11 @@ class UpdateUnit extends EditUnit, SelectableUnit {
 }
 
 class DetailsUnit extends SingletonUnit, SelectableUnit {
-	refers Label title
 	refers Selection selection
 	boolean omitFieldLabels
 }
 
 abstract class IndexUnit extends CollectionUnit, InlineActionContainer {
-	refers Label title
 	boolean omitColumnLabels
 	refers SearchUnit targettingSearches opposite resultsDestination
 	String rowClasses
@@ -471,7 +470,6 @@ class IndexLineDirectionUnit extends IndexUnit {
 }
 
 abstract class CardsUnit extends CollectionUnit, InlineActionContainer {
-	refers Label unitTitle
 	boolean omitFieldLabels
 	boolean overlaySingleSelectAction
 	String columnClass
@@ -498,13 +496,11 @@ class ImageIndexUnit extends CardsUnit, ImageUnit {
 }
 
 class SliderUnit extends ImageUnit {
-	refers Label unitTitle
 	int showTime
 	int transitionTime
 }
 
 class GalleryUnit extends ImageUnit {
-	refers Label unitTitle
 	refers ImageManipulation fullSizeFilter
 	int showTime
 	int transitionTime

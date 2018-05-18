@@ -49,6 +49,7 @@ public class CollectionUnitItemProvider extends DynamicUnitItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addSelectorsPropertyDescriptor(object);
+			addUnitTitlePropertyDescriptor(object);
 			addContentTypePropertyDescriptor(object);
 			addSelectionPropertyDescriptor(object);
 			addOmitContainerLoadPropertyDescriptor(object);
@@ -116,6 +117,28 @@ public class CollectionUnitItemProvider extends DynamicUnitItemProvider {
 				 getString("_UI_CollectionUnit_contentType_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_contentType_feature", "_UI_CollectionUnit_type"),
 				 WafPackage.Literals.COLLECTION_UNIT__CONTENT_TYPE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Unit Title feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addUnitTitlePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_CollectionUnit_unitTitle_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_unitTitle_feature", "_UI_CollectionUnit_type"),
+				 WafPackage.Literals.COLLECTION_UNIT__UNIT_TITLE,
 				 true,
 				 false,
 				 true,
