@@ -10,30 +10,29 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
-import work.andycarpenter.psms.waf.IndexUnit;
+import work.andycarpenter.psms.waf.CardsUnit;
 import work.andycarpenter.psms.waf.WafFactory;
 import work.andycarpenter.psms.waf.WafPackage;
 
 /**
- * This is the item provider adapter for a {@link work.andycarpenter.psms.waf.IndexUnit} object.
+ * This is the item provider adapter for a {@link work.andycarpenter.psms.waf.CardsUnit} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class IndexUnitItemProvider extends CollectionUnitItemProvider {
+public class CardsUnitItemProvider extends CollectionUnitItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public IndexUnitItemProvider(AdapterFactory adapterFactory) {
+	public CardsUnitItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -48,28 +47,29 @@ public class IndexUnitItemProvider extends CollectionUnitItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addTitlePropertyDescriptor(object);
-			addOmitColumnLabelsPropertyDescriptor(object);
-			addTargettingSearchesPropertyDescriptor(object);
-			addRowClassesPropertyDescriptor(object);
+			addUnitTitlePropertyDescriptor(object);
+			addOmitFieldLabelsPropertyDescriptor(object);
+			addOverlaySingleSelectActionPropertyDescriptor(object);
+			addColumnClassPropertyDescriptor(object);
+			addCardClassPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Title feature.
+	 * This adds a property descriptor for the Unit Title feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addTitlePropertyDescriptor(Object object) {
+	protected void addUnitTitlePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_IndexUnit_title_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_IndexUnit_title_feature", "_UI_IndexUnit_type"),
-				 WafPackage.Literals.INDEX_UNIT__TITLE,
+				 getString("_UI_CardsUnit_unitTitle_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CardsUnit_unitTitle_feature", "_UI_CardsUnit_type"),
+				 WafPackage.Literals.CARDS_UNIT__UNIT_TITLE,
 				 true,
 				 false,
 				 true,
@@ -79,19 +79,19 @@ public class IndexUnitItemProvider extends CollectionUnitItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Omit Column Labels feature.
+	 * This adds a property descriptor for the Omit Field Labels feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addOmitColumnLabelsPropertyDescriptor(Object object) {
+	protected void addOmitFieldLabelsPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_IndexUnit_omitColumnLabels_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_IndexUnit_omitColumnLabels_feature", "_UI_IndexUnit_type"),
-				 WafPackage.Literals.INDEX_UNIT__OMIT_COLUMN_LABELS,
+				 getString("_UI_CardsUnit_omitFieldLabels_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CardsUnit_omitFieldLabels_feature", "_UI_CardsUnit_type"),
+				 WafPackage.Literals.CARDS_UNIT__OMIT_FIELD_LABELS,
 				 true,
 				 false,
 				 false,
@@ -101,41 +101,63 @@ public class IndexUnitItemProvider extends CollectionUnitItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Targetting Searches feature.
+	 * This adds a property descriptor for the Overlay Single Select Action feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addTargettingSearchesPropertyDescriptor(Object object) {
+	protected void addOverlaySingleSelectActionPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_IndexUnit_targettingSearches_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_IndexUnit_targettingSearches_feature", "_UI_IndexUnit_type"),
-				 WafPackage.Literals.INDEX_UNIT__TARGETTING_SEARCHES,
+				 getString("_UI_CardsUnit_overlaySingleSelectAction_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CardsUnit_overlaySingleSelectAction_feature", "_UI_CardsUnit_type"),
+				 WafPackage.Literals.CARDS_UNIT__OVERLAY_SINGLE_SELECT_ACTION,
 				 true,
 				 false,
-				 true,
-				 null,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 null,
 				 null));
 	}
 
 	/**
-	 * This adds a property descriptor for the Row Classes feature.
+	 * This adds a property descriptor for the Column Class feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addRowClassesPropertyDescriptor(Object object) {
+	protected void addColumnClassPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_IndexUnit_rowClasses_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_IndexUnit_rowClasses_feature", "_UI_IndexUnit_type"),
-				 WafPackage.Literals.INDEX_UNIT__ROW_CLASSES,
+				 getString("_UI_CardsUnit_columnClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CardsUnit_columnClass_feature", "_UI_CardsUnit_type"),
+				 WafPackage.Literals.CARDS_UNIT__COLUMN_CLASS,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Card Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCardClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_CardsUnit_cardClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CardsUnit_cardClass_feature", "_UI_CardsUnit_type"),
+				 WafPackage.Literals.CARDS_UNIT__CARD_CLASS,
 				 true,
 				 false,
 				 false,
@@ -182,10 +204,10 @@ public class IndexUnitItemProvider extends CollectionUnitItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((IndexUnit)object).getName();
+		String label = ((CardsUnit)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_IndexUnit_type") :
-			getString("_UI_IndexUnit_type") + " " + label;
+			getString("_UI_CardsUnit_type") :
+			getString("_UI_CardsUnit_type") + " " + label;
 	}
 	
 
@@ -200,12 +222,14 @@ public class IndexUnitItemProvider extends CollectionUnitItemProvider {
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(IndexUnit.class)) {
-			case WafPackage.INDEX_UNIT__OMIT_COLUMN_LABELS:
-			case WafPackage.INDEX_UNIT__ROW_CLASSES:
+		switch (notification.getFeatureID(CardsUnit.class)) {
+			case WafPackage.CARDS_UNIT__OMIT_FIELD_LABELS:
+			case WafPackage.CARDS_UNIT__OVERLAY_SINGLE_SELECT_ACTION:
+			case WafPackage.CARDS_UNIT__COLUMN_CLASS:
+			case WafPackage.CARDS_UNIT__CARD_CLASS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case WafPackage.INDEX_UNIT__ACTIONS:
+			case WafPackage.CARDS_UNIT__ACTIONS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}

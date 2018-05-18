@@ -9,24 +9,26 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
-import work.andycarpenter.psms.waf.IndexCardsUnit;
+import work.andycarpenter.psms.waf.SingletonUnit;
+import work.andycarpenter.psms.waf.WafPackage;
 
 /**
- * This is the item provider adapter for a {@link work.andycarpenter.psms.waf.IndexCardsUnit} object.
+ * This is the item provider adapter for a {@link work.andycarpenter.psms.waf.SingletonUnit} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class IndexCardsUnitItemProvider extends IndexUnitItemProvider {
+public class SingletonUnitItemProvider extends DynamicUnitItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public IndexCardsUnitItemProvider(AdapterFactory adapterFactory) {
+	public SingletonUnitItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -41,19 +43,42 @@ public class IndexCardsUnitItemProvider extends IndexUnitItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addContentTypePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This returns IndexCardsUnit.gif.
+	 * This adds a property descriptor for the Content Type feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addContentTypePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_SingletonUnit_contentType_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_SingletonUnit_contentType_feature", "_UI_SingletonUnit_type"),
+				 WafPackage.Literals.SINGLETON_UNIT__CONTENT_TYPE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This returns SingletonUnit.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/IndexCardsUnit"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/SingletonUnit"));
 	}
 
 	/**
@@ -64,10 +89,10 @@ public class IndexCardsUnitItemProvider extends IndexUnitItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((IndexCardsUnit)object).getName();
+		String label = ((SingletonUnit)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_IndexCardsUnit_type") :
-			getString("_UI_IndexCardsUnit_type") + " " + label;
+			getString("_UI_SingletonUnit_type") :
+			getString("_UI_SingletonUnit_type") + " " + label;
 	}
 	
 

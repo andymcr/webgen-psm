@@ -23,7 +23,7 @@ import work.andycarpenter.psms.waf.WafPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class DetailsUnitItemProvider extends DataUnitItemProvider {
+public class DetailsUnitItemProvider extends SingletonUnitItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -45,34 +45,12 @@ public class DetailsUnitItemProvider extends DataUnitItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addContentTypePropertyDescriptor(object);
 			addSelectorsPropertyDescriptor(object);
+			addTitlePropertyDescriptor(object);
 			addSelectionPropertyDescriptor(object);
 			addOmitFieldLabelsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Content Type feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addContentTypePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_SingletonUnit_contentType_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_SingletonUnit_contentType_feature", "_UI_SingletonUnit_type"),
-				 WafPackage.Literals.SINGLETON_UNIT__CONTENT_TYPE,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
 	}
 
 	/**
@@ -89,6 +67,28 @@ public class DetailsUnitItemProvider extends DataUnitItemProvider {
 				 getString("_UI_SelectableUnit_selectors_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_SelectableUnit_selectors_feature", "_UI_SelectableUnit_type"),
 				 WafPackage.Literals.SELECTABLE_UNIT__SELECTORS,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Title feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTitlePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DetailsUnit_title_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DetailsUnit_title_feature", "_UI_DetailsUnit_type"),
+				 WafPackage.Literals.DETAILS_UNIT__TITLE,
 				 true,
 				 false,
 				 true,

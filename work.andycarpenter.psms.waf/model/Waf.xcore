@@ -378,7 +378,7 @@ interface SelectableUnit {
 	refers SelectAction[] selectors opposite target
 }
 
-interface SingletonUnit {
+class SingletonUnit extends DynamicUnit {
 	refers Entity[1] contentType
 }
 
@@ -388,7 +388,7 @@ enum PaginationControlPlacements {
 	AboveAndBelow = 2
 }
 
-interface CollectionUnit extends SelectableUnit {
+class CollectionUnit extends DynamicUnit, SelectableUnit {
 	refers Entity[1..*] contentType
 	refers Selection selection
 	boolean omitContainerLoad
@@ -419,7 +419,7 @@ interface CollectionUnit extends SelectableUnit {
 	String paginationElementClass
 }
 
-abstract class EditUnit extends DynamicUnit, SingletonUnit {
+abstract class EditUnit extends SingletonUnit {
 	boolean onSaveContinueEditing = "false"
 	contains Predicate disableWhen
 	refers Label title
@@ -448,16 +448,14 @@ class MapUnit extends EditUnit, SelectableUnit {
 class UpdateUnit extends EditUnit, SelectableUnit {
 }
 
-abstract class DataUnit extends DynamicUnit {
+class DetailsUnit extends SingletonUnit, SelectableUnit {
 	refers Label title
-}
-
-class DetailsUnit extends DataUnit, SingletonUnit, SelectableUnit {
 	refers Selection selection
 	boolean omitFieldLabels
 }
 
-abstract class IndexUnit extends DataUnit, CollectionUnit, InlineActionContainer {
+abstract class IndexUnit extends CollectionUnit, InlineActionContainer {
+	refers Label title
 	boolean omitColumnLabels
 	refers SearchUnit targettingSearches opposite resultsDestination
 	String rowClasses
@@ -472,7 +470,44 @@ class IndexPageDirectionUnit extends IndexUnit {
 class IndexLineDirectionUnit extends IndexUnit {
 }
 
-class IndexCardsUnit extends IndexUnit {
+abstract class CardsUnit extends CollectionUnit, InlineActionContainer {
+	refers Label unitTitle
+	boolean omitFieldLabels
+	boolean overlaySingleSelectAction
+	String columnClass
+	String cardClass
+}
+
+class CardsIndexUnit extends CardsUnit {
+}
+
+abstract class ImageUnit extends CollectionUnit {
+	contains FeaturePath[1] imagePathFeature
+	contains FeaturePath imageTitleFeature
+	boolean truncateImageTitle
+	refers ImageManipulation imageFilter
+	refers ImageManipulation missingImageFilter
+	String missingImagePath
+}
+
+
+class ImageIndexUnit extends CardsUnit, ImageUnit {
+	boolean enableImageEnlargement
+	boolean overlayTitle
+	boolean revealUntruncatedContent
+}
+
+class SliderUnit extends ImageUnit {
+	refers Label unitTitle
+	int showTime
+	int transitionTime
+}
+
+class GalleryUnit extends ImageUnit {
+	refers Label unitTitle
+	refers ImageManipulation fullSizeFilter
+	int showTime
+	int transitionTime
 }
 
 abstract class ControlUnit extends DynamicUnit {
@@ -485,37 +520,6 @@ class SearchUnit extends ControlUnit {
 	refers IndexUnit[1] resultsDestination opposite targettingSearches
 }
 
-abstract class ImageUnit extends DynamicUnit, CollectionUnit {
-	refers Label title
-	contains FeaturePath[1] imagePathFeature
-	contains FeaturePath imageTitleFeature
-	boolean truncateImageTitle
-	refers ImageManipulation imageFilter
-	refers ImageManipulation missingImageFilter
-	String missingImagePath
-}
-
-
-class ImageIndexUnit extends ImageUnit, InlineActionContainer {
-	boolean omitFieldLabels
-	boolean enableImageEnlargement
-	boolean overlayTitle
-	boolean overlaySingleSelectAction
-	boolean revealUntruncatedContent
-	String columnClass
-	String cardClass
-}
-
-class SliderUnit extends ImageUnit {
-	int showTime
-	int transitionTime
-}
-
-class GalleryUnit extends ImageUnit {
-	refers ImageManipulation fullSizeFilter
-	int showTime
-	int transitionTime
-}
 
 interface AuthenticationUnit {
 }

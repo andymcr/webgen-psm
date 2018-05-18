@@ -269,6 +269,16 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.Literals.UNIT_CONTAINER__UNITS,
+				 WafFactory.eINSTANCE.createSingletonUnit()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.Literals.UNIT_CONTAINER__UNITS,
+				 WafFactory.eINSTANCE.createCollectionUnit()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.Literals.UNIT_CONTAINER__UNITS,
 				 WafFactory.eINSTANCE.createCreateUnit()));
 
 		newChildDescriptors.add
@@ -309,12 +319,7 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.Literals.UNIT_CONTAINER__UNITS,
-				 WafFactory.eINSTANCE.createIndexCardsUnit()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.Literals.UNIT_CONTAINER__UNITS,
-				 WafFactory.eINSTANCE.createSearchUnit()));
+				 WafFactory.eINSTANCE.createCardsIndexUnit()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -330,6 +335,11 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 			(createChildParameter
 				(WafPackage.Literals.UNIT_CONTAINER__UNITS,
 				 WafFactory.eINSTANCE.createGalleryUnit()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.Literals.UNIT_CONTAINER__UNITS,
+				 WafFactory.eINSTANCE.createSearchUnit()));
 
 		newChildDescriptors.add
 			(createChildParameter

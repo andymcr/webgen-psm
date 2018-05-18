@@ -8,9 +8,7 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
@@ -26,7 +24,7 @@ import work.andycarpenter.psms.waf.WafPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ImageIndexUnitItemProvider extends ImageUnitItemProvider {
+public class ImageIndexUnitItemProvider extends CardsUnitItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -48,35 +46,101 @@ public class ImageIndexUnitItemProvider extends ImageUnitItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addOmitFieldLabelsPropertyDescriptor(object);
+			addTruncateImageTitlePropertyDescriptor(object);
+			addImageFilterPropertyDescriptor(object);
+			addMissingImageFilterPropertyDescriptor(object);
+			addMissingImagePathPropertyDescriptor(object);
 			addEnableImageEnlargementPropertyDescriptor(object);
 			addOverlayTitlePropertyDescriptor(object);
-			addOverlaySingleSelectActionPropertyDescriptor(object);
 			addRevealUntruncatedContentPropertyDescriptor(object);
-			addColumnClassPropertyDescriptor(object);
-			addCardClassPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Omit Field Labels feature.
+	 * This adds a property descriptor for the Truncate Image Title feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addOmitFieldLabelsPropertyDescriptor(Object object) {
+	protected void addTruncateImageTitlePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ImageIndexUnit_omitFieldLabels_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ImageIndexUnit_omitFieldLabels_feature", "_UI_ImageIndexUnit_type"),
-				 WafPackage.Literals.IMAGE_INDEX_UNIT__OMIT_FIELD_LABELS,
+				 getString("_UI_ImageUnit_truncateImageTitle_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ImageUnit_truncateImageTitle_feature", "_UI_ImageUnit_type"),
+				 WafPackage.Literals.IMAGE_UNIT__TRUNCATE_IMAGE_TITLE,
 				 true,
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Image Filter feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addImageFilterPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ImageUnit_imageFilter_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ImageUnit_imageFilter_feature", "_UI_ImageUnit_type"),
+				 WafPackage.Literals.IMAGE_UNIT__IMAGE_FILTER,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Missing Image Filter feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addMissingImageFilterPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ImageUnit_missingImageFilter_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ImageUnit_missingImageFilter_feature", "_UI_ImageUnit_type"),
+				 WafPackage.Literals.IMAGE_UNIT__MISSING_IMAGE_FILTER,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Missing Image Path feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addMissingImagePathPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ImageUnit_missingImagePath_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ImageUnit_missingImagePath_feature", "_UI_ImageUnit_type"),
+				 WafPackage.Literals.IMAGE_UNIT__MISSING_IMAGE_PATH,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -126,28 +190,6 @@ public class ImageIndexUnitItemProvider extends ImageUnitItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Overlay Single Select Action feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addOverlaySingleSelectActionPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ImageIndexUnit_overlaySingleSelectAction_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ImageIndexUnit_overlaySingleSelectAction_feature", "_UI_ImageIndexUnit_type"),
-				 WafPackage.Literals.IMAGE_INDEX_UNIT__OVERLAY_SINGLE_SELECT_ACTION,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Reveal Untruncated Content feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -170,50 +212,6 @@ public class ImageIndexUnitItemProvider extends ImageUnitItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Column Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addColumnClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ImageIndexUnit_columnClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ImageIndexUnit_columnClass_feature", "_UI_ImageIndexUnit_type"),
-				 WafPackage.Literals.IMAGE_INDEX_UNIT__COLUMN_CLASS,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Card Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addCardClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ImageIndexUnit_cardClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ImageIndexUnit_cardClass_feature", "_UI_ImageIndexUnit_type"),
-				 WafPackage.Literals.IMAGE_INDEX_UNIT__CARD_CLASS,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -225,7 +223,8 @@ public class ImageIndexUnitItemProvider extends ImageUnitItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(WafPackage.Literals.INLINE_ACTION_CONTAINER__ACTIONS);
+			childrenFeatures.add(WafPackage.Literals.IMAGE_UNIT__IMAGE_PATH_FEATURE);
+			childrenFeatures.add(WafPackage.Literals.IMAGE_UNIT__IMAGE_TITLE_FEATURE);
 		}
 		return childrenFeatures;
 	}
@@ -281,16 +280,15 @@ public class ImageIndexUnitItemProvider extends ImageUnitItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ImageIndexUnit.class)) {
-			case WafPackage.IMAGE_INDEX_UNIT__OMIT_FIELD_LABELS:
+			case WafPackage.IMAGE_INDEX_UNIT__TRUNCATE_IMAGE_TITLE:
+			case WafPackage.IMAGE_INDEX_UNIT__MISSING_IMAGE_PATH:
 			case WafPackage.IMAGE_INDEX_UNIT__ENABLE_IMAGE_ENLARGEMENT:
 			case WafPackage.IMAGE_INDEX_UNIT__OVERLAY_TITLE:
-			case WafPackage.IMAGE_INDEX_UNIT__OVERLAY_SINGLE_SELECT_ACTION:
 			case WafPackage.IMAGE_INDEX_UNIT__REVEAL_UNTRUNCATED_CONTENT:
-			case WafPackage.IMAGE_INDEX_UNIT__COLUMN_CLASS:
-			case WafPackage.IMAGE_INDEX_UNIT__CARD_CLASS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case WafPackage.IMAGE_INDEX_UNIT__ACTIONS:
+			case WafPackage.IMAGE_INDEX_UNIT__IMAGE_PATH_FEATURE:
+			case WafPackage.IMAGE_INDEX_UNIT__IMAGE_TITLE_FEATURE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -310,18 +308,33 @@ public class ImageIndexUnitItemProvider extends ImageUnitItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.INLINE_ACTION_CONTAINER__ACTIONS,
-				 WafFactory.eINSTANCE.createSelectAction()));
+				(WafPackage.Literals.IMAGE_UNIT__IMAGE_PATH_FEATURE,
+				 WafFactory.eINSTANCE.createFeaturePathAttribute()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.INLINE_ACTION_CONTAINER__ACTIONS,
-				 WafFactory.eINSTANCE.createDeleteAction()));
+				(WafPackage.Literals.IMAGE_UNIT__IMAGE_PATH_FEATURE,
+				 WafFactory.eINSTANCE.createFeaturePathAssociation()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.INLINE_ACTION_CONTAINER__ACTIONS,
-				 WafFactory.eINSTANCE.createFeatureSupportAction()));
+				(WafPackage.Literals.IMAGE_UNIT__IMAGE_PATH_FEATURE,
+				 WafFactory.eINSTANCE.createFeaturePathLabel()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.Literals.IMAGE_UNIT__IMAGE_TITLE_FEATURE,
+				 WafFactory.eINSTANCE.createFeaturePathAttribute()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.Literals.IMAGE_UNIT__IMAGE_TITLE_FEATURE,
+				 WafFactory.eINSTANCE.createFeaturePathAssociation()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.Literals.IMAGE_UNIT__IMAGE_TITLE_FEATURE,
+				 WafFactory.eINSTANCE.createFeaturePathLabel()));
 	}
 
 	/**

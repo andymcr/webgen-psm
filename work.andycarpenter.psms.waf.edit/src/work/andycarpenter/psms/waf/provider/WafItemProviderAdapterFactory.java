@@ -727,6 +727,52 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.waf.SingletonUnit} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected SingletonUnitItemProvider singletonUnitItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link work.andycarpenter.psms.waf.SingletonUnit}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createSingletonUnitAdapter() {
+		if (singletonUnitItemProvider == null) {
+			singletonUnitItemProvider = new SingletonUnitItemProvider(this);
+		}
+
+		return singletonUnitItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.waf.CollectionUnit} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected CollectionUnitItemProvider collectionUnitItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link work.andycarpenter.psms.waf.CollectionUnit}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createCollectionUnitAdapter() {
+		if (collectionUnitItemProvider == null) {
+			collectionUnitItemProvider = new CollectionUnitItemProvider(this);
+		}
+
+		return collectionUnitItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.waf.CreateUnit} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -911,29 +957,6 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.waf.IndexCardsUnit} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected IndexCardsUnitItemProvider indexCardsUnitItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link work.andycarpenter.psms.waf.IndexCardsUnit}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createIndexCardsUnitAdapter() {
-		if (indexCardsUnitItemProvider == null) {
-			indexCardsUnitItemProvider = new IndexCardsUnitItemProvider(this);
-		}
-
-		return indexCardsUnitItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.waf.SearchUnit} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -954,6 +977,29 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 		}
 
 		return searchUnitItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.waf.CardsIndexUnit} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected CardsIndexUnitItemProvider cardsIndexUnitItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link work.andycarpenter.psms.waf.CardsIndexUnit}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createCardsIndexUnitAdapter() {
+		if (cardsIndexUnitItemProvider == null) {
+			cardsIndexUnitItemProvider = new CardsIndexUnitItemProvider(this);
+		}
+
+		return cardsIndexUnitItemProvider;
 	}
 
 	/**
@@ -1312,6 +1358,8 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 		if (dataTypeFieldItemProvider != null) dataTypeFieldItemProvider.dispose();
 		if (dateFieldItemProvider != null) dateFieldItemProvider.dispose();
 		if (captchaFieldItemProvider != null) captchaFieldItemProvider.dispose();
+		if (singletonUnitItemProvider != null) singletonUnitItemProvider.dispose();
+		if (collectionUnitItemProvider != null) collectionUnitItemProvider.dispose();
 		if (createUnitItemProvider != null) createUnitItemProvider.dispose();
 		if (createUpdateUnitItemProvider != null) createUpdateUnitItemProvider.dispose();
 		if (mapUnitItemProvider != null) mapUnitItemProvider.dispose();
@@ -1320,11 +1368,11 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 		if (indexGridUnitItemProvider != null) indexGridUnitItemProvider.dispose();
 		if (indexPageDirectionUnitItemProvider != null) indexPageDirectionUnitItemProvider.dispose();
 		if (indexLineDirectionUnitItemProvider != null) indexLineDirectionUnitItemProvider.dispose();
-		if (indexCardsUnitItemProvider != null) indexCardsUnitItemProvider.dispose();
-		if (searchUnitItemProvider != null) searchUnitItemProvider.dispose();
+		if (cardsIndexUnitItemProvider != null) cardsIndexUnitItemProvider.dispose();
 		if (imageIndexUnitItemProvider != null) imageIndexUnitItemProvider.dispose();
 		if (sliderUnitItemProvider != null) sliderUnitItemProvider.dispose();
 		if (galleryUnitItemProvider != null) galleryUnitItemProvider.dispose();
+		if (searchUnitItemProvider != null) searchUnitItemProvider.dispose();
 		if (registrationUnitItemProvider != null) registrationUnitItemProvider.dispose();
 		if (loginUnitItemProvider != null) loginUnitItemProvider.dispose();
 		if (forgottenPasswordUnitItemProvider != null) forgottenPasswordUnitItemProvider.dispose();
