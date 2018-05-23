@@ -188,8 +188,8 @@ public class GalleryUnitItemProvider extends ImageUnitItemProvider {
 		Object childObject = child;
 
 		boolean qualify =
-			childFeature == WafPackage.Literals.IMAGE_UNIT__IMAGE_PATH_FEATURE ||
-			childFeature == WafPackage.Literals.IMAGE_UNIT__IMAGE_TITLE_FEATURE;
+			childFeature == WafPackage.Literals.COLLECTION_UNIT__ELEMENT_TITLE ||
+			childFeature == WafPackage.Literals.IMAGE_UNIT__IMAGE_PATH_FEATURE;
 
 		if (qualify) {
 			return getString

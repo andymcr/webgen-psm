@@ -391,6 +391,8 @@ enum PaginationControlPlacements {
 
 class CollectionUnit extends DynamicUnit, SelectableUnit {
 	refers Label unitTitle
+	contains FeaturePath elementTitle
+	boolean truncateElementTitle = "false"
 	refers Entity[1..*] contentType
 	refers Selection selection
 	boolean omitContainerLoad
@@ -481,8 +483,6 @@ class CardsIndexUnit extends CardsUnit {
 
 abstract class ImageUnit extends CollectionUnit {
 	contains FeaturePath[1] imagePathFeature
-	contains FeaturePath imageTitleFeature
-	boolean truncateImageTitle
 	refers ImageManipulation imageFilter
 	refers ImageManipulation missingImageFilter
 	String missingImagePath

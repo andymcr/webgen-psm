@@ -46,7 +46,6 @@ public class ImageIndexUnitItemProvider extends CardsUnitItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addTruncateImageTitlePropertyDescriptor(object);
 			addImageFilterPropertyDescriptor(object);
 			addMissingImageFilterPropertyDescriptor(object);
 			addMissingImagePathPropertyDescriptor(object);
@@ -55,28 +54,6 @@ public class ImageIndexUnitItemProvider extends CardsUnitItemProvider {
 			addRevealUntruncatedContentPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Truncate Image Title feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addTruncateImageTitlePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ImageUnit_truncateImageTitle_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ImageUnit_truncateImageTitle_feature", "_UI_ImageUnit_type"),
-				 WafPackage.Literals.IMAGE_UNIT__TRUNCATE_IMAGE_TITLE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
 	}
 
 	/**
@@ -224,7 +201,6 @@ public class ImageIndexUnitItemProvider extends CardsUnitItemProvider {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(WafPackage.Literals.IMAGE_UNIT__IMAGE_PATH_FEATURE);
-			childrenFeatures.add(WafPackage.Literals.IMAGE_UNIT__IMAGE_TITLE_FEATURE);
 		}
 		return childrenFeatures;
 	}
@@ -280,7 +256,6 @@ public class ImageIndexUnitItemProvider extends CardsUnitItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ImageIndexUnit.class)) {
-			case WafPackage.IMAGE_INDEX_UNIT__TRUNCATE_IMAGE_TITLE:
 			case WafPackage.IMAGE_INDEX_UNIT__MISSING_IMAGE_PATH:
 			case WafPackage.IMAGE_INDEX_UNIT__ENABLE_IMAGE_ENLARGEMENT:
 			case WafPackage.IMAGE_INDEX_UNIT__OVERLAY_TITLE:
@@ -288,7 +263,6 @@ public class ImageIndexUnitItemProvider extends CardsUnitItemProvider {
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case WafPackage.IMAGE_INDEX_UNIT__IMAGE_PATH_FEATURE:
-			case WafPackage.IMAGE_INDEX_UNIT__IMAGE_TITLE_FEATURE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -320,21 +294,6 @@ public class ImageIndexUnitItemProvider extends CardsUnitItemProvider {
 			(createChildParameter
 				(WafPackage.Literals.IMAGE_UNIT__IMAGE_PATH_FEATURE,
 				 WafFactory.eINSTANCE.createFeaturePathLabel()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.Literals.IMAGE_UNIT__IMAGE_TITLE_FEATURE,
-				 WafFactory.eINSTANCE.createFeaturePathAttribute()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.Literals.IMAGE_UNIT__IMAGE_TITLE_FEATURE,
-				 WafFactory.eINSTANCE.createFeaturePathAssociation()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.Literals.IMAGE_UNIT__IMAGE_TITLE_FEATURE,
-				 WafFactory.eINSTANCE.createFeaturePathLabel()));
 	}
 
 	/**
@@ -349,8 +308,8 @@ public class ImageIndexUnitItemProvider extends CardsUnitItemProvider {
 		Object childObject = child;
 
 		boolean qualify =
-			childFeature == WafPackage.Literals.IMAGE_UNIT__IMAGE_PATH_FEATURE ||
-			childFeature == WafPackage.Literals.IMAGE_UNIT__IMAGE_TITLE_FEATURE;
+			childFeature == WafPackage.Literals.COLLECTION_UNIT__ELEMENT_TITLE ||
+			childFeature == WafPackage.Literals.IMAGE_UNIT__IMAGE_PATH_FEATURE;
 
 		if (qualify) {
 			return getString
