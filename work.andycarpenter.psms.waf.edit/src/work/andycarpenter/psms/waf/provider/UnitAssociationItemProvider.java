@@ -51,8 +51,8 @@ public class UnitAssociationItemProvider extends UnitFeatureItemProvider {
 			addNamePropertyDescriptor(object);
 			addAssociationPropertyDescriptor(object);
 			addValueDisplayPropertyDescriptor(object);
-			addSelectionPropertyDescriptor(object);
-			addAjaxOptionsListPropertyDescriptor(object);
+			addOptionsPropertyDescriptor(object);
+			addFilteredOptionsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -124,19 +124,19 @@ public class UnitAssociationItemProvider extends UnitFeatureItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Selection feature.
+	 * This adds a property descriptor for the Options feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addSelectionPropertyDescriptor(Object object) {
+	protected void addOptionsPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_UnitAssociation_selection_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UnitAssociation_selection_feature", "_UI_UnitAssociation_type"),
-				 WafPackage.Literals.UNIT_ASSOCIATION__SELECTION,
+				 getString("_UI_UnitAssociation_options_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UnitAssociation_options_feature", "_UI_UnitAssociation_type"),
+				 WafPackage.Literals.UNIT_ASSOCIATION__OPTIONS,
 				 true,
 				 false,
 				 true,
@@ -146,19 +146,19 @@ public class UnitAssociationItemProvider extends UnitFeatureItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Ajax Options List feature.
+	 * This adds a property descriptor for the Filtered Options feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addAjaxOptionsListPropertyDescriptor(Object object) {
+	protected void addFilteredOptionsPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_UnitAssociation_ajaxOptionsList_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UnitAssociation_ajaxOptionsList_feature", "_UI_UnitAssociation_type"),
-				 WafPackage.Literals.UNIT_ASSOCIATION__AJAX_OPTIONS_LIST,
+				 getString("_UI_UnitAssociation_filteredOptions_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UnitAssociation_filteredOptions_feature", "_UI_UnitAssociation_type"),
+				 WafPackage.Literals.UNIT_ASSOCIATION__FILTERED_OPTIONS,
 				 true,
 				 false,
 				 true,

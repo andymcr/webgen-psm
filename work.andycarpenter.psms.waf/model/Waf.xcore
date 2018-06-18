@@ -291,8 +291,8 @@ class UnitAttribute extends UnitFeature {
 }
 
 class UnitAssociation extends UnitFeature, UnitContainer, AssociationReference {
-	refers Selection selection
-	refers Selection ajaxOptionsList
+	refers Selection options
+	refers Filter filteredOptions
 }
 
 abstract class AssociationReference {
