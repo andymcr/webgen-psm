@@ -163,6 +163,7 @@ public class ServiceActionBarContributor
 	 */
 	@Override
 	public void contributeToToolBar(IToolBarManager toolBarManager) {
+		super.contributeToToolBar(toolBarManager);
 		toolBarManager.add(new Separator("service-settings"));
 		toolBarManager.add(new Separator("service-additions"));
 	}

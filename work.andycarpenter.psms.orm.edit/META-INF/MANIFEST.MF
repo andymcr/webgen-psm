@@ -2,6 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: work.andycarpenter.psms.orm.edit;singleton:=true
+Automatic-Module-Name: work.andycarpenter.psms.orm.edit
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
 Bundle-Activator: work.andycarpenter.psms.orm.provider.OrmEditPlugin$Implementation
