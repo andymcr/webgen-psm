@@ -260,7 +260,7 @@ enum CollectionAssociationRelationships {
 }
 
 @Ecore(constraints="x")
-@OCL(x="collectionType.elementType = opposite.parentEntity")
+@OCL(x="collectionType.elementType = opposite.partOf")
 class CollectionAssociation extends Association {
 	refers CollectionType[1] collectionType
 	CollectionAssociationRelationships associationRelationship
