@@ -957,6 +957,52 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.waf.TextCardsUnit} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected TextCardsUnitItemProvider textCardsUnitItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link work.andycarpenter.psms.waf.TextCardsUnit}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createTextCardsUnitAdapter() {
+		if (textCardsUnitItemProvider == null) {
+			textCardsUnitItemProvider = new TextCardsUnitItemProvider(this);
+		}
+
+		return textCardsUnitItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.waf.ImageCardsUnit} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ImageCardsUnitItemProvider imageCardsUnitItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link work.andycarpenter.psms.waf.ImageCardsUnit}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createImageCardsUnitAdapter() {
+		if (imageCardsUnitItemProvider == null) {
+			imageCardsUnitItemProvider = new ImageCardsUnitItemProvider(this);
+		}
+
+		return imageCardsUnitItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.waf.SearchUnit} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -977,52 +1023,6 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 		}
 
 		return searchUnitItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.waf.CardsIndexUnit} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected CardsIndexUnitItemProvider cardsIndexUnitItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link work.andycarpenter.psms.waf.CardsIndexUnit}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createCardsIndexUnitAdapter() {
-		if (cardsIndexUnitItemProvider == null) {
-			cardsIndexUnitItemProvider = new CardsIndexUnitItemProvider(this);
-		}
-
-		return cardsIndexUnitItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.waf.ImageIndexUnit} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ImageIndexUnitItemProvider imageIndexUnitItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link work.andycarpenter.psms.waf.ImageIndexUnit}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createImageIndexUnitAdapter() {
-		if (imageIndexUnitItemProvider == null) {
-			imageIndexUnitItemProvider = new ImageIndexUnitItemProvider(this);
-		}
-
-		return imageIndexUnitItemProvider;
 	}
 
 	/**
@@ -1368,8 +1368,8 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 		if (indexGridUnitItemProvider != null) indexGridUnitItemProvider.dispose();
 		if (indexPageDirectionUnitItemProvider != null) indexPageDirectionUnitItemProvider.dispose();
 		if (indexLineDirectionUnitItemProvider != null) indexLineDirectionUnitItemProvider.dispose();
-		if (cardsIndexUnitItemProvider != null) cardsIndexUnitItemProvider.dispose();
-		if (imageIndexUnitItemProvider != null) imageIndexUnitItemProvider.dispose();
+		if (textCardsUnitItemProvider != null) textCardsUnitItemProvider.dispose();
+		if (imageCardsUnitItemProvider != null) imageCardsUnitItemProvider.dispose();
 		if (sliderUnitItemProvider != null) sliderUnitItemProvider.dispose();
 		if (galleryUnitItemProvider != null) galleryUnitItemProvider.dispose();
 		if (searchUnitItemProvider != null) searchUnitItemProvider.dispose();

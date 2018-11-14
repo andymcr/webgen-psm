@@ -478,7 +478,7 @@ abstract class CardsUnit extends CollectionUnit, InlineActionContainer {
 	String cardClass
 }
 
-class CardsIndexUnit extends CardsUnit {
+class TextCardsUnit extends CardsUnit {
 }
 
 abstract class ImageUnit extends CollectionUnit {
@@ -489,7 +489,7 @@ abstract class ImageUnit extends CollectionUnit {
 }
 
 
-class ImageIndexUnit extends CardsUnit, ImageUnit {
+class ImageCardsUnit extends CardsUnit, ImageUnit {
 	boolean enableImageEnlargement
 	boolean overlayTitle
 	boolean revealUntruncatedContent
