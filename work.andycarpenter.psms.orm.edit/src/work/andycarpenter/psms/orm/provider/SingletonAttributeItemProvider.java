@@ -45,33 +45,10 @@ public class SingletonAttributeItemProvider extends AttributeItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addRequiredPropertyDescriptor(object);
 			addUniquePropertyDescriptor(object);
 			addContainerUniquePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Required feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addRequiredPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_SingletonAttribute_required_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_SingletonAttribute_required_feature", "_UI_SingletonAttribute_type"),
-				 OrmPackage.Literals.SINGLETON_ATTRIBUTE__REQUIRED,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
 	}
 
 	/**
@@ -145,7 +122,6 @@ public class SingletonAttributeItemProvider extends AttributeItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(SingletonAttribute.class)) {
-			case OrmPackage.SINGLETON_ATTRIBUTE__REQUIRED:
 			case OrmPackage.SINGLETON_ATTRIBUTE__UNIQUE:
 			case OrmPackage.SINGLETON_ATTRIBUTE__CONTAINER_UNIQUE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));

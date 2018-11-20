@@ -45,32 +45,9 @@ public class SingletonAssociationItemProvider extends AssociationItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addRequiredPropertyDescriptor(object);
 			addAssociationRelationshipPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Required feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addRequiredPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_SingletonAssociation_required_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_SingletonAssociation_required_feature", "_UI_SingletonAssociation_type"),
-				 OrmPackage.Literals.SINGLETON_ASSOCIATION__REQUIRED,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
 	}
 
 	/**
@@ -133,7 +110,6 @@ public class SingletonAssociationItemProvider extends AssociationItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(SingletonAssociation.class)) {
-			case OrmPackage.SINGLETON_ASSOCIATION__REQUIRED:
 			case OrmPackage.SINGLETON_ASSOCIATION__ASSOCIATION_RELATIONSHIP:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
