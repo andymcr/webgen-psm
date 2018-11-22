@@ -63,6 +63,7 @@ class Selection extends NamedElement, FormalParameterList {
 	contains Filter[] filters opposite selection
 	contains Order[] ordering
 	int limit = "0"
+	refers Feature[] grouping
 	refers Association[] selectPath
 	String methodName
 }
