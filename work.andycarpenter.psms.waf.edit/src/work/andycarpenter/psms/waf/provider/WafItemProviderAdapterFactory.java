@@ -980,6 +980,29 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.waf.DateCardsUnit} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected DateCardsUnitItemProvider dateCardsUnitItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link work.andycarpenter.psms.waf.DateCardsUnit}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createDateCardsUnitAdapter() {
+		if (dateCardsUnitItemProvider == null) {
+			dateCardsUnitItemProvider = new DateCardsUnitItemProvider(this);
+		}
+
+		return dateCardsUnitItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.waf.ImageCardsUnit} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1369,6 +1392,7 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 		if (indexPageDirectionUnitItemProvider != null) indexPageDirectionUnitItemProvider.dispose();
 		if (indexLineDirectionUnitItemProvider != null) indexLineDirectionUnitItemProvider.dispose();
 		if (textCardsUnitItemProvider != null) textCardsUnitItemProvider.dispose();
+		if (dateCardsUnitItemProvider != null) dateCardsUnitItemProvider.dispose();
 		if (imageCardsUnitItemProvider != null) imageCardsUnitItemProvider.dispose();
 		if (sliderUnitItemProvider != null) sliderUnitItemProvider.dispose();
 		if (galleryUnitItemProvider != null) galleryUnitItemProvider.dispose();

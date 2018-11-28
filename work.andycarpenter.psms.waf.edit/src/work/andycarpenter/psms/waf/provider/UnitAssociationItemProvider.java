@@ -321,6 +321,11 @@ public class UnitAssociationItemProvider extends UnitFeatureItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.Literals.UNIT_CONTAINER__UNITS,
+				 WafFactory.eINSTANCE.createDateCardsUnit()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.Literals.UNIT_CONTAINER__UNITS,
 				 WafFactory.eINSTANCE.createImageCardsUnit()));
 
 		newChildDescriptors.add

@@ -481,6 +481,10 @@ abstract class CardsUnit extends CollectionUnit, InlineActionContainer {
 class TextCardsUnit extends CardsUnit {
 }
 
+class DateCardsUnit extends CardsUnit {
+	contains FeaturePath[1] elementDate
+}
+
 abstract class ImageUnit extends CollectionUnit {
 	contains FeaturePath[1] imagePathFeature
 	refers ImageManipulation imageFilter
