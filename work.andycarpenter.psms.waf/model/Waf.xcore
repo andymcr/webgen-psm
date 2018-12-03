@@ -273,8 +273,9 @@ abstract class UnitFeature extends UnitField, InlineActionContainer {
 	boolean autofocus
 	String footer
 	String headerClass
-	String inputClass
 	String displayClass
+	String inputColumnClass
+	String inputElementClass
 	String footerClass
 }
 

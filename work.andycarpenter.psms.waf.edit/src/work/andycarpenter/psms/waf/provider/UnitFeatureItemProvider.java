@@ -68,8 +68,9 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 			addAutofocusPropertyDescriptor(object);
 			addFooterPropertyDescriptor(object);
 			addHeaderClassPropertyDescriptor(object);
-			addInputClassPropertyDescriptor(object);
 			addDisplayClassPropertyDescriptor(object);
+			addInputColumnClassPropertyDescriptor(object);
+			addInputElementClassPropertyDescriptor(object);
 			addFooterClassPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -428,19 +429,41 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Input Class feature.
+	 * This adds a property descriptor for the Input Column Class feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addInputClassPropertyDescriptor(Object object) {
+	protected void addInputColumnClassPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_UnitFeature_inputClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UnitFeature_inputClass_feature", "_UI_UnitFeature_type"),
-				 WafPackage.Literals.UNIT_FEATURE__INPUT_CLASS,
+				 getString("_UI_UnitFeature_inputColumnClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UnitFeature_inputColumnClass_feature", "_UI_UnitFeature_type"),
+				 WafPackage.Literals.UNIT_FEATURE__INPUT_COLUMN_CLASS,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Input Element Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addInputElementClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_UnitFeature_inputElementClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UnitFeature_inputElementClass_feature", "_UI_UnitFeature_type"),
+				 WafPackage.Literals.UNIT_FEATURE__INPUT_ELEMENT_CLASS,
 				 true,
 				 false,
 				 false,
@@ -568,8 +591,9 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 			case WafPackage.UNIT_FEATURE__AUTOFOCUS:
 			case WafPackage.UNIT_FEATURE__FOOTER:
 			case WafPackage.UNIT_FEATURE__HEADER_CLASS:
-			case WafPackage.UNIT_FEATURE__INPUT_CLASS:
 			case WafPackage.UNIT_FEATURE__DISPLAY_CLASS:
+			case WafPackage.UNIT_FEATURE__INPUT_COLUMN_CLASS:
+			case WafPackage.UNIT_FEATURE__INPUT_ELEMENT_CLASS:
 			case WafPackage.UNIT_FEATURE__FOOTER_CLASS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
