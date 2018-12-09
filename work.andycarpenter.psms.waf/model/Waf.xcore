@@ -302,7 +302,7 @@ abstract class AssociationReference {
 			association.name
 	}
 	refers Association[1] association
-	refers Label valueDisplay
+	refers ModelLabel valueDisplay
 	contains ChildPath childFeature
 }
 
