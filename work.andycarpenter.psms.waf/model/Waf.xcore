@@ -581,7 +581,7 @@ class FeatureSupportAction extends InlineAction {
 
 class Badge {
 	String iconName
-	contains Expression value
+	contains FeaturePath value
 	contains Predicate displayWhen
 	contains Predicate newWhen
 }

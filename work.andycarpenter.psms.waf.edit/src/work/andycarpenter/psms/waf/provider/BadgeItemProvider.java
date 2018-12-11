@@ -25,9 +25,6 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import work.andycarpenter.psms.expression.ExpressionFactory;
-
-import work.andycarpenter.psms.service.ServiceFactory;
-
 import work.andycarpenter.psms.waf.Badge;
 import work.andycarpenter.psms.waf.WafFactory;
 import work.andycarpenter.psms.waf.WafPackage;
@@ -204,96 +201,6 @@ public class BadgeItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.BADGE__VALUE,
-				 ServiceFactory.eINSTANCE.createConstantReference()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.Literals.BADGE__VALUE,
-				 ServiceFactory.eINSTANCE.createFeatureReference()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.Literals.BADGE__VALUE,
-				 ServiceFactory.eINSTANCE.createParameterReference()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.Literals.BADGE__VALUE,
-				 ExpressionFactory.eINSTANCE.createNullLiteral()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.Literals.BADGE__VALUE,
-				 ExpressionFactory.eINSTANCE.createBooleanLiteral()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.Literals.BADGE__VALUE,
-				 ExpressionFactory.eINSTANCE.createIntegerLiteral()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.Literals.BADGE__VALUE,
-				 ExpressionFactory.eINSTANCE.createStringLiteral()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.Literals.BADGE__VALUE,
-				 ExpressionFactory.eINSTANCE.createTimeLiteral()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.Literals.BADGE__VALUE,
-				 ExpressionFactory.eINSTANCE.createCurrentTime()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.Literals.BADGE__VALUE,
-				 ExpressionFactory.eINSTANCE.createCurrentUser()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.Literals.BADGE__VALUE,
-				 ExpressionFactory.eINSTANCE.createPredicateBooleanOperator()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.Literals.BADGE__VALUE,
-				 ExpressionFactory.eINSTANCE.createPredicateEqualityOperator()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.Literals.BADGE__VALUE,
-				 ExpressionFactory.eINSTANCE.createPredicateComparisonOperator()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.Literals.BADGE__VALUE,
-				 ExpressionFactory.eINSTANCE.createPredicateInOperator()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.Literals.BADGE__VALUE,
-				 ExpressionFactory.eINSTANCE.createPredicateIsOperator()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.Literals.BADGE__VALUE,
-				 ExpressionFactory.eINSTANCE.createPredicateLikeOperator()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.Literals.BADGE__VALUE,
-				 ExpressionFactory.eINSTANCE.createPredicateIsEmpty()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.Literals.BADGE__VALUE,
-				 ExpressionFactory.eINSTANCE.createPredicateIsNull()));
-
-		newChildDescriptors.add
-			(createChildParameter
 				(WafPackage.Literals.BADGE__DISPLAY_WHEN,
 				 ExpressionFactory.eINSTANCE.createPredicateBooleanOperator()));
 
@@ -385,7 +292,6 @@ public class BadgeItemProvider
 		Object childObject = child;
 
 		boolean qualify =
-			childFeature == WafPackage.Literals.BADGE__VALUE ||
 			childFeature == WafPackage.Literals.BADGE__DISPLAY_WHEN ||
 			childFeature == WafPackage.Literals.BADGE__NEW_WHEN;
 
