@@ -755,7 +755,6 @@ public class CollectionUnitItemProvider extends DynamicUnitItemProvider {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(WafPackage.Literals.COLLECTION_UNIT__ELEMENT_TITLE);
-			childrenFeatures.add(WafPackage.Literals.COLLECTION_UNIT__BADGES);
 		}
 		return childrenFeatures;
 	}
@@ -834,7 +833,6 @@ public class CollectionUnitItemProvider extends DynamicUnitItemProvider {
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case WafPackage.COLLECTION_UNIT__ELEMENT_TITLE:
-			case WafPackage.COLLECTION_UNIT__BADGES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -866,11 +864,6 @@ public class CollectionUnitItemProvider extends DynamicUnitItemProvider {
 			(createChildParameter
 				(WafPackage.Literals.COLLECTION_UNIT__ELEMENT_TITLE,
 				 WafFactory.eINSTANCE.createFeaturePathLabel()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.Literals.COLLECTION_UNIT__BADGES,
-				 WafFactory.eINSTANCE.createBadge()));
 	}
 
 }

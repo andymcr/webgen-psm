@@ -403,7 +403,6 @@ class CollectionUnit extends DynamicUnit, SelectableUnit {
 	refers Selection findElementSelection
 	refers Filter filter
 	refers Filter[] supportedFilters
-	contains Badge[] badges
 	String emptyMessage
 	int defaultPaginationSize
 	int maximumPaginationSize
@@ -473,12 +472,19 @@ class IndexLineDirectionUnit extends IndexUnit {
 }
 
 abstract class CardsUnit extends CollectionUnit, InlineActionContainer {
+	contains Badge[] badges
 	boolean omitFieldLabels
 	boolean overlaySingleSelectAction
 	String columnClass
 	String cardClass
 }
 
+class Badge {
+	String iconName
+	contains FeaturePath value
+	contains Predicate displayWhen
+	contains Predicate newWhen
+}
 class TextCardsUnit extends CardsUnit {
 }
 
@@ -577,11 +583,4 @@ class FeatureSupportAction extends InlineAction {
 	contains Predicate enableWhen
 	String[1] uriElement
 	String fileExtension
-}
-
-class Badge {
-	String iconName
-	contains FeaturePath value
-	contains Predicate displayWhen
-	contains Predicate newWhen
 }

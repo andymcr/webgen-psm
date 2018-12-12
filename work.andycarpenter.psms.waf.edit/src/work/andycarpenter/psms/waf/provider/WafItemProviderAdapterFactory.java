@@ -1391,6 +1391,7 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 		if (indexGridUnitItemProvider != null) indexGridUnitItemProvider.dispose();
 		if (indexPageDirectionUnitItemProvider != null) indexPageDirectionUnitItemProvider.dispose();
 		if (indexLineDirectionUnitItemProvider != null) indexLineDirectionUnitItemProvider.dispose();
+		if (badgeItemProvider != null) badgeItemProvider.dispose();
 		if (textCardsUnitItemProvider != null) textCardsUnitItemProvider.dispose();
 		if (dateCardsUnitItemProvider != null) dateCardsUnitItemProvider.dispose();
 		if (imageCardsUnitItemProvider != null) imageCardsUnitItemProvider.dispose();
@@ -1403,7 +1404,6 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 		if (selectActionItemProvider != null) selectActionItemProvider.dispose();
 		if (deleteActionItemProvider != null) deleteActionItemProvider.dispose();
 		if (featureSupportActionItemProvider != null) featureSupportActionItemProvider.dispose();
-		if (badgeItemProvider != null) badgeItemProvider.dispose();
 	}
 
 	/**
