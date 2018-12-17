@@ -62,7 +62,7 @@ public class InterfaceFieldItemProvider extends NamedElementItemProvider {
 			addTitlePropertyDescriptor(object);
 			addEscapeHTMLPropertyDescriptor(object);
 			addCollectionDisplayOptionPropertyDescriptor(object);
-			addMaximumDisplaySizePropertyDescriptor(object);
+			addHasCustomisedDisplayLabelPropertyDescriptor(object);
 			addTruncatePropertyDescriptor(object);
 			addDateFormatPropertyDescriptor(object);
 			addDisableInputPropertyDescriptor(object);
@@ -209,23 +209,23 @@ public class InterfaceFieldItemProvider extends NamedElementItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Maximum Display Size feature.
+	 * This adds a property descriptor for the Has Customised Display Label feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addMaximumDisplaySizePropertyDescriptor(Object object) {
+	protected void addHasCustomisedDisplayLabelPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_UnitField_maximumDisplaySize_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_maximumDisplaySize_feature", "_UI_UnitField_type"),
-				 WafPackage.Literals.UNIT_FIELD__MAXIMUM_DISPLAY_SIZE,
+				 getString("_UI_UnitField_hasCustomisedDisplayLabel_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_hasCustomisedDisplayLabel_feature", "_UI_UnitField_type"),
+				 WafPackage.Literals.UNIT_FIELD__HAS_CUSTOMISED_DISPLAY_LABEL,
 				 true,
 				 false,
 				 false,
-				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -491,7 +491,7 @@ public class InterfaceFieldItemProvider extends NamedElementItemProvider {
 			case WafPackage.INTERFACE_FIELD__TITLE:
 			case WafPackage.INTERFACE_FIELD__ESCAPE_HTML:
 			case WafPackage.INTERFACE_FIELD__COLLECTION_DISPLAY_OPTION:
-			case WafPackage.INTERFACE_FIELD__MAXIMUM_DISPLAY_SIZE:
+			case WafPackage.INTERFACE_FIELD__HAS_CUSTOMISED_DISPLAY_LABEL:
 			case WafPackage.INTERFACE_FIELD__TRUNCATE:
 			case WafPackage.INTERFACE_FIELD__DATE_FORMAT:
 			case WafPackage.INTERFACE_FIELD__DISABLE_INPUT:

@@ -257,7 +257,7 @@ interface UnitField extends DisplayElement {
 	String title = ""
 	boolean escapeHTML = "true"
 	CollectionDisplayOptions collectionDisplayOption
-	int maximumDisplaySize = "-1"
+	Boolean hasCustomisedDisplayLabel = "false"
 	Boolean truncate
 	String dateFormat
 	Boolean disableInput = "false"
