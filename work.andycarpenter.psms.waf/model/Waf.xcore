@@ -254,11 +254,12 @@ interface UnitField extends DisplayElement {
 	container DynamicUnit[1] displayedOn opposite displayFields
 	String requiresRole = ""
 	contains Predicate hideWhen
-	String title = ""
+	boolean hasCustomisedDisplayLabel
+	String title
+	boolean hasCustomisedTitle
 	boolean escapeHTML = "true"
 	CollectionDisplayOptions collectionDisplayOption
-	Boolean hasCustomisedDisplayLabel = "false"
-	Boolean truncate
+	boolean truncate
 	String dateFormat
 	Boolean disableInput = "false"
 }
@@ -288,6 +289,7 @@ class UnitAttribute extends UnitFeature {
 	contains Expression defaultValue
 	boolean obfuscateFormFields
 	String placeholder
+	boolean hasCustomisedPlaceholder
 	String validationPattern
 }
 
@@ -356,6 +358,7 @@ abstract class InterfaceField extends NamedElement, UnitField {
 	refers UnitField mustMatch
 	String interfaceType
 	String placeholder
+	boolean hasCustomisedPlaceholder
 	String validationPattern
 	String inputClass
 }

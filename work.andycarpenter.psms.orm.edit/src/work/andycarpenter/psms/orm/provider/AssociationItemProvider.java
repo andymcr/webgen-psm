@@ -53,7 +53,6 @@ public class AssociationItemProvider extends FeatureItemProvider {
 			addContainsPropertyDescriptor(object);
 			addOwningEndPropertyDescriptor(object);
 			addVisiblePropertyDescriptor(object);
-			addPlaceholderPropertyDescriptor(object);
 			addSerializationMaxDepthPropertyDescriptor(object);
 			addPivotTableNamePropertyDescriptor(object);
 		}
@@ -193,28 +192,6 @@ public class AssociationItemProvider extends FeatureItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Placeholder feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addPlaceholderPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Association_placeholder_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Association_placeholder_feature", "_UI_Association_type"),
-				 OrmPackage.Literals.ASSOCIATION__PLACEHOLDER,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Serialization Max Depth feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -320,7 +297,6 @@ public class AssociationItemProvider extends FeatureItemProvider {
 			case OrmPackage.ASSOCIATION__CONTAINS:
 			case OrmPackage.ASSOCIATION__OWNING_END:
 			case OrmPackage.ASSOCIATION__VISIBLE:
-			case OrmPackage.ASSOCIATION__PLACEHOLDER:
 			case OrmPackage.ASSOCIATION__SERIALIZATION_MAX_DEPTH:
 			case OrmPackage.ASSOCIATION__PIVOT_TABLE_NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));

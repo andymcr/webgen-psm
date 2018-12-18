@@ -56,6 +56,7 @@ public class UnitAttributeItemProvider extends UnitFeatureItemProvider {
 			addNamePropertyDescriptor(object);
 			addObfuscateFormFieldsPropertyDescriptor(object);
 			addPlaceholderPropertyDescriptor(object);
+			addHasCustomisedPlaceholderPropertyDescriptor(object);
 			addValidationPatternPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -145,6 +146,28 @@ public class UnitAttributeItemProvider extends UnitFeatureItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Has Customised Placeholder feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasCustomisedPlaceholderPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_UnitAttribute_hasCustomisedPlaceholder_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UnitAttribute_hasCustomisedPlaceholder_feature", "_UI_UnitAttribute_type"),
+				 WafPackage.Literals.UNIT_ATTRIBUTE__HAS_CUSTOMISED_PLACEHOLDER,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -242,6 +265,7 @@ public class UnitAttributeItemProvider extends UnitFeatureItemProvider {
 			case WafPackage.UNIT_ATTRIBUTE__NAME:
 			case WafPackage.UNIT_ATTRIBUTE__OBFUSCATE_FORM_FIELDS:
 			case WafPackage.UNIT_ATTRIBUTE__PLACEHOLDER:
+			case WafPackage.UNIT_ATTRIBUTE__HAS_CUSTOMISED_PLACEHOLDER:
 			case WafPackage.UNIT_ATTRIBUTE__VALIDATION_PATTERN:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;

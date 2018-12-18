@@ -59,10 +59,11 @@ public class InterfaceFieldItemProvider extends NamedElementItemProvider {
 			addDisplayLabelPropertyDescriptor(object);
 			addDisplayedOnPropertyDescriptor(object);
 			addRequiresRolePropertyDescriptor(object);
+			addHasCustomisedDisplayLabelPropertyDescriptor(object);
 			addTitlePropertyDescriptor(object);
+			addHasCustomisedTitlePropertyDescriptor(object);
 			addEscapeHTMLPropertyDescriptor(object);
 			addCollectionDisplayOptionPropertyDescriptor(object);
-			addHasCustomisedDisplayLabelPropertyDescriptor(object);
 			addTruncatePropertyDescriptor(object);
 			addDateFormatPropertyDescriptor(object);
 			addDisableInputPropertyDescriptor(object);
@@ -70,6 +71,7 @@ public class InterfaceFieldItemProvider extends NamedElementItemProvider {
 			addMustMatchPropertyDescriptor(object);
 			addInterfaceTypePropertyDescriptor(object);
 			addPlaceholderPropertyDescriptor(object);
+			addHasCustomisedPlaceholderPropertyDescriptor(object);
 			addValidationPatternPropertyDescriptor(object);
 			addInputClassPropertyDescriptor(object);
 		}
@@ -165,6 +167,28 @@ public class InterfaceFieldItemProvider extends NamedElementItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Has Customised Title feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasCustomisedTitlePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_UnitField_hasCustomisedTitle_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_hasCustomisedTitle_feature", "_UI_UnitField_type"),
+				 WafPackage.Literals.UNIT_FIELD__HAS_CUSTOMISED_TITLE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Escape HTML feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -225,7 +249,7 @@ public class InterfaceFieldItemProvider extends NamedElementItemProvider {
 				 true,
 				 false,
 				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -247,7 +271,7 @@ public class InterfaceFieldItemProvider extends NamedElementItemProvider {
 				 true,
 				 false,
 				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -385,6 +409,28 @@ public class InterfaceFieldItemProvider extends NamedElementItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Has Customised Placeholder feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasCustomisedPlaceholderPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_InterfaceField_hasCustomisedPlaceholder_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_InterfaceField_hasCustomisedPlaceholder_feature", "_UI_InterfaceField_type"),
+				 WafPackage.Literals.INTERFACE_FIELD__HAS_CUSTOMISED_PLACEHOLDER,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Validation Pattern feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -488,16 +534,18 @@ public class InterfaceFieldItemProvider extends NamedElementItemProvider {
 		switch (notification.getFeatureID(InterfaceField.class)) {
 			case WafPackage.INTERFACE_FIELD__DISPLAY_LABEL:
 			case WafPackage.INTERFACE_FIELD__REQUIRES_ROLE:
+			case WafPackage.INTERFACE_FIELD__HAS_CUSTOMISED_DISPLAY_LABEL:
 			case WafPackage.INTERFACE_FIELD__TITLE:
+			case WafPackage.INTERFACE_FIELD__HAS_CUSTOMISED_TITLE:
 			case WafPackage.INTERFACE_FIELD__ESCAPE_HTML:
 			case WafPackage.INTERFACE_FIELD__COLLECTION_DISPLAY_OPTION:
-			case WafPackage.INTERFACE_FIELD__HAS_CUSTOMISED_DISPLAY_LABEL:
 			case WafPackage.INTERFACE_FIELD__TRUNCATE:
 			case WafPackage.INTERFACE_FIELD__DATE_FORMAT:
 			case WafPackage.INTERFACE_FIELD__DISABLE_INPUT:
 			case WafPackage.INTERFACE_FIELD__REQUIRED:
 			case WafPackage.INTERFACE_FIELD__INTERFACE_TYPE:
 			case WafPackage.INTERFACE_FIELD__PLACEHOLDER:
+			case WafPackage.INTERFACE_FIELD__HAS_CUSTOMISED_PLACEHOLDER:
 			case WafPackage.INTERFACE_FIELD__VALIDATION_PATTERN:
 			case WafPackage.INTERFACE_FIELD__INPUT_CLASS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));

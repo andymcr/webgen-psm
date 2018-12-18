@@ -51,10 +51,11 @@ public class UnitLabelItemProvider extends DisplayElementItemProvider {
 
 			addDisplayedOnPropertyDescriptor(object);
 			addRequiresRolePropertyDescriptor(object);
+			addHasCustomisedDisplayLabelPropertyDescriptor(object);
 			addTitlePropertyDescriptor(object);
+			addHasCustomisedTitlePropertyDescriptor(object);
 			addEscapeHTMLPropertyDescriptor(object);
 			addCollectionDisplayOptionPropertyDescriptor(object);
-			addHasCustomisedDisplayLabelPropertyDescriptor(object);
 			addTruncatePropertyDescriptor(object);
 			addDateFormatPropertyDescriptor(object);
 			addDisableInputPropertyDescriptor(object);
@@ -131,6 +132,28 @@ public class UnitLabelItemProvider extends DisplayElementItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Has Customised Title feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasCustomisedTitlePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_UnitField_hasCustomisedTitle_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_hasCustomisedTitle_feature", "_UI_UnitField_type"),
+				 WafPackage.Literals.UNIT_FIELD__HAS_CUSTOMISED_TITLE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Escape HTML feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -191,7 +214,7 @@ public class UnitLabelItemProvider extends DisplayElementItemProvider {
 				 true,
 				 false,
 				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -213,7 +236,7 @@ public class UnitLabelItemProvider extends DisplayElementItemProvider {
 				 true,
 				 false,
 				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -375,10 +398,11 @@ public class UnitLabelItemProvider extends DisplayElementItemProvider {
 
 		switch (notification.getFeatureID(UnitLabel.class)) {
 			case WafPackage.UNIT_LABEL__REQUIRES_ROLE:
+			case WafPackage.UNIT_LABEL__HAS_CUSTOMISED_DISPLAY_LABEL:
 			case WafPackage.UNIT_LABEL__TITLE:
+			case WafPackage.UNIT_LABEL__HAS_CUSTOMISED_TITLE:
 			case WafPackage.UNIT_LABEL__ESCAPE_HTML:
 			case WafPackage.UNIT_LABEL__COLLECTION_DISPLAY_OPTION:
-			case WafPackage.UNIT_LABEL__HAS_CUSTOMISED_DISPLAY_LABEL:
 			case WafPackage.UNIT_LABEL__TRUNCATE:
 			case WafPackage.UNIT_LABEL__DATE_FORMAT:
 			case WafPackage.UNIT_LABEL__DISABLE_INPUT:
