@@ -182,10 +182,11 @@ class ActionMenuEntry extends MenuEntry, NamedDisplayElement {
 class EditStaticTextMenuEntry extends MenuEntry, NamedDisplayElement {
 }
 
-class Page extends NamedDisplayElement, UnitContainer {
+class Page extends NamedDisplayElement {
 	container WafModel partOf opposite pages
 	refers Page parentPage opposite childPages
 	refers Page[] childPages opposite parentPage
+	contains ContentUnit[] units opposite displayedOn
 	String uriElement = ""
 	String styleClass = ""
 }
@@ -200,12 +201,8 @@ class QueryParameter extends NamedElement {
 	String value
 }
 
-interface UnitContainer {
-	contains ContentUnit[] units opposite displayedOn
-}
-
 abstract class ContentUnit extends NamedDisplayElement {
-	container UnitContainer[1] displayedOn opposite units
+	container Page[1] displayedOn opposite units
 	String uriElement = ""
 	contains RouteActual[] routeActuals
 	String requiresRole = ""
@@ -293,7 +290,7 @@ class UnitAttribute extends UnitFeature {
 	String validationPattern = ""
 }
 
-class UnitAssociation extends UnitFeature, UnitContainer, AssociationReference {
+class UnitAssociation extends UnitFeature, AssociationReference {
 	refers Selection options
 	refers Filter filteredOptions
 }
