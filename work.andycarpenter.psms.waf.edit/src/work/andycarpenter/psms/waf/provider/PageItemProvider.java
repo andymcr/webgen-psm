@@ -183,7 +183,7 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(WafPackage.Literals.UNIT_CONTAINER__UNITS);
+			childrenFeatures.add(WafPackage.Literals.PAGE__UNITS);
 		}
 		return childrenFeatures;
 	}
@@ -263,102 +263,102 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.UNIT_CONTAINER__UNITS,
+				(WafPackage.Literals.PAGE__UNITS,
 				 WafFactory.eINSTANCE.createStaticUnit()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.UNIT_CONTAINER__UNITS,
+				(WafPackage.Literals.PAGE__UNITS,
 				 WafFactory.eINSTANCE.createSingletonUnit()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.UNIT_CONTAINER__UNITS,
+				(WafPackage.Literals.PAGE__UNITS,
 				 WafFactory.eINSTANCE.createCollectionUnit()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.UNIT_CONTAINER__UNITS,
+				(WafPackage.Literals.PAGE__UNITS,
 				 WafFactory.eINSTANCE.createCreateUnit()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.UNIT_CONTAINER__UNITS,
+				(WafPackage.Literals.PAGE__UNITS,
 				 WafFactory.eINSTANCE.createCreateUpdateUnit()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.UNIT_CONTAINER__UNITS,
+				(WafPackage.Literals.PAGE__UNITS,
 				 WafFactory.eINSTANCE.createMapUnit()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.UNIT_CONTAINER__UNITS,
+				(WafPackage.Literals.PAGE__UNITS,
 				 WafFactory.eINSTANCE.createUpdateUnit()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.UNIT_CONTAINER__UNITS,
+				(WafPackage.Literals.PAGE__UNITS,
 				 WafFactory.eINSTANCE.createDetailsUnit()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.UNIT_CONTAINER__UNITS,
+				(WafPackage.Literals.PAGE__UNITS,
 				 WafFactory.eINSTANCE.createIndexGridUnit()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.UNIT_CONTAINER__UNITS,
+				(WafPackage.Literals.PAGE__UNITS,
 				 WafFactory.eINSTANCE.createIndexPageDirectionUnit()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.UNIT_CONTAINER__UNITS,
+				(WafPackage.Literals.PAGE__UNITS,
 				 WafFactory.eINSTANCE.createIndexLineDirectionUnit()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.UNIT_CONTAINER__UNITS,
+				(WafPackage.Literals.PAGE__UNITS,
 				 WafFactory.eINSTANCE.createTextCardsUnit()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.UNIT_CONTAINER__UNITS,
+				(WafPackage.Literals.PAGE__UNITS,
 				 WafFactory.eINSTANCE.createDateCardsUnit()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.UNIT_CONTAINER__UNITS,
+				(WafPackage.Literals.PAGE__UNITS,
 				 WafFactory.eINSTANCE.createImageCardsUnit()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.UNIT_CONTAINER__UNITS,
+				(WafPackage.Literals.PAGE__UNITS,
 				 WafFactory.eINSTANCE.createSliderUnit()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.UNIT_CONTAINER__UNITS,
+				(WafPackage.Literals.PAGE__UNITS,
 				 WafFactory.eINSTANCE.createGalleryUnit()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.UNIT_CONTAINER__UNITS,
+				(WafPackage.Literals.PAGE__UNITS,
 				 WafFactory.eINSTANCE.createSearchUnit()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.UNIT_CONTAINER__UNITS,
+				(WafPackage.Literals.PAGE__UNITS,
 				 WafFactory.eINSTANCE.createRegistrationUnit()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.UNIT_CONTAINER__UNITS,
+				(WafPackage.Literals.PAGE__UNITS,
 				 WafFactory.eINSTANCE.createLoginUnit()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.UNIT_CONTAINER__UNITS,
+				(WafPackage.Literals.PAGE__UNITS,
 				 WafFactory.eINSTANCE.createForgottenPasswordUnit()));
 	}
 
