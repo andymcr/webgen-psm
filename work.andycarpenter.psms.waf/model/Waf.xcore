@@ -187,7 +187,7 @@ class Page extends NamedDisplayElement, UnitContainer {
 	refers Page parentPage opposite childPages
 	refers Page[] childPages opposite parentPage
 	String uriElement = ""
-	String styleClass
+	String styleClass = ""
 }
 
 class Query extends NamedElement {
@@ -273,11 +273,11 @@ abstract class UnitFeature extends UnitField, InlineActionContainer {
 	String emptyDisplayValue
 	boolean autofocus
 	String footer
-	String headerClass
-	String displayClass
-	String inputColumnClass
-	String inputElementClass
-	String footerClass
+	String headerClass = ""
+	String displayClass = ""
+	String inputColumnClass = ""
+	String inputElementClass = ""
+	String footerClass = ""
 }
 
 class UnitAttribute extends UnitFeature {
@@ -290,7 +290,7 @@ class UnitAttribute extends UnitFeature {
 	boolean obfuscateFormFields
 	String placeholder
 	boolean hasCustomisedPlaceholder
-	String validationPattern
+	String validationPattern = ""
 }
 
 class UnitAssociation extends UnitFeature, UnitContainer, AssociationReference {
@@ -359,7 +359,7 @@ abstract class InterfaceField extends NamedElement, UnitField {
 	String interfaceType
 	String placeholder
 	boolean hasCustomisedPlaceholder
-	String validationPattern
+	String validationPattern = ""
 	String inputClass
 }
 
