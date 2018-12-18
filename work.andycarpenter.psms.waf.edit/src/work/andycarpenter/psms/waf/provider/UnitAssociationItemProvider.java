@@ -179,7 +179,6 @@ public class UnitAssociationItemProvider extends UnitFeatureItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(WafPackage.Literals.UNIT_CONTAINER__UNITS);
 			childrenFeatures.add(WafPackage.Literals.ASSOCIATION_REFERENCE__CHILD_FEATURE);
 		}
 		return childrenFeatures;
@@ -239,7 +238,6 @@ public class UnitAssociationItemProvider extends UnitFeatureItemProvider {
 			case WafPackage.UNIT_ASSOCIATION__NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case WafPackage.UNIT_ASSOCIATION__UNITS:
 			case WafPackage.UNIT_ASSOCIATION__CHILD_FEATURE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
@@ -257,106 +255,6 @@ public class UnitAssociationItemProvider extends UnitFeatureItemProvider {
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.Literals.UNIT_CONTAINER__UNITS,
-				 WafFactory.eINSTANCE.createStaticUnit()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.Literals.UNIT_CONTAINER__UNITS,
-				 WafFactory.eINSTANCE.createSingletonUnit()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.Literals.UNIT_CONTAINER__UNITS,
-				 WafFactory.eINSTANCE.createCollectionUnit()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.Literals.UNIT_CONTAINER__UNITS,
-				 WafFactory.eINSTANCE.createCreateUnit()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.Literals.UNIT_CONTAINER__UNITS,
-				 WafFactory.eINSTANCE.createCreateUpdateUnit()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.Literals.UNIT_CONTAINER__UNITS,
-				 WafFactory.eINSTANCE.createMapUnit()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.Literals.UNIT_CONTAINER__UNITS,
-				 WafFactory.eINSTANCE.createUpdateUnit()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.Literals.UNIT_CONTAINER__UNITS,
-				 WafFactory.eINSTANCE.createDetailsUnit()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.Literals.UNIT_CONTAINER__UNITS,
-				 WafFactory.eINSTANCE.createIndexGridUnit()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.Literals.UNIT_CONTAINER__UNITS,
-				 WafFactory.eINSTANCE.createIndexPageDirectionUnit()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.Literals.UNIT_CONTAINER__UNITS,
-				 WafFactory.eINSTANCE.createIndexLineDirectionUnit()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.Literals.UNIT_CONTAINER__UNITS,
-				 WafFactory.eINSTANCE.createTextCardsUnit()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.Literals.UNIT_CONTAINER__UNITS,
-				 WafFactory.eINSTANCE.createDateCardsUnit()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.Literals.UNIT_CONTAINER__UNITS,
-				 WafFactory.eINSTANCE.createImageCardsUnit()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.Literals.UNIT_CONTAINER__UNITS,
-				 WafFactory.eINSTANCE.createSliderUnit()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.Literals.UNIT_CONTAINER__UNITS,
-				 WafFactory.eINSTANCE.createGalleryUnit()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.Literals.UNIT_CONTAINER__UNITS,
-				 WafFactory.eINSTANCE.createSearchUnit()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.Literals.UNIT_CONTAINER__UNITS,
-				 WafFactory.eINSTANCE.createRegistrationUnit()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.Literals.UNIT_CONTAINER__UNITS,
-				 WafFactory.eINSTANCE.createLoginUnit()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.Literals.UNIT_CONTAINER__UNITS,
-				 WafFactory.eINSTANCE.createForgottenPasswordUnit()));
 
 		newChildDescriptors.add
 			(createChildParameter
