@@ -475,6 +475,7 @@ abstract class CardsUnit extends CollectionUnit, InlineActionContainer {
 	contains Badge[] badges
 	boolean omitFieldLabels
 	boolean overlaySingleSelectAction
+	String rowClass
 	String columnClass
 	String cardClass
 }
