@@ -8,7 +8,7 @@ Bundle-ClassPath: .
 Bundle-Activator: work.andycarpenter.psms.api.provider.ApiEditPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-RequiredExecutionEnvironment: JavaSE-11
 Export-Package: work.andycarpenter.psms.api.provider
 Require-Bundle: org.eclipse.core.runtime,
  work.andycarpenter.psms.api;visibility:=reexport,
