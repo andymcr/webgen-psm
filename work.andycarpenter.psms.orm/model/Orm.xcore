@@ -238,7 +238,7 @@ abstract class Association extends Feature {
 	boolean[1] ^contains = "false"
 	boolean[1] owningEnd = "false"
 	boolean[1] visible = "true"
-	Integer[1] serializationMaxDepth = "1"
+	int[1] serializationMaxDepth = "1"
 	String pivotTableName
 }
 
