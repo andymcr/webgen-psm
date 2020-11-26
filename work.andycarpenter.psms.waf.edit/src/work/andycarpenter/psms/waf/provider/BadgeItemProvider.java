@@ -105,7 +105,6 @@ public class BadgeItemProvider
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(WafPackage.Literals.BADGE__VALUE);
 			childrenFeatures.add(WafPackage.Literals.BADGE__DISPLAY_WHEN);
-			childrenFeatures.add(WafPackage.Literals.BADGE__NEW_WHEN);
 		}
 		return childrenFeatures;
 	}
@@ -166,7 +165,6 @@ public class BadgeItemProvider
 				return;
 			case WafPackage.BADGE__VALUE:
 			case WafPackage.BADGE__DISPLAY_WHEN:
-			case WafPackage.BADGE__NEW_WHEN:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -238,69 +236,6 @@ public class BadgeItemProvider
 			(createChildParameter
 				(WafPackage.Literals.BADGE__DISPLAY_WHEN,
 				 ExpressionFactory.eINSTANCE.createPredicateIsNull()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.Literals.BADGE__NEW_WHEN,
-				 ExpressionFactory.eINSTANCE.createPredicateBooleanOperator()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.Literals.BADGE__NEW_WHEN,
-				 ExpressionFactory.eINSTANCE.createPredicateEqualityOperator()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.Literals.BADGE__NEW_WHEN,
-				 ExpressionFactory.eINSTANCE.createPredicateComparisonOperator()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.Literals.BADGE__NEW_WHEN,
-				 ExpressionFactory.eINSTANCE.createPredicateInOperator()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.Literals.BADGE__NEW_WHEN,
-				 ExpressionFactory.eINSTANCE.createPredicateIsOperator()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.Literals.BADGE__NEW_WHEN,
-				 ExpressionFactory.eINSTANCE.createPredicateLikeOperator()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.Literals.BADGE__NEW_WHEN,
-				 ExpressionFactory.eINSTANCE.createPredicateIsEmpty()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.Literals.BADGE__NEW_WHEN,
-				 ExpressionFactory.eINSTANCE.createPredicateIsNull()));
-	}
-
-	/**
-	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
-		Object childFeature = feature;
-		Object childObject = child;
-
-		boolean qualify =
-			childFeature == WafPackage.Literals.BADGE__DISPLAY_WHEN ||
-			childFeature == WafPackage.Literals.BADGE__NEW_WHEN;
-
-		if (qualify) {
-			return getString
-				("_UI_CreateChild_text2",
-				 new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
-		}
-		return super.getCreateChildText(owner, feature, child, selection);
 	}
 
 	/**

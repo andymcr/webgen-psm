@@ -484,7 +484,6 @@ class Badge {
 	String iconName
 	contains FeaturePath value
 	contains Predicate displayWhen
-	contains Predicate newWhen
 }
 class TextCardsUnit extends CardsUnit {
 }
@@ -560,6 +559,7 @@ abstract class InlineAction extends NamedDisplayElement {
 	contains Predicate displayWhen
 	String header
 	String footer
+	String anchorClass
 	String headerClass
 	String footerClass
 }
