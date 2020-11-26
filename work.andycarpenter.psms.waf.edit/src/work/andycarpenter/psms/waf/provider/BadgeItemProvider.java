@@ -65,6 +65,7 @@ public class BadgeItemProvider
 			super.getPropertyDescriptors(object);
 
 			addIconNamePropertyDescriptor(object);
+			addTitlePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -87,6 +88,28 @@ public class BadgeItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Title feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTitlePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Badge_title_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Badge_title_feature", "_UI_Badge_type"),
+				 WafPackage.Literals.BADGE__TITLE,
+				 true,
+				 false,
+				 true,
+				 null,
 				 null,
 				 null));
 	}

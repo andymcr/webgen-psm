@@ -483,8 +483,10 @@ abstract class CardsUnit extends CollectionUnit, InlineActionContainer {
 class Badge {
 	String iconName
 	contains FeaturePath value
+	refers Attribute title
 	contains Predicate displayWhen
 }
+
 class TextCardsUnit extends CardsUnit {
 }
 

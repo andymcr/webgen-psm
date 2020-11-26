@@ -57,6 +57,7 @@ public class InlineActionItemProvider extends NamedDisplayElementItemProvider {
 			addDisablePropertyDescriptor(object);
 			addHeaderPropertyDescriptor(object);
 			addFooterPropertyDescriptor(object);
+			addAnchorClassPropertyDescriptor(object);
 			addHeaderClassPropertyDescriptor(object);
 			addFooterClassPropertyDescriptor(object);
 		}
@@ -143,6 +144,28 @@ public class InlineActionItemProvider extends NamedDisplayElementItemProvider {
 				 getString("_UI_InlineAction_footer_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_InlineAction_footer_feature", "_UI_InlineAction_type"),
 				 WafPackage.Literals.INLINE_ACTION__FOOTER,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Anchor Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAnchorClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_InlineAction_anchorClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_InlineAction_anchorClass_feature", "_UI_InlineAction_type"),
+				 WafPackage.Literals.INLINE_ACTION__ANCHOR_CLASS,
 				 true,
 				 false,
 				 false,
@@ -255,6 +278,7 @@ public class InlineActionItemProvider extends NamedDisplayElementItemProvider {
 			case WafPackage.INLINE_ACTION__DISABLE:
 			case WafPackage.INLINE_ACTION__HEADER:
 			case WafPackage.INLINE_ACTION__FOOTER:
+			case WafPackage.INLINE_ACTION__ANCHOR_CLASS:
 			case WafPackage.INLINE_ACTION__HEADER_CLASS:
 			case WafPackage.INLINE_ACTION__FOOTER_CLASS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
