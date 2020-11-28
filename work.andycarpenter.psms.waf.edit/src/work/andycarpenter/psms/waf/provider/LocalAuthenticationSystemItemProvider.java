@@ -54,9 +54,6 @@ public class LocalAuthenticationSystemItemProvider extends AuthenticationItemPro
 			addAllowSelfRegistrationPropertyDescriptor(object);
 			addUseEmailActivationPropertyDescriptor(object);
 			addSendWelcomeEmailPropertyDescriptor(object);
-			addRegistrationUnitPropertyDescriptor(object);
-			addLoginUnitPropertyDescriptor(object);
-			addForgottenPasswordUnitPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -255,72 +252,6 @@ public class LocalAuthenticationSystemItemProvider extends AuthenticationItemPro
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Registration Unit feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addRegistrationUnitPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_LocalAuthenticationSystem_registrationUnit_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_LocalAuthenticationSystem_registrationUnit_feature", "_UI_LocalAuthenticationSystem_type"),
-				 WafPackage.Literals.LOCAL_AUTHENTICATION_SYSTEM__REGISTRATION_UNIT,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Login Unit feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addLoginUnitPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_LocalAuthenticationSystem_loginUnit_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_LocalAuthenticationSystem_loginUnit_feature", "_UI_LocalAuthenticationSystem_type"),
-				 WafPackage.Literals.LOCAL_AUTHENTICATION_SYSTEM__LOGIN_UNIT,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Forgotten Password Unit feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addForgottenPasswordUnitPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_LocalAuthenticationSystem_forgottenPasswordUnit_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_LocalAuthenticationSystem_forgottenPasswordUnit_feature", "_UI_LocalAuthenticationSystem_type"),
-				 WafPackage.Literals.LOCAL_AUTHENTICATION_SYSTEM__FORGOTTEN_PASSWORD_UNIT,
-				 true,
-				 false,
-				 true,
-				 null,
 				 null,
 				 null));
 	}

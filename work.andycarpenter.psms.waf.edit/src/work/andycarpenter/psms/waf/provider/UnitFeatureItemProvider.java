@@ -70,7 +70,8 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 			addFooterPropertyDescriptor(object);
 			addHeaderClassPropertyDescriptor(object);
 			addDisplayClassPropertyDescriptor(object);
-			addInputColumnClassPropertyDescriptor(object);
+			addInputGroupClassPropertyDescriptor(object);
+			addInputLabelClassPropertyDescriptor(object);
 			addInputElementClassPropertyDescriptor(object);
 			addFooterClassPropertyDescriptor(object);
 		}
@@ -452,28 +453,6 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Input Column Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addInputColumnClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_UnitFeature_inputColumnClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UnitFeature_inputColumnClass_feature", "_UI_UnitFeature_type"),
-				 WafPackage.Literals.UNIT_FEATURE__INPUT_COLUMN_CLASS,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Input Element Class feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -509,6 +488,50 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 				 getString("_UI_UnitFeature_displayClass_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_UnitFeature_displayClass_feature", "_UI_UnitFeature_type"),
 				 WafPackage.Literals.UNIT_FEATURE__DISPLAY_CLASS,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Input Group Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addInputGroupClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_UnitFeature_inputGroupClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UnitFeature_inputGroupClass_feature", "_UI_UnitFeature_type"),
+				 WafPackage.Literals.UNIT_FEATURE__INPUT_GROUP_CLASS,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Input Label Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addInputLabelClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_UnitFeature_inputLabelClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UnitFeature_inputLabelClass_feature", "_UI_UnitFeature_type"),
+				 WafPackage.Literals.UNIT_FEATURE__INPUT_LABEL_CLASS,
 				 true,
 				 false,
 				 false,
@@ -616,7 +639,8 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 			case WafPackage.UNIT_FEATURE__FOOTER:
 			case WafPackage.UNIT_FEATURE__HEADER_CLASS:
 			case WafPackage.UNIT_FEATURE__DISPLAY_CLASS:
-			case WafPackage.UNIT_FEATURE__INPUT_COLUMN_CLASS:
+			case WafPackage.UNIT_FEATURE__INPUT_GROUP_CLASS:
+			case WafPackage.UNIT_FEATURE__INPUT_LABEL_CLASS:
 			case WafPackage.UNIT_FEATURE__INPUT_ELEMENT_CLASS:
 			case WafPackage.UNIT_FEATURE__FOOTER_CLASS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));

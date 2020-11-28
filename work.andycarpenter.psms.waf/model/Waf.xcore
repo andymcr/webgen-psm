@@ -104,9 +104,6 @@ class LocalAuthenticationSystem extends Authentication {
 	boolean allowSelfRegistration
 	boolean useEmailActivation = "true"
 	boolean sendWelcomeEmail = "true"
-	refers RegistrationUnit registrationUnit opposite authenticationSystem
-	refers LoginUnit loginUnit opposite authenticationSystem
-	refers ForgottenPasswordUnit forgottenPasswordUnit opposite authenticationSystem
 }
 
 class CasAuthentication extends Authentication {
@@ -161,8 +158,8 @@ class ThumbnailFilter extends ImageFilter {
 class Menu extends NamedDisplayElement {
 	contains MenuEntry[] entries opposite partOf
 	boolean omitCaption
-	String captionClass
 	String styleClass
+	String captionClass
 	String layoutClass
 }
 
@@ -208,9 +205,9 @@ abstract class ContentUnit extends NamedDisplayElement {
 	String requiresRole = ""
 	String purposeSummary
 	String alternative
+	String sectionClass
 	boolean omitCaption
 	String captionClass
-	String styleClass
 	String contentClass
 }
 
@@ -272,8 +269,9 @@ abstract class UnitFeature extends UnitField, InlineActionContainer {
 	String footer
 	String headerClass = ""
 	String displayClass = ""
-	String inputColumnClass = ""
-	String inputElementClass = ""
+	String inputGroupClass
+	String inputLabelClass
+	String inputElementClass
 	String footerClass = ""
 }
 
@@ -528,27 +526,6 @@ abstract class ControlUnit extends DynamicUnit {
 
 class SearchUnit extends ControlUnit {
 	refers IndexUnit[1] resultsDestination opposite targettingSearches
-}
-
-
-interface AuthenticationUnit {
-}
-
-class RegistrationUnit extends EditUnit, AuthenticationUnit {
-	refers LocalAuthenticationSystem authenticationSystem opposite registrationUnit
-}
-
-class LoginUnit extends ControlUnit, AuthenticationUnit {
-	refers LocalAuthenticationSystem authenticationSystem opposite loginUnit
-	refers UnitField[1] loginIdField
-	refers UnitField[1] passwordField
-	refers UnitField rememberMeField
-	String[1] logoutUriElement
-}
-
-class ForgottenPasswordUnit extends ControlUnit, AuthenticationUnit {
-	refers LocalAuthenticationSystem authenticationSystem opposite forgottenPasswordUnit
-	refers UnitField[1] loginIdField
 }
 
 

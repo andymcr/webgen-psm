@@ -53,8 +53,8 @@ public class MenuItemProvider extends NamedDisplayElementItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addOmitCaptionPropertyDescriptor(object);
-			addCaptionClassPropertyDescriptor(object);
 			addStyleClassPropertyDescriptor(object);
+			addCaptionClassPropertyDescriptor(object);
 			addLayoutClassPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -83,28 +83,6 @@ public class MenuItemProvider extends NamedDisplayElementItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Caption Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addCaptionClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Menu_captionClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Menu_captionClass_feature", "_UI_Menu_type"),
-				 WafPackage.Literals.MENU__CAPTION_CLASS,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Style Class feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -118,6 +96,28 @@ public class MenuItemProvider extends NamedDisplayElementItemProvider {
 				 getString("_UI_Menu_styleClass_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Menu_styleClass_feature", "_UI_Menu_type"),
 				 WafPackage.Literals.MENU__STYLE_CLASS,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Caption Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCaptionClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Menu_captionClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Menu_captionClass_feature", "_UI_Menu_type"),
+				 WafPackage.Literals.MENU__CAPTION_CLASS,
 				 true,
 				 false,
 				 false,
@@ -217,8 +217,8 @@ public class MenuItemProvider extends NamedDisplayElementItemProvider {
 
 		switch (notification.getFeatureID(Menu.class)) {
 			case WafPackage.MENU__OMIT_CAPTION:
-			case WafPackage.MENU__CAPTION_CLASS:
 			case WafPackage.MENU__STYLE_CLASS:
+			case WafPackage.MENU__CAPTION_CLASS:
 			case WafPackage.MENU__LAYOUT_CLASS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;

@@ -1095,75 +1095,6 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.waf.RegistrationUnit} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected RegistrationUnitItemProvider registrationUnitItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link work.andycarpenter.psms.waf.RegistrationUnit}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createRegistrationUnitAdapter() {
-		if (registrationUnitItemProvider == null) {
-			registrationUnitItemProvider = new RegistrationUnitItemProvider(this);
-		}
-
-		return registrationUnitItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.waf.LoginUnit} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected LoginUnitItemProvider loginUnitItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link work.andycarpenter.psms.waf.LoginUnit}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createLoginUnitAdapter() {
-		if (loginUnitItemProvider == null) {
-			loginUnitItemProvider = new LoginUnitItemProvider(this);
-		}
-
-		return loginUnitItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.waf.ForgottenPasswordUnit} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ForgottenPasswordUnitItemProvider forgottenPasswordUnitItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link work.andycarpenter.psms.waf.ForgottenPasswordUnit}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createForgottenPasswordUnitAdapter() {
-		if (forgottenPasswordUnitItemProvider == null) {
-			forgottenPasswordUnitItemProvider = new ForgottenPasswordUnitItemProvider(this);
-		}
-
-		return forgottenPasswordUnitItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.waf.SelectAction} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1398,9 +1329,6 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 		if (sliderUnitItemProvider != null) sliderUnitItemProvider.dispose();
 		if (galleryUnitItemProvider != null) galleryUnitItemProvider.dispose();
 		if (searchUnitItemProvider != null) searchUnitItemProvider.dispose();
-		if (registrationUnitItemProvider != null) registrationUnitItemProvider.dispose();
-		if (loginUnitItemProvider != null) loginUnitItemProvider.dispose();
-		if (forgottenPasswordUnitItemProvider != null) forgottenPasswordUnitItemProvider.dispose();
 		if (selectActionItemProvider != null) selectActionItemProvider.dispose();
 		if (deleteActionItemProvider != null) deleteActionItemProvider.dispose();
 		if (featureSupportActionItemProvider != null) featureSupportActionItemProvider.dispose();
