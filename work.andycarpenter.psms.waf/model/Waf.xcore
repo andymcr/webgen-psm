@@ -421,6 +421,7 @@ class CollectionUnit extends DynamicUnit, SelectableUnit {
 	String lastPageIconName = ""
 	String paginationClass
 	String paginationElementClass
+	String paginationAnchorClass
 }
 
 abstract class EditUnit extends SingletonUnit {
