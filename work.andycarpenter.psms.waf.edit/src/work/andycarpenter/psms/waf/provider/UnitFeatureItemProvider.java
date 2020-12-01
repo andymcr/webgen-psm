@@ -62,6 +62,7 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 			addTruncatePropertyDescriptor(object);
 			addDateFormatPropertyDescriptor(object);
 			addDisableInputPropertyDescriptor(object);
+			addActionNavigationClassPropertyDescriptor(object);
 			addCollectionUiAllowAddPropertyDescriptor(object);
 			addCollectionUiAllowRemovePropertyDescriptor(object);
 			addDefaultDisplayValuePropertyDescriptor(object);
@@ -290,6 +291,28 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 				 getString("_UI_UnitField_disableInput_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_disableInput_feature", "_UI_UnitField_type"),
 				 WafPackage.Literals.UNIT_FIELD__DISABLE_INPUT,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Action Navigation Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addActionNavigationClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_InlineActionContainer_actionNavigationClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_InlineActionContainer_actionNavigationClass_feature", "_UI_InlineActionContainer_type"),
+				 WafPackage.Literals.INLINE_ACTION_CONTAINER__ACTION_NAVIGATION_CLASS,
 				 true,
 				 false,
 				 false,
@@ -631,6 +654,7 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 			case WafPackage.UNIT_FEATURE__TRUNCATE:
 			case WafPackage.UNIT_FEATURE__DATE_FORMAT:
 			case WafPackage.UNIT_FEATURE__DISABLE_INPUT:
+			case WafPackage.UNIT_FEATURE__ACTION_NAVIGATION_CLASS:
 			case WafPackage.UNIT_FEATURE__COLLECTION_UI_ALLOW_ADD:
 			case WafPackage.UNIT_FEATURE__COLLECTION_UI_ALLOW_REMOVE:
 			case WafPackage.UNIT_FEATURE__DEFAULT_DISPLAY_VALUE:

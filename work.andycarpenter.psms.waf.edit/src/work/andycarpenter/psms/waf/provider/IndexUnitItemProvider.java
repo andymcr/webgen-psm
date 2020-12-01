@@ -48,11 +48,34 @@ public class IndexUnitItemProvider extends CollectionUnitItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addActionNavigationClassPropertyDescriptor(object);
 			addOmitColumnLabelsPropertyDescriptor(object);
 			addTargettingSearchesPropertyDescriptor(object);
 			addRowClassesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Action Navigation Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addActionNavigationClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_InlineActionContainer_actionNavigationClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_InlineActionContainer_actionNavigationClass_feature", "_UI_InlineActionContainer_type"),
+				 WafPackage.Literals.INLINE_ACTION_CONTAINER__ACTION_NAVIGATION_CLASS,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -178,6 +201,7 @@ public class IndexUnitItemProvider extends CollectionUnitItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(IndexUnit.class)) {
+			case WafPackage.INDEX_UNIT__ACTION_NAVIGATION_CLASS:
 			case WafPackage.INDEX_UNIT__OMIT_COLUMN_LABELS:
 			case WafPackage.INDEX_UNIT__ROW_CLASSES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
