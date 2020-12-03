@@ -32,6 +32,7 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 
 import work.andycarpenter.psms.expression.ExpressionPackage;
+import work.andycarpenter.psms.expression.FunctionCall;
 import work.andycarpenter.psms.expression.PredicateComparisonOperator;
 import work.andycarpenter.psms.expression.PredicateEqualityOperator;
 import work.andycarpenter.psms.expression.PredicateInOperator;
@@ -624,6 +625,30 @@ public class ServiceItemProviderAdapterFactory extends ServiceAdapterFactory imp
 			CreationSwitch(List<Object> newChildDescriptors, EditingDomain editingDomain) {
 				this.newChildDescriptors = newChildDescriptors;
 				this.editingDomain = editingDomain;
+			}
+			/**
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			@Override
+			public Object caseFunctionCall(FunctionCall object) {
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.FUNCTION_CALL__ACTUALS,
+						 ServiceFactory.eINSTANCE.createConstantReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.FUNCTION_CALL__ACTUALS,
+						 ServiceFactory.eINSTANCE.createFeatureReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.FUNCTION_CALL__ACTUALS,
+						 ServiceFactory.eINSTANCE.createParameterReference()));
+
+				return null;
 			}
 			/**
 			 * <!-- begin-user-doc -->

@@ -32,6 +32,7 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 
 import work.andycarpenter.psms.expression.ExpressionPackage;
+import work.andycarpenter.psms.expression.FunctionCall;
 import work.andycarpenter.psms.expression.PredicateComparisonOperator;
 import work.andycarpenter.psms.expression.PredicateEqualityOperator;
 import work.andycarpenter.psms.expression.PredicateInOperator;
@@ -1592,6 +1593,30 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 			CreationSwitch(List<Object> newChildDescriptors, EditingDomain editingDomain) {
 				this.newChildDescriptors = newChildDescriptors;
 				this.editingDomain = editingDomain;
+			}
+			/**
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			@Override
+			public Object caseFunctionCall(FunctionCall object) {
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.FUNCTION_CALL__ACTUALS,
+						 WafFactory.eINSTANCE.createFeaturePathAttribute()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.FUNCTION_CALL__ACTUALS,
+						 WafFactory.eINSTANCE.createFeaturePathAssociation()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.FUNCTION_CALL__ACTUALS,
+						 WafFactory.eINSTANCE.createFeaturePathLabel()));
+
+				return null;
 			}
 			/**
 			 * <!-- begin-user-doc -->

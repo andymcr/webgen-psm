@@ -250,6 +250,29 @@ public class ExpressionItemProviderAdapterFactory extends ExpressionAdapterFacto
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.expression.FunctionCall} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected FunctionCallItemProvider functionCallItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link work.andycarpenter.psms.expression.FunctionCall}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createFunctionCallAdapter() {
+		if (functionCallItemProvider == null) {
+			functionCallItemProvider = new FunctionCallItemProvider(this);
+		}
+
+		return functionCallItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.expression.PredicateBooleanOperator} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -566,6 +589,7 @@ public class ExpressionItemProviderAdapterFactory extends ExpressionAdapterFacto
 		if (timeLiteralItemProvider != null) timeLiteralItemProvider.dispose();
 		if (currentTimeItemProvider != null) currentTimeItemProvider.dispose();
 		if (currentUserItemProvider != null) currentUserItemProvider.dispose();
+		if (functionCallItemProvider != null) functionCallItemProvider.dispose();
 		if (predicateBooleanOperatorItemProvider != null) predicateBooleanOperatorItemProvider.dispose();
 		if (predicateEqualityOperatorItemProvider != null) predicateEqualityOperatorItemProvider.dispose();
 		if (predicateComparisonOperatorItemProvider != null) predicateComparisonOperatorItemProvider.dispose();

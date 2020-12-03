@@ -677,6 +677,11 @@ public class InterfaceFieldItemProvider extends NamedElementItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.Literals.INTERFACE_FIELD__DEFAULT_VALUE,
+				 ExpressionFactory.eINSTANCE.createFunctionCall()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.Literals.INTERFACE_FIELD__DEFAULT_VALUE,
 				 ExpressionFactory.eINSTANCE.createPredicateBooleanOperator()));
 
 		newChildDescriptors.add

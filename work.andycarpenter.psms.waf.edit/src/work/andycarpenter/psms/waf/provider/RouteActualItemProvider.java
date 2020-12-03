@@ -244,6 +244,11 @@ public class RouteActualItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.Literals.ROUTE_ACTUAL__VALUE,
+				 ExpressionFactory.eINSTANCE.createFunctionCall()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.Literals.ROUTE_ACTUAL__VALUE,
 				 ExpressionFactory.eINSTANCE.createPredicateBooleanOperator()));
 
 		newChildDescriptors.add

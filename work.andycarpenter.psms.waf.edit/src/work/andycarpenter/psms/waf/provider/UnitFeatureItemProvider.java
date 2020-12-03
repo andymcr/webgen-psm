@@ -813,6 +813,11 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.Literals.UNIT_FEATURE__FORCED_VALUE,
+				 ExpressionFactory.eINSTANCE.createFunctionCall()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.Literals.UNIT_FEATURE__FORCED_VALUE,
 				 ExpressionFactory.eINSTANCE.createPredicateBooleanOperator()));
 
 		newChildDescriptors.add

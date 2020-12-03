@@ -54,6 +54,12 @@ class CurrentUser extends Expression {
 }
 
 
+class FunctionCall extends Expression {
+	String[1] name
+	contains Expression[*] actuals
+}
+
+
 interface Variable extends Expression {
 }
 
