@@ -231,7 +231,9 @@ abstract class DynamicUnit extends ContentUnit {
 	String headerClass
 	String controlClass
 	String footerClass
-	String errorClass
+	String fieldListClass
+	String fieldLabelClass
+	String fieldValueClass
 }
 
 class UnitSupportAction extends NamedDisplayElement {
