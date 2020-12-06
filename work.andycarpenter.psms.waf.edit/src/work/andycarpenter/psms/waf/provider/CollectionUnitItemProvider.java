@@ -61,6 +61,7 @@ public class CollectionUnitItemProvider extends DynamicUnitItemProvider {
 			addFilterPropertyDescriptor(object);
 			addSupportedFiltersPropertyDescriptor(object);
 			addEmptyMessagePropertyDescriptor(object);
+			addOmitFieldLabelsPropertyDescriptor(object);
 			addDefaultPaginationSizePropertyDescriptor(object);
 			addMaximumPaginationSizePropertyDescriptor(object);
 			addPaginationControlPlacementPropertyDescriptor(object);
@@ -365,6 +366,28 @@ public class CollectionUnitItemProvider extends DynamicUnitItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Omit Field Labels feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addOmitFieldLabelsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_CollectionUnit_omitFieldLabels_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_omitFieldLabels_feature", "_UI_CollectionUnit_type"),
+				 WafPackage.Literals.COLLECTION_UNIT__OMIT_FIELD_LABELS,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -836,6 +859,7 @@ public class CollectionUnitItemProvider extends DynamicUnitItemProvider {
 			case WafPackage.COLLECTION_UNIT__TRUNCATE_ELEMENT_TITLE:
 			case WafPackage.COLLECTION_UNIT__OMIT_CONTAINER_LOAD:
 			case WafPackage.COLLECTION_UNIT__EMPTY_MESSAGE:
+			case WafPackage.COLLECTION_UNIT__OMIT_FIELD_LABELS:
 			case WafPackage.COLLECTION_UNIT__DEFAULT_PAGINATION_SIZE:
 			case WafPackage.COLLECTION_UNIT__MAXIMUM_PAGINATION_SIZE:
 			case WafPackage.COLLECTION_UNIT__PAGINATION_CONTROL_PLACEMENT:

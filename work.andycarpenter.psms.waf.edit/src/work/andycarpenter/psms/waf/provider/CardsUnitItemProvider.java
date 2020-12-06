@@ -48,7 +48,6 @@ public class CardsUnitItemProvider extends CollectionUnitItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addActionNavigationClassPropertyDescriptor(object);
-			addOmitFieldLabelsPropertyDescriptor(object);
 			addOverlaySingleSelectActionPropertyDescriptor(object);
 			addRowClassPropertyDescriptor(object);
 			addColumnClassPropertyDescriptor(object);
@@ -75,28 +74,6 @@ public class CardsUnitItemProvider extends CollectionUnitItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Omit Field Labels feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addOmitFieldLabelsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_CardsUnit_omitFieldLabels_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_CardsUnit_omitFieldLabels_feature", "_UI_CardsUnit_type"),
-				 WafPackage.Literals.CARDS_UNIT__OMIT_FIELD_LABELS,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -248,7 +225,6 @@ public class CardsUnitItemProvider extends CollectionUnitItemProvider {
 
 		switch (notification.getFeatureID(CardsUnit.class)) {
 			case WafPackage.CARDS_UNIT__ACTION_NAVIGATION_CLASS:
-			case WafPackage.CARDS_UNIT__OMIT_FIELD_LABELS:
 			case WafPackage.CARDS_UNIT__OVERLAY_SINGLE_SELECT_ACTION:
 			case WafPackage.CARDS_UNIT__ROW_CLASS:
 			case WafPackage.CARDS_UNIT__COLUMN_CLASS:

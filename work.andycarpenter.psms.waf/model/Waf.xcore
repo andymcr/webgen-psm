@@ -232,8 +232,6 @@ abstract class DynamicUnit extends ContentUnit {
 	String controlClass
 	String footerClass
 	String fieldListClass
-	String fieldLabelClass
-	String fieldValueClass
 }
 
 class UnitSupportAction extends NamedDisplayElement {
@@ -272,8 +270,8 @@ abstract class UnitFeature extends UnitField, InlineActionContainer {
 	String headerClass = ""
 	String displayClass = ""
 	String inputGroupClass
-	String inputLabelClass
-	String inputElementClass
+	String fieldLabelClass
+	String fieldValueClass
 	String footerClass = ""
 }
 
@@ -404,6 +402,7 @@ class CollectionUnit extends DynamicUnit, SelectableUnit {
 	refers Filter filter
 	refers Filter[] supportedFilters
 	String emptyMessage
+	boolean omitFieldLabels
 	int defaultPaginationSize
 	int maximumPaginationSize
 	PaginationControlPlacements paginationControlPlacement = "Below"
@@ -458,7 +457,6 @@ class DetailsUnit extends SingletonUnit, SelectableUnit {
 }
 
 abstract class IndexUnit extends CollectionUnit, InlineActionContainer {
-	boolean omitColumnLabels
 	refers SearchUnit targettingSearches opposite resultsDestination
 	String rowClasses
 }
@@ -474,7 +472,6 @@ class IndexLineDirectionUnit extends IndexUnit {
 
 abstract class CardsUnit extends CollectionUnit, InlineActionContainer {
 	contains Badge[] badges
-	boolean omitFieldLabels
 	boolean overlaySingleSelectAction
 	String rowClass
 	String columnClass
