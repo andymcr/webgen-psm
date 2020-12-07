@@ -52,6 +52,8 @@ public class CardsUnitItemProvider extends CollectionUnitItemProvider {
 			addRowClassPropertyDescriptor(object);
 			addColumnClassPropertyDescriptor(object);
 			addCardClassPropertyDescriptor(object);
+			addCardHeaderClassPropertyDescriptor(object);
+			addCardFooterClassPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -167,6 +169,50 @@ public class CardsUnitItemProvider extends CollectionUnitItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Card Header Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCardHeaderClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_CardsUnit_cardHeaderClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CardsUnit_cardHeaderClass_feature", "_UI_CardsUnit_type"),
+				 WafPackage.Literals.CARDS_UNIT__CARD_HEADER_CLASS,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Card Footer Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCardFooterClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_CardsUnit_cardFooterClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CardsUnit_cardFooterClass_feature", "_UI_CardsUnit_type"),
+				 WafPackage.Literals.CARDS_UNIT__CARD_FOOTER_CLASS,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -229,6 +275,8 @@ public class CardsUnitItemProvider extends CollectionUnitItemProvider {
 			case WafPackage.CARDS_UNIT__ROW_CLASS:
 			case WafPackage.CARDS_UNIT__COLUMN_CLASS:
 			case WafPackage.CARDS_UNIT__CARD_CLASS:
+			case WafPackage.CARDS_UNIT__CARD_HEADER_CLASS:
+			case WafPackage.CARDS_UNIT__CARD_FOOTER_CLASS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case WafPackage.CARDS_UNIT__ACTIONS:
