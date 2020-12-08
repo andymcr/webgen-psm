@@ -477,6 +477,7 @@ abstract class CardsUnit extends CollectionUnit, InlineActionContainer {
 	String columnClass
 	String cardClass
 	String cardHeaderClass
+	String cardBodyClass
 	String cardFooterClass
 }
 

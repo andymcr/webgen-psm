@@ -53,6 +53,7 @@ public class CardsUnitItemProvider extends CollectionUnitItemProvider {
 			addColumnClassPropertyDescriptor(object);
 			addCardClassPropertyDescriptor(object);
 			addCardHeaderClassPropertyDescriptor(object);
+			addCardBodyClassPropertyDescriptor(object);
 			addCardFooterClassPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -191,6 +192,28 @@ public class CardsUnitItemProvider extends CollectionUnitItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Card Body Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCardBodyClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_CardsUnit_cardBodyClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CardsUnit_cardBodyClass_feature", "_UI_CardsUnit_type"),
+				 WafPackage.Literals.CARDS_UNIT__CARD_BODY_CLASS,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Card Footer Class feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -276,6 +299,7 @@ public class CardsUnitItemProvider extends CollectionUnitItemProvider {
 			case WafPackage.CARDS_UNIT__COLUMN_CLASS:
 			case WafPackage.CARDS_UNIT__CARD_CLASS:
 			case WafPackage.CARDS_UNIT__CARD_HEADER_CLASS:
+			case WafPackage.CARDS_UNIT__CARD_BODY_CLASS:
 			case WafPackage.CARDS_UNIT__CARD_FOOTER_CLASS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
