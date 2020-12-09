@@ -66,6 +66,7 @@ public class BadgeItemProvider
 
 			addIconNamePropertyDescriptor(object);
 			addTitlePropertyDescriptor(object);
+			addBadgeClassPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -110,6 +111,28 @@ public class BadgeItemProvider
 				 false,
 				 true,
 				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Badge Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addBadgeClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Badge_badgeClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Badge_badgeClass_feature", "_UI_Badge_type"),
+				 WafPackage.Literals.BADGE__BADGE_CLASS,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -184,6 +207,7 @@ public class BadgeItemProvider
 
 		switch (notification.getFeatureID(Badge.class)) {
 			case WafPackage.BADGE__ICON_NAME:
+			case WafPackage.BADGE__BADGE_CLASS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case WafPackage.BADGE__VALUE:

@@ -486,6 +486,7 @@ class Badge {
 	contains FeaturePath value
 	refers Attribute title
 	contains Predicate displayWhen
+	String badgeClass
 }
 
 class TextCardsUnit extends CardsUnit {
