@@ -132,7 +132,7 @@ class ModelLabelAttribute extends ModelLabelFeature {
 
 class ModelLabelAssociation extends ModelLabelFeature {
 	refers Association[1] association
-	refers ModelLabel dynamicLabel
+	refers ModelLabel valueDisplay
 }
 
 
@@ -240,6 +240,19 @@ abstract class Association extends Feature {
 	boolean[1] visible = "true"
 	int[1] serializationMaxDepth = "1"
 	String pivotTableName
+}
+
+abstract class AssociationReference {
+	derived String name get {
+		if (association !== null)
+			association.name
+	}
+	refers Association[1] association
+	refers ModelLabel valueDisplay
+	contains FeatureChildPath childFeature
+}
+
+abstract class FeatureChildPath {
 }
 
 enum SingletonAssociationRelationships {
