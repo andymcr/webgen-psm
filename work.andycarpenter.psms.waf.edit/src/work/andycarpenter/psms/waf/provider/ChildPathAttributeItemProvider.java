@@ -9,11 +9,13 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import work.andycarpenter.psms.orm.provider.FeatureChildPathItemProvider;
 import work.andycarpenter.psms.waf.ChildPathAttribute;
 import work.andycarpenter.psms.waf.WafPackage;
 
@@ -23,7 +25,7 @@ import work.andycarpenter.psms.waf.WafPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ChildPathAttributeItemProvider extends ChildPathItemProvider {
+public class ChildPathAttributeItemProvider extends FeatureChildPathItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -150,6 +152,17 @@ public class ChildPathAttributeItemProvider extends ChildPathItemProvider {
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+	}
+
+	/**
+	 * Return the resource locator for this item provider's resources.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ResourceLocator getResourceLocator() {
+		return WafEditPlugin.INSTANCE;
 	}
 
 }

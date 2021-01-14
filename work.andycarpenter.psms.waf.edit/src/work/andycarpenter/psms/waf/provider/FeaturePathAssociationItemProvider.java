@@ -16,6 +16,7 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import work.andycarpenter.psms.orm.OrmPackage;
 import work.andycarpenter.psms.waf.FeaturePathAssociation;
 import work.andycarpenter.psms.waf.WafFactory;
 import work.andycarpenter.psms.waf.WafPackage;
@@ -68,7 +69,7 @@ public class FeaturePathAssociationItemProvider extends FeaturePathItemProvider 
 				 getResourceLocator(),
 				 getString("_UI_AssociationReference_name_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_AssociationReference_name_feature", "_UI_AssociationReference_type"),
-				 WafPackage.Literals.ASSOCIATION_REFERENCE__NAME,
+				 OrmPackage.Literals.ASSOCIATION_REFERENCE__NAME,
 				 false,
 				 false,
 				 false,
@@ -90,7 +91,7 @@ public class FeaturePathAssociationItemProvider extends FeaturePathItemProvider 
 				 getResourceLocator(),
 				 getString("_UI_AssociationReference_association_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_AssociationReference_association_feature", "_UI_AssociationReference_type"),
-				 WafPackage.Literals.ASSOCIATION_REFERENCE__ASSOCIATION,
+				 OrmPackage.Literals.ASSOCIATION_REFERENCE__ASSOCIATION,
 				 true,
 				 false,
 				 true,
@@ -112,7 +113,7 @@ public class FeaturePathAssociationItemProvider extends FeaturePathItemProvider 
 				 getResourceLocator(),
 				 getString("_UI_AssociationReference_valueDisplay_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_AssociationReference_valueDisplay_feature", "_UI_AssociationReference_type"),
-				 WafPackage.Literals.ASSOCIATION_REFERENCE__VALUE_DISPLAY,
+				 OrmPackage.Literals.ASSOCIATION_REFERENCE__VALUE_DISPLAY,
 				 true,
 				 false,
 				 true,
@@ -133,7 +134,7 @@ public class FeaturePathAssociationItemProvider extends FeaturePathItemProvider 
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(WafPackage.Literals.ASSOCIATION_REFERENCE__CHILD_FEATURE);
+			childrenFeatures.add(OrmPackage.Literals.ASSOCIATION_REFERENCE__CHILD_FEATURE);
 		}
 		return childrenFeatures;
 	}
@@ -212,12 +213,12 @@ public class FeaturePathAssociationItemProvider extends FeaturePathItemProvider 
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.ASSOCIATION_REFERENCE__CHILD_FEATURE,
+				(OrmPackage.Literals.ASSOCIATION_REFERENCE__CHILD_FEATURE,
 				 WafFactory.eINSTANCE.createChildPathAttribute()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.ASSOCIATION_REFERENCE__CHILD_FEATURE,
+				(OrmPackage.Literals.ASSOCIATION_REFERENCE__CHILD_FEATURE,
 				 WafFactory.eINSTANCE.createChildPathAssociation()));
 	}
 

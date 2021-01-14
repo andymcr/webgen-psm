@@ -43,6 +43,7 @@ import work.andycarpenter.psms.expression.PredicateLikeOperator;
 
 import work.andycarpenter.psms.expression.util.ExpressionSwitch;
 
+import work.andycarpenter.psms.orm.AssociationReference;
 import work.andycarpenter.psms.orm.Attribute;
 import work.andycarpenter.psms.orm.OrmPackage;
 
@@ -1400,6 +1401,25 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 				return null;
 			}
  
+			/**
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			@Override
+			public Object caseAssociationReference(AssociationReference object) {
+				newChildDescriptors.add
+					(createChildParameter
+						(OrmPackage.Literals.ASSOCIATION_REFERENCE__CHILD_FEATURE,
+						 WafFactory.eINSTANCE.createChildPathAttribute()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(OrmPackage.Literals.ASSOCIATION_REFERENCE__CHILD_FEATURE,
+						 WafFactory.eINSTANCE.createChildPathAssociation()));
+
+				return null;
+			}
 			/**
 			 * <!-- begin-user-doc -->
 			 * <!-- end-user-doc -->

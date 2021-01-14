@@ -12,11 +12,12 @@ package work.andycarpenter.psms.waf
 import work.andycarpenter.psms.expression.Expression
 import work.andycarpenter.psms.expression.Predicate
 import work.andycarpenter.psms.expression.Variable
-import work.andycarpenter.psms.orm.Association
+import work.andycarpenter.psms.orm.AssociationReference
 import work.andycarpenter.psms.orm.Attribute
 import work.andycarpenter.psms.orm.DataType
 import work.andycarpenter.psms.orm.DateDetails
 import work.andycarpenter.psms.orm.Entity
+import work.andycarpenter.psms.orm.FeatureChildPath
 import work.andycarpenter.psms.orm.Label
 import work.andycarpenter.psms.orm.ModelLabel
 import work.andycarpenter.psms.orm.NamedDisplayElement
@@ -293,20 +294,7 @@ class UnitAssociation extends UnitFeature, AssociationReference {
 	refers Filter filteredOptions
 }
 
-abstract class AssociationReference {
-	derived String name get {
-		if (association !== null)
-			association.name
-	}
-	refers Association[1] association
-	refers ModelLabel valueDisplay
-	contains ChildPath childFeature
-}
-
-abstract class ChildPath {
-}
-
-class ChildPathAttribute extends ChildPath {
+class ChildPathAttribute extends FeatureChildPath {
 	derived String name get {
 		if (attribute !== null)
 			attribute.name
@@ -314,7 +302,7 @@ class ChildPathAttribute extends ChildPath {
 	refers Attribute[1] attribute
 }
 
-class ChildPathAssociation extends ChildPath, AssociationReference {
+class ChildPathAssociation extends FeatureChildPath, AssociationReference {
 }
 
 abstract class FeaturePath extends Variable {

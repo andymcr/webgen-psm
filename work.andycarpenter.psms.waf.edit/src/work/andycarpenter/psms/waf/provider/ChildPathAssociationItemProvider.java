@@ -9,6 +9,7 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EStructuralFeature;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
@@ -16,6 +17,8 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import work.andycarpenter.psms.orm.OrmPackage;
+import work.andycarpenter.psms.orm.provider.FeatureChildPathItemProvider;
 import work.andycarpenter.psms.waf.ChildPathAssociation;
 import work.andycarpenter.psms.waf.WafFactory;
 import work.andycarpenter.psms.waf.WafPackage;
@@ -26,7 +29,7 @@ import work.andycarpenter.psms.waf.WafPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ChildPathAssociationItemProvider extends ChildPathItemProvider {
+public class ChildPathAssociationItemProvider extends FeatureChildPathItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -68,7 +71,7 @@ public class ChildPathAssociationItemProvider extends ChildPathItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_AssociationReference_name_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_AssociationReference_name_feature", "_UI_AssociationReference_type"),
-				 WafPackage.Literals.ASSOCIATION_REFERENCE__NAME,
+				 OrmPackage.Literals.ASSOCIATION_REFERENCE__NAME,
 				 false,
 				 false,
 				 false,
@@ -90,7 +93,7 @@ public class ChildPathAssociationItemProvider extends ChildPathItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_AssociationReference_association_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_AssociationReference_association_feature", "_UI_AssociationReference_type"),
-				 WafPackage.Literals.ASSOCIATION_REFERENCE__ASSOCIATION,
+				 OrmPackage.Literals.ASSOCIATION_REFERENCE__ASSOCIATION,
 				 true,
 				 false,
 				 true,
@@ -112,7 +115,7 @@ public class ChildPathAssociationItemProvider extends ChildPathItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_AssociationReference_valueDisplay_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_AssociationReference_valueDisplay_feature", "_UI_AssociationReference_type"),
-				 WafPackage.Literals.ASSOCIATION_REFERENCE__VALUE_DISPLAY,
+				 OrmPackage.Literals.ASSOCIATION_REFERENCE__VALUE_DISPLAY,
 				 true,
 				 false,
 				 true,
@@ -133,7 +136,7 @@ public class ChildPathAssociationItemProvider extends ChildPathItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(WafPackage.Literals.ASSOCIATION_REFERENCE__CHILD_FEATURE);
+			childrenFeatures.add(OrmPackage.Literals.ASSOCIATION_REFERENCE__CHILD_FEATURE);
 		}
 		return childrenFeatures;
 	}
@@ -212,13 +215,24 @@ public class ChildPathAssociationItemProvider extends ChildPathItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.ASSOCIATION_REFERENCE__CHILD_FEATURE,
+				(OrmPackage.Literals.ASSOCIATION_REFERENCE__CHILD_FEATURE,
 				 WafFactory.eINSTANCE.createChildPathAttribute()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.ASSOCIATION_REFERENCE__CHILD_FEATURE,
+				(OrmPackage.Literals.ASSOCIATION_REFERENCE__CHILD_FEATURE,
 				 WafFactory.eINSTANCE.createChildPathAssociation()));
+	}
+
+	/**
+	 * Return the resource locator for this item provider's resources.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ResourceLocator getResourceLocator() {
+		return WafEditPlugin.INSTANCE;
 	}
 
 }
