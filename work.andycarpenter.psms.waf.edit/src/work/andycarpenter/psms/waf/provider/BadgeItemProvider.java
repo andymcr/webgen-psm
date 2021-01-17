@@ -247,6 +247,11 @@ public class BadgeItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.Literals.BADGE__DISPLAY_WHEN,
+				 ExpressionFactory.eINSTANCE.createPredicateBooleanVariable()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.Literals.BADGE__DISPLAY_WHEN,
 				 ExpressionFactory.eINSTANCE.createPredicateBooleanOperator()));
 
 		newChildDescriptors.add

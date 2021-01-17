@@ -273,6 +273,29 @@ public class ExpressionItemProviderAdapterFactory extends ExpressionAdapterFacto
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.expression.PredicateBooleanVariable} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected PredicateBooleanVariableItemProvider predicateBooleanVariableItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link work.andycarpenter.psms.expression.PredicateBooleanVariable}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createPredicateBooleanVariableAdapter() {
+		if (predicateBooleanVariableItemProvider == null) {
+			predicateBooleanVariableItemProvider = new PredicateBooleanVariableItemProvider(this);
+		}
+
+		return predicateBooleanVariableItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.expression.PredicateBooleanOperator} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -590,6 +613,7 @@ public class ExpressionItemProviderAdapterFactory extends ExpressionAdapterFacto
 		if (currentTimeItemProvider != null) currentTimeItemProvider.dispose();
 		if (currentUserItemProvider != null) currentUserItemProvider.dispose();
 		if (functionCallItemProvider != null) functionCallItemProvider.dispose();
+		if (predicateBooleanVariableItemProvider != null) predicateBooleanVariableItemProvider.dispose();
 		if (predicateBooleanOperatorItemProvider != null) predicateBooleanOperatorItemProvider.dispose();
 		if (predicateEqualityOperatorItemProvider != null) predicateEqualityOperatorItemProvider.dispose();
 		if (predicateComparisonOperatorItemProvider != null) predicateComparisonOperatorItemProvider.dispose();

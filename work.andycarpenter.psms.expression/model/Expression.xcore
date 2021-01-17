@@ -68,6 +68,10 @@ abstract class Predicate extends Expression {
 	boolean negated = "false"
 }
 
+class PredicateBooleanVariable extends Predicate {
+	contains Variable feature
+}
+
 class PredicateBooleanOperator extends Predicate {
 	contains Predicate[+] expressions
 	BooleanOperator[1] operator = "And"

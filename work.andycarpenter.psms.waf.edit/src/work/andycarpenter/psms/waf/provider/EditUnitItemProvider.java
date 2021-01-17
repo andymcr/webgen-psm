@@ -275,6 +275,11 @@ public class EditUnitItemProvider extends SingletonUnitItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.Literals.EDIT_UNIT__DISABLE_WHEN,
+				 ExpressionFactory.eINSTANCE.createPredicateBooleanVariable()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.Literals.EDIT_UNIT__DISABLE_WHEN,
 				 ExpressionFactory.eINSTANCE.createPredicateBooleanOperator()));
 
 		newChildDescriptors.add

@@ -247,6 +247,11 @@ public class FunctionCallItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(ExpressionPackage.Literals.FUNCTION_CALL__ACTUALS,
+				 ExpressionFactory.eINSTANCE.createPredicateBooleanVariable()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ExpressionPackage.Literals.FUNCTION_CALL__ACTUALS,
 				 ExpressionFactory.eINSTANCE.createPredicateBooleanOperator()));
 
 		newChildDescriptors.add

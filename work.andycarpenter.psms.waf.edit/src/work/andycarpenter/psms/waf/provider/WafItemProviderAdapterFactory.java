@@ -33,6 +33,7 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 
 import work.andycarpenter.psms.expression.ExpressionPackage;
 import work.andycarpenter.psms.expression.FunctionCall;
+import work.andycarpenter.psms.expression.PredicateBooleanVariable;
 import work.andycarpenter.psms.expression.PredicateComparisonOperator;
 import work.andycarpenter.psms.expression.PredicateEqualityOperator;
 import work.andycarpenter.psms.expression.PredicateInOperator;
@@ -1634,6 +1635,30 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 				newChildDescriptors.add
 					(createChildParameter
 						(ExpressionPackage.Literals.FUNCTION_CALL__ACTUALS,
+						 WafFactory.eINSTANCE.createFeaturePathLabel()));
+
+				return null;
+			}
+			/**
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			@Override
+			public Object casePredicateBooleanVariable(PredicateBooleanVariable object) {
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_BOOLEAN_VARIABLE__FEATURE,
+						 WafFactory.eINSTANCE.createFeaturePathAttribute()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_BOOLEAN_VARIABLE__FEATURE,
+						 WafFactory.eINSTANCE.createFeaturePathAssociation()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_BOOLEAN_VARIABLE__FEATURE,
 						 WafFactory.eINSTANCE.createFeaturePathLabel()));
 
 				return null;

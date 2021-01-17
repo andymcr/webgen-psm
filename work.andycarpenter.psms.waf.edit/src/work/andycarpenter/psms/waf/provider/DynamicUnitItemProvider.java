@@ -359,6 +359,11 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.Literals.DYNAMIC_UNIT__HIDE_WHEN,
+				 ExpressionFactory.eINSTANCE.createPredicateBooleanVariable()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.Literals.DYNAMIC_UNIT__HIDE_WHEN,
 				 ExpressionFactory.eINSTANCE.createPredicateBooleanOperator()));
 
 		newChildDescriptors.add
