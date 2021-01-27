@@ -1,0 +1,93 @@
+@Ecore(
+	nsURI="http://andycarpenter.work/psm/Base",
+	nsPrefix="base"
+)
+@GenModel(
+	editDirectory="/work.andycarpenter.psms.base.edit/src",
+	editPluginID="work.andycarpenter.psms.base.edit",
+	childCreationExtenders="true")
+package work.andycarpenter.psms.base
+
+import work.andycarpenter.psms.expression.Expression
+import work.andycarpenter.psms.expression.Literal
+import work.andycarpenter.psms.expression.Variable
+
+
+class NullLiteral extends Literal {
+}
+
+class BooleanLiteral extends Literal {
+	Boolean[1] value
+}
+
+class IntegerLiteral extends Literal {
+	int[1] value
+}
+
+class StringLiteral extends Literal {
+	String[1] value
+}
+
+class TimeLiteral extends Literal {
+	String[1] value
+}
+
+
+class CurrentTime extends Variable {
+}
+
+class CurrentUser extends Variable {
+}
+
+
+abstract class NamedElement {
+	String[1] name
+}
+
+abstract class NamedDisplayElement extends NamedElement {
+	String[1] displayLabel
+}
+
+
+interface ConstantContainer {
+	contains Constant[] constants opposite definedBy
+}
+
+class Constant extends NamedElement {
+	refers ConstantContainer definedBy opposite constants
+	contains Expression value
+}
+
+class ConstantReference extends Variable { 
+	refers Constant[1] value 
+} 
+ 
+
+abstract class Classifier extends NamedDisplayElement {
+}
+
+class DataType extends Classifier {
+}
+
+class EnumerationType extends DataType {
+	contains EnumerationLiteral[] enumerations
+}
+
+class EnumerationLiteral extends NamedDisplayElement {
+}
+
+
+interface FormalParameterList {
+	contains FormalParameter[] parameters
+}
+
+class FormalParameter extends NamedElement {
+	refers DataType dataType
+	String defaultValue
+	String placeholder
+	String description
+}
+
+class ParameterReference extends Variable { 
+	refers FormalParameter[1] parameter 
+} 
