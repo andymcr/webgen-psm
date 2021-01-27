@@ -1,5 +1,5 @@
 @Ecore(
-	nsURI="http://cs.manchester.ac.uk/mdsd/Service",
+	nsURI="http://andycarpenter.work/psm/service",
 	nsPrefix="service"
 )
 @GenModel(
@@ -9,92 +9,25 @@
 	editorDirectory="/work.andycarpenter.psms.service.editor/src")
 package work.andycarpenter.psms.service
 
-import work.andycarpenter.psms.expression.Expression
-import work.andycarpenter.psms.expression.Predicate
-import work.andycarpenter.psms.expression.Variable
-import work.andycarpenter.psms.orm.Association
-import work.andycarpenter.psms.orm.DataType
+import work.andycarpenter.psms.base.ConstantContainer
+import work.andycarpenter.psms.base.FormalParameterList
+import work.andycarpenter.psms.base.NamedElement
 import work.andycarpenter.psms.orm.Entity
-import work.andycarpenter.psms.orm.Feature
-import work.andycarpenter.psms.orm.NamedDisplayElement
-import work.andycarpenter.psms.orm.NamedElement
 import work.andycarpenter.psms.orm.OrmModel
+import work.andycarpenter.psms.orm.Repository
 
-
-interface FormalParameterList {
-	contains FormalParameter[] parameters
-}
-
-class FormalParameter extends NamedElement {
-	refers DataType dataType
-	String defaultValue
-	String placeholder
-	String description
-}
 
 class ServiceModel {
 	refers OrmModel[1] persistence
 	contains Service[] services opposite partOf
 }
 
-class Service extends NamedElement {
+class Service extends NamedElement, ConstantContainer {
 	refers ServiceModel[1] partOf opposite services
-	contains Constant[] constants opposite definedBy
 	refers Entity serves
-	contains Selection[] selections opposite partOf
-	refers Selection findAll
-	refers Selection findOne
 	contains BusinessOperation[] operations opposite partOf
-	refers Service[] uses
+	refers Repository[] uses
 }
-
-
-class Constant extends NamedElement {
-	container Service[1] definedBy opposite constants
-	contains Expression value
-}
-
-class Selection extends NamedElement, FormalParameterList {
-	container Service partOf opposite selections
-	boolean distinct
-	refers Feature[] fields
-	refers Association[] joins
-	contains Predicate condition
-	contains Filter[] filters opposite selection
-	contains Order[] ordering
-	int limit = "0"
-	refers Feature[] grouping
-	refers Association[] selectPath
-	String methodName
-}
-
-class Filter extends NamedDisplayElement, FormalParameterList {
-	refers Selection selection opposite filters
-	contains Predicate condition
-	String methodName
-}
-abstract class Order {
-	contains Variable[1] path
-}
-
-class Asc extends Order {
-}
-
-class Desc extends Order {
-}
-
-
-class ConstantReference extends Variable { 
-	refers Constant[1] value 
-} 
- 
-class FeatureReference extends Variable { 
-	refers Feature[1] feature 
-} 
- 
-class ParameterReference extends Variable { 
-	refers FormalParameter[1] parameter 
-} 
 
 class BusinessOperation extends NamedElement, FormalParameterList {
 	container Service[1] partOf opposite operations

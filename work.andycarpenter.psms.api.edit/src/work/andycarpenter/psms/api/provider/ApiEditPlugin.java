@@ -6,11 +6,10 @@ import org.eclipse.emf.common.EMFPlugin;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 
+import work.andycarpenter.psms.base.provider.BaseEditPlugin;
 import work.andycarpenter.psms.expression.provider.ExpressionEditPlugin;
 
 import work.andycarpenter.psms.orm.provider.OrmEditPlugin;
-
-import work.andycarpenter.psms.service.provider.ServiceEditPlugin;
 
 /**
  * This is the central singleton for the Api edit plugin.
@@ -44,8 +43,8 @@ public final class ApiEditPlugin extends EMFPlugin {
 	public ApiEditPlugin() {
 		super
 		  (new ResourceLocator [] {
-		     ServiceEditPlugin.INSTANCE,
 		     OrmEditPlugin.INSTANCE,
+		     BaseEditPlugin.INSTANCE,
 		     ExpressionEditPlugin.INSTANCE,
 		   });
 	}

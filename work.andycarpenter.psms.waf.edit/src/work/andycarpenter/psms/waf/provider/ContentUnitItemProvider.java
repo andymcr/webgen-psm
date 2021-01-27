@@ -17,9 +17,7 @@ import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
-import work.andycarpenter.psms.orm.provider.NamedDisplayElementItemProvider;
-
+import work.andycarpenter.psms.base.provider.NamedDisplayElementItemProvider;
 import work.andycarpenter.psms.waf.ContentUnit;
 import work.andycarpenter.psms.waf.WafFactory;
 import work.andycarpenter.psms.waf.WafPackage;

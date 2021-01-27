@@ -9,7 +9,7 @@
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <!-- @generated Service -->
       <factory
-            uri="http://cs.manchester.ac.uk/mdsd/Service"
+            uri="http://andycarpenter.work/psm/service"
             class="work.andycarpenter.psms.service.provider.ServiceItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
@@ -17,16 +17,6 @@
                org.eclipse.emf.edit.provider.ITreeItemContentProvider
                org.eclipse.emf.edit.provider.IItemLabelProvider
                org.eclipse.emf.edit.provider.IItemPropertySource"/>
-   </extension>
-
-   <extension point="org.eclipse.emf.edit.childCreationExtenders">
-      <!-- @generated Service -->
-      <extender
-            uri="http://cs.manchester.ac.uk/mdsd/ObjectRelationalMapping"
-            class="work.andycarpenter.psms.service.provider.ServiceItemProviderAdapterFactory$OrmChildCreationExtender"/>
-      <extender
-            uri="http://cs.manchester.ac.uk/mdsd/Expression"
-            class="work.andycarpenter.psms.service.provider.ServiceItemProviderAdapterFactory$ExpressionChildCreationExtender"/>
    </extension>
 
 </plugin>

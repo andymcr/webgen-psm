@@ -10,18 +10,15 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
-import work.andycarpenter.psms.orm.provider.NamedElementItemProvider;
-
+import work.andycarpenter.psms.base.BaseFactory;
+import work.andycarpenter.psms.base.BasePackage;
+import work.andycarpenter.psms.base.provider.NamedElementItemProvider;
 import work.andycarpenter.psms.service.BusinessOperation;
-import work.andycarpenter.psms.service.ServiceFactory;
 import work.andycarpenter.psms.service.ServicePackage;
 
 /**
@@ -160,7 +157,7 @@ public class BusinessOperationItemProvider extends NamedElementItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ServicePackage.Literals.FORMAL_PARAMETER_LIST__PARAMETERS);
+			childrenFeatures.add(BasePackage.Literals.FORMAL_PARAMETER_LIST__PARAMETERS);
 		}
 		return childrenFeatures;
 	}
@@ -240,8 +237,8 @@ public class BusinessOperationItemProvider extends NamedElementItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ServicePackage.Literals.FORMAL_PARAMETER_LIST__PARAMETERS,
-				 ServiceFactory.eINSTANCE.createFormalParameter()));
+				(BasePackage.Literals.FORMAL_PARAMETER_LIST__PARAMETERS,
+				 BaseFactory.eINSTANCE.createFormalParameter()));
 	}
 
 	/**

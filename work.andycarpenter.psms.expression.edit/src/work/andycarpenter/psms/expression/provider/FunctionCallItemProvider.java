@@ -207,41 +207,6 @@ public class FunctionCallItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(ExpressionPackage.Literals.FUNCTION_CALL__ACTUALS,
-				 ExpressionFactory.eINSTANCE.createNullLiteral()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ExpressionPackage.Literals.FUNCTION_CALL__ACTUALS,
-				 ExpressionFactory.eINSTANCE.createBooleanLiteral()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ExpressionPackage.Literals.FUNCTION_CALL__ACTUALS,
-				 ExpressionFactory.eINSTANCE.createIntegerLiteral()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ExpressionPackage.Literals.FUNCTION_CALL__ACTUALS,
-				 ExpressionFactory.eINSTANCE.createStringLiteral()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ExpressionPackage.Literals.FUNCTION_CALL__ACTUALS,
-				 ExpressionFactory.eINSTANCE.createTimeLiteral()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ExpressionPackage.Literals.FUNCTION_CALL__ACTUALS,
-				 ExpressionFactory.eINSTANCE.createCurrentTime()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ExpressionPackage.Literals.FUNCTION_CALL__ACTUALS,
-				 ExpressionFactory.eINSTANCE.createCurrentUser()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ExpressionPackage.Literals.FUNCTION_CALL__ACTUALS,
 				 ExpressionFactory.eINSTANCE.createFunctionCall()));
 
 		newChildDescriptors.add

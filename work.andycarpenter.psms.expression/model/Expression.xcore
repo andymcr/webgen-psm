@@ -1,5 +1,5 @@
 @Ecore(
-	nsURI="http://cs.manchester.ac.uk/mdsd/Expression",
+	nsURI="http://andycarpenter.work/psm/Expression",
 	nsPrefix="expression"
 )
 @GenModel(
@@ -8,7 +8,6 @@
 	extensibleProviderFactory="true"
 )
 package work.andycarpenter.psms.expression
-
 
 enum BooleanOperator {
 	And
@@ -27,40 +26,12 @@ interface Expression {
 interface Literal extends Expression {
 }
 
-class NullLiteral extends Literal {
+interface Variable extends Expression {
 }
-
-class BooleanLiteral extends Literal {
-	Boolean[1] value
-}
-
-class IntegerLiteral extends Literal {
-	int[1] value
-}
-
-class StringLiteral extends Literal {
-	String[1] value
-}
-
-class TimeLiteral extends Literal {
-	String[1] value
-}
-
-
-class CurrentTime extends Expression {
-}
-
-class CurrentUser extends Expression {
-}
-
 
 class FunctionCall extends Expression {
 	String[1] name
 	contains Expression[*] actuals
-}
-
-
-interface Variable extends Expression {
 }
 
 

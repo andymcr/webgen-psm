@@ -9,12 +9,14 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+import work.andycarpenter.psms.base.provider.ClassifierItemProvider;
 import work.andycarpenter.psms.orm.Entity;
 import work.andycarpenter.psms.orm.OrmFactory;
 import work.andycarpenter.psms.orm.OrmPackage;
@@ -50,6 +52,7 @@ public class EntityItemProvider extends ClassifierItemProvider {
 			addPartOfPropertyDescriptor(object);
 			addSingletonNamePropertyDescriptor(object);
 			addPluralisedNamePropertyDescriptor(object);
+			addRepositoryPropertyDescriptor(object);
 			addKeysPropertyDescriptor(object);
 			addTableNamePropertyDescriptor(object);
 			addAutoKeyNamePropertyDescriptor(object);
@@ -126,6 +129,28 @@ public class EntityItemProvider extends ClassifierItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Repository feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRepositoryPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Entity_repository_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Entity_repository_feature", "_UI_Entity_type"),
+				 OrmPackage.Literals.ENTITY__REPOSITORY,
+				 true,
+				 false,
+				 true,
+				 null,
 				 null,
 				 null));
 	}
@@ -503,6 +528,17 @@ public class EntityItemProvider extends ClassifierItemProvider {
 			(createChildParameter
 				(OrmPackage.Literals.ENTITY__LABELS,
 				 OrmFactory.eINSTANCE.createModelLabel()));
+	}
+
+	/**
+	 * Return the resource locator for this item provider's resources.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ResourceLocator getResourceLocator() {
+		return OrmEditPlugin.INSTANCE;
 	}
 
 }

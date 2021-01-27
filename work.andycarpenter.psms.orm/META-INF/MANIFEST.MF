@@ -18,6 +18,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.ocl.examples.codegen;visibility:=reexport,
  org.eclipse.ocl.ecore;visibility:=reexport,
  org.eclipse.xtext.xbase.lib,
- work.andycarpenter.psms.expression;visibility:=reexport
+ work.andycarpenter.psms.expression;bundle-version="1.0.0";visibility:=reexport,
+ work.andycarpenter.psms.base;bundle-version="1.0.0";visibility:=reexport
 Bundle-ActivationPolicy: lazy
 

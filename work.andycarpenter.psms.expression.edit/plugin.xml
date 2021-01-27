@@ -9,7 +9,7 @@
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <!-- @generated Expression -->
       <factory
-            uri="http://cs.manchester.ac.uk/mdsd/Expression"
+            uri="http://andycarpenter.work/psm/Expression"
             class="work.andycarpenter.psms.expression.provider.ExpressionItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider

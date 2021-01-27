@@ -9,13 +9,14 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EStructuralFeature;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
+import work.andycarpenter.psms.base.provider.NamedElementItemProvider;
 import work.andycarpenter.psms.orm.ModelLabel;
 import work.andycarpenter.psms.orm.OrmFactory;
 import work.andycarpenter.psms.orm.OrmPackage;
@@ -220,6 +221,17 @@ public class ModelLabelItemProvider extends NamedElementItemProvider {
 			(createChildParameter
 				(OrmPackage.Literals.MODEL_LABEL__FEATURES,
 				 OrmFactory.eINSTANCE.createModelLabelAssociation()));
+	}
+
+	/**
+	 * Return the resource locator for this item provider's resources.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ResourceLocator getResourceLocator() {
+		return OrmEditPlugin.INSTANCE;
 	}
 
 }

@@ -16,9 +16,9 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
-import work.andycarpenter.psms.orm.provider.NamedElementItemProvider;
-
+import work.andycarpenter.psms.base.BaseFactory;
+import work.andycarpenter.psms.base.BasePackage;
+import work.andycarpenter.psms.base.provider.NamedElementItemProvider;
 import work.andycarpenter.psms.service.Service;
 import work.andycarpenter.psms.service.ServiceFactory;
 import work.andycarpenter.psms.service.ServicePackage;
@@ -53,8 +53,6 @@ public class ServiceItemProvider extends NamedElementItemProvider {
 
 			addPartOfPropertyDescriptor(object);
 			addServesPropertyDescriptor(object);
-			addFindAllPropertyDescriptor(object);
-			addFindOnePropertyDescriptor(object);
 			addUsesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -105,50 +103,6 @@ public class ServiceItemProvider extends NamedElementItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Find All feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addFindAllPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Service_findAll_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Service_findAll_feature", "_UI_Service_type"),
-				 ServicePackage.Literals.SERVICE__FIND_ALL,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Find One feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addFindOnePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Service_findOne_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Service_findOne_feature", "_UI_Service_type"),
-				 ServicePackage.Literals.SERVICE__FIND_ONE,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Uses feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -182,8 +136,7 @@ public class ServiceItemProvider extends NamedElementItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ServicePackage.Literals.SERVICE__CONSTANTS);
-			childrenFeatures.add(ServicePackage.Literals.SERVICE__SELECTIONS);
+			childrenFeatures.add(BasePackage.Literals.CONSTANT_CONTAINER__CONSTANTS);
 			childrenFeatures.add(ServicePackage.Literals.SERVICE__OPERATIONS);
 		}
 		return childrenFeatures;
@@ -241,7 +194,6 @@ public class ServiceItemProvider extends NamedElementItemProvider {
 
 		switch (notification.getFeatureID(Service.class)) {
 			case ServicePackage.SERVICE__CONSTANTS:
-			case ServicePackage.SERVICE__SELECTIONS:
 			case ServicePackage.SERVICE__OPERATIONS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
@@ -262,13 +214,8 @@ public class ServiceItemProvider extends NamedElementItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ServicePackage.Literals.SERVICE__CONSTANTS,
-				 ServiceFactory.eINSTANCE.createConstant()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ServicePackage.Literals.SERVICE__SELECTIONS,
-				 ServiceFactory.eINSTANCE.createSelection()));
+				(BasePackage.Literals.CONSTANT_CONTAINER__CONSTANTS,
+				 BaseFactory.eINSTANCE.createConstant()));
 
 		newChildDescriptors.add
 			(createChildParameter

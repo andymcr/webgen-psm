@@ -31,6 +31,9 @@ import org.eclipse.emf.edit.provider.INotifyChangedListener;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 
+import work.andycarpenter.psms.base.BasePackage;
+import work.andycarpenter.psms.base.Constant;
+import work.andycarpenter.psms.base.util.BaseSwitch;
 import work.andycarpenter.psms.expression.ExpressionPackage;
 import work.andycarpenter.psms.expression.FunctionCall;
 import work.andycarpenter.psms.expression.PredicateBooleanVariable;
@@ -46,16 +49,10 @@ import work.andycarpenter.psms.expression.util.ExpressionSwitch;
 
 import work.andycarpenter.psms.orm.AssociationReference;
 import work.andycarpenter.psms.orm.Attribute;
+import work.andycarpenter.psms.orm.Order;
 import work.andycarpenter.psms.orm.OrmPackage;
 
 import work.andycarpenter.psms.orm.util.OrmSwitch;
-
-import work.andycarpenter.psms.service.Constant;
-import work.andycarpenter.psms.service.Order;
-import work.andycarpenter.psms.service.ServicePackage;
-
-import work.andycarpenter.psms.service.util.ServiceSwitch;
-
 import work.andycarpenter.psms.waf.WafFactory;
 
 import work.andycarpenter.psms.waf.util.WafAdapterFactory;
@@ -1426,6 +1423,30 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 			 * <!-- end-user-doc -->
 			 * @generated
 			 */
+			@Override
+			public Object caseOrder(Order object) {
+				newChildDescriptors.add
+					(createChildParameter
+						(OrmPackage.Literals.ORDER__PATH,
+						 WafFactory.eINSTANCE.createFeaturePathAttribute()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(OrmPackage.Literals.ORDER__PATH,
+						 WafFactory.eINSTANCE.createFeaturePathAssociation()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(OrmPackage.Literals.ORDER__PATH,
+						 WafFactory.eINSTANCE.createFeaturePathLabel()));
+
+				return null;
+			}
+			/**
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
 			protected CommandParameter createChildParameter(Object feature, Object child) {
 				return new CommandParameter(null, feature, child);
 			}
@@ -1454,19 +1475,19 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 	}
 
 	/**
-	 * A child creation extender for the {@link ServicePackage}.
+	 * A child creation extender for the {@link BasePackage}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static class ServiceChildCreationExtender implements IChildCreationExtender {
+	public static class BaseChildCreationExtender implements IChildCreationExtender {
 		/**
 		 * The switch for creating child descriptors specific to each extended class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		protected static class CreationSwitch extends ServiceSwitch<Object> {
+		protected static class CreationSwitch extends BaseSwitch<Object> {
 			/**
 			 * The child descriptors being populated.
 			 * <!-- begin-user-doc -->
@@ -1502,42 +1523,17 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 			public Object caseConstant(Constant object) {
 				newChildDescriptors.add
 					(createChildParameter
-						(ServicePackage.Literals.CONSTANT__VALUE,
+						(BasePackage.Literals.CONSTANT__VALUE,
 						 WafFactory.eINSTANCE.createFeaturePathAttribute()));
 
 				newChildDescriptors.add
 					(createChildParameter
-						(ServicePackage.Literals.CONSTANT__VALUE,
+						(BasePackage.Literals.CONSTANT__VALUE,
 						 WafFactory.eINSTANCE.createFeaturePathAssociation()));
 
 				newChildDescriptors.add
 					(createChildParameter
-						(ServicePackage.Literals.CONSTANT__VALUE,
-						 WafFactory.eINSTANCE.createFeaturePathLabel()));
-
-				return null;
-			}
- 
-			/**
-			 * <!-- begin-user-doc -->
-			 * <!-- end-user-doc -->
-			 * @generated
-			 */
-			@Override
-			public Object caseOrder(Order object) {
-				newChildDescriptors.add
-					(createChildParameter
-						(ServicePackage.Literals.ORDER__PATH,
-						 WafFactory.eINSTANCE.createFeaturePathAttribute()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(ServicePackage.Literals.ORDER__PATH,
-						 WafFactory.eINSTANCE.createFeaturePathAssociation()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(ServicePackage.Literals.ORDER__PATH,
+						(BasePackage.Literals.CONSTANT__VALUE,
 						 WafFactory.eINSTANCE.createFeaturePathLabel()));
 
 				return null;

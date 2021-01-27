@@ -159,8 +159,8 @@ import work.andycarpenter.psms.service.provider.ServiceItemProviderAdapterFactor
 
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
 
+import work.andycarpenter.psms.base.provider.BaseItemProviderAdapterFactory;
 import work.andycarpenter.psms.expression.provider.ExpressionItemProviderAdapterFactory;
-
 import work.andycarpenter.psms.orm.provider.OrmItemProviderAdapterFactory;
 
 
@@ -706,6 +706,7 @@ public class ServiceEditor
 		adapterFactory.addAdapterFactory(new ResourceItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ServiceItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new OrmItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new BaseItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ExpressionItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ReflectiveItemProviderAdapterFactory());
 

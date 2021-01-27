@@ -8,8 +8,8 @@ import org.eclipse.emf.common.ui.EclipseUIPlugin;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 
+import work.andycarpenter.psms.base.provider.BaseEditPlugin;
 import work.andycarpenter.psms.expression.provider.ExpressionEditPlugin;
-
 import work.andycarpenter.psms.orm.provider.OrmEditPlugin;
 
 /**
@@ -45,6 +45,7 @@ public final class ServiceEditorPlugin extends EMFPlugin {
 		super
 			(new ResourceLocator [] {
 				OrmEditPlugin.INSTANCE,
+				BaseEditPlugin.INSTANCE,
 				ExpressionEditPlugin.INSTANCE,
 			});
 	}

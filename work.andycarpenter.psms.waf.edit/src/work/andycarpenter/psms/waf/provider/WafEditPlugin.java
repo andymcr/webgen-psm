@@ -8,6 +8,7 @@ import org.eclipse.emf.common.util.ResourceLocator;
 
 import work.andycarpenter.psms.api.provider.ApiEditPlugin;
 
+import work.andycarpenter.psms.base.provider.BaseEditPlugin;
 import work.andycarpenter.psms.expression.provider.ExpressionEditPlugin;
 
 import work.andycarpenter.psms.orm.provider.OrmEditPlugin;
@@ -49,6 +50,7 @@ public final class WafEditPlugin extends EMFPlugin {
 		     OrmEditPlugin.INSTANCE,
 		     ServiceEditPlugin.INSTANCE,
 		     ApiEditPlugin.INSTANCE,
+		     BaseEditPlugin.INSTANCE,
 		     ExpressionEditPlugin.INSTANCE,
 		   });
 	}

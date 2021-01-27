@@ -23,7 +23,7 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
+import work.andycarpenter.psms.base.BaseFactory;
 import work.andycarpenter.psms.orm.DatabaseTechnologies;
 import work.andycarpenter.psms.orm.OrmFactory;
 import work.andycarpenter.psms.orm.OrmModel;
@@ -198,6 +198,7 @@ public class OrmModelItemProvider
 			childrenFeatures.add(OrmPackage.Literals.ORM_MODEL__SERIALIZATION_GROUPS);
 			childrenFeatures.add(OrmPackage.Literals.ORM_MODEL__DATA_TYPES);
 			childrenFeatures.add(OrmPackage.Literals.ORM_MODEL__ENTITIES);
+			childrenFeatures.add(OrmPackage.Literals.ORM_MODEL__REPOSITORIES);
 			childrenFeatures.add(OrmPackage.Literals.ORM_MODEL__COLLECTION_TYPES);
 		}
 		return childrenFeatures;
@@ -265,6 +266,7 @@ public class OrmModelItemProvider
 			case OrmPackage.ORM_MODEL__SERIALIZATION_GROUPS:
 			case OrmPackage.ORM_MODEL__DATA_TYPES:
 			case OrmPackage.ORM_MODEL__ENTITIES:
+			case OrmPackage.ORM_MODEL__REPOSITORIES:
 			case OrmPackage.ORM_MODEL__COLLECTION_TYPES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
@@ -291,17 +293,22 @@ public class OrmModelItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(OrmPackage.Literals.ORM_MODEL__DATA_TYPES,
-				 OrmFactory.eINSTANCE.createDataType()));
+				 BaseFactory.eINSTANCE.createDataType()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(OrmPackage.Literals.ORM_MODEL__DATA_TYPES,
-				 OrmFactory.eINSTANCE.createEnumerationType()));
+				 BaseFactory.eINSTANCE.createEnumerationType()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(OrmPackage.Literals.ORM_MODEL__ENTITIES,
 				 OrmFactory.eINSTANCE.createEntity()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OrmPackage.Literals.ORM_MODEL__REPOSITORIES,
+				 OrmFactory.eINSTANCE.createRepository()));
 
 		newChildDescriptors.add
 			(createChildParameter

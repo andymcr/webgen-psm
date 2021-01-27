@@ -8,13 +8,11 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
-import work.andycarpenter.psms.orm.OrmPackage;
+import work.andycarpenter.psms.base.BasePackage;
 import work.andycarpenter.psms.waf.EditStaticTextMenuEntry;
 import work.andycarpenter.psms.waf.WafPackage;
 
@@ -65,7 +63,7 @@ public class EditStaticTextMenuEntryItemProvider extends MenuEntryItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_NamedElement_name_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_NamedElement_name_feature", "_UI_NamedElement_type"),
-				 OrmPackage.Literals.NAMED_ELEMENT__NAME,
+				 BasePackage.Literals.NAMED_ELEMENT__NAME,
 				 true,
 				 false,
 				 false,
@@ -87,7 +85,7 @@ public class EditStaticTextMenuEntryItemProvider extends MenuEntryItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_NamedDisplayElement_displayLabel_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_NamedDisplayElement_displayLabel_feature", "_UI_NamedDisplayElement_type"),
-				 OrmPackage.Literals.NAMED_DISPLAY_ELEMENT__DISPLAY_LABEL,
+				 BasePackage.Literals.NAMED_DISPLAY_ELEMENT__DISPLAY_LABEL,
 				 true,
 				 false,
 				 false,

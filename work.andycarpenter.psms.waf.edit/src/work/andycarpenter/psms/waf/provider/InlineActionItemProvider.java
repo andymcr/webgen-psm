@@ -18,10 +18,8 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import work.andycarpenter.psms.base.provider.NamedDisplayElementItemProvider;
 import work.andycarpenter.psms.expression.ExpressionFactory;
-
-import work.andycarpenter.psms.orm.provider.NamedDisplayElementItemProvider;
-
 import work.andycarpenter.psms.waf.InlineAction;
 import work.andycarpenter.psms.waf.WafPackage;
 

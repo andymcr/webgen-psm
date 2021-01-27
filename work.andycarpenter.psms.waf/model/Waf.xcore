@@ -1,5 +1,5 @@
 @Ecore(
-	nsURI="http://cs.manchester.ac.uk/mdsd/WebApplicationFramework",
+	nsURI="http://andycarpenter.work/psm/WebApplicationFramework",
 	nsPrefix="waf"
 )
 @GenModel(
@@ -9,26 +9,27 @@
 	editorDirectory="/work.andycarpenter.psms.waf.editor/src")
 package work.andycarpenter.psms.waf
 
+import work.andycarpenter.psms.base.DataType
+import work.andycarpenter.psms.base.FormalParameter
+import work.andycarpenter.psms.base.NamedDisplayElement
+import work.andycarpenter.psms.base.NamedElement
 import work.andycarpenter.psms.expression.Expression
 import work.andycarpenter.psms.expression.Predicate
 import work.andycarpenter.psms.expression.Variable
 import work.andycarpenter.psms.orm.AssociationReference
 import work.andycarpenter.psms.orm.Attribute
-import work.andycarpenter.psms.orm.DataType
 import work.andycarpenter.psms.orm.DateDetails
 import work.andycarpenter.psms.orm.Entity
 import work.andycarpenter.psms.orm.FeatureChildPath
+import work.andycarpenter.psms.orm.Filter
 import work.andycarpenter.psms.orm.Label
 import work.andycarpenter.psms.orm.ModelLabel
-import work.andycarpenter.psms.orm.NamedDisplayElement
-import work.andycarpenter.psms.orm.NamedElement
 import work.andycarpenter.psms.orm.OrmModel
+import work.andycarpenter.psms.orm.Repository
+import work.andycarpenter.psms.orm.Selection
 import work.andycarpenter.psms.orm.SingletonLocation
 import work.andycarpenter.psms.api.API
 import work.andycarpenter.psms.service.BusinessOperation
-import work.andycarpenter.psms.service.Filter
-import work.andycarpenter.psms.service.FormalParameter
-import work.andycarpenter.psms.service.Selection
 import work.andycarpenter.psms.service.Service
 import work.andycarpenter.psms.service.ServiceModel
 
@@ -223,6 +224,7 @@ class StaticUnit extends ContentUnit {
 
 abstract class DynamicUnit extends ContentUnit {
 	contains UnitField[] displayFields opposite displayedOn
+	refers Repository[] repositoriesUsed
 	refers Service[] servicesUsed
 	contains Predicate hideWhen
 	String messageWhenHidden
@@ -384,7 +386,7 @@ class CollectionUnit extends DynamicUnit, SelectableUnit {
 	refers Selection selection
 	boolean omitContainerLoad
 	refers Entity containerType
-	refers Service containerService
+	refers Repository containerRepository
 	refers Selection findContainerSelection
 	refers Selection findElementSelection
 	refers Filter filter

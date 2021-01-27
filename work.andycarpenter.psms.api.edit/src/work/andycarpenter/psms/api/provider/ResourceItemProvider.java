@@ -64,7 +64,7 @@ public class ResourceItemProvider
 			super.getPropertyDescriptors(object);
 
 			addParentResourcePropertyDescriptor(object);
-			addServicePropertyDescriptor(object);
+			addRepositoryPropertyDescriptor(object);
 			addNamePropertyDescriptor(object);
 			addUriElementPropertyDescriptor(object);
 			addEnableDefaultGetOnePropertyDescriptor(object);
@@ -99,19 +99,19 @@ public class ResourceItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Service feature.
+	 * This adds a property descriptor for the Repository feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addServicePropertyDescriptor(Object object) {
+	protected void addRepositoryPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Resource_service_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Resource_service_feature", "_UI_Resource_type"),
-				 ApiPackage.Literals.RESOURCE__SERVICE,
+				 getString("_UI_Resource_repository_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Resource_repository_feature", "_UI_Resource_type"),
+				 ApiPackage.Literals.RESOURCE__REPOSITORY,
 				 true,
 				 false,
 				 true,

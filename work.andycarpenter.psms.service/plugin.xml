@@ -9,7 +9,7 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated Waf -->
       <package
-            uri="http://cs.manchester.ac.uk/mdsd/service"
+            uri="http://andycarpenter.work/psm/service"
             class="work.andycarpenter.psms.service.ServicePackage"
             genModel="model/Service.xcore"/>
    </extension>

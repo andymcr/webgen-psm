@@ -1,5 +1,5 @@
 @Ecore(
-	nsURI="http://cs.manchester.ac.uk/mdsd/ObjectRelationalMapping",
+	nsURI="http://andycarpenter.work/psm/ObjectRelationalMapping",
 	nsPrefix="orm"
 )
 @Ecore(
@@ -12,14 +12,24 @@
 	complianceLevel="6.0")
 package work.andycarpenter.psms.orm
 
+import work.andycarpenter.psms.base.Classifier
+import work.andycarpenter.psms.base.ConstantContainer
+import work.andycarpenter.psms.base.DataType
+import work.andycarpenter.psms.base.FormalParameterList
+import work.andycarpenter.psms.base.NamedDisplayElement
+import work.andycarpenter.psms.base.NamedElement
 import work.andycarpenter.psms.expression.Expression
+import work.andycarpenter.psms.expression.Predicate
+import work.andycarpenter.psms.expression.Variable
 
 annotation "http://www.eclipse.org/emf/2002/Ecore/OCL" as OCL
+
 
 class OrmModel {
 	contains SerializationGroup[] serializationGroups
 	contains DataType[] dataTypes
 	contains Entity[] entities opposite partOf
+	contains Repository[] repositories opposite partOf
 	contains CollectionType[] collectionTypes
 	DatabaseTechnologies databaseTechnology = "MySql"
 	OrmTechnologies ormTechnology
@@ -53,17 +63,6 @@ enum OrmTechnologies {
 	DoctrineODM = 5
 }
 
-abstract class NamedElement {
-	String[1] name
-}
-
-abstract class NamedDisplayElement extends NamedElement {
-	String[1] displayLabel
-}
-
-abstract class Classifier extends NamedDisplayElement {
-}
-
 enum CollectionTypes {
 	Bag
 	List
@@ -82,21 +81,13 @@ class CollectionType extends NamedElement {
 class SerializationGroup extends NamedElement {
 }
 
-class DataType extends Classifier {
-}
-
-class EnumerationType extends DataType {
-	contains EnumerationLiteral[] enumerations
-}
-
-class EnumerationLiteral extends NamedDisplayElement {
-}
 
 
 class Entity extends Classifier {
 	container OrmModel[1] partOf opposite entities
 	String[1] singletonName
 	String[1] pluralisedName
+	refers Repository repository opposite serves
 	contains Feature[] features opposite partOf
 	refers Feature[] ^keys
 	String tableName
@@ -280,4 +271,48 @@ class AssociationKey {
 	container Association[1] keyFor opposite ^keys
 	refers Feature[1] sourceFeature
 	refers Feature targetFeature
+}
+
+
+class Repository extends NamedElement, ConstantContainer {
+	refers OrmModel[1] partOf opposite repositories
+	refers Entity serves opposite repository
+	contains Selection[] selections opposite partOf
+	refers Selection findAll
+	refers Selection findOne
+}
+
+class Selection extends NamedElement, FormalParameterList {
+	container Repository partOf opposite selections
+	boolean distinct
+	refers Feature[] fields
+	refers Association[] joins
+	contains Predicate condition
+	contains Filter[] filters opposite selection
+	contains Order[] ordering
+	int limit = "0"
+	refers Feature[] grouping
+	refers Association[] selectPath
+	String methodName
+}
+
+class FeatureReference extends Variable { 
+	refers Feature[1] feature 
+}
+
+
+abstract class Order {
+	contains Variable[1] path
+}
+
+class Asc extends Order {
+}
+
+class Desc extends Order {
+}
+
+class Filter extends NamedDisplayElement, FormalParameterList {
+	refers Selection selection opposite filters
+	contains Predicate condition
+	String methodName
 }

@@ -7,9 +7,9 @@
 	editPluginID="work.andycarpenter.psms.api.edit")
 package work.andycarpenter.psms.api
 
+import work.andycarpenter.psms.orm.Repository
 import work.andycarpenter.psms.orm.SerializationGroup
-import work.andycarpenter.psms.service.Selection
-import work.andycarpenter.psms.service.Service
+import work.andycarpenter.psms.orm.Selection
 
 
 class API {
@@ -18,10 +18,10 @@ class API {
 
 class Resource {
 	container Resource parentResource opposite childResources
-	refers Service[1] service
+	refers Repository[1] repository
 	derived String[1] name get {
-		if (service !== null)
-			service.name
+		if (repository !== null)
+			repository.name
 	}
 	String[1] uriElement
 	boolean enableDefaultGetOne = "true"

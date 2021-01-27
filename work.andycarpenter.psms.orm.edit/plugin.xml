@@ -18,4 +18,14 @@
                org.eclipse.emf.edit.provider.IItemPropertySource"/>
    </extension>
 
+   <extension point="org.eclipse.emf.edit.childCreationExtenders">
+      <!-- @generated Orm -->
+      <extender
+            uri="http://andycarpenter.work/psm/Base"
+            class="work.andycarpenter.psms.orm.provider.OrmItemProviderAdapterFactory$BaseChildCreationExtender"/>
+      <extender
+            uri="http://andycarpenter.work/psm/Expression"
+            class="work.andycarpenter.psms.orm.provider.OrmItemProviderAdapterFactory$ExpressionChildCreationExtender"/>
+   </extension>
+
 </plugin>
