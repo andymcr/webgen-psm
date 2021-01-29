@@ -24,7 +24,6 @@ class ServiceModel {
 
 class Service extends NamedElement, ConstantContainer {
 	refers ServiceModel[1] partOf opposite services
-	refers Entity serves
 	contains BusinessOperation[] operations opposite partOf
 	refers Repository[] uses
 }
