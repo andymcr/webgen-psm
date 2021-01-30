@@ -25,7 +25,8 @@ class ServiceModel {
 class Service extends NamedElement, ConstantContainer {
 	refers ServiceModel[1] partOf opposite services
 	contains BusinessOperation[] operations opposite partOf
-	refers Repository[] uses
+	refers Repository[] requires
+	refers Service[] uses
 }
 
 class BusinessOperation extends NamedElement, FormalParameterList {
