@@ -277,13 +277,13 @@ class AssociationKey {
 class Repository extends NamedElement, ConstantContainer {
 	refers OrmModel[1] partOf opposite repositories
 	refers Entity serves opposite repository
-	contains Selection[] selections opposite partOf
+	contains Selection[] selections opposite definedBy
 	refers Selection findAll
 	refers Selection findOne
 }
 
 class Selection extends NamedElement, FormalParameterList {
-	container Repository partOf opposite selections
+	container Repository definedBy opposite selections
 	boolean distinct
 	refers Feature[] fields
 	refers Association[] joins

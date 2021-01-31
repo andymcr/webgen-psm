@@ -53,7 +53,7 @@ public class SelectionItemProvider extends NamedElementItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addPartOfPropertyDescriptor(object);
+			addDefinedByPropertyDescriptor(object);
 			addDistinctPropertyDescriptor(object);
 			addFieldsPropertyDescriptor(object);
 			addJoinsPropertyDescriptor(object);
@@ -66,19 +66,19 @@ public class SelectionItemProvider extends NamedElementItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Part Of feature.
+	 * This adds a property descriptor for the Defined By feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addPartOfPropertyDescriptor(Object object) {
+	protected void addDefinedByPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Selection_partOf_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Selection_partOf_feature", "_UI_Selection_type"),
-				 OrmPackage.Literals.SELECTION__PART_OF,
+				 getString("_UI_Selection_definedBy_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Selection_definedBy_feature", "_UI_Selection_type"),
+				 OrmPackage.Literals.SELECTION__DEFINED_BY,
 				 true,
 				 false,
 				 true,
