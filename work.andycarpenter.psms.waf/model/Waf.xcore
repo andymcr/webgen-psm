@@ -554,6 +554,8 @@ class DeleteAction extends InlineAction {
 class FeatureSupportAction extends InlineAction {
 	refers BusinessOperation[1] operation
 	String confirmMessage
+	String successMessage
+	String failureMessage
 	String requiresRole
 	contains Predicate enableWhen
 	String[1] uriElement

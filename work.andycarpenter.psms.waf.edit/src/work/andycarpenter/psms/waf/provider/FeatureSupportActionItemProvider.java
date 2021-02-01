@@ -51,6 +51,8 @@ public class FeatureSupportActionItemProvider extends InlineActionItemProvider {
 
 			addOperationPropertyDescriptor(object);
 			addConfirmMessagePropertyDescriptor(object);
+			addSuccessMessagePropertyDescriptor(object);
+			addFailureMessagePropertyDescriptor(object);
 			addRequiresRolePropertyDescriptor(object);
 			addUriElementPropertyDescriptor(object);
 			addFileExtensionPropertyDescriptor(object);
@@ -94,6 +96,50 @@ public class FeatureSupportActionItemProvider extends InlineActionItemProvider {
 				 getString("_UI_FeatureSupportAction_confirmMessage_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_FeatureSupportAction_confirmMessage_feature", "_UI_FeatureSupportAction_type"),
 				 WafPackage.Literals.FEATURE_SUPPORT_ACTION__CONFIRM_MESSAGE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Success Message feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSuccessMessagePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_FeatureSupportAction_successMessage_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_FeatureSupportAction_successMessage_feature", "_UI_FeatureSupportAction_type"),
+				 WafPackage.Literals.FEATURE_SUPPORT_ACTION__SUCCESS_MESSAGE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Failure Message feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addFailureMessagePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_FeatureSupportAction_failureMessage_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_FeatureSupportAction_failureMessage_feature", "_UI_FeatureSupportAction_type"),
+				 WafPackage.Literals.FEATURE_SUPPORT_ACTION__FAILURE_MESSAGE,
 				 true,
 				 false,
 				 false,
@@ -237,6 +283,8 @@ public class FeatureSupportActionItemProvider extends InlineActionItemProvider {
 
 		switch (notification.getFeatureID(FeatureSupportAction.class)) {
 			case WafPackage.FEATURE_SUPPORT_ACTION__CONFIRM_MESSAGE:
+			case WafPackage.FEATURE_SUPPORT_ACTION__SUCCESS_MESSAGE:
+			case WafPackage.FEATURE_SUPPORT_ACTION__FAILURE_MESSAGE:
 			case WafPackage.FEATURE_SUPPORT_ACTION__REQUIRES_ROLE:
 			case WafPackage.FEATURE_SUPPORT_ACTION__URI_ELEMENT:
 			case WafPackage.FEATURE_SUPPORT_ACTION__FILE_EXTENSION:
