@@ -48,7 +48,6 @@ public class AssociationItemProvider extends FeatureItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addOppositePropertyDescriptor(object);
-			addPseudoPropertyDescriptor(object);
 			addContainerPropertyDescriptor(object);
 			addContainsPropertyDescriptor(object);
 			addOwningEndPropertyDescriptor(object);
@@ -77,28 +76,6 @@ public class AssociationItemProvider extends FeatureItemProvider {
 				 false,
 				 true,
 				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Pseudo feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addPseudoPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Association_pseudo_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Association_pseudo_feature", "_UI_Association_type"),
-				 OrmPackage.Literals.ASSOCIATION__PSEUDO,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -292,7 +269,6 @@ public class AssociationItemProvider extends FeatureItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Association.class)) {
-			case OrmPackage.ASSOCIATION__PSEUDO:
 			case OrmPackage.ASSOCIATION__CONTAINER:
 			case OrmPackage.ASSOCIATION__CONTAINS:
 			case OrmPackage.ASSOCIATION__OWNING_END:

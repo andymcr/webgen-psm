@@ -223,7 +223,6 @@ class SingletonLocation extends SingletonAttribute {
 @OCL(onlyOneOwningEnd="owningEnd xor opposite.owningEnd")
 abstract class Association extends Feature {
 	refers Association[1] ^opposite
-	boolean pseudo
 	contains AssociationKey[] ^keys opposite keyFor
 	boolean[1] ^container = "false"
 	boolean[1] ^contains = "false"
