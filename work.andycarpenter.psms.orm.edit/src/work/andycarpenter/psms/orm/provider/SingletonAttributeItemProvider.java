@@ -47,6 +47,8 @@ public class SingletonAttributeItemProvider extends AttributeItemProvider {
 
 			addUniquePropertyDescriptor(object);
 			addContainerUniquePropertyDescriptor(object);
+			addPersistentTypePropertyDescriptor(object);
+			addOrmTypePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -96,6 +98,50 @@ public class SingletonAttributeItemProvider extends AttributeItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Persistent Type feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPersistentTypePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_SingletonAttribute_persistentType_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_SingletonAttribute_persistentType_feature", "_UI_SingletonAttribute_type"),
+				 OrmPackage.Literals.SINGLETON_ATTRIBUTE__PERSISTENT_TYPE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Orm Type feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addOrmTypePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_SingletonAttribute_ormType_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_SingletonAttribute_ormType_feature", "_UI_SingletonAttribute_type"),
+				 OrmPackage.Literals.SINGLETON_ATTRIBUTE__ORM_TYPE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -124,6 +170,8 @@ public class SingletonAttributeItemProvider extends AttributeItemProvider {
 		switch (notification.getFeatureID(SingletonAttribute.class)) {
 			case OrmPackage.SINGLETON_ATTRIBUTE__UNIQUE:
 			case OrmPackage.SINGLETON_ATTRIBUTE__CONTAINER_UNIQUE:
+			case OrmPackage.SINGLETON_ATTRIBUTE__PERSISTENT_TYPE:
+			case OrmPackage.SINGLETON_ATTRIBUTE__ORM_TYPE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

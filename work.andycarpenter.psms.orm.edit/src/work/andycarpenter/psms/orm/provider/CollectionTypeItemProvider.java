@@ -49,6 +49,7 @@ public class CollectionTypeItemProvider extends NamedElementItemProvider {
 			addCollectionTypePropertyDescriptor(object);
 			addElementTypePropertyDescriptor(object);
 			addPersistenceTypePropertyDescriptor(object);
+			addOrmTypePropertyDescriptor(object);
 			addJavaInterfaceTypePropertyDescriptor(object);
 			addJavaImplementationTypePropertyDescriptor(object);
 		}
@@ -113,6 +114,28 @@ public class CollectionTypeItemProvider extends NamedElementItemProvider {
 				 getString("_UI_CollectionType_persistenceType_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionType_persistenceType_feature", "_UI_CollectionType_type"),
 				 OrmPackage.Literals.COLLECTION_TYPE__PERSISTENCE_TYPE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Orm Type feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addOrmTypePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_CollectionType_ormType_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionType_ormType_feature", "_UI_CollectionType_type"),
+				 OrmPackage.Literals.COLLECTION_TYPE__ORM_TYPE,
 				 true,
 				 false,
 				 false,
@@ -205,6 +228,7 @@ public class CollectionTypeItemProvider extends NamedElementItemProvider {
 		switch (notification.getFeatureID(CollectionType.class)) {
 			case OrmPackage.COLLECTION_TYPE__COLLECTION_TYPE:
 			case OrmPackage.COLLECTION_TYPE__PERSISTENCE_TYPE:
+			case OrmPackage.COLLECTION_TYPE__ORM_TYPE:
 			case OrmPackage.COLLECTION_TYPE__JAVA_INTERFACE_TYPE:
 			case OrmPackage.COLLECTION_TYPE__JAVA_IMPLEMENTATION_TYPE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));

@@ -74,6 +74,7 @@ class CollectionType extends NamedElement {
 	CollectionTypes collectionType
 	refers Classifier[1] elementType
 	String[1] persistenceType
+	String[1] ormType
 	String[1] javaInterfaceType
 	String[1] javaImplementationType
 }
@@ -148,13 +149,13 @@ abstract class Attribute extends Feature, Label {
 	refers Attribute[] slugFields
 	String validationPattern
 	boolean hidden
-	String[1] persistentType
-	String[1] ormType
 }
 
 abstract class SingletonAttribute extends Attribute {
 	boolean ^unique
 	boolean containerUnique
+	String[1] persistentType
+	String[1] ormType
 }
 
 abstract class CollectionAttribute extends Attribute {
