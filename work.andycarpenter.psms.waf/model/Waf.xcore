@@ -222,24 +222,18 @@ class StaticUnit extends ContentUnit {
 	String[1] content
 }
 
-abstract class DynamicUnit extends ContentUnit {
+abstract class DynamicUnit extends ContentUnit, ActionContainer {
 	contains UnitField[] displayFields opposite displayedOn
 	refers Repository[] repositoriesUsed
 	refers Service[] servicesUsed
 	contains Predicate hideWhen
 	String messageWhenHidden
-	contains UnitSupportAction[] supportActions
 	String header
 	String footer
 	String headerClass
 	String controlClass
 	String footerClass
 	String fieldListClass
-}
-
-class UnitSupportAction extends NamedDisplayElement {
-	boolean disable
-	String confirmMessage
 }
 
 enum CollectionDisplayOptions {
@@ -258,10 +252,10 @@ interface UnitField extends DisplayElement {
 	CollectionDisplayOptions collectionDisplayOption
 	boolean truncate
 	String dateFormat
-	Boolean disableInput = "false"
+	boolean disableInput
 }
 
-abstract class UnitFeature extends UnitField, InlineActionContainer {
+abstract class UnitFeature extends UnitField, ActionContainer {
 	contains Expression forcedValue
 	boolean collectionUiAllowAdd = "true"
 	boolean collectionUiAllowRemove = "true"
@@ -446,7 +440,7 @@ class DetailsUnit extends SingletonUnit, SelectableUnit {
 	boolean omitFieldLabels
 }
 
-abstract class IndexUnit extends CollectionUnit, InlineActionContainer {
+abstract class IndexUnit extends CollectionUnit {
 	refers SearchUnit targettingSearches opposite resultsDestination
 	String rowClasses
 }
@@ -460,7 +454,7 @@ class IndexPageDirectionUnit extends IndexUnit {
 class IndexLineDirectionUnit extends IndexUnit {
 }
 
-abstract class CardsUnit extends CollectionUnit, InlineActionContainer {
+abstract class CardsUnit extends CollectionUnit {
 	contains Badge[] badges
 	boolean overlaySingleSelectAction
 	String rowClass
@@ -522,42 +516,46 @@ class SearchUnit extends ControlUnit {
 }
 
 
-interface InlineActionContainer {
-	contains InlineAction[] actions opposite usedBy
+interface ActionContainer {
+	contains Action[] actions opposite usedBy
 	String actionNavigationClass
 }
 
-abstract class InlineAction extends NamedDisplayElement {
-	container InlineActionContainer[1] usedBy opposite actions
+abstract class Action extends NamedDisplayElement {
+	refers ActionContainer[1]usedBy opposite actions
 	boolean disable
 	contains Predicate displayWhen
-	String header
-	String footer
+	contains Predicate enableWhen
+	String confirmMessage
+	String successMessage
+	String failureMessage
 	String anchorClass
 	String headerClass
 	String footerClass
 }
 
-class SelectAction extends InlineAction {
+class SelectAction extends Action {
 	refers SelectableUnit[1] target opposite selectors
 	contains FeaturePath valuePath
 }
 
-class DeleteAction extends InlineAction {
-	refers Page destination
-	String[1] confirmMessage
+class DeleteAction extends Action {
 	String requiresRole
-	contains Predicate enableWhen
 	String[1] uriElement
 }
 
-class FeatureSupportAction extends InlineAction {
+abstract class OperationAction extends Action {
 	refers BusinessOperation[1] operation
-	String confirmMessage
-	String successMessage
-	String failureMessage
-	String requiresRole
-	contains Predicate enableWhen
-	String[1] uriElement
 	String fileExtension
+	String requiresRole
+	String[1] uriElement
+}
+
+class InstanceOperationAction extends OperationAction {
+}
+
+class ContainerOperationAction extends OperationAction {
+}
+
+class GeneralOperationAction extends OperationAction {
 }

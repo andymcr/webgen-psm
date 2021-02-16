@@ -47,7 +47,6 @@ public class CardsUnitItemProvider extends CollectionUnitItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addActionNavigationClassPropertyDescriptor(object);
 			addOverlaySingleSelectActionPropertyDescriptor(object);
 			addRowClassPropertyDescriptor(object);
 			addColumnClassPropertyDescriptor(object);
@@ -57,28 +56,6 @@ public class CardsUnitItemProvider extends CollectionUnitItemProvider {
 			addCardFooterClassPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Action Navigation Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addActionNavigationClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_InlineActionContainer_actionNavigationClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_InlineActionContainer_actionNavigationClass_feature", "_UI_InlineActionContainer_type"),
-				 WafPackage.Literals.INLINE_ACTION_CONTAINER__ACTION_NAVIGATION_CLASS,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
 	}
 
 	/**
@@ -247,7 +224,6 @@ public class CardsUnitItemProvider extends CollectionUnitItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(WafPackage.Literals.INLINE_ACTION_CONTAINER__ACTIONS);
 			childrenFeatures.add(WafPackage.Literals.CARDS_UNIT__BADGES);
 		}
 		return childrenFeatures;
@@ -293,7 +269,6 @@ public class CardsUnitItemProvider extends CollectionUnitItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(CardsUnit.class)) {
-			case WafPackage.CARDS_UNIT__ACTION_NAVIGATION_CLASS:
 			case WafPackage.CARDS_UNIT__OVERLAY_SINGLE_SELECT_ACTION:
 			case WafPackage.CARDS_UNIT__ROW_CLASS:
 			case WafPackage.CARDS_UNIT__COLUMN_CLASS:
@@ -303,7 +278,6 @@ public class CardsUnitItemProvider extends CollectionUnitItemProvider {
 			case WafPackage.CARDS_UNIT__CARD_FOOTER_CLASS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case WafPackage.CARDS_UNIT__ACTIONS:
 			case WafPackage.CARDS_UNIT__BADGES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
@@ -321,21 +295,6 @@ public class CardsUnitItemProvider extends CollectionUnitItemProvider {
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.Literals.INLINE_ACTION_CONTAINER__ACTIONS,
-				 WafFactory.eINSTANCE.createSelectAction()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.Literals.INLINE_ACTION_CONTAINER__ACTIONS,
-				 WafFactory.eINSTANCE.createDeleteAction()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.Literals.INLINE_ACTION_CONTAINER__ACTIONS,
-				 WafFactory.eINSTANCE.createFeatureSupportAction()));
 
 		newChildDescriptors.add
 			(createChildParameter

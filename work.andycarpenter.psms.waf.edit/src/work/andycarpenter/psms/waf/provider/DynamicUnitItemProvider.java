@@ -50,6 +50,7 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addActionNavigationClassPropertyDescriptor(object);
 			addRepositoriesUsedPropertyDescriptor(object);
 			addServicesUsedPropertyDescriptor(object);
 			addMessageWhenHiddenPropertyDescriptor(object);
@@ -61,6 +62,28 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 			addFieldListClassPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Action Navigation Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addActionNavigationClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ActionContainer_actionNavigationClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ActionContainer_actionNavigationClass_feature", "_UI_ActionContainer_type"),
+				 WafPackage.Literals.ACTION_CONTAINER__ACTION_NAVIGATION_CLASS,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -273,9 +296,9 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
+			childrenFeatures.add(WafPackage.Literals.ACTION_CONTAINER__ACTIONS);
 			childrenFeatures.add(WafPackage.Literals.DYNAMIC_UNIT__DISPLAY_FIELDS);
 			childrenFeatures.add(WafPackage.Literals.DYNAMIC_UNIT__HIDE_WHEN);
-			childrenFeatures.add(WafPackage.Literals.DYNAMIC_UNIT__SUPPORT_ACTIONS);
 		}
 		return childrenFeatures;
 	}
@@ -320,6 +343,7 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(DynamicUnit.class)) {
+			case WafPackage.DYNAMIC_UNIT__ACTION_NAVIGATION_CLASS:
 			case WafPackage.DYNAMIC_UNIT__MESSAGE_WHEN_HIDDEN:
 			case WafPackage.DYNAMIC_UNIT__HEADER:
 			case WafPackage.DYNAMIC_UNIT__FOOTER:
@@ -329,9 +353,9 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 			case WafPackage.DYNAMIC_UNIT__FIELD_LIST_CLASS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
+			case WafPackage.DYNAMIC_UNIT__ACTIONS:
 			case WafPackage.DYNAMIC_UNIT__DISPLAY_FIELDS:
 			case WafPackage.DYNAMIC_UNIT__HIDE_WHEN:
-			case WafPackage.DYNAMIC_UNIT__SUPPORT_ACTIONS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -348,6 +372,31 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.Literals.ACTION_CONTAINER__ACTIONS,
+				 WafFactory.eINSTANCE.createSelectAction()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.Literals.ACTION_CONTAINER__ACTIONS,
+				 WafFactory.eINSTANCE.createDeleteAction()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.Literals.ACTION_CONTAINER__ACTIONS,
+				 WafFactory.eINSTANCE.createInstanceOperationAction()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.Literals.ACTION_CONTAINER__ACTIONS,
+				 WafFactory.eINSTANCE.createContainerOperationAction()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.Literals.ACTION_CONTAINER__ACTIONS,
+				 WafFactory.eINSTANCE.createGeneralOperationAction()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -423,11 +472,6 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 			(createChildParameter
 				(WafPackage.Literals.DYNAMIC_UNIT__HIDE_WHEN,
 				 ExpressionFactory.eINSTANCE.createPredicateIsNull()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.Literals.DYNAMIC_UNIT__SUPPORT_ACTIONS,
-				 WafFactory.eINSTANCE.createUnitSupportAction()));
 	}
 
 }

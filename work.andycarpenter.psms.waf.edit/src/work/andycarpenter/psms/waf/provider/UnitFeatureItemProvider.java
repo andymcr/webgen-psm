@@ -294,7 +294,7 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 				 true,
 				 false,
 				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -310,9 +310,9 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_InlineActionContainer_actionNavigationClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_InlineActionContainer_actionNavigationClass_feature", "_UI_InlineActionContainer_type"),
-				 WafPackage.Literals.INLINE_ACTION_CONTAINER__ACTION_NAVIGATION_CLASS,
+				 getString("_UI_ActionContainer_actionNavigationClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ActionContainer_actionNavigationClass_feature", "_UI_ActionContainer_type"),
+				 WafPackage.Literals.ACTION_CONTAINER__ACTION_NAVIGATION_CLASS,
 				 true,
 				 false,
 				 false,
@@ -598,7 +598,7 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(WafPackage.Literals.UNIT_FIELD__HIDE_WHEN);
-			childrenFeatures.add(WafPackage.Literals.INLINE_ACTION_CONTAINER__ACTIONS);
+			childrenFeatures.add(WafPackage.Literals.ACTION_CONTAINER__ACTIONS);
 			childrenFeatures.add(WafPackage.Literals.UNIT_FEATURE__FORCED_VALUE);
 			childrenFeatures.add(WafPackage.Literals.UNIT_FEATURE__DISPLAY_DEFAULT_WHEN);
 		}
@@ -737,18 +737,28 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.INLINE_ACTION_CONTAINER__ACTIONS,
+				(WafPackage.Literals.ACTION_CONTAINER__ACTIONS,
 				 WafFactory.eINSTANCE.createSelectAction()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.INLINE_ACTION_CONTAINER__ACTIONS,
+				(WafPackage.Literals.ACTION_CONTAINER__ACTIONS,
 				 WafFactory.eINSTANCE.createDeleteAction()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.INLINE_ACTION_CONTAINER__ACTIONS,
-				 WafFactory.eINSTANCE.createFeatureSupportAction()));
+				(WafPackage.Literals.ACTION_CONTAINER__ACTIONS,
+				 WafFactory.eINSTANCE.createInstanceOperationAction()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.Literals.ACTION_CONTAINER__ACTIONS,
+				 WafFactory.eINSTANCE.createContainerOperationAction()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.Literals.ACTION_CONTAINER__ACTIONS,
+				 WafFactory.eINSTANCE.createGeneralOperationAction()));
 
 		newChildDescriptors.add
 			(createChildParameter

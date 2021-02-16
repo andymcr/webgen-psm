@@ -25,7 +25,7 @@ import work.andycarpenter.psms.waf.WafPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class SelectActionItemProvider extends InlineActionItemProvider {
+public class SelectActionItemProvider extends ActionItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -174,6 +174,29 @@ public class SelectActionItemProvider extends InlineActionItemProvider {
 			(createChildParameter
 				(WafPackage.Literals.SELECT_ACTION__VALUE_PATH,
 				 WafFactory.eINSTANCE.createFeaturePathLabel()));
+	}
+
+	/**
+	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
+		Object childFeature = feature;
+		Object childObject = child;
+
+		boolean qualify =
+			childFeature == WafPackage.Literals.ACTION__DISPLAY_WHEN ||
+			childFeature == WafPackage.Literals.ACTION__ENABLE_WHEN;
+
+		if (qualify) {
+			return getString
+				("_UI_CreateChild_text2",
+				 new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
+		}
+		return super.getCreateChildText(owner, feature, child, selection);
 	}
 
 }

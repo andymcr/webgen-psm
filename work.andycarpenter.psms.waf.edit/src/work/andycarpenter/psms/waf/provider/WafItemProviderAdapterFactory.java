@@ -451,29 +451,6 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.waf.UnitSupportAction} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected UnitSupportActionItemProvider unitSupportActionItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link work.andycarpenter.psms.waf.UnitSupportAction}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createUnitSupportActionAdapter() {
-		if (unitSupportActionItemProvider == null) {
-			unitSupportActionItemProvider = new UnitSupportActionItemProvider(this);
-		}
-
-		return unitSupportActionItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.waf.UnitAttribute} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1141,26 +1118,72 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.waf.FeatureSupportAction} instances.
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.waf.InstanceOperationAction} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected FeatureSupportActionItemProvider featureSupportActionItemProvider;
+	protected InstanceOperationActionItemProvider instanceOperationActionItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link work.andycarpenter.psms.waf.FeatureSupportAction}.
+	 * This creates an adapter for a {@link work.andycarpenter.psms.waf.InstanceOperationAction}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createFeatureSupportActionAdapter() {
-		if (featureSupportActionItemProvider == null) {
-			featureSupportActionItemProvider = new FeatureSupportActionItemProvider(this);
+	public Adapter createInstanceOperationActionAdapter() {
+		if (instanceOperationActionItemProvider == null) {
+			instanceOperationActionItemProvider = new InstanceOperationActionItemProvider(this);
 		}
 
-		return featureSupportActionItemProvider;
+		return instanceOperationActionItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.waf.ContainerOperationAction} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ContainerOperationActionItemProvider containerOperationActionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link work.andycarpenter.psms.waf.ContainerOperationAction}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createContainerOperationActionAdapter() {
+		if (containerOperationActionItemProvider == null) {
+			containerOperationActionItemProvider = new ContainerOperationActionItemProvider(this);
+		}
+
+		return containerOperationActionItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.waf.GeneralOperationAction} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected GeneralOperationActionItemProvider generalOperationActionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link work.andycarpenter.psms.waf.GeneralOperationAction}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createGeneralOperationActionAdapter() {
+		if (generalOperationActionItemProvider == null) {
+			generalOperationActionItemProvider = new GeneralOperationActionItemProvider(this);
+		}
+
+		return generalOperationActionItemProvider;
 	}
 
 	/**
@@ -1300,7 +1323,6 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 		if (queryParameterItemProvider != null) queryParameterItemProvider.dispose();
 		if (routeActualItemProvider != null) routeActualItemProvider.dispose();
 		if (staticUnitItemProvider != null) staticUnitItemProvider.dispose();
-		if (unitSupportActionItemProvider != null) unitSupportActionItemProvider.dispose();
 		if (unitAttributeItemProvider != null) unitAttributeItemProvider.dispose();
 		if (unitAssociationItemProvider != null) unitAssociationItemProvider.dispose();
 		if (childPathAttributeItemProvider != null) childPathAttributeItemProvider.dispose();
@@ -1331,7 +1353,9 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 		if (searchUnitItemProvider != null) searchUnitItemProvider.dispose();
 		if (selectActionItemProvider != null) selectActionItemProvider.dispose();
 		if (deleteActionItemProvider != null) deleteActionItemProvider.dispose();
-		if (featureSupportActionItemProvider != null) featureSupportActionItemProvider.dispose();
+		if (instanceOperationActionItemProvider != null) instanceOperationActionItemProvider.dispose();
+		if (containerOperationActionItemProvider != null) containerOperationActionItemProvider.dispose();
+		if (generalOperationActionItemProvider != null) generalOperationActionItemProvider.dispose();
 	}
 
 	/**
