@@ -87,20 +87,24 @@ abstract class Authentication {
 	refers WafModel[1] authorises opposite authentication
 	refers Entity[1] user
 	refers Attribute[1] userKey
+	String[1] registrationLabel = ""
 	String[1] loginLabel = ""
 	String logoutLabel = ""
 }
 
 enum AuthenticationKeyTypes {
+	Any = 0
 	Email = 1
 	Username = 2
 }
 
 class LocalAuthenticationSystem extends Authentication {
-	refers Entity authentication
+	refers Entity[1] authenticationModel
 	AuthenticationKeyTypes[1] authenticationKey
-	refers Entity loginAttempt
-	refers Entity autoLogin
+	refers RegistrationUnit registrationUnit
+	refers LoginUnit[1] loginUnit
+	refers LogoutUnit[1] logoutUnit
+	refers ForgottenPasswordUnit forgottenPasswordUnit
 	boolean useCaptcha
 	boolean allowRememberMe
 	boolean allowSelfRegistration
@@ -109,6 +113,9 @@ class LocalAuthenticationSystem extends Authentication {
 }
 
 class CasAuthentication extends Authentication {
+}
+
+interface SecurityUnit extends DynamicUnit {
 }
 
 
@@ -513,6 +520,19 @@ abstract class ControlUnit extends DynamicUnit {
 
 class SearchUnit extends ControlUnit {
 	refers IndexUnit[1] resultsDestination opposite targettingSearches
+}
+
+
+class RegistrationUnit extends DynamicUnit, SecurityUnit {
+}
+
+class LoginUnit extends EditUnit, SecurityUnit {
+}
+
+class LogoutUnit extends DynamicUnit, SecurityUnit {
+}
+
+class ForgottenPasswordUnit extends DynamicUnit, SecurityUnit {
 }
 
 

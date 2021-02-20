@@ -343,6 +343,26 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 			(createChildParameter
 				(WafPackage.Literals.PAGE__UNITS,
 				 WafFactory.eINSTANCE.createSearchUnit()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.Literals.PAGE__UNITS,
+				 WafFactory.eINSTANCE.createRegistrationUnit()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.Literals.PAGE__UNITS,
+				 WafFactory.eINSTANCE.createLoginUnit()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.Literals.PAGE__UNITS,
+				 WafFactory.eINSTANCE.createLogoutUnit()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.Literals.PAGE__UNITS,
+				 WafFactory.eINSTANCE.createForgottenPasswordUnit()));
 	}
 
 	/**

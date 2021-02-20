@@ -45,10 +45,12 @@ public class LocalAuthenticationSystemItemProvider extends AuthenticationItemPro
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addAuthenticationPropertyDescriptor(object);
+			addAuthenticationModelPropertyDescriptor(object);
 			addAuthenticationKeyPropertyDescriptor(object);
-			addLoginAttemptPropertyDescriptor(object);
-			addAutoLoginPropertyDescriptor(object);
+			addRegistrationUnitPropertyDescriptor(object);
+			addLoginUnitPropertyDescriptor(object);
+			addLogoutUnitPropertyDescriptor(object);
+			addForgottenPasswordUnitPropertyDescriptor(object);
 			addUseCaptchaPropertyDescriptor(object);
 			addAllowRememberMePropertyDescriptor(object);
 			addAllowSelfRegistrationPropertyDescriptor(object);
@@ -59,19 +61,19 @@ public class LocalAuthenticationSystemItemProvider extends AuthenticationItemPro
 	}
 
 	/**
-	 * This adds a property descriptor for the Authentication feature.
+	 * This adds a property descriptor for the Authentication Model feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addAuthenticationPropertyDescriptor(Object object) {
+	protected void addAuthenticationModelPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_LocalAuthenticationSystem_authentication_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_LocalAuthenticationSystem_authentication_feature", "_UI_LocalAuthenticationSystem_type"),
-				 WafPackage.Literals.LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION,
+				 getString("_UI_LocalAuthenticationSystem_authenticationModel_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_LocalAuthenticationSystem_authenticationModel_feature", "_UI_LocalAuthenticationSystem_type"),
+				 WafPackage.Literals.LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION_MODEL,
 				 true,
 				 false,
 				 true,
@@ -103,19 +105,19 @@ public class LocalAuthenticationSystemItemProvider extends AuthenticationItemPro
 	}
 
 	/**
-	 * This adds a property descriptor for the Login Attempt feature.
+	 * This adds a property descriptor for the Registration Unit feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addLoginAttemptPropertyDescriptor(Object object) {
+	protected void addRegistrationUnitPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_LocalAuthenticationSystem_loginAttempt_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_LocalAuthenticationSystem_loginAttempt_feature", "_UI_LocalAuthenticationSystem_type"),
-				 WafPackage.Literals.LOCAL_AUTHENTICATION_SYSTEM__LOGIN_ATTEMPT,
+				 getString("_UI_LocalAuthenticationSystem_registrationUnit_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_LocalAuthenticationSystem_registrationUnit_feature", "_UI_LocalAuthenticationSystem_type"),
+				 WafPackage.Literals.LOCAL_AUTHENTICATION_SYSTEM__REGISTRATION_UNIT,
 				 true,
 				 false,
 				 true,
@@ -125,19 +127,63 @@ public class LocalAuthenticationSystemItemProvider extends AuthenticationItemPro
 	}
 
 	/**
-	 * This adds a property descriptor for the Auto Login feature.
+	 * This adds a property descriptor for the Login Unit feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addAutoLoginPropertyDescriptor(Object object) {
+	protected void addLoginUnitPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_LocalAuthenticationSystem_autoLogin_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_LocalAuthenticationSystem_autoLogin_feature", "_UI_LocalAuthenticationSystem_type"),
-				 WafPackage.Literals.LOCAL_AUTHENTICATION_SYSTEM__AUTO_LOGIN,
+				 getString("_UI_LocalAuthenticationSystem_loginUnit_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_LocalAuthenticationSystem_loginUnit_feature", "_UI_LocalAuthenticationSystem_type"),
+				 WafPackage.Literals.LOCAL_AUTHENTICATION_SYSTEM__LOGIN_UNIT,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Logout Unit feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addLogoutUnitPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_LocalAuthenticationSystem_logoutUnit_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_LocalAuthenticationSystem_logoutUnit_feature", "_UI_LocalAuthenticationSystem_type"),
+				 WafPackage.Literals.LOCAL_AUTHENTICATION_SYSTEM__LOGOUT_UNIT,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Forgotten Password Unit feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addForgottenPasswordUnitPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_LocalAuthenticationSystem_forgottenPasswordUnit_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_LocalAuthenticationSystem_forgottenPasswordUnit_feature", "_UI_LocalAuthenticationSystem_type"),
+				 WafPackage.Literals.LOCAL_AUTHENTICATION_SYSTEM__FORGOTTEN_PASSWORD_UNIT,
 				 true,
 				 false,
 				 true,
@@ -275,7 +321,7 @@ public class LocalAuthenticationSystemItemProvider extends AuthenticationItemPro
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((LocalAuthenticationSystem)object).getLoginLabel();
+		String label = ((LocalAuthenticationSystem)object).getRegistrationLabel();
 		return label == null || label.length() == 0 ?
 			getString("_UI_LocalAuthenticationSystem_type") :
 			getString("_UI_LocalAuthenticationSystem_type") + " " + label;
