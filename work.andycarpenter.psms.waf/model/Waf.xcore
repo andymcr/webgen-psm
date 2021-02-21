@@ -115,7 +115,7 @@ class LocalAuthenticationSystem extends Authentication {
 class CasAuthentication extends Authentication {
 }
 
-interface SecurityUnit extends DynamicUnit {
+interface SecurityUnit {
 }
 
 
@@ -194,7 +194,7 @@ class Page extends NamedDisplayElement {
 	refers Page[] childPages opposite parentPage
 	contains ContentUnit[] units opposite displayedOn
 	String uriElement = ""
-	String styleClass = ""
+	String styleClass
 }
 
 class Query extends NamedElement {
@@ -238,9 +238,9 @@ abstract class DynamicUnit extends ContentUnit, ActionContainer {
 	String header
 	String footer
 	String headerClass
+	String fieldListClass
 	String controlClass
 	String footerClass
-	String fieldListClass
 }
 
 enum CollectionDisplayOptions {
@@ -271,12 +271,11 @@ abstract class UnitFeature extends UnitField, ActionContainer {
 	String emptyDisplayValue
 	boolean autofocus
 	String footer
-	String headerClass = ""
-	String displayClass = ""
+	String headerClass
 	String inputGroupClass
 	String fieldLabelClass
 	String fieldValueClass
-	String footerClass = ""
+	String footerClass
 }
 
 class UnitAttribute extends UnitFeature {
@@ -419,6 +418,8 @@ abstract class EditUnit extends SingletonUnit {
 	contains Predicate disableWhen
 	refers Page confirmDestination
 	String[1] confirmLabel
+	String confirmMessage
+	String successMessage
 	refers Page cancelDestination
 	String cancelLabel
 	boolean customiseValues

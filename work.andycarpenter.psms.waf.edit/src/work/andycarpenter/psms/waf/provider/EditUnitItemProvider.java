@@ -52,6 +52,8 @@ public class EditUnitItemProvider extends SingletonUnitItemProvider {
 			addOnSaveContinueEditingPropertyDescriptor(object);
 			addConfirmDestinationPropertyDescriptor(object);
 			addConfirmLabelPropertyDescriptor(object);
+			addConfirmMessagePropertyDescriptor(object);
+			addSuccessMessagePropertyDescriptor(object);
 			addCancelDestinationPropertyDescriptor(object);
 			addCancelLabelPropertyDescriptor(object);
 			addCustomiseValuesPropertyDescriptor(object);
@@ -117,6 +119,50 @@ public class EditUnitItemProvider extends SingletonUnitItemProvider {
 				 getString("_UI_EditUnit_confirmLabel_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_EditUnit_confirmLabel_feature", "_UI_EditUnit_type"),
 				 WafPackage.Literals.EDIT_UNIT__CONFIRM_LABEL,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Confirm Message feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addConfirmMessagePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EditUnit_confirmMessage_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EditUnit_confirmMessage_feature", "_UI_EditUnit_type"),
+				 WafPackage.Literals.EDIT_UNIT__CONFIRM_MESSAGE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Success Message feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSuccessMessagePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EditUnit_successMessage_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EditUnit_successMessage_feature", "_UI_EditUnit_type"),
+				 WafPackage.Literals.EDIT_UNIT__SUCCESS_MESSAGE,
 				 true,
 				 false,
 				 false,
@@ -250,6 +296,8 @@ public class EditUnitItemProvider extends SingletonUnitItemProvider {
 		switch (notification.getFeatureID(EditUnit.class)) {
 			case WafPackage.EDIT_UNIT__ON_SAVE_CONTINUE_EDITING:
 			case WafPackage.EDIT_UNIT__CONFIRM_LABEL:
+			case WafPackage.EDIT_UNIT__CONFIRM_MESSAGE:
+			case WafPackage.EDIT_UNIT__SUCCESS_MESSAGE:
 			case WafPackage.EDIT_UNIT__CANCEL_LABEL:
 			case WafPackage.EDIT_UNIT__CUSTOMISE_VALUES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));

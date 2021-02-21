@@ -70,7 +70,6 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 			addAutofocusPropertyDescriptor(object);
 			addFooterPropertyDescriptor(object);
 			addHeaderClassPropertyDescriptor(object);
-			addDisplayClassPropertyDescriptor(object);
 			addInputGroupClassPropertyDescriptor(object);
 			addFieldLabelClassPropertyDescriptor(object);
 			addFieldValueClassPropertyDescriptor(object);
@@ -476,28 +475,6 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Display Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addDisplayClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_UnitFeature_displayClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UnitFeature_displayClass_feature", "_UI_UnitFeature_type"),
-				 WafPackage.Literals.UNIT_FEATURE__DISPLAY_CLASS,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Input Group Class feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -662,7 +639,6 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 			case WafPackage.UNIT_FEATURE__AUTOFOCUS:
 			case WafPackage.UNIT_FEATURE__FOOTER:
 			case WafPackage.UNIT_FEATURE__HEADER_CLASS:
-			case WafPackage.UNIT_FEATURE__DISPLAY_CLASS:
 			case WafPackage.UNIT_FEATURE__INPUT_GROUP_CLASS:
 			case WafPackage.UNIT_FEATURE__FIELD_LABEL_CLASS:
 			case WafPackage.UNIT_FEATURE__FIELD_VALUE_CLASS:

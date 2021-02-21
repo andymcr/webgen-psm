@@ -57,9 +57,9 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 			addHeaderPropertyDescriptor(object);
 			addFooterPropertyDescriptor(object);
 			addHeaderClassPropertyDescriptor(object);
+			addFieldListClassPropertyDescriptor(object);
 			addControlClassPropertyDescriptor(object);
 			addFooterClassPropertyDescriptor(object);
-			addFieldListClassPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -348,9 +348,9 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 			case WafPackage.DYNAMIC_UNIT__HEADER:
 			case WafPackage.DYNAMIC_UNIT__FOOTER:
 			case WafPackage.DYNAMIC_UNIT__HEADER_CLASS:
+			case WafPackage.DYNAMIC_UNIT__FIELD_LIST_CLASS:
 			case WafPackage.DYNAMIC_UNIT__CONTROL_CLASS:
 			case WafPackage.DYNAMIC_UNIT__FOOTER_CLASS:
-			case WafPackage.DYNAMIC_UNIT__FIELD_LIST_CLASS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case WafPackage.DYNAMIC_UNIT__ACTIONS:
