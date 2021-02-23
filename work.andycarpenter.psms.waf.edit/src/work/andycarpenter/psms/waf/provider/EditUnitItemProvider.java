@@ -52,10 +52,12 @@ public class EditUnitItemProvider extends SingletonUnitItemProvider {
 			addOnSaveContinueEditingPropertyDescriptor(object);
 			addConfirmDestinationPropertyDescriptor(object);
 			addConfirmLabelPropertyDescriptor(object);
+			addHasCustomConfirmLabelPropertyDescriptor(object);
 			addConfirmMessagePropertyDescriptor(object);
 			addSuccessMessagePropertyDescriptor(object);
 			addCancelDestinationPropertyDescriptor(object);
 			addCancelLabelPropertyDescriptor(object);
+			addHasCustomCancelLabelPropertyDescriptor(object);
 			addCustomiseValuesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -123,6 +125,28 @@ public class EditUnitItemProvider extends SingletonUnitItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Has Custom Confirm Label feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasCustomConfirmLabelPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EditUnit_hasCustomConfirmLabel_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EditUnit_hasCustomConfirmLabel_feature", "_UI_EditUnit_type"),
+				 WafPackage.Literals.EDIT_UNIT__HAS_CUSTOM_CONFIRM_LABEL,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -216,6 +240,28 @@ public class EditUnitItemProvider extends SingletonUnitItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Has Custom Cancel Label feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasCustomCancelLabelPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EditUnit_hasCustomCancelLabel_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EditUnit_hasCustomCancelLabel_feature", "_UI_EditUnit_type"),
+				 WafPackage.Literals.EDIT_UNIT__HAS_CUSTOM_CANCEL_LABEL,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Customise Values feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -296,9 +342,11 @@ public class EditUnitItemProvider extends SingletonUnitItemProvider {
 		switch (notification.getFeatureID(EditUnit.class)) {
 			case WafPackage.EDIT_UNIT__ON_SAVE_CONTINUE_EDITING:
 			case WafPackage.EDIT_UNIT__CONFIRM_LABEL:
+			case WafPackage.EDIT_UNIT__HAS_CUSTOM_CONFIRM_LABEL:
 			case WafPackage.EDIT_UNIT__CONFIRM_MESSAGE:
 			case WafPackage.EDIT_UNIT__SUCCESS_MESSAGE:
 			case WafPackage.EDIT_UNIT__CANCEL_LABEL:
+			case WafPackage.EDIT_UNIT__HAS_CUSTOM_CANCEL_LABEL:
 			case WafPackage.EDIT_UNIT__CUSTOMISE_VALUES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;

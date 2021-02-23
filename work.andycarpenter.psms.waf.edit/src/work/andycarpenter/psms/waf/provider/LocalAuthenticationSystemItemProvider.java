@@ -14,6 +14,7 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import work.andycarpenter.psms.waf.AuthenticationKeyTypes;
 import work.andycarpenter.psms.waf.LocalAuthenticationSystem;
 import work.andycarpenter.psms.waf.WafPackage;
 
@@ -321,7 +322,8 @@ public class LocalAuthenticationSystemItemProvider extends AuthenticationItemPro
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((LocalAuthenticationSystem)object).getRegistrationLabel();
+		AuthenticationKeyTypes labelValue = ((LocalAuthenticationSystem)object).getAuthenticationKey();
+		String label = labelValue == null ? null : labelValue.toString();
 		return label == null || label.length() == 0 ?
 			getString("_UI_LocalAuthenticationSystem_type") :
 			getString("_UI_LocalAuthenticationSystem_type") + " " + label;

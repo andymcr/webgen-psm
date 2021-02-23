@@ -73,8 +73,8 @@ class WafModel {
 	InputTechnologies inputTechnology
 	AjaxTechnologies ajaxTechnology
 	contains Authentication authentication opposite authorises
-	String captchaSiteKey
-	String captchaSecretKey
+	String defaultSaveLabel
+	String defaultCancelLabel
 	String textEditorURL
 	String topNavigationId
 	refers Menu sideMenu
@@ -87,9 +87,6 @@ abstract class Authentication {
 	refers WafModel[1] authorises opposite authentication
 	refers Entity[1] user
 	refers Attribute[1] userKey
-	String[1] registrationLabel = ""
-	String[1] loginLabel = ""
-	String logoutLabel = ""
 }
 
 enum AuthenticationKeyTypes {
@@ -113,6 +110,8 @@ class LocalAuthenticationSystem extends Authentication {
 }
 
 class CasAuthentication extends Authentication {
+	String[1] loginLabel
+	String logoutLabel
 }
 
 interface SecurityUnit {
@@ -418,10 +417,12 @@ abstract class EditUnit extends SingletonUnit {
 	contains Predicate disableWhen
 	refers Page confirmDestination
 	String[1] confirmLabel
+	boolean hasCustomConfirmLabel
 	String confirmMessage
 	String successMessage
 	refers Page cancelDestination
 	String cancelLabel
+	boolean hasCustomCancelLabel
 	boolean customiseValues
 }
 
@@ -553,6 +554,10 @@ abstract class Action extends NamedDisplayElement {
 	String anchorClass
 	String headerClass
 	String footerClass
+}
+
+class SecurityAction extends Action {
+	refers SecurityUnit[1] target
 }
 
 class SelectAction extends Action {

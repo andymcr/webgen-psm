@@ -714,6 +714,11 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.Literals.ACTION_CONTAINER__ACTIONS,
+				 WafFactory.eINSTANCE.createSecurityAction()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.Literals.ACTION_CONTAINER__ACTIONS,
 				 WafFactory.eINSTANCE.createSelectAction()));
 
 		newChildDescriptors.add

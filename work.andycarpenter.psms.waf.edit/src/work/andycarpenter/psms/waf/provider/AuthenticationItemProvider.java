@@ -18,11 +18,7 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
-import org.eclipse.emf.edit.provider.ViewerNotification;
-
-import work.andycarpenter.psms.waf.Authentication;
 import work.andycarpenter.psms.waf.WafPackage;
 
 /**
@@ -63,9 +59,6 @@ public class AuthenticationItemProvider
 			addAuthorisesPropertyDescriptor(object);
 			addUserPropertyDescriptor(object);
 			addUserKeyPropertyDescriptor(object);
-			addRegistrationLabelPropertyDescriptor(object);
-			addLoginLabelPropertyDescriptor(object);
-			addLogoutLabelPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -137,72 +130,6 @@ public class AuthenticationItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Registration Label feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addRegistrationLabelPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Authentication_registrationLabel_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Authentication_registrationLabel_feature", "_UI_Authentication_type"),
-				 WafPackage.Literals.AUTHENTICATION__REGISTRATION_LABEL,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Login Label feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addLoginLabelPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Authentication_loginLabel_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Authentication_loginLabel_feature", "_UI_Authentication_type"),
-				 WafPackage.Literals.AUTHENTICATION__LOGIN_LABEL,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Logout Label feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addLogoutLabelPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Authentication_logoutLabel_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Authentication_logoutLabel_feature", "_UI_Authentication_type"),
-				 WafPackage.Literals.AUTHENTICATION__LOGOUT_LABEL,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -210,10 +137,7 @@ public class AuthenticationItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Authentication)object).getRegistrationLabel();
-		return label == null || label.length() == 0 ?
-			getString("_UI_Authentication_type") :
-			getString("_UI_Authentication_type") + " " + label;
+		return getString("_UI_Authentication_type");
 	}
 	
 
@@ -227,14 +151,6 @@ public class AuthenticationItemProvider
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-
-		switch (notification.getFeatureID(Authentication.class)) {
-			case WafPackage.AUTHENTICATION__REGISTRATION_LABEL:
-			case WafPackage.AUTHENTICATION__LOGIN_LABEL:
-			case WafPackage.AUTHENTICATION__LOGOUT_LABEL:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-		}
 		super.notifyChanged(notification);
 	}
 

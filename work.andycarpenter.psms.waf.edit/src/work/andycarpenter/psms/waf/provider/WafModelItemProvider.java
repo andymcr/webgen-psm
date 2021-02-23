@@ -77,8 +77,8 @@ public class WafModelItemProvider
 			addUseDbSessionStoragePropertyDescriptor(object);
 			addInputTechnologyPropertyDescriptor(object);
 			addAjaxTechnologyPropertyDescriptor(object);
-			addCaptchaSiteKeyPropertyDescriptor(object);
-			addCaptchaSecretKeyPropertyDescriptor(object);
+			addDefaultSaveLabelPropertyDescriptor(object);
+			addDefaultCancelLabelPropertyDescriptor(object);
 			addTextEditorURLPropertyDescriptor(object);
 			addTopNavigationIdPropertyDescriptor(object);
 			addSideMenuPropertyDescriptor(object);
@@ -397,19 +397,19 @@ public class WafModelItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Captcha Site Key feature.
+	 * This adds a property descriptor for the Default Cancel Label feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addCaptchaSiteKeyPropertyDescriptor(Object object) {
+	protected void addDefaultCancelLabelPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_WafModel_captchaSiteKey_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafModel_captchaSiteKey_feature", "_UI_WafModel_type"),
-				 WafPackage.Literals.WAF_MODEL__CAPTCHA_SITE_KEY,
+				 getString("_UI_WafModel_defaultCancelLabel_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WafModel_defaultCancelLabel_feature", "_UI_WafModel_type"),
+				 WafPackage.Literals.WAF_MODEL__DEFAULT_CANCEL_LABEL,
 				 true,
 				 false,
 				 false,
@@ -419,19 +419,19 @@ public class WafModelItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Captcha Secret Key feature.
+	 * This adds a property descriptor for the Default Save Label feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addCaptchaSecretKeyPropertyDescriptor(Object object) {
+	protected void addDefaultSaveLabelPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_WafModel_captchaSecretKey_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafModel_captchaSecretKey_feature", "_UI_WafModel_type"),
-				 WafPackage.Literals.WAF_MODEL__CAPTCHA_SECRET_KEY,
+				 getString("_UI_WafModel_defaultSaveLabel_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WafModel_defaultSaveLabel_feature", "_UI_WafModel_type"),
+				 WafPackage.Literals.WAF_MODEL__DEFAULT_SAVE_LABEL,
 				 true,
 				 false,
 				 false,
@@ -631,8 +631,8 @@ public class WafModelItemProvider
 			case WafPackage.WAF_MODEL__USE_DB_SESSION_STORAGE:
 			case WafPackage.WAF_MODEL__INPUT_TECHNOLOGY:
 			case WafPackage.WAF_MODEL__AJAX_TECHNOLOGY:
-			case WafPackage.WAF_MODEL__CAPTCHA_SITE_KEY:
-			case WafPackage.WAF_MODEL__CAPTCHA_SECRET_KEY:
+			case WafPackage.WAF_MODEL__DEFAULT_SAVE_LABEL:
+			case WafPackage.WAF_MODEL__DEFAULT_CANCEL_LABEL:
 			case WafPackage.WAF_MODEL__TEXT_EDITOR_URL:
 			case WafPackage.WAF_MODEL__TOP_NAVIGATION_ID:
 			case WafPackage.WAF_MODEL__SITE_TEMPLATE:
