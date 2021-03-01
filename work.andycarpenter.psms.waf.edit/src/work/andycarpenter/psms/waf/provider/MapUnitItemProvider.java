@@ -67,7 +67,7 @@ public class MapUnitItemProvider extends EditUnitItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_SelectableUnit_selectors_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_SelectableUnit_selectors_feature", "_UI_SelectableUnit_type"),
-				 WafPackage.Literals.SELECTABLE_UNIT__SELECTORS,
+				 WafPackage.eINSTANCE.getSelectableUnit_Selectors(),
 				 true,
 				 false,
 				 true,
@@ -89,7 +89,7 @@ public class MapUnitItemProvider extends EditUnitItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_MapUnit_readOnly_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_MapUnit_readOnly_feature", "_UI_MapUnit_type"),
-				 WafPackage.Literals.MAP_UNIT__READ_ONLY,
+				 WafPackage.eINSTANCE.getMapUnit_ReadOnly(),
 				 true,
 				 false,
 				 false,
@@ -111,7 +111,7 @@ public class MapUnitItemProvider extends EditUnitItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_MapUnit_defaultZoomLevel_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_MapUnit_defaultZoomLevel_feature", "_UI_MapUnit_type"),
-				 WafPackage.Literals.MAP_UNIT__DEFAULT_ZOOM_LEVEL,
+				 WafPackage.eINSTANCE.getMapUnit_DefaultZoomLevel(),
 				 true,
 				 false,
 				 false,
@@ -133,7 +133,7 @@ public class MapUnitItemProvider extends EditUnitItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_MapUnit_location_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_MapUnit_location_feature", "_UI_MapUnit_type"),
-				 WafPackage.Literals.MAP_UNIT__LOCATION,
+				 WafPackage.eINSTANCE.getMapUnit_Location(),
 				 true,
 				 false,
 				 true,
@@ -155,7 +155,7 @@ public class MapUnitItemProvider extends EditUnitItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_MapUnit_placeName_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_MapUnit_placeName_feature", "_UI_MapUnit_type"),
-				 WafPackage.Literals.MAP_UNIT__PLACE_NAME,
+				 WafPackage.eINSTANCE.getMapUnit_PlaceName(),
 				 true,
 				 false,
 				 true,
@@ -234,8 +234,8 @@ public class MapUnitItemProvider extends EditUnitItemProvider {
 		Object childObject = child;
 
 		boolean qualify =
-			childFeature == WafPackage.Literals.DYNAMIC_UNIT__HIDE_WHEN ||
-			childFeature == WafPackage.Literals.EDIT_UNIT__DISABLE_WHEN;
+			childFeature == WafPackage.eINSTANCE.getDynamicUnit_HideWhen() ||
+			childFeature == WafPackage.eINSTANCE.getEditUnit_DisableWhen();
 
 		if (qualify) {
 			return getString

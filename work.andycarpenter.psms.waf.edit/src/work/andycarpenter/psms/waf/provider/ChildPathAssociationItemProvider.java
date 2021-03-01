@@ -54,6 +54,8 @@ public class ChildPathAssociationItemProvider extends FeatureChildPathItemProvid
 			addNamePropertyDescriptor(object);
 			addAssociationPropertyDescriptor(object);
 			addValueDisplayPropertyDescriptor(object);
+			addHasChildPropertyDescriptor(object);
+			addPersistentFeaturePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -119,6 +121,50 @@ public class ChildPathAssociationItemProvider extends FeatureChildPathItemProvid
 				 true,
 				 false,
 				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Has Child feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasChildPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ChildPathAssociation_hasChild_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ChildPathAssociation_hasChild_feature", "_UI_ChildPathAssociation_type"),
+				 WafPackage.eINSTANCE.getChildPathAssociation_HasChild(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Persistent Feature feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPersistentFeaturePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ChildPathAssociation_persistentFeature_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ChildPathAssociation_persistentFeature_feature", "_UI_ChildPathAssociation_type"),
+				 WafPackage.eINSTANCE.getChildPathAssociation_PersistentFeature(),
+				 false,
+				 false,
+				 false,
 				 null,
 				 null,
 				 null));
@@ -193,6 +239,7 @@ public class ChildPathAssociationItemProvider extends FeatureChildPathItemProvid
 
 		switch (notification.getFeatureID(ChildPathAssociation.class)) {
 			case WafPackage.CHILD_PATH_ASSOCIATION__NAME:
+			case WafPackage.CHILD_PATH_ASSOCIATION__HAS_CHILD:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case WafPackage.CHILD_PATH_ASSOCIATION__CHILD_FEATURE:

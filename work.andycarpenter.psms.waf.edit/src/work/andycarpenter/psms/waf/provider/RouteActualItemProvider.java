@@ -84,7 +84,7 @@ public class RouteActualItemProvider
 				 getResourceLocator(),
 				 getString("_UI_RouteActual_routeParameter_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_RouteActual_routeParameter_feature", "_UI_RouteActual_type"),
-				 WafPackage.Literals.ROUTE_ACTUAL__ROUTE_PARAMETER,
+				 WafPackage.eINSTANCE.getRouteActual_RouteParameter(),
 				 true,
 				 false,
 				 true,
@@ -105,7 +105,7 @@ public class RouteActualItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(WafPackage.Literals.ROUTE_ACTUAL__VALUE);
+			childrenFeatures.add(WafPackage.eINSTANCE.getRouteActual_Value());
 		}
 		return childrenFeatures;
 	}
@@ -178,117 +178,117 @@ public class RouteActualItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.ROUTE_ACTUAL__VALUE,
+				(WafPackage.eINSTANCE.getRouteActual_Value(),
 				 WafFactory.eINSTANCE.createFeaturePathAttribute()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.ROUTE_ACTUAL__VALUE,
+				(WafPackage.eINSTANCE.getRouteActual_Value(),
 				 WafFactory.eINSTANCE.createFeaturePathAssociation()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.ROUTE_ACTUAL__VALUE,
+				(WafPackage.eINSTANCE.getRouteActual_Value(),
 				 WafFactory.eINSTANCE.createFeaturePathLabel()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.ROUTE_ACTUAL__VALUE,
+				(WafPackage.eINSTANCE.getRouteActual_Value(),
 				 OrmFactory.eINSTANCE.createFeatureReference()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.ROUTE_ACTUAL__VALUE,
+				(WafPackage.eINSTANCE.getRouteActual_Value(),
 				 BaseFactory.eINSTANCE.createNullLiteral()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.ROUTE_ACTUAL__VALUE,
+				(WafPackage.eINSTANCE.getRouteActual_Value(),
 				 BaseFactory.eINSTANCE.createBooleanLiteral()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.ROUTE_ACTUAL__VALUE,
+				(WafPackage.eINSTANCE.getRouteActual_Value(),
 				 BaseFactory.eINSTANCE.createIntegerLiteral()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.ROUTE_ACTUAL__VALUE,
+				(WafPackage.eINSTANCE.getRouteActual_Value(),
 				 BaseFactory.eINSTANCE.createStringLiteral()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.ROUTE_ACTUAL__VALUE,
+				(WafPackage.eINSTANCE.getRouteActual_Value(),
 				 BaseFactory.eINSTANCE.createTimeLiteral()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.ROUTE_ACTUAL__VALUE,
+				(WafPackage.eINSTANCE.getRouteActual_Value(),
 				 BaseFactory.eINSTANCE.createCurrentTime()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.ROUTE_ACTUAL__VALUE,
+				(WafPackage.eINSTANCE.getRouteActual_Value(),
 				 BaseFactory.eINSTANCE.createCurrentUser()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.ROUTE_ACTUAL__VALUE,
+				(WafPackage.eINSTANCE.getRouteActual_Value(),
 				 BaseFactory.eINSTANCE.createConstantReference()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.ROUTE_ACTUAL__VALUE,
+				(WafPackage.eINSTANCE.getRouteActual_Value(),
 				 BaseFactory.eINSTANCE.createParameterReference()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.ROUTE_ACTUAL__VALUE,
+				(WafPackage.eINSTANCE.getRouteActual_Value(),
 				 ExpressionFactory.eINSTANCE.createFunctionCall()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.ROUTE_ACTUAL__VALUE,
+				(WafPackage.eINSTANCE.getRouteActual_Value(),
 				 ExpressionFactory.eINSTANCE.createPredicateBooleanVariable()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.ROUTE_ACTUAL__VALUE,
+				(WafPackage.eINSTANCE.getRouteActual_Value(),
 				 ExpressionFactory.eINSTANCE.createPredicateBooleanOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.ROUTE_ACTUAL__VALUE,
+				(WafPackage.eINSTANCE.getRouteActual_Value(),
 				 ExpressionFactory.eINSTANCE.createPredicateEqualityOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.ROUTE_ACTUAL__VALUE,
+				(WafPackage.eINSTANCE.getRouteActual_Value(),
 				 ExpressionFactory.eINSTANCE.createPredicateComparisonOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.ROUTE_ACTUAL__VALUE,
+				(WafPackage.eINSTANCE.getRouteActual_Value(),
 				 ExpressionFactory.eINSTANCE.createPredicateInOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.ROUTE_ACTUAL__VALUE,
+				(WafPackage.eINSTANCE.getRouteActual_Value(),
 				 ExpressionFactory.eINSTANCE.createPredicateIsOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.ROUTE_ACTUAL__VALUE,
+				(WafPackage.eINSTANCE.getRouteActual_Value(),
 				 ExpressionFactory.eINSTANCE.createPredicateLikeOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.ROUTE_ACTUAL__VALUE,
+				(WafPackage.eINSTANCE.getRouteActual_Value(),
 				 ExpressionFactory.eINSTANCE.createPredicateIsEmpty()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.ROUTE_ACTUAL__VALUE,
+				(WafPackage.eINSTANCE.getRouteActual_Value(),
 				 ExpressionFactory.eINSTANCE.createPredicateIsNull()));
 	}
 

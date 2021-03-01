@@ -460,6 +460,60 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getDataType_IsBooleanDataType() {
+		return (EAttribute)dataTypeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getDataType_IsEmailDataType() {
+		return (EAttribute)dataTypeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getDataType_IsEnumerationType() {
+		return (EAttribute)dataTypeEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getDataType_IsIntegerDataType() {
+		return (EAttribute)dataTypeEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getDataType_IsStringDataType() {
+		return (EAttribute)dataTypeEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getDataType_IsTextareaDataType() {
+		return (EAttribute)dataTypeEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getEnumerationType() {
 		return enumerationTypeEClass;
 	}
@@ -628,6 +682,12 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 		classifierEClass = createEClass(CLASSIFIER);
 
 		dataTypeEClass = createEClass(DATA_TYPE);
+		createEAttribute(dataTypeEClass, DATA_TYPE__IS_BOOLEAN_DATA_TYPE);
+		createEAttribute(dataTypeEClass, DATA_TYPE__IS_EMAIL_DATA_TYPE);
+		createEAttribute(dataTypeEClass, DATA_TYPE__IS_ENUMERATION_TYPE);
+		createEAttribute(dataTypeEClass, DATA_TYPE__IS_INTEGER_DATA_TYPE);
+		createEAttribute(dataTypeEClass, DATA_TYPE__IS_STRING_DATA_TYPE);
+		createEAttribute(dataTypeEClass, DATA_TYPE__IS_TEXTAREA_DATA_TYPE);
 
 		enumerationTypeEClass = createEClass(ENUMERATION_TYPE);
 		createEReference(enumerationTypeEClass, ENUMERATION_TYPE__ENUMERATIONS);
@@ -734,6 +794,12 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 		initEClass(classifierEClass, Classifier.class, "Classifier", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(dataTypeEClass, DataType.class, "DataType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getDataType_IsBooleanDataType(), theEcorePackage.getEBoolean(), "isBooleanDataType", null, 0, 1, DataType.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDataType_IsEmailDataType(), theEcorePackage.getEBoolean(), "isEmailDataType", null, 0, 1, DataType.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDataType_IsEnumerationType(), theEcorePackage.getEBoolean(), "isEnumerationType", null, 0, 1, DataType.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDataType_IsIntegerDataType(), theEcorePackage.getEBoolean(), "isIntegerDataType", null, 0, 1, DataType.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDataType_IsStringDataType(), theEcorePackage.getEBoolean(), "isStringDataType", null, 0, 1, DataType.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDataType_IsTextareaDataType(), theEcorePackage.getEBoolean(), "isTextareaDataType", null, 0, 1, DataType.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(enumerationTypeEClass, EnumerationType.class, "EnumerationType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getEnumerationType_Enumerations(), this.getEnumerationLiteral(), null, "enumerations", null, 0, -1, EnumerationType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

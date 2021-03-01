@@ -64,7 +64,7 @@ public class DateFieldItemProvider extends InterfaceFieldItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_DateField_details_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_DateField_details_feature", "_UI_DateField_type"),
-				 WafPackage.Literals.DATE_FIELD__DETAILS,
+				 WafPackage.eINSTANCE.getDateField_Details(),
 				 true,
 				 false,
 				 false,
@@ -86,7 +86,7 @@ public class DateFieldItemProvider extends InterfaceFieldItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_DateField_format_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_DateField_format_feature", "_UI_DateField_type"),
-				 WafPackage.Literals.DATE_FIELD__FORMAT,
+				 WafPackage.eINSTANCE.getDateField_Format(),
 				 true,
 				 false,
 				 false,
@@ -165,8 +165,8 @@ public class DateFieldItemProvider extends InterfaceFieldItemProvider {
 		Object childObject = child;
 
 		boolean qualify =
-			childFeature == WafPackage.Literals.UNIT_FIELD__HIDE_WHEN ||
-			childFeature == WafPackage.Literals.INTERFACE_FIELD__DEFAULT_VALUE;
+			childFeature == WafPackage.eINSTANCE.getUnitField_HideWhen() ||
+			childFeature == WafPackage.eINSTANCE.getInterfaceField_FieldDefaultValue();
 
 		if (qualify) {
 			return getString

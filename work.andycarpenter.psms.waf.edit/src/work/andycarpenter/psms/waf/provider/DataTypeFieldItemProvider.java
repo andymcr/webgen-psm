@@ -45,7 +45,7 @@ public class DataTypeFieldItemProvider extends InterfaceFieldItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addDataTypePropertyDescriptor(object);
+			addFieldDataTypePropertyDescriptor(object);
 			addCaseInsensitivePropertyDescriptor(object);
 			addObfuscateFormFieldsPropertyDescriptor(object);
 			addEncryptPropertyDescriptor(object);
@@ -54,19 +54,19 @@ public class DataTypeFieldItemProvider extends InterfaceFieldItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Data Type feature.
+	 * This adds a property descriptor for the Field Data Type feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addDataTypePropertyDescriptor(Object object) {
+	protected void addFieldDataTypePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_DataTypeField_dataType_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DataTypeField_dataType_feature", "_UI_DataTypeField_type"),
-				 WafPackage.Literals.DATA_TYPE_FIELD__DATA_TYPE,
+				 getString("_UI_DataTypeField_fieldDataType_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DataTypeField_fieldDataType_feature", "_UI_DataTypeField_type"),
+				 WafPackage.eINSTANCE.getDataTypeField_FieldDataType(),
 				 true,
 				 false,
 				 true,
@@ -88,7 +88,7 @@ public class DataTypeFieldItemProvider extends InterfaceFieldItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_DataTypeField_caseInsensitive_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_DataTypeField_caseInsensitive_feature", "_UI_DataTypeField_type"),
-				 WafPackage.Literals.DATA_TYPE_FIELD__CASE_INSENSITIVE,
+				 WafPackage.eINSTANCE.getDataTypeField_CaseInsensitive(),
 				 true,
 				 false,
 				 false,
@@ -110,7 +110,7 @@ public class DataTypeFieldItemProvider extends InterfaceFieldItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_DataTypeField_obfuscateFormFields_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_DataTypeField_obfuscateFormFields_feature", "_UI_DataTypeField_type"),
-				 WafPackage.Literals.DATA_TYPE_FIELD__OBFUSCATE_FORM_FIELDS,
+				 WafPackage.eINSTANCE.getDataTypeField_ObfuscateFormFields(),
 				 true,
 				 false,
 				 false,
@@ -132,7 +132,7 @@ public class DataTypeFieldItemProvider extends InterfaceFieldItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_DataTypeField_encrypt_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_DataTypeField_encrypt_feature", "_UI_DataTypeField_type"),
-				 WafPackage.Literals.DATA_TYPE_FIELD__ENCRYPT,
+				 WafPackage.eINSTANCE.getDataTypeField_Encrypt(),
 				 true,
 				 false,
 				 false,
@@ -212,8 +212,8 @@ public class DataTypeFieldItemProvider extends InterfaceFieldItemProvider {
 		Object childObject = child;
 
 		boolean qualify =
-			childFeature == WafPackage.Literals.UNIT_FIELD__HIDE_WHEN ||
-			childFeature == WafPackage.Literals.INTERFACE_FIELD__DEFAULT_VALUE;
+			childFeature == WafPackage.eINSTANCE.getUnitField_HideWhen() ||
+			childFeature == WafPackage.eINSTANCE.getInterfaceField_FieldDefaultValue();
 
 		if (qualify) {
 			return getString

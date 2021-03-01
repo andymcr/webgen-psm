@@ -46,6 +46,13 @@ public class IndexUnitItemProvider extends CollectionUnitItemProvider {
 
 			addTargettingSearchesPropertyDescriptor(object);
 			addRowClassesPropertyDescriptor(object);
+			addContentClassPropertyDescriptor(object);
+			addHasContentClassPropertyDescriptor(object);
+			addIndexFieldListClassPropertyDescriptor(object);
+			addIndexFieldLabelClassPropertyDescriptor(object);
+			addIndexFieldValueClassPropertyDescriptor(object);
+			addIndexControlClassPropertyDescriptor(object);
+			addIndexAnchorClassPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -63,7 +70,7 @@ public class IndexUnitItemProvider extends CollectionUnitItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_IndexUnit_targettingSearches_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_IndexUnit_targettingSearches_feature", "_UI_IndexUnit_type"),
-				 WafPackage.Literals.INDEX_UNIT__TARGETTING_SEARCHES,
+				 WafPackage.eINSTANCE.getIndexUnit_TargettingSearches(),
 				 true,
 				 false,
 				 true,
@@ -85,8 +92,162 @@ public class IndexUnitItemProvider extends CollectionUnitItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_IndexUnit_rowClasses_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_IndexUnit_rowClasses_feature", "_UI_IndexUnit_type"),
-				 WafPackage.Literals.INDEX_UNIT__ROW_CLASSES,
+				 WafPackage.eINSTANCE.getIndexUnit_RowClasses(),
 				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Content Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addContentClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_IndexUnit_contentClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_IndexUnit_contentClass_feature", "_UI_IndexUnit_type"),
+				 WafPackage.eINSTANCE.getIndexUnit_ContentClass(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Has Content Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasContentClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_IndexUnit_hasContentClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_IndexUnit_hasContentClass_feature", "_UI_IndexUnit_type"),
+				 WafPackage.eINSTANCE.getIndexUnit_HasContentClass(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Index Field List Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIndexFieldListClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_IndexUnit_indexFieldListClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_IndexUnit_indexFieldListClass_feature", "_UI_IndexUnit_type"),
+				 WafPackage.eINSTANCE.getIndexUnit_IndexFieldListClass(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Index Field Label Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIndexFieldLabelClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_IndexUnit_indexFieldLabelClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_IndexUnit_indexFieldLabelClass_feature", "_UI_IndexUnit_type"),
+				 WafPackage.eINSTANCE.getIndexUnit_IndexFieldLabelClass(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Index Field Value Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIndexFieldValueClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_IndexUnit_indexFieldValueClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_IndexUnit_indexFieldValueClass_feature", "_UI_IndexUnit_type"),
+				 WafPackage.eINSTANCE.getIndexUnit_IndexFieldValueClass(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Index Control Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIndexControlClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_IndexUnit_indexControlClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_IndexUnit_indexControlClass_feature", "_UI_IndexUnit_type"),
+				 WafPackage.eINSTANCE.getIndexUnit_IndexControlClass(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Index Anchor Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIndexAnchorClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_IndexUnit_indexAnchorClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_IndexUnit_indexAnchorClass_feature", "_UI_IndexUnit_type"),
+				 WafPackage.eINSTANCE.getIndexUnit_IndexAnchorClass(),
+				 false,
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
@@ -122,6 +283,13 @@ public class IndexUnitItemProvider extends CollectionUnitItemProvider {
 
 		switch (notification.getFeatureID(IndexUnit.class)) {
 			case WafPackage.INDEX_UNIT__ROW_CLASSES:
+			case WafPackage.INDEX_UNIT__CONTENT_CLASS:
+			case WafPackage.INDEX_UNIT__HAS_CONTENT_CLASS:
+			case WafPackage.INDEX_UNIT__INDEX_FIELD_LIST_CLASS:
+			case WafPackage.INDEX_UNIT__INDEX_FIELD_LABEL_CLASS:
+			case WafPackage.INDEX_UNIT__INDEX_FIELD_VALUE_CLASS:
+			case WafPackage.INDEX_UNIT__INDEX_CONTROL_CLASS:
+			case WafPackage.INDEX_UNIT__INDEX_ANCHOR_CLASS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

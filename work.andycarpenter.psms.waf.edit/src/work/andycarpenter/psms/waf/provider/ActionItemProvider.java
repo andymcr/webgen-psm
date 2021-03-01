@@ -54,10 +54,18 @@ public class ActionItemProvider extends NamedDisplayElementItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addUsedByPropertyDescriptor(object);
+			addParentUnitPropertyDescriptor(object);
+			addAuthorisationRolesPropertyDescriptor(object);
+			addIsAuthorisedPropertyDescriptor(object);
+			addHasCustomisedAuthorisationPropertyDescriptor(object);
 			addDisablePropertyDescriptor(object);
 			addConfirmMessagePropertyDescriptor(object);
+			addHasConfirmMessagePropertyDescriptor(object);
 			addSuccessMessagePropertyDescriptor(object);
+			addHasSuccessMessagePropertyDescriptor(object);
 			addFailureMessagePropertyDescriptor(object);
+			addHasFailureMessagePropertyDescriptor(object);
+			addHasMessagesPropertyDescriptor(object);
 			addAnchorClassPropertyDescriptor(object);
 			addHeaderClassPropertyDescriptor(object);
 			addFooterClassPropertyDescriptor(object);
@@ -78,11 +86,99 @@ public class ActionItemProvider extends NamedDisplayElementItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_Action_usedBy_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Action_usedBy_feature", "_UI_Action_type"),
-				 WafPackage.Literals.ACTION__USED_BY,
+				 WafPackage.eINSTANCE.getAction_UsedBy(),
 				 true,
 				 false,
 				 true,
 				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Parent Unit feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addParentUnitPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Action_parentUnit_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Action_parentUnit_feature", "_UI_Action_type"),
+				 WafPackage.eINSTANCE.getAction_ParentUnit(),
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Authorisation Roles feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAuthorisationRolesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Action_authorisationRoles_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Action_authorisationRoles_feature", "_UI_Action_type"),
+				 WafPackage.eINSTANCE.getAction_AuthorisationRoles(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Is Authorised feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIsAuthorisedPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Action_isAuthorised_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Action_isAuthorised_feature", "_UI_Action_type"),
+				 WafPackage.eINSTANCE.getAction_IsAuthorised(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Has Customised Authorisation feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasCustomisedAuthorisationPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Action_hasCustomisedAuthorisation_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Action_hasCustomisedAuthorisation_feature", "_UI_Action_type"),
+				 WafPackage.eINSTANCE.getAction_HasCustomisedAuthorisation(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -100,7 +196,7 @@ public class ActionItemProvider extends NamedDisplayElementItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_Action_disable_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Action_disable_feature", "_UI_Action_type"),
-				 WafPackage.Literals.ACTION__DISABLE,
+				 WafPackage.eINSTANCE.getAction_Disable(),
 				 true,
 				 false,
 				 false,
@@ -122,11 +218,33 @@ public class ActionItemProvider extends NamedDisplayElementItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_Action_confirmMessage_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Action_confirmMessage_feature", "_UI_Action_type"),
-				 WafPackage.Literals.ACTION__CONFIRM_MESSAGE,
+				 WafPackage.eINSTANCE.getAction_ConfirmMessage(),
 				 true,
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Has Confirm Message feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasConfirmMessagePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Action_hasConfirmMessage_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Action_hasConfirmMessage_feature", "_UI_Action_type"),
+				 WafPackage.eINSTANCE.getAction_HasConfirmMessage(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -144,11 +262,33 @@ public class ActionItemProvider extends NamedDisplayElementItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_Action_successMessage_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Action_successMessage_feature", "_UI_Action_type"),
-				 WafPackage.Literals.ACTION__SUCCESS_MESSAGE,
+				 WafPackage.eINSTANCE.getAction_SuccessMessage(),
 				 true,
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Has Success Message feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasSuccessMessagePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Action_hasSuccessMessage_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Action_hasSuccessMessage_feature", "_UI_Action_type"),
+				 WafPackage.eINSTANCE.getAction_HasSuccessMessage(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -166,11 +306,55 @@ public class ActionItemProvider extends NamedDisplayElementItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_Action_failureMessage_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Action_failureMessage_feature", "_UI_Action_type"),
-				 WafPackage.Literals.ACTION__FAILURE_MESSAGE,
+				 WafPackage.eINSTANCE.getAction_FailureMessage(),
 				 true,
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Has Failure Message feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasFailureMessagePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Action_hasFailureMessage_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Action_hasFailureMessage_feature", "_UI_Action_type"),
+				 WafPackage.eINSTANCE.getAction_HasFailureMessage(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Has Messages feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasMessagesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Action_hasMessages_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Action_hasMessages_feature", "_UI_Action_type"),
+				 WafPackage.eINSTANCE.getAction_HasMessages(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -188,7 +372,7 @@ public class ActionItemProvider extends NamedDisplayElementItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_Action_anchorClass_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Action_anchorClass_feature", "_UI_Action_type"),
-				 WafPackage.Literals.ACTION__ANCHOR_CLASS,
+				 WafPackage.eINSTANCE.getAction_AnchorClass(),
 				 true,
 				 false,
 				 false,
@@ -210,7 +394,7 @@ public class ActionItemProvider extends NamedDisplayElementItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_Action_headerClass_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Action_headerClass_feature", "_UI_Action_type"),
-				 WafPackage.Literals.ACTION__HEADER_CLASS,
+				 WafPackage.eINSTANCE.getAction_HeaderClass(),
 				 true,
 				 false,
 				 false,
@@ -232,7 +416,7 @@ public class ActionItemProvider extends NamedDisplayElementItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_Action_footerClass_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Action_footerClass_feature", "_UI_Action_type"),
-				 WafPackage.Literals.ACTION__FOOTER_CLASS,
+				 WafPackage.eINSTANCE.getAction_FooterClass(),
 				 true,
 				 false,
 				 false,
@@ -253,8 +437,8 @@ public class ActionItemProvider extends NamedDisplayElementItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(WafPackage.Literals.ACTION__DISPLAY_WHEN);
-			childrenFeatures.add(WafPackage.Literals.ACTION__ENABLE_WHEN);
+			childrenFeatures.add(WafPackage.eINSTANCE.getAction_DisplayWhen());
+			childrenFeatures.add(WafPackage.eINSTANCE.getAction_EnableWhen());
 		}
 		return childrenFeatures;
 	}
@@ -299,10 +483,17 @@ public class ActionItemProvider extends NamedDisplayElementItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Action.class)) {
+			case WafPackage.ACTION__AUTHORISATION_ROLES:
+			case WafPackage.ACTION__IS_AUTHORISED:
+			case WafPackage.ACTION__HAS_CUSTOMISED_AUTHORISATION:
 			case WafPackage.ACTION__DISABLE:
 			case WafPackage.ACTION__CONFIRM_MESSAGE:
+			case WafPackage.ACTION__HAS_CONFIRM_MESSAGE:
 			case WafPackage.ACTION__SUCCESS_MESSAGE:
+			case WafPackage.ACTION__HAS_SUCCESS_MESSAGE:
 			case WafPackage.ACTION__FAILURE_MESSAGE:
+			case WafPackage.ACTION__HAS_FAILURE_MESSAGE:
+			case WafPackage.ACTION__HAS_MESSAGES:
 			case WafPackage.ACTION__ANCHOR_CLASS:
 			case WafPackage.ACTION__HEADER_CLASS:
 			case WafPackage.ACTION__FOOTER_CLASS:
@@ -329,92 +520,92 @@ public class ActionItemProvider extends NamedDisplayElementItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.ACTION__DISPLAY_WHEN,
+				(WafPackage.eINSTANCE.getAction_DisplayWhen(),
 				 ExpressionFactory.eINSTANCE.createPredicateBooleanVariable()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.ACTION__DISPLAY_WHEN,
+				(WafPackage.eINSTANCE.getAction_DisplayWhen(),
 				 ExpressionFactory.eINSTANCE.createPredicateBooleanOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.ACTION__DISPLAY_WHEN,
+				(WafPackage.eINSTANCE.getAction_DisplayWhen(),
 				 ExpressionFactory.eINSTANCE.createPredicateEqualityOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.ACTION__DISPLAY_WHEN,
+				(WafPackage.eINSTANCE.getAction_DisplayWhen(),
 				 ExpressionFactory.eINSTANCE.createPredicateComparisonOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.ACTION__DISPLAY_WHEN,
+				(WafPackage.eINSTANCE.getAction_DisplayWhen(),
 				 ExpressionFactory.eINSTANCE.createPredicateInOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.ACTION__DISPLAY_WHEN,
+				(WafPackage.eINSTANCE.getAction_DisplayWhen(),
 				 ExpressionFactory.eINSTANCE.createPredicateIsOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.ACTION__DISPLAY_WHEN,
+				(WafPackage.eINSTANCE.getAction_DisplayWhen(),
 				 ExpressionFactory.eINSTANCE.createPredicateLikeOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.ACTION__DISPLAY_WHEN,
+				(WafPackage.eINSTANCE.getAction_DisplayWhen(),
 				 ExpressionFactory.eINSTANCE.createPredicateIsEmpty()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.ACTION__DISPLAY_WHEN,
+				(WafPackage.eINSTANCE.getAction_DisplayWhen(),
 				 ExpressionFactory.eINSTANCE.createPredicateIsNull()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.ACTION__ENABLE_WHEN,
+				(WafPackage.eINSTANCE.getAction_EnableWhen(),
 				 ExpressionFactory.eINSTANCE.createPredicateBooleanVariable()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.ACTION__ENABLE_WHEN,
+				(WafPackage.eINSTANCE.getAction_EnableWhen(),
 				 ExpressionFactory.eINSTANCE.createPredicateBooleanOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.ACTION__ENABLE_WHEN,
+				(WafPackage.eINSTANCE.getAction_EnableWhen(),
 				 ExpressionFactory.eINSTANCE.createPredicateEqualityOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.ACTION__ENABLE_WHEN,
+				(WafPackage.eINSTANCE.getAction_EnableWhen(),
 				 ExpressionFactory.eINSTANCE.createPredicateComparisonOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.ACTION__ENABLE_WHEN,
+				(WafPackage.eINSTANCE.getAction_EnableWhen(),
 				 ExpressionFactory.eINSTANCE.createPredicateInOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.ACTION__ENABLE_WHEN,
+				(WafPackage.eINSTANCE.getAction_EnableWhen(),
 				 ExpressionFactory.eINSTANCE.createPredicateIsOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.ACTION__ENABLE_WHEN,
+				(WafPackage.eINSTANCE.getAction_EnableWhen(),
 				 ExpressionFactory.eINSTANCE.createPredicateLikeOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.ACTION__ENABLE_WHEN,
+				(WafPackage.eINSTANCE.getAction_EnableWhen(),
 				 ExpressionFactory.eINSTANCE.createPredicateIsEmpty()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.ACTION__ENABLE_WHEN,
+				(WafPackage.eINSTANCE.getAction_EnableWhen(),
 				 ExpressionFactory.eINSTANCE.createPredicateIsNull()));
 	}
 
@@ -430,8 +621,8 @@ public class ActionItemProvider extends NamedDisplayElementItemProvider {
 		Object childObject = child;
 
 		boolean qualify =
-			childFeature == WafPackage.Literals.ACTION__DISPLAY_WHEN ||
-			childFeature == WafPackage.Literals.ACTION__ENABLE_WHEN;
+			childFeature == WafPackage.eINSTANCE.getAction_DisplayWhen() ||
+			childFeature == WafPackage.eINSTANCE.getAction_EnableWhen();
 
 		if (qualify) {
 			return getString

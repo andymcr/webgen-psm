@@ -109,8 +109,8 @@ public class ContainerOperationActionItemProvider extends OperationActionItemPro
 		Object childObject = child;
 
 		boolean qualify =
-			childFeature == WafPackage.Literals.ACTION__DISPLAY_WHEN ||
-			childFeature == WafPackage.Literals.ACTION__ENABLE_WHEN;
+			childFeature == WafPackage.eINSTANCE.getAction_DisplayWhen() ||
+			childFeature == WafPackage.eINSTANCE.getAction_EnableWhen();
 
 		if (qualify) {
 			return getString

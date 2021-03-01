@@ -107,8 +107,8 @@ public class LoginUnitItemProvider extends EditUnitItemProvider {
 		Object childObject = child;
 
 		boolean qualify =
-			childFeature == WafPackage.Literals.DYNAMIC_UNIT__HIDE_WHEN ||
-			childFeature == WafPackage.Literals.EDIT_UNIT__DISABLE_WHEN;
+			childFeature == WafPackage.eINSTANCE.getDynamicUnit_HideWhen() ||
+			childFeature == WafPackage.eINSTANCE.getEditUnit_DisableWhen();
 
 		if (qualify) {
 			return getString

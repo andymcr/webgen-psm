@@ -5,19 +5,13 @@ package work.andycarpenter.psms.waf.provider;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
-
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.emf.edit.command.CommandParameter;
-
 import org.eclipse.emf.edit.domain.EditingDomain;
-
 import org.eclipse.emf.edit.provider.ChangeNotifier;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
@@ -30,7 +24,6 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.INotifyChangedListener;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-
 import work.andycarpenter.psms.base.BasePackage;
 import work.andycarpenter.psms.base.Constant;
 import work.andycarpenter.psms.base.util.BaseSwitch;
@@ -44,17 +37,13 @@ import work.andycarpenter.psms.expression.PredicateIsEmpty;
 import work.andycarpenter.psms.expression.PredicateIsNull;
 import work.andycarpenter.psms.expression.PredicateIsOperator;
 import work.andycarpenter.psms.expression.PredicateLikeOperator;
-
 import work.andycarpenter.psms.expression.util.ExpressionSwitch;
-
 import work.andycarpenter.psms.orm.AssociationReference;
 import work.andycarpenter.psms.orm.Attribute;
 import work.andycarpenter.psms.orm.Order;
 import work.andycarpenter.psms.orm.OrmPackage;
-
 import work.andycarpenter.psms.orm.util.OrmSwitch;
 import work.andycarpenter.psms.waf.WafFactory;
-
 import work.andycarpenter.psms.waf.util.WafAdapterFactory;
 
 /**
@@ -497,52 +486,6 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.waf.ChildPathAttribute} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ChildPathAttributeItemProvider childPathAttributeItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link work.andycarpenter.psms.waf.ChildPathAttribute}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createChildPathAttributeAdapter() {
-		if (childPathAttributeItemProvider == null) {
-			childPathAttributeItemProvider = new ChildPathAttributeItemProvider(this);
-		}
-
-		return childPathAttributeItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.waf.ChildPathAssociation} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ChildPathAssociationItemProvider childPathAssociationItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link work.andycarpenter.psms.waf.ChildPathAssociation}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createChildPathAssociationAdapter() {
-		if (childPathAssociationItemProvider == null) {
-			childPathAssociationItemProvider = new ChildPathAssociationItemProvider(this);
-		}
-
-		return childPathAssociationItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.waf.FeaturePathAttribute} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -609,6 +552,52 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 		}
 
 		return featurePathLabelItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.waf.ChildPathAttribute} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ChildPathAttributeItemProvider childPathAttributeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link work.andycarpenter.psms.waf.ChildPathAttribute}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createChildPathAttributeAdapter() {
+		if (childPathAttributeItemProvider == null) {
+			childPathAttributeItemProvider = new ChildPathAttributeItemProvider(this);
+		}
+
+		return childPathAttributeItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.waf.ChildPathAssociation} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ChildPathAssociationItemProvider childPathAssociationItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link work.andycarpenter.psms.waf.ChildPathAssociation}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createChildPathAssociationAdapter() {
+		if (childPathAssociationItemProvider == null) {
+			childPathAssociationItemProvider = new ChildPathAssociationItemProvider(this);
+		}
+
+		return childPathAssociationItemProvider;
 	}
 
 	/**
@@ -934,6 +923,29 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.waf.Badge} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected BadgeItemProvider badgeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link work.andycarpenter.psms.waf.Badge}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createBadgeAdapter() {
+		if (badgeItemProvider == null) {
+			badgeItemProvider = new BadgeItemProvider(this);
+		}
+
+		return badgeItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.waf.TextCardsUnit} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1000,6 +1012,52 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 		}
 
 		return imageCardsUnitItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.waf.SliderUnit} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected SliderUnitItemProvider sliderUnitItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link work.andycarpenter.psms.waf.SliderUnit}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createSliderUnitAdapter() {
+		if (sliderUnitItemProvider == null) {
+			sliderUnitItemProvider = new SliderUnitItemProvider(this);
+		}
+
+		return sliderUnitItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.waf.GalleryUnit} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected GalleryUnitItemProvider galleryUnitItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link work.andycarpenter.psms.waf.GalleryUnit}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createGalleryUnitAdapter() {
+		if (galleryUnitItemProvider == null) {
+			galleryUnitItemProvider = new GalleryUnitItemProvider(this);
+		}
+
+		return galleryUnitItemProvider;
 	}
 
 	/**
@@ -1141,52 +1199,6 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.waf.SliderUnit} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected SliderUnitItemProvider sliderUnitItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link work.andycarpenter.psms.waf.SliderUnit}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createSliderUnitAdapter() {
-		if (sliderUnitItemProvider == null) {
-			sliderUnitItemProvider = new SliderUnitItemProvider(this);
-		}
-
-		return sliderUnitItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.waf.GalleryUnit} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected GalleryUnitItemProvider galleryUnitItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link work.andycarpenter.psms.waf.GalleryUnit}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createGalleryUnitAdapter() {
-		if (galleryUnitItemProvider == null) {
-			galleryUnitItemProvider = new GalleryUnitItemProvider(this);
-		}
-
-		return galleryUnitItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.waf.SelectAction} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1299,29 +1311,6 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 		}
 
 		return generalOperationActionItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.waf.Badge} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected BadgeItemProvider badgeItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link work.andycarpenter.psms.waf.Badge}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createBadgeAdapter() {
-		if (badgeItemProvider == null) {
-			badgeItemProvider = new BadgeItemProvider(this);
-		}
-
-		return badgeItemProvider;
 	}
 
 	/**
@@ -1440,11 +1429,11 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 		if (staticUnitItemProvider != null) staticUnitItemProvider.dispose();
 		if (unitAttributeItemProvider != null) unitAttributeItemProvider.dispose();
 		if (unitAssociationItemProvider != null) unitAssociationItemProvider.dispose();
-		if (childPathAttributeItemProvider != null) childPathAttributeItemProvider.dispose();
-		if (childPathAssociationItemProvider != null) childPathAssociationItemProvider.dispose();
 		if (featurePathAttributeItemProvider != null) featurePathAttributeItemProvider.dispose();
 		if (featurePathAssociationItemProvider != null) featurePathAssociationItemProvider.dispose();
 		if (featurePathLabelItemProvider != null) featurePathLabelItemProvider.dispose();
+		if (childPathAttributeItemProvider != null) childPathAttributeItemProvider.dispose();
+		if (childPathAssociationItemProvider != null) childPathAssociationItemProvider.dispose();
 		if (unitLabelItemProvider != null) unitLabelItemProvider.dispose();
 		if (dataTypeFieldItemProvider != null) dataTypeFieldItemProvider.dispose();
 		if (dateFieldItemProvider != null) dateFieldItemProvider.dispose();
@@ -1527,17 +1516,17 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 			public Object caseAttribute(Attribute object) {
 				newChildDescriptors.add
 					(createChildParameter
-						(OrmPackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
+						(OrmPackage.Literals.ATTRIBUTE__ATTRIBUTE_DEFAULT_VALUE,
 						 WafFactory.eINSTANCE.createFeaturePathAttribute()));
 
 				newChildDescriptors.add
 					(createChildParameter
-						(OrmPackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
+						(OrmPackage.Literals.ATTRIBUTE__ATTRIBUTE_DEFAULT_VALUE,
 						 WafFactory.eINSTANCE.createFeaturePathAssociation()));
 
 				newChildDescriptors.add
 					(createChildParameter
-						(OrmPackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
+						(OrmPackage.Literals.ATTRIBUTE__ATTRIBUTE_DEFAULT_VALUE,
 						 WafFactory.eINSTANCE.createFeaturePathLabel()));
 
 				return null;
@@ -1562,6 +1551,7 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 
 				return null;
 			}
+ 
 			/**
 			 * <!-- begin-user-doc -->
 			 * <!-- end-user-doc -->
@@ -1586,6 +1576,7 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 
 				return null;
 			}
+ 
 			/**
 			 * <!-- begin-user-doc -->
 			 * <!-- end-user-doc -->
@@ -1779,6 +1770,7 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 
 				return null;
 			}
+ 
 			/**
 			 * <!-- begin-user-doc -->
 			 * <!-- end-user-doc -->
@@ -1803,6 +1795,7 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 
 				return null;
 			}
+ 
 			/**
 			 * <!-- begin-user-doc -->
 			 * <!-- end-user-doc -->

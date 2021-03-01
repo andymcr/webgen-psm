@@ -31,4 +31,5 @@
             uri="http://andycarpenter.work/psm/Expression"
             class="work.andycarpenter.psms.waf.provider.WafItemProviderAdapterFactory$ExpressionChildCreationExtender"/>
    </extension>
+
 </plugin>

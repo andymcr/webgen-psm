@@ -71,7 +71,7 @@ public class ImageCardsUnitItemProvider extends CardsUnitItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_ImageUnit_imageFilter_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ImageUnit_imageFilter_feature", "_UI_ImageUnit_type"),
-				 WafPackage.Literals.IMAGE_UNIT__IMAGE_FILTER,
+				 WafPackage.eINSTANCE.getImageUnit_ImageFilter(),
 				 true,
 				 false,
 				 true,
@@ -93,7 +93,7 @@ public class ImageCardsUnitItemProvider extends CardsUnitItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_ImageUnit_missingImageFilter_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ImageUnit_missingImageFilter_feature", "_UI_ImageUnit_type"),
-				 WafPackage.Literals.IMAGE_UNIT__MISSING_IMAGE_FILTER,
+				 WafPackage.eINSTANCE.getImageUnit_MissingImageFilter(),
 				 true,
 				 false,
 				 true,
@@ -115,7 +115,7 @@ public class ImageCardsUnitItemProvider extends CardsUnitItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_ImageUnit_missingImagePath_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ImageUnit_missingImagePath_feature", "_UI_ImageUnit_type"),
-				 WafPackage.Literals.IMAGE_UNIT__MISSING_IMAGE_PATH,
+				 WafPackage.eINSTANCE.getImageUnit_MissingImagePath(),
 				 true,
 				 false,
 				 false,
@@ -137,7 +137,7 @@ public class ImageCardsUnitItemProvider extends CardsUnitItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_ImageCardsUnit_enableImageEnlargement_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ImageCardsUnit_enableImageEnlargement_feature", "_UI_ImageCardsUnit_type"),
-				 WafPackage.Literals.IMAGE_CARDS_UNIT__ENABLE_IMAGE_ENLARGEMENT,
+				 WafPackage.eINSTANCE.getImageCardsUnit_EnableImageEnlargement(),
 				 true,
 				 false,
 				 false,
@@ -159,7 +159,7 @@ public class ImageCardsUnitItemProvider extends CardsUnitItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_ImageCardsUnit_overlayTitle_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ImageCardsUnit_overlayTitle_feature", "_UI_ImageCardsUnit_type"),
-				 WafPackage.Literals.IMAGE_CARDS_UNIT__OVERLAY_TITLE,
+				 WafPackage.eINSTANCE.getImageCardsUnit_OverlayTitle(),
 				 true,
 				 false,
 				 false,
@@ -181,7 +181,7 @@ public class ImageCardsUnitItemProvider extends CardsUnitItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_ImageCardsUnit_revealUntruncatedContent_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ImageCardsUnit_revealUntruncatedContent_feature", "_UI_ImageCardsUnit_type"),
-				 WafPackage.Literals.IMAGE_CARDS_UNIT__REVEAL_UNTRUNCATED_CONTENT,
+				 WafPackage.eINSTANCE.getImageCardsUnit_RevealUntruncatedContent(),
 				 true,
 				 false,
 				 false,
@@ -202,7 +202,7 @@ public class ImageCardsUnitItemProvider extends CardsUnitItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(WafPackage.Literals.IMAGE_UNIT__IMAGE_PATH_FEATURE);
+			childrenFeatures.add(WafPackage.eINSTANCE.getImageUnit_ImagePathFeature());
 		}
 		return childrenFeatures;
 	}
@@ -284,17 +284,17 @@ public class ImageCardsUnitItemProvider extends CardsUnitItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.IMAGE_UNIT__IMAGE_PATH_FEATURE,
+				(WafPackage.eINSTANCE.getImageUnit_ImagePathFeature(),
 				 WafFactory.eINSTANCE.createFeaturePathAttribute()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.IMAGE_UNIT__IMAGE_PATH_FEATURE,
+				(WafPackage.eINSTANCE.getImageUnit_ImagePathFeature(),
 				 WafFactory.eINSTANCE.createFeaturePathAssociation()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.IMAGE_UNIT__IMAGE_PATH_FEATURE,
+				(WafPackage.eINSTANCE.getImageUnit_ImagePathFeature(),
 				 WafFactory.eINSTANCE.createFeaturePathLabel()));
 	}
 
@@ -310,8 +310,8 @@ public class ImageCardsUnitItemProvider extends CardsUnitItemProvider {
 		Object childObject = child;
 
 		boolean qualify =
-			childFeature == WafPackage.Literals.COLLECTION_UNIT__ELEMENT_TITLE ||
-			childFeature == WafPackage.Literals.IMAGE_UNIT__IMAGE_PATH_FEATURE;
+			childFeature == WafPackage.eINSTANCE.getCollectionUnit_ElementTitle() ||
+			childFeature == WafPackage.eINSTANCE.getImageUnit_ImagePathFeature();
 
 		if (qualify) {
 			return getString

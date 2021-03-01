@@ -51,7 +51,6 @@ public class CollectionUnitItemProvider extends DynamicUnitItemProvider {
 			addSelectorsPropertyDescriptor(object);
 			addUnitTitlePropertyDescriptor(object);
 			addTruncateElementTitlePropertyDescriptor(object);
-			addContentTypePropertyDescriptor(object);
 			addSelectionPropertyDescriptor(object);
 			addOmitContainerLoadPropertyDescriptor(object);
 			addContainerTypePropertyDescriptor(object);
@@ -60,6 +59,9 @@ public class CollectionUnitItemProvider extends DynamicUnitItemProvider {
 			addFindElementSelectionPropertyDescriptor(object);
 			addFilterPropertyDescriptor(object);
 			addSupportedFiltersPropertyDescriptor(object);
+			addHasFiltersPropertyDescriptor(object);
+			addHasGroupedResultsPropertyDescriptor(object);
+			addHasPaginationPropertyDescriptor(object);
 			addEmptyMessagePropertyDescriptor(object);
 			addOmitFieldLabelsPropertyDescriptor(object);
 			addDefaultPaginationSizePropertyDescriptor(object);
@@ -97,29 +99,7 @@ public class CollectionUnitItemProvider extends DynamicUnitItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_SelectableUnit_selectors_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_SelectableUnit_selectors_feature", "_UI_SelectableUnit_type"),
-				 WafPackage.Literals.SELECTABLE_UNIT__SELECTORS,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Content Type feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addContentTypePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_CollectionUnit_contentType_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_contentType_feature", "_UI_CollectionUnit_type"),
-				 WafPackage.Literals.COLLECTION_UNIT__CONTENT_TYPE,
+				 WafPackage.eINSTANCE.getSelectableUnit_Selectors(),
 				 true,
 				 false,
 				 true,
@@ -141,7 +121,7 @@ public class CollectionUnitItemProvider extends DynamicUnitItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_CollectionUnit_unitTitle_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_unitTitle_feature", "_UI_CollectionUnit_type"),
-				 WafPackage.Literals.COLLECTION_UNIT__UNIT_TITLE,
+				 WafPackage.eINSTANCE.getCollectionUnit_UnitTitle(),
 				 true,
 				 false,
 				 true,
@@ -163,7 +143,7 @@ public class CollectionUnitItemProvider extends DynamicUnitItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_CollectionUnit_truncateElementTitle_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_truncateElementTitle_feature", "_UI_CollectionUnit_type"),
-				 WafPackage.Literals.COLLECTION_UNIT__TRUNCATE_ELEMENT_TITLE,
+				 WafPackage.eINSTANCE.getCollectionUnit_TruncateElementTitle(),
 				 true,
 				 false,
 				 false,
@@ -185,7 +165,7 @@ public class CollectionUnitItemProvider extends DynamicUnitItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_CollectionUnit_selection_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_selection_feature", "_UI_CollectionUnit_type"),
-				 WafPackage.Literals.COLLECTION_UNIT__SELECTION,
+				 WafPackage.eINSTANCE.getCollectionUnit_Selection(),
 				 true,
 				 false,
 				 true,
@@ -207,7 +187,7 @@ public class CollectionUnitItemProvider extends DynamicUnitItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_CollectionUnit_omitContainerLoad_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_omitContainerLoad_feature", "_UI_CollectionUnit_type"),
-				 WafPackage.Literals.COLLECTION_UNIT__OMIT_CONTAINER_LOAD,
+				 WafPackage.eINSTANCE.getCollectionUnit_OmitContainerLoad(),
 				 true,
 				 false,
 				 false,
@@ -229,7 +209,7 @@ public class CollectionUnitItemProvider extends DynamicUnitItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_CollectionUnit_containerType_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_containerType_feature", "_UI_CollectionUnit_type"),
-				 WafPackage.Literals.COLLECTION_UNIT__CONTAINER_TYPE,
+				 WafPackage.eINSTANCE.getCollectionUnit_ContainerType(),
 				 true,
 				 false,
 				 true,
@@ -251,7 +231,7 @@ public class CollectionUnitItemProvider extends DynamicUnitItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_CollectionUnit_containerRepository_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_containerRepository_feature", "_UI_CollectionUnit_type"),
-				 WafPackage.Literals.COLLECTION_UNIT__CONTAINER_REPOSITORY,
+				 WafPackage.eINSTANCE.getCollectionUnit_ContainerRepository(),
 				 true,
 				 false,
 				 true,
@@ -273,7 +253,7 @@ public class CollectionUnitItemProvider extends DynamicUnitItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_CollectionUnit_findContainerSelection_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_findContainerSelection_feature", "_UI_CollectionUnit_type"),
-				 WafPackage.Literals.COLLECTION_UNIT__FIND_CONTAINER_SELECTION,
+				 WafPackage.eINSTANCE.getCollectionUnit_FindContainerSelection(),
 				 true,
 				 false,
 				 true,
@@ -295,7 +275,7 @@ public class CollectionUnitItemProvider extends DynamicUnitItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_CollectionUnit_findElementSelection_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_findElementSelection_feature", "_UI_CollectionUnit_type"),
-				 WafPackage.Literals.COLLECTION_UNIT__FIND_ELEMENT_SELECTION,
+				 WafPackage.eINSTANCE.getCollectionUnit_FindElementSelection(),
 				 true,
 				 false,
 				 true,
@@ -317,7 +297,7 @@ public class CollectionUnitItemProvider extends DynamicUnitItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_CollectionUnit_filter_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_filter_feature", "_UI_CollectionUnit_type"),
-				 WafPackage.Literals.COLLECTION_UNIT__FILTER,
+				 WafPackage.eINSTANCE.getCollectionUnit_Filter(),
 				 true,
 				 false,
 				 true,
@@ -339,11 +319,77 @@ public class CollectionUnitItemProvider extends DynamicUnitItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_CollectionUnit_supportedFilters_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_supportedFilters_feature", "_UI_CollectionUnit_type"),
-				 WafPackage.Literals.COLLECTION_UNIT__SUPPORTED_FILTERS,
+				 WafPackage.eINSTANCE.getCollectionUnit_SupportedFilters(),
 				 true,
 				 false,
 				 true,
 				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Has Filters feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasFiltersPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_CollectionUnit_hasFilters_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_hasFilters_feature", "_UI_CollectionUnit_type"),
+				 WafPackage.eINSTANCE.getCollectionUnit_HasFilters(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Has Grouped Results feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasGroupedResultsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_CollectionUnit_hasGroupedResults_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_hasGroupedResults_feature", "_UI_CollectionUnit_type"),
+				 WafPackage.eINSTANCE.getCollectionUnit_HasGroupedResults(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Has Pagination feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasPaginationPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_CollectionUnit_hasPagination_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_hasPagination_feature", "_UI_CollectionUnit_type"),
+				 WafPackage.eINSTANCE.getCollectionUnit_HasPagination(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -361,7 +407,7 @@ public class CollectionUnitItemProvider extends DynamicUnitItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_CollectionUnit_emptyMessage_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_emptyMessage_feature", "_UI_CollectionUnit_type"),
-				 WafPackage.Literals.COLLECTION_UNIT__EMPTY_MESSAGE,
+				 WafPackage.eINSTANCE.getCollectionUnit_EmptyMessage(),
 				 true,
 				 false,
 				 false,
@@ -383,7 +429,7 @@ public class CollectionUnitItemProvider extends DynamicUnitItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_CollectionUnit_omitFieldLabels_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_omitFieldLabels_feature", "_UI_CollectionUnit_type"),
-				 WafPackage.Literals.COLLECTION_UNIT__OMIT_FIELD_LABELS,
+				 WafPackage.eINSTANCE.getCollectionUnit_OmitFieldLabels(),
 				 true,
 				 false,
 				 false,
@@ -405,7 +451,7 @@ public class CollectionUnitItemProvider extends DynamicUnitItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_CollectionUnit_defaultPaginationSize_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_defaultPaginationSize_feature", "_UI_CollectionUnit_type"),
-				 WafPackage.Literals.COLLECTION_UNIT__DEFAULT_PAGINATION_SIZE,
+				 WafPackage.eINSTANCE.getCollectionUnit_DefaultPaginationSize(),
 				 true,
 				 false,
 				 false,
@@ -427,7 +473,7 @@ public class CollectionUnitItemProvider extends DynamicUnitItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_CollectionUnit_maximumPaginationSize_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_maximumPaginationSize_feature", "_UI_CollectionUnit_type"),
-				 WafPackage.Literals.COLLECTION_UNIT__MAXIMUM_PAGINATION_SIZE,
+				 WafPackage.eINSTANCE.getCollectionUnit_MaximumPaginationSize(),
 				 true,
 				 false,
 				 false,
@@ -449,7 +495,7 @@ public class CollectionUnitItemProvider extends DynamicUnitItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_CollectionUnit_paginationControlPlacement_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_paginationControlPlacement_feature", "_UI_CollectionUnit_type"),
-				 WafPackage.Literals.COLLECTION_UNIT__PAGINATION_CONTROL_PLACEMENT,
+				 WafPackage.eINSTANCE.getCollectionUnit_PaginationControlPlacement(),
 				 true,
 				 false,
 				 false,
@@ -471,7 +517,7 @@ public class CollectionUnitItemProvider extends DynamicUnitItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_CollectionUnit_nextNpages_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_nextNpages_feature", "_UI_CollectionUnit_type"),
-				 WafPackage.Literals.COLLECTION_UNIT__NEXT_NPAGES,
+				 WafPackage.eINSTANCE.getCollectionUnit_NextNpages(),
 				 true,
 				 false,
 				 false,
@@ -493,7 +539,7 @@ public class CollectionUnitItemProvider extends DynamicUnitItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_CollectionUnit_previousNpages_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_previousNpages_feature", "_UI_CollectionUnit_type"),
-				 WafPackage.Literals.COLLECTION_UNIT__PREVIOUS_NPAGES,
+				 WafPackage.eINSTANCE.getCollectionUnit_PreviousNpages(),
 				 true,
 				 false,
 				 false,
@@ -515,7 +561,7 @@ public class CollectionUnitItemProvider extends DynamicUnitItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_CollectionUnit_nextPageLabel_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_nextPageLabel_feature", "_UI_CollectionUnit_type"),
-				 WafPackage.Literals.COLLECTION_UNIT__NEXT_PAGE_LABEL,
+				 WafPackage.eINSTANCE.getCollectionUnit_NextPageLabel(),
 				 true,
 				 false,
 				 false,
@@ -537,7 +583,7 @@ public class CollectionUnitItemProvider extends DynamicUnitItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_CollectionUnit_nextPageIconName_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_nextPageIconName_feature", "_UI_CollectionUnit_type"),
-				 WafPackage.Literals.COLLECTION_UNIT__NEXT_PAGE_ICON_NAME,
+				 WafPackage.eINSTANCE.getCollectionUnit_NextPageIconName(),
 				 true,
 				 false,
 				 false,
@@ -559,7 +605,7 @@ public class CollectionUnitItemProvider extends DynamicUnitItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_CollectionUnit_previousPageLabel_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_previousPageLabel_feature", "_UI_CollectionUnit_type"),
-				 WafPackage.Literals.COLLECTION_UNIT__PREVIOUS_PAGE_LABEL,
+				 WafPackage.eINSTANCE.getCollectionUnit_PreviousPageLabel(),
 				 true,
 				 false,
 				 false,
@@ -581,7 +627,7 @@ public class CollectionUnitItemProvider extends DynamicUnitItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_CollectionUnit_previousPageIconName_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_previousPageIconName_feature", "_UI_CollectionUnit_type"),
-				 WafPackage.Literals.COLLECTION_UNIT__PREVIOUS_PAGE_ICON_NAME,
+				 WafPackage.eINSTANCE.getCollectionUnit_PreviousPageIconName(),
 				 true,
 				 false,
 				 false,
@@ -603,7 +649,7 @@ public class CollectionUnitItemProvider extends DynamicUnitItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_CollectionUnit_useDisabledPageLinks_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_useDisabledPageLinks_feature", "_UI_CollectionUnit_type"),
-				 WafPackage.Literals.COLLECTION_UNIT__USE_DISABLED_PAGE_LINKS,
+				 WafPackage.eINSTANCE.getCollectionUnit_UseDisabledPageLinks(),
 				 true,
 				 false,
 				 false,
@@ -625,7 +671,7 @@ public class CollectionUnitItemProvider extends DynamicUnitItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_CollectionUnit_useFirstLastPageLinks_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_useFirstLastPageLinks_feature", "_UI_CollectionUnit_type"),
-				 WafPackage.Literals.COLLECTION_UNIT__USE_FIRST_LAST_PAGE_LINKS,
+				 WafPackage.eINSTANCE.getCollectionUnit_UseFirstLastPageLinks(),
 				 true,
 				 false,
 				 false,
@@ -647,7 +693,7 @@ public class CollectionUnitItemProvider extends DynamicUnitItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_CollectionUnit_firstPageLabel_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_firstPageLabel_feature", "_UI_CollectionUnit_type"),
-				 WafPackage.Literals.COLLECTION_UNIT__FIRST_PAGE_LABEL,
+				 WafPackage.eINSTANCE.getCollectionUnit_FirstPageLabel(),
 				 true,
 				 false,
 				 false,
@@ -669,7 +715,7 @@ public class CollectionUnitItemProvider extends DynamicUnitItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_CollectionUnit_firstPageIconName_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_firstPageIconName_feature", "_UI_CollectionUnit_type"),
-				 WafPackage.Literals.COLLECTION_UNIT__FIRST_PAGE_ICON_NAME,
+				 WafPackage.eINSTANCE.getCollectionUnit_FirstPageIconName(),
 				 true,
 				 false,
 				 false,
@@ -691,7 +737,7 @@ public class CollectionUnitItemProvider extends DynamicUnitItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_CollectionUnit_lastPageLabel_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_lastPageLabel_feature", "_UI_CollectionUnit_type"),
-				 WafPackage.Literals.COLLECTION_UNIT__LAST_PAGE_LABEL,
+				 WafPackage.eINSTANCE.getCollectionUnit_LastPageLabel(),
 				 true,
 				 false,
 				 false,
@@ -713,7 +759,7 @@ public class CollectionUnitItemProvider extends DynamicUnitItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_CollectionUnit_lastPageIconName_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_lastPageIconName_feature", "_UI_CollectionUnit_type"),
-				 WafPackage.Literals.COLLECTION_UNIT__LAST_PAGE_ICON_NAME,
+				 WafPackage.eINSTANCE.getCollectionUnit_LastPageIconName(),
 				 true,
 				 false,
 				 false,
@@ -735,7 +781,7 @@ public class CollectionUnitItemProvider extends DynamicUnitItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_CollectionUnit_paginationClass_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_paginationClass_feature", "_UI_CollectionUnit_type"),
-				 WafPackage.Literals.COLLECTION_UNIT__PAGINATION_CLASS,
+				 WafPackage.eINSTANCE.getCollectionUnit_PaginationClass(),
 				 true,
 				 false,
 				 false,
@@ -757,7 +803,7 @@ public class CollectionUnitItemProvider extends DynamicUnitItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_CollectionUnit_paginationElementClass_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_paginationElementClass_feature", "_UI_CollectionUnit_type"),
-				 WafPackage.Literals.COLLECTION_UNIT__PAGINATION_ELEMENT_CLASS,
+				 WafPackage.eINSTANCE.getCollectionUnit_PaginationElementClass(),
 				 true,
 				 false,
 				 false,
@@ -779,7 +825,7 @@ public class CollectionUnitItemProvider extends DynamicUnitItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_CollectionUnit_paginationAnchorClass_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_paginationAnchorClass_feature", "_UI_CollectionUnit_type"),
-				 WafPackage.Literals.COLLECTION_UNIT__PAGINATION_ANCHOR_CLASS,
+				 WafPackage.eINSTANCE.getCollectionUnit_PaginationAnchorClass(),
 				 true,
 				 false,
 				 false,
@@ -800,7 +846,7 @@ public class CollectionUnitItemProvider extends DynamicUnitItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(WafPackage.Literals.COLLECTION_UNIT__ELEMENT_TITLE);
+			childrenFeatures.add(WafPackage.eINSTANCE.getCollectionUnit_ElementTitle());
 		}
 		return childrenFeatures;
 	}
@@ -858,6 +904,9 @@ public class CollectionUnitItemProvider extends DynamicUnitItemProvider {
 		switch (notification.getFeatureID(CollectionUnit.class)) {
 			case WafPackage.COLLECTION_UNIT__TRUNCATE_ELEMENT_TITLE:
 			case WafPackage.COLLECTION_UNIT__OMIT_CONTAINER_LOAD:
+			case WafPackage.COLLECTION_UNIT__HAS_FILTERS:
+			case WafPackage.COLLECTION_UNIT__HAS_GROUPED_RESULTS:
+			case WafPackage.COLLECTION_UNIT__HAS_PAGINATION:
 			case WafPackage.COLLECTION_UNIT__EMPTY_MESSAGE:
 			case WafPackage.COLLECTION_UNIT__OMIT_FIELD_LABELS:
 			case WafPackage.COLLECTION_UNIT__DEFAULT_PAGINATION_SIZE:
@@ -900,17 +949,17 @@ public class CollectionUnitItemProvider extends DynamicUnitItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.COLLECTION_UNIT__ELEMENT_TITLE,
+				(WafPackage.eINSTANCE.getCollectionUnit_ElementTitle(),
 				 WafFactory.eINSTANCE.createFeaturePathAttribute()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.COLLECTION_UNIT__ELEMENT_TITLE,
+				(WafPackage.eINSTANCE.getCollectionUnit_ElementTitle(),
 				 WafFactory.eINSTANCE.createFeaturePathAssociation()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.COLLECTION_UNIT__ELEMENT_TITLE,
+				(WafPackage.eINSTANCE.getCollectionUnit_ElementTitle(),
 				 WafFactory.eINSTANCE.createFeaturePathLabel()));
 	}
 

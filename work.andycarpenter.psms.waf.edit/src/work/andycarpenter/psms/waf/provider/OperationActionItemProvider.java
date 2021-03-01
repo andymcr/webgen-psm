@@ -47,8 +47,9 @@ public class OperationActionItemProvider extends ActionItemProvider {
 
 			addOperationPropertyDescriptor(object);
 			addFileExtensionPropertyDescriptor(object);
-			addRequiresRolePropertyDescriptor(object);
 			addUriElementPropertyDescriptor(object);
+			addLocalAuthorisationRolesPropertyDescriptor(object);
+			addOperationAuthorisationRolesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -66,7 +67,7 @@ public class OperationActionItemProvider extends ActionItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_OperationAction_operation_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_OperationAction_operation_feature", "_UI_OperationAction_type"),
-				 WafPackage.Literals.OPERATION_ACTION__OPERATION,
+				 WafPackage.eINSTANCE.getOperationAction_Operation(),
 				 true,
 				 false,
 				 true,
@@ -88,29 +89,7 @@ public class OperationActionItemProvider extends ActionItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_OperationAction_fileExtension_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_OperationAction_fileExtension_feature", "_UI_OperationAction_type"),
-				 WafPackage.Literals.OPERATION_ACTION__FILE_EXTENSION,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Requires Role feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addRequiresRolePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_OperationAction_requiresRole_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_OperationAction_requiresRole_feature", "_UI_OperationAction_type"),
-				 WafPackage.Literals.OPERATION_ACTION__REQUIRES_ROLE,
+				 WafPackage.eINSTANCE.getOperationAction_FileExtension(),
 				 true,
 				 false,
 				 false,
@@ -132,8 +111,52 @@ public class OperationActionItemProvider extends ActionItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_OperationAction_uriElement_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_OperationAction_uriElement_feature", "_UI_OperationAction_type"),
-				 WafPackage.Literals.OPERATION_ACTION__URI_ELEMENT,
+				 WafPackage.eINSTANCE.getOperationAction_UriElement(),
 				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Local Authorisation Roles feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addLocalAuthorisationRolesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_OperationAction_localAuthorisationRoles_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_OperationAction_localAuthorisationRoles_feature", "_UI_OperationAction_type"),
+				 WafPackage.eINSTANCE.getOperationAction_LocalAuthorisationRoles(),
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Operation Authorisation Roles feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addOperationAuthorisationRolesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_OperationAction_operationAuthorisationRoles_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_OperationAction_operationAuthorisationRoles_feature", "_UI_OperationAction_type"),
+				 WafPackage.eINSTANCE.getOperationAction_OperationAuthorisationRoles(),
+				 false,
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
@@ -169,8 +192,9 @@ public class OperationActionItemProvider extends ActionItemProvider {
 
 		switch (notification.getFeatureID(OperationAction.class)) {
 			case WafPackage.OPERATION_ACTION__FILE_EXTENSION:
-			case WafPackage.OPERATION_ACTION__REQUIRES_ROLE:
 			case WafPackage.OPERATION_ACTION__URI_ELEMENT:
+			case WafPackage.OPERATION_ACTION__LOCAL_AUTHORISATION_ROLES:
+			case WafPackage.OPERATION_ACTION__OPERATION_AUTHORISATION_ROLES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}
@@ -201,8 +225,8 @@ public class OperationActionItemProvider extends ActionItemProvider {
 		Object childObject = child;
 
 		boolean qualify =
-			childFeature == WafPackage.Literals.ACTION__DISPLAY_WHEN ||
-			childFeature == WafPackage.Literals.ACTION__ENABLE_WHEN;
+			childFeature == WafPackage.eINSTANCE.getAction_DisplayWhen() ||
+			childFeature == WafPackage.eINSTANCE.getAction_EnableWhen();
 
 		if (qualify) {
 			return getString

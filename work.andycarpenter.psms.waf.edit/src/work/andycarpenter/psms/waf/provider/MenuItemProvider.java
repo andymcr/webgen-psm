@@ -71,7 +71,7 @@ public class MenuItemProvider extends NamedDisplayElementItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_Menu_omitCaption_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Menu_omitCaption_feature", "_UI_Menu_type"),
-				 WafPackage.Literals.MENU__OMIT_CAPTION,
+				 WafPackage.eINSTANCE.getMenu_OmitCaption(),
 				 true,
 				 false,
 				 false,
@@ -93,7 +93,7 @@ public class MenuItemProvider extends NamedDisplayElementItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_Menu_styleClass_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Menu_styleClass_feature", "_UI_Menu_type"),
-				 WafPackage.Literals.MENU__STYLE_CLASS,
+				 WafPackage.eINSTANCE.getMenu_StyleClass(),
 				 true,
 				 false,
 				 false,
@@ -115,7 +115,7 @@ public class MenuItemProvider extends NamedDisplayElementItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_Menu_captionClass_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Menu_captionClass_feature", "_UI_Menu_type"),
-				 WafPackage.Literals.MENU__CAPTION_CLASS,
+				 WafPackage.eINSTANCE.getMenu_CaptionClass(),
 				 true,
 				 false,
 				 false,
@@ -137,7 +137,7 @@ public class MenuItemProvider extends NamedDisplayElementItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_Menu_layoutClass_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Menu_layoutClass_feature", "_UI_Menu_type"),
-				 WafPackage.Literals.MENU__LAYOUT_CLASS,
+				 WafPackage.eINSTANCE.getMenu_LayoutClass(),
 				 true,
 				 false,
 				 false,
@@ -158,7 +158,7 @@ public class MenuItemProvider extends NamedDisplayElementItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(WafPackage.Literals.MENU__ENTRIES);
+			childrenFeatures.add(WafPackage.eINSTANCE.getMenu_Entries());
 		}
 		return childrenFeatures;
 	}
@@ -240,17 +240,17 @@ public class MenuItemProvider extends NamedDisplayElementItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.MENU__ENTRIES,
+				(WafPackage.eINSTANCE.getMenu_Entries(),
 				 WafFactory.eINSTANCE.createSubmenuEntry()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.MENU__ENTRIES,
+				(WafPackage.eINSTANCE.getMenu_Entries(),
 				 WafFactory.eINSTANCE.createActionMenuEntry()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.MENU__ENTRIES,
+				(WafPackage.eINSTANCE.getMenu_Entries(),
 				 WafFactory.eINSTANCE.createEditStaticTextMenuEntry()));
 	}
 

@@ -64,6 +64,7 @@ public class OrmModelItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addEnumerationTypesPropertyDescriptor(object);
 			addDatabaseTechnologyPropertyDescriptor(object);
 			addOrmTechnologyPropertyDescriptor(object);
 			addTimestampCreationPropertyDescriptor(object);
@@ -71,6 +72,28 @@ public class OrmModelItemProvider
 			addHasCustomOrmTypesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Enumeration Types feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addEnumerationTypesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_OrmModel_enumerationTypes_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_OrmModel_enumerationTypes_feature", "_UI_OrmModel_type"),
+				 OrmPackage.Literals.ORM_MODEL__ENUMERATION_TYPES,
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**

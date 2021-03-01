@@ -67,7 +67,7 @@ public class QueryItemProvider extends NamedElementItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_Query_filter_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Query_filter_feature", "_UI_Query_type"),
-				 WafPackage.Literals.QUERY__FILTER,
+				 WafPackage.eINSTANCE.getQuery_Filter(),
 				 true,
 				 false,
 				 true,
@@ -88,7 +88,7 @@ public class QueryItemProvider extends NamedElementItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(WafPackage.Literals.QUERY__PARAMETERS);
+			childrenFeatures.add(WafPackage.eINSTANCE.getQuery_Parameters());
 		}
 		return childrenFeatures;
 	}
@@ -164,7 +164,7 @@ public class QueryItemProvider extends NamedElementItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.QUERY__PARAMETERS,
+				(WafPackage.eINSTANCE.getQuery_Parameters(),
 				 WafFactory.eINSTANCE.createQueryParameter()));
 	}
 

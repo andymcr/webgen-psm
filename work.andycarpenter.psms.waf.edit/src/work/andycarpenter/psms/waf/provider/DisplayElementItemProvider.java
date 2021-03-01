@@ -78,7 +78,7 @@ public class DisplayElementItemProvider
 				 getResourceLocator(),
 				 getString("_UI_DisplayElement_displayLabel_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_DisplayElement_displayLabel_feature", "_UI_DisplayElement_type"),
-				 WafPackage.Literals.DISPLAY_ELEMENT__DISPLAY_LABEL,
+				 WafPackage.eINSTANCE.getDisplayElement_DisplayLabel(),
 				 true,
 				 false,
 				 false,

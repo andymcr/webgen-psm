@@ -45,8 +45,8 @@ public class FeaturePathAttributeItemProvider extends FeaturePathItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addNamePropertyDescriptor(object);
 			addAttributePropertyDescriptor(object);
+			addNamePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -64,7 +64,7 @@ public class FeaturePathAttributeItemProvider extends FeaturePathItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_FeaturePathAttribute_name_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_FeaturePathAttribute_name_feature", "_UI_FeaturePathAttribute_type"),
-				 WafPackage.Literals.FEATURE_PATH_ATTRIBUTE__NAME,
+				 WafPackage.eINSTANCE.getFeaturePathAttribute_Name(),
 				 false,
 				 false,
 				 false,
@@ -86,7 +86,7 @@ public class FeaturePathAttributeItemProvider extends FeaturePathItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_FeaturePathAttribute_attribute_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_FeaturePathAttribute_attribute_feature", "_UI_FeaturePathAttribute_type"),
-				 WafPackage.Literals.FEATURE_PATH_ATTRIBUTE__ATTRIBUTE,
+				 WafPackage.eINSTANCE.getFeaturePathAttribute_Attribute(),
 				 true,
 				 false,
 				 true,

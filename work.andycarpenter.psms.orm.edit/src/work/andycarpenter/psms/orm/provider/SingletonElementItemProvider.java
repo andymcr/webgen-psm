@@ -45,7 +45,7 @@ public class SingletonElementItemProvider extends SingletonAttributeItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addDataTypePropertyDescriptor(object);
+			addAttributeDataTypePropertyDescriptor(object);
 			addObfuscateFormFieldsPropertyDescriptor(object);
 			addCaseInsensitivePropertyDescriptor(object);
 			addEncryptPropertyDescriptor(object);
@@ -54,19 +54,19 @@ public class SingletonElementItemProvider extends SingletonAttributeItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Data Type feature.
+	 * This adds a property descriptor for the Attribute Data Type feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addDataTypePropertyDescriptor(Object object) {
+	protected void addAttributeDataTypePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_SingletonElement_dataType_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_SingletonElement_dataType_feature", "_UI_SingletonElement_type"),
-				 OrmPackage.Literals.SINGLETON_ELEMENT__DATA_TYPE,
+				 getString("_UI_SingletonElement_attributeDataType_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_SingletonElement_attributeDataType_feature", "_UI_SingletonElement_type"),
+				 OrmPackage.Literals.SINGLETON_ELEMENT__ATTRIBUTE_DATA_TYPE,
 				 true,
 				 false,
 				 true,

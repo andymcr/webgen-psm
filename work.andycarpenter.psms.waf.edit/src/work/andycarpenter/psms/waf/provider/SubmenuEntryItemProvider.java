@@ -46,7 +46,8 @@ public class SubmenuEntryItemProvider extends MenuItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addPartOfPropertyDescriptor(object);
-			addRequiresRolePropertyDescriptor(object);
+			addAuthorisationRolesPropertyDescriptor(object);
+			addIsAuthorisedPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -64,7 +65,7 @@ public class SubmenuEntryItemProvider extends MenuItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_MenuEntry_partOf_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_MenuEntry_partOf_feature", "_UI_MenuEntry_type"),
-				 WafPackage.Literals.MENU_ENTRY__PART_OF,
+				 WafPackage.eINSTANCE.getMenuEntry_PartOf(),
 				 true,
 				 false,
 				 true,
@@ -74,23 +75,45 @@ public class SubmenuEntryItemProvider extends MenuItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Requires Role feature.
+	 * This adds a property descriptor for the Authorisation Roles feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addRequiresRolePropertyDescriptor(Object object) {
+	protected void addAuthorisationRolesPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_SubmenuEntry_requiresRole_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_SubmenuEntry_requiresRole_feature", "_UI_SubmenuEntry_type"),
-				 WafPackage.Literals.SUBMENU_ENTRY__REQUIRES_ROLE,
+				 getString("_UI_SubmenuEntry_authorisationRoles_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_SubmenuEntry_authorisationRoles_feature", "_UI_SubmenuEntry_type"),
+				 WafPackage.eINSTANCE.getSubmenuEntry_AuthorisationRoles(),
 				 true,
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Is Authorised feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIsAuthorisedPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_SubmenuEntry_isAuthorised_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_SubmenuEntry_isAuthorised_feature", "_UI_SubmenuEntry_type"),
+				 WafPackage.eINSTANCE.getSubmenuEntry_IsAuthorised(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -133,7 +156,8 @@ public class SubmenuEntryItemProvider extends MenuItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(SubmenuEntry.class)) {
-			case WafPackage.SUBMENU_ENTRY__REQUIRES_ROLE:
+			case WafPackage.SUBMENU_ENTRY__AUTHORISATION_ROLES:
+			case WafPackage.SUBMENU_ENTRY__IS_AUTHORISED:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

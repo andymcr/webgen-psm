@@ -75,7 +75,7 @@ public class MenuEntryItemProvider
 				 getResourceLocator(),
 				 getString("_UI_MenuEntry_partOf_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_MenuEntry_partOf_feature", "_UI_MenuEntry_type"),
-				 WafPackage.Literals.MENU_ENTRY__PART_OF,
+				 WafPackage.eINSTANCE.getMenuEntry_PartOf(),
 				 true,
 				 false,
 				 true,

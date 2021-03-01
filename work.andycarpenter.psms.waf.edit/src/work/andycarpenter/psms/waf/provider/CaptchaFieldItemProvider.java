@@ -109,8 +109,8 @@ public class CaptchaFieldItemProvider extends InterfaceFieldItemProvider {
 		Object childObject = child;
 
 		boolean qualify =
-			childFeature == WafPackage.Literals.UNIT_FIELD__HIDE_WHEN ||
-			childFeature == WafPackage.Literals.INTERFACE_FIELD__DEFAULT_VALUE;
+			childFeature == WafPackage.eINSTANCE.getUnitField_HideWhen() ||
+			childFeature == WafPackage.eINSTANCE.getInterfaceField_FieldDefaultValue();
 
 		if (qualify) {
 			return getString

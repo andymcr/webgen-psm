@@ -63,6 +63,10 @@ public class FeaturePathItemProvider
 			super.getPropertyDescriptors(object);
 
 			addSuffixesPropertyDescriptor(object);
+			addHasChildPropertyDescriptor(object);
+			addPersistentFeaturePropertyDescriptor(object);
+			addIsRequiredPropertyDescriptor(object);
+			addIsSingletonPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -90,6 +94,94 @@ public class FeaturePathItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Has Child feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasChildPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_FeaturePath_hasChild_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_FeaturePath_hasChild_feature", "_UI_FeaturePath_type"),
+				 WafPackage.eINSTANCE.getFeaturePath_HasChild(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Persistent Feature feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPersistentFeaturePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_FeaturePath_persistentFeature_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_FeaturePath_persistentFeature_feature", "_UI_FeaturePath_type"),
+				 WafPackage.eINSTANCE.getFeaturePath_PersistentFeature(),
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Is Required feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIsRequiredPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_FeaturePath_isRequired_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_FeaturePath_isRequired_feature", "_UI_FeaturePath_type"),
+				 WafPackage.eINSTANCE.getFeaturePath_IsRequired(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Is Singleton feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIsSingletonPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_FeaturePath_isSingleton_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_FeaturePath_isSingleton_feature", "_UI_FeaturePath_type"),
+				 WafPackage.eINSTANCE.getFeaturePath_IsSingleton(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -97,7 +189,8 @@ public class FeaturePathItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_FeaturePath_type");
+		FeaturePath featurePath = (FeaturePath)object;
+		return getString("_UI_FeaturePath_type") + " " + featurePath.isHasChild();
 	}
 	
 
@@ -114,6 +207,9 @@ public class FeaturePathItemProvider
 
 		switch (notification.getFeatureID(FeaturePath.class)) {
 			case WafPackage.FEATURE_PATH__SUFFIXES:
+			case WafPackage.FEATURE_PATH__HAS_CHILD:
+			case WafPackage.FEATURE_PATH__IS_REQUIRED:
+			case WafPackage.FEATURE_PATH__IS_SINGLETON:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

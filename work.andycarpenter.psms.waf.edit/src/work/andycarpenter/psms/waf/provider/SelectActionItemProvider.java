@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import work.andycarpenter.psms.waf.SelectAction;
@@ -48,6 +49,7 @@ public class SelectActionItemProvider extends ActionItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addTargetPropertyDescriptor(object);
+			addSelectAuthorisationRolesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -65,11 +67,33 @@ public class SelectActionItemProvider extends ActionItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_SelectAction_target_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_SelectAction_target_feature", "_UI_SelectAction_type"),
-				 WafPackage.Literals.SELECT_ACTION__TARGET,
+				 WafPackage.eINSTANCE.getSelectAction_Target(),
 				 true,
 				 false,
 				 true,
 				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Select Authorisation Roles feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSelectAuthorisationRolesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_SelectAction_selectAuthorisationRoles_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_SelectAction_selectAuthorisationRoles_feature", "_UI_SelectAction_type"),
+				 WafPackage.eINSTANCE.getSelectAction_SelectAuthorisationRoles(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -86,7 +110,7 @@ public class SelectActionItemProvider extends ActionItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(WafPackage.Literals.SELECT_ACTION__VALUE_PATH);
+			childrenFeatures.add(WafPackage.eINSTANCE.getSelectAction_ValuePath());
 		}
 		return childrenFeatures;
 	}
@@ -142,6 +166,9 @@ public class SelectActionItemProvider extends ActionItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(SelectAction.class)) {
+			case WafPackage.SELECT_ACTION__SELECT_AUTHORISATION_ROLES:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
 			case WafPackage.SELECT_ACTION__VALUE_PATH:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
@@ -162,17 +189,17 @@ public class SelectActionItemProvider extends ActionItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.SELECT_ACTION__VALUE_PATH,
+				(WafPackage.eINSTANCE.getSelectAction_ValuePath(),
 				 WafFactory.eINSTANCE.createFeaturePathAttribute()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.SELECT_ACTION__VALUE_PATH,
+				(WafPackage.eINSTANCE.getSelectAction_ValuePath(),
 				 WafFactory.eINSTANCE.createFeaturePathAssociation()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.SELECT_ACTION__VALUE_PATH,
+				(WafPackage.eINSTANCE.getSelectAction_ValuePath(),
 				 WafFactory.eINSTANCE.createFeaturePathLabel()));
 	}
 
@@ -188,8 +215,8 @@ public class SelectActionItemProvider extends ActionItemProvider {
 		Object childObject = child;
 
 		boolean qualify =
-			childFeature == WafPackage.Literals.ACTION__DISPLAY_WHEN ||
-			childFeature == WafPackage.Literals.ACTION__ENABLE_WHEN;
+			childFeature == WafPackage.eINSTANCE.getAction_DisplayWhen() ||
+			childFeature == WafPackage.eINSTANCE.getAction_EnableWhen();
 
 		if (qualify) {
 			return getString

@@ -53,7 +53,7 @@ public class UnitAssociationItemProvider extends UnitFeatureItemProvider {
 			addAssociationPropertyDescriptor(object);
 			addValueDisplayPropertyDescriptor(object);
 			addOptionsPropertyDescriptor(object);
-			addFilteredOptionsPropertyDescriptor(object);
+			addOptionsFilterPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -137,7 +137,7 @@ public class UnitAssociationItemProvider extends UnitFeatureItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_UnitAssociation_options_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_UnitAssociation_options_feature", "_UI_UnitAssociation_type"),
-				 WafPackage.Literals.UNIT_ASSOCIATION__OPTIONS,
+				 WafPackage.eINSTANCE.getUnitAssociation_Options(),
 				 true,
 				 false,
 				 true,
@@ -147,19 +147,19 @@ public class UnitAssociationItemProvider extends UnitFeatureItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Filtered Options feature.
+	 * This adds a property descriptor for the Options Filter feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addFilteredOptionsPropertyDescriptor(Object object) {
+	protected void addOptionsFilterPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_UnitAssociation_filteredOptions_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UnitAssociation_filteredOptions_feature", "_UI_UnitAssociation_type"),
-				 WafPackage.Literals.UNIT_ASSOCIATION__FILTERED_OPTIONS,
+				 getString("_UI_UnitAssociation_optionsFilter_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UnitAssociation_optionsFilter_feature", "_UI_UnitAssociation_type"),
+				 WafPackage.eINSTANCE.getUnitAssociation_OptionsFilter(),
 				 true,
 				 false,
 				 true,
@@ -280,9 +280,9 @@ public class UnitAssociationItemProvider extends UnitFeatureItemProvider {
 		Object childObject = child;
 
 		boolean qualify =
-			childFeature == WafPackage.Literals.UNIT_FIELD__HIDE_WHEN ||
-			childFeature == WafPackage.Literals.UNIT_FEATURE__FORCED_VALUE ||
-			childFeature == WafPackage.Literals.UNIT_FEATURE__DISPLAY_DEFAULT_WHEN;
+			childFeature == WafPackage.eINSTANCE.getUnitField_HideWhen() ||
+			childFeature == WafPackage.eINSTANCE.getUnitFeature_ForcedValue() ||
+			childFeature == WafPackage.eINSTANCE.getUnitFeature_DisplayDefaultWhen();
 
 		if (qualify) {
 			return getString

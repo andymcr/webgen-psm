@@ -9,17 +9,21 @@
 	editorDirectory="/work.andycarpenter.psms.waf.editor/src")
 package work.andycarpenter.psms.waf
 
+import work.andycarpenter.psms.base.Classifier
 import work.andycarpenter.psms.base.DataType
+import work.andycarpenter.psms.base.EnumerationType
 import work.andycarpenter.psms.base.FormalParameter
 import work.andycarpenter.psms.base.NamedDisplayElement
 import work.andycarpenter.psms.base.NamedElement
 import work.andycarpenter.psms.expression.Expression
 import work.andycarpenter.psms.expression.Predicate
 import work.andycarpenter.psms.expression.Variable
+import work.andycarpenter.psms.orm.Association
 import work.andycarpenter.psms.orm.AssociationReference
 import work.andycarpenter.psms.orm.Attribute
 import work.andycarpenter.psms.orm.DateDetails
 import work.andycarpenter.psms.orm.Entity
+import work.andycarpenter.psms.orm.Feature
 import work.andycarpenter.psms.orm.FeatureChildPath
 import work.andycarpenter.psms.orm.Filter
 import work.andycarpenter.psms.orm.Label
@@ -32,6 +36,7 @@ import work.andycarpenter.psms.api.API
 import work.andycarpenter.psms.service.BusinessOperation
 import work.andycarpenter.psms.service.Service
 import work.andycarpenter.psms.service.ServiceModel
+import org.eclipse.xtext.xbase.lib.CollectionLiterals
 
 
 enum FrameworkTechnologies {
@@ -80,6 +85,127 @@ class WafModel {
 	refers Menu sideMenu
 	String siteTemplate
 	boolean staticUnitsEditable
+	derived readonly transient volatile boolean hasAPI get {
+		api !== null
+	}
+	refers readonly transient volatile unsettable derived DynamicUnit[] formUnits get {
+		return pages.flatMap[it.formUnits].toEList()
+	}
+	derived readonly transient volatile boolean hasFormUnits get {
+		!formUnits.isEmpty()
+	}
+	refers readonly transient volatile unsettable derived ImageUnit[] imageUnits get {
+		return pages.flatMap[it.imageUnits].toEList()
+	}
+	derived readonly transient volatile boolean hasImageUnits get {
+		!imageUnits.isEmpty()
+	}
+	refers readonly transient volatile unsettable derived ImageCardsUnit[] imageCardsUnits get {
+		return pages.flatMap[it.imageCardsUnits].toEList()
+	}
+	derived readonly transient volatile boolean hasImageCardsUnits get {
+		!imageCardsUnits.isEmpty()
+	}
+	refers derived readonly transient volatile UnitField[] formFields get {
+		pages.flatMap[it.formFields].toEList()
+	}
+	derived readonly transient volatile boolean hasFormFields get {
+		!formFields.isEmpty()
+	}
+	derived readonly transient volatile boolean hasFormAssociations get {
+		!formFields.filter[it instanceof UnitAssociation].isEmpty()
+	}
+	derived readonly transient volatile boolean hasResourceFields get {
+		!pages.filter[it.hasResourceFields].isEmpty()
+	}
+	derived readonly transient volatile boolean isAuthenticated get {
+		authentication !== null
+	}
+	derived readonly transient volatile boolean isCasAuthenticated get {
+		if (isAuthenticated)
+			authentication instanceof CasAuthentication
+		else
+			false
+	}
+	refers derived readonly transient volatile CasAuthentication casAuthentication get {
+		if (isCasAuthenticated)
+			authentication as CasAuthentication
+	}
+	derived readonly transient volatile boolean isLocallyAuthenticated get {
+		if (isAuthenticated)
+			authentication instanceof LocalAuthenticationSystem
+		else
+			false
+	}
+	refers derived readonly transient volatile LocalAuthenticationSystem localAuthentication get {
+		if (isLocallyAuthenticated)
+			authentication as LocalAuthenticationSystem
+	}
+	String defaultStyleClass = ''
+	String defaultSectionClass = ''
+	String defaultCaptionClass = ''
+	String defaultContentClass = ''
+	String defaultCardsContentClass = ''
+	String defaultDetailsContentClass = ''
+	String defaultFormContentClass = ''
+	String defaultGalleryContentClass = ''
+	String defaultIndexContentClass = ''
+	String defaultSliderContentClass = ''
+	String defaultStaticContentClass = ''
+	String defaultFieldListClass = ''
+	String defaultCardsFieldListClass = ''
+	String defaultDetailsFieldListClass = ''
+	String defaultFormFieldListClass = ''
+	String defaultGalleryFieldListClass = ''
+	String defaultIndexFieldListClass = ''
+	String defaultSliderFieldListClass = ''
+	String defaultRowClass = ''
+	String defaultColumnClass = ''
+	String defaultCardClass = ''
+	String defaultCardHeaderClass = ''
+	String defaultCardBodyClass = ''
+	String defaultCardFooterClass = ''
+	String defaultControlClass = ''
+	String defaultCardsControlClass = ''
+	String defaultDetailsControlClass = ''
+	String defaultFormControlClass = ''
+	String defaultGalleryControlClass = ''
+	String defaultIndexControlClass = ''
+	String defaultSliderControlClass = ''
+	String defaultStaticControlClass = ''
+	String defaultInputGroupClass = ''
+	String defaultFieldLabelClass = ''
+	String defaultCardsFieldLabelClass = ''
+	String defaultDetailsFieldLabelClass = ''
+	String defaultFormFieldLabelClass = ''
+	String defaultGalleryFieldLabelClass = ''
+	String defaultIndexFieldLabelClass = ''
+	String defaultSliderFieldLabelClass = ''
+	String defaultFieldValueClass = ''
+	String defaultCardsFieldValueClass = ''
+	String defaultDetailsFieldValueClass = ''
+	String defaultFormFieldValueClass = ''
+	String defaultGalleryFieldValueClass = ''
+	String defaultIndexFieldValueClass = ''
+	String defaultSliderFieldValueClass = ''
+	String defaultActionNavigationClass = ''
+	String defaultAnchorClass = ''
+	String defaultCardsAnchorClass = ''
+	String defaultDetailsAnchorClass = ''
+	String defaultFormAnchorClass = ''
+	String defaultGalleryAnchorClass = ''
+	String defaultIndexAnchorClass = ''
+	String defaultSliderAnchorClass = ''
+	String defaultStaticAnchorClass = ''
+	refers readonly transient volatile unsettable derived WafModel genModel get {
+		this
+	}
+	refers readonly transient volatile unsettable derived WafModel uiModel get {
+		this
+	}
+	refers readonly transient volatile unsettable derived Authentication securityModel get {
+		authentication
+	}
 }
 
 
@@ -176,7 +302,10 @@ abstract class MenuEntry {
 }
 
 class SubmenuEntry extends Menu, MenuEntry {
-	String requiresRole
+	String authorisationRoles = ''
+	derived readonly transient volatile boolean isAuthorised get {
+		authorisationRoles.trim() != ''
+	}
 }
 
 class ActionMenuEntry extends MenuEntry, NamedDisplayElement {
@@ -191,9 +320,172 @@ class Page extends NamedDisplayElement {
 	container WafModel partOf opposite pages
 	refers Page parentPage opposite childPages
 	refers Page[] childPages opposite parentPage
+	derived readonly transient volatile String commonRole get {
+		if (units.isEmpty())
+			''
+		else if (hasCommonUnitAuthentication)
+			units.head.authorisationRoles
+		else
+			''
+	}
+	derived readonly transient volatile boolean isAuthorised get {
+		commonRole.trim() != ''
+	}
+	derived readonly transient volatile boolean hasCommonUnitAuthentication get {
+		if (units.size() < 2)
+			true
+		else
+			units.drop(1).forall[authorisationRoles.trim() == units.head.authorisationRoles.trim()]
+	}
 	contains ContentUnit[] units opposite displayedOn
-	String uriElement = ""
-	String styleClass
+	derived readonly transient volatile boolean hasChangableCollections get {
+		!editUnits.filter[it.hasChangableCollections].isEmpty()
+	}
+	refers readonly transient volatile unsettable derived CollectionUnit[] collectionUnits get {
+		return units.filter[it instanceof CollectionUnit].map[it as CollectionUnit].toEList
+	}
+	derived readonly transient volatile boolean hasCollectionUnits get {
+		!collectionUnits.isEmpty()
+	}
+	refers readonly transient volatile unsettable derived DynamicUnit[] dynamicUnits get {
+		units.filter[it instanceof DynamicUnit].map[it as DynamicUnit].toEList
+	}
+	derived readonly transient volatile boolean hasDynamicUnits get {
+		!dynamicUnits.isEmpty()
+	}
+	refers readonly transient volatile unsettable derived EditUnit[] editUnits get {
+		units.filter[it instanceof EditUnit].map[it as EditUnit].toEList
+	}
+	derived readonly transient volatile boolean hasEditUnits get {
+		!editUnits.isEmpty()
+	}
+	refers readonly transient volatile unsettable derived EditUnit[] anyEditUnits get {
+		(editUnits + childPages.flatMap[editUnits]).toEList()
+	}
+	derived readonly transient volatile boolean hasAnyEditUnits get {
+		!anyEditUnits.isEmpty()
+	}
+	refers readonly transient volatile unsettable derived ForgottenPasswordUnit[] forgottenPasswordUnits get {
+		return units.filter[it instanceof ForgottenPasswordUnit].map[it as ForgottenPasswordUnit].toEList
+	}
+	derived readonly transient volatile boolean hasForgottenPasswordUnits get {
+		!forgottenPasswordUnits.isEmpty()
+	}
+	refers readonly transient volatile unsettable derived DynamicUnit[] formUnits get {
+		return dynamicUnits.filter[isFormUnit].toEList
+	}
+	derived readonly transient volatile boolean hasFormUnits get {
+		!formUnits.isEmpty()
+	}
+	derived readonly transient volatile boolean hasFilters get {
+		!collectionUnits.filter[it.hasFilters].isEmpty()
+	}
+	refers readonly transient volatile unsettable derived GalleryUnit[] galleryUnits get {
+		return units.filter[it instanceof GalleryUnit].map[it as GalleryUnit].toEList
+	}
+	derived readonly transient volatile boolean hasGalleryUnits get {
+		!galleryUnits.isEmpty()
+	}
+	refers readonly transient volatile unsettable derived IndexUnit[] indexUnits get {
+		return units.filter[it instanceof IndexUnit].map[it as IndexUnit].toEList
+	}
+	derived readonly transient volatile boolean hasIndexUnits get {
+		!indexUnits.isEmpty()
+	}
+	refers readonly transient volatile unsettable derived ImageUnit[] imageUnits get {
+		return units.filter[it instanceof ImageUnit].map[it as ImageUnit].toEList
+	}
+	derived readonly transient volatile boolean hasImageUnits get {
+		!imageUnits.isEmpty()
+	}
+	refers readonly transient volatile unsettable derived ImageCardsUnit[] imageCardsUnits get {
+		return units.filter[it instanceof ImageCardsUnit].map[it as ImageCardsUnit].toEList
+	}
+	derived readonly transient volatile boolean hasImageCardsUnits get {
+		!imageCardsUnits.isEmpty()
+	}
+	refers readonly transient volatile unsettable derived LoginUnit[] loginUnits get {
+		return units.filter[it instanceof LoginUnit].map[it as LoginUnit].toEList
+	}
+	derived readonly transient volatile boolean hasLoginUnits get {
+		!loginUnits.isEmpty()
+	}
+	refers readonly transient volatile unsettable derived MapUnit[] mapUnits get {
+		return units.filter[it instanceof MapUnit].map[it as MapUnit].toEList
+	}
+	derived readonly transient volatile boolean hasMapUnits get {
+		!mapUnits.isEmpty()
+	}
+	refers readonly transient volatile unsettable derived DynamicUnit[] nonSecurityUnits get {
+		dynamicUnits.filter[!(it instanceof SecurityUnit)].toEList
+	}
+	derived readonly transient volatile boolean hasNonSecurityUnits get {
+		!nonSecurityUnits.isEmpty()
+	}
+	refers readonly transient volatile unsettable derived SliderUnit[] sliderUnits get {
+		return units.filter[it instanceof SliderUnit].map[it as SliderUnit].toEList
+	}
+	derived readonly transient volatile boolean hasSliderUnits get {
+		!sliderUnits.isEmpty()
+	}
+	refers readonly transient volatile unsettable derived Repository[] repositories get {
+		dynamicUnits.flatMap[repositoriesUsed].toSet().toEList()
+	}
+	derived readonly transient volatile boolean hasRepositories get {
+		!repositories.isEmpty()
+	}
+	refers readonly transient volatile unsettable derived Service[] services get {
+		return dynamicUnits.flatMap[servicesUsed].toSet().toEList()
+	}
+	derived readonly transient volatile boolean hasServices get {
+		!services.isEmpty()
+	}
+	derived readonly transient volatile boolean hasPagination get {
+		!collectionUnits.filter[it.hasPagination].isEmpty()
+	}
+	derived readonly transient volatile boolean hasCaptchaFields get {
+		!dynamicUnits.filter[it.hasCaptchaFields].isEmpty()
+	}
+	refers derived readonly transient volatile UnitField[] formFields get {
+		dynamicUnits.flatMap[it.formFields].toEList()
+	}
+	derived readonly transient volatile boolean hasInterfaceFields get {
+		!dynamicUnits.filter[it.hasInterfaceFields].isEmpty()
+	}
+	derived readonly transient volatile boolean hasResourceFields get {
+		!dynamicUnits.filter[it.hasResourceFields].isEmpty()
+	}
+	refers derived readonly transient volatile Action[] actionsWithoutTarget get {
+		dynamicUnits.flatMap[it.actionsWithoutTarget].toEList()
+	}
+	String uriElement = ''
+	String localStyleClass
+	derived readonly transient volatile String styleClass get {
+		if (localStyleClass.trim() != '') {
+			localStyleClass.trim();
+		} else if (uiModel.defaultStyleClass.trim() != '') {
+			uiModel.defaultStyleClass.trim()
+		}
+	}
+	derived readonly transient volatile boolean hasStyleClass get {
+		styleClass !== null
+	}
+	refers readonly transient volatile unsettable derived WafModel genModel get {
+		partOf.genModel
+	}
+	refers readonly transient volatile unsettable derived WafModel uiModel get {
+		partOf.uiModel
+	}
+	refers readonly transient volatile unsettable derived Authentication securityModel get {
+		partOf.securityModel
+	}
+	refers readonly transient volatile unsettable derived Page rootPage get {
+		if (parentPage === null) {
+			this
+		} else {
+			parentPage.rootPage
+		}
+	}
 }
 
 class Query extends NamedElement {
@@ -208,15 +500,50 @@ class QueryParameter extends NamedElement {
 
 abstract class ContentUnit extends NamedDisplayElement {
 	container Page[1] displayedOn opposite units
-	String uriElement = ""
+	String uriElement = ''
 	contains RouteActual[] routeActuals
-	String requiresRole = ""
+	String authorisationRoles = ''
+	derived readonly transient volatile boolean isAuthorised get {
+		authorisationRoles.trim() != ''
+	}
+	refers derived readonly transient volatile LocalAuthenticationSystem localAuthentication get {
+		genModel.localAuthentication
+	}
 	String purposeSummary
 	String alternative
-	String sectionClass
 	boolean omitCaption
-	String captionClass
-	String contentClass
+	String localSectionClass
+	derived readonly transient volatile String sectionClass get {
+		if (localSectionClass.trim() != '') {
+			localSectionClass.trim();
+		} else if (uiModel.defaultSectionClass.trim() != '') {
+			uiModel.defaultSectionClass.trim()
+		}
+	}
+	derived readonly transient volatile boolean hasSectionClass get {
+		sectionClass !== null
+	}
+	String localCaptionClass
+	derived readonly transient volatile String captionClass get {
+		if (localCaptionClass.trim() != '') {
+			localCaptionClass.trim();
+		} else if (uiModel.defaultCaptionClass.trim() != '') {
+			uiModel.defaultCaptionClass.trim()
+		}
+	}
+	derived readonly transient volatile boolean hasCaptionClass get {
+		captionClass !== null
+	}
+	String localContentClass
+	refers readonly transient volatile unsettable derived WafModel genModel get {
+		displayedOn.genModel
+	}
+	refers readonly transient volatile unsettable derived WafModel uiModel get {
+		displayedOn.uiModel
+	}
+	refers readonly transient volatile unsettable derived Authentication securityModel get {
+		displayedOn.securityModel
+	}
 }
 
 class RouteActual {
@@ -226,19 +553,261 @@ class RouteActual {
 class StaticUnit extends ContentUnit {
 	refers Repository repository
 	String[1] content
+	derived readonly transient volatile String contentClass get {
+		if (localContentClass.trim() != '') {
+			localContentClass.trim();
+		} else if (uiModel.defaultStaticContentClass.trim() != '') {
+			uiModel.defaultStaticContentClass.trim()
+		} else if (uiModel.defaultContentClass.trim() != '') {
+			uiModel.defaultContentClass.trim()
+		}
+	}
+	derived readonly transient volatile boolean hasContentClass get {
+		contentClass !== null
+	}
 }
 
 abstract class DynamicUnit extends ContentUnit, ActionContainer {
 	contains UnitField[] displayFields opposite displayedOn
+	refers Entity[1] contentType
 	refers Repository[] repositoriesUsed
 	refers Service[] servicesUsed
 	contains Predicate hideWhen
-	String messageWhenHidden
+	String messageWhenHidden = ''
 	String header
 	String footer
+	refers readonly transient volatile unsettable derived Repository contentRepository get {
+		contentType?.repository
+	}
+	refers readonly transient volatile unsettable derived Association containingAssociation get {
+		contentType?.containingAssociation
+	}
+	refers readonly transient volatile unsettable derived Entity containingType get {
+		if (this instanceof CollectionUnit) {
+			if ((this as CollectionUnit).findContainerSelection !== null)
+				(this as CollectionUnit).findContainerSelection.definedBy.serves
+			else if ((this as CollectionUnit).selection !== null) {
+				if (!(this as CollectionUnit).selection.selectPath.isEmpty())
+					(this as CollectionUnit).selection.selectPath.last().targetType
+			}
+		} else if (this instanceof DetailsUnit) {
+			if ((this as DetailsUnit).selection !== null)
+				if (!(this as DetailsUnit).selection.selectPath.isEmpty())
+					(this as DetailsUnit).selection.selectPath.last().targetType
+				else
+					contentType.containingType
+			else
+				contentType.containingType
+		} else
+			contentType.containingType
+	}
+	derived readonly transient volatile boolean isContained get {
+		containingType !== null
+	}
+	derived readonly transient volatile boolean hasExplicitlyEditedContainer get {
+		if (this instanceof EditUnit && (containingAssociation !== null))
+			featureFields.exists[persistentFeature == containingAssociation]
+		else
+			false
+	}
+	refers readonly transient volatile unsettable derived UnitAssociation[] associationFields get {
+		return displayFields.filter[it instanceof UnitAssociation].map[it as UnitAssociation].toEList
+	}
+	derived readonly transient volatile boolean hasAssociationFields get {
+		!associationFields.isEmpty()
+	}
+	derived readonly transient volatile boolean hasBooleanFields get {
+		!displayFields.filter[isBooleanField].isEmpty()
+	}
+	derived readonly transient volatile boolean hasCaptchaFields get {
+		!displayFields.filter[it instanceof CaptchaField].isEmpty()
+	}
+	derived readonly transient volatile boolean hasChangableCollections get {
+		(this instanceof EditUnit)
+			&& !displayFields.filter[isSingleton]
+				.filter[it instanceof UnitFeature].map[it as UnitFeature]
+				.filter[collectionUiAllowAdd || collectionUiAllowRemove].isEmpty()
+	}
+	refers readonly transient volatile unsettable derived UnitField[] collectionFields get {
+		return displayFields.filter[!isSingleton].toEList
+	}
+	refers readonly transient volatile unsettable derived UnitFeature[] collectionFeatures get {
+		return collectionFields.filter[it instanceof UnitFeature].map[it as UnitFeature].toEList
+	}
+	refers readonly transient volatile unsettable derived UnitField[] dataTypeFields get {
+		return displayFields.filter[isDataTypeField].toEList
+	}
+	refers readonly transient volatile unsettable derived UnitField[] dateFields get {
+		return displayFields.filter[isDateField].toEList
+	}
+	refers readonly transient volatile unsettable derived UnitField[] defaultValueFields get {
+		return displayFields.filter[hasDefaultValue].toEList
+	}
+	derived readonly transient volatile boolean hasDisabledFields get {
+		!displayFields.filter[isDisabled].isEmpty()
+	}
+	derived readonly transient volatile boolean hasDefaultValueFields get {
+		!defaultValueFields.isEmpty()
+	}
+	derived readonly transient volatile boolean hasDynamicChoiceFields get {
+		!displayFields.filter[hasDynamicChoices].isEmpty()
+	}
+	derived readonly transient volatile boolean hasEmailFields get {
+		!displayFields.filter[isEmailField].isEmpty()
+	}
+	refers readonly transient volatile unsettable derived UnitField[] encryptedFields get {
+		displayFields.filter[isEncryptedField].toEList()
+	}
+	derived readonly transient volatile boolean hasEncryptedFields get {
+		!encryptedFields.isEmpty()
+	}
+	refers readonly transient volatile unsettable derived UnitField[] enumerationFields get {
+		displayFields.filter[isEnumerationField].toEList()
+	}
+	derived readonly transient volatile boolean hasEnumerationFields get {
+		!enumerationFields.isEmpty()
+	}
+	refers readonly transient volatile unsettable derived UnitFeature[] featureFields get {
+		displayFields.filter[it instanceof UnitFeature].map[it as UnitFeature].toEList()
+	}
+	refers readonly transient volatile unsettable derived UnitField[] forcedValueFields get {
+		displayFields.filter[hasForcedValue].toEList()
+	}
+	derived readonly transient volatile boolean hasForcedValueFields get {
+		!forcedValueFields.isEmpty()
+	}
+	derived readonly transient volatile boolean isFormUnit get {
+		this instanceof EditUnit || this instanceof ControlUnit
+	}
+	refers readonly transient volatile unsettable derived UnitField[] formFields get {
+		if (isFormUnit)
+			displayFields
+		else
+			CollectionLiterals::emptyList().toEList()
+	}
+	derived readonly transient volatile boolean hasIntegerFields get {
+		!displayFields.filter[isIntegerField].isEmpty()
+	}
+	refers readonly transient volatile unsettable derived InterfaceField[] interfaceFields get {
+		return displayFields.filter[it instanceof InterfaceField].map[it as InterfaceField].toEList
+	}
+	derived readonly transient volatile boolean hasInterfaceFields get {
+		!interfaceFields.isEmpty()
+	}
+	derived readonly transient volatile boolean hasObfuscatedFields get {
+		!displayFields.filter[isObfuscatedField].isEmpty()
+	}
+	readonly transient volatile unsettable derived boolean hasResourceFields get {
+		!displayFields.filter[isResourceField].isEmpty()
+	}
+	derived readonly transient volatile boolean hasStringFields get {
+		!displayFields.filter[isStringField].isEmpty()
+	}
+	derived readonly transient volatile boolean hasTextareaFields get {
+		!displayFields.filter[isTextareaField].isEmpty()
+	}
+	derived readonly transient volatile boolean hasUrlFields get {
+		!displayFields.filter[isUrlField].isEmpty()
+	}
 	String headerClass
-	String fieldListClass
-	String controlClass
+	String localFieldListClass = ''
+	derived readonly transient volatile String fieldListClass get {
+		if (this instanceof CardsUnit) 
+			(this as CardsUnit).cardsFieldListClass
+		else if (this instanceof DetailsUnit) 
+			(this as DetailsUnit).detailsFieldListClass
+		else if (this instanceof EditUnit) 
+			(this as EditUnit).formFieldListClass
+		else if (this instanceof GalleryUnit) 
+			(this as GalleryUnit).galleryFieldListClass
+		else if (this instanceof IndexUnit) 
+			(this as IndexUnit).indexFieldListClass
+		else if (this instanceof SliderUnit) 
+			(this as SliderUnit).sliderFieldListClass
+	}
+	derived readonly transient volatile boolean hasFieldListClass get {
+		fieldListClass !== null
+	}
+	String localInputGroupClass = ''
+	derived readonly transient volatile String inputGroupClass get {
+		if (this instanceof EditUnit) 
+			(this as EditUnit).formInputGroupClass
+	}
+	derived readonly transient volatile boolean hasInputGroupClass get {
+		inputGroupClass !== null
+	}
+	String localFieldLabelClass = ''
+	derived readonly transient volatile String fieldLabelClass get {
+		if (this instanceof CardsUnit) 
+			(this as CardsUnit).cardsFieldLabelClass
+		else if (this instanceof DetailsUnit) 
+			(this as DetailsUnit).detailsFieldLabelClass
+		else if (this instanceof EditUnit) 
+			(this as EditUnit).formFieldLabelClass
+		else if (this instanceof GalleryUnit) 
+			(this as GalleryUnit).galleryFieldLabelClass
+		else if (this instanceof IndexUnit) 
+			(this as IndexUnit).indexFieldLabelClass
+		else if (this instanceof SliderUnit) 
+			(this as SliderUnit).sliderFieldLabelClass
+	}
+	derived readonly transient volatile boolean hasFieldLabelClass get {
+		fieldLabelClass !== null
+	}
+	String localFieldValueClass = ''
+	derived readonly transient volatile String fieldValueClass get {
+		if (this instanceof CardsUnit) 
+			(this as CardsUnit).cardsFieldValueClass
+		else if (this instanceof DetailsUnit) 
+			(this as DetailsUnit).detailsFieldValueClass
+		else if (this instanceof EditUnit) 
+			(this as EditUnit).formFieldValueClass
+		else if (this instanceof GalleryUnit) 
+			(this as GalleryUnit).galleryFieldValueClass
+		else if (this instanceof IndexUnit) 
+			(this as IndexUnit).indexFieldValueClass
+		else if (this instanceof SliderUnit) 
+			(this as SliderUnit).sliderFieldValueClass
+	}
+	derived readonly transient volatile boolean hasFieldValueClass get {
+		fieldValueClass !== null
+	}
+	String localControlClass = ''
+	derived readonly transient volatile String controlClass get {
+		if (this instanceof CardsUnit) 
+			(this as CardsUnit).cardsControlClass
+		else if (this instanceof DetailsUnit) 
+			(this as DetailsUnit).detailsControlClass
+		else if (this instanceof EditUnit) 
+			(this as EditUnit).formControlClass
+		else if (this instanceof GalleryUnit) 
+			(this as GalleryUnit).galleryControlClass
+		else if (this instanceof IndexUnit) 
+			(this as IndexUnit).indexControlClass
+		else if (this instanceof SliderUnit) 
+			(this as SliderUnit).sliderControlClass
+	}
+	derived readonly transient volatile boolean hasControlClass get {
+		controlClass !== null
+	}
+	String localAnchorClass = ''
+	derived readonly transient volatile String anchorClass get {
+		if (this instanceof CardsUnit) 
+			(this as CardsUnit).cardsAnchorClass
+		else if (this instanceof DetailsUnit) 
+			(this as DetailsUnit).detailsAnchorClass
+		else if (this instanceof EditUnit) 
+			(this as EditUnit).formAnchorClass
+		else if (this instanceof GalleryUnit) 
+			(this as GalleryUnit).galleryAnchorClass
+		else if (this instanceof IndexUnit) 
+			(this as IndexUnit).indexAnchorClass
+		else if (this instanceof SliderUnit) 
+			(this as SliderUnit).sliderAnchorClass
+	}
+	derived readonly transient volatile boolean hasAnchorClass get {
+		anchorClass !== null
+	}
 	String footerClass
 }
 
@@ -249,16 +818,218 @@ enum CollectionDisplayOptions {
 
 interface UnitField extends DisplayElement {
 	container DynamicUnit[1] displayedOn opposite displayFields
-	String requiresRole = ""
+	String authorisationRoles = ''
+	derived readonly transient volatile boolean isAuthorised get {
+		authorisationRoles.trim() != ''
+	}
 	contains Predicate hideWhen
 	boolean hasCustomisedDisplayLabel
 	String title
 	boolean hasCustomisedTitle
+	refers derived readonly transient volatile Feature persistentFeature get {
+		if (this instanceof UnitAttribute) 
+			(this as UnitAttribute).attribute
+		else if (this instanceof UnitAssociation) {
+			if ((this as UnitAssociation).childFeature instanceof ChildPathAttribute)
+				((this as UnitAssociation).childFeature as ChildPathAttribute).persistentFeature
+			else if ((this as UnitAssociation).childFeature instanceof ChildPathAssociation)
+				((this as UnitAssociation).childFeature as ChildPathAssociation).persistentFeature
+			else
+				(this as UnitAssociation).association
+		}
+	}
+	derived readonly transient volatile boolean isContains get {
+		if (this instanceof UnitAssociation) 
+			(this as UnitAssociation).association.isContains
+		else
+			false
+	}
+	derived readonly transient volatile boolean isDisabled get {
+		disabledInput
+	}
+	derived readonly transient volatile boolean isRequired get {
+		if (persistentFeature !== null) 
+			persistentFeature.isRequired
+		else
+			false
+	}
+	derived readonly transient volatile boolean isSingleton get {
+		if (persistentFeature !== null) 
+			persistentFeature.isSingleton
+		else
+			false
+	}
+	derived readonly transient volatile boolean isAssociationField get {
+		this instanceof UnitAssociation
+	}
+	derived readonly transient volatile boolean isAttributeField get {
+		this instanceof UnitAttribute
+	}
+	derived readonly transient volatile boolean isBooleanField get {
+		if (persistentFeature !== null) 
+			persistentFeature.isBooleanFeature
+		else
+			false
+	}
+	derived readonly transient volatile boolean isDataTypeField get {
+		if (persistentFeature !== null) 
+			persistentFeature.isDataTypeFeature
+		else
+			false
+	}
+	refers derived readonly transient volatile Classifier dataType get {
+		persistentFeature?.dataType
+	}
+	derived readonly transient volatile boolean isDateField get {
+		if (persistentFeature !== null) 
+			persistentFeature.isDateFeature
+		else
+			false
+	}
+	derived readonly transient volatile DateDetails dateDetails get {
+		persistentFeature?.dateDetails
+	}
+	derived readonly transient volatile boolean isEmailField get {
+		if (persistentFeature !== null) 
+			persistentFeature.isEmailFeature
+		else
+			false
+	}
+	derived readonly transient volatile boolean isEncryptedField get {
+		if (persistentFeature !== null) 
+			persistentFeature.isEncrypted
+		else
+			false
+	}
+	derived readonly transient volatile boolean isEnumerationField get {
+		if (persistentFeature !== null) 
+			persistentFeature.isEnumerationFeature
+		else
+			false
+	}
+	refers derived readonly transient volatile EnumerationType enumerationType get {
+		persistentFeature?.enumerationType
+	}
+	derived readonly transient volatile boolean isIntegerField get {
+		if (persistentFeature !== null) 
+			persistentFeature.isIntegerFeature
+		else
+			false
+	}
+	derived readonly transient volatile boolean isLocationField get {
+		if (persistentFeature !== null) 
+			persistentFeature.isLocationFeature
+		else
+			false
+	}
+	derived readonly transient volatile boolean isObfuscatedFeature get {
+		if (persistentFeature !== null) 
+			persistentFeature.isResourceFeature
+		else
+			false
+	}
+	derived readonly transient volatile boolean isObfuscatedField get {
+		if (this instanceof UnitAttribute) 
+			(this as UnitAttribute).obfuscateFormFields || isObfuscatedFeature
+		else if (this instanceof DataTypeField) 
+			(this as DataTypeField).obfuscateFormFields || isObfuscatedFeature
+		else
+			isObfuscatedFeature
+	}
+	derived readonly transient volatile boolean isResourceField get {
+		if (persistentFeature !== null) 
+			persistentFeature.isResourceFeature
+		else
+			false
+	}
+	derived readonly transient volatile boolean isStringField get {
+		if (persistentFeature !== null) 
+			persistentFeature.isStringFeature
+		else
+			false
+	}
+	derived readonly transient volatile boolean isTextareaField get {
+		if (persistentFeature !== null) 
+			persistentFeature.isTextareaFeature
+		else
+			false
+	}
+	derived readonly transient volatile boolean isUrlField get {
+		if (persistentFeature !== null) 
+			persistentFeature.isUrlFeature
+		else
+			false
+	}
+	refers readonly transient volatile derived Expression defaultValue get {
+		if (this instanceof UnitAttribute)
+			(this as UnitAttribute).attributeDefaultValue
+		else if (this instanceof InterfaceField)
+			(this as InterfaceField).fieldDefaultValue
+	}
+	derived readonly transient volatile boolean hasDefaultValue get {
+		defaultValue !== null
+	}
+	derived readonly transient volatile boolean hasForcedValue get {
+		if (this instanceof UnitFeature) 
+			(this as UnitFeature).forcedValue !== null
+		else
+			false
+	}
+	derived readonly transient volatile boolean hasDynamicChoices get {
+		if (this instanceof UnitAssociation) 
+			(this as UnitAssociation).optionsFilter !== null
+		else
+			false
+	}
 	boolean escapeHTML = "true"
 	CollectionDisplayOptions collectionDisplayOption
 	boolean truncate
 	String dateFormat
-	boolean disableInput
+	boolean disabledInput
+	String headerClass
+	String localInputGroupClass
+	derived readonly transient volatile String inputGroupClass get {
+		if (localInputGroupClass.trim() != '') {
+			localInputGroupClass.trim();
+		} else if (displayedOn.hasInputGroupClass) {
+			displayedOn.inputGroupClass
+		}
+	}
+	derived readonly transient volatile boolean hasInputGroupClass get {
+		inputGroupClass !== null
+	}
+	String localFieldLabelClass
+	derived readonly transient volatile String fieldLabelClass get {
+		if (localFieldLabelClass.trim() != '') {
+			localFieldLabelClass.trim();
+		} else if (displayedOn.hasFieldLabelClass) {
+			displayedOn.fieldLabelClass
+		}
+	}
+	derived readonly transient volatile boolean hasFieldLabelClass get {
+		fieldLabelClass !== null
+	}
+	String localFieldValueClass
+	derived readonly transient volatile String fieldValueClass get {
+		if (localFieldValueClass.trim() != '') {
+			localFieldValueClass.trim();
+		} else if (displayedOn.hasFieldValueClass) {
+			displayedOn.fieldValueClass
+		}
+	}
+	derived readonly transient volatile boolean hasFieldValueClass get {
+		fieldValueClass !== null
+	}
+	String footerClass
+	refers readonly transient volatile unsettable derived WafModel genModel get {
+		displayedOn.genModel
+	}
+	refers readonly transient volatile unsettable derived WafModel uiModel get {
+		displayedOn.uiModel
+	}
+	refers readonly transient volatile unsettable derived Authentication securityModel get {
+		displayedOn.securityModel
+	}
 }
 
 abstract class UnitFeature extends UnitField, ActionContainer {
@@ -270,51 +1041,63 @@ abstract class UnitFeature extends UnitField, ActionContainer {
 	String emptyDisplayValue
 	boolean autofocus
 	String footer
-	String headerClass
-	String inputGroupClass
-	String fieldLabelClass
-	String fieldValueClass
-	String footerClass
 }
 
 class UnitAttribute extends UnitFeature {
 	refers Attribute[1] attribute
 	derived String[1] name get {
-		if (attribute !== null)
-			attribute.name
+		attribute?.name
 	}
-	contains Expression defaultValue
+	contains Expression attributeDefaultValue
 	boolean obfuscateFormFields
 	String placeholder
 	boolean hasCustomisedPlaceholder
-	String validationPattern = ""
+	String validationPattern = ''
 }
 
 class UnitAssociation extends UnitFeature, AssociationReference {
 	refers Selection options
-	refers Filter filteredOptions
-}
-
-class ChildPathAttribute extends FeatureChildPath {
-	derived String name get {
-		if (attribute !== null)
-			attribute.name
-	}
-	refers Attribute[1] attribute
-}
-
-class ChildPathAssociation extends FeatureChildPath, AssociationReference {
+	refers Filter optionsFilter
 }
 
 abstract class FeaturePath extends Variable {
+	derived readonly transient volatile boolean hasChild get {
+		if (this instanceof FeaturePathAssociation)
+			(this as FeaturePathAssociation).childFeature !== null
+		else
+			false
+	}
+	refers derived readonly transient volatile Feature persistentFeature get {
+		if (this instanceof FeaturePathAttribute) 
+			(this as FeaturePathAttribute).attribute
+		else if (this instanceof FeaturePathAssociation) {
+			if ((this as FeaturePathAssociation).childFeature instanceof ChildPathAttribute)
+				((this as FeaturePathAssociation).childFeature as ChildPathAttribute).persistentFeature
+			else if ((this as FeaturePathAssociation).childFeature instanceof ChildPathAssociation)
+				((this as FeaturePathAssociation).childFeature as ChildPathAssociation).persistentFeature
+			else
+				(this as FeaturePathAssociation).association
+		}
+	}
+	derived readonly transient volatile boolean isRequired get {
+		if (persistentFeature !== null) 
+			persistentFeature.isRequired
+		else
+			false
+	}
+	derived readonly transient volatile boolean isSingleton get {
+		if (persistentFeature !== null) 
+			persistentFeature.isSingleton
+		else
+			false
+	}
 }
 
 class FeaturePathAttribute extends FeaturePath {
-	derived String name get {
-		if (attribute !== null)
-			attribute.name
-	}
 	refers Attribute[1] attribute
+	derived String name get {
+		attribute?.name
+	}
 }
 
 class FeaturePathAssociation extends FeaturePath, AssociationReference {
@@ -328,6 +1111,30 @@ class FeaturePathLabel extends FeaturePath {
 	refers ModelLabel[1] label
 }
 
+class ChildPathAttribute extends FeatureChildPath {
+	derived String name get {
+		attribute?.name
+	}
+	refers Attribute[1] attribute
+	refers derived readonly transient volatile Feature persistentFeature get {
+		attribute
+	}
+}
+
+class ChildPathAssociation extends FeatureChildPath, AssociationReference {
+	derived readonly transient volatile boolean hasChild get {
+		childFeature !== null
+	}
+	refers derived readonly transient volatile Feature persistentFeature get {
+		if (!hasChild)
+			association
+		else if (childFeature instanceof ChildPathAttribute)
+				(childFeature as ChildPathAttribute).persistentFeature
+		else if (childFeature instanceof ChildPathAssociation)
+				(childFeature as ChildPathAssociation).persistentFeature
+	}
+}
+
 class UnitLabel extends UnitField {
 	refers ModelLabel[1] label
 	derived String[1] name get {
@@ -338,17 +1145,17 @@ class UnitLabel extends UnitField {
 
 abstract class InterfaceField extends NamedElement, UnitField {
 	boolean required
-	contains Expression defaultValue
+	contains Expression fieldDefaultValue
 	refers UnitField mustMatch
 	String interfaceType
 	String placeholder
 	boolean hasCustomisedPlaceholder
-	String validationPattern = ""
+	String validationPattern = ''
 	String inputClass
 }
 
 class DataTypeField extends InterfaceField {
-	refers DataType[1] dataType
+	refers DataType[1] fieldDataType
 	boolean caseInsensitive
 	boolean obfuscateFormFields
 	boolean encrypt
@@ -368,7 +1175,6 @@ interface SelectableUnit {
 
 class SingletonUnit extends DynamicUnit {
 	refers Label title
-	refers Entity[1] contentType
 }
 
 enum PaginationControlPlacements {
@@ -381,7 +1187,6 @@ class CollectionUnit extends DynamicUnit, SelectableUnit {
 	refers Label unitTitle
 	contains FeaturePath elementTitle
 	boolean truncateElementTitle = "false"
-	refers Entity[1..*] contentType
 	refers Selection selection
 	boolean omitContainerLoad
 	refers Entity containerType
@@ -390,6 +1195,18 @@ class CollectionUnit extends DynamicUnit, SelectableUnit {
 	refers Selection findElementSelection
 	refers Filter filter
 	refers Filter[] supportedFilters
+	derived readonly transient volatile boolean hasFilters get {
+		!supportedFilters.isEmpty()
+	}
+	derived readonly transient volatile boolean hasGroupedResults get {
+		!selection?.grouping.isEmpty()
+	}
+	derived readonly transient volatile boolean hasPagination get {
+		if (selection === null)
+			defaultPaginationSize > 0
+		else
+			defaultPaginationSize > 0 && selection.hasPaginationSupport
+	}
 	String emptyMessage
 	boolean omitFieldLabels
 	int defaultPaginationSize
@@ -398,15 +1215,15 @@ class CollectionUnit extends DynamicUnit, SelectableUnit {
 	int nextNpages
 	int previousNpages
 	String nextPageLabel = ">"
-	String nextPageIconName = ""
+	String nextPageIconName = ''
 	String previousPageLabel = "<"
-	String previousPageIconName = ""
+	String previousPageIconName = ''
 	boolean useDisabledPageLinks
 	boolean useFirstLastPageLinks
 	String firstPageLabel = "<<"
-	String firstPageIconName = ""
+	String firstPageIconName = ''
 	String lastPageLabel = ">>"
-	String lastPageIconName = ""
+	String lastPageIconName = ''
 	String paginationClass
 	String paginationElementClass
 	String paginationAnchorClass
@@ -418,19 +1235,89 @@ abstract class EditUnit extends SingletonUnit {
 	refers Page confirmDestination
 	String[1] confirmLabel
 	boolean hasCustomConfirmLabel
-	String confirmMessage
-	String successMessage
+	String confirmMessage = ''
+	derived readonly transient volatile boolean hasConfirmMessage get {
+		confirmMessage.trim() != ''
+	}
+	String successMessage = ''
+	derived readonly transient volatile boolean hasSuccessMessage get {
+		successMessage.trim() != ''
+	}
 	refers Page cancelDestination
 	String cancelLabel
 	boolean hasCustomCancelLabel
 	boolean customiseValues
+	derived readonly transient volatile String contentClass get {
+		if (localContentClass.trim() != '') {
+			localContentClass.trim();
+		} else if (uiModel.defaultFormContentClass.trim() != '') {
+			uiModel.defaultFormContentClass.trim()
+		} else if (uiModel.defaultContentClass.trim() != '') {
+			uiModel.defaultContentClass.trim()
+		}
+	}
+	derived readonly transient volatile boolean hasContentClass get {
+		contentClass !== null
+	}
+	derived readonly transient volatile String formFieldListClass get {
+		if (localFieldListClass.trim() != '') {
+			localFieldListClass.trim();
+		} else if (uiModel.defaultFormFieldListClass.trim() != '') {
+			uiModel.defaultFormFieldListClass.trim()
+		} else if (uiModel.defaultFieldListClass.trim() != '') {
+			uiModel.defaultFieldListClass.trim()
+		}
+	}
+	derived readonly transient volatile String formInputGroupClass get {
+		if (localInputGroupClass.trim() != '') {
+			localInputGroupClass.trim();
+		} else if (uiModel.defaultInputGroupClass.trim() != '') {
+			uiModel.defaultInputGroupClass.trim()
+		}
+	}
+	derived readonly transient volatile String formFieldLabelClass get {
+		if (localFieldLabelClass.trim() != '') {
+			localFieldLabelClass.trim();
+		} else if (uiModel.defaultFormFieldLabelClass.trim() != '') {
+			uiModel.defaultFormFieldLabelClass.trim()
+		} else if (uiModel.defaultFieldLabelClass.trim() != '') {
+			uiModel.defaultFieldLabelClass.trim()
+		}
+	}
+	derived readonly transient volatile String formFieldValueClass get {
+		if (localFieldValueClass.trim() != '') {
+			localFieldValueClass.trim();
+		} else if (uiModel.defaultFormFieldValueClass.trim() != '') {
+			uiModel.defaultFormFieldValueClass.trim()
+		} else if (uiModel.defaultFieldValueClass.trim() != '') {
+			uiModel.defaultFieldValueClass.trim()
+		}
+	}
+	derived readonly transient volatile String formControlClass get {
+		if (localControlClass.trim() != '') {
+			localControlClass.trim();
+		} else if (uiModel.defaultFormControlClass.trim() != '') {
+			uiModel.defaultFormControlClass.trim()
+		} else if (uiModel.defaultControlClass.trim() != '') {
+			uiModel.defaultControlClass.trim()
+		}
+	}
+	derived readonly transient volatile String formAnchorClass get {
+		if (localAnchorClass.trim() != '') {
+			localAnchorClass.trim();
+		} else if (uiModel.defaultFormAnchorClass.trim() != '') {
+			uiModel.defaultFormAnchorClass.trim()
+		} else if (uiModel.defaultAnchorClass.trim() != '') {
+			uiModel.defaultAnchorClass.trim()
+		}
+	}
 }
 
 class CreateUnit extends EditUnit {
 }
 
 class CreateUpdateUnit extends EditUnit, SelectableUnit {
-	String createUriElement = ""
+	String createUriElement = ''
 	String clearLabel
 }
 
@@ -447,11 +1334,125 @@ class UpdateUnit extends EditUnit, SelectableUnit {
 class DetailsUnit extends SingletonUnit, SelectableUnit {
 	refers Selection selection
 	boolean omitFieldLabels
+	derived readonly transient volatile String contentClass get {
+		if (localContentClass.trim() != '') {
+			localContentClass.trim();
+		} else if (uiModel.defaultDetailsContentClass.trim() != '') {
+			uiModel.defaultDetailsContentClass.trim()
+		} else if (uiModel.defaultContentClass.trim() != '') {
+			uiModel.defaultContentClass.trim()
+		}
+	}
+	derived readonly transient volatile boolean hasContentClass get {
+		contentClass !== null
+	}
+	derived readonly transient volatile String DetailsFieldListClass get {
+		if (localFieldListClass.trim() != '') {
+			localFieldListClass.trim();
+		} else if (uiModel.defaultDetailsFieldListClass.trim() != '') {
+			uiModel.defaultDetailsFieldListClass.trim()
+		} else if (uiModel.defaultFieldListClass.trim() != '') {
+			uiModel.defaultFieldListClass.trim()
+		}
+	}
+	derived readonly transient volatile String detailsFieldLabelClass get {
+		if (localFieldLabelClass.trim() != '') {
+			localFieldLabelClass.trim();
+		} else if (uiModel.defaultDetailsFieldLabelClass.trim() != '') {
+			uiModel.defaultDetailsFieldLabelClass.trim()
+		} else if (uiModel.defaultFieldLabelClass.trim() != '') {
+			uiModel.defaultFieldLabelClass.trim()
+		}
+	}
+	derived readonly transient volatile String detailsFieldValueClass get {
+		if (localFieldValueClass.trim() != '') {
+			localFieldValueClass.trim();
+		} else if (uiModel.defaultDetailsFieldValueClass.trim() != '') {
+			uiModel.defaultDetailsFieldValueClass.trim()
+		} else if (uiModel.defaultFieldValueClass.trim() != '') {
+			uiModel.defaultFieldValueClass.trim()
+		}
+	}
+	derived readonly transient volatile String detailsControlClass get {
+		if (localControlClass.trim() != '') {
+			localControlClass.trim();
+		} else if (uiModel.defaultDetailsControlClass.trim() != '') {
+			uiModel.defaultDetailsControlClass.trim()
+		} else if (uiModel.defaultControlClass.trim() != '') {
+			uiModel.defaultControlClass.trim()
+		}
+	}
+	derived readonly transient volatile String detailsAnchorClass get {
+		if (localAnchorClass.trim() != '') {
+			localAnchorClass.trim();
+		} else if (uiModel.defaultDetailsAnchorClass.trim() != '') {
+			uiModel.defaultDetailsAnchorClass.trim()
+		} else if (uiModel.defaultAnchorClass.trim() != '') {
+			uiModel.defaultAnchorClass.trim()
+		}
+	}
 }
 
 abstract class IndexUnit extends CollectionUnit {
 	refers SearchUnit targettingSearches opposite resultsDestination
 	String rowClasses
+	derived readonly transient volatile String contentClass get {
+		if (localContentClass.trim() != '') {
+			localContentClass.trim();
+		} else if (uiModel.defaultIndexContentClass.trim() != '') {
+			uiModel.defaultIndexContentClass.trim()
+		} else if (uiModel.defaultContentClass.trim() != '') {
+			uiModel.defaultContentClass.trim()
+		}
+	}
+	derived readonly transient volatile boolean hasContentClass get {
+		contentClass !== null
+	}
+	derived readonly transient volatile String indexFieldListClass get {
+		if (localFieldListClass.trim() != '') {
+			localFieldListClass.trim();
+		} else if (uiModel.defaultIndexFieldListClass.trim() != '') {
+			uiModel.defaultIndexFieldListClass.trim()
+		} else if (uiModel.defaultFieldListClass.trim() != '') {
+			uiModel.defaultFieldListClass.trim()
+		}
+	}
+	derived readonly transient volatile String indexFieldLabelClass get {
+		if (localFieldLabelClass.trim() != '') {
+			localFieldLabelClass.trim();
+		} else if (uiModel.defaultIndexFieldLabelClass.trim() != '') {
+			uiModel.defaultIndexFieldLabelClass.trim()
+		} else if (uiModel.defaultFieldLabelClass.trim() != '') {
+			uiModel.defaultFieldLabelClass.trim()
+		}
+	}
+	derived readonly transient volatile String indexFieldValueClass get {
+		if (localFieldValueClass.trim() != '') {
+			localFieldValueClass.trim();
+		} else if (uiModel.defaultIndexFieldValueClass.trim() != '') {
+			uiModel.defaultIndexFieldValueClass.trim()
+		} else if (uiModel.defaultFieldValueClass.trim() != '') {
+			uiModel.defaultFieldValueClass.trim()
+		}
+	}
+	derived readonly transient volatile String indexControlClass get {
+		if (localControlClass.trim() != '') {
+			localControlClass.trim();
+		} else if (uiModel.defaultIndexControlClass.trim() != '') {
+			uiModel.defaultIndexControlClass.trim()
+		} else if (uiModel.defaultControlClass.trim() != '') {
+			uiModel.defaultControlClass.trim()
+		}
+	}
+	derived readonly transient volatile String indexAnchorClass get {
+		if (localAnchorClass.trim() != '') {
+			localAnchorClass.trim();
+		} else if (uiModel.defaultIndexAnchorClass.trim() != '') {
+			uiModel.defaultIndexAnchorClass.trim()
+		} else if (uiModel.defaultAnchorClass.trim() != '') {
+			uiModel.defaultAnchorClass.trim()
+		}
+	}
 }
 
 class IndexGridUnit extends IndexUnit {
@@ -466,12 +1467,129 @@ class IndexLineDirectionUnit extends IndexUnit {
 abstract class CardsUnit extends CollectionUnit {
 	contains Badge[] badges
 	boolean overlaySingleSelectAction
-	String rowClass
-	String columnClass
-	String cardClass
-	String cardHeaderClass
-	String cardBodyClass
-	String cardFooterClass
+	derived readonly transient volatile String contentClass get {
+		if (localContentClass.trim() != '') {
+			localContentClass.trim();
+		} else if (uiModel.defaultCardsContentClass.trim() != '') {
+			uiModel.defaultCardsContentClass.trim()
+		} else if (uiModel.defaultContentClass.trim() != '') {
+			uiModel.defaultContentClass.trim()
+		}
+	}
+	derived readonly transient volatile boolean hasContentClass get {
+		contentClass !== null
+	}
+	derived readonly transient volatile String cardsFieldListClass get {
+		if (localFieldListClass.trim() != '') {
+			localFieldListClass.trim();
+		} else if (uiModel.defaultCardsFieldListClass.trim() != '') {
+			uiModel.defaultCardsFieldListClass.trim()
+		} else if (uiModel.defaultFieldListClass.trim() != '') {
+			uiModel.defaultFieldListClass.trim()
+		}
+	}
+	derived readonly transient volatile String cardsFieldLabelClass get {
+		if (localFieldLabelClass.trim() != '') {
+			localFieldLabelClass.trim();
+		} else if (uiModel.defaultCardsFieldLabelClass.trim() != '') {
+			uiModel.defaultCardsFieldLabelClass.trim()
+		} else if (uiModel.defaultFieldLabelClass.trim() != '') {
+			uiModel.defaultFieldLabelClass.trim()
+		}
+	}
+	derived readonly transient volatile String cardsFieldValueClass get {
+		if (localFieldValueClass.trim() != '') {
+			localFieldValueClass.trim();
+		} else if (uiModel.defaultFormFieldValueClass.trim() != '') {
+			uiModel.defaultFormFieldValueClass.trim()
+		} else if (uiModel.defaultFieldValueClass.trim() != '') {
+			uiModel.defaultFieldValueClass.trim()
+		}
+	}
+	String localRowClass = ''
+	derived readonly transient volatile String rowClass get {
+		if (localRowClass.trim() != '') {
+			localRowClass.trim();
+		} else if (uiModel.defaultRowClass.trim() != '') {
+			uiModel.defaultRowClass.trim()
+		}
+	}
+	derived readonly transient volatile boolean hasRowClass get {
+		rowClass !== null
+	}
+	String localColumnClass = ''
+	derived readonly transient volatile String columnClass get {
+		if (localColumnClass.trim() != '') {
+			localColumnClass.trim();
+		} else if (uiModel.defaultColumnClass.trim() != '') {
+			uiModel.defaultColumnClass.trim()
+		}
+	}
+	derived readonly transient volatile boolean hasColumnClass get {
+		columnClass !== null
+	}
+	String localCardClass = ''
+	derived readonly transient volatile String cardClass get {
+		if (localCardClass.trim() != '') {
+			localCardClass.trim();
+		} else if (uiModel.defaultCardClass.trim() != '') {
+			uiModel.defaultCardClass.trim()
+		}
+	}
+	derived readonly transient volatile boolean hasCardClass get {
+		cardClass !== null
+	}
+	String localCardHeaderClass = ''
+	derived readonly transient volatile String cardHeaderClass get {
+		if (localCardHeaderClass.trim() != '') {
+			localCardHeaderClass.trim();
+		} else if (uiModel.defaultCardHeaderClass.trim() != '') {
+			uiModel.defaultCardHeaderClass.trim()
+		}
+	}
+	derived readonly transient volatile boolean hasCardHeaderClass get {
+		cardHeaderClass !== null
+	}
+	String localCardBodyClass = ''
+	derived readonly transient volatile String cardBodyClass get {
+		if (localCardBodyClass.trim() != '') {
+			localCardBodyClass.trim();
+		} else if (uiModel.defaultCardBodyClass.trim() != '') {
+			uiModel.defaultCardBodyClass.trim()
+		}
+	}
+	derived readonly transient volatile boolean hasCardBodyClass get {
+		cardBodyClass !== null
+	}
+	String localCardFooterClass = ''
+	derived readonly transient volatile String cardFooterClass get {
+		if (localCardFooterClass.trim() != '') {
+			localCardFooterClass.trim();
+		} else if (uiModel.defaultCardFooterClass.trim() != '') {
+			uiModel.defaultCardFooterClass.trim()
+		}
+	}
+	derived readonly transient volatile boolean hasCardFooterClass get {
+		cardFooterClass !== null
+	}
+	derived readonly transient volatile String cardsControlClass get {
+		if (localControlClass.trim() != '') {
+			localControlClass.trim();
+		} else if (uiModel.defaultCardsControlClass.trim() != '') {
+			uiModel.defaultCardsControlClass.trim()
+		} else if (uiModel.defaultControlClass.trim() != '') {
+			uiModel.defaultControlClass.trim()
+		}
+	}
+	derived readonly transient volatile String cardsAnchorClass get {
+		if (localAnchorClass.trim() != '') {
+			localAnchorClass.trim();
+		} else if (uiModel.defaultCardsAnchorClass.trim() != '') {
+			uiModel.defaultCardsAnchorClass.trim()
+		} else if (uiModel.defaultAnchorClass.trim() != '') {
+			uiModel.defaultAnchorClass.trim()
+		}
+	}
 }
 
 class Badge {
@@ -506,12 +1624,126 @@ class ImageCardsUnit extends CardsUnit, ImageUnit {
 class SliderUnit extends ImageUnit {
 	int showTime
 	int transitionTime
+	derived readonly transient volatile String contentClass get {
+		if (localContentClass.trim() != '') {
+			localContentClass.trim();
+		} else if (uiModel.defaultSliderContentClass.trim() != '') {
+			uiModel.defaultSliderContentClass.trim()
+		} else if (uiModel.defaultContentClass.trim() != '') {
+			uiModel.defaultContentClass.trim()
+		}
+	}
+	derived readonly transient volatile boolean hasContentClass get {
+		contentClass !== null
+	}
+	derived readonly transient volatile String sliderFieldListClass get {
+		if (localFieldListClass.trim() != '') {
+			localFieldListClass.trim();
+		} else if (uiModel.defaultSliderFieldListClass.trim() != '') {
+			uiModel.defaultSliderFieldListClass.trim()
+		} else if (uiModel.defaultFieldListClass.trim() != '') {
+			uiModel.defaultFieldListClass.trim()
+		}
+	}
+	derived readonly transient volatile String sliderFieldLabelClass get {
+		if (localFieldLabelClass.trim() != '') {
+			localFieldLabelClass.trim();
+		} else if (uiModel.defaultSliderFieldLabelClass.trim() != '') {
+			uiModel.defaultSliderFieldLabelClass.trim()
+		} else if (uiModel.defaultFieldLabelClass.trim() != '') {
+			uiModel.defaultFieldLabelClass.trim()
+		}
+	}
+	derived readonly transient volatile String sliderFieldValueClass get {
+		if (localFieldValueClass.trim() != '') {
+			localFieldValueClass.trim();
+		} else if (uiModel.defaultSliderFieldValueClass.trim() != '') {
+			uiModel.defaultSliderFieldValueClass.trim()
+		} else if (uiModel.defaultFieldValueClass.trim() != '') {
+			uiModel.defaultFieldValueClass.trim()
+		}
+	}
+	derived readonly transient volatile String sliderControlClass get {
+		if (localControlClass.trim() != '') {
+			localControlClass.trim();
+		} else if (uiModel.defaultSliderControlClass.trim() != '') {
+			uiModel.defaultSliderControlClass.trim()
+		} else if (uiModel.defaultControlClass.trim() != '') {
+			uiModel.defaultControlClass.trim()
+		}
+	}
+	derived readonly transient volatile String sliderAnchorClass get {
+		if (localAnchorClass.trim() != '') {
+			localAnchorClass.trim();
+		} else if (uiModel.defaultSliderAnchorClass.trim() != '') {
+			uiModel.defaultSliderAnchorClass.trim()
+		} else if (uiModel.defaultAnchorClass.trim() != '') {
+			uiModel.defaultAnchorClass.trim()
+		}
+	}
 }
 
 class GalleryUnit extends ImageUnit {
 	refers ImageManipulation fullSizeFilter
 	int showTime
 	int transitionTime
+	derived readonly transient volatile String contentClass get {
+		if (localContentClass.trim() != '') {
+			localContentClass.trim();
+		} else if (uiModel.defaultGalleryContentClass.trim() != '') {
+			uiModel.defaultGalleryContentClass.trim()
+		} else if (uiModel.defaultContentClass.trim() != '') {
+			uiModel.defaultContentClass.trim()
+		}
+	}
+	derived readonly transient volatile boolean hasContentClass get {
+		contentClass !== null
+	}
+	derived readonly transient volatile String galleryFieldListClass get {
+		if (localFieldListClass.trim() != '') {
+			localFieldListClass.trim();
+		} else if (uiModel.defaultGalleryFieldListClass.trim() != '') {
+			uiModel.defaultGalleryFieldListClass.trim()
+		} else if (uiModel.defaultFieldListClass.trim() != '') {
+			uiModel.defaultFieldListClass.trim()
+		}
+	}
+	derived readonly transient volatile String galleryFieldLabelClass get {
+		if (localFieldLabelClass.trim() != '') {
+			localFieldLabelClass.trim();
+		} else if (uiModel.defaultGalleryFieldLabelClass.trim() != '') {
+			uiModel.defaultGalleryFieldLabelClass.trim()
+		} else if (uiModel.defaultFieldLabelClass.trim() != '') {
+			uiModel.defaultFieldLabelClass.trim()
+		}
+	}
+	derived readonly transient volatile String galleryFieldValueClass get {
+		if (localFieldValueClass.trim() != '') {
+			localFieldValueClass.trim();
+		} else if (uiModel.defaultGalleryFieldValueClass.trim() != '') {
+			uiModel.defaultGalleryFieldValueClass.trim()
+		} else if (uiModel.defaultFieldValueClass.trim() != '') {
+			uiModel.defaultFieldValueClass.trim()
+		}
+	}
+	derived readonly transient volatile String galleryControlClass get {
+		if (localControlClass.trim() != '') {
+			localControlClass.trim();
+		} else if (uiModel.defaultGalleryControlClass.trim() != '') {
+			uiModel.defaultGalleryControlClass.trim()
+		} else if (uiModel.defaultControlClass.trim() != '') {
+			uiModel.defaultControlClass.trim()
+		}
+	}
+	derived readonly transient volatile String galleryAnchorClass get {
+		if (localAnchorClass.trim() != '') {
+			localAnchorClass.trim();
+		} else if (uiModel.defaultGalleryAnchorClass.trim() != '') {
+			uiModel.defaultGalleryAnchorClass.trim()
+		} else if (uiModel.defaultAnchorClass.trim() != '') {
+			uiModel.defaultAnchorClass.trim()
+		}
+	}
 }
 
 abstract class ControlUnit extends DynamicUnit {
@@ -539,18 +1771,95 @@ class ForgottenPasswordUnit extends DynamicUnit, SecurityUnit {
 
 
 interface ActionContainer {
-	contains Action[] actions opposite usedBy
-	String actionNavigationClass
+	contains Action[] allActions opposite usedBy
+	refers derived readonly transient volatile unsettable Action[] actions get {
+		return allActions.filter[!disable].toEList
+	}
+	derived readonly transient volatile boolean hasActions get {
+		!actions.isEmpty()
+	}
+	refers derived readonly transient volatile unsettable Action[] actionsWithMessages get {
+		actions.filter[hasMessages].toEList()
+	}
+	refers derived readonly transient volatile unsettable Action[] actionsWithoutTarget get {
+		actions.filter[it instanceof DeleteAction || it instanceof OperationAction].toEList()
+	}
+	derived readonly transient volatile boolean hasActionsMessages get {
+		!actionsWithMessages.isEmpty()
+	}
+	String localActionNavigationClass
+	derived readonly transient volatile String actionNavigationClass get {
+		if (localActionNavigationClass.trim() != '') {
+			localActionNavigationClass.trim();
+		} else if (uiModelRef.defaultActionNavigationClass.trim() != '') {
+			uiModelRef.defaultActionNavigationClass.trim()
+		}
+	}
+	derived readonly transient volatile boolean hasActionNavigationClassClass get {
+		actionNavigationClass !== null
+	}
+	refers readonly transient volatile unsettable derived WafModel genModelRef get {
+		if (this instanceof DynamicUnit)
+			(this as DynamicUnit).genModel
+		else if (this instanceof UnitFeature)
+			(this as UnitFeature).genModel
+	}
+	refers readonly transient volatile unsettable derived WafModel uiModelRef get {
+		if (this instanceof DynamicUnit)
+			(this as DynamicUnit).uiModel
+		else if (this instanceof UnitFeature)
+			(this as UnitFeature).uiModel
+	}
+	refers readonly transient volatile unsettable derived Authentication securityModelRef get {
+		if (this instanceof DynamicUnit)
+			(this as DynamicUnit).securityModel
+		else if (this instanceof UnitFeature)
+			(this as UnitFeature).securityModel
+	}
 }
 
 abstract class Action extends NamedDisplayElement {
-	refers ActionContainer[1]usedBy opposite actions
+	refers ActionContainer[1]usedBy opposite allActions
+	refers readonly transient volatile unsettable derived DynamicUnit parentUnit get {
+		if (usedBy instanceof DynamicUnit)
+			(usedBy as DynamicUnit)
+		else if (usedBy instanceof UnitFeature)
+			(usedBy as UnitFeature).displayedOn
+	}
+	derived readonly transient volatile String authorisationRoles get {
+		if (this instanceof SecurityAction)
+			(this as SecurityAction).securityAuthorisationRoles
+		else if (this instanceof SelectAction)
+			(this as SelectAction).selectAuthorisationRoles
+		else if (this instanceof DeleteAction)
+			(this as DeleteAction).deleteAuthorisationRoles
+		else if (this instanceof OperationAction)
+			(this as OperationAction).operationAuthorisationRoles
+	}
+	derived readonly transient volatile boolean isAuthorised get {
+		authorisationRoles.trim() != ''
+	}
+	derived readonly transient volatile boolean hasCustomisedAuthorisation get {
+		authorisationRoles.trim() != parentUnit.authorisationRoles.trim()
+	}
 	boolean disable
 	contains Predicate displayWhen
 	contains Predicate enableWhen
-	String confirmMessage
-	String successMessage
-	String failureMessage
+	String confirmMessage = ''
+	derived readonly transient volatile boolean hasConfirmMessage get {
+		confirmMessage.trim() != ''
+	}
+	String successMessage = ''
+	derived readonly transient volatile boolean hasSuccessMessage get {
+		successMessage.trim() != ''
+	}
+	String failureMessage = ''
+	derived readonly transient volatile boolean hasFailureMessage get {
+		failureMessage.trim() != ''
+	}
+	derived readonly transient volatile boolean hasMessages get {
+		hasConfirmMessage || hasSuccessMessage || hasFailureMessage
+	}
 	String anchorClass
 	String headerClass
 	String footerClass
@@ -558,23 +1867,47 @@ abstract class Action extends NamedDisplayElement {
 
 class SecurityAction extends Action {
 	refers SecurityUnit[1] target
+	derived readonly transient volatile String securityAuthorisationRoles get {
+		(target as DynamicUnit)?.authorisationRoles
+	}
 }
 
 class SelectAction extends Action {
 	refers SelectableUnit[1] target opposite selectors
 	contains FeaturePath valuePath
+	derived readonly transient volatile String selectAuthorisationRoles get {
+		(target as DynamicUnit)?.authorisationRoles
+	}
 }
 
 class DeleteAction extends Action {
-	String requiresRole
 	String[1] uriElement
+	String localAuthorisationRoles = ''
+	derived readonly transient volatile String deleteAuthorisationRoles get {
+		if (localAuthorisationRoles.trim() != '')
+			localAuthorisationRoles
+		else
+			if (usedBy instanceof DynamicUnit)
+				(usedBy as DynamicUnit).authorisationRoles
+			else if (usedBy instanceof UnitFeature)
+				(usedBy as UnitFeature).displayedOn.authorisationRoles
+	}
 }
 
 abstract class OperationAction extends Action {
 	refers BusinessOperation[1] operation
 	String fileExtension
-	String requiresRole
 	String[1] uriElement
+	String localAuthorisationRoles = ''
+	derived readonly transient volatile String operationAuthorisationRoles get {
+		if (localAuthorisationRoles.trim() != '')
+			localAuthorisationRoles
+		else
+			if (usedBy instanceof DynamicUnit)
+				(usedBy as DynamicUnit).authorisationRoles
+			else if (usedBy instanceof UnitFeature)
+				(usedBy as UnitFeature).displayedOn.authorisationRoles
+	}
 }
 
 class InstanceOperationAction extends OperationAction {

@@ -48,12 +48,17 @@ public class AssociationItemProvider extends FeatureItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addOppositePropertyDescriptor(object);
-			addContainerPropertyDescriptor(object);
-			addContainsPropertyDescriptor(object);
-			addOwningEndPropertyDescriptor(object);
+			addAssociationContainerPropertyDescriptor(object);
+			addAssociationContainsPropertyDescriptor(object);
+			addAssociationOwningEndPropertyDescriptor(object);
 			addVisiblePropertyDescriptor(object);
 			addSerializationMaxDepthPropertyDescriptor(object);
 			addPivotTableNamePropertyDescriptor(object);
+			addIsOppositeSingletonPropertyDescriptor(object);
+			addOppositeColumnNamePropertyDescriptor(object);
+			addSourceTypePropertyDescriptor(object);
+			addTargetTypePropertyDescriptor(object);
+			addHasSerializationControlAssociationPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -81,19 +86,19 @@ public class AssociationItemProvider extends FeatureItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Container feature.
+	 * This adds a property descriptor for the Association Container feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addContainerPropertyDescriptor(Object object) {
+	protected void addAssociationContainerPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Association_container_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Association_container_feature", "_UI_Association_type"),
-				 OrmPackage.Literals.ASSOCIATION__CONTAINER,
+				 getString("_UI_Association_associationContainer_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Association_associationContainer_feature", "_UI_Association_type"),
+				 OrmPackage.Literals.ASSOCIATION__ASSOCIATION_CONTAINER,
 				 true,
 				 false,
 				 false,
@@ -103,19 +108,19 @@ public class AssociationItemProvider extends FeatureItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Contains feature.
+	 * This adds a property descriptor for the Association Contains feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addContainsPropertyDescriptor(Object object) {
+	protected void addAssociationContainsPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Association_contains_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Association_contains_feature", "_UI_Association_type"),
-				 OrmPackage.Literals.ASSOCIATION__CONTAINS,
+				 getString("_UI_Association_associationContains_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Association_associationContains_feature", "_UI_Association_type"),
+				 OrmPackage.Literals.ASSOCIATION__ASSOCIATION_CONTAINS,
 				 true,
 				 false,
 				 false,
@@ -125,19 +130,19 @@ public class AssociationItemProvider extends FeatureItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Owning End feature.
+	 * This adds a property descriptor for the Association Owning End feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addOwningEndPropertyDescriptor(Object object) {
+	protected void addAssociationOwningEndPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Association_owningEnd_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Association_owningEnd_feature", "_UI_Association_type"),
-				 OrmPackage.Literals.ASSOCIATION__OWNING_END,
+				 getString("_UI_Association_associationOwningEnd_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Association_associationOwningEnd_feature", "_UI_Association_type"),
+				 OrmPackage.Literals.ASSOCIATION__ASSOCIATION_OWNING_END,
 				 true,
 				 false,
 				 false,
@@ -213,6 +218,116 @@ public class AssociationItemProvider extends FeatureItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Is Opposite Singleton feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIsOppositeSingletonPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Association_isOppositeSingleton_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Association_isOppositeSingleton_feature", "_UI_Association_type"),
+				 OrmPackage.Literals.ASSOCIATION__IS_OPPOSITE_SINGLETON,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Opposite Column Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addOppositeColumnNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Association_oppositeColumnName_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Association_oppositeColumnName_feature", "_UI_Association_type"),
+				 OrmPackage.Literals.ASSOCIATION__OPPOSITE_COLUMN_NAME,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Source Type feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSourceTypePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Association_sourceType_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Association_sourceType_feature", "_UI_Association_type"),
+				 OrmPackage.Literals.ASSOCIATION__SOURCE_TYPE,
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Target Type feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTargetTypePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Association_targetType_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Association_targetType_feature", "_UI_Association_type"),
+				 OrmPackage.Literals.ASSOCIATION__TARGET_TYPE,
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Has Serialization Control Association feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasSerializationControlAssociationPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Association_hasSerializationControlAssociation_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Association_hasSerializationControlAssociation_feature", "_UI_Association_type"),
+				 OrmPackage.Literals.ASSOCIATION__HAS_SERIALIZATION_CONTROL_ASSOCIATION,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -269,12 +384,15 @@ public class AssociationItemProvider extends FeatureItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Association.class)) {
-			case OrmPackage.ASSOCIATION__CONTAINER:
-			case OrmPackage.ASSOCIATION__CONTAINS:
-			case OrmPackage.ASSOCIATION__OWNING_END:
+			case OrmPackage.ASSOCIATION__ASSOCIATION_CONTAINER:
+			case OrmPackage.ASSOCIATION__ASSOCIATION_CONTAINS:
+			case OrmPackage.ASSOCIATION__ASSOCIATION_OWNING_END:
 			case OrmPackage.ASSOCIATION__VISIBLE:
 			case OrmPackage.ASSOCIATION__SERIALIZATION_MAX_DEPTH:
 			case OrmPackage.ASSOCIATION__PIVOT_TABLE_NAME:
+			case OrmPackage.ASSOCIATION__IS_OPPOSITE_SINGLETON:
+			case OrmPackage.ASSOCIATION__OPPOSITE_COLUMN_NAME:
+			case OrmPackage.ASSOCIATION__HAS_SERIALIZATION_CONTROL_ASSOCIATION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case OrmPackage.ASSOCIATION__KEYS:

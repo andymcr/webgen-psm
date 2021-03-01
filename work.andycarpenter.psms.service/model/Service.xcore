@@ -12,7 +12,6 @@ package work.andycarpenter.psms.service
 import work.andycarpenter.psms.base.ConstantContainer
 import work.andycarpenter.psms.base.FormalParameterList
 import work.andycarpenter.psms.base.NamedElement
-import work.andycarpenter.psms.orm.Entity
 import work.andycarpenter.psms.orm.OrmModel
 import work.andycarpenter.psms.orm.Repository
 

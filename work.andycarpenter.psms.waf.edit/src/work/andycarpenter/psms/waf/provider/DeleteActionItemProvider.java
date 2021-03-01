@@ -43,32 +43,11 @@ public class DeleteActionItemProvider extends ActionItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addRequiresRolePropertyDescriptor(object);
 			addUriElementPropertyDescriptor(object);
+			addLocalAuthorisationRolesPropertyDescriptor(object);
+			addDeleteAuthorisationRolesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Requires Role feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addRequiresRolePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_DeleteAction_requiresRole_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DeleteAction_requiresRole_feature", "_UI_DeleteAction_type"),
-				 WafPackage.Literals.DELETE_ACTION__REQUIRES_ROLE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
 	}
 
 	/**
@@ -84,8 +63,52 @@ public class DeleteActionItemProvider extends ActionItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_DeleteAction_uriElement_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_DeleteAction_uriElement_feature", "_UI_DeleteAction_type"),
-				 WafPackage.Literals.DELETE_ACTION__URI_ELEMENT,
+				 WafPackage.eINSTANCE.getDeleteAction_UriElement(),
 				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Local Authorisation Roles feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addLocalAuthorisationRolesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DeleteAction_localAuthorisationRoles_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DeleteAction_localAuthorisationRoles_feature", "_UI_DeleteAction_type"),
+				 WafPackage.eINSTANCE.getDeleteAction_LocalAuthorisationRoles(),
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Delete Authorisation Roles feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDeleteAuthorisationRolesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DeleteAction_deleteAuthorisationRoles_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DeleteAction_deleteAuthorisationRoles_feature", "_UI_DeleteAction_type"),
+				 WafPackage.eINSTANCE.getDeleteAction_DeleteAuthorisationRoles(),
+				 false,
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
@@ -131,8 +154,9 @@ public class DeleteActionItemProvider extends ActionItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(DeleteAction.class)) {
-			case WafPackage.DELETE_ACTION__REQUIRES_ROLE:
 			case WafPackage.DELETE_ACTION__URI_ELEMENT:
+			case WafPackage.DELETE_ACTION__LOCAL_AUTHORISATION_ROLES:
+			case WafPackage.DELETE_ACTION__DELETE_AUTHORISATION_ROLES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}
@@ -163,8 +187,8 @@ public class DeleteActionItemProvider extends ActionItemProvider {
 		Object childObject = child;
 
 		boolean qualify =
-			childFeature == WafPackage.Literals.ACTION__DISPLAY_WHEN ||
-			childFeature == WafPackage.Literals.ACTION__ENABLE_WHEN;
+			childFeature == WafPackage.eINSTANCE.getAction_DisplayWhen() ||
+			childFeature == WafPackage.eINSTANCE.getAction_EnableWhen();
 
 		if (qualify) {
 			return getString

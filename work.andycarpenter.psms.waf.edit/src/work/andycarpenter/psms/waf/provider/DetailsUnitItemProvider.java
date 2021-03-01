@@ -48,6 +48,13 @@ public class DetailsUnitItemProvider extends SingletonUnitItemProvider {
 			addSelectorsPropertyDescriptor(object);
 			addSelectionPropertyDescriptor(object);
 			addOmitFieldLabelsPropertyDescriptor(object);
+			addContentClassPropertyDescriptor(object);
+			addHasContentClassPropertyDescriptor(object);
+			addDetailsFieldListClassPropertyDescriptor(object);
+			addDetailsFieldLabelClassPropertyDescriptor(object);
+			addDetailsFieldValueClassPropertyDescriptor(object);
+			addDetailsControlClassPropertyDescriptor(object);
+			addDetailsAnchorClassPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -65,7 +72,7 @@ public class DetailsUnitItemProvider extends SingletonUnitItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_SelectableUnit_selectors_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_SelectableUnit_selectors_feature", "_UI_SelectableUnit_type"),
-				 WafPackage.Literals.SELECTABLE_UNIT__SELECTORS,
+				 WafPackage.eINSTANCE.getSelectableUnit_Selectors(),
 				 true,
 				 false,
 				 true,
@@ -87,7 +94,7 @@ public class DetailsUnitItemProvider extends SingletonUnitItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_DetailsUnit_selection_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_DetailsUnit_selection_feature", "_UI_DetailsUnit_type"),
-				 WafPackage.Literals.DETAILS_UNIT__SELECTION,
+				 WafPackage.eINSTANCE.getDetailsUnit_Selection(),
 				 true,
 				 false,
 				 true,
@@ -109,11 +116,165 @@ public class DetailsUnitItemProvider extends SingletonUnitItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_DetailsUnit_omitFieldLabels_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_DetailsUnit_omitFieldLabels_feature", "_UI_DetailsUnit_type"),
-				 WafPackage.Literals.DETAILS_UNIT__OMIT_FIELD_LABELS,
+				 WafPackage.eINSTANCE.getDetailsUnit_OmitFieldLabels(),
 				 true,
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Content Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addContentClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DetailsUnit_contentClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DetailsUnit_contentClass_feature", "_UI_DetailsUnit_type"),
+				 WafPackage.eINSTANCE.getDetailsUnit_ContentClass(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Has Content Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasContentClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DetailsUnit_hasContentClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DetailsUnit_hasContentClass_feature", "_UI_DetailsUnit_type"),
+				 WafPackage.eINSTANCE.getDetailsUnit_HasContentClass(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Details Field List Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDetailsFieldListClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DetailsUnit_DetailsFieldListClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DetailsUnit_DetailsFieldListClass_feature", "_UI_DetailsUnit_type"),
+				 WafPackage.eINSTANCE.getDetailsUnit_DetailsFieldListClass(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Details Field Label Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDetailsFieldLabelClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DetailsUnit_detailsFieldLabelClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DetailsUnit_detailsFieldLabelClass_feature", "_UI_DetailsUnit_type"),
+				 WafPackage.eINSTANCE.getDetailsUnit_DetailsFieldLabelClass(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Details Field Value Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDetailsFieldValueClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DetailsUnit_detailsFieldValueClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DetailsUnit_detailsFieldValueClass_feature", "_UI_DetailsUnit_type"),
+				 WafPackage.eINSTANCE.getDetailsUnit_DetailsFieldValueClass(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Details Control Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDetailsControlClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DetailsUnit_detailsControlClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DetailsUnit_detailsControlClass_feature", "_UI_DetailsUnit_type"),
+				 WafPackage.eINSTANCE.getDetailsUnit_DetailsControlClass(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Details Anchor Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDetailsAnchorClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DetailsUnit_detailsAnchorClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DetailsUnit_detailsAnchorClass_feature", "_UI_DetailsUnit_type"),
+				 WafPackage.eINSTANCE.getDetailsUnit_DetailsAnchorClass(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -157,6 +318,13 @@ public class DetailsUnitItemProvider extends SingletonUnitItemProvider {
 
 		switch (notification.getFeatureID(DetailsUnit.class)) {
 			case WafPackage.DETAILS_UNIT__OMIT_FIELD_LABELS:
+			case WafPackage.DETAILS_UNIT__CONTENT_CLASS:
+			case WafPackage.DETAILS_UNIT__HAS_CONTENT_CLASS:
+			case WafPackage.DETAILS_UNIT__DETAILS_FIELD_LIST_CLASS:
+			case WafPackage.DETAILS_UNIT__DETAILS_FIELD_LABEL_CLASS:
+			case WafPackage.DETAILS_UNIT__DETAILS_FIELD_VALUE_CLASS:
+			case WafPackage.DETAILS_UNIT__DETAILS_CONTROL_CLASS:
+			case WafPackage.DETAILS_UNIT__DETAILS_ANCHOR_CLASS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

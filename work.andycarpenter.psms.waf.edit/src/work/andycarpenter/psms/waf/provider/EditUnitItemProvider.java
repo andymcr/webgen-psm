@@ -54,11 +54,21 @@ public class EditUnitItemProvider extends SingletonUnitItemProvider {
 			addConfirmLabelPropertyDescriptor(object);
 			addHasCustomConfirmLabelPropertyDescriptor(object);
 			addConfirmMessagePropertyDescriptor(object);
+			addHasConfirmMessagePropertyDescriptor(object);
 			addSuccessMessagePropertyDescriptor(object);
+			addHasSuccessMessagePropertyDescriptor(object);
 			addCancelDestinationPropertyDescriptor(object);
 			addCancelLabelPropertyDescriptor(object);
 			addHasCustomCancelLabelPropertyDescriptor(object);
 			addCustomiseValuesPropertyDescriptor(object);
+			addContentClassPropertyDescriptor(object);
+			addHasContentClassPropertyDescriptor(object);
+			addFormFieldListClassPropertyDescriptor(object);
+			addFormInputGroupClassPropertyDescriptor(object);
+			addFormFieldLabelClassPropertyDescriptor(object);
+			addFormFieldValueClassPropertyDescriptor(object);
+			addFormControlClassPropertyDescriptor(object);
+			addFormAnchorClassPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -76,7 +86,7 @@ public class EditUnitItemProvider extends SingletonUnitItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_EditUnit_onSaveContinueEditing_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_EditUnit_onSaveContinueEditing_feature", "_UI_EditUnit_type"),
-				 WafPackage.Literals.EDIT_UNIT__ON_SAVE_CONTINUE_EDITING,
+				 WafPackage.eINSTANCE.getEditUnit_OnSaveContinueEditing(),
 				 true,
 				 false,
 				 false,
@@ -98,7 +108,7 @@ public class EditUnitItemProvider extends SingletonUnitItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_EditUnit_confirmDestination_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_EditUnit_confirmDestination_feature", "_UI_EditUnit_type"),
-				 WafPackage.Literals.EDIT_UNIT__CONFIRM_DESTINATION,
+				 WafPackage.eINSTANCE.getEditUnit_ConfirmDestination(),
 				 true,
 				 false,
 				 true,
@@ -120,7 +130,7 @@ public class EditUnitItemProvider extends SingletonUnitItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_EditUnit_confirmLabel_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_EditUnit_confirmLabel_feature", "_UI_EditUnit_type"),
-				 WafPackage.Literals.EDIT_UNIT__CONFIRM_LABEL,
+				 WafPackage.eINSTANCE.getEditUnit_ConfirmLabel(),
 				 true,
 				 false,
 				 false,
@@ -142,7 +152,7 @@ public class EditUnitItemProvider extends SingletonUnitItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_EditUnit_hasCustomConfirmLabel_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_EditUnit_hasCustomConfirmLabel_feature", "_UI_EditUnit_type"),
-				 WafPackage.Literals.EDIT_UNIT__HAS_CUSTOM_CONFIRM_LABEL,
+				 WafPackage.eINSTANCE.getEditUnit_HasCustomConfirmLabel(),
 				 true,
 				 false,
 				 false,
@@ -164,11 +174,33 @@ public class EditUnitItemProvider extends SingletonUnitItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_EditUnit_confirmMessage_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_EditUnit_confirmMessage_feature", "_UI_EditUnit_type"),
-				 WafPackage.Literals.EDIT_UNIT__CONFIRM_MESSAGE,
+				 WafPackage.eINSTANCE.getEditUnit_ConfirmMessage(),
 				 true,
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Has Confirm Message feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasConfirmMessagePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EditUnit_hasConfirmMessage_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EditUnit_hasConfirmMessage_feature", "_UI_EditUnit_type"),
+				 WafPackage.eINSTANCE.getEditUnit_HasConfirmMessage(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -186,11 +218,33 @@ public class EditUnitItemProvider extends SingletonUnitItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_EditUnit_successMessage_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_EditUnit_successMessage_feature", "_UI_EditUnit_type"),
-				 WafPackage.Literals.EDIT_UNIT__SUCCESS_MESSAGE,
+				 WafPackage.eINSTANCE.getEditUnit_SuccessMessage(),
 				 true,
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Has Success Message feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasSuccessMessagePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EditUnit_hasSuccessMessage_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EditUnit_hasSuccessMessage_feature", "_UI_EditUnit_type"),
+				 WafPackage.eINSTANCE.getEditUnit_HasSuccessMessage(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -208,7 +262,7 @@ public class EditUnitItemProvider extends SingletonUnitItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_EditUnit_cancelDestination_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_EditUnit_cancelDestination_feature", "_UI_EditUnit_type"),
-				 WafPackage.Literals.EDIT_UNIT__CANCEL_DESTINATION,
+				 WafPackage.eINSTANCE.getEditUnit_CancelDestination(),
 				 true,
 				 false,
 				 true,
@@ -230,7 +284,7 @@ public class EditUnitItemProvider extends SingletonUnitItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_EditUnit_cancelLabel_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_EditUnit_cancelLabel_feature", "_UI_EditUnit_type"),
-				 WafPackage.Literals.EDIT_UNIT__CANCEL_LABEL,
+				 WafPackage.eINSTANCE.getEditUnit_CancelLabel(),
 				 true,
 				 false,
 				 false,
@@ -252,7 +306,7 @@ public class EditUnitItemProvider extends SingletonUnitItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_EditUnit_hasCustomCancelLabel_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_EditUnit_hasCustomCancelLabel_feature", "_UI_EditUnit_type"),
-				 WafPackage.Literals.EDIT_UNIT__HAS_CUSTOM_CANCEL_LABEL,
+				 WafPackage.eINSTANCE.getEditUnit_HasCustomCancelLabel(),
 				 true,
 				 false,
 				 false,
@@ -274,11 +328,187 @@ public class EditUnitItemProvider extends SingletonUnitItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_EditUnit_customiseValues_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_EditUnit_customiseValues_feature", "_UI_EditUnit_type"),
-				 WafPackage.Literals.EDIT_UNIT__CUSTOMISE_VALUES,
+				 WafPackage.eINSTANCE.getEditUnit_CustomiseValues(),
 				 true,
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Content Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addContentClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EditUnit_contentClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EditUnit_contentClass_feature", "_UI_EditUnit_type"),
+				 WafPackage.eINSTANCE.getEditUnit_ContentClass(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Has Content Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasContentClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EditUnit_hasContentClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EditUnit_hasContentClass_feature", "_UI_EditUnit_type"),
+				 WafPackage.eINSTANCE.getEditUnit_HasContentClass(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Form Field List Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addFormFieldListClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EditUnit_formFieldListClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EditUnit_formFieldListClass_feature", "_UI_EditUnit_type"),
+				 WafPackage.eINSTANCE.getEditUnit_FormFieldListClass(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Form Input Group Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addFormInputGroupClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EditUnit_formInputGroupClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EditUnit_formInputGroupClass_feature", "_UI_EditUnit_type"),
+				 WafPackage.eINSTANCE.getEditUnit_FormInputGroupClass(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Form Field Label Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addFormFieldLabelClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EditUnit_formFieldLabelClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EditUnit_formFieldLabelClass_feature", "_UI_EditUnit_type"),
+				 WafPackage.eINSTANCE.getEditUnit_FormFieldLabelClass(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Form Field Value Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addFormFieldValueClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EditUnit_formFieldValueClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EditUnit_formFieldValueClass_feature", "_UI_EditUnit_type"),
+				 WafPackage.eINSTANCE.getEditUnit_FormFieldValueClass(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Form Control Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addFormControlClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EditUnit_formControlClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EditUnit_formControlClass_feature", "_UI_EditUnit_type"),
+				 WafPackage.eINSTANCE.getEditUnit_FormControlClass(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Form Anchor Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addFormAnchorClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EditUnit_formAnchorClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EditUnit_formAnchorClass_feature", "_UI_EditUnit_type"),
+				 WafPackage.eINSTANCE.getEditUnit_FormAnchorClass(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -295,7 +525,7 @@ public class EditUnitItemProvider extends SingletonUnitItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(WafPackage.Literals.EDIT_UNIT__DISABLE_WHEN);
+			childrenFeatures.add(WafPackage.eINSTANCE.getEditUnit_DisableWhen());
 		}
 		return childrenFeatures;
 	}
@@ -344,10 +574,20 @@ public class EditUnitItemProvider extends SingletonUnitItemProvider {
 			case WafPackage.EDIT_UNIT__CONFIRM_LABEL:
 			case WafPackage.EDIT_UNIT__HAS_CUSTOM_CONFIRM_LABEL:
 			case WafPackage.EDIT_UNIT__CONFIRM_MESSAGE:
+			case WafPackage.EDIT_UNIT__HAS_CONFIRM_MESSAGE:
 			case WafPackage.EDIT_UNIT__SUCCESS_MESSAGE:
+			case WafPackage.EDIT_UNIT__HAS_SUCCESS_MESSAGE:
 			case WafPackage.EDIT_UNIT__CANCEL_LABEL:
 			case WafPackage.EDIT_UNIT__HAS_CUSTOM_CANCEL_LABEL:
 			case WafPackage.EDIT_UNIT__CUSTOMISE_VALUES:
+			case WafPackage.EDIT_UNIT__CONTENT_CLASS:
+			case WafPackage.EDIT_UNIT__HAS_CONTENT_CLASS:
+			case WafPackage.EDIT_UNIT__FORM_FIELD_LIST_CLASS:
+			case WafPackage.EDIT_UNIT__FORM_INPUT_GROUP_CLASS:
+			case WafPackage.EDIT_UNIT__FORM_FIELD_LABEL_CLASS:
+			case WafPackage.EDIT_UNIT__FORM_FIELD_VALUE_CLASS:
+			case WafPackage.EDIT_UNIT__FORM_CONTROL_CLASS:
+			case WafPackage.EDIT_UNIT__FORM_ANCHOR_CLASS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case WafPackage.EDIT_UNIT__DISABLE_WHEN:
@@ -370,47 +610,47 @@ public class EditUnitItemProvider extends SingletonUnitItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.EDIT_UNIT__DISABLE_WHEN,
+				(WafPackage.eINSTANCE.getEditUnit_DisableWhen(),
 				 ExpressionFactory.eINSTANCE.createPredicateBooleanVariable()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.EDIT_UNIT__DISABLE_WHEN,
+				(WafPackage.eINSTANCE.getEditUnit_DisableWhen(),
 				 ExpressionFactory.eINSTANCE.createPredicateBooleanOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.EDIT_UNIT__DISABLE_WHEN,
+				(WafPackage.eINSTANCE.getEditUnit_DisableWhen(),
 				 ExpressionFactory.eINSTANCE.createPredicateEqualityOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.EDIT_UNIT__DISABLE_WHEN,
+				(WafPackage.eINSTANCE.getEditUnit_DisableWhen(),
 				 ExpressionFactory.eINSTANCE.createPredicateComparisonOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.EDIT_UNIT__DISABLE_WHEN,
+				(WafPackage.eINSTANCE.getEditUnit_DisableWhen(),
 				 ExpressionFactory.eINSTANCE.createPredicateInOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.EDIT_UNIT__DISABLE_WHEN,
+				(WafPackage.eINSTANCE.getEditUnit_DisableWhen(),
 				 ExpressionFactory.eINSTANCE.createPredicateIsOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.EDIT_UNIT__DISABLE_WHEN,
+				(WafPackage.eINSTANCE.getEditUnit_DisableWhen(),
 				 ExpressionFactory.eINSTANCE.createPredicateLikeOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.EDIT_UNIT__DISABLE_WHEN,
+				(WafPackage.eINSTANCE.getEditUnit_DisableWhen(),
 				 ExpressionFactory.eINSTANCE.createPredicateIsEmpty()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.EDIT_UNIT__DISABLE_WHEN,
+				(WafPackage.eINSTANCE.getEditUnit_DisableWhen(),
 				 ExpressionFactory.eINSTANCE.createPredicateIsNull()));
 	}
 
@@ -426,8 +666,8 @@ public class EditUnitItemProvider extends SingletonUnitItemProvider {
 		Object childObject = child;
 
 		boolean qualify =
-			childFeature == WafPackage.Literals.DYNAMIC_UNIT__HIDE_WHEN ||
-			childFeature == WafPackage.Literals.EDIT_UNIT__DISABLE_WHEN;
+			childFeature == WafPackage.eINSTANCE.getDynamicUnit_HideWhen() ||
+			childFeature == WafPackage.eINSTANCE.getEditUnit_DisableWhen();
 
 		if (qualify) {
 			return getString

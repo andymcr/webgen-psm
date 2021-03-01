@@ -48,6 +48,13 @@ public class GalleryUnitItemProvider extends ImageUnitItemProvider {
 			addFullSizeFilterPropertyDescriptor(object);
 			addShowTimePropertyDescriptor(object);
 			addTransitionTimePropertyDescriptor(object);
+			addContentClassPropertyDescriptor(object);
+			addHasContentClassPropertyDescriptor(object);
+			addGalleryFieldListClassPropertyDescriptor(object);
+			addGalleryFieldLabelClassPropertyDescriptor(object);
+			addGalleryFieldValueClassPropertyDescriptor(object);
+			addGalleryControlClassPropertyDescriptor(object);
+			addGalleryAnchorClassPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -65,7 +72,7 @@ public class GalleryUnitItemProvider extends ImageUnitItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_GalleryUnit_fullSizeFilter_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_GalleryUnit_fullSizeFilter_feature", "_UI_GalleryUnit_type"),
-				 WafPackage.Literals.GALLERY_UNIT__FULL_SIZE_FILTER,
+				 WafPackage.eINSTANCE.getGalleryUnit_FullSizeFilter(),
 				 true,
 				 false,
 				 true,
@@ -87,7 +94,7 @@ public class GalleryUnitItemProvider extends ImageUnitItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_GalleryUnit_showTime_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_GalleryUnit_showTime_feature", "_UI_GalleryUnit_type"),
-				 WafPackage.Literals.GALLERY_UNIT__SHOW_TIME,
+				 WafPackage.eINSTANCE.getGalleryUnit_ShowTime(),
 				 true,
 				 false,
 				 false,
@@ -109,11 +116,165 @@ public class GalleryUnitItemProvider extends ImageUnitItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_GalleryUnit_transitionTime_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_GalleryUnit_transitionTime_feature", "_UI_GalleryUnit_type"),
-				 WafPackage.Literals.GALLERY_UNIT__TRANSITION_TIME,
+				 WafPackage.eINSTANCE.getGalleryUnit_TransitionTime(),
 				 true,
 				 false,
 				 false,
 				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Content Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addContentClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_GalleryUnit_contentClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_GalleryUnit_contentClass_feature", "_UI_GalleryUnit_type"),
+				 WafPackage.eINSTANCE.getGalleryUnit_ContentClass(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Has Content Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasContentClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_GalleryUnit_hasContentClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_GalleryUnit_hasContentClass_feature", "_UI_GalleryUnit_type"),
+				 WafPackage.eINSTANCE.getGalleryUnit_HasContentClass(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Gallery Field List Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addGalleryFieldListClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_GalleryUnit_galleryFieldListClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_GalleryUnit_galleryFieldListClass_feature", "_UI_GalleryUnit_type"),
+				 WafPackage.eINSTANCE.getGalleryUnit_GalleryFieldListClass(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Gallery Field Label Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addGalleryFieldLabelClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_GalleryUnit_galleryFieldLabelClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_GalleryUnit_galleryFieldLabelClass_feature", "_UI_GalleryUnit_type"),
+				 WafPackage.eINSTANCE.getGalleryUnit_GalleryFieldLabelClass(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Gallery Field Value Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addGalleryFieldValueClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_GalleryUnit_galleryFieldValueClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_GalleryUnit_galleryFieldValueClass_feature", "_UI_GalleryUnit_type"),
+				 WafPackage.eINSTANCE.getGalleryUnit_GalleryFieldValueClass(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Gallery Control Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addGalleryControlClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_GalleryUnit_galleryControlClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_GalleryUnit_galleryControlClass_feature", "_UI_GalleryUnit_type"),
+				 WafPackage.eINSTANCE.getGalleryUnit_GalleryControlClass(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Gallery Anchor Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addGalleryAnchorClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_GalleryUnit_galleryAnchorClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_GalleryUnit_galleryAnchorClass_feature", "_UI_GalleryUnit_type"),
+				 WafPackage.eINSTANCE.getGalleryUnit_GalleryAnchorClass(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -158,6 +319,13 @@ public class GalleryUnitItemProvider extends ImageUnitItemProvider {
 		switch (notification.getFeatureID(GalleryUnit.class)) {
 			case WafPackage.GALLERY_UNIT__SHOW_TIME:
 			case WafPackage.GALLERY_UNIT__TRANSITION_TIME:
+			case WafPackage.GALLERY_UNIT__CONTENT_CLASS:
+			case WafPackage.GALLERY_UNIT__HAS_CONTENT_CLASS:
+			case WafPackage.GALLERY_UNIT__GALLERY_FIELD_LIST_CLASS:
+			case WafPackage.GALLERY_UNIT__GALLERY_FIELD_LABEL_CLASS:
+			case WafPackage.GALLERY_UNIT__GALLERY_FIELD_VALUE_CLASS:
+			case WafPackage.GALLERY_UNIT__GALLERY_CONTROL_CLASS:
+			case WafPackage.GALLERY_UNIT__GALLERY_ANCHOR_CLASS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}
@@ -188,8 +356,8 @@ public class GalleryUnitItemProvider extends ImageUnitItemProvider {
 		Object childObject = child;
 
 		boolean qualify =
-			childFeature == WafPackage.Literals.COLLECTION_UNIT__ELEMENT_TITLE ||
-			childFeature == WafPackage.Literals.IMAGE_UNIT__IMAGE_PATH_FEATURE;
+			childFeature == WafPackage.eINSTANCE.getCollectionUnit_ElementTitle() ||
+			childFeature == WafPackage.eINSTANCE.getImageUnit_ImagePathFeature();
 
 		if (qualify) {
 			return getString

@@ -84,7 +84,7 @@ public class BadgeItemProvider
 				 getResourceLocator(),
 				 getString("_UI_Badge_iconName_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Badge_iconName_feature", "_UI_Badge_type"),
-				 WafPackage.Literals.BADGE__ICON_NAME,
+				 WafPackage.eINSTANCE.getBadge_IconName(),
 				 true,
 				 false,
 				 false,
@@ -106,7 +106,7 @@ public class BadgeItemProvider
 				 getResourceLocator(),
 				 getString("_UI_Badge_title_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Badge_title_feature", "_UI_Badge_type"),
-				 WafPackage.Literals.BADGE__TITLE,
+				 WafPackage.eINSTANCE.getBadge_Title(),
 				 true,
 				 false,
 				 true,
@@ -128,7 +128,7 @@ public class BadgeItemProvider
 				 getResourceLocator(),
 				 getString("_UI_Badge_badgeClass_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Badge_badgeClass_feature", "_UI_Badge_type"),
-				 WafPackage.Literals.BADGE__BADGE_CLASS,
+				 WafPackage.eINSTANCE.getBadge_BadgeClass(),
 				 true,
 				 false,
 				 false,
@@ -149,8 +149,8 @@ public class BadgeItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(WafPackage.Literals.BADGE__VALUE);
-			childrenFeatures.add(WafPackage.Literals.BADGE__DISPLAY_WHEN);
+			childrenFeatures.add(WafPackage.eINSTANCE.getBadge_Value());
+			childrenFeatures.add(WafPackage.eINSTANCE.getBadge_DisplayWhen());
 		}
 		return childrenFeatures;
 	}
@@ -231,62 +231,62 @@ public class BadgeItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.BADGE__VALUE,
+				(WafPackage.eINSTANCE.getBadge_Value(),
 				 WafFactory.eINSTANCE.createFeaturePathAttribute()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.BADGE__VALUE,
+				(WafPackage.eINSTANCE.getBadge_Value(),
 				 WafFactory.eINSTANCE.createFeaturePathAssociation()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.BADGE__VALUE,
+				(WafPackage.eINSTANCE.getBadge_Value(),
 				 WafFactory.eINSTANCE.createFeaturePathLabel()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.BADGE__DISPLAY_WHEN,
+				(WafPackage.eINSTANCE.getBadge_DisplayWhen(),
 				 ExpressionFactory.eINSTANCE.createPredicateBooleanVariable()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.BADGE__DISPLAY_WHEN,
+				(WafPackage.eINSTANCE.getBadge_DisplayWhen(),
 				 ExpressionFactory.eINSTANCE.createPredicateBooleanOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.BADGE__DISPLAY_WHEN,
+				(WafPackage.eINSTANCE.getBadge_DisplayWhen(),
 				 ExpressionFactory.eINSTANCE.createPredicateEqualityOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.BADGE__DISPLAY_WHEN,
+				(WafPackage.eINSTANCE.getBadge_DisplayWhen(),
 				 ExpressionFactory.eINSTANCE.createPredicateComparisonOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.BADGE__DISPLAY_WHEN,
+				(WafPackage.eINSTANCE.getBadge_DisplayWhen(),
 				 ExpressionFactory.eINSTANCE.createPredicateInOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.BADGE__DISPLAY_WHEN,
+				(WafPackage.eINSTANCE.getBadge_DisplayWhen(),
 				 ExpressionFactory.eINSTANCE.createPredicateIsOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.BADGE__DISPLAY_WHEN,
+				(WafPackage.eINSTANCE.getBadge_DisplayWhen(),
 				 ExpressionFactory.eINSTANCE.createPredicateLikeOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.BADGE__DISPLAY_WHEN,
+				(WafPackage.eINSTANCE.getBadge_DisplayWhen(),
 				 ExpressionFactory.eINSTANCE.createPredicateIsEmpty()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.BADGE__DISPLAY_WHEN,
+				(WafPackage.eINSTANCE.getBadge_DisplayWhen(),
 				 ExpressionFactory.eINSTANCE.createPredicateIsNull()));
 	}
 

@@ -62,7 +62,7 @@ public class DateCardsUnitItemProvider extends CardsUnitItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(WafPackage.Literals.DATE_CARDS_UNIT__ELEMENT_DATE);
+			childrenFeatures.add(WafPackage.eINSTANCE.getDateCardsUnit_ElementDate());
 		}
 		return childrenFeatures;
 	}
@@ -138,17 +138,17 @@ public class DateCardsUnitItemProvider extends CardsUnitItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.DATE_CARDS_UNIT__ELEMENT_DATE,
+				(WafPackage.eINSTANCE.getDateCardsUnit_ElementDate(),
 				 WafFactory.eINSTANCE.createFeaturePathAttribute()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.DATE_CARDS_UNIT__ELEMENT_DATE,
+				(WafPackage.eINSTANCE.getDateCardsUnit_ElementDate(),
 				 WafFactory.eINSTANCE.createFeaturePathAssociation()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.DATE_CARDS_UNIT__ELEMENT_DATE,
+				(WafPackage.eINSTANCE.getDateCardsUnit_ElementDate(),
 				 WafFactory.eINSTANCE.createFeaturePathLabel()));
 	}
 
@@ -164,8 +164,8 @@ public class DateCardsUnitItemProvider extends CardsUnitItemProvider {
 		Object childObject = child;
 
 		boolean qualify =
-			childFeature == WafPackage.Literals.COLLECTION_UNIT__ELEMENT_TITLE ||
-			childFeature == WafPackage.Literals.DATE_CARDS_UNIT__ELEMENT_DATE;
+			childFeature == WafPackage.eINSTANCE.getCollectionUnit_ElementTitle() ||
+			childFeature == WafPackage.eINSTANCE.getDateCardsUnit_ElementDate();
 
 		if (qualify) {
 			return getString

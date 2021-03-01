@@ -67,6 +67,24 @@ abstract class Classifier extends NamedDisplayElement {
 }
 
 class DataType extends Classifier {
+	derived readonly transient volatile boolean isBooleanDataType get {
+		name == 'Boolean'
+	}
+	derived readonly transient volatile boolean isEmailDataType get {
+		name == 'Email'
+	}
+	derived readonly transient volatile boolean isEnumerationType get {
+		this instanceof EnumerationType
+	}
+	derived readonly transient volatile boolean isIntegerDataType get {
+		name == 'Integer'
+	}
+	derived readonly transient volatile boolean isStringDataType get {
+		name == 'String'
+	}
+	derived readonly transient volatile boolean isTextareaDataType get {
+		name == 'Textarea'
+	}
 }
 
 class EnumerationType extends DataType {

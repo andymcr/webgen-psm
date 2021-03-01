@@ -112,7 +112,7 @@ public class ActionMenuEntryItemProvider extends MenuEntryItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_ActionMenuEntry_action_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ActionMenuEntry_action_feature", "_UI_ActionMenuEntry_type"),
-				 WafPackage.Literals.ACTION_MENU_ENTRY__ACTION,
+				 WafPackage.eINSTANCE.getActionMenuEntry_Action(),
 				 true,
 				 false,
 				 true,
@@ -133,7 +133,7 @@ public class ActionMenuEntryItemProvider extends MenuEntryItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(WafPackage.Literals.ACTION_MENU_ENTRY__QUERY);
+			childrenFeatures.add(WafPackage.eINSTANCE.getActionMenuEntry_Query());
 		}
 		return childrenFeatures;
 	}
@@ -213,7 +213,7 @@ public class ActionMenuEntryItemProvider extends MenuEntryItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.ACTION_MENU_ENTRY__QUERY,
+				(WafPackage.eINSTANCE.getActionMenuEntry_Query(),
 				 WafFactory.eINSTANCE.createQuery()));
 	}
 

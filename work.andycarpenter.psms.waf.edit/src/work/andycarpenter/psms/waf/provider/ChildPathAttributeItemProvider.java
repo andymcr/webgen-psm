@@ -49,6 +49,7 @@ public class ChildPathAttributeItemProvider extends FeatureChildPathItemProvider
 
 			addNamePropertyDescriptor(object);
 			addAttributePropertyDescriptor(object);
+			addPersistentFeaturePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -66,7 +67,7 @@ public class ChildPathAttributeItemProvider extends FeatureChildPathItemProvider
 				 getResourceLocator(),
 				 getString("_UI_ChildPathAttribute_name_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ChildPathAttribute_name_feature", "_UI_ChildPathAttribute_type"),
-				 WafPackage.Literals.CHILD_PATH_ATTRIBUTE__NAME,
+				 WafPackage.eINSTANCE.getChildPathAttribute_Name(),
 				 false,
 				 false,
 				 false,
@@ -88,10 +89,32 @@ public class ChildPathAttributeItemProvider extends FeatureChildPathItemProvider
 				 getResourceLocator(),
 				 getString("_UI_ChildPathAttribute_attribute_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ChildPathAttribute_attribute_feature", "_UI_ChildPathAttribute_type"),
-				 WafPackage.Literals.CHILD_PATH_ATTRIBUTE__ATTRIBUTE,
+				 WafPackage.eINSTANCE.getChildPathAttribute_Attribute(),
 				 true,
 				 false,
 				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Persistent Feature feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPersistentFeaturePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ChildPathAttribute_persistentFeature_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ChildPathAttribute_persistentFeature_feature", "_UI_ChildPathAttribute_type"),
+				 WafPackage.eINSTANCE.getChildPathAttribute_PersistentFeature(),
+				 false,
+				 false,
+				 false,
 				 null,
 				 null,
 				 null));

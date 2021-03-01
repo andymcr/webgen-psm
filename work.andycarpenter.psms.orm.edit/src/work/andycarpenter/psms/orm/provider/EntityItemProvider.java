@@ -54,12 +54,41 @@ public class EntityItemProvider extends ClassifierItemProvider {
 			addPluralisedNamePropertyDescriptor(object);
 			addRepositoryPropertyDescriptor(object);
 			addKeysPropertyDescriptor(object);
+			addFeaturesPropertyDescriptor(object);
+			addPrimaryKeysPropertyDescriptor(object);
+			addHasPrimaryKeysPropertyDescriptor(object);
+			addFeaturesWithDefaultValuePropertyDescriptor(object);
+			addHasFeaturesWithDefaultValuePropertyDescriptor(object);
+			addAttributesPropertyDescriptor(object);
+			addHasAttributesPropertyDescriptor(object);
+			addAttributeKeysPropertyDescriptor(object);
+			addHasAttributeKeysPropertyDescriptor(object);
+			addResourceAttributesPropertyDescriptor(object);
+			addHasResourceAttributesPropertyDescriptor(object);
+			addUniqueAttributesPropertyDescriptor(object);
+			addHasUniqueAttributesPropertyDescriptor(object);
+			addContainerUniqueAttributesPropertyDescriptor(object);
+			addAssociationsPropertyDescriptor(object);
+			addHasAssociationsPropertyDescriptor(object);
+			addAssociationKeysPropertyDescriptor(object);
+			addHasAssociationKeysPropertyDescriptor(object);
+			addContainingAssociationPropertyDescriptor(object);
+			addContainingTypePropertyDescriptor(object);
+			addIsContainedPropertyDescriptor(object);
+			addCollectionAssociationsPropertyDescriptor(object);
+			addHasCollectionAssociationsPropertyDescriptor(object);
+			addSlugAttributesPropertyDescriptor(object);
+			addHasSlugAttributesPropertyDescriptor(object);
+			addValidatedFeaturesPropertyDescriptor(object);
+			addHasValidatedFeaturesPropertyDescriptor(object);
+			addTableColumnsPropertyDescriptor(object);
 			addTableNamePropertyDescriptor(object);
 			addAutoKeyNamePropertyDescriptor(object);
 			addAutoKeyPersistentTypePropertyDescriptor(object);
 			addAutoKeyGenerationStrategyPropertyDescriptor(object);
 			addUniquePropertyDescriptor(object);
 			addContainerUniquePropertyDescriptor(object);
+			addHasDefaultLabelPropertyDescriptor(object);
 			addImplementsUserInterfacePropertyDescriptor(object);
 			addImplementForumUserPropertyDescriptor(object);
 			addAllowFormTypeCustomisationPropertyDescriptor(object);
@@ -172,6 +201,622 @@ public class EntityItemProvider extends ClassifierItemProvider {
 				 true,
 				 false,
 				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Features feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addFeaturesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Entity_features_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Entity_features_feature", "_UI_Entity_type"),
+				 OrmPackage.Literals.ENTITY__FEATURES,
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Primary Keys feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPrimaryKeysPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Entity_primaryKeys_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Entity_primaryKeys_feature", "_UI_Entity_type"),
+				 OrmPackage.Literals.ENTITY__PRIMARY_KEYS,
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Has Primary Keys feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasPrimaryKeysPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Entity_hasPrimaryKeys_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Entity_hasPrimaryKeys_feature", "_UI_Entity_type"),
+				 OrmPackage.Literals.ENTITY__HAS_PRIMARY_KEYS,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Features With Default Value feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addFeaturesWithDefaultValuePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Entity_featuresWithDefaultValue_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Entity_featuresWithDefaultValue_feature", "_UI_Entity_type"),
+				 OrmPackage.Literals.ENTITY__FEATURES_WITH_DEFAULT_VALUE,
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Has Features With Default Value feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasFeaturesWithDefaultValuePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Entity_hasFeaturesWithDefaultValue_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Entity_hasFeaturesWithDefaultValue_feature", "_UI_Entity_type"),
+				 OrmPackage.Literals.ENTITY__HAS_FEATURES_WITH_DEFAULT_VALUE,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Attributes feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAttributesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Entity_attributes_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Entity_attributes_feature", "_UI_Entity_type"),
+				 OrmPackage.Literals.ENTITY__ATTRIBUTES,
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Has Attributes feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasAttributesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Entity_hasAttributes_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Entity_hasAttributes_feature", "_UI_Entity_type"),
+				 OrmPackage.Literals.ENTITY__HAS_ATTRIBUTES,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Attribute Keys feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAttributeKeysPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Entity_attributeKeys_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Entity_attributeKeys_feature", "_UI_Entity_type"),
+				 OrmPackage.Literals.ENTITY__ATTRIBUTE_KEYS,
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Has Attribute Keys feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasAttributeKeysPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Entity_hasAttributeKeys_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Entity_hasAttributeKeys_feature", "_UI_Entity_type"),
+				 OrmPackage.Literals.ENTITY__HAS_ATTRIBUTE_KEYS,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Resource Attributes feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addResourceAttributesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Entity_resourceAttributes_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Entity_resourceAttributes_feature", "_UI_Entity_type"),
+				 OrmPackage.Literals.ENTITY__RESOURCE_ATTRIBUTES,
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Has Resource Attributes feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasResourceAttributesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Entity_hasResourceAttributes_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Entity_hasResourceAttributes_feature", "_UI_Entity_type"),
+				 OrmPackage.Literals.ENTITY__HAS_RESOURCE_ATTRIBUTES,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Unique Attributes feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addUniqueAttributesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Entity_uniqueAttributes_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Entity_uniqueAttributes_feature", "_UI_Entity_type"),
+				 OrmPackage.Literals.ENTITY__UNIQUE_ATTRIBUTES,
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Has Unique Attributes feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasUniqueAttributesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Entity_hasUniqueAttributes_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Entity_hasUniqueAttributes_feature", "_UI_Entity_type"),
+				 OrmPackage.Literals.ENTITY__HAS_UNIQUE_ATTRIBUTES,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Container Unique Attributes feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addContainerUniqueAttributesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Entity_containerUniqueAttributes_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Entity_containerUniqueAttributes_feature", "_UI_Entity_type"),
+				 OrmPackage.Literals.ENTITY__CONTAINER_UNIQUE_ATTRIBUTES,
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Associations feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAssociationsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Entity_associations_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Entity_associations_feature", "_UI_Entity_type"),
+				 OrmPackage.Literals.ENTITY__ASSOCIATIONS,
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Has Associations feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasAssociationsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Entity_hasAssociations_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Entity_hasAssociations_feature", "_UI_Entity_type"),
+				 OrmPackage.Literals.ENTITY__HAS_ASSOCIATIONS,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Association Keys feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAssociationKeysPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Entity_associationKeys_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Entity_associationKeys_feature", "_UI_Entity_type"),
+				 OrmPackage.Literals.ENTITY__ASSOCIATION_KEYS,
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Has Association Keys feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasAssociationKeysPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Entity_hasAssociationKeys_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Entity_hasAssociationKeys_feature", "_UI_Entity_type"),
+				 OrmPackage.Literals.ENTITY__HAS_ASSOCIATION_KEYS,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Containing Association feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addContainingAssociationPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Entity_containingAssociation_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Entity_containingAssociation_feature", "_UI_Entity_type"),
+				 OrmPackage.Literals.ENTITY__CONTAINING_ASSOCIATION,
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Containing Type feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addContainingTypePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Entity_containingType_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Entity_containingType_feature", "_UI_Entity_type"),
+				 OrmPackage.Literals.ENTITY__CONTAINING_TYPE,
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Is Contained feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIsContainedPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Entity_isContained_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Entity_isContained_feature", "_UI_Entity_type"),
+				 OrmPackage.Literals.ENTITY__IS_CONTAINED,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Collection Associations feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCollectionAssociationsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Entity_collectionAssociations_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Entity_collectionAssociations_feature", "_UI_Entity_type"),
+				 OrmPackage.Literals.ENTITY__COLLECTION_ASSOCIATIONS,
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Has Collection Associations feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasCollectionAssociationsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Entity_hasCollectionAssociations_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Entity_hasCollectionAssociations_feature", "_UI_Entity_type"),
+				 OrmPackage.Literals.ENTITY__HAS_COLLECTION_ASSOCIATIONS,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Slug Attributes feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSlugAttributesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Entity_slugAttributes_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Entity_slugAttributes_feature", "_UI_Entity_type"),
+				 OrmPackage.Literals.ENTITY__SLUG_ATTRIBUTES,
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Has Slug Attributes feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasSlugAttributesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Entity_hasSlugAttributes_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Entity_hasSlugAttributes_feature", "_UI_Entity_type"),
+				 OrmPackage.Literals.ENTITY__HAS_SLUG_ATTRIBUTES,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Validated Features feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addValidatedFeaturesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Entity_validatedFeatures_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Entity_validatedFeatures_feature", "_UI_Entity_type"),
+				 OrmPackage.Literals.ENTITY__VALIDATED_FEATURES,
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Has Validated Features feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasValidatedFeaturesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Entity_hasValidatedFeatures_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Entity_hasValidatedFeatures_feature", "_UI_Entity_type"),
+				 OrmPackage.Literals.ENTITY__HAS_VALIDATED_FEATURES,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Table Columns feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTableColumnsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Entity_tableColumns_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Entity_tableColumns_feature", "_UI_Entity_type"),
+				 OrmPackage.Literals.ENTITY__TABLE_COLUMNS,
+				 false,
+				 false,
+				 false,
 				 null,
 				 null,
 				 null));
@@ -310,6 +955,28 @@ public class EntityItemProvider extends ClassifierItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Has Default Label feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasDefaultLabelPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Entity_hasDefaultLabel_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Entity_hasDefaultLabel_feature", "_UI_Entity_type"),
+				 OrmPackage.Literals.ENTITY__HAS_DEFAULT_LABEL,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Implements User Interface feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -387,7 +1054,7 @@ public class EntityItemProvider extends ClassifierItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(OrmPackage.Literals.ENTITY__FEATURES);
+			childrenFeatures.add(OrmPackage.Literals.ENTITY__ALL_FEATURES);
 			childrenFeatures.add(OrmPackage.Literals.ENTITY__LABELS);
 		}
 		return childrenFeatures;
@@ -446,16 +1113,29 @@ public class EntityItemProvider extends ClassifierItemProvider {
 		switch (notification.getFeatureID(Entity.class)) {
 			case OrmPackage.ENTITY__SINGLETON_NAME:
 			case OrmPackage.ENTITY__PLURALISED_NAME:
+			case OrmPackage.ENTITY__HAS_PRIMARY_KEYS:
+			case OrmPackage.ENTITY__HAS_FEATURES_WITH_DEFAULT_VALUE:
+			case OrmPackage.ENTITY__HAS_ATTRIBUTES:
+			case OrmPackage.ENTITY__HAS_ATTRIBUTE_KEYS:
+			case OrmPackage.ENTITY__HAS_RESOURCE_ATTRIBUTES:
+			case OrmPackage.ENTITY__HAS_UNIQUE_ATTRIBUTES:
+			case OrmPackage.ENTITY__HAS_ASSOCIATIONS:
+			case OrmPackage.ENTITY__HAS_ASSOCIATION_KEYS:
+			case OrmPackage.ENTITY__IS_CONTAINED:
+			case OrmPackage.ENTITY__HAS_COLLECTION_ASSOCIATIONS:
+			case OrmPackage.ENTITY__HAS_SLUG_ATTRIBUTES:
+			case OrmPackage.ENTITY__HAS_VALIDATED_FEATURES:
 			case OrmPackage.ENTITY__TABLE_NAME:
 			case OrmPackage.ENTITY__AUTO_KEY_NAME:
 			case OrmPackage.ENTITY__AUTO_KEY_PERSISTENT_TYPE:
 			case OrmPackage.ENTITY__AUTO_KEY_GENERATION_STRATEGY:
+			case OrmPackage.ENTITY__HAS_DEFAULT_LABEL:
 			case OrmPackage.ENTITY__IMPLEMENTS_USER_INTERFACE:
 			case OrmPackage.ENTITY__IMPLEMENT_FORUM_USER:
 			case OrmPackage.ENTITY__ALLOW_FORM_TYPE_CUSTOMISATION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case OrmPackage.ENTITY__FEATURES:
+			case OrmPackage.ENTITY__ALL_FEATURES:
 			case OrmPackage.ENTITY__LABELS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
@@ -476,52 +1156,52 @@ public class EntityItemProvider extends ClassifierItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OrmPackage.Literals.ENTITY__FEATURES,
+				(OrmPackage.Literals.ENTITY__ALL_FEATURES,
 				 OrmFactory.eINSTANCE.createSingletonElement()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OrmPackage.Literals.ENTITY__FEATURES,
+				(OrmPackage.Literals.ENTITY__ALL_FEATURES,
 				 OrmFactory.eINSTANCE.createCollectionElement()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OrmPackage.Literals.ENTITY__FEATURES,
+				(OrmPackage.Literals.ENTITY__ALL_FEATURES,
 				 OrmFactory.eINSTANCE.createSingletonDate()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OrmPackage.Literals.ENTITY__FEATURES,
+				(OrmPackage.Literals.ENTITY__ALL_FEATURES,
 				 OrmFactory.eINSTANCE.createCollectionDate()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OrmPackage.Literals.ENTITY__FEATURES,
+				(OrmPackage.Literals.ENTITY__ALL_FEATURES,
 				 OrmFactory.eINSTANCE.createSingletonURL()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OrmPackage.Literals.ENTITY__FEATURES,
+				(OrmPackage.Literals.ENTITY__ALL_FEATURES,
 				 OrmFactory.eINSTANCE.createSingletonFile()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OrmPackage.Literals.ENTITY__FEATURES,
+				(OrmPackage.Literals.ENTITY__ALL_FEATURES,
 				 OrmFactory.eINSTANCE.createSingletonImage()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OrmPackage.Literals.ENTITY__FEATURES,
+				(OrmPackage.Literals.ENTITY__ALL_FEATURES,
 				 OrmFactory.eINSTANCE.createSingletonLocation()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OrmPackage.Literals.ENTITY__FEATURES,
+				(OrmPackage.Literals.ENTITY__ALL_FEATURES,
 				 OrmFactory.eINSTANCE.createSingletonAssociation()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OrmPackage.Literals.ENTITY__FEATURES,
+				(OrmPackage.Literals.ENTITY__ALL_FEATURES,
 				 OrmFactory.eINSTANCE.createCollectionAssociation()));
 
 		newChildDescriptors.add

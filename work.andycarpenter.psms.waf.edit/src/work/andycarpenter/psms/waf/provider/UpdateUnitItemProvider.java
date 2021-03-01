@@ -61,7 +61,7 @@ public class UpdateUnitItemProvider extends EditUnitItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_SelectableUnit_selectors_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_SelectableUnit_selectors_feature", "_UI_SelectableUnit_type"),
-				 WafPackage.Literals.SELECTABLE_UNIT__SELECTORS,
+				 WafPackage.eINSTANCE.getSelectableUnit_Selectors(),
 				 true,
 				 false,
 				 true,
@@ -133,8 +133,8 @@ public class UpdateUnitItemProvider extends EditUnitItemProvider {
 		Object childObject = child;
 
 		boolean qualify =
-			childFeature == WafPackage.Literals.DYNAMIC_UNIT__HIDE_WHEN ||
-			childFeature == WafPackage.Literals.EDIT_UNIT__DISABLE_WHEN;
+			childFeature == WafPackage.eINSTANCE.getDynamicUnit_HideWhen() ||
+			childFeature == WafPackage.eINSTANCE.getEditUnit_DisableWhen();
 
 		if (qualify) {
 			return getString

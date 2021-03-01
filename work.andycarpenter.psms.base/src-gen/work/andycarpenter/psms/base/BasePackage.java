@@ -649,13 +649,67 @@ public interface BasePackage extends EPackage {
 	int DATA_TYPE__DISPLAY_LABEL = CLASSIFIER__DISPLAY_LABEL;
 
 	/**
+	 * The feature id for the '<em><b>Is Boolean Data Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_TYPE__IS_BOOLEAN_DATA_TYPE = CLASSIFIER_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Is Email Data Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_TYPE__IS_EMAIL_DATA_TYPE = CLASSIFIER_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Is Enumeration Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_TYPE__IS_ENUMERATION_TYPE = CLASSIFIER_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Is Integer Data Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_TYPE__IS_INTEGER_DATA_TYPE = CLASSIFIER_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Is String Data Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_TYPE__IS_STRING_DATA_TYPE = CLASSIFIER_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Is Textarea Data Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_TYPE__IS_TEXTAREA_DATA_TYPE = CLASSIFIER_FEATURE_COUNT + 5;
+
+	/**
 	 * The number of structural features of the '<em>Data Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_TYPE_FEATURE_COUNT = CLASSIFIER_FEATURE_COUNT + 0;
+	int DATA_TYPE_FEATURE_COUNT = CLASSIFIER_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of operations of the '<em>Data Type</em>' class.
@@ -693,6 +747,60 @@ public interface BasePackage extends EPackage {
 	 * @ordered
 	 */
 	int ENUMERATION_TYPE__DISPLAY_LABEL = DATA_TYPE__DISPLAY_LABEL;
+
+	/**
+	 * The feature id for the '<em><b>Is Boolean Data Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENUMERATION_TYPE__IS_BOOLEAN_DATA_TYPE = DATA_TYPE__IS_BOOLEAN_DATA_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Is Email Data Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENUMERATION_TYPE__IS_EMAIL_DATA_TYPE = DATA_TYPE__IS_EMAIL_DATA_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Is Enumeration Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENUMERATION_TYPE__IS_ENUMERATION_TYPE = DATA_TYPE__IS_ENUMERATION_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Is Integer Data Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENUMERATION_TYPE__IS_INTEGER_DATA_TYPE = DATA_TYPE__IS_INTEGER_DATA_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Is String Data Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENUMERATION_TYPE__IS_STRING_DATA_TYPE = DATA_TYPE__IS_STRING_DATA_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Is Textarea Data Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENUMERATION_TYPE__IS_TEXTAREA_DATA_TYPE = DATA_TYPE__IS_TEXTAREA_DATA_TYPE;
 
 	/**
 	 * The feature id for the '<em><b>Enumerations</b></em>' containment reference list.
@@ -1175,6 +1283,72 @@ public interface BasePackage extends EPackage {
 	EClass getDataType();
 
 	/**
+	 * Returns the meta object for the attribute '{@link work.andycarpenter.psms.base.DataType#isIsBooleanDataType <em>Is Boolean Data Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Is Boolean Data Type</em>'.
+	 * @see work.andycarpenter.psms.base.DataType#isIsBooleanDataType()
+	 * @see #getDataType()
+	 * @generated
+	 */
+	EAttribute getDataType_IsBooleanDataType();
+
+	/**
+	 * Returns the meta object for the attribute '{@link work.andycarpenter.psms.base.DataType#isIsEmailDataType <em>Is Email Data Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Is Email Data Type</em>'.
+	 * @see work.andycarpenter.psms.base.DataType#isIsEmailDataType()
+	 * @see #getDataType()
+	 * @generated
+	 */
+	EAttribute getDataType_IsEmailDataType();
+
+	/**
+	 * Returns the meta object for the attribute '{@link work.andycarpenter.psms.base.DataType#isIsEnumerationType <em>Is Enumeration Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Is Enumeration Type</em>'.
+	 * @see work.andycarpenter.psms.base.DataType#isIsEnumerationType()
+	 * @see #getDataType()
+	 * @generated
+	 */
+	EAttribute getDataType_IsEnumerationType();
+
+	/**
+	 * Returns the meta object for the attribute '{@link work.andycarpenter.psms.base.DataType#isIsIntegerDataType <em>Is Integer Data Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Is Integer Data Type</em>'.
+	 * @see work.andycarpenter.psms.base.DataType#isIsIntegerDataType()
+	 * @see #getDataType()
+	 * @generated
+	 */
+	EAttribute getDataType_IsIntegerDataType();
+
+	/**
+	 * Returns the meta object for the attribute '{@link work.andycarpenter.psms.base.DataType#isIsStringDataType <em>Is String Data Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Is String Data Type</em>'.
+	 * @see work.andycarpenter.psms.base.DataType#isIsStringDataType()
+	 * @see #getDataType()
+	 * @generated
+	 */
+	EAttribute getDataType_IsStringDataType();
+
+	/**
+	 * Returns the meta object for the attribute '{@link work.andycarpenter.psms.base.DataType#isIsTextareaDataType <em>Is Textarea Data Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Is Textarea Data Type</em>'.
+	 * @see work.andycarpenter.psms.base.DataType#isIsTextareaDataType()
+	 * @see #getDataType()
+	 * @generated
+	 */
+	EAttribute getDataType_IsTextareaDataType();
+
+	/**
 	 * Returns the meta object for class '{@link work.andycarpenter.psms.base.EnumerationType <em>Enumeration Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1543,6 +1717,54 @@ public interface BasePackage extends EPackage {
 		 * @generated
 		 */
 		EClass DATA_TYPE = eINSTANCE.getDataType();
+
+		/**
+		 * The meta object literal for the '<em><b>Is Boolean Data Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DATA_TYPE__IS_BOOLEAN_DATA_TYPE = eINSTANCE.getDataType_IsBooleanDataType();
+
+		/**
+		 * The meta object literal for the '<em><b>Is Email Data Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DATA_TYPE__IS_EMAIL_DATA_TYPE = eINSTANCE.getDataType_IsEmailDataType();
+
+		/**
+		 * The meta object literal for the '<em><b>Is Enumeration Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DATA_TYPE__IS_ENUMERATION_TYPE = eINSTANCE.getDataType_IsEnumerationType();
+
+		/**
+		 * The meta object literal for the '<em><b>Is Integer Data Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DATA_TYPE__IS_INTEGER_DATA_TYPE = eINSTANCE.getDataType_IsIntegerDataType();
+
+		/**
+		 * The meta object literal for the '<em><b>Is String Data Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DATA_TYPE__IS_STRING_DATA_TYPE = eINSTANCE.getDataType_IsStringDataType();
+
+		/**
+		 * The meta object literal for the '<em><b>Is Textarea Data Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DATA_TYPE__IS_TEXTAREA_DATA_TYPE = eINSTANCE.getDataType_IsTextareaDataType();
 
 		/**
 		 * The meta object literal for the '{@link work.andycarpenter.psms.base.impl.EnumerationTypeImpl <em>Enumeration Type</em>}' class.

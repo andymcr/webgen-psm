@@ -75,7 +75,7 @@ public class UnitAttributeItemProvider extends UnitFeatureItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_UnitAttribute_attribute_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_UnitAttribute_attribute_feature", "_UI_UnitAttribute_type"),
-				 WafPackage.Literals.UNIT_ATTRIBUTE__ATTRIBUTE,
+				 WafPackage.eINSTANCE.getUnitAttribute_Attribute(),
 				 true,
 				 false,
 				 true,
@@ -97,7 +97,7 @@ public class UnitAttributeItemProvider extends UnitFeatureItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_UnitAttribute_name_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_UnitAttribute_name_feature", "_UI_UnitAttribute_type"),
-				 WafPackage.Literals.UNIT_ATTRIBUTE__NAME,
+				 WafPackage.eINSTANCE.getUnitAttribute_Name(),
 				 false,
 				 false,
 				 false,
@@ -119,7 +119,7 @@ public class UnitAttributeItemProvider extends UnitFeatureItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_UnitAttribute_obfuscateFormFields_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_UnitAttribute_obfuscateFormFields_feature", "_UI_UnitAttribute_type"),
-				 WafPackage.Literals.UNIT_ATTRIBUTE__OBFUSCATE_FORM_FIELDS,
+				 WafPackage.eINSTANCE.getUnitAttribute_ObfuscateFormFields(),
 				 true,
 				 false,
 				 false,
@@ -141,7 +141,7 @@ public class UnitAttributeItemProvider extends UnitFeatureItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_UnitAttribute_placeholder_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_UnitAttribute_placeholder_feature", "_UI_UnitAttribute_type"),
-				 WafPackage.Literals.UNIT_ATTRIBUTE__PLACEHOLDER,
+				 WafPackage.eINSTANCE.getUnitAttribute_Placeholder(),
 				 true,
 				 false,
 				 false,
@@ -163,7 +163,7 @@ public class UnitAttributeItemProvider extends UnitFeatureItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_UnitAttribute_hasCustomisedPlaceholder_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_UnitAttribute_hasCustomisedPlaceholder_feature", "_UI_UnitAttribute_type"),
-				 WafPackage.Literals.UNIT_ATTRIBUTE__HAS_CUSTOMISED_PLACEHOLDER,
+				 WafPackage.eINSTANCE.getUnitAttribute_HasCustomisedPlaceholder(),
 				 true,
 				 false,
 				 false,
@@ -185,7 +185,7 @@ public class UnitAttributeItemProvider extends UnitFeatureItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_UnitAttribute_validationPattern_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_UnitAttribute_validationPattern_feature", "_UI_UnitAttribute_type"),
-				 WafPackage.Literals.UNIT_ATTRIBUTE__VALIDATION_PATTERN,
+				 WafPackage.eINSTANCE.getUnitAttribute_ValidationPattern(),
 				 true,
 				 false,
 				 false,
@@ -206,7 +206,7 @@ public class UnitAttributeItemProvider extends UnitFeatureItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(WafPackage.Literals.UNIT_ATTRIBUTE__DEFAULT_VALUE);
+			childrenFeatures.add(WafPackage.eINSTANCE.getUnitAttribute_AttributeDefaultValue());
 		}
 		return childrenFeatures;
 	}
@@ -269,7 +269,7 @@ public class UnitAttributeItemProvider extends UnitFeatureItemProvider {
 			case WafPackage.UNIT_ATTRIBUTE__VALIDATION_PATTERN:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case WafPackage.UNIT_ATTRIBUTE__DEFAULT_VALUE:
+			case WafPackage.UNIT_ATTRIBUTE__ATTRIBUTE_DEFAULT_VALUE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -289,117 +289,117 @@ public class UnitAttributeItemProvider extends UnitFeatureItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.UNIT_ATTRIBUTE__DEFAULT_VALUE,
+				(WafPackage.eINSTANCE.getUnitAttribute_AttributeDefaultValue(),
 				 WafFactory.eINSTANCE.createFeaturePathAttribute()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.UNIT_ATTRIBUTE__DEFAULT_VALUE,
+				(WafPackage.eINSTANCE.getUnitAttribute_AttributeDefaultValue(),
 				 WafFactory.eINSTANCE.createFeaturePathAssociation()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.UNIT_ATTRIBUTE__DEFAULT_VALUE,
+				(WafPackage.eINSTANCE.getUnitAttribute_AttributeDefaultValue(),
 				 WafFactory.eINSTANCE.createFeaturePathLabel()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.UNIT_ATTRIBUTE__DEFAULT_VALUE,
+				(WafPackage.eINSTANCE.getUnitAttribute_AttributeDefaultValue(),
 				 OrmFactory.eINSTANCE.createFeatureReference()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.UNIT_ATTRIBUTE__DEFAULT_VALUE,
+				(WafPackage.eINSTANCE.getUnitAttribute_AttributeDefaultValue(),
 				 BaseFactory.eINSTANCE.createNullLiteral()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.UNIT_ATTRIBUTE__DEFAULT_VALUE,
+				(WafPackage.eINSTANCE.getUnitAttribute_AttributeDefaultValue(),
 				 BaseFactory.eINSTANCE.createBooleanLiteral()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.UNIT_ATTRIBUTE__DEFAULT_VALUE,
+				(WafPackage.eINSTANCE.getUnitAttribute_AttributeDefaultValue(),
 				 BaseFactory.eINSTANCE.createIntegerLiteral()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.UNIT_ATTRIBUTE__DEFAULT_VALUE,
+				(WafPackage.eINSTANCE.getUnitAttribute_AttributeDefaultValue(),
 				 BaseFactory.eINSTANCE.createStringLiteral()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.UNIT_ATTRIBUTE__DEFAULT_VALUE,
+				(WafPackage.eINSTANCE.getUnitAttribute_AttributeDefaultValue(),
 				 BaseFactory.eINSTANCE.createTimeLiteral()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.UNIT_ATTRIBUTE__DEFAULT_VALUE,
+				(WafPackage.eINSTANCE.getUnitAttribute_AttributeDefaultValue(),
 				 BaseFactory.eINSTANCE.createCurrentTime()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.UNIT_ATTRIBUTE__DEFAULT_VALUE,
+				(WafPackage.eINSTANCE.getUnitAttribute_AttributeDefaultValue(),
 				 BaseFactory.eINSTANCE.createCurrentUser()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.UNIT_ATTRIBUTE__DEFAULT_VALUE,
+				(WafPackage.eINSTANCE.getUnitAttribute_AttributeDefaultValue(),
 				 BaseFactory.eINSTANCE.createConstantReference()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.UNIT_ATTRIBUTE__DEFAULT_VALUE,
+				(WafPackage.eINSTANCE.getUnitAttribute_AttributeDefaultValue(),
 				 BaseFactory.eINSTANCE.createParameterReference()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.UNIT_ATTRIBUTE__DEFAULT_VALUE,
+				(WafPackage.eINSTANCE.getUnitAttribute_AttributeDefaultValue(),
 				 ExpressionFactory.eINSTANCE.createFunctionCall()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.UNIT_ATTRIBUTE__DEFAULT_VALUE,
+				(WafPackage.eINSTANCE.getUnitAttribute_AttributeDefaultValue(),
 				 ExpressionFactory.eINSTANCE.createPredicateBooleanVariable()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.UNIT_ATTRIBUTE__DEFAULT_VALUE,
+				(WafPackage.eINSTANCE.getUnitAttribute_AttributeDefaultValue(),
 				 ExpressionFactory.eINSTANCE.createPredicateBooleanOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.UNIT_ATTRIBUTE__DEFAULT_VALUE,
+				(WafPackage.eINSTANCE.getUnitAttribute_AttributeDefaultValue(),
 				 ExpressionFactory.eINSTANCE.createPredicateEqualityOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.UNIT_ATTRIBUTE__DEFAULT_VALUE,
+				(WafPackage.eINSTANCE.getUnitAttribute_AttributeDefaultValue(),
 				 ExpressionFactory.eINSTANCE.createPredicateComparisonOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.UNIT_ATTRIBUTE__DEFAULT_VALUE,
+				(WafPackage.eINSTANCE.getUnitAttribute_AttributeDefaultValue(),
 				 ExpressionFactory.eINSTANCE.createPredicateInOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.UNIT_ATTRIBUTE__DEFAULT_VALUE,
+				(WafPackage.eINSTANCE.getUnitAttribute_AttributeDefaultValue(),
 				 ExpressionFactory.eINSTANCE.createPredicateIsOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.UNIT_ATTRIBUTE__DEFAULT_VALUE,
+				(WafPackage.eINSTANCE.getUnitAttribute_AttributeDefaultValue(),
 				 ExpressionFactory.eINSTANCE.createPredicateLikeOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.UNIT_ATTRIBUTE__DEFAULT_VALUE,
+				(WafPackage.eINSTANCE.getUnitAttribute_AttributeDefaultValue(),
 				 ExpressionFactory.eINSTANCE.createPredicateIsEmpty()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.UNIT_ATTRIBUTE__DEFAULT_VALUE,
+				(WafPackage.eINSTANCE.getUnitAttribute_AttributeDefaultValue(),
 				 ExpressionFactory.eINSTANCE.createPredicateIsNull()));
 	}
 
@@ -415,10 +415,10 @@ public class UnitAttributeItemProvider extends UnitFeatureItemProvider {
 		Object childObject = child;
 
 		boolean qualify =
-			childFeature == WafPackage.Literals.UNIT_FIELD__HIDE_WHEN ||
-			childFeature == WafPackage.Literals.UNIT_FEATURE__FORCED_VALUE ||
-			childFeature == WafPackage.Literals.UNIT_FEATURE__DISPLAY_DEFAULT_WHEN ||
-			childFeature == WafPackage.Literals.UNIT_ATTRIBUTE__DEFAULT_VALUE;
+			childFeature == WafPackage.eINSTANCE.getUnitField_HideWhen() ||
+			childFeature == WafPackage.eINSTANCE.getUnitFeature_ForcedValue() ||
+			childFeature == WafPackage.eINSTANCE.getUnitFeature_DisplayDefaultWhen() ||
+			childFeature == WafPackage.eINSTANCE.getUnitAttribute_AttributeDefaultValue();
 
 		if (qualify) {
 			return getString

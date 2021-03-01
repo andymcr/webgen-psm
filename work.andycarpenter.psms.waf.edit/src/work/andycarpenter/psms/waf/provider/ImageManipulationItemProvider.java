@@ -68,7 +68,7 @@ public class ImageManipulationItemProvider extends NamedElementItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_ImageManipulation_jpegQuality_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ImageManipulation_jpegQuality_feature", "_UI_ImageManipulation_type"),
-				 WafPackage.Literals.IMAGE_MANIPULATION__JPEG_QUALITY,
+				 WafPackage.eINSTANCE.getImageManipulation_JpegQuality(),
 				 true,
 				 false,
 				 false,
@@ -89,7 +89,7 @@ public class ImageManipulationItemProvider extends NamedElementItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(WafPackage.Literals.IMAGE_MANIPULATION__FILTERS);
+			childrenFeatures.add(WafPackage.eINSTANCE.getImageManipulation_Filters());
 		}
 		return childrenFeatures;
 	}
@@ -168,12 +168,12 @@ public class ImageManipulationItemProvider extends NamedElementItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.IMAGE_MANIPULATION__FILTERS,
+				(WafPackage.eINSTANCE.getImageManipulation_Filters(),
 				 WafFactory.eINSTANCE.createBackgroundFilter()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.IMAGE_MANIPULATION__FILTERS,
+				(WafPackage.eINSTANCE.getImageManipulation_Filters(),
 				 WafFactory.eINSTANCE.createThumbnailFilter()));
 	}
 

@@ -52,13 +52,22 @@ public class ContentUnitItemProvider extends NamedDisplayElementItemProvider {
 
 			addDisplayedOnPropertyDescriptor(object);
 			addUriElementPropertyDescriptor(object);
-			addRequiresRolePropertyDescriptor(object);
+			addAuthorisationRolesPropertyDescriptor(object);
+			addIsAuthorisedPropertyDescriptor(object);
+			addLocalAuthenticationPropertyDescriptor(object);
 			addPurposeSummaryPropertyDescriptor(object);
 			addAlternativePropertyDescriptor(object);
-			addSectionClassPropertyDescriptor(object);
 			addOmitCaptionPropertyDescriptor(object);
+			addLocalSectionClassPropertyDescriptor(object);
+			addSectionClassPropertyDescriptor(object);
+			addHasSectionClassPropertyDescriptor(object);
+			addLocalCaptionClassPropertyDescriptor(object);
 			addCaptionClassPropertyDescriptor(object);
-			addContentClassPropertyDescriptor(object);
+			addHasCaptionClassPropertyDescriptor(object);
+			addLocalContentClassPropertyDescriptor(object);
+			addGenModelPropertyDescriptor(object);
+			addUiModelPropertyDescriptor(object);
+			addSecurityModelPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -76,7 +85,7 @@ public class ContentUnitItemProvider extends NamedDisplayElementItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_ContentUnit_displayedOn_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ContentUnit_displayedOn_feature", "_UI_ContentUnit_type"),
-				 WafPackage.Literals.CONTENT_UNIT__DISPLAYED_ON,
+				 WafPackage.eINSTANCE.getContentUnit_DisplayedOn(),
 				 true,
 				 false,
 				 true,
@@ -98,7 +107,7 @@ public class ContentUnitItemProvider extends NamedDisplayElementItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_ContentUnit_uriElement_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ContentUnit_uriElement_feature", "_UI_ContentUnit_type"),
-				 WafPackage.Literals.CONTENT_UNIT__URI_ELEMENT,
+				 WafPackage.eINSTANCE.getContentUnit_UriElement(),
 				 true,
 				 false,
 				 false,
@@ -108,23 +117,67 @@ public class ContentUnitItemProvider extends NamedDisplayElementItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Requires Role feature.
+	 * This adds a property descriptor for the Authorisation Roles feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addRequiresRolePropertyDescriptor(Object object) {
+	protected void addAuthorisationRolesPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ContentUnit_requiresRole_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ContentUnit_requiresRole_feature", "_UI_ContentUnit_type"),
-				 WafPackage.Literals.CONTENT_UNIT__REQUIRES_ROLE,
+				 getString("_UI_ContentUnit_authorisationRoles_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ContentUnit_authorisationRoles_feature", "_UI_ContentUnit_type"),
+				 WafPackage.eINSTANCE.getContentUnit_AuthorisationRoles(),
 				 true,
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Is Authorised feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIsAuthorisedPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ContentUnit_isAuthorised_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ContentUnit_isAuthorised_feature", "_UI_ContentUnit_type"),
+				 WafPackage.eINSTANCE.getContentUnit_IsAuthorised(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Local Authentication feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addLocalAuthenticationPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ContentUnit_localAuthentication_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ContentUnit_localAuthentication_feature", "_UI_ContentUnit_type"),
+				 WafPackage.eINSTANCE.getContentUnit_LocalAuthentication(),
+				 false,
+				 false,
+				 false,
+				 null,
 				 null,
 				 null));
 	}
@@ -142,7 +195,7 @@ public class ContentUnitItemProvider extends NamedDisplayElementItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_ContentUnit_purposeSummary_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ContentUnit_purposeSummary_feature", "_UI_ContentUnit_type"),
-				 WafPackage.Literals.CONTENT_UNIT__PURPOSE_SUMMARY,
+				 WafPackage.eINSTANCE.getContentUnit_PurposeSummary(),
 				 true,
 				 false,
 				 false,
@@ -164,7 +217,7 @@ public class ContentUnitItemProvider extends NamedDisplayElementItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_ContentUnit_alternative_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ContentUnit_alternative_feature", "_UI_ContentUnit_type"),
-				 WafPackage.Literals.CONTENT_UNIT__ALTERNATIVE,
+				 WafPackage.eINSTANCE.getContentUnit_Alternative(),
 				 true,
 				 false,
 				 false,
@@ -186,7 +239,51 @@ public class ContentUnitItemProvider extends NamedDisplayElementItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_ContentUnit_sectionClass_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ContentUnit_sectionClass_feature", "_UI_ContentUnit_type"),
-				 WafPackage.Literals.CONTENT_UNIT__SECTION_CLASS,
+				 WafPackage.eINSTANCE.getContentUnit_SectionClass(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Has Section Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasSectionClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ContentUnit_hasSectionClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ContentUnit_hasSectionClass_feature", "_UI_ContentUnit_type"),
+				 WafPackage.eINSTANCE.getContentUnit_HasSectionClass(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Local Caption Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addLocalCaptionClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ContentUnit_localCaptionClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ContentUnit_localCaptionClass_feature", "_UI_ContentUnit_type"),
+				 WafPackage.eINSTANCE.getContentUnit_LocalCaptionClass(),
 				 true,
 				 false,
 				 false,
@@ -208,11 +305,33 @@ public class ContentUnitItemProvider extends NamedDisplayElementItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_ContentUnit_omitCaption_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ContentUnit_omitCaption_feature", "_UI_ContentUnit_type"),
-				 WafPackage.Literals.CONTENT_UNIT__OMIT_CAPTION,
+				 WafPackage.eINSTANCE.getContentUnit_OmitCaption(),
 				 true,
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Local Section Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addLocalSectionClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ContentUnit_localSectionClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ContentUnit_localSectionClass_feature", "_UI_ContentUnit_type"),
+				 WafPackage.eINSTANCE.getContentUnit_LocalSectionClass(),
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -230,7 +349,51 @@ public class ContentUnitItemProvider extends NamedDisplayElementItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_ContentUnit_captionClass_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ContentUnit_captionClass_feature", "_UI_ContentUnit_type"),
-				 WafPackage.Literals.CONTENT_UNIT__CAPTION_CLASS,
+				 WafPackage.eINSTANCE.getContentUnit_CaptionClass(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Has Caption Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasCaptionClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ContentUnit_hasCaptionClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ContentUnit_hasCaptionClass_feature", "_UI_ContentUnit_type"),
+				 WafPackage.eINSTANCE.getContentUnit_HasCaptionClass(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Local Content Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addLocalContentClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ContentUnit_localContentClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ContentUnit_localContentClass_feature", "_UI_ContentUnit_type"),
+				 WafPackage.eINSTANCE.getContentUnit_LocalContentClass(),
 				 true,
 				 false,
 				 false,
@@ -240,23 +403,67 @@ public class ContentUnitItemProvider extends NamedDisplayElementItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Content Class feature.
+	 * This adds a property descriptor for the Gen Model feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addContentClassPropertyDescriptor(Object object) {
+	protected void addGenModelPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ContentUnit_contentClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ContentUnit_contentClass_feature", "_UI_ContentUnit_type"),
-				 WafPackage.Literals.CONTENT_UNIT__CONTENT_CLASS,
-				 true,
+				 getString("_UI_ContentUnit_genModel_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ContentUnit_genModel_feature", "_UI_ContentUnit_type"),
+				 WafPackage.eINSTANCE.getContentUnit_GenModel(),
 				 false,
 				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Ui Model feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addUiModelPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ContentUnit_uiModel_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ContentUnit_uiModel_feature", "_UI_ContentUnit_type"),
+				 WafPackage.eINSTANCE.getContentUnit_UiModel(),
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Security Model feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSecurityModelPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ContentUnit_securityModel_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ContentUnit_securityModel_feature", "_UI_ContentUnit_type"),
+				 WafPackage.eINSTANCE.getContentUnit_SecurityModel(),
+				 false,
+				 false,
+				 false,
+				 null,
 				 null,
 				 null));
 	}
@@ -273,7 +480,7 @@ public class ContentUnitItemProvider extends NamedDisplayElementItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(WafPackage.Literals.CONTENT_UNIT__ROUTE_ACTUALS);
+			childrenFeatures.add(WafPackage.eINSTANCE.getContentUnit_RouteActuals());
 		}
 		return childrenFeatures;
 	}
@@ -319,13 +526,18 @@ public class ContentUnitItemProvider extends NamedDisplayElementItemProvider {
 
 		switch (notification.getFeatureID(ContentUnit.class)) {
 			case WafPackage.CONTENT_UNIT__URI_ELEMENT:
-			case WafPackage.CONTENT_UNIT__REQUIRES_ROLE:
+			case WafPackage.CONTENT_UNIT__AUTHORISATION_ROLES:
+			case WafPackage.CONTENT_UNIT__IS_AUTHORISED:
 			case WafPackage.CONTENT_UNIT__PURPOSE_SUMMARY:
 			case WafPackage.CONTENT_UNIT__ALTERNATIVE:
-			case WafPackage.CONTENT_UNIT__SECTION_CLASS:
 			case WafPackage.CONTENT_UNIT__OMIT_CAPTION:
+			case WafPackage.CONTENT_UNIT__LOCAL_SECTION_CLASS:
+			case WafPackage.CONTENT_UNIT__SECTION_CLASS:
+			case WafPackage.CONTENT_UNIT__HAS_SECTION_CLASS:
+			case WafPackage.CONTENT_UNIT__LOCAL_CAPTION_CLASS:
 			case WafPackage.CONTENT_UNIT__CAPTION_CLASS:
-			case WafPackage.CONTENT_UNIT__CONTENT_CLASS:
+			case WafPackage.CONTENT_UNIT__HAS_CAPTION_CLASS:
+			case WafPackage.CONTENT_UNIT__LOCAL_CONTENT_CLASS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case WafPackage.CONTENT_UNIT__ROUTE_ACTUALS:
@@ -348,7 +560,7 @@ public class ContentUnitItemProvider extends NamedDisplayElementItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.CONTENT_UNIT__ROUTE_ACTUALS,
+				(WafPackage.eINSTANCE.getContentUnit_RouteActuals(),
 				 WafFactory.eINSTANCE.createRouteActual()));
 	}
 

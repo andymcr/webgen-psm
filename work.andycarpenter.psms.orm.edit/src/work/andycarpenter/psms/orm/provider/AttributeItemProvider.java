@@ -52,6 +52,7 @@ public class AttributeItemProvider extends FeatureItemProvider {
 			addSlugFieldsPropertyDescriptor(object);
 			addValidationPatternPropertyDescriptor(object);
 			addHiddenPropertyDescriptor(object);
+			addHasSerializationControlAttributePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -123,6 +124,28 @@ public class AttributeItemProvider extends FeatureItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Has Serialization Control Attribute feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasSerializationControlAttributePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Attribute_hasSerializationControlAttribute_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Attribute_hasSerializationControlAttribute_feature", "_UI_Attribute_type"),
+				 OrmPackage.Literals.ATTRIBUTE__HAS_SERIALIZATION_CONTROL_ATTRIBUTE,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -134,7 +157,7 @@ public class AttributeItemProvider extends FeatureItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(OrmPackage.Literals.ATTRIBUTE__DEFAULT_VALUE);
+			childrenFeatures.add(OrmPackage.Literals.ATTRIBUTE__ATTRIBUTE_DEFAULT_VALUE);
 		}
 		return childrenFeatures;
 	}
@@ -181,9 +204,10 @@ public class AttributeItemProvider extends FeatureItemProvider {
 		switch (notification.getFeatureID(Attribute.class)) {
 			case OrmPackage.ATTRIBUTE__VALIDATION_PATTERN:
 			case OrmPackage.ATTRIBUTE__HIDDEN:
+			case OrmPackage.ATTRIBUTE__HAS_SERIALIZATION_CONTROL_ATTRIBUTE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case OrmPackage.ATTRIBUTE__DEFAULT_VALUE:
+			case OrmPackage.ATTRIBUTE__ATTRIBUTE_DEFAULT_VALUE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -203,102 +227,102 @@ public class AttributeItemProvider extends FeatureItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OrmPackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
+				(OrmPackage.Literals.ATTRIBUTE__ATTRIBUTE_DEFAULT_VALUE,
 				 OrmFactory.eINSTANCE.createFeatureReference()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OrmPackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
+				(OrmPackage.Literals.ATTRIBUTE__ATTRIBUTE_DEFAULT_VALUE,
 				 BaseFactory.eINSTANCE.createNullLiteral()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OrmPackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
+				(OrmPackage.Literals.ATTRIBUTE__ATTRIBUTE_DEFAULT_VALUE,
 				 BaseFactory.eINSTANCE.createBooleanLiteral()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OrmPackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
+				(OrmPackage.Literals.ATTRIBUTE__ATTRIBUTE_DEFAULT_VALUE,
 				 BaseFactory.eINSTANCE.createIntegerLiteral()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OrmPackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
+				(OrmPackage.Literals.ATTRIBUTE__ATTRIBUTE_DEFAULT_VALUE,
 				 BaseFactory.eINSTANCE.createStringLiteral()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OrmPackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
+				(OrmPackage.Literals.ATTRIBUTE__ATTRIBUTE_DEFAULT_VALUE,
 				 BaseFactory.eINSTANCE.createTimeLiteral()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OrmPackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
+				(OrmPackage.Literals.ATTRIBUTE__ATTRIBUTE_DEFAULT_VALUE,
 				 BaseFactory.eINSTANCE.createCurrentTime()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OrmPackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
+				(OrmPackage.Literals.ATTRIBUTE__ATTRIBUTE_DEFAULT_VALUE,
 				 BaseFactory.eINSTANCE.createCurrentUser()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OrmPackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
+				(OrmPackage.Literals.ATTRIBUTE__ATTRIBUTE_DEFAULT_VALUE,
 				 BaseFactory.eINSTANCE.createConstantReference()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OrmPackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
+				(OrmPackage.Literals.ATTRIBUTE__ATTRIBUTE_DEFAULT_VALUE,
 				 BaseFactory.eINSTANCE.createParameterReference()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OrmPackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
+				(OrmPackage.Literals.ATTRIBUTE__ATTRIBUTE_DEFAULT_VALUE,
 				 ExpressionFactory.eINSTANCE.createFunctionCall()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OrmPackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
+				(OrmPackage.Literals.ATTRIBUTE__ATTRIBUTE_DEFAULT_VALUE,
 				 ExpressionFactory.eINSTANCE.createPredicateBooleanVariable()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OrmPackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
+				(OrmPackage.Literals.ATTRIBUTE__ATTRIBUTE_DEFAULT_VALUE,
 				 ExpressionFactory.eINSTANCE.createPredicateBooleanOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OrmPackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
+				(OrmPackage.Literals.ATTRIBUTE__ATTRIBUTE_DEFAULT_VALUE,
 				 ExpressionFactory.eINSTANCE.createPredicateEqualityOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OrmPackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
+				(OrmPackage.Literals.ATTRIBUTE__ATTRIBUTE_DEFAULT_VALUE,
 				 ExpressionFactory.eINSTANCE.createPredicateComparisonOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OrmPackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
+				(OrmPackage.Literals.ATTRIBUTE__ATTRIBUTE_DEFAULT_VALUE,
 				 ExpressionFactory.eINSTANCE.createPredicateInOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OrmPackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
+				(OrmPackage.Literals.ATTRIBUTE__ATTRIBUTE_DEFAULT_VALUE,
 				 ExpressionFactory.eINSTANCE.createPredicateIsOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OrmPackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
+				(OrmPackage.Literals.ATTRIBUTE__ATTRIBUTE_DEFAULT_VALUE,
 				 ExpressionFactory.eINSTANCE.createPredicateLikeOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OrmPackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
+				(OrmPackage.Literals.ATTRIBUTE__ATTRIBUTE_DEFAULT_VALUE,
 				 ExpressionFactory.eINSTANCE.createPredicateIsEmpty()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OrmPackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
+				(OrmPackage.Literals.ATTRIBUTE__ATTRIBUTE_DEFAULT_VALUE,
 				 ExpressionFactory.eINSTANCE.createPredicateIsNull()));
 	}
 

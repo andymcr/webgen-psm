@@ -61,7 +61,7 @@ public class SearchUnitItemProvider extends ControlUnitItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_SearchUnit_resultsDestination_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_SearchUnit_resultsDestination_feature", "_UI_SearchUnit_type"),
-				 WafPackage.Literals.SEARCH_UNIT__RESULTS_DESTINATION,
+				 WafPackage.eINSTANCE.getSearchUnit_ResultsDestination(),
 				 true,
 				 false,
 				 true,

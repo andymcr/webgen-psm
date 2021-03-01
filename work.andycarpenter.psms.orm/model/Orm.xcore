@@ -15,6 +15,7 @@ package work.andycarpenter.psms.orm
 import work.andycarpenter.psms.base.Classifier
 import work.andycarpenter.psms.base.ConstantContainer
 import work.andycarpenter.psms.base.DataType
+import work.andycarpenter.psms.base.EnumerationType
 import work.andycarpenter.psms.base.FormalParameterList
 import work.andycarpenter.psms.base.NamedDisplayElement
 import work.andycarpenter.psms.base.NamedElement
@@ -28,6 +29,9 @@ annotation "http://www.eclipse.org/emf/2002/Ecore/OCL" as OCL
 class OrmModel {
 	contains SerializationGroup[] serializationGroups
 	contains DataType[] dataTypes
+	refers derived readonly transient volatile EnumerationType[] enumerationTypes get {
+		dataTypes.filter[it instanceof EnumerationType].map[it as EnumerationType].toEList()
+	}
 	contains Entity[] entities opposite partOf
 	contains Repository[] repositories opposite partOf
 	contains CollectionType[] collectionTypes
@@ -89,8 +93,92 @@ class Entity extends Classifier {
 	String[1] singletonName
 	String[1] pluralisedName
 	refers Repository repository opposite serves
-	contains Feature[] features opposite partOf
+	contains Feature[] allFeatures opposite partOf
 	refers Feature[] ^keys
+	refers derived readonly transient volatile Feature[] features get {
+		allFeatures.filter[isVisible].toEList()
+	}
+	refers derived readonly transient volatile Feature[] primaryKeys get {
+		features.filter[isPrimaryKey].toEList()
+	}
+	derived readonly transient volatile boolean hasPrimaryKeys get {
+		!primaryKeys.isEmpty()
+	}
+	refers derived readonly transient volatile Feature[] featuresWithDefaultValue get {
+		features.filter[hasDefaultValue].toEList()
+	}
+	derived readonly transient volatile boolean hasFeaturesWithDefaultValue get {
+		!featuresWithDefaultValue.isEmpty()
+	}
+	refers derived readonly transient volatile Attribute[] attributes get {
+		features.filter[it instanceof Attribute].map[it as Attribute].toEList()
+	}
+	derived readonly transient volatile boolean hasAttributes get {
+		!attributes.isEmpty()
+	}
+	refers derived readonly transient volatile Attribute[] attributeKeys get {
+		keys.filter[it instanceof Attribute].map[it as Attribute].toEList()
+	}
+	derived readonly transient volatile boolean hasAttributeKeys get {
+		!attributeKeys.isEmpty()
+	}
+	refers derived readonly transient volatile SingletonResource[] resourceAttributes get {
+		attributes.filter[it instanceof SingletonResource].map[it as SingletonResource].toEList()
+	}
+	derived readonly transient volatile boolean hasResourceAttributes get {
+		!resourceAttributes.isEmpty()
+	}
+	refers derived readonly transient volatile Attribute[] uniqueAttributes get {
+		attributes.filter[isUnique].toEList()
+	}
+	derived readonly transient volatile boolean hasUniqueAttributes get {
+		!uniqueAttributes.isEmpty()
+	}
+	refers derived readonly transient volatile Attribute[] containerUniqueAttributes get {
+		attributes.filter[isContainerUnique].toEList()
+	}
+	refers derived readonly transient volatile Association[] associations get {
+		features.filter[it instanceof Association].map[it as Association].toEList()
+	}
+	derived readonly transient volatile boolean hasAssociations get {
+		!associations.isEmpty()
+	}
+	refers derived readonly transient volatile Association[] associationKeys get {
+		keys.filter[it instanceof Association].map[it as Association].toEList()
+	}
+	derived readonly transient volatile boolean hasAssociationKeys get {
+		!associationKeys.isEmpty()
+	}
+	refers derived readonly transient volatile Association containingAssociation get {
+		associations.findFirst[isContainer]
+	}
+	refers derived readonly transient volatile Entity containingType get {
+		containingAssociation?.targetType
+	}
+	derived readonly transient volatile boolean isContained get {
+		containingType !== null
+	}
+	refers derived readonly transient volatile Association[] collectionAssociations get {
+		associations.filter[!isSingleton].toEList()
+	}
+	derived readonly transient volatile boolean hasCollectionAssociations get {
+		!collectionAssociations.isEmpty()
+	}
+	refers derived readonly transient volatile Attribute[] slugAttributes get {
+		attributes.filter[hasSlugFields].toEList()
+	}
+	derived readonly transient volatile boolean hasSlugAttributes get {
+		!slugAttributes.isEmpty()
+	}
+	refers derived readonly transient volatile Feature[] validatedFeatures get {
+		features.filter[isValidated].toEList()
+	}
+	derived readonly transient volatile boolean hasValidatedFeatures get {
+		!validatedFeatures.isEmpty()
+	}
+	refers derived readonly transient volatile Feature[] tableColumns get {
+		features.filter[hasColumn].toEList()
+	}
 	String tableName
 	String autoKeyName
 	String autoKeyPersistentType
@@ -98,6 +186,9 @@ class Entity extends Classifier {
 	refers Feature[] ^unique
 	refers Feature[] containerUnique
 	contains ModelLabel[] labels opposite labelFor
+	derived readonly transient volatile boolean hasDefaultLabel get {
+		!labels.filter[name == 'default'].isEmpty()
+	}
 	boolean implementsUserInterface = "false"
 	boolean implementForumUser = "false"
 	boolean allowFormTypeCustomisation = "false"
@@ -129,26 +220,194 @@ class ModelLabelAssociation extends ModelLabelFeature {
 
 
 abstract class Feature extends NamedDisplayElement {
-	container Entity[1] partOf opposite features
+	container Entity[1] partOf opposite allFeatures
 	Cardinality cardinality
-	boolean primaryKey
-	boolean ^derived
+	boolean isPrimaryKey
+	boolean isDerived
 	boolean customiseSet
 	String[1] singletonName
 	String[1] pluralisedName
 	IsHasChoices booleanIsHasChoice
 	String[1] columnName
-	boolean[1] encodeUriKey = "false"
-	boolean collectionOrmAllowAdd = "false"
-	boolean collectionOrmAllowRemove = "false"
+	boolean[1] encodeUriKey
+	boolean collectionOrmAllowAdd
+	boolean collectionOrmAllowRemove
 	refers SerializationGroup[] serializationGroups
+	derived readonly transient volatile boolean isBooleanFeature get {
+		if (this instanceof SingletonElement)
+			(this as SingletonElement).attributeDataType.isBooleanDataType
+		else
+			false
+	}
+	derived readonly transient volatile boolean isDataTypeFeature get {
+		this instanceof SingletonElement || this instanceof CollectionElement
+	}
+	refers derived readonly transient volatile Classifier dataType get {
+		if (isDataTypeFeature)
+			if (this instanceof SingletonElement)
+				(this as SingletonElement).dataType
+			else if (this instanceof CollectionElement)
+				(this as CollectionElement).collectionType.elementType
+			
+	}
+	derived readonly transient volatile boolean isDateFeature get {
+		this instanceof DateAttribute
+	}
+	derived readonly transient volatile DateDetails dateDetails get {
+		if (this instanceof DateAttribute)
+			(this as DateAttribute).details
+	}
+	derived readonly transient volatile boolean isEmailFeature get {
+		if (this instanceof SingletonElement)
+			(this as SingletonElement).attributeDataType.isEmailDataType
+		else
+			false
+	}
+	derived readonly transient volatile boolean isEnumerationFeature get {
+		if (this instanceof SingletonElement)
+			(this as SingletonElement).attributeDataType.isEnumerationType
+		else
+			false
+	}
+	refers derived readonly transient volatile EnumerationType enumerationType get {
+		if (isEnumerationFeature)
+			(this as SingletonElement).attributeDataType as EnumerationType
+	}
+	derived readonly transient volatile boolean isIntegerFeature get {
+		if (this instanceof SingletonElement)
+			(this as SingletonElement).attributeDataType.isIntegerDataType
+		else
+			false
+	}
+	derived readonly transient volatile boolean isLocationFeature get {
+		this instanceof SingletonLocation
+	}
+	derived readonly transient volatile boolean isObfuscatedFeature get {
+		if (this instanceof SingletonElement)
+			(this as SingletonElement).obfuscateFormFields
+		else
+			false
+	}
+	derived readonly transient volatile boolean isResourceFeature get {
+		this instanceof SingletonResource
+	}
+	derived readonly transient volatile boolean isStringFeature get {
+		if (this instanceof SingletonElement)
+			(this as SingletonElement).attributeDataType.isStringDataType
+		else
+			false
+	}
+	derived readonly transient volatile boolean isTextareaFeature get {
+		if (this instanceof SingletonElement)
+			(this as SingletonElement).attributeDataType.isTextareaDataType
+		else
+			false
+	}
+	derived readonly transient volatile boolean isUrlFeature get {
+		this instanceof SingletonURL
+	}
+	refers derived readonly transient volatile Expression defaultValue get {
+		if (this instanceof Attribute)
+			(this as Attribute).attributeDefaultValue
+	}
+	derived readonly transient volatile boolean hasDefaultValue get {
+		defaultValue !== null
+	}
+	derived readonly transient volatile boolean hasHtml5Attributes get {
+		hasValidationPattern // || hasPlaceholder
+	}
+	derived readonly transient volatile boolean hasColumn get {
+		this instanceof Attribute || isOwningEnd
+	}
+	derived readonly transient volatile boolean isOwningEnd get {
+		if (this instanceof Association)
+			(this as Association).associationOwningEnd
+		else
+			false
+	}
+	derived readonly transient volatile boolean hasSlugFields get {
+		if (this instanceof Attribute)
+			(this as Attribute).slugFields.size > 0
+		else
+			false
+	}
+	derived readonly transient volatile boolean hasValidationPattern get {
+		if (this instanceof Attribute)
+			(this as Attribute).validationPattern !== null
+		else
+			false
+	}
+	derived readonly transient volatile boolean isCaseInsensitive get {
+		if (this instanceof SingletonElement)
+			(this as SingletonElement).caseInsensitive
+		else
+			false
+	}
+	derived readonly transient volatile boolean isContainer get {
+		if (this instanceof Association)
+			(this as Association).associationContainer
+		else
+			false
+	}
+	derived readonly transient volatile boolean isContainerUnique get {
+		if (this instanceof SingletonAttribute)
+			(this as SingletonAttribute).containerUnique
+		else
+			false
+	}
+	derived readonly transient volatile boolean isContains get {
+		if (this instanceof Association)
+			(this as Association).associationContains
+		else
+			false
+	}
+	derived readonly transient volatile boolean isEncrypted get {
+		if (this instanceof SingletonElement)
+			(this as SingletonElement).encrypt
+		else
+			false
+	}
+	derived readonly transient volatile boolean isRequired get {
+		cardinality.literal == 'Required'
+	}
+	derived readonly transient volatile boolean isSingleton get {
+		(this instanceof SingletonAttribute) || (this instanceof SingletonAssociation)
+	}
+	derived readonly transient volatile boolean isUnique get {
+		if (this instanceof SingletonAttribute)
+			(this as SingletonAttribute).unique
+		else
+			false
+	}
+	derived readonly transient volatile boolean isValidated get {
+		isRequired || isContains /* isUnique is an entity property */
+	}
+	derived readonly transient volatile boolean isVisible get {
+		if (this instanceof Attribute)
+			true
+		else if (this instanceof Association)
+			(this as Association).visible
+		else
+			true
+	}
+	derived readonly transient volatile boolean hasSerializationControl get {
+		if (this instanceof Attribute)
+			(this as Attribute).hasSerializationControlAttribute
+		else if (this instanceof Association)
+			(this as Association).hasSerializationControlAssociation
+		else
+			false 
+	}
 }
 
 abstract class Attribute extends Feature, Label {
-	contains Expression defaultValue
+	contains Expression attributeDefaultValue
 	refers Attribute[] slugFields
 	String validationPattern
 	boolean hidden
+	derived readonly transient volatile boolean hasSerializationControlAttribute get {
+		serializationGroups.size > 0 
+	}
 }
 
 abstract class SingletonAttribute extends Attribute {
@@ -162,7 +421,7 @@ abstract class CollectionAttribute extends Attribute {
 }
 
 class SingletonElement extends SingletonAttribute {
-	refers DataType[1] dataType
+	refers DataType[1] attributeDataType
 	boolean obfuscateFormFields
 	boolean caseInsensitive
 	boolean encrypt
@@ -221,22 +480,36 @@ class SingletonLocation extends SingletonAttribute {
 }
 
 @Ecore(constraints="onlyOneOwningEnd")
-@OCL(onlyOneOwningEnd="owningEnd xor opposite.owningEnd")
+@OCL(onlyOneOwningEnd="associationOwningEnd xor opposite.associationOwningEnd")
 abstract class Association extends Feature {
 	refers Association[1] ^opposite
 	contains AssociationKey[] ^keys opposite keyFor
-	boolean[1] ^container = "false"
-	boolean[1] ^contains = "false"
-	boolean[1] owningEnd = "false"
+	boolean[1] associationContainer
+	boolean[1] associationContains
+	boolean[1] associationOwningEnd
 	boolean[1] visible = "true"
 	int[1] serializationMaxDepth = "1"
 	String pivotTableName
+	derived readonly transient volatile boolean isOppositeSingleton get {
+		opposite.isSingleton
+	}
+	derived readonly transient volatile String oppositeColumnName get {
+		opposite?.columnName
+	}
+	refers derived readonly transient volatile Entity sourceType get {
+		partOf
+	}
+	refers derived readonly transient volatile Entity targetType get {
+		opposite?.sourceType
+	}
+	derived readonly transient volatile boolean hasSerializationControlAssociation get {
+		serializationGroups.size > 0 || serializationMaxDepth > 0
+	}
 }
 
 abstract class AssociationReference {
 	derived String name get {
-		if (association !== null)
-			association.name
+		association?.name
 	}
 	refers Association[1] association
 	refers ModelLabel valueDisplay
@@ -294,6 +567,19 @@ class Selection extends NamedElement, FormalParameterList {
 	refers Feature[] grouping
 	refers Association[] selectPath
 	String methodName
+	refers derived readonly transient volatile Entity selectionType get {
+		if (selectPath.isEmpty())
+			definedBy.serves
+		else
+			selectPath.last().targetType
+	}
+	derived readonly transient volatile boolean hasFormals get {
+		!parameters.isEmpty()
+	}
+	derived readonly transient volatile boolean hasPaginationSupport get {
+		(limit == 0 || limit > 1)
+			&& (joins.isEmpty() || fields.isEmpty())
+	}
 }
 
 class FeatureReference extends Variable { 
