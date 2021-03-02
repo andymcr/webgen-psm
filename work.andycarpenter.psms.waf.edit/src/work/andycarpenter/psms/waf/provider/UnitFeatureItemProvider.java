@@ -985,248 +985,6 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Action Navigation Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addActionNavigationClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ActionContainer_actionNavigationClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ActionContainer_actionNavigationClass_feature", "_UI_ActionContainer_type"),
-				 WafPackage.eINSTANCE.getActionContainer_ActionNavigationClass(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Has Action Navigation Class Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addHasActionNavigationClassClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ActionContainer_hasActionNavigationClassClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ActionContainer_hasActionNavigationClassClass_feature", "_UI_ActionContainer_type"),
-				 WafPackage.eINSTANCE.getActionContainer_HasActionNavigationClassClass(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Gen Model Ref feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addGenModelRefPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ActionContainer_genModelRef_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ActionContainer_genModelRef_feature", "_UI_ActionContainer_type"),
-				 WafPackage.eINSTANCE.getActionContainer_GenModelRef(),
-				 false,
-				 false,
-				 false,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Ui Model Ref feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addUiModelRefPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ActionContainer_uiModelRef_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ActionContainer_uiModelRef_feature", "_UI_ActionContainer_type"),
-				 WafPackage.eINSTANCE.getActionContainer_UiModelRef(),
-				 false,
-				 false,
-				 false,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Security Model Ref feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addSecurityModelRefPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ActionContainer_securityModelRef_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ActionContainer_securityModelRef_feature", "_UI_ActionContainer_type"),
-				 WafPackage.eINSTANCE.getActionContainer_SecurityModelRef(),
-				 false,
-				 false,
-				 false,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Actions feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addActionsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ActionContainer_actions_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ActionContainer_actions_feature", "_UI_ActionContainer_type"),
-				 WafPackage.eINSTANCE.getActionContainer_Actions(),
-				 false,
-				 false,
-				 false,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Has Actions feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addHasActionsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ActionContainer_hasActions_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ActionContainer_hasActions_feature", "_UI_ActionContainer_type"),
-				 WafPackage.eINSTANCE.getActionContainer_HasActions(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Actions With Messages feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addActionsWithMessagesPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ActionContainer_actionsWithMessages_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ActionContainer_actionsWithMessages_feature", "_UI_ActionContainer_type"),
-				 WafPackage.eINSTANCE.getActionContainer_ActionsWithMessages(),
-				 false,
-				 false,
-				 false,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Actions Without Target feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addActionsWithoutTargetPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ActionContainer_actionsWithoutTarget_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ActionContainer_actionsWithoutTarget_feature", "_UI_ActionContainer_type"),
-				 WafPackage.eINSTANCE.getActionContainer_ActionsWithoutTarget(),
-				 false,
-				 false,
-				 false,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Has Actions Messages feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addHasActionsMessagesPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ActionContainer_hasActionsMessages_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ActionContainer_hasActionsMessages_feature", "_UI_ActionContainer_type"),
-				 WafPackage.eINSTANCE.getActionContainer_HasActionsMessages(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Local Action Navigation Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addLocalActionNavigationClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ActionContainer_localActionNavigationClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ActionContainer_localActionNavigationClass_feature", "_UI_ActionContainer_type"),
-				 WafPackage.eINSTANCE.getActionContainer_LocalActionNavigationClass(),
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Collection Ui Allow Add feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1658,6 +1416,248 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 				 getString("_UI_UnitField_securityModel_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_securityModel_feature", "_UI_UnitField_type"),
 				 WafPackage.eINSTANCE.getUnitField_SecurityModel(),
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Actions feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addActionsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ActionContainer_actions_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ActionContainer_actions_feature", "_UI_ActionContainer_type"),
+				 WafPackage.eINSTANCE.getActionContainer_Actions(),
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Has Actions feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasActionsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ActionContainer_hasActions_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ActionContainer_hasActions_feature", "_UI_ActionContainer_type"),
+				 WafPackage.eINSTANCE.getActionContainer_HasActions(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Actions With Messages feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addActionsWithMessagesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ActionContainer_actionsWithMessages_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ActionContainer_actionsWithMessages_feature", "_UI_ActionContainer_type"),
+				 WafPackage.eINSTANCE.getActionContainer_ActionsWithMessages(),
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Actions Without Target feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addActionsWithoutTargetPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ActionContainer_actionsWithoutTarget_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ActionContainer_actionsWithoutTarget_feature", "_UI_ActionContainer_type"),
+				 WafPackage.eINSTANCE.getActionContainer_ActionsWithoutTarget(),
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Has Actions Messages feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasActionsMessagesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ActionContainer_hasActionsMessages_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ActionContainer_hasActionsMessages_feature", "_UI_ActionContainer_type"),
+				 WafPackage.eINSTANCE.getActionContainer_HasActionsMessages(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Local Action Navigation Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addLocalActionNavigationClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ActionContainer_localActionNavigationClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ActionContainer_localActionNavigationClass_feature", "_UI_ActionContainer_type"),
+				 WafPackage.eINSTANCE.getActionContainer_LocalActionNavigationClass(),
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Action Navigation Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addActionNavigationClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ActionContainer_actionNavigationClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ActionContainer_actionNavigationClass_feature", "_UI_ActionContainer_type"),
+				 WafPackage.eINSTANCE.getActionContainer_ActionNavigationClass(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Has Action Navigation Class Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasActionNavigationClassClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ActionContainer_hasActionNavigationClassClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ActionContainer_hasActionNavigationClassClass_feature", "_UI_ActionContainer_type"),
+				 WafPackage.eINSTANCE.getActionContainer_HasActionNavigationClassClass(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Gen Model Ref feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addGenModelRefPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ActionContainer_genModelRef_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ActionContainer_genModelRef_feature", "_UI_ActionContainer_type"),
+				 WafPackage.eINSTANCE.getActionContainer_GenModelRef(),
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Ui Model Ref feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addUiModelRefPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ActionContainer_uiModelRef_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ActionContainer_uiModelRef_feature", "_UI_ActionContainer_type"),
+				 WafPackage.eINSTANCE.getActionContainer_UiModelRef(),
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Security Model Ref feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSecurityModelRefPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ActionContainer_securityModelRef_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ActionContainer_securityModelRef_feature", "_UI_ActionContainer_type"),
+				 WafPackage.eINSTANCE.getActionContainer_SecurityModelRef(),
 				 false,
 				 false,
 				 false,

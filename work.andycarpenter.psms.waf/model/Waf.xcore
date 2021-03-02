@@ -459,16 +459,17 @@ class Page extends NamedDisplayElement {
 		dynamicUnits.flatMap[it.actionsWithoutTarget].toEList()
 	}
 	String uriElement = ''
-	String localStyleClass
+	String localStyleClass = ''
 	derived readonly transient volatile String styleClass get {
-		if (localStyleClass.trim() != '') {
-			localStyleClass.trim();
-		} else if (uiModel.defaultStyleClass.trim() != '') {
+		if (localStyleClass.trim() != '')
+			localStyleClass.trim()
+		else if (uiModel.defaultStyleClass.trim() != '')
 			uiModel.defaultStyleClass.trim()
-		}
+		else
+			''
 	}
 	derived readonly transient volatile boolean hasStyleClass get {
-		styleClass !== null
+		styleClass != ''
 	}
 	refers readonly transient volatile unsettable derived WafModel genModel get {
 		partOf.genModel
@@ -512,29 +513,31 @@ abstract class ContentUnit extends NamedDisplayElement {
 	String purposeSummary
 	String alternative
 	boolean omitCaption
-	String localSectionClass
+	String localSectionClass = ''
 	derived readonly transient volatile String sectionClass get {
-		if (localSectionClass.trim() != '') {
-			localSectionClass.trim();
-		} else if (uiModel.defaultSectionClass.trim() != '') {
+		if (localSectionClass.trim() != '')
+			localSectionClass.trim()
+		else if (uiModel.defaultSectionClass.trim() != '')
 			uiModel.defaultSectionClass.trim()
-		}
+		else
+			''
 	}
 	derived readonly transient volatile boolean hasSectionClass get {
-		sectionClass !== null
+		sectionClass != ''
 	}
-	String localCaptionClass
+	String localCaptionClass = ''
 	derived readonly transient volatile String captionClass get {
-		if (localCaptionClass.trim() != '') {
-			localCaptionClass.trim();
-		} else if (uiModel.defaultCaptionClass.trim() != '') {
+		if (localCaptionClass.trim() != '')
+			localCaptionClass.trim()
+		else if (uiModel.defaultCaptionClass.trim() != '')
 			uiModel.defaultCaptionClass.trim()
-		}
+		else
+			''
 	}
 	derived readonly transient volatile boolean hasCaptionClass get {
-		captionClass !== null
+		captionClass != ''
 	}
-	String localContentClass
+	String localContentClass = ''
 	refers readonly transient volatile unsettable derived WafModel genModel get {
 		displayedOn.genModel
 	}
@@ -554,16 +557,17 @@ class StaticUnit extends ContentUnit {
 	refers Repository repository
 	String[1] content
 	derived readonly transient volatile String contentClass get {
-		if (localContentClass.trim() != '') {
-			localContentClass.trim();
-		} else if (uiModel.defaultStaticContentClass.trim() != '') {
+		if (localContentClass.trim() != '')
+			localContentClass.trim()
+		else if (uiModel.defaultStaticContentClass.trim() != '')
 			uiModel.defaultStaticContentClass.trim()
-		} else if (uiModel.defaultContentClass.trim() != '') {
+		else if (uiModel.defaultContentClass.trim() != '')
 			uiModel.defaultContentClass.trim()
-		}
+		else
+			''
 	}
 	derived readonly transient volatile boolean hasContentClass get {
-		contentClass !== null
+		contentClass != ''
 	}
 }
 
@@ -724,17 +728,21 @@ abstract class DynamicUnit extends ContentUnit, ActionContainer {
 			(this as IndexUnit).indexFieldListClass
 		else if (this instanceof SliderUnit) 
 			(this as SliderUnit).sliderFieldListClass
+		else
+			''
 	}
 	derived readonly transient volatile boolean hasFieldListClass get {
-		fieldListClass !== null
+		fieldListClass != ''
 	}
 	String localInputGroupClass = ''
 	derived readonly transient volatile String inputGroupClass get {
 		if (this instanceof EditUnit) 
 			(this as EditUnit).formInputGroupClass
+		else
+			''
 	}
 	derived readonly transient volatile boolean hasInputGroupClass get {
-		inputGroupClass !== null
+		inputGroupClass != ''
 	}
 	String localFieldLabelClass = ''
 	derived readonly transient volatile String fieldLabelClass get {
@@ -750,9 +758,11 @@ abstract class DynamicUnit extends ContentUnit, ActionContainer {
 			(this as IndexUnit).indexFieldLabelClass
 		else if (this instanceof SliderUnit) 
 			(this as SliderUnit).sliderFieldLabelClass
+		else
+			''
 	}
 	derived readonly transient volatile boolean hasFieldLabelClass get {
-		fieldLabelClass !== null
+		fieldLabelClass != ''
 	}
 	String localFieldValueClass = ''
 	derived readonly transient volatile String fieldValueClass get {
@@ -768,9 +778,11 @@ abstract class DynamicUnit extends ContentUnit, ActionContainer {
 			(this as IndexUnit).indexFieldValueClass
 		else if (this instanceof SliderUnit) 
 			(this as SliderUnit).sliderFieldValueClass
+		else
+			''
 	}
 	derived readonly transient volatile boolean hasFieldValueClass get {
-		fieldValueClass !== null
+		fieldValueClass != ''
 	}
 	String localControlClass = ''
 	derived readonly transient volatile String controlClass get {
@@ -786,9 +798,11 @@ abstract class DynamicUnit extends ContentUnit, ActionContainer {
 			(this as IndexUnit).indexControlClass
 		else if (this instanceof SliderUnit) 
 			(this as SliderUnit).sliderControlClass
+		else
+			''
 	}
 	derived readonly transient volatile boolean hasControlClass get {
-		controlClass !== null
+		controlClass != ''
 	}
 	String localAnchorClass = ''
 	derived readonly transient volatile String anchorClass get {
@@ -804,9 +818,11 @@ abstract class DynamicUnit extends ContentUnit, ActionContainer {
 			(this as IndexUnit).indexAnchorClass
 		else if (this instanceof SliderUnit) 
 			(this as SliderUnit).sliderAnchorClass
+		else
+			''
 	}
 	derived readonly transient volatile boolean hasAnchorClass get {
-		anchorClass !== null
+		anchorClass != ''
 	}
 	String footerClass
 }
@@ -987,38 +1003,41 @@ interface UnitField extends DisplayElement {
 	String dateFormat
 	boolean disabledInput
 	String headerClass
-	String localInputGroupClass
+	String localInputGroupClass = ''
 	derived readonly transient volatile String inputGroupClass get {
-		if (localInputGroupClass.trim() != '') {
-			localInputGroupClass.trim();
-		} else if (displayedOn.hasInputGroupClass) {
+		if (localInputGroupClass.trim() != '')
+			localInputGroupClass.trim()
+		else if (displayedOn.hasInputGroupClass)
 			displayedOn.inputGroupClass
-		}
+		else
+			''
 	}
 	derived readonly transient volatile boolean hasInputGroupClass get {
-		inputGroupClass !== null
+		inputGroupClass != ''
 	}
-	String localFieldLabelClass
+	String localFieldLabelClass = ''
 	derived readonly transient volatile String fieldLabelClass get {
-		if (localFieldLabelClass.trim() != '') {
-			localFieldLabelClass.trim();
-		} else if (displayedOn.hasFieldLabelClass) {
+		if (localFieldLabelClass.trim() != '')
+			localFieldLabelClass.trim()
+		else if (displayedOn.hasFieldLabelClass)
 			displayedOn.fieldLabelClass
-		}
+		else
+			''
 	}
 	derived readonly transient volatile boolean hasFieldLabelClass get {
-		fieldLabelClass !== null
+		fieldLabelClass != ''
 	}
-	String localFieldValueClass
+	String localFieldValueClass = ''
 	derived readonly transient volatile String fieldValueClass get {
-		if (localFieldValueClass.trim() != '') {
-			localFieldValueClass.trim();
-		} else if (displayedOn.hasFieldValueClass) {
+		if (localFieldValueClass.trim() != '')
+			localFieldValueClass.trim()
+		else if (displayedOn.hasFieldValueClass)
 			displayedOn.fieldValueClass
-		}
+		else
+			''
 	}
 	derived readonly transient volatile boolean hasFieldValueClass get {
-		fieldValueClass !== null
+		fieldValueClass != ''
 	}
 	String footerClass
 	refers readonly transient volatile unsettable derived WafModel genModel get {
@@ -1067,27 +1086,19 @@ abstract class FeaturePath extends Variable {
 		else
 			false
 	}
-	refers derived readonly transient volatile Feature persistentFeature get {
-		if (this instanceof FeaturePathAttribute) 
-			(this as FeaturePathAttribute).attribute
-		else if (this instanceof FeaturePathAssociation) {
-			if ((this as FeaturePathAssociation).childFeature instanceof ChildPathAttribute)
-				((this as FeaturePathAssociation).childFeature as ChildPathAttribute).persistentFeature
-			else if ((this as FeaturePathAssociation).childFeature instanceof ChildPathAssociation)
-				((this as FeaturePathAssociation).childFeature as ChildPathAssociation).persistentFeature
-			else
-				(this as FeaturePathAssociation).association
-		}
-	}
 	derived readonly transient volatile boolean isRequired get {
-		if (persistentFeature !== null) 
-			persistentFeature.isRequired
+		if (this instanceof FeaturePathAttribute) 
+			(this as FeaturePathAttribute).attribute.isRequired
+		else if (this instanceof FeaturePathAssociation) 
+			(this as FeaturePathAssociation).association.isRequired
 		else
 			false
 	}
 	derived readonly transient volatile boolean isSingleton get {
-		if (persistentFeature !== null) 
-			persistentFeature.isSingleton
+		if (this instanceof FeaturePathAttribute) 
+			(this as FeaturePathAttribute).attribute.isSingleton
+		else if (this instanceof FeaturePathAssociation) 
+			(this as FeaturePathAssociation).association.isSingleton
 		else
 			false
 	}
@@ -1104,18 +1115,17 @@ class FeaturePathAssociation extends FeaturePath, AssociationReference {
 }
 
 class FeaturePathLabel extends FeaturePath {
-	derived String name get {
-		if (label !== null)
-			label.name
-	}
 	refers ModelLabel[1] label
+	derived String name get {
+		label?.name
+	}
 }
 
 class ChildPathAttribute extends FeatureChildPath {
+	refers Attribute[1] attribute
 	derived String name get {
 		attribute?.name
 	}
-	refers Attribute[1] attribute
 	refers derived readonly transient volatile Feature persistentFeature get {
 		attribute
 	}
@@ -1199,7 +1209,10 @@ class CollectionUnit extends DynamicUnit, SelectableUnit {
 		!supportedFilters.isEmpty()
 	}
 	derived readonly transient volatile boolean hasGroupedResults get {
-		!selection?.grouping.isEmpty()
+		if (selection !== null)
+			!selection.grouping.isEmpty()
+		else
+			false
 	}
 	derived readonly transient volatile boolean hasPagination get {
 		if (selection === null)
@@ -1248,68 +1261,75 @@ abstract class EditUnit extends SingletonUnit {
 	boolean hasCustomCancelLabel
 	boolean customiseValues
 	derived readonly transient volatile String contentClass get {
-		if (localContentClass.trim() != '') {
-			localContentClass.trim();
-		} else if (uiModel.defaultFormContentClass.trim() != '') {
+		if (localContentClass.trim() != '')
+			localContentClass.trim()
+		else if (uiModel.defaultFormContentClass.trim() != '')
 			uiModel.defaultFormContentClass.trim()
-		} else if (uiModel.defaultContentClass.trim() != '') {
+		else if (uiModel.defaultContentClass.trim() != '')
 			uiModel.defaultContentClass.trim()
-		}
+		else
+			''
 	}
 	derived readonly transient volatile boolean hasContentClass get {
-		contentClass !== null
+		contentClass != ''
 	}
 	derived readonly transient volatile String formFieldListClass get {
-		if (localFieldListClass.trim() != '') {
-			localFieldListClass.trim();
-		} else if (uiModel.defaultFormFieldListClass.trim() != '') {
+		if (localFieldListClass.trim() != '')
+			localFieldListClass.trim()
+		else if (uiModel.defaultFormFieldListClass.trim() != '')
 			uiModel.defaultFormFieldListClass.trim()
-		} else if (uiModel.defaultFieldListClass.trim() != '') {
+		else if (uiModel.defaultFieldListClass.trim() != '')
 			uiModel.defaultFieldListClass.trim()
-		}
+		else
+			''
 	}
 	derived readonly transient volatile String formInputGroupClass get {
-		if (localInputGroupClass.trim() != '') {
-			localInputGroupClass.trim();
-		} else if (uiModel.defaultInputGroupClass.trim() != '') {
+		if (localInputGroupClass.trim() != '')
+			localInputGroupClass.trim()
+		else if (uiModel.defaultInputGroupClass.trim() != '')
 			uiModel.defaultInputGroupClass.trim()
-		}
+		else
+			''
 	}
 	derived readonly transient volatile String formFieldLabelClass get {
-		if (localFieldLabelClass.trim() != '') {
-			localFieldLabelClass.trim();
-		} else if (uiModel.defaultFormFieldLabelClass.trim() != '') {
+		if (localFieldLabelClass.trim() != '')
+			localFieldLabelClass.trim()
+		else if (uiModel.defaultFormFieldLabelClass.trim() != '')
 			uiModel.defaultFormFieldLabelClass.trim()
-		} else if (uiModel.defaultFieldLabelClass.trim() != '') {
+		else if (uiModel.defaultFieldLabelClass.trim() != '')
 			uiModel.defaultFieldLabelClass.trim()
-		}
+		else
+			''
 	}
 	derived readonly transient volatile String formFieldValueClass get {
-		if (localFieldValueClass.trim() != '') {
-			localFieldValueClass.trim();
-		} else if (uiModel.defaultFormFieldValueClass.trim() != '') {
+		if (localFieldValueClass.trim() != '')
+			localFieldValueClass.trim()
+		else if (uiModel.defaultFormFieldValueClass.trim() != '')
 			uiModel.defaultFormFieldValueClass.trim()
-		} else if (uiModel.defaultFieldValueClass.trim() != '') {
+		else if (uiModel.defaultFieldValueClass.trim() != '')
 			uiModel.defaultFieldValueClass.trim()
-		}
+		else
+			''
 	}
 	derived readonly transient volatile String formControlClass get {
-		if (localControlClass.trim() != '') {
-			localControlClass.trim();
-		} else if (uiModel.defaultFormControlClass.trim() != '') {
+		if (localControlClass.trim() != '')
+			localControlClass.trim()
+		else if (uiModel.defaultFormControlClass.trim() != '')
 			uiModel.defaultFormControlClass.trim()
-		} else if (uiModel.defaultControlClass.trim() != '') {
+		else if (uiModel.defaultControlClass.trim() != '')
 			uiModel.defaultControlClass.trim()
-		}
+		else
+			''
 	}
 	derived readonly transient volatile String formAnchorClass get {
-		if (localAnchorClass.trim() != '') {
-			localAnchorClass.trim();
-		} else if (uiModel.defaultFormAnchorClass.trim() != '') {
+		if (localAnchorClass.trim() != '')
+			localAnchorClass.trim()
+		else if (uiModel.defaultFormAnchorClass.trim() != '')
 			uiModel.defaultFormAnchorClass.trim()
-		} else if (uiModel.defaultAnchorClass.trim() != '') {
+		else if (uiModel.defaultAnchorClass.trim() != '')
 			uiModel.defaultAnchorClass.trim()
-		}
+		else
+			''
 	}
 }
 
@@ -1335,61 +1355,67 @@ class DetailsUnit extends SingletonUnit, SelectableUnit {
 	refers Selection selection
 	boolean omitFieldLabels
 	derived readonly transient volatile String contentClass get {
-		if (localContentClass.trim() != '') {
-			localContentClass.trim();
-		} else if (uiModel.defaultDetailsContentClass.trim() != '') {
+		if (localContentClass.trim() != '')
+			localContentClass.trim()
+		else if (uiModel.defaultDetailsContentClass.trim() != '')
 			uiModel.defaultDetailsContentClass.trim()
-		} else if (uiModel.defaultContentClass.trim() != '') {
+		else if (uiModel.defaultContentClass.trim() != '')
 			uiModel.defaultContentClass.trim()
-		}
+		else
+			''
 	}
 	derived readonly transient volatile boolean hasContentClass get {
-		contentClass !== null
+		contentClass != ''
 	}
 	derived readonly transient volatile String DetailsFieldListClass get {
-		if (localFieldListClass.trim() != '') {
-			localFieldListClass.trim();
-		} else if (uiModel.defaultDetailsFieldListClass.trim() != '') {
+		if (localFieldListClass.trim() != '')
+			localFieldListClass.trim()
+		else if (uiModel.defaultDetailsFieldListClass.trim() != '')
 			uiModel.defaultDetailsFieldListClass.trim()
-		} else if (uiModel.defaultFieldListClass.trim() != '') {
+		else if (uiModel.defaultFieldListClass.trim() != '')
 			uiModel.defaultFieldListClass.trim()
-		}
+		else
+			''
 	}
 	derived readonly transient volatile String detailsFieldLabelClass get {
-		if (localFieldLabelClass.trim() != '') {
-			localFieldLabelClass.trim();
-		} else if (uiModel.defaultDetailsFieldLabelClass.trim() != '') {
+		if (localFieldLabelClass.trim() != '')
+			localFieldLabelClass.trim()
+		else if (uiModel.defaultDetailsFieldLabelClass.trim() != '')
 			uiModel.defaultDetailsFieldLabelClass.trim()
-		} else if (uiModel.defaultFieldLabelClass.trim() != '') {
+		else if (uiModel.defaultFieldLabelClass.trim() != '')
 			uiModel.defaultFieldLabelClass.trim()
-		}
+		else
+			''
 	}
 	derived readonly transient volatile String detailsFieldValueClass get {
-		if (localFieldValueClass.trim() != '') {
-			localFieldValueClass.trim();
-		} else if (uiModel.defaultDetailsFieldValueClass.trim() != '') {
+		if (localFieldValueClass.trim() != '')
+			localFieldValueClass.trim()
+		else if (uiModel.defaultDetailsFieldValueClass.trim() != '')
 			uiModel.defaultDetailsFieldValueClass.trim()
-		} else if (uiModel.defaultFieldValueClass.trim() != '') {
+		else if (uiModel.defaultFieldValueClass.trim() != '')
 			uiModel.defaultFieldValueClass.trim()
-		}
+		else
+			''
 	}
 	derived readonly transient volatile String detailsControlClass get {
-		if (localControlClass.trim() != '') {
-			localControlClass.trim();
-		} else if (uiModel.defaultDetailsControlClass.trim() != '') {
+		if (localControlClass.trim() != '')
+			localControlClass.trim()
+		else if (uiModel.defaultDetailsControlClass.trim() != '')
 			uiModel.defaultDetailsControlClass.trim()
-		} else if (uiModel.defaultControlClass.trim() != '') {
+		else if (uiModel.defaultControlClass.trim() != '')
 			uiModel.defaultControlClass.trim()
-		}
+		else
+			''
 	}
 	derived readonly transient volatile String detailsAnchorClass get {
-		if (localAnchorClass.trim() != '') {
-			localAnchorClass.trim();
-		} else if (uiModel.defaultDetailsAnchorClass.trim() != '') {
+		if (localAnchorClass.trim() != '')
+			localAnchorClass.trim()
+		else if (uiModel.defaultDetailsAnchorClass.trim() != '')
 			uiModel.defaultDetailsAnchorClass.trim()
-		} else if (uiModel.defaultAnchorClass.trim() != '') {
+		else if (uiModel.defaultAnchorClass.trim() != '')
 			uiModel.defaultAnchorClass.trim()
-		}
+		else
+			''
 	}
 }
 
@@ -1397,61 +1423,67 @@ abstract class IndexUnit extends CollectionUnit {
 	refers SearchUnit targettingSearches opposite resultsDestination
 	String rowClasses
 	derived readonly transient volatile String contentClass get {
-		if (localContentClass.trim() != '') {
-			localContentClass.trim();
-		} else if (uiModel.defaultIndexContentClass.trim() != '') {
+		if (localContentClass.trim() != '')
+			localContentClass.trim()
+		else if (uiModel.defaultIndexContentClass.trim() != '')
 			uiModel.defaultIndexContentClass.trim()
-		} else if (uiModel.defaultContentClass.trim() != '') {
+		else if (uiModel.defaultContentClass.trim() != '')
 			uiModel.defaultContentClass.trim()
-		}
+		else
+			''
 	}
 	derived readonly transient volatile boolean hasContentClass get {
-		contentClass !== null
+		contentClass != ''
 	}
 	derived readonly transient volatile String indexFieldListClass get {
-		if (localFieldListClass.trim() != '') {
-			localFieldListClass.trim();
-		} else if (uiModel.defaultIndexFieldListClass.trim() != '') {
+		if (localFieldListClass.trim() != '')
+			localFieldListClass.trim()
+		else if (uiModel.defaultIndexFieldListClass.trim() != '')
 			uiModel.defaultIndexFieldListClass.trim()
-		} else if (uiModel.defaultFieldListClass.trim() != '') {
+		else if (uiModel.defaultFieldListClass.trim() != '')
 			uiModel.defaultFieldListClass.trim()
-		}
+		else
+			''
 	}
 	derived readonly transient volatile String indexFieldLabelClass get {
-		if (localFieldLabelClass.trim() != '') {
-			localFieldLabelClass.trim();
-		} else if (uiModel.defaultIndexFieldLabelClass.trim() != '') {
+		if (localFieldLabelClass.trim() != '')
+			localFieldLabelClass.trim()
+		else if (uiModel.defaultIndexFieldLabelClass.trim() != '')
 			uiModel.defaultIndexFieldLabelClass.trim()
-		} else if (uiModel.defaultFieldLabelClass.trim() != '') {
+		else if (uiModel.defaultFieldLabelClass.trim() != '')
 			uiModel.defaultFieldLabelClass.trim()
-		}
+		else
+			''
 	}
 	derived readonly transient volatile String indexFieldValueClass get {
-		if (localFieldValueClass.trim() != '') {
-			localFieldValueClass.trim();
-		} else if (uiModel.defaultIndexFieldValueClass.trim() != '') {
+		if (localFieldValueClass.trim() != '')
+			localFieldValueClass.trim()
+		else if (uiModel.defaultIndexFieldValueClass.trim() != '')
 			uiModel.defaultIndexFieldValueClass.trim()
-		} else if (uiModel.defaultFieldValueClass.trim() != '') {
+		else if (uiModel.defaultFieldValueClass.trim() != '')
 			uiModel.defaultFieldValueClass.trim()
-		}
+		else
+			''
 	}
 	derived readonly transient volatile String indexControlClass get {
-		if (localControlClass.trim() != '') {
-			localControlClass.trim();
-		} else if (uiModel.defaultIndexControlClass.trim() != '') {
+		if (localControlClass.trim() != '')
+			localControlClass.trim()
+		else if (uiModel.defaultIndexControlClass.trim() != '')
 			uiModel.defaultIndexControlClass.trim()
-		} else if (uiModel.defaultControlClass.trim() != '') {
+		else if (uiModel.defaultControlClass.trim() != '')
 			uiModel.defaultControlClass.trim()
-		}
+		else
+			''
 	}
 	derived readonly transient volatile String indexAnchorClass get {
-		if (localAnchorClass.trim() != '') {
-			localAnchorClass.trim();
-		} else if (uiModel.defaultIndexAnchorClass.trim() != '') {
+		if (localAnchorClass.trim() != '')
+			localAnchorClass.trim()
+		else if (uiModel.defaultIndexAnchorClass.trim() != '')
 			uiModel.defaultIndexAnchorClass.trim()
-		} else if (uiModel.defaultAnchorClass.trim() != '') {
+		else if (uiModel.defaultAnchorClass.trim() != '')
 			uiModel.defaultAnchorClass.trim()
-		}
+		else
+			''
 	}
 }
 
@@ -1468,127 +1500,139 @@ abstract class CardsUnit extends CollectionUnit {
 	contains Badge[] badges
 	boolean overlaySingleSelectAction
 	derived readonly transient volatile String contentClass get {
-		if (localContentClass.trim() != '') {
-			localContentClass.trim();
-		} else if (uiModel.defaultCardsContentClass.trim() != '') {
+		if (localContentClass.trim() != '')
+			localContentClass.trim()
+		else if (uiModel.defaultCardsContentClass.trim() != '')
 			uiModel.defaultCardsContentClass.trim()
-		} else if (uiModel.defaultContentClass.trim() != '') {
+		else if (uiModel.defaultContentClass.trim() != '')
 			uiModel.defaultContentClass.trim()
-		}
+		else
+			''
 	}
 	derived readonly transient volatile boolean hasContentClass get {
-		contentClass !== null
+		contentClass != ''
 	}
 	derived readonly transient volatile String cardsFieldListClass get {
-		if (localFieldListClass.trim() != '') {
-			localFieldListClass.trim();
-		} else if (uiModel.defaultCardsFieldListClass.trim() != '') {
+		if (localFieldListClass.trim() != '')
+			localFieldListClass.trim()
+		else if (uiModel.defaultCardsFieldListClass.trim() != '')
 			uiModel.defaultCardsFieldListClass.trim()
-		} else if (uiModel.defaultFieldListClass.trim() != '') {
+		else if (uiModel.defaultFieldListClass.trim() != '')
 			uiModel.defaultFieldListClass.trim()
-		}
+		else
+			''
 	}
 	derived readonly transient volatile String cardsFieldLabelClass get {
-		if (localFieldLabelClass.trim() != '') {
-			localFieldLabelClass.trim();
-		} else if (uiModel.defaultCardsFieldLabelClass.trim() != '') {
+		if (localFieldLabelClass.trim() != '')
+			localFieldLabelClass.trim()
+		else if (uiModel.defaultCardsFieldLabelClass.trim() != '')
 			uiModel.defaultCardsFieldLabelClass.trim()
-		} else if (uiModel.defaultFieldLabelClass.trim() != '') {
+		else if (uiModel.defaultFieldLabelClass.trim() != '')
 			uiModel.defaultFieldLabelClass.trim()
-		}
+		else
+			''
 	}
 	derived readonly transient volatile String cardsFieldValueClass get {
-		if (localFieldValueClass.trim() != '') {
-			localFieldValueClass.trim();
-		} else if (uiModel.defaultFormFieldValueClass.trim() != '') {
+		if (localFieldValueClass.trim() != '')
+			localFieldValueClass.trim()
+		else if (uiModel.defaultFormFieldValueClass.trim() != '')
 			uiModel.defaultFormFieldValueClass.trim()
-		} else if (uiModel.defaultFieldValueClass.trim() != '') {
+		else if (uiModel.defaultFieldValueClass.trim() != '')
 			uiModel.defaultFieldValueClass.trim()
-		}
+		else
+			''
 	}
 	String localRowClass = ''
 	derived readonly transient volatile String rowClass get {
-		if (localRowClass.trim() != '') {
-			localRowClass.trim();
-		} else if (uiModel.defaultRowClass.trim() != '') {
+		if (localRowClass.trim() != '')
+			localRowClass.trim()
+		else if (uiModel.defaultRowClass.trim() != '')
 			uiModel.defaultRowClass.trim()
-		}
+		else
+			''
 	}
 	derived readonly transient volatile boolean hasRowClass get {
-		rowClass !== null
+		rowClass != ''
 	}
 	String localColumnClass = ''
 	derived readonly transient volatile String columnClass get {
-		if (localColumnClass.trim() != '') {
-			localColumnClass.trim();
-		} else if (uiModel.defaultColumnClass.trim() != '') {
+		if (localColumnClass.trim() != '')
+			localColumnClass.trim()
+		else if (uiModel.defaultColumnClass.trim() != '')
 			uiModel.defaultColumnClass.trim()
-		}
+		else
+			''
 	}
 	derived readonly transient volatile boolean hasColumnClass get {
-		columnClass !== null
+		columnClass != ''
 	}
 	String localCardClass = ''
 	derived readonly transient volatile String cardClass get {
-		if (localCardClass.trim() != '') {
-			localCardClass.trim();
-		} else if (uiModel.defaultCardClass.trim() != '') {
+		if (localCardClass.trim() != '')
+			localCardClass.trim()
+		else if (uiModel.defaultCardClass.trim() != '')
 			uiModel.defaultCardClass.trim()
-		}
+		else
+			''
 	}
 	derived readonly transient volatile boolean hasCardClass get {
-		cardClass !== null
+		cardClass != ''
 	}
 	String localCardHeaderClass = ''
 	derived readonly transient volatile String cardHeaderClass get {
-		if (localCardHeaderClass.trim() != '') {
-			localCardHeaderClass.trim();
-		} else if (uiModel.defaultCardHeaderClass.trim() != '') {
+		if (localCardHeaderClass.trim() != '')
+			localCardHeaderClass.trim()
+		else if (uiModel.defaultCardHeaderClass.trim() != '')
 			uiModel.defaultCardHeaderClass.trim()
-		}
+		else
+			''
 	}
 	derived readonly transient volatile boolean hasCardHeaderClass get {
-		cardHeaderClass !== null
+		cardHeaderClass != ''
 	}
 	String localCardBodyClass = ''
 	derived readonly transient volatile String cardBodyClass get {
-		if (localCardBodyClass.trim() != '') {
-			localCardBodyClass.trim();
-		} else if (uiModel.defaultCardBodyClass.trim() != '') {
+		if (localCardBodyClass.trim() != '')
+			localCardBodyClass.trim()
+		else if (uiModel.defaultCardBodyClass.trim() != '')
 			uiModel.defaultCardBodyClass.trim()
-		}
+		else
+			''
 	}
 	derived readonly transient volatile boolean hasCardBodyClass get {
-		cardBodyClass !== null
+		cardBodyClass != ''
 	}
 	String localCardFooterClass = ''
 	derived readonly transient volatile String cardFooterClass get {
-		if (localCardFooterClass.trim() != '') {
-			localCardFooterClass.trim();
-		} else if (uiModel.defaultCardFooterClass.trim() != '') {
+		if (localCardFooterClass.trim() != '')
+			localCardFooterClass.trim()
+		else if (uiModel.defaultCardFooterClass.trim() != '')
 			uiModel.defaultCardFooterClass.trim()
-		}
+		else
+			''
 	}
 	derived readonly transient volatile boolean hasCardFooterClass get {
-		cardFooterClass !== null
+		cardFooterClass != ''
 	}
 	derived readonly transient volatile String cardsControlClass get {
-		if (localControlClass.trim() != '') {
-			localControlClass.trim();
-		} else if (uiModel.defaultCardsControlClass.trim() != '') {
+		if (localControlClass.trim() != '')
+			localControlClass.trim()
+		else if (uiModel.defaultCardsControlClass.trim() != '')
 			uiModel.defaultCardsControlClass.trim()
-		} else if (uiModel.defaultControlClass.trim() != '') {
+		else if (uiModel.defaultControlClass.trim() != '')
 			uiModel.defaultControlClass.trim()
-		}
+		else
+			''
 	}
 	derived readonly transient volatile String cardsAnchorClass get {
-		if (localAnchorClass.trim() != '') {
-			localAnchorClass.trim();
-		} else if (uiModel.defaultCardsAnchorClass.trim() != '') {
+		if (localAnchorClass.trim() != '')
+			localAnchorClass.trim()
+		else if (uiModel.defaultCardsAnchorClass.trim() != '')
 			uiModel.defaultCardsAnchorClass.trim()
-		} else if (uiModel.defaultAnchorClass.trim() != '') {
+		else if (uiModel.defaultAnchorClass.trim() != '')
 			uiModel.defaultAnchorClass.trim()
-		}
+		else
+			''
 	}
 }
 
@@ -1625,61 +1669,67 @@ class SliderUnit extends ImageUnit {
 	int showTime
 	int transitionTime
 	derived readonly transient volatile String contentClass get {
-		if (localContentClass.trim() != '') {
-			localContentClass.trim();
-		} else if (uiModel.defaultSliderContentClass.trim() != '') {
+		if (localContentClass.trim() != '')
+			localContentClass.trim()
+		else if (uiModel.defaultSliderContentClass.trim() != '')
 			uiModel.defaultSliderContentClass.trim()
-		} else if (uiModel.defaultContentClass.trim() != '') {
+		else if (uiModel.defaultContentClass.trim() != '')
 			uiModel.defaultContentClass.trim()
-		}
+		else
+			''
 	}
 	derived readonly transient volatile boolean hasContentClass get {
-		contentClass !== null
+		contentClass != ''
 	}
 	derived readonly transient volatile String sliderFieldListClass get {
-		if (localFieldListClass.trim() != '') {
-			localFieldListClass.trim();
-		} else if (uiModel.defaultSliderFieldListClass.trim() != '') {
+		if (localFieldListClass.trim() != '')
+			localFieldListClass.trim()
+		else if (uiModel.defaultSliderFieldListClass.trim() != '')
 			uiModel.defaultSliderFieldListClass.trim()
-		} else if (uiModel.defaultFieldListClass.trim() != '') {
+		else if (uiModel.defaultFieldListClass.trim() != '')
 			uiModel.defaultFieldListClass.trim()
-		}
+		else
+			''
 	}
 	derived readonly transient volatile String sliderFieldLabelClass get {
-		if (localFieldLabelClass.trim() != '') {
-			localFieldLabelClass.trim();
-		} else if (uiModel.defaultSliderFieldLabelClass.trim() != '') {
+		if (localFieldLabelClass.trim() != '')
+			localFieldLabelClass.trim()
+		else if (uiModel.defaultSliderFieldLabelClass.trim() != '')
 			uiModel.defaultSliderFieldLabelClass.trim()
-		} else if (uiModel.defaultFieldLabelClass.trim() != '') {
+		else if (uiModel.defaultFieldLabelClass.trim() != '')
 			uiModel.defaultFieldLabelClass.trim()
-		}
+		else
+			''
 	}
 	derived readonly transient volatile String sliderFieldValueClass get {
-		if (localFieldValueClass.trim() != '') {
-			localFieldValueClass.trim();
-		} else if (uiModel.defaultSliderFieldValueClass.trim() != '') {
+		if (localFieldValueClass.trim() != '')
+			localFieldValueClass.trim()
+		else if (uiModel.defaultSliderFieldValueClass.trim() != '')
 			uiModel.defaultSliderFieldValueClass.trim()
-		} else if (uiModel.defaultFieldValueClass.trim() != '') {
+		else if (uiModel.defaultFieldValueClass.trim() != '')
 			uiModel.defaultFieldValueClass.trim()
-		}
+		else
+			''
 	}
 	derived readonly transient volatile String sliderControlClass get {
-		if (localControlClass.trim() != '') {
-			localControlClass.trim();
-		} else if (uiModel.defaultSliderControlClass.trim() != '') {
+		if (localControlClass.trim() != '')
+			localControlClass.trim()
+		else if (uiModel.defaultSliderControlClass.trim() != '')
 			uiModel.defaultSliderControlClass.trim()
-		} else if (uiModel.defaultControlClass.trim() != '') {
+		else if (uiModel.defaultControlClass.trim() != '')
 			uiModel.defaultControlClass.trim()
-		}
+		else
+			''
 	}
 	derived readonly transient volatile String sliderAnchorClass get {
-		if (localAnchorClass.trim() != '') {
-			localAnchorClass.trim();
-		} else if (uiModel.defaultSliderAnchorClass.trim() != '') {
+		if (localAnchorClass.trim() != '')
+			localAnchorClass.trim()
+		else if (uiModel.defaultSliderAnchorClass.trim() != '')
 			uiModel.defaultSliderAnchorClass.trim()
-		} else if (uiModel.defaultAnchorClass.trim() != '') {
+		else if (uiModel.defaultAnchorClass.trim() != '')
 			uiModel.defaultAnchorClass.trim()
-		}
+		else
+			''
 	}
 }
 
@@ -1688,61 +1738,67 @@ class GalleryUnit extends ImageUnit {
 	int showTime
 	int transitionTime
 	derived readonly transient volatile String contentClass get {
-		if (localContentClass.trim() != '') {
-			localContentClass.trim();
-		} else if (uiModel.defaultGalleryContentClass.trim() != '') {
+		if (localContentClass.trim() != '')
+			localContentClass.trim()
+		else if (uiModel.defaultGalleryContentClass.trim() != '')
 			uiModel.defaultGalleryContentClass.trim()
-		} else if (uiModel.defaultContentClass.trim() != '') {
+		else if (uiModel.defaultContentClass.trim() != '')
 			uiModel.defaultContentClass.trim()
-		}
+		else
+			''
 	}
 	derived readonly transient volatile boolean hasContentClass get {
-		contentClass !== null
+		contentClass != ''
 	}
 	derived readonly transient volatile String galleryFieldListClass get {
-		if (localFieldListClass.trim() != '') {
-			localFieldListClass.trim();
-		} else if (uiModel.defaultGalleryFieldListClass.trim() != '') {
+		if (localFieldListClass.trim() != '')
+			localFieldListClass.trim()
+		else if (uiModel.defaultGalleryFieldListClass.trim() != '')
 			uiModel.defaultGalleryFieldListClass.trim()
-		} else if (uiModel.defaultFieldListClass.trim() != '') {
+		else if (uiModel.defaultFieldListClass.trim() != '')
 			uiModel.defaultFieldListClass.trim()
-		}
+		else
+			''
 	}
 	derived readonly transient volatile String galleryFieldLabelClass get {
-		if (localFieldLabelClass.trim() != '') {
-			localFieldLabelClass.trim();
-		} else if (uiModel.defaultGalleryFieldLabelClass.trim() != '') {
+		if (localFieldLabelClass.trim() != '')
+			localFieldLabelClass.trim()
+		else if (uiModel.defaultGalleryFieldLabelClass.trim() != '')
 			uiModel.defaultGalleryFieldLabelClass.trim()
-		} else if (uiModel.defaultFieldLabelClass.trim() != '') {
+		else if (uiModel.defaultFieldLabelClass.trim() != '')
 			uiModel.defaultFieldLabelClass.trim()
-		}
+		else
+			''
 	}
 	derived readonly transient volatile String galleryFieldValueClass get {
-		if (localFieldValueClass.trim() != '') {
-			localFieldValueClass.trim();
-		} else if (uiModel.defaultGalleryFieldValueClass.trim() != '') {
+		if (localFieldValueClass.trim() != '')
+			localFieldValueClass.trim()
+		else if (uiModel.defaultGalleryFieldValueClass.trim() != '')
 			uiModel.defaultGalleryFieldValueClass.trim()
-		} else if (uiModel.defaultFieldValueClass.trim() != '') {
+		else if (uiModel.defaultFieldValueClass.trim() != '')
 			uiModel.defaultFieldValueClass.trim()
-		}
+		else
+			''
 	}
 	derived readonly transient volatile String galleryControlClass get {
-		if (localControlClass.trim() != '') {
-			localControlClass.trim();
-		} else if (uiModel.defaultGalleryControlClass.trim() != '') {
+		if (localControlClass.trim() != '')
+			localControlClass.trim()
+		else if (uiModel.defaultGalleryControlClass.trim() != '')
 			uiModel.defaultGalleryControlClass.trim()
-		} else if (uiModel.defaultControlClass.trim() != '') {
+		else if (uiModel.defaultControlClass.trim() != '')
 			uiModel.defaultControlClass.trim()
-		}
+		else
+			''
 	}
 	derived readonly transient volatile String galleryAnchorClass get {
-		if (localAnchorClass.trim() != '') {
-			localAnchorClass.trim();
-		} else if (uiModel.defaultGalleryAnchorClass.trim() != '') {
+		if (localAnchorClass.trim() != '')
+			localAnchorClass.trim()
+		else if (uiModel.defaultGalleryAnchorClass.trim() != '')
 			uiModel.defaultGalleryAnchorClass.trim()
-		} else if (uiModel.defaultAnchorClass.trim() != '') {
+		else if (uiModel.defaultAnchorClass.trim() != '')
 			uiModel.defaultAnchorClass.trim()
-		}
+		else
+			''
 	}
 }
 
@@ -1787,16 +1843,17 @@ interface ActionContainer {
 	derived readonly transient volatile boolean hasActionsMessages get {
 		!actionsWithMessages.isEmpty()
 	}
-	String localActionNavigationClass
+	String localActionNavigationClass = ''
 	derived readonly transient volatile String actionNavigationClass get {
-		if (localActionNavigationClass.trim() != '') {
-			localActionNavigationClass.trim();
-		} else if (uiModelRef.defaultActionNavigationClass.trim() != '') {
+		if (localActionNavigationClass.trim() != '')
+			localActionNavigationClass.trim()
+		else if (uiModelRef.defaultActionNavigationClass.trim() != '')
 			uiModelRef.defaultActionNavigationClass.trim()
-		}
+		else
+			''
 	}
 	derived readonly transient volatile boolean hasActionNavigationClassClass get {
-		actionNavigationClass !== null
+		actionNavigationClass != ''
 	}
 	refers readonly transient volatile unsettable derived WafModel genModelRef get {
 		if (this instanceof DynamicUnit)
@@ -1860,7 +1917,21 @@ abstract class Action extends NamedDisplayElement {
 	derived readonly transient volatile boolean hasMessages get {
 		hasConfirmMessage || hasSuccessMessage || hasFailureMessage
 	}
-	String anchorClass
+	String localAnchorClass = ''
+	derived readonly transient volatile String anchorClass get {
+		if (localAnchorClass.trim() != '')
+			localAnchorClass.trim()
+		else if (usedBy instanceof DynamicUnit)
+			if (parentUnit.anchorClass.trim() != '')
+				parentUnit.anchorClass.trim()
+			else
+				''
+		else
+			''
+	}
+	derived readonly transient volatile boolean hasAnchorClass get {
+		anchorClass.trim != ''
+	}
 	String headerClass
 	String footerClass
 }

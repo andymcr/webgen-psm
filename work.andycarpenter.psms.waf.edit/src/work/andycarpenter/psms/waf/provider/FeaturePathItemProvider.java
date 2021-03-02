@@ -64,7 +64,6 @@ public class FeaturePathItemProvider
 
 			addSuffixesPropertyDescriptor(object);
 			addHasChildPropertyDescriptor(object);
-			addPersistentFeaturePropertyDescriptor(object);
 			addIsRequiredPropertyDescriptor(object);
 			addIsSingletonPropertyDescriptor(object);
 		}
@@ -111,28 +110,6 @@ public class FeaturePathItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Persistent Feature feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addPersistentFeaturePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_FeaturePath_persistentFeature_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_FeaturePath_persistentFeature_feature", "_UI_FeaturePath_type"),
-				 WafPackage.eINSTANCE.getFeaturePath_PersistentFeature(),
-				 false,
-				 false,
-				 false,
-				 null,
 				 null,
 				 null));
 	}

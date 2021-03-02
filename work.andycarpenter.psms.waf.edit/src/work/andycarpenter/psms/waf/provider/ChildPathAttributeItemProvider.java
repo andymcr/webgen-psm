@@ -47,8 +47,8 @@ public class ChildPathAttributeItemProvider extends FeatureChildPathItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addNamePropertyDescriptor(object);
 			addAttributePropertyDescriptor(object);
+			addNamePropertyDescriptor(object);
 			addPersistentFeaturePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;

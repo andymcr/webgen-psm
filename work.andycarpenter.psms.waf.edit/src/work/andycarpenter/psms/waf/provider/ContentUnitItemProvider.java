@@ -293,50 +293,6 @@ public class ContentUnitItemProvider extends NamedDisplayElementItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Omit Caption feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addOmitCaptionPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ContentUnit_omitCaption_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ContentUnit_omitCaption_feature", "_UI_ContentUnit_type"),
-				 WafPackage.eINSTANCE.getContentUnit_OmitCaption(),
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Local Section Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addLocalSectionClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ContentUnit_localSectionClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ContentUnit_localSectionClass_feature", "_UI_ContentUnit_type"),
-				 WafPackage.eINSTANCE.getContentUnit_LocalSectionClass(),
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Caption Class feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -464,6 +420,50 @@ public class ContentUnitItemProvider extends NamedDisplayElementItemProvider {
 				 false,
 				 false,
 				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Omit Caption feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addOmitCaptionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ContentUnit_omitCaption_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ContentUnit_omitCaption_feature", "_UI_ContentUnit_type"),
+				 WafPackage.eINSTANCE.getContentUnit_OmitCaption(),
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Local Section Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addLocalSectionClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ContentUnit_localSectionClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ContentUnit_localSectionClass_feature", "_UI_ContentUnit_type"),
+				 WafPackage.eINSTANCE.getContentUnit_LocalSectionClass(),
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}

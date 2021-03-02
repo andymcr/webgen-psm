@@ -66,7 +66,9 @@ public class ActionItemProvider extends NamedDisplayElementItemProvider {
 			addFailureMessagePropertyDescriptor(object);
 			addHasFailureMessagePropertyDescriptor(object);
 			addHasMessagesPropertyDescriptor(object);
+			addLocalAnchorClassPropertyDescriptor(object);
 			addAnchorClassPropertyDescriptor(object);
+			addHasAnchorClassPropertyDescriptor(object);
 			addHeaderClassPropertyDescriptor(object);
 			addFooterClassPropertyDescriptor(object);
 		}
@@ -360,6 +362,28 @@ public class ActionItemProvider extends NamedDisplayElementItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Local Anchor Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addLocalAnchorClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Action_localAnchorClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Action_localAnchorClass_feature", "_UI_Action_type"),
+				 WafPackage.eINSTANCE.getAction_LocalAnchorClass(),
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Anchor Class feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -373,10 +397,32 @@ public class ActionItemProvider extends NamedDisplayElementItemProvider {
 				 getString("_UI_Action_anchorClass_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Action_anchorClass_feature", "_UI_Action_type"),
 				 WafPackage.eINSTANCE.getAction_AnchorClass(),
-				 true,
+				 false,
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Has Anchor Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasAnchorClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Action_hasAnchorClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Action_hasAnchorClass_feature", "_UI_Action_type"),
+				 WafPackage.eINSTANCE.getAction_HasAnchorClass(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -494,7 +540,9 @@ public class ActionItemProvider extends NamedDisplayElementItemProvider {
 			case WafPackage.ACTION__FAILURE_MESSAGE:
 			case WafPackage.ACTION__HAS_FAILURE_MESSAGE:
 			case WafPackage.ACTION__HAS_MESSAGES:
+			case WafPackage.ACTION__LOCAL_ANCHOR_CLASS:
 			case WafPackage.ACTION__ANCHOR_CLASS:
+			case WafPackage.ACTION__HAS_ANCHOR_CLASS:
 			case WafPackage.ACTION__HEADER_CLASS:
 			case WafPackage.ACTION__FOOTER_CLASS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
