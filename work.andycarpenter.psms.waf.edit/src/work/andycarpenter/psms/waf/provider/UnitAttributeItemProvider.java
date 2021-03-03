@@ -55,8 +55,6 @@ public class UnitAttributeItemProvider extends UnitFeatureItemProvider {
 			addAttributePropertyDescriptor(object);
 			addNamePropertyDescriptor(object);
 			addObfuscateFormFieldsPropertyDescriptor(object);
-			addPlaceholderPropertyDescriptor(object);
-			addHasCustomisedPlaceholderPropertyDescriptor(object);
 			addValidationPatternPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -120,50 +118,6 @@ public class UnitAttributeItemProvider extends UnitFeatureItemProvider {
 				 getString("_UI_UnitAttribute_obfuscateFormFields_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_UnitAttribute_obfuscateFormFields_feature", "_UI_UnitAttribute_type"),
 				 WafPackage.eINSTANCE.getUnitAttribute_ObfuscateFormFields(),
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Placeholder feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addPlaceholderPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_UnitAttribute_placeholder_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UnitAttribute_placeholder_feature", "_UI_UnitAttribute_type"),
-				 WafPackage.eINSTANCE.getUnitAttribute_Placeholder(),
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Has Customised Placeholder feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addHasCustomisedPlaceholderPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_UnitAttribute_hasCustomisedPlaceholder_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UnitAttribute_hasCustomisedPlaceholder_feature", "_UI_UnitAttribute_type"),
-				 WafPackage.eINSTANCE.getUnitAttribute_HasCustomisedPlaceholder(),
 				 true,
 				 false,
 				 false,
@@ -264,8 +218,6 @@ public class UnitAttributeItemProvider extends UnitFeatureItemProvider {
 		switch (notification.getFeatureID(UnitAttribute.class)) {
 			case WafPackage.UNIT_ATTRIBUTE__NAME:
 			case WafPackage.UNIT_ATTRIBUTE__OBFUSCATE_FORM_FIELDS:
-			case WafPackage.UNIT_ATTRIBUTE__PLACEHOLDER:
-			case WafPackage.UNIT_ATTRIBUTE__HAS_CUSTOMISED_PLACEHOLDER:
 			case WafPackage.UNIT_ATTRIBUTE__VALIDATION_PATTERN:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;

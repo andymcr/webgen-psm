@@ -56,8 +56,14 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 			addAuthorisationRolesPropertyDescriptor(object);
 			addIsAuthorisedPropertyDescriptor(object);
 			addHasCustomisedDisplayLabelPropertyDescriptor(object);
+			addLocalTitlePropertyDescriptor(object);
 			addTitlePropertyDescriptor(object);
+			addHasTitlePropertyDescriptor(object);
 			addHasCustomisedTitlePropertyDescriptor(object);
+			addLocalPlaceholderPropertyDescriptor(object);
+			addPlaceholderPropertyDescriptor(object);
+			addHasPlaceholderPropertyDescriptor(object);
+			addHasCustomisedPlaceholderPropertyDescriptor(object);
 			addPersistentFeaturePropertyDescriptor(object);
 			addIsContainsPropertyDescriptor(object);
 			addIsDisabledPropertyDescriptor(object);
@@ -206,10 +212,32 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 				 getString("_UI_UnitField_title_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_title_feature", "_UI_UnitField_type"),
 				 WafPackage.eINSTANCE.getUnitField_Title(),
-				 true,
+				 false,
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Has Title feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasTitlePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_UnitField_hasTitle_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_hasTitle_feature", "_UI_UnitField_type"),
+				 WafPackage.eINSTANCE.getUnitField_HasTitle(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -228,7 +256,95 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 				 getString("_UI_UnitField_hasCustomisedTitle_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_hasCustomisedTitle_feature", "_UI_UnitField_type"),
 				 WafPackage.eINSTANCE.getUnitField_HasCustomisedTitle(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Local Placeholder feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addLocalPlaceholderPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_UnitField_localPlaceholder_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_localPlaceholder_feature", "_UI_UnitField_type"),
+				 WafPackage.eINSTANCE.getUnitField_LocalPlaceholder(),
 				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Placeholder feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPlaceholderPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_UnitField_placeholder_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_placeholder_feature", "_UI_UnitField_type"),
+				 WafPackage.eINSTANCE.getUnitField_Placeholder(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Has Placeholder feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasPlaceholderPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_UnitField_hasPlaceholder_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_hasPlaceholder_feature", "_UI_UnitField_type"),
+				 WafPackage.eINSTANCE.getUnitField_HasPlaceholder(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Has Customised Placeholder feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasCustomisedPlaceholderPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_UnitField_hasCustomisedPlaceholder_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_hasCustomisedPlaceholder_feature", "_UI_UnitField_type"),
+				 WafPackage.eINSTANCE.getUnitField_HasCustomisedPlaceholder(),
+				 false,
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
@@ -382,10 +498,32 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 				 getString("_UI_UnitField_hasCustomisedDisplayLabel_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_hasCustomisedDisplayLabel_feature", "_UI_UnitField_type"),
 				 WafPackage.eINSTANCE.getUnitField_HasCustomisedDisplayLabel(),
-				 true,
+				 false,
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Local Title feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addLocalTitlePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_UnitField_localTitle_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_localTitle_feature", "_UI_UnitField_type"),
+				 WafPackage.eINSTANCE.getUnitField_LocalTitle(),
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -1729,8 +1867,14 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 			case WafPackage.UNIT_FEATURE__AUTHORISATION_ROLES:
 			case WafPackage.UNIT_FEATURE__IS_AUTHORISED:
 			case WafPackage.UNIT_FEATURE__HAS_CUSTOMISED_DISPLAY_LABEL:
+			case WafPackage.UNIT_FEATURE__LOCAL_TITLE:
 			case WafPackage.UNIT_FEATURE__TITLE:
+			case WafPackage.UNIT_FEATURE__HAS_TITLE:
 			case WafPackage.UNIT_FEATURE__HAS_CUSTOMISED_TITLE:
+			case WafPackage.UNIT_FEATURE__LOCAL_PLACEHOLDER:
+			case WafPackage.UNIT_FEATURE__PLACEHOLDER:
+			case WafPackage.UNIT_FEATURE__HAS_PLACEHOLDER:
+			case WafPackage.UNIT_FEATURE__HAS_CUSTOMISED_PLACEHOLDER:
 			case WafPackage.UNIT_FEATURE__IS_CONTAINS:
 			case WafPackage.UNIT_FEATURE__IS_DISABLED:
 			case WafPackage.UNIT_FEATURE__IS_REQUIRED:

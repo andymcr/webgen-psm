@@ -245,7 +245,7 @@ interface SecurityUnit {
 
 
 abstract class DisplayElement {
-	String[1] displayLabel
+	String[1] displayLabel = ''
 }
 
 
@@ -838,10 +838,58 @@ interface UnitField extends DisplayElement {
 	derived readonly transient volatile boolean isAuthorised get {
 		authorisationRoles.trim() != ''
 	}
+	derived readonly unsettable transient volatile boolean hasCustomisedDisplayLabel get {
+		if (this instanceof UnitFeature)
+			displayLabel.trim() != ''
+				&& displayLabel.trim() != (this as UnitFeature).persistentFeature.displayLabel.trim()
+		else if (this instanceof InterfaceField)
+			true
+		else // UnitLabel
+			false
+	}
+	String localTitle = ''
+	derived readonly unsettable transient volatile String title get {
+		if (this instanceof UnitLabel)
+			''
+		else
+			if (localTitle.trim() != '')
+				localTitle.trim()
+			else if (this instanceof UnitFeature)
+				(this as UnitFeature).persistentFeature.displayLabel.trim()
+			else
+				''
+	}
+	derived readonly unsettable transient volatile boolean hasTitle get {
+		title != ''
+	}
+	derived readonly unsettable transient volatile boolean hasCustomisedTitle get {
+		if (this instanceof UnitFeature)
+			title != (this as UnitFeature).persistentFeature.displayLabel.trim()
+		else
+			title.trim() != ''
+	}
+	String localPlaceholder = ''
+	derived readonly unsettable transient volatile String placeholder get {
+		if (this instanceof UnitLabel)
+			''
+		else
+			if (localPlaceholder.trim() != '')
+				localPlaceholder.trim()
+			else if (this instanceof UnitFeature)
+				(this as UnitFeature).persistentFeature.displayLabel.trim()
+			else
+				''
+	}
+	derived readonly unsettable transient volatile boolean hasPlaceholder get {
+		placeholder != ''
+	}
+	derived readonly unsettable transient volatile boolean hasCustomisedPlaceholder get {
+		if (this instanceof UnitFeature)
+			placeholder != (this as UnitFeature).persistentFeature.displayLabel.trim()
+		else
+			placeholder != ''
+	}
 	contains Predicate hideWhen
-	boolean hasCustomisedDisplayLabel
-	String title
-	boolean hasCustomisedTitle
 	refers derived readonly transient volatile Feature persistentFeature get {
 		if (this instanceof UnitAttribute) 
 			(this as UnitAttribute).attribute
@@ -1069,8 +1117,6 @@ class UnitAttribute extends UnitFeature {
 	}
 	contains Expression attributeDefaultValue
 	boolean obfuscateFormFields
-	String placeholder
-	boolean hasCustomisedPlaceholder
 	String validationPattern = ''
 }
 
@@ -1148,8 +1194,7 @@ class ChildPathAssociation extends FeatureChildPath, AssociationReference {
 class UnitLabel extends UnitField {
 	refers ModelLabel[1] label
 	derived String[1] name get {
-		if (label !== null)
-			label.name
+		label?.name
 	}
 }
 
@@ -1158,8 +1203,6 @@ abstract class InterfaceField extends NamedElement, UnitField {
 	contains Expression fieldDefaultValue
 	refers UnitField mustMatch
 	String interfaceType
-	String placeholder
-	boolean hasCustomisedPlaceholder
 	String validationPattern = ''
 	String inputClass
 }
