@@ -64,7 +64,9 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 			addContentTypePropertyDescriptor(object);
 			addRepositoriesUsedPropertyDescriptor(object);
 			addServicesUsedPropertyDescriptor(object);
+			addIsConditionallyDisplayedPropertyDescriptor(object);
 			addMessageWhenHiddenPropertyDescriptor(object);
+			addHasHiddenMessagePropertyDescriptor(object);
 			addHeaderPropertyDescriptor(object);
 			addFooterPropertyDescriptor(object);
 			addContentRepositoryPropertyDescriptor(object);
@@ -436,6 +438,28 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Is Conditionally Displayed feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIsConditionallyDisplayedPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DynamicUnit_isConditionallyDisplayed_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DynamicUnit_isConditionallyDisplayed_feature", "_UI_DynamicUnit_type"),
+				 WafPackage.eINSTANCE.getDynamicUnit_IsConditionallyDisplayed(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Message When Hidden feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -450,6 +474,28 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 				 getString("_UI_PropertyDescriptor_description", "_UI_DynamicUnit_messageWhenHidden_feature", "_UI_DynamicUnit_type"),
 				 WafPackage.eINSTANCE.getDynamicUnit_MessageWhenHidden(),
 				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Has Hidden Message feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasHiddenMessagePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DynamicUnit_hasHiddenMessage_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DynamicUnit_hasHiddenMessage_feature", "_UI_DynamicUnit_type"),
+				 WafPackage.eINSTANCE.getDynamicUnit_HasHiddenMessage(),
+				 false,
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
@@ -1797,7 +1843,9 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 			case WafPackage.DYNAMIC_UNIT__LOCAL_ACTION_NAVIGATION_CLASS:
 			case WafPackage.DYNAMIC_UNIT__ACTION_NAVIGATION_CLASS:
 			case WafPackage.DYNAMIC_UNIT__HAS_ACTION_NAVIGATION_CLASS_CLASS:
+			case WafPackage.DYNAMIC_UNIT__IS_CONDITIONALLY_DISPLAYED:
 			case WafPackage.DYNAMIC_UNIT__MESSAGE_WHEN_HIDDEN:
+			case WafPackage.DYNAMIC_UNIT__HAS_HIDDEN_MESSAGE:
 			case WafPackage.DYNAMIC_UNIT__HEADER:
 			case WafPackage.DYNAMIC_UNIT__FOOTER:
 			case WafPackage.DYNAMIC_UNIT__IS_CONTAINED:

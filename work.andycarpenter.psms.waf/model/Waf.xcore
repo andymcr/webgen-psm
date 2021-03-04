@@ -577,16 +577,22 @@ abstract class DynamicUnit extends ContentUnit, ActionContainer {
 	refers Repository[] repositoriesUsed
 	refers Service[] servicesUsed
 	contains Predicate hideWhen
+	derived readonly unsettable transient volatile Boolean isConditionallyDisplayed get {
+		hideWhen !== null
+	}
 	String messageWhenHidden = ''
+	derived readonly unsettable transient volatile Boolean hasHiddenMessage get {
+		hideWhen !== null && messageWhenHidden.trim() != ''
+	}
 	String header
 	String footer
-	refers readonly transient volatile unsettable derived Repository contentRepository get {
+	refers derived readonly unsettable transient volatile Repository contentRepository get {
 		contentType?.repository
 	}
-	refers readonly transient volatile unsettable derived Association containingAssociation get {
+	refers derived readonly unsettable transient volatile Association containingAssociation get {
 		contentType?.containingAssociation
 	}
-	refers readonly transient volatile unsettable derived Entity containingType get {
+	refers derived readonly unsettable transient volatile Entity containingType get {
 		if (this instanceof CollectionUnit) {
 			if ((this as CollectionUnit).findContainerSelection !== null)
 				(this as CollectionUnit).findContainerSelection.definedBy.serves
