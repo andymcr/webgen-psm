@@ -1126,6 +1126,7 @@ class UnitAssociation extends UnitFeature, AssociationReference {
 }
 
 abstract class FeaturePath extends Variable {
+	boolean useContainerAsContext
 	derived readonly transient volatile boolean hasChild get {
 		if (this instanceof FeaturePathAssociation)
 			(this as FeaturePathAssociation).childFeature !== null

@@ -63,6 +63,7 @@ public class FeaturePathItemProvider
 			super.getPropertyDescriptors(object);
 
 			addSuffixesPropertyDescriptor(object);
+			addUseContainerAsContextPropertyDescriptor(object);
 			addHasChildPropertyDescriptor(object);
 			addIsRequiredPropertyDescriptor(object);
 			addIsSingletonPropertyDescriptor(object);
@@ -88,6 +89,28 @@ public class FeaturePathItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Use Container As Context feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addUseContainerAsContextPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_FeaturePath_useContainerAsContext_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_FeaturePath_useContainerAsContext_feature", "_UI_FeaturePath_type"),
+				 WafPackage.eINSTANCE.getFeaturePath_UseContainerAsContext(),
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -167,7 +190,7 @@ public class FeaturePathItemProvider
 	@Override
 	public String getText(Object object) {
 		FeaturePath featurePath = (FeaturePath)object;
-		return getString("_UI_FeaturePath_type") + " " + featurePath.isHasChild();
+		return getString("_UI_FeaturePath_type") + " " + featurePath.isUseContainerAsContext();
 	}
 	
 
@@ -184,6 +207,7 @@ public class FeaturePathItemProvider
 
 		switch (notification.getFeatureID(FeaturePath.class)) {
 			case WafPackage.FEATURE_PATH__SUFFIXES:
+			case WafPackage.FEATURE_PATH__USE_CONTAINER_AS_CONTEXT:
 			case WafPackage.FEATURE_PATH__HAS_CHILD:
 			case WafPackage.FEATURE_PATH__IS_REQUIRED:
 			case WafPackage.FEATURE_PATH__IS_SINGLETON:
