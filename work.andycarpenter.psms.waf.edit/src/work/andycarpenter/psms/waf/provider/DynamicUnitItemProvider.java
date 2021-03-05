@@ -64,6 +64,7 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 			addContentTypePropertyDescriptor(object);
 			addRepositoriesUsedPropertyDescriptor(object);
 			addServicesUsedPropertyDescriptor(object);
+			addHasWhenFieldsEmptyAddImplicitFieldsPropertyDescriptor(object);
 			addIsConditionallyDisplayedPropertyDescriptor(object);
 			addMessageWhenHiddenPropertyDescriptor(object);
 			addHasHiddenMessagePropertyDescriptor(object);
@@ -433,6 +434,28 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 				 false,
 				 true,
 				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Has When Fields Empty Add Implicit Fields feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasWhenFieldsEmptyAddImplicitFieldsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DynamicUnit_hasWhenFieldsEmptyAddImplicitFields_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DynamicUnit_hasWhenFieldsEmptyAddImplicitFields_feature", "_UI_DynamicUnit_type"),
+				 WafPackage.eINSTANCE.getDynamicUnit_HasWhenFieldsEmptyAddImplicitFields(),
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -1792,6 +1815,7 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(WafPackage.eINSTANCE.getActionContainer_AllActions());
+			childrenFeatures.add(WafPackage.eINSTANCE.getDynamicUnit_RouteActuals());
 			childrenFeatures.add(WafPackage.eINSTANCE.getDynamicUnit_DisplayFields());
 			childrenFeatures.add(WafPackage.eINSTANCE.getDynamicUnit_HideWhen());
 		}
@@ -1843,6 +1867,7 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 			case WafPackage.DYNAMIC_UNIT__LOCAL_ACTION_NAVIGATION_CLASS:
 			case WafPackage.DYNAMIC_UNIT__ACTION_NAVIGATION_CLASS:
 			case WafPackage.DYNAMIC_UNIT__HAS_ACTION_NAVIGATION_CLASS_CLASS:
+			case WafPackage.DYNAMIC_UNIT__HAS_WHEN_FIELDS_EMPTY_ADD_IMPLICIT_FIELDS:
 			case WafPackage.DYNAMIC_UNIT__IS_CONDITIONALLY_DISPLAYED:
 			case WafPackage.DYNAMIC_UNIT__MESSAGE_WHEN_HIDDEN:
 			case WafPackage.DYNAMIC_UNIT__HAS_HIDDEN_MESSAGE:
@@ -1892,6 +1917,7 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case WafPackage.DYNAMIC_UNIT__ALL_ACTIONS:
+			case WafPackage.DYNAMIC_UNIT__ROUTE_ACTUALS:
 			case WafPackage.DYNAMIC_UNIT__DISPLAY_FIELDS:
 			case WafPackage.DYNAMIC_UNIT__HIDE_WHEN:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
@@ -1940,6 +1966,11 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 			(createChildParameter
 				(WafPackage.eINSTANCE.getActionContainer_AllActions(),
 				 WafFactory.eINSTANCE.createGeneralOperationAction()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.eINSTANCE.getDynamicUnit_RouteActuals(),
+				 WafFactory.eINSTANCE.createRouteActual()));
 
 		newChildDescriptors.add
 			(createChildParameter

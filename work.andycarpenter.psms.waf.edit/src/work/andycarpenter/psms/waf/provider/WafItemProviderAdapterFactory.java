@@ -1425,8 +1425,8 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 		if (pageItemProvider != null) pageItemProvider.dispose();
 		if (queryItemProvider != null) queryItemProvider.dispose();
 		if (queryParameterItemProvider != null) queryParameterItemProvider.dispose();
-		if (routeActualItemProvider != null) routeActualItemProvider.dispose();
 		if (staticUnitItemProvider != null) staticUnitItemProvider.dispose();
+		if (routeActualItemProvider != null) routeActualItemProvider.dispose();
 		if (unitAttributeItemProvider != null) unitAttributeItemProvider.dispose();
 		if (unitAssociationItemProvider != null) unitAssociationItemProvider.dispose();
 		if (featurePathAttributeItemProvider != null) featurePathAttributeItemProvider.dispose();

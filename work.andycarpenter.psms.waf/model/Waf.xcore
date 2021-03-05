@@ -502,7 +502,6 @@ class QueryParameter extends NamedElement {
 abstract class ContentUnit extends NamedDisplayElement {
 	container Page[1] displayedOn opposite units
 	String uriElement = ''
-	contains RouteActual[] routeActuals
 	String authorisationRoles = ''
 	derived readonly transient volatile boolean isAuthorised get {
 		authorisationRoles.trim() != ''
@@ -549,10 +548,6 @@ abstract class ContentUnit extends NamedDisplayElement {
 	}
 }
 
-class RouteActual {
-	refers Attribute[1] routeParameter
-	contains Expression[1] value
-}
 class StaticUnit extends ContentUnit {
 	refers Repository repository
 	String[1] content
@@ -572,10 +567,12 @@ class StaticUnit extends ContentUnit {
 }
 
 abstract class DynamicUnit extends ContentUnit, ActionContainer {
-	contains UnitField[] displayFields opposite displayedOn
 	refers Entity[1] contentType
 	refers Repository[] repositoriesUsed
 	refers Service[] servicesUsed
+	contains RouteActual[] routeActuals
+	contains UnitField[] displayFields opposite displayedOn
+	boolean hasWhenFieldsEmptyAddImplicitFields = "true"
 	contains Predicate hideWhen
 	derived readonly unsettable transient volatile Boolean isConditionallyDisplayed get {
 		hideWhen !== null
@@ -831,6 +828,11 @@ abstract class DynamicUnit extends ContentUnit, ActionContainer {
 		anchorClass != ''
 	}
 	String footerClass
+}
+
+class RouteActual {
+	refers Attribute[1] routeParameter
+	contains Expression[1] value
 }
 
 enum CollectionDisplayOptions {
