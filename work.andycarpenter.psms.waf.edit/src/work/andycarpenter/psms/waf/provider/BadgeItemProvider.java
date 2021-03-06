@@ -64,11 +64,36 @@ public class BadgeItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addDisplayedOnPropertyDescriptor(object);
 			addIconNamePropertyDescriptor(object);
 			addTitlePropertyDescriptor(object);
+			addLocalBadgeClassPropertyDescriptor(object);
 			addBadgeClassPropertyDescriptor(object);
+			addHasBadgeClassPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Displayed On feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDisplayedOnPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Badge_displayedOn_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Badge_displayedOn_feature", "_UI_Badge_type"),
+				 WafPackage.eINSTANCE.getBadge_DisplayedOn(),
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
@@ -116,6 +141,28 @@ public class BadgeItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Local Badge Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addLocalBadgeClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Badge_localBadgeClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Badge_localBadgeClass_feature", "_UI_Badge_type"),
+				 WafPackage.eINSTANCE.getBadge_LocalBadgeClass(),
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Badge Class feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -129,10 +176,32 @@ public class BadgeItemProvider
 				 getString("_UI_Badge_badgeClass_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Badge_badgeClass_feature", "_UI_Badge_type"),
 				 WafPackage.eINSTANCE.getBadge_BadgeClass(),
-				 true,
+				 false,
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Has Badge Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasBadgeClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Badge_hasBadgeClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Badge_hasBadgeClass_feature", "_UI_Badge_type"),
+				 WafPackage.eINSTANCE.getBadge_HasBadgeClass(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -207,7 +276,9 @@ public class BadgeItemProvider
 
 		switch (notification.getFeatureID(Badge.class)) {
 			case WafPackage.BADGE__ICON_NAME:
+			case WafPackage.BADGE__LOCAL_BADGE_CLASS:
 			case WafPackage.BADGE__BADGE_CLASS:
+			case WafPackage.BADGE__HAS_BADGE_CLASS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case WafPackage.BADGE__VALUE:

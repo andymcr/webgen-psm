@@ -36,6 +36,7 @@ import work.andycarpenter.psms.api.API
 import work.andycarpenter.psms.service.BusinessOperation
 import work.andycarpenter.psms.service.Service
 import work.andycarpenter.psms.service.ServiceModel
+import java.util.LinkedList
 import org.eclipse.xtext.xbase.lib.CollectionLiterals
 
 
@@ -165,6 +166,7 @@ class WafModel {
 	String defaultCardHeaderClass = ''
 	String defaultCardBodyClass = ''
 	String defaultCardFooterClass = ''
+	String defaultBadgeClass = ''
 	String defaultControlClass = ''
 	String defaultCardsControlClass = ''
 	String defaultDetailsControlClass = ''
@@ -428,17 +430,17 @@ class Page extends NamedDisplayElement {
 	derived readonly transient volatile boolean hasSliderUnits get {
 		!sliderUnits.isEmpty()
 	}
-	refers readonly transient volatile unsettable derived Repository[] repositories get {
+	refers readonly derived unsettable transient volatile Repository[] repositoriesUsed get {
 		dynamicUnits.flatMap[repositoriesUsed].toSet().toEList()
 	}
-	derived readonly transient volatile boolean hasRepositories get {
-		!repositories.isEmpty()
+	derived readonly transient volatile boolean hasRepositoriesUsed get {
+		!repositoriesUsed.isEmpty()
 	}
-	refers readonly transient volatile unsettable derived Service[] services get {
+	refers readonly transient volatile unsettable derived Service[] servicesUsed get {
 		return dynamicUnits.flatMap[servicesUsed].toSet().toEList()
 	}
-	derived readonly transient volatile boolean hasServices get {
-		!services.isEmpty()
+	derived readonly transient volatile boolean hasServicesUsed get {
+		!servicesUsed.isEmpty()
 	}
 	derived readonly transient volatile boolean hasPagination get {
 		!collectionUnits.filter[it.hasPagination].isEmpty()
@@ -568,21 +570,6 @@ class StaticUnit extends ContentUnit {
 
 abstract class DynamicUnit extends ContentUnit, ActionContainer {
 	refers Entity[1] contentType
-	refers Repository[] repositoriesUsed
-	refers Service[] servicesUsed
-	contains RouteActual[] routeActuals
-	contains UnitField[] displayFields opposite displayedOn
-	boolean hasWhenFieldsEmptyAddImplicitFields = "true"
-	contains Predicate hideWhen
-	derived readonly unsettable transient volatile Boolean isConditionallyDisplayed get {
-		hideWhen !== null
-	}
-	String messageWhenHidden = ''
-	derived readonly unsettable transient volatile Boolean hasHiddenMessage get {
-		hideWhen !== null && messageWhenHidden.trim() != ''
-	}
-	String header
-	String footer
 	refers derived readonly unsettable transient volatile Repository contentRepository get {
 		contentType?.repository
 	}
@@ -608,15 +595,39 @@ abstract class DynamicUnit extends ContentUnit, ActionContainer {
 		} else
 			contentType.containingType
 	}
-	derived readonly transient volatile boolean isContained get {
+	derived readonly unsettable transient volatile boolean isContained get {
 		containingType !== null
 	}
-	derived readonly transient volatile boolean hasExplicitlyEditedContainer get {
+	refers derived readonly unsettable transient volatile Repository containerRepository get {
+		containingType?.repository
+	}
+	derived readonly unsettable transient volatile boolean hasExplicitlyEditedContainer get {
 		if (this instanceof EditUnit && (containingAssociation !== null))
 			featureFields.exists[persistentFeature == containingAssociation]
 		else
 			false
 	}
+	refers derived readonly unsettable transient volatile Repository[] repositoriesUsed get {
+		var repositories = new LinkedList<Repository>()
+		repositories.add(contentRepository)
+		if (this instanceof CollectionUnit && isContained)
+			repositories.add(containerRepository)
+		return repositories.toEList()
+	}
+	refers Service[] servicesUsed
+	contains RouteActual[] routeActuals
+	contains UnitField[] displayFields opposite displayedOn
+	boolean hasWhenFieldsEmptyAddImplicitFields = "true"
+	contains Predicate hideWhen
+	derived readonly unsettable transient volatile Boolean isConditionallyDisplayed get {
+		hideWhen !== null
+	}
+	String messageWhenHidden = ''
+	derived readonly unsettable transient volatile Boolean hasHiddenMessage get {
+		hideWhen !== null && messageWhenHidden.trim() != ''
+	}
+	String header
+	String footer
 	refers readonly transient volatile unsettable derived UnitAssociation[] associationFields get {
 		return displayFields.filter[it instanceof UnitAssociation].map[it as UnitAssociation].toEList
 	}
@@ -1252,7 +1263,6 @@ class CollectionUnit extends DynamicUnit, SelectableUnit {
 	refers Selection selection
 	boolean omitContainerLoad
 	refers Entity containerType
-	refers Repository containerRepository
 	refers Selection findContainerSelection
 	refers Selection findElementSelection
 	refers Filter filter
@@ -1549,7 +1559,7 @@ class IndexLineDirectionUnit extends IndexUnit {
 }
 
 abstract class CardsUnit extends CollectionUnit {
-	contains Badge[] badges
+	contains Badge[] badges opposite displayedOn
 	boolean overlaySingleSelectAction
 	derived readonly transient volatile String contentClass get {
 		if (localContentClass.trim() != '')
@@ -1595,7 +1605,7 @@ abstract class CardsUnit extends CollectionUnit {
 			''
 	}
 	String localRowClass = ''
-	derived readonly transient volatile String rowClass get {
+	derived readonly unsettable transient volatile String rowClass get {
 		if (localRowClass.trim() != '')
 			localRowClass.trim()
 		else if (uiModel.defaultRowClass.trim() != '')
@@ -1666,6 +1676,7 @@ abstract class CardsUnit extends CollectionUnit {
 	derived readonly transient volatile boolean hasCardFooterClass get {
 		cardFooterClass != ''
 	}
+	String localBadgeClass = ''
 	derived readonly transient volatile String cardsControlClass get {
 		if (localControlClass.trim() != '')
 			localControlClass.trim()
@@ -1689,11 +1700,25 @@ abstract class CardsUnit extends CollectionUnit {
 }
 
 class Badge {
+	refers CardsUnit[1] displayedOn opposite badges
 	String iconName
 	contains FeaturePath value
 	refers Attribute title
 	contains Predicate displayWhen
-	String badgeClass
+	String localBadgeClass
+	derived readonly unsettable transient volatile String badgeClass get {
+		if (localBadgeClass.trim() != '')
+			localBadgeClass.trim()
+		else if (displayedOn.localBadgeClass.trim() != '')
+			displayedOn.localBadgeClass.trim()
+		else if (displayedOn.uiModel.defaultBadgeClass.trim() != '')
+			displayedOn.uiModel.defaultBadgeClass.trim()
+		else
+			''
+	}
+	derived readonly unsettable transient volatile boolean hasBadgeClass get {
+		badgeClass != ''
+	}
 }
 
 class TextCardsUnit extends CardsUnit {

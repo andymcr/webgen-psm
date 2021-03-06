@@ -86,10 +86,10 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 			addHasNonSecurityUnitsPropertyDescriptor(object);
 			addSliderUnitsPropertyDescriptor(object);
 			addHasSliderUnitsPropertyDescriptor(object);
-			addRepositoriesPropertyDescriptor(object);
-			addHasRepositoriesPropertyDescriptor(object);
-			addServicesPropertyDescriptor(object);
-			addHasServicesPropertyDescriptor(object);
+			addRepositoriesUsedPropertyDescriptor(object);
+			addHasRepositoriesUsedPropertyDescriptor(object);
+			addServicesUsedPropertyDescriptor(object);
+			addHasServicesUsedPropertyDescriptor(object);
 			addHasPaginationPropertyDescriptor(object);
 			addHasCaptchaFieldsPropertyDescriptor(object);
 			addFormFieldsPropertyDescriptor(object);
@@ -901,19 +901,19 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Repositories feature.
+	 * This adds a property descriptor for the Repositories Used feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addRepositoriesPropertyDescriptor(Object object) {
+	protected void addRepositoriesUsedPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Page_repositories_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Page_repositories_feature", "_UI_Page_type"),
-				 WafPackage.eINSTANCE.getPage_Repositories(),
+				 getString("_UI_Page_repositoriesUsed_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Page_repositoriesUsed_feature", "_UI_Page_type"),
+				 WafPackage.eINSTANCE.getPage_RepositoriesUsed(),
 				 false,
 				 false,
 				 false,
@@ -923,19 +923,19 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Has Repositories feature.
+	 * This adds a property descriptor for the Has Repositories Used feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addHasRepositoriesPropertyDescriptor(Object object) {
+	protected void addHasRepositoriesUsedPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Page_hasRepositories_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Page_hasRepositories_feature", "_UI_Page_type"),
-				 WafPackage.eINSTANCE.getPage_HasRepositories(),
+				 getString("_UI_Page_hasRepositoriesUsed_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Page_hasRepositoriesUsed_feature", "_UI_Page_type"),
+				 WafPackage.eINSTANCE.getPage_HasRepositoriesUsed(),
 				 false,
 				 false,
 				 false,
@@ -945,23 +945,45 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Services feature.
+	 * This adds a property descriptor for the Services Used feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addServicesPropertyDescriptor(Object object) {
+	protected void addServicesUsedPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Page_services_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Page_services_feature", "_UI_Page_type"),
-				 WafPackage.eINSTANCE.getPage_Services(),
+				 getString("_UI_Page_servicesUsed_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Page_servicesUsed_feature", "_UI_Page_type"),
+				 WafPackage.eINSTANCE.getPage_ServicesUsed(),
 				 false,
 				 false,
 				 false,
 				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Has Services Used feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasServicesUsedPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Page_hasServicesUsed_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Page_hasServicesUsed_feature", "_UI_Page_type"),
+				 WafPackage.eINSTANCE.getPage_HasServicesUsed(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -984,28 +1006,6 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 				 false,
 				 false,
 				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Has Services feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addHasServicesPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Page_hasServices_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Page_hasServices_feature", "_UI_Page_type"),
-				 WafPackage.eINSTANCE.getPage_HasServices(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -1383,8 +1383,8 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 			case WafPackage.PAGE__HAS_MAP_UNITS:
 			case WafPackage.PAGE__HAS_NON_SECURITY_UNITS:
 			case WafPackage.PAGE__HAS_SLIDER_UNITS:
-			case WafPackage.PAGE__HAS_REPOSITORIES:
-			case WafPackage.PAGE__HAS_SERVICES:
+			case WafPackage.PAGE__HAS_REPOSITORIES_USED:
+			case WafPackage.PAGE__HAS_SERVICES_USED:
 			case WafPackage.PAGE__HAS_PAGINATION:
 			case WafPackage.PAGE__HAS_CAPTCHA_FIELDS:
 			case WafPackage.PAGE__HAS_INTERFACE_FIELDS:

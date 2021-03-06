@@ -124,6 +124,7 @@ public class WafModelItemProvider
 			addDefaultCardHeaderClassPropertyDescriptor(object);
 			addDefaultCardBodyClassPropertyDescriptor(object);
 			addDefaultCardFooterClassPropertyDescriptor(object);
+			addDefaultBadgeClassPropertyDescriptor(object);
 			addDefaultControlClassPropertyDescriptor(object);
 			addDefaultCardsControlClassPropertyDescriptor(object);
 			addDefaultDetailsControlClassPropertyDescriptor(object);
@@ -1506,6 +1507,28 @@ public class WafModelItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Default Badge Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDefaultBadgeClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_WafModel_defaultBadgeClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WafModel_defaultBadgeClass_feature", "_UI_WafModel_type"),
+				 WafPackage.eINSTANCE.getWafModel_DefaultBadgeClass(),
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Default Control Class feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2396,6 +2419,7 @@ public class WafModelItemProvider
 			case WafPackage.WAF_MODEL__DEFAULT_CARD_HEADER_CLASS:
 			case WafPackage.WAF_MODEL__DEFAULT_CARD_BODY_CLASS:
 			case WafPackage.WAF_MODEL__DEFAULT_CARD_FOOTER_CLASS:
+			case WafPackage.WAF_MODEL__DEFAULT_BADGE_CLASS:
 			case WafPackage.WAF_MODEL__DEFAULT_CONTROL_CLASS:
 			case WafPackage.WAF_MODEL__DEFAULT_CARDS_CONTROL_CLASS:
 			case WafPackage.WAF_MODEL__DEFAULT_DETAILS_CONTROL_CLASS:

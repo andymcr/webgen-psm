@@ -71,6 +71,7 @@ public class CardsUnitItemProvider extends CollectionUnitItemProvider {
 			addLocalCardFooterClassPropertyDescriptor(object);
 			addCardFooterClassPropertyDescriptor(object);
 			addHasCardFooterClassPropertyDescriptor(object);
+			addLocalBadgeClassPropertyDescriptor(object);
 			addCardsControlClassPropertyDescriptor(object);
 			addCardsAnchorClassPropertyDescriptor(object);
 		}
@@ -474,6 +475,28 @@ public class CardsUnitItemProvider extends CollectionUnitItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Local Badge Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addLocalBadgeClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_CardsUnit_localBadgeClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CardsUnit_localBadgeClass_feature", "_UI_CardsUnit_type"),
+				 WafPackage.eINSTANCE.getCardsUnit_LocalBadgeClass(),
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Cards Control Class feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -730,6 +753,7 @@ public class CardsUnitItemProvider extends CollectionUnitItemProvider {
 			case WafPackage.CARDS_UNIT__LOCAL_CARD_FOOTER_CLASS:
 			case WafPackage.CARDS_UNIT__CARD_FOOTER_CLASS:
 			case WafPackage.CARDS_UNIT__HAS_CARD_FOOTER_CLASS:
+			case WafPackage.CARDS_UNIT__LOCAL_BADGE_CLASS:
 			case WafPackage.CARDS_UNIT__CARDS_CONTROL_CLASS:
 			case WafPackage.CARDS_UNIT__CARDS_ANCHOR_CLASS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));

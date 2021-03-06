@@ -62,6 +62,12 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 			addUiModelRefPropertyDescriptor(object);
 			addSecurityModelRefPropertyDescriptor(object);
 			addContentTypePropertyDescriptor(object);
+			addContentRepositoryPropertyDescriptor(object);
+			addContainingAssociationPropertyDescriptor(object);
+			addContainingTypePropertyDescriptor(object);
+			addIsContainedPropertyDescriptor(object);
+			addContainerRepositoryPropertyDescriptor(object);
+			addHasExplicitlyEditedContainerPropertyDescriptor(object);
 			addRepositoriesUsedPropertyDescriptor(object);
 			addServicesUsedPropertyDescriptor(object);
 			addHasWhenFieldsEmptyAddImplicitFieldsPropertyDescriptor(object);
@@ -70,11 +76,6 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 			addHasHiddenMessagePropertyDescriptor(object);
 			addHeaderPropertyDescriptor(object);
 			addFooterPropertyDescriptor(object);
-			addContentRepositoryPropertyDescriptor(object);
-			addContainingAssociationPropertyDescriptor(object);
-			addContainingTypePropertyDescriptor(object);
-			addIsContainedPropertyDescriptor(object);
-			addHasExplicitlyEditedContainerPropertyDescriptor(object);
 			addAssociationFieldsPropertyDescriptor(object);
 			addHasAssociationFieldsPropertyDescriptor(object);
 			addHasBooleanFieldsPropertyDescriptor(object);
@@ -408,9 +409,9 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 				 getString("_UI_DynamicUnit_repositoriesUsed_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_DynamicUnit_repositoriesUsed_feature", "_UI_DynamicUnit_type"),
 				 WafPackage.eINSTANCE.getDynamicUnit_RepositoriesUsed(),
-				 true,
 				 false,
-				 true,
+				 false,
+				 false,
 				 null,
 				 null,
 				 null));
@@ -654,6 +655,28 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Container Repository feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addContainerRepositoryPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DynamicUnit_containerRepository_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DynamicUnit_containerRepository_feature", "_UI_DynamicUnit_type"),
+				 WafPackage.eINSTANCE.getDynamicUnit_ContainerRepository(),
+				 false,
+				 false,
+				 false,
+				 null,
 				 null,
 				 null));
 	}
@@ -1867,14 +1890,14 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 			case WafPackage.DYNAMIC_UNIT__LOCAL_ACTION_NAVIGATION_CLASS:
 			case WafPackage.DYNAMIC_UNIT__ACTION_NAVIGATION_CLASS:
 			case WafPackage.DYNAMIC_UNIT__HAS_ACTION_NAVIGATION_CLASS_CLASS:
+			case WafPackage.DYNAMIC_UNIT__IS_CONTAINED:
+			case WafPackage.DYNAMIC_UNIT__HAS_EXPLICITLY_EDITED_CONTAINER:
 			case WafPackage.DYNAMIC_UNIT__HAS_WHEN_FIELDS_EMPTY_ADD_IMPLICIT_FIELDS:
 			case WafPackage.DYNAMIC_UNIT__IS_CONDITIONALLY_DISPLAYED:
 			case WafPackage.DYNAMIC_UNIT__MESSAGE_WHEN_HIDDEN:
 			case WafPackage.DYNAMIC_UNIT__HAS_HIDDEN_MESSAGE:
 			case WafPackage.DYNAMIC_UNIT__HEADER:
 			case WafPackage.DYNAMIC_UNIT__FOOTER:
-			case WafPackage.DYNAMIC_UNIT__IS_CONTAINED:
-			case WafPackage.DYNAMIC_UNIT__HAS_EXPLICITLY_EDITED_CONTAINER:
 			case WafPackage.DYNAMIC_UNIT__HAS_ASSOCIATION_FIELDS:
 			case WafPackage.DYNAMIC_UNIT__HAS_BOOLEAN_FIELDS:
 			case WafPackage.DYNAMIC_UNIT__HAS_CAPTCHA_FIELDS:
