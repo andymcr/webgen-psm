@@ -418,8 +418,8 @@ class Page extends NamedDisplayElement {
 	derived readonly transient volatile boolean hasMapUnits get {
 		!mapUnits.isEmpty()
 	}
-	refers readonly transient volatile unsettable derived DynamicUnit[] nonSecurityUnits get {
-		dynamicUnits.filter[!(it instanceof SecurityUnit)].toEList
+	refers readonly transient volatile unsettable derived ContentUnit[] nonSecurityUnits get {
+		units.filter[!(it instanceof SecurityUnit)].toEList
 	}
 	derived readonly transient volatile boolean hasNonSecurityUnits get {
 		!nonSecurityUnits.isEmpty()
@@ -609,7 +609,8 @@ abstract class DynamicUnit extends ContentUnit, ActionContainer {
 	}
 	refers derived readonly unsettable transient volatile Repository[] repositoriesUsed get {
 		var repositories = new LinkedList<Repository>()
-		repositories.add(contentRepository)
+		if (!(this instanceof SecurityUnit) || this instanceof LoginUnit)
+			repositories.add(contentRepository)
 		if (this instanceof CollectionUnit && isContained)
 			repositories.add(containerRepository)
 		return repositories.toEList()
