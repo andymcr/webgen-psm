@@ -108,16 +108,16 @@ public class WafModelItemProvider
 			addDefaultDetailsContentClassPropertyDescriptor(object);
 			addDefaultFormContentClassPropertyDescriptor(object);
 			addDefaultGalleryContentClassPropertyDescriptor(object);
-			addDefaultIndexContentClassPropertyDescriptor(object);
 			addDefaultSliderContentClassPropertyDescriptor(object);
 			addDefaultStaticContentClassPropertyDescriptor(object);
+			addDefaultTabularContentClassPropertyDescriptor(object);
 			addDefaultFieldListClassPropertyDescriptor(object);
 			addDefaultCardsFieldListClassPropertyDescriptor(object);
 			addDefaultDetailsFieldListClassPropertyDescriptor(object);
 			addDefaultFormFieldListClassPropertyDescriptor(object);
 			addDefaultGalleryFieldListClassPropertyDescriptor(object);
-			addDefaultIndexFieldListClassPropertyDescriptor(object);
 			addDefaultSliderFieldListClassPropertyDescriptor(object);
+			addDefaultTabularFieldListClassPropertyDescriptor(object);
 			addDefaultRowClassPropertyDescriptor(object);
 			addDefaultColumnClassPropertyDescriptor(object);
 			addDefaultCardClassPropertyDescriptor(object);
@@ -130,33 +130,31 @@ public class WafModelItemProvider
 			addDefaultDetailsControlClassPropertyDescriptor(object);
 			addDefaultFormControlClassPropertyDescriptor(object);
 			addDefaultGalleryControlClassPropertyDescriptor(object);
-			addDefaultIndexControlClassPropertyDescriptor(object);
 			addDefaultSliderControlClassPropertyDescriptor(object);
-			addDefaultStaticControlClassPropertyDescriptor(object);
+			addDefaultTabularControlClassPropertyDescriptor(object);
 			addDefaultInputGroupClassPropertyDescriptor(object);
 			addDefaultFieldLabelClassPropertyDescriptor(object);
 			addDefaultCardsFieldLabelClassPropertyDescriptor(object);
 			addDefaultDetailsFieldLabelClassPropertyDescriptor(object);
 			addDefaultFormFieldLabelClassPropertyDescriptor(object);
 			addDefaultGalleryFieldLabelClassPropertyDescriptor(object);
-			addDefaultIndexFieldLabelClassPropertyDescriptor(object);
 			addDefaultSliderFieldLabelClassPropertyDescriptor(object);
+			addDefaultTabularFieldLabelClassPropertyDescriptor(object);
 			addDefaultFieldValueClassPropertyDescriptor(object);
 			addDefaultCardsFieldValueClassPropertyDescriptor(object);
 			addDefaultDetailsFieldValueClassPropertyDescriptor(object);
 			addDefaultFormFieldValueClassPropertyDescriptor(object);
 			addDefaultGalleryFieldValueClassPropertyDescriptor(object);
-			addDefaultIndexFieldValueClassPropertyDescriptor(object);
 			addDefaultSliderFieldValueClassPropertyDescriptor(object);
+			addDefaultTabularFieldValueClassPropertyDescriptor(object);
 			addDefaultActionNavigationClassPropertyDescriptor(object);
 			addDefaultAnchorClassPropertyDescriptor(object);
 			addDefaultCardsAnchorClassPropertyDescriptor(object);
 			addDefaultDetailsAnchorClassPropertyDescriptor(object);
 			addDefaultFormAnchorClassPropertyDescriptor(object);
 			addDefaultGalleryAnchorClassPropertyDescriptor(object);
-			addDefaultIndexAnchorClassPropertyDescriptor(object);
 			addDefaultSliderAnchorClassPropertyDescriptor(object);
-			addDefaultStaticAnchorClassPropertyDescriptor(object);
+			addDefaultTabularAnchorClassPropertyDescriptor(object);
 			addGenModelPropertyDescriptor(object);
 			addUiModelPropertyDescriptor(object);
 			addSecurityModelPropertyDescriptor(object);
@@ -1155,28 +1153,6 @@ public class WafModelItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Default Index Content Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addDefaultIndexContentClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_WafModel_defaultIndexContentClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafModel_defaultIndexContentClass_feature", "_UI_WafModel_type"),
-				 WafPackage.eINSTANCE.getWafModel_DefaultIndexContentClass(),
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Default Slider Content Class feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1212,6 +1188,28 @@ public class WafModelItemProvider
 				 getString("_UI_WafModel_defaultStaticContentClass_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_WafModel_defaultStaticContentClass_feature", "_UI_WafModel_type"),
 				 WafPackage.eINSTANCE.getWafModel_DefaultStaticContentClass(),
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Default Tabular Content Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDefaultTabularContentClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_WafModel_defaultTabularContentClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WafModel_defaultTabularContentClass_feature", "_UI_WafModel_type"),
+				 WafPackage.eINSTANCE.getWafModel_DefaultTabularContentClass(),
 				 true,
 				 false,
 				 false,
@@ -1331,28 +1329,6 @@ public class WafModelItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Default Index Field List Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addDefaultIndexFieldListClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_WafModel_defaultIndexFieldListClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafModel_defaultIndexFieldListClass_feature", "_UI_WafModel_type"),
-				 WafPackage.eINSTANCE.getWafModel_DefaultIndexFieldListClass(),
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Default Slider Field List Class feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1366,6 +1342,28 @@ public class WafModelItemProvider
 				 getString("_UI_WafModel_defaultSliderFieldListClass_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_WafModel_defaultSliderFieldListClass_feature", "_UI_WafModel_type"),
 				 WafPackage.eINSTANCE.getWafModel_DefaultSliderFieldListClass(),
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Default Tabular Field List Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDefaultTabularFieldListClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_WafModel_defaultTabularFieldListClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WafModel_defaultTabularFieldListClass_feature", "_UI_WafModel_type"),
+				 WafPackage.eINSTANCE.getWafModel_DefaultTabularFieldListClass(),
 				 true,
 				 false,
 				 false,
@@ -1639,28 +1637,6 @@ public class WafModelItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Default Index Control Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addDefaultIndexControlClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_WafModel_defaultIndexControlClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafModel_defaultIndexControlClass_feature", "_UI_WafModel_type"),
-				 WafPackage.eINSTANCE.getWafModel_DefaultIndexControlClass(),
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Default Slider Control Class feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1683,19 +1659,19 @@ public class WafModelItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Default Static Control Class feature.
+	 * This adds a property descriptor for the Default Tabular Control Class feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addDefaultStaticControlClassPropertyDescriptor(Object object) {
+	protected void addDefaultTabularControlClassPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_WafModel_defaultStaticControlClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafModel_defaultStaticControlClass_feature", "_UI_WafModel_type"),
-				 WafPackage.eINSTANCE.getWafModel_DefaultStaticControlClass(),
+				 getString("_UI_WafModel_defaultTabularControlClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WafModel_defaultTabularControlClass_feature", "_UI_WafModel_type"),
+				 WafPackage.eINSTANCE.getWafModel_DefaultTabularControlClass(),
 				 true,
 				 false,
 				 false,
@@ -1815,28 +1791,6 @@ public class WafModelItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Default Index Field Label Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addDefaultIndexFieldLabelClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_WafModel_defaultIndexFieldLabelClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafModel_defaultIndexFieldLabelClass_feature", "_UI_WafModel_type"),
-				 WafPackage.eINSTANCE.getWafModel_DefaultIndexFieldLabelClass(),
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Default Slider Field Label Class feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1850,6 +1804,28 @@ public class WafModelItemProvider
 				 getString("_UI_WafModel_defaultSliderFieldLabelClass_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_WafModel_defaultSliderFieldLabelClass_feature", "_UI_WafModel_type"),
 				 WafPackage.eINSTANCE.getWafModel_DefaultSliderFieldLabelClass(),
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Default Tabular Field Label Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDefaultTabularFieldLabelClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_WafModel_defaultTabularFieldLabelClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WafModel_defaultTabularFieldLabelClass_feature", "_UI_WafModel_type"),
+				 WafPackage.eINSTANCE.getWafModel_DefaultTabularFieldLabelClass(),
 				 true,
 				 false,
 				 false,
@@ -1969,28 +1945,6 @@ public class WafModelItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Default Index Field Value Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addDefaultIndexFieldValueClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_WafModel_defaultIndexFieldValueClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafModel_defaultIndexFieldValueClass_feature", "_UI_WafModel_type"),
-				 WafPackage.eINSTANCE.getWafModel_DefaultIndexFieldValueClass(),
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Default Slider Field Value Class feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2004,6 +1958,28 @@ public class WafModelItemProvider
 				 getString("_UI_WafModel_defaultSliderFieldValueClass_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_WafModel_defaultSliderFieldValueClass_feature", "_UI_WafModel_type"),
 				 WafPackage.eINSTANCE.getWafModel_DefaultSliderFieldValueClass(),
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Default Tabular Field Value Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDefaultTabularFieldValueClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_WafModel_defaultTabularFieldValueClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WafModel_defaultTabularFieldValueClass_feature", "_UI_WafModel_type"),
+				 WafPackage.eINSTANCE.getWafModel_DefaultTabularFieldValueClass(),
 				 true,
 				 false,
 				 false,
@@ -2167,28 +2143,6 @@ public class WafModelItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Default Index Anchor Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addDefaultIndexAnchorClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_WafModel_defaultIndexAnchorClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafModel_defaultIndexAnchorClass_feature", "_UI_WafModel_type"),
-				 WafPackage.eINSTANCE.getWafModel_DefaultIndexAnchorClass(),
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Default Slider Anchor Class feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2211,19 +2165,19 @@ public class WafModelItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Default Static Anchor Class feature.
+	 * This adds a property descriptor for the Default Tabular Anchor Class feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addDefaultStaticAnchorClassPropertyDescriptor(Object object) {
+	protected void addDefaultTabularAnchorClassPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_WafModel_defaultStaticAnchorClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafModel_defaultStaticAnchorClass_feature", "_UI_WafModel_type"),
-				 WafPackage.eINSTANCE.getWafModel_DefaultStaticAnchorClass(),
+				 getString("_UI_WafModel_defaultTabularAnchorClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WafModel_defaultTabularAnchorClass_feature", "_UI_WafModel_type"),
+				 WafPackage.eINSTANCE.getWafModel_DefaultTabularAnchorClass(),
 				 true,
 				 false,
 				 false,
@@ -2403,16 +2357,16 @@ public class WafModelItemProvider
 			case WafPackage.WAF_MODEL__DEFAULT_DETAILS_CONTENT_CLASS:
 			case WafPackage.WAF_MODEL__DEFAULT_FORM_CONTENT_CLASS:
 			case WafPackage.WAF_MODEL__DEFAULT_GALLERY_CONTENT_CLASS:
-			case WafPackage.WAF_MODEL__DEFAULT_INDEX_CONTENT_CLASS:
 			case WafPackage.WAF_MODEL__DEFAULT_SLIDER_CONTENT_CLASS:
 			case WafPackage.WAF_MODEL__DEFAULT_STATIC_CONTENT_CLASS:
+			case WafPackage.WAF_MODEL__DEFAULT_TABULAR_CONTENT_CLASS:
 			case WafPackage.WAF_MODEL__DEFAULT_FIELD_LIST_CLASS:
 			case WafPackage.WAF_MODEL__DEFAULT_CARDS_FIELD_LIST_CLASS:
 			case WafPackage.WAF_MODEL__DEFAULT_DETAILS_FIELD_LIST_CLASS:
 			case WafPackage.WAF_MODEL__DEFAULT_FORM_FIELD_LIST_CLASS:
 			case WafPackage.WAF_MODEL__DEFAULT_GALLERY_FIELD_LIST_CLASS:
-			case WafPackage.WAF_MODEL__DEFAULT_INDEX_FIELD_LIST_CLASS:
 			case WafPackage.WAF_MODEL__DEFAULT_SLIDER_FIELD_LIST_CLASS:
+			case WafPackage.WAF_MODEL__DEFAULT_TABULAR_FIELD_LIST_CLASS:
 			case WafPackage.WAF_MODEL__DEFAULT_ROW_CLASS:
 			case WafPackage.WAF_MODEL__DEFAULT_COLUMN_CLASS:
 			case WafPackage.WAF_MODEL__DEFAULT_CARD_CLASS:
@@ -2425,33 +2379,31 @@ public class WafModelItemProvider
 			case WafPackage.WAF_MODEL__DEFAULT_DETAILS_CONTROL_CLASS:
 			case WafPackage.WAF_MODEL__DEFAULT_FORM_CONTROL_CLASS:
 			case WafPackage.WAF_MODEL__DEFAULT_GALLERY_CONTROL_CLASS:
-			case WafPackage.WAF_MODEL__DEFAULT_INDEX_CONTROL_CLASS:
 			case WafPackage.WAF_MODEL__DEFAULT_SLIDER_CONTROL_CLASS:
-			case WafPackage.WAF_MODEL__DEFAULT_STATIC_CONTROL_CLASS:
+			case WafPackage.WAF_MODEL__DEFAULT_TABULAR_CONTROL_CLASS:
 			case WafPackage.WAF_MODEL__DEFAULT_INPUT_GROUP_CLASS:
 			case WafPackage.WAF_MODEL__DEFAULT_FIELD_LABEL_CLASS:
 			case WafPackage.WAF_MODEL__DEFAULT_CARDS_FIELD_LABEL_CLASS:
 			case WafPackage.WAF_MODEL__DEFAULT_DETAILS_FIELD_LABEL_CLASS:
 			case WafPackage.WAF_MODEL__DEFAULT_FORM_FIELD_LABEL_CLASS:
 			case WafPackage.WAF_MODEL__DEFAULT_GALLERY_FIELD_LABEL_CLASS:
-			case WafPackage.WAF_MODEL__DEFAULT_INDEX_FIELD_LABEL_CLASS:
 			case WafPackage.WAF_MODEL__DEFAULT_SLIDER_FIELD_LABEL_CLASS:
+			case WafPackage.WAF_MODEL__DEFAULT_TABULAR_FIELD_LABEL_CLASS:
 			case WafPackage.WAF_MODEL__DEFAULT_FIELD_VALUE_CLASS:
 			case WafPackage.WAF_MODEL__DEFAULT_CARDS_FIELD_VALUE_CLASS:
 			case WafPackage.WAF_MODEL__DEFAULT_DETAILS_FIELD_VALUE_CLASS:
 			case WafPackage.WAF_MODEL__DEFAULT_FORM_FIELD_VALUE_CLASS:
 			case WafPackage.WAF_MODEL__DEFAULT_GALLERY_FIELD_VALUE_CLASS:
-			case WafPackage.WAF_MODEL__DEFAULT_INDEX_FIELD_VALUE_CLASS:
 			case WafPackage.WAF_MODEL__DEFAULT_SLIDER_FIELD_VALUE_CLASS:
+			case WafPackage.WAF_MODEL__DEFAULT_TABULAR_FIELD_VALUE_CLASS:
 			case WafPackage.WAF_MODEL__DEFAULT_ACTION_NAVIGATION_CLASS:
 			case WafPackage.WAF_MODEL__DEFAULT_ANCHOR_CLASS:
 			case WafPackage.WAF_MODEL__DEFAULT_CARDS_ANCHOR_CLASS:
 			case WafPackage.WAF_MODEL__DEFAULT_DETAILS_ANCHOR_CLASS:
 			case WafPackage.WAF_MODEL__DEFAULT_FORM_ANCHOR_CLASS:
 			case WafPackage.WAF_MODEL__DEFAULT_GALLERY_ANCHOR_CLASS:
-			case WafPackage.WAF_MODEL__DEFAULT_INDEX_ANCHOR_CLASS:
 			case WafPackage.WAF_MODEL__DEFAULT_SLIDER_ANCHOR_CLASS:
-			case WafPackage.WAF_MODEL__DEFAULT_STATIC_ANCHOR_CLASS:
+			case WafPackage.WAF_MODEL__DEFAULT_TABULAR_ANCHOR_CLASS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case WafPackage.WAF_MODEL__IMAGE_MANIPULATIONS:

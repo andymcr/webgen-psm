@@ -854,72 +854,26 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.waf.IndexGridUnit} instances.
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.waf.TabularUnit} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected IndexGridUnitItemProvider indexGridUnitItemProvider;
+	protected TabularUnitItemProvider tabularUnitItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link work.andycarpenter.psms.waf.IndexGridUnit}.
+	 * This creates an adapter for a {@link work.andycarpenter.psms.waf.TabularUnit}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createIndexGridUnitAdapter() {
-		if (indexGridUnitItemProvider == null) {
-			indexGridUnitItemProvider = new IndexGridUnitItemProvider(this);
+	public Adapter createTabularUnitAdapter() {
+		if (tabularUnitItemProvider == null) {
+			tabularUnitItemProvider = new TabularUnitItemProvider(this);
 		}
 
-		return indexGridUnitItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.waf.IndexPageDirectionUnit} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected IndexPageDirectionUnitItemProvider indexPageDirectionUnitItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link work.andycarpenter.psms.waf.IndexPageDirectionUnit}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createIndexPageDirectionUnitAdapter() {
-		if (indexPageDirectionUnitItemProvider == null) {
-			indexPageDirectionUnitItemProvider = new IndexPageDirectionUnitItemProvider(this);
-		}
-
-		return indexPageDirectionUnitItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.waf.IndexLineDirectionUnit} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected IndexLineDirectionUnitItemProvider indexLineDirectionUnitItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link work.andycarpenter.psms.waf.IndexLineDirectionUnit}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createIndexLineDirectionUnitAdapter() {
-		if (indexLineDirectionUnitItemProvider == null) {
-			indexLineDirectionUnitItemProvider = new IndexLineDirectionUnitItemProvider(this);
-		}
-
-		return indexLineDirectionUnitItemProvider;
+		return tabularUnitItemProvider;
 	}
 
 	/**
@@ -1445,9 +1399,7 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 		if (mapUnitItemProvider != null) mapUnitItemProvider.dispose();
 		if (updateUnitItemProvider != null) updateUnitItemProvider.dispose();
 		if (detailsUnitItemProvider != null) detailsUnitItemProvider.dispose();
-		if (indexGridUnitItemProvider != null) indexGridUnitItemProvider.dispose();
-		if (indexPageDirectionUnitItemProvider != null) indexPageDirectionUnitItemProvider.dispose();
-		if (indexLineDirectionUnitItemProvider != null) indexLineDirectionUnitItemProvider.dispose();
+		if (tabularUnitItemProvider != null) tabularUnitItemProvider.dispose();
 		if (badgeItemProvider != null) badgeItemProvider.dispose();
 		if (textCardsUnitItemProvider != null) textCardsUnitItemProvider.dispose();
 		if (dateCardsUnitItemProvider != null) dateCardsUnitItemProvider.dispose();

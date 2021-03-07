@@ -72,8 +72,8 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 			addHasFiltersPropertyDescriptor(object);
 			addGalleryUnitsPropertyDescriptor(object);
 			addHasGalleryUnitsPropertyDescriptor(object);
-			addIndexUnitsPropertyDescriptor(object);
-			addHasIndexUnitsPropertyDescriptor(object);
+			addTabularUnitsPropertyDescriptor(object);
+			addHasTabularUnitsPropertyDescriptor(object);
 			addImageUnitsPropertyDescriptor(object);
 			addHasImageUnitsPropertyDescriptor(object);
 			addImageCardsUnitsPropertyDescriptor(object);
@@ -593,19 +593,19 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Index Units feature.
+	 * This adds a property descriptor for the Tabular Units feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addIndexUnitsPropertyDescriptor(Object object) {
+	protected void addTabularUnitsPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Page_indexUnits_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Page_indexUnits_feature", "_UI_Page_type"),
-				 WafPackage.eINSTANCE.getPage_IndexUnits(),
+				 getString("_UI_Page_tabularUnits_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Page_tabularUnits_feature", "_UI_Page_type"),
+				 WafPackage.eINSTANCE.getPage_TabularUnits(),
 				 false,
 				 false,
 				 false,
@@ -615,19 +615,19 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Has Index Units feature.
+	 * This adds a property descriptor for the Has Tabular Units feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addHasIndexUnitsPropertyDescriptor(Object object) {
+	protected void addHasTabularUnitsPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Page_hasIndexUnits_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Page_hasIndexUnits_feature", "_UI_Page_type"),
-				 WafPackage.eINSTANCE.getPage_HasIndexUnits(),
+				 getString("_UI_Page_hasTabularUnits_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Page_hasTabularUnits_feature", "_UI_Page_type"),
+				 WafPackage.eINSTANCE.getPage_HasTabularUnits(),
 				 false,
 				 false,
 				 false,
@@ -1376,7 +1376,7 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 			case WafPackage.PAGE__HAS_FORM_UNITS:
 			case WafPackage.PAGE__HAS_FILTERS:
 			case WafPackage.PAGE__HAS_GALLERY_UNITS:
-			case WafPackage.PAGE__HAS_INDEX_UNITS:
+			case WafPackage.PAGE__HAS_TABULAR_UNITS:
 			case WafPackage.PAGE__HAS_IMAGE_UNITS:
 			case WafPackage.PAGE__HAS_IMAGE_CARDS_UNITS:
 			case WafPackage.PAGE__HAS_LOGIN_UNITS:
@@ -1456,17 +1456,7 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.eINSTANCE.getPage_Units(),
-				 WafFactory.eINSTANCE.createIndexGridUnit()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.eINSTANCE.getPage_Units(),
-				 WafFactory.eINSTANCE.createIndexPageDirectionUnit()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.eINSTANCE.getPage_Units(),
-				 WafFactory.eINSTANCE.createIndexLineDirectionUnit()));
+				 WafFactory.eINSTANCE.createTabularUnit()));
 
 		newChildDescriptors.add
 			(createChildParameter

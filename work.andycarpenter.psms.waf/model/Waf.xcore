@@ -150,16 +150,16 @@ class WafModel {
 	String defaultDetailsContentClass = ''
 	String defaultFormContentClass = ''
 	String defaultGalleryContentClass = ''
-	String defaultIndexContentClass = ''
 	String defaultSliderContentClass = ''
 	String defaultStaticContentClass = ''
+	String defaultTabularContentClass = ''
 	String defaultFieldListClass = ''
 	String defaultCardsFieldListClass = ''
 	String defaultDetailsFieldListClass = ''
 	String defaultFormFieldListClass = ''
 	String defaultGalleryFieldListClass = ''
-	String defaultIndexFieldListClass = ''
 	String defaultSliderFieldListClass = ''
+	String defaultTabularFieldListClass = ''
 	String defaultRowClass = ''
 	String defaultColumnClass = ''
 	String defaultCardClass = ''
@@ -172,33 +172,31 @@ class WafModel {
 	String defaultDetailsControlClass = ''
 	String defaultFormControlClass = ''
 	String defaultGalleryControlClass = ''
-	String defaultIndexControlClass = ''
 	String defaultSliderControlClass = ''
-	String defaultStaticControlClass = ''
+	String defaultTabularControlClass = ''
 	String defaultInputGroupClass = ''
 	String defaultFieldLabelClass = ''
 	String defaultCardsFieldLabelClass = ''
 	String defaultDetailsFieldLabelClass = ''
 	String defaultFormFieldLabelClass = ''
 	String defaultGalleryFieldLabelClass = ''
-	String defaultIndexFieldLabelClass = ''
 	String defaultSliderFieldLabelClass = ''
+	String defaultTabularFieldLabelClass = ''
 	String defaultFieldValueClass = ''
 	String defaultCardsFieldValueClass = ''
 	String defaultDetailsFieldValueClass = ''
 	String defaultFormFieldValueClass = ''
 	String defaultGalleryFieldValueClass = ''
-	String defaultIndexFieldValueClass = ''
 	String defaultSliderFieldValueClass = ''
+	String defaultTabularFieldValueClass = ''
 	String defaultActionNavigationClass = ''
 	String defaultAnchorClass = ''
 	String defaultCardsAnchorClass = ''
 	String defaultDetailsAnchorClass = ''
 	String defaultFormAnchorClass = ''
 	String defaultGalleryAnchorClass = ''
-	String defaultIndexAnchorClass = ''
 	String defaultSliderAnchorClass = ''
-	String defaultStaticAnchorClass = ''
+	String defaultTabularAnchorClass = ''
 	refers readonly transient volatile unsettable derived WafModel genModel get {
 		this
 	}
@@ -388,11 +386,11 @@ class Page extends NamedDisplayElement {
 	derived readonly transient volatile boolean hasGalleryUnits get {
 		!galleryUnits.isEmpty()
 	}
-	refers readonly transient volatile unsettable derived IndexUnit[] indexUnits get {
-		return units.filter[it instanceof IndexUnit].map[it as IndexUnit].toEList
+	refers readonly transient volatile unsettable derived TabularUnit[] tabularUnits get {
+		return units.filter[it instanceof TabularUnit].map[it as TabularUnit].toEList
 	}
-	derived readonly transient volatile boolean hasIndexUnits get {
-		!indexUnits.isEmpty()
+	derived readonly transient volatile boolean hasTabularUnits get {
+		!tabularUnits.isEmpty()
 	}
 	refers readonly transient volatile unsettable derived ImageUnit[] imageUnits get {
 		return units.filter[it instanceof ImageUnit].map[it as ImageUnit].toEList
@@ -739,8 +737,8 @@ abstract class DynamicUnit extends ContentUnit, ActionContainer {
 			(this as EditUnit).formFieldListClass
 		else if (this instanceof GalleryUnit) 
 			(this as GalleryUnit).galleryFieldListClass
-		else if (this instanceof IndexUnit) 
-			(this as IndexUnit).indexFieldListClass
+		else if (this instanceof TabularUnit) 
+			(this as TabularUnit).tabularFieldListClass
 		else if (this instanceof SliderUnit) 
 			(this as SliderUnit).sliderFieldListClass
 		else
@@ -769,8 +767,8 @@ abstract class DynamicUnit extends ContentUnit, ActionContainer {
 			(this as EditUnit).formFieldLabelClass
 		else if (this instanceof GalleryUnit) 
 			(this as GalleryUnit).galleryFieldLabelClass
-		else if (this instanceof IndexUnit) 
-			(this as IndexUnit).indexFieldLabelClass
+		else if (this instanceof TabularUnit) 
+			(this as TabularUnit).tabularFieldLabelClass
 		else if (this instanceof SliderUnit) 
 			(this as SliderUnit).sliderFieldLabelClass
 		else
@@ -789,8 +787,8 @@ abstract class DynamicUnit extends ContentUnit, ActionContainer {
 			(this as EditUnit).formFieldValueClass
 		else if (this instanceof GalleryUnit) 
 			(this as GalleryUnit).galleryFieldValueClass
-		else if (this instanceof IndexUnit) 
-			(this as IndexUnit).indexFieldValueClass
+		else if (this instanceof TabularUnit) 
+			(this as TabularUnit).tabularFieldValueClass
 		else if (this instanceof SliderUnit) 
 			(this as SliderUnit).sliderFieldValueClass
 		else
@@ -809,8 +807,8 @@ abstract class DynamicUnit extends ContentUnit, ActionContainer {
 			(this as EditUnit).formControlClass
 		else if (this instanceof GalleryUnit) 
 			(this as GalleryUnit).galleryControlClass
-		else if (this instanceof IndexUnit) 
-			(this as IndexUnit).indexControlClass
+		else if (this instanceof TabularUnit) 
+			(this as TabularUnit).tabularControlClass
 		else if (this instanceof SliderUnit) 
 			(this as SliderUnit).sliderControlClass
 		else
@@ -829,8 +827,8 @@ abstract class DynamicUnit extends ContentUnit, ActionContainer {
 			(this as EditUnit).formAnchorClass
 		else if (this instanceof GalleryUnit) 
 			(this as GalleryUnit).galleryAnchorClass
-		else if (this instanceof IndexUnit) 
-			(this as IndexUnit).indexAnchorClass
+		else if (this instanceof TabularUnit) 
+			(this as TabularUnit).tabularAnchorClass
 		else if (this instanceof SliderUnit) 
 			(this as SliderUnit).sliderAnchorClass
 		else
@@ -1482,14 +1480,14 @@ class DetailsUnit extends SingletonUnit, SelectableUnit {
 	}
 }
 
-abstract class IndexUnit extends CollectionUnit {
+class TabularUnit extends CollectionUnit {
 	refers SearchUnit targettingSearches opposite resultsDestination
 	String rowClasses
 	derived readonly transient volatile String contentClass get {
 		if (localContentClass.trim() != '')
 			localContentClass.trim()
-		else if (uiModel.defaultIndexContentClass.trim() != '')
-			uiModel.defaultIndexContentClass.trim()
+		else if (uiModel.defaultTabularContentClass.trim() != '')
+			uiModel.defaultTabularContentClass.trim()
 		else if (uiModel.defaultContentClass.trim() != '')
 			uiModel.defaultContentClass.trim()
 		else
@@ -1498,65 +1496,56 @@ abstract class IndexUnit extends CollectionUnit {
 	derived readonly transient volatile boolean hasContentClass get {
 		contentClass != ''
 	}
-	derived readonly transient volatile String indexFieldListClass get {
+	derived readonly transient volatile String tabularFieldListClass get {
 		if (localFieldListClass.trim() != '')
 			localFieldListClass.trim()
-		else if (uiModel.defaultIndexFieldListClass.trim() != '')
-			uiModel.defaultIndexFieldListClass.trim()
+		else if (uiModel.defaultTabularFieldListClass.trim() != '')
+			uiModel.defaultTabularFieldListClass.trim()
 		else if (uiModel.defaultFieldListClass.trim() != '')
 			uiModel.defaultFieldListClass.trim()
 		else
 			''
 	}
-	derived readonly transient volatile String indexFieldLabelClass get {
+	derived readonly transient volatile String tabularFieldLabelClass get {
 		if (localFieldLabelClass.trim() != '')
 			localFieldLabelClass.trim()
-		else if (uiModel.defaultIndexFieldLabelClass.trim() != '')
-			uiModel.defaultIndexFieldLabelClass.trim()
+		else if (uiModel.defaultTabularFieldLabelClass.trim() != '')
+			uiModel.defaultTabularFieldLabelClass.trim()
 		else if (uiModel.defaultFieldLabelClass.trim() != '')
 			uiModel.defaultFieldLabelClass.trim()
 		else
 			''
 	}
-	derived readonly transient volatile String indexFieldValueClass get {
+	derived readonly transient volatile String tabularFieldValueClass get {
 		if (localFieldValueClass.trim() != '')
 			localFieldValueClass.trim()
-		else if (uiModel.defaultIndexFieldValueClass.trim() != '')
-			uiModel.defaultIndexFieldValueClass.trim()
+		else if (uiModel.defaultTabularFieldValueClass.trim() != '')
+			uiModel.defaultTabularFieldValueClass.trim()
 		else if (uiModel.defaultFieldValueClass.trim() != '')
 			uiModel.defaultFieldValueClass.trim()
 		else
 			''
 	}
-	derived readonly transient volatile String indexControlClass get {
+	derived readonly transient volatile String tabularControlClass get {
 		if (localControlClass.trim() != '')
 			localControlClass.trim()
-		else if (uiModel.defaultIndexControlClass.trim() != '')
-			uiModel.defaultIndexControlClass.trim()
+		else if (uiModel.defaultTabularControlClass.trim() != '')
+			uiModel.defaultTabularControlClass.trim()
 		else if (uiModel.defaultControlClass.trim() != '')
 			uiModel.defaultControlClass.trim()
 		else
 			''
 	}
-	derived readonly transient volatile String indexAnchorClass get {
+	derived readonly transient volatile String tabularAnchorClass get {
 		if (localAnchorClass.trim() != '')
 			localAnchorClass.trim()
-		else if (uiModel.defaultIndexAnchorClass.trim() != '')
-			uiModel.defaultIndexAnchorClass.trim()
+		else if (uiModel.defaultTabularAnchorClass.trim() != '')
+			uiModel.defaultTabularAnchorClass.trim()
 		else if (uiModel.defaultAnchorClass.trim() != '')
 			uiModel.defaultAnchorClass.trim()
 		else
 			''
 	}
-}
-
-class IndexGridUnit extends IndexUnit {
-}
-
-class IndexPageDirectionUnit extends IndexUnit {	
-}
-
-class IndexLineDirectionUnit extends IndexUnit {
 }
 
 abstract class CardsUnit extends CollectionUnit {
@@ -1887,7 +1876,7 @@ abstract class ControlUnit extends DynamicUnit {
 }
 
 class SearchUnit extends ControlUnit {
-	refers IndexUnit[1] resultsDestination opposite targettingSearches
+	refers TabularUnit[1] resultsDestination opposite targettingSearches
 }
 
 
