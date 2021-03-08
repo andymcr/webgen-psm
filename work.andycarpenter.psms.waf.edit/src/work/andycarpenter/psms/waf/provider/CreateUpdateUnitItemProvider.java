@@ -46,7 +46,7 @@ public class CreateUpdateUnitItemProvider extends EditUnitItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addSelectorsPropertyDescriptor(object);
-			addCreateUriElementPropertyDescriptor(object);
+			addUpdateUriElementPropertyDescriptor(object);
 			addClearLabelPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -75,19 +75,19 @@ public class CreateUpdateUnitItemProvider extends EditUnitItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Create Uri Element feature.
+	 * This adds a property descriptor for the Update Uri Element feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addCreateUriElementPropertyDescriptor(Object object) {
+	protected void addUpdateUriElementPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_CreateUpdateUnit_createUriElement_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_CreateUpdateUnit_createUriElement_feature", "_UI_CreateUpdateUnit_type"),
-				 WafPackage.eINSTANCE.getCreateUpdateUnit_CreateUriElement(),
+				 getString("_UI_CreateUpdateUnit_updateUriElement_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CreateUpdateUnit_updateUriElement_feature", "_UI_CreateUpdateUnit_type"),
+				 WafPackage.eINSTANCE.getCreateUpdateUnit_UpdateUriElement(),
 				 true,
 				 false,
 				 false,
@@ -156,7 +156,7 @@ public class CreateUpdateUnitItemProvider extends EditUnitItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(CreateUpdateUnit.class)) {
-			case WafPackage.CREATE_UPDATE_UNIT__CREATE_URI_ELEMENT:
+			case WafPackage.CREATE_UPDATE_UNIT__UPDATE_URI_ELEMENT:
 			case WafPackage.CREATE_UPDATE_UNIT__CLEAR_LABEL:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;

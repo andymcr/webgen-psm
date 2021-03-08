@@ -1436,17 +1436,17 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.eINSTANCE.getPage_Units(),
+				 WafFactory.eINSTANCE.createUpdateUnit()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.eINSTANCE.getPage_Units(),
 				 WafFactory.eINSTANCE.createCreateUpdateUnit()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.eINSTANCE.getPage_Units(),
 				 WafFactory.eINSTANCE.createMapUnit()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.eINSTANCE.getPage_Units(),
-				 WafFactory.eINSTANCE.createUpdateUnit()));
 
 		newChildDescriptors.add
 			(createChildParameter

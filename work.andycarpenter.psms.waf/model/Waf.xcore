@@ -1397,8 +1397,11 @@ abstract class EditUnit extends SingletonUnit {
 class CreateUnit extends EditUnit {
 }
 
+class UpdateUnit extends EditUnit, SelectableUnit {
+}
+
 class CreateUpdateUnit extends EditUnit, SelectableUnit {
-	String createUriElement = ''
+	String updateUriElement = ''
 	String clearLabel
 }
 
@@ -1407,9 +1410,6 @@ class MapUnit extends EditUnit, SelectableUnit {
 	int defaultZoomLevel
 	refers SingletonLocation[1] location
 	refers Attribute placeName
-}
-
-class UpdateUnit extends EditUnit, SelectableUnit {
 }
 
 class DetailsUnit extends SingletonUnit, SelectableUnit {

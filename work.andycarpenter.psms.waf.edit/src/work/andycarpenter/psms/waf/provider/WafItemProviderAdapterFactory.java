@@ -1395,9 +1395,9 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 		if (singletonUnitItemProvider != null) singletonUnitItemProvider.dispose();
 		if (collectionUnitItemProvider != null) collectionUnitItemProvider.dispose();
 		if (createUnitItemProvider != null) createUnitItemProvider.dispose();
+		if (updateUnitItemProvider != null) updateUnitItemProvider.dispose();
 		if (createUpdateUnitItemProvider != null) createUpdateUnitItemProvider.dispose();
 		if (mapUnitItemProvider != null) mapUnitItemProvider.dispose();
-		if (updateUnitItemProvider != null) updateUnitItemProvider.dispose();
 		if (detailsUnitItemProvider != null) detailsUnitItemProvider.dispose();
 		if (tabularUnitItemProvider != null) tabularUnitItemProvider.dispose();
 		if (badgeItemProvider != null) badgeItemProvider.dispose();
