@@ -1006,7 +1006,7 @@ interface UnitField extends DisplayElement {
 	}
 	derived readonly transient volatile boolean isObfuscatedFeature get {
 		if (persistentFeature !== null) 
-			persistentFeature.isResourceFeature
+			persistentFeature.isObfuscatedFeature
 		else
 			false
 	}
@@ -1398,6 +1398,7 @@ class CreateUnit extends EditUnit {
 }
 
 class UpdateUnit extends EditUnit, SelectableUnit {
+	boolean displayEmptyForm = "true"
 }
 
 class CreateUpdateUnit extends EditUnit, SelectableUnit {

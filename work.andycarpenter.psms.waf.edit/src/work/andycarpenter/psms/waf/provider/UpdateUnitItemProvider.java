@@ -12,6 +12,8 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ViewerNotification;
 import work.andycarpenter.psms.waf.UpdateUnit;
 import work.andycarpenter.psms.waf.WafPackage;
 
@@ -44,6 +46,7 @@ public class UpdateUnitItemProvider extends EditUnitItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addSelectorsPropertyDescriptor(object);
+			addDisplayEmptyFormPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -66,6 +69,28 @@ public class UpdateUnitItemProvider extends EditUnitItemProvider {
 				 false,
 				 true,
 				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Display Empty Form feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDisplayEmptyFormPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_UpdateUnit_displayEmptyForm_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UpdateUnit_displayEmptyForm_feature", "_UI_UpdateUnit_type"),
+				 WafPackage.eINSTANCE.getUpdateUnit_DisplayEmptyForm(),
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -106,6 +131,12 @@ public class UpdateUnitItemProvider extends EditUnitItemProvider {
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(UpdateUnit.class)) {
+			case WafPackage.UPDATE_UNIT__DISPLAY_EMPTY_FORM:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 
