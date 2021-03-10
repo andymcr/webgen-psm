@@ -165,7 +165,9 @@ public class UpdateUnitItemProvider extends EditUnitItemProvider {
 
 		boolean qualify =
 			childFeature == WafPackage.eINSTANCE.getDynamicUnit_HideWhen() ||
-			childFeature == WafPackage.eINSTANCE.getEditUnit_DisableWhen();
+			childFeature == WafPackage.eINSTANCE.getEditUnit_DisableWhen() ||
+			childFeature == WafPackage.eINSTANCE.getEditUnit_ConfirmMessage() ||
+			childFeature == WafPackage.eINSTANCE.getEditUnit_SuccessMessage();
 
 		if (qualify) {
 			return getString

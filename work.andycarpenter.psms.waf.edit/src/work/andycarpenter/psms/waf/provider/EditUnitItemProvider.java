@@ -19,6 +19,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 import work.andycarpenter.psms.expression.ExpressionFactory;
 
 import work.andycarpenter.psms.waf.EditUnit;
+import work.andycarpenter.psms.waf.WafFactory;
 import work.andycarpenter.psms.waf.WafPackage;
 
 /**
@@ -53,9 +54,7 @@ public class EditUnitItemProvider extends SingletonUnitItemProvider {
 			addConfirmDestinationPropertyDescriptor(object);
 			addConfirmLabelPropertyDescriptor(object);
 			addHasCustomConfirmLabelPropertyDescriptor(object);
-			addConfirmMessagePropertyDescriptor(object);
 			addHasConfirmMessagePropertyDescriptor(object);
-			addSuccessMessagePropertyDescriptor(object);
 			addHasSuccessMessagePropertyDescriptor(object);
 			addCancelDestinationPropertyDescriptor(object);
 			addCancelLabelPropertyDescriptor(object);
@@ -162,28 +161,6 @@ public class EditUnitItemProvider extends SingletonUnitItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Confirm Message feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addConfirmMessagePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_EditUnit_confirmMessage_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_EditUnit_confirmMessage_feature", "_UI_EditUnit_type"),
-				 WafPackage.eINSTANCE.getEditUnit_ConfirmMessage(),
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Has Confirm Message feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -201,28 +178,6 @@ public class EditUnitItemProvider extends SingletonUnitItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Success Message feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addSuccessMessagePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_EditUnit_successMessage_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_EditUnit_successMessage_feature", "_UI_EditUnit_type"),
-				 WafPackage.eINSTANCE.getEditUnit_SuccessMessage(),
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -526,6 +481,8 @@ public class EditUnitItemProvider extends SingletonUnitItemProvider {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(WafPackage.eINSTANCE.getEditUnit_DisableWhen());
+			childrenFeatures.add(WafPackage.eINSTANCE.getEditUnit_ConfirmMessage());
+			childrenFeatures.add(WafPackage.eINSTANCE.getEditUnit_SuccessMessage());
 		}
 		return childrenFeatures;
 	}
@@ -573,9 +530,7 @@ public class EditUnitItemProvider extends SingletonUnitItemProvider {
 			case WafPackage.EDIT_UNIT__ON_SAVE_CONTINUE_EDITING:
 			case WafPackage.EDIT_UNIT__CONFIRM_LABEL:
 			case WafPackage.EDIT_UNIT__HAS_CUSTOM_CONFIRM_LABEL:
-			case WafPackage.EDIT_UNIT__CONFIRM_MESSAGE:
 			case WafPackage.EDIT_UNIT__HAS_CONFIRM_MESSAGE:
-			case WafPackage.EDIT_UNIT__SUCCESS_MESSAGE:
 			case WafPackage.EDIT_UNIT__HAS_SUCCESS_MESSAGE:
 			case WafPackage.EDIT_UNIT__CANCEL_LABEL:
 			case WafPackage.EDIT_UNIT__HAS_CUSTOM_CANCEL_LABEL:
@@ -591,6 +546,8 @@ public class EditUnitItemProvider extends SingletonUnitItemProvider {
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case WafPackage.EDIT_UNIT__DISABLE_WHEN:
+			case WafPackage.EDIT_UNIT__CONFIRM_MESSAGE:
+			case WafPackage.EDIT_UNIT__SUCCESS_MESSAGE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -652,6 +609,16 @@ public class EditUnitItemProvider extends SingletonUnitItemProvider {
 			(createChildParameter
 				(WafPackage.eINSTANCE.getEditUnit_DisableWhen(),
 				 ExpressionFactory.eINSTANCE.createPredicateIsNull()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.eINSTANCE.getEditUnit_ConfirmMessage(),
+				 WafFactory.eINSTANCE.createMessage()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.eINSTANCE.getEditUnit_SuccessMessage(),
+				 WafFactory.eINSTANCE.createMessage()));
 	}
 
 	/**
@@ -667,7 +634,9 @@ public class EditUnitItemProvider extends SingletonUnitItemProvider {
 
 		boolean qualify =
 			childFeature == WafPackage.eINSTANCE.getDynamicUnit_HideWhen() ||
-			childFeature == WafPackage.eINSTANCE.getEditUnit_DisableWhen();
+			childFeature == WafPackage.eINSTANCE.getEditUnit_DisableWhen() ||
+			childFeature == WafPackage.eINSTANCE.getEditUnit_ConfirmMessage() ||
+			childFeature == WafPackage.eINSTANCE.getEditUnit_SuccessMessage();
 
 		if (qualify) {
 			return getString

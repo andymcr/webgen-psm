@@ -1309,13 +1309,13 @@ abstract class EditUnit extends SingletonUnit {
 	refers Page confirmDestination
 	String[1] confirmLabel
 	boolean hasCustomConfirmLabel
-	String confirmMessage = ''
+	contains Message confirmMessage
 	derived readonly transient volatile boolean hasConfirmMessage get {
-		confirmMessage.trim() != ''
+		confirmMessage !== null
 	}
-	String successMessage = ''
+	contains Message successMessage
 	derived readonly transient volatile boolean hasSuccessMessage get {
-		successMessage.trim() != ''
+		successMessage !== null
 	}
 	refers Page cancelDestination
 	String cancelLabel
@@ -2068,4 +2068,10 @@ class ContainerOperationAction extends OperationAction {
 }
 
 class GeneralOperationAction extends OperationAction {
+}
+
+
+class Message {
+	String[1] text
+	contains FeaturePath[] features
 }
