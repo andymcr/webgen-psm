@@ -1905,11 +1905,23 @@ interface ActionContainer {
 	refers derived readonly transient volatile unsettable Action[] actionsWithMessages get {
 		actions.filter[hasMessages].toEList()
 	}
+	derived readonly transient volatile boolean hasActionsMessages get {
+		!actionsWithMessages.isEmpty()
+	}
 	refers derived readonly transient volatile unsettable Action[] actionsWithoutTarget get {
 		actions.filter[it instanceof DeleteAction || it instanceof OperationAction].toEList()
 	}
-	derived readonly transient volatile boolean hasActionsMessages get {
-		!actionsWithMessages.isEmpty()
+	refers derived readonly transient volatile unsettable Action[] containerActions get {
+		actions.filter[it instanceof ContainerOperationAction || it instanceof GeneralOperationAction].toEList()
+	}
+	derived readonly transient volatile boolean hasContainerActions get {
+		!containerActions.isEmpty()
+	}
+	refers derived readonly transient volatile unsettable Action[] instanceActions get {
+		actions.filter[it instanceof DeleteAction || it instanceof InstanceOperationAction || it instanceof SelectAction].toEList()
+	}
+	derived readonly transient volatile boolean hasInstanceActions get {
+		!instanceActions.isEmpty()
 	}
 	String localActionNavigationClass = ''
 	derived readonly transient volatile String actionNavigationClass get {
