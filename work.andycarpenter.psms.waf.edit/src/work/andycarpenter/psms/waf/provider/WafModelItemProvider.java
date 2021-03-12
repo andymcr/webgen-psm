@@ -91,6 +91,7 @@ public class WafModelItemProvider
 			addHasImageUnitsPropertyDescriptor(object);
 			addImageCardsUnitsPropertyDescriptor(object);
 			addHasImageCardsUnitsPropertyDescriptor(object);
+			addHasDynamicChoiceFieldsPropertyDescriptor(object);
 			addFormFieldsPropertyDescriptor(object);
 			addHasFormFieldsPropertyDescriptor(object);
 			addHasFormAssociationsPropertyDescriptor(object);
@@ -770,6 +771,28 @@ public class WafModelItemProvider
 				 getString("_UI_WafModel_hasImageCardsUnits_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_WafModel_hasImageCardsUnits_feature", "_UI_WafModel_type"),
 				 WafPackage.eINSTANCE.getWafModel_HasImageCardsUnits(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Has Dynamic Choice Fields feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasDynamicChoiceFieldsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_WafModel_hasDynamicChoiceFields_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WafModel_hasDynamicChoiceFields_feature", "_UI_WafModel_type"),
+				 WafPackage.eINSTANCE.getWafModel_HasDynamicChoiceFields(),
 				 false,
 				 false,
 				 false,
@@ -2343,6 +2366,7 @@ public class WafModelItemProvider
 			case WafPackage.WAF_MODEL__HAS_FORM_UNITS:
 			case WafPackage.WAF_MODEL__HAS_IMAGE_UNITS:
 			case WafPackage.WAF_MODEL__HAS_IMAGE_CARDS_UNITS:
+			case WafPackage.WAF_MODEL__HAS_DYNAMIC_CHOICE_FIELDS:
 			case WafPackage.WAF_MODEL__HAS_FORM_FIELDS:
 			case WafPackage.WAF_MODEL__HAS_FORM_ASSOCIATIONS:
 			case WafPackage.WAF_MODEL__HAS_RESOURCE_FIELDS:

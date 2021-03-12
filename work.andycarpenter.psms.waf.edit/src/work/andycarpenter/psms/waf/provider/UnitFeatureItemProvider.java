@@ -53,6 +53,7 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addDisplayedOnPropertyDescriptor(object);
+			addFieldNamePropertyDescriptor(object);
 			addAuthorisationRolesPropertyDescriptor(object);
 			addIsAuthorisedPropertyDescriptor(object);
 			addHasCustomisedDisplayLabelPropertyDescriptor(object);
@@ -80,6 +81,7 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 			addIsEncryptedFieldPropertyDescriptor(object);
 			addIsEnumerationFieldPropertyDescriptor(object);
 			addEnumerationTypePropertyDescriptor(object);
+			addIsInterfaceFieldPropertyDescriptor(object);
 			addIsIntegerFieldPropertyDescriptor(object);
 			addIsLocationFieldPropertyDescriptor(object);
 			addIsObfuscatedFeaturePropertyDescriptor(object);
@@ -154,6 +156,28 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 				 false,
 				 true,
 				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Field Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addFieldNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_UnitField_fieldName_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_fieldName_feature", "_UI_UnitField_type"),
+				 WafPackage.eINSTANCE.getUnitField_FieldName(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -880,6 +904,28 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 				 false,
 				 false,
 				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Is Interface Field feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIsInterfaceFieldPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_UnitField_isInterfaceField_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_isInterfaceField_feature", "_UI_UnitField_type"),
+				 WafPackage.eINSTANCE.getUnitField_IsInterfaceField(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -1937,7 +1983,7 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((UnitFeature)object).getDisplayLabel();
+		String label = ((UnitFeature)object).getFieldName();
 		return label == null || label.length() == 0 ?
 			getString("_UI_UnitFeature_type") :
 			getString("_UI_UnitFeature_type") + " " + label;
@@ -1956,6 +2002,7 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(UnitFeature.class)) {
+			case WafPackage.UNIT_FEATURE__FIELD_NAME:
 			case WafPackage.UNIT_FEATURE__AUTHORISATION_ROLES:
 			case WafPackage.UNIT_FEATURE__IS_AUTHORISED:
 			case WafPackage.UNIT_FEATURE__HAS_CUSTOMISED_DISPLAY_LABEL:
@@ -1980,6 +2027,7 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 			case WafPackage.UNIT_FEATURE__IS_EMAIL_FIELD:
 			case WafPackage.UNIT_FEATURE__IS_ENCRYPTED_FIELD:
 			case WafPackage.UNIT_FEATURE__IS_ENUMERATION_FIELD:
+			case WafPackage.UNIT_FEATURE__IS_INTERFACE_FIELD:
 			case WafPackage.UNIT_FEATURE__IS_INTEGER_FIELD:
 			case WafPackage.UNIT_FEATURE__IS_LOCATION_FIELD:
 			case WafPackage.UNIT_FEATURE__IS_OBFUSCATED_FEATURE:
@@ -2096,12 +2144,17 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.eINSTANCE.getActionContainer_AllActions(),
-				 WafFactory.eINSTANCE.createSelectAction()));
+				 WafFactory.eINSTANCE.createDeleteAction()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.eINSTANCE.getActionContainer_AllActions(),
-				 WafFactory.eINSTANCE.createDeleteAction()));
+				 WafFactory.eINSTANCE.createContainerSelectAction()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.eINSTANCE.getActionContainer_AllActions(),
+				 WafFactory.eINSTANCE.createInstanceSelectAction()));
 
 		newChildDescriptors.add
 			(createChildParameter

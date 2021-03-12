@@ -107,6 +107,9 @@ class WafModel {
 	derived readonly transient volatile boolean hasImageCardsUnits get {
 		!imageCardsUnits.isEmpty()
 	}
+	derived readonly transient volatile boolean hasDynamicChoiceFields get {
+		!pages.filter[it.hasDynamicChoiceFields].isEmpty()
+	}
 	refers derived readonly transient volatile UnitField[] formFields get {
 		pages.flatMap[it.formFields].toEList()
 	}
@@ -448,6 +451,9 @@ class Page extends NamedDisplayElement {
 	}
 	refers derived readonly transient volatile UnitField[] formFields get {
 		dynamicUnits.flatMap[it.formFields].toEList()
+	}
+	derived readonly transient volatile boolean hasDynamicChoiceFields get {
+		!dynamicUnits.filter[it.hasDynamicChoiceFields].isEmpty()
 	}
 	derived readonly transient volatile boolean hasInterfaceFields get {
 		!dynamicUnits.filter[it.hasInterfaceFields].isEmpty()
@@ -852,6 +858,16 @@ enum CollectionDisplayOptions {
 
 interface UnitField extends DisplayElement {
 	container DynamicUnit[1] displayedOn opposite displayFields
+	derived readonly transient volatile String fieldName get {
+		if (this instanceof UnitAttribute)
+			(this as UnitAttribute).name
+		else if (this instanceof UnitAssociation)
+			(this as UnitAssociation).name
+		else if (this instanceof InterfaceField)
+			(this as InterfaceField).name
+		else if (this instanceof UnitLabel)
+			(this as UnitLabel).name
+	}
 	String authorisationRoles = ''
 	derived readonly transient volatile boolean isAuthorised get {
 		authorisationRoles.trim() != ''
@@ -991,6 +1007,9 @@ interface UnitField extends DisplayElement {
 	}
 	refers derived readonly transient volatile EnumerationType enumerationType get {
 		persistentFeature?.enumerationType
+	}
+	derived readonly transient volatile boolean isInterfaceField get {
+		this instanceof InterfaceField
 	}
 	derived readonly transient volatile boolean isIntegerField get {
 		if (persistentFeature !== null) 
@@ -1912,13 +1931,13 @@ interface ActionContainer {
 		actions.filter[it instanceof DeleteAction || it instanceof OperationAction].toEList()
 	}
 	refers derived readonly transient volatile unsettable Action[] containerActions get {
-		actions.filter[it instanceof ContainerOperationAction || it instanceof GeneralOperationAction].toEList()
+		actions.filter[it instanceof ContainerSelectAction || it instanceof ContainerOperationAction || it instanceof GeneralOperationAction].toEList()
 	}
 	derived readonly transient volatile boolean hasContainerActions get {
 		!containerActions.isEmpty()
 	}
 	refers derived readonly transient volatile unsettable Action[] instanceActions get {
-		actions.filter[it instanceof DeleteAction || it instanceof InstanceOperationAction || it instanceof SelectAction].toEList()
+		actions.filter[it instanceof DeleteAction || it instanceof InstanceSelectAction || it instanceof InstanceOperationAction].toEList()
 	}
 	derived readonly transient volatile boolean hasInstanceActions get {
 		!instanceActions.isEmpty()
@@ -2023,14 +2042,6 @@ class SecurityAction extends Action {
 	}
 }
 
-class SelectAction extends Action {
-	refers SelectableUnit[1] target opposite selectors
-	contains FeaturePath valuePath
-	derived readonly transient volatile String selectAuthorisationRoles get {
-		(target as DynamicUnit)?.authorisationRoles
-	}
-}
-
 class DeleteAction extends Action {
 	String[1] uriElement
 	String localAuthorisationRoles = ''
@@ -2043,6 +2054,20 @@ class DeleteAction extends Action {
 			else if (usedBy instanceof UnitFeature)
 				(usedBy as UnitFeature).displayedOn.authorisationRoles
 	}
+}
+
+abstract class SelectAction extends Action {
+	refers SelectableUnit[1] target opposite selectors
+	contains FeaturePath valuePath
+	derived readonly transient volatile String selectAuthorisationRoles get {
+		(target as DynamicUnit)?.authorisationRoles
+	}
+}
+
+class ContainerSelectAction extends SelectAction {
+}
+
+class InstanceSelectAction extends SelectAction {
 }
 
 abstract class OperationAction extends Action {

@@ -1153,29 +1153,6 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.waf.SelectAction} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected SelectActionItemProvider selectActionItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link work.andycarpenter.psms.waf.SelectAction}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createSelectActionAdapter() {
-		if (selectActionItemProvider == null) {
-			selectActionItemProvider = new SelectActionItemProvider(this);
-		}
-
-		return selectActionItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.waf.DeleteAction} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1196,6 +1173,52 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 		}
 
 		return deleteActionItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.waf.ContainerSelectAction} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ContainerSelectActionItemProvider containerSelectActionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link work.andycarpenter.psms.waf.ContainerSelectAction}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createContainerSelectActionAdapter() {
+		if (containerSelectActionItemProvider == null) {
+			containerSelectActionItemProvider = new ContainerSelectActionItemProvider(this);
+		}
+
+		return containerSelectActionItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.waf.InstanceSelectAction} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected InstanceSelectActionItemProvider instanceSelectActionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link work.andycarpenter.psms.waf.InstanceSelectAction}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createInstanceSelectActionAdapter() {
+		if (instanceSelectActionItemProvider == null) {
+			instanceSelectActionItemProvider = new InstanceSelectActionItemProvider(this);
+		}
+
+		return instanceSelectActionItemProvider;
 	}
 
 	/**
@@ -1435,8 +1458,9 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 		if (logoutUnitItemProvider != null) logoutUnitItemProvider.dispose();
 		if (forgottenPasswordUnitItemProvider != null) forgottenPasswordUnitItemProvider.dispose();
 		if (securityActionItemProvider != null) securityActionItemProvider.dispose();
-		if (selectActionItemProvider != null) selectActionItemProvider.dispose();
 		if (deleteActionItemProvider != null) deleteActionItemProvider.dispose();
+		if (containerSelectActionItemProvider != null) containerSelectActionItemProvider.dispose();
+		if (instanceSelectActionItemProvider != null) instanceSelectActionItemProvider.dispose();
 		if (instanceOperationActionItemProvider != null) instanceOperationActionItemProvider.dispose();
 		if (containerOperationActionItemProvider != null) containerOperationActionItemProvider.dispose();
 		if (generalOperationActionItemProvider != null) generalOperationActionItemProvider.dispose();

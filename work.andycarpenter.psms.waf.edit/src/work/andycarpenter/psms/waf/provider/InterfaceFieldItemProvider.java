@@ -56,6 +56,7 @@ public class InterfaceFieldItemProvider extends NamedElementItemProvider {
 
 			addDisplayLabelPropertyDescriptor(object);
 			addDisplayedOnPropertyDescriptor(object);
+			addFieldNamePropertyDescriptor(object);
 			addAuthorisationRolesPropertyDescriptor(object);
 			addIsAuthorisedPropertyDescriptor(object);
 			addHasCustomisedDisplayLabelPropertyDescriptor(object);
@@ -83,6 +84,7 @@ public class InterfaceFieldItemProvider extends NamedElementItemProvider {
 			addIsEncryptedFieldPropertyDescriptor(object);
 			addIsEnumerationFieldPropertyDescriptor(object);
 			addEnumerationTypePropertyDescriptor(object);
+			addIsInterfaceFieldPropertyDescriptor(object);
 			addIsIntegerFieldPropertyDescriptor(object);
 			addIsLocationFieldPropertyDescriptor(object);
 			addIsObfuscatedFeaturePropertyDescriptor(object);
@@ -163,6 +165,28 @@ public class InterfaceFieldItemProvider extends NamedElementItemProvider {
 				 false,
 				 true,
 				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Field Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addFieldNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_UnitField_fieldName_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_fieldName_feature", "_UI_UnitField_type"),
+				 WafPackage.eINSTANCE.getUnitField_FieldName(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -823,6 +847,28 @@ public class InterfaceFieldItemProvider extends NamedElementItemProvider {
 				 false,
 				 false,
 				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Is Interface Field feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIsInterfaceFieldPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_UnitField_isInterfaceField_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_isInterfaceField_feature", "_UI_UnitField_type"),
+				 WafPackage.eINSTANCE.getUnitField_IsInterfaceField(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -1612,6 +1658,7 @@ public class InterfaceFieldItemProvider extends NamedElementItemProvider {
 
 		switch (notification.getFeatureID(InterfaceField.class)) {
 			case WafPackage.INTERFACE_FIELD__DISPLAY_LABEL:
+			case WafPackage.INTERFACE_FIELD__FIELD_NAME:
 			case WafPackage.INTERFACE_FIELD__AUTHORISATION_ROLES:
 			case WafPackage.INTERFACE_FIELD__IS_AUTHORISED:
 			case WafPackage.INTERFACE_FIELD__HAS_CUSTOMISED_DISPLAY_LABEL:
@@ -1636,6 +1683,7 @@ public class InterfaceFieldItemProvider extends NamedElementItemProvider {
 			case WafPackage.INTERFACE_FIELD__IS_EMAIL_FIELD:
 			case WafPackage.INTERFACE_FIELD__IS_ENCRYPTED_FIELD:
 			case WafPackage.INTERFACE_FIELD__IS_ENUMERATION_FIELD:
+			case WafPackage.INTERFACE_FIELD__IS_INTERFACE_FIELD:
 			case WafPackage.INTERFACE_FIELD__IS_INTEGER_FIELD:
 			case WafPackage.INTERFACE_FIELD__IS_LOCATION_FIELD:
 			case WafPackage.INTERFACE_FIELD__IS_OBFUSCATED_FEATURE:

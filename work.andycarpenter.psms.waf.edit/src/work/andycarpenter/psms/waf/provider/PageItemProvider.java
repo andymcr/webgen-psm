@@ -93,6 +93,7 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 			addHasPaginationPropertyDescriptor(object);
 			addHasCaptchaFieldsPropertyDescriptor(object);
 			addFormFieldsPropertyDescriptor(object);
+			addHasDynamicChoiceFieldsPropertyDescriptor(object);
 			addHasInterfaceFieldsPropertyDescriptor(object);
 			addHasResourceFieldsPropertyDescriptor(object);
 			addActionsWithoutTargetPropertyDescriptor(object);
@@ -1011,6 +1012,28 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Has Dynamic Choice Fields feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasDynamicChoiceFieldsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Page_hasDynamicChoiceFields_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Page_hasDynamicChoiceFields_feature", "_UI_Page_type"),
+				 WafPackage.eINSTANCE.getPage_HasDynamicChoiceFields(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Has Pagination feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1387,6 +1410,7 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 			case WafPackage.PAGE__HAS_SERVICES_USED:
 			case WafPackage.PAGE__HAS_PAGINATION:
 			case WafPackage.PAGE__HAS_CAPTCHA_FIELDS:
+			case WafPackage.PAGE__HAS_DYNAMIC_CHOICE_FIELDS:
 			case WafPackage.PAGE__HAS_INTERFACE_FIELDS:
 			case WafPackage.PAGE__HAS_RESOURCE_FIELDS:
 			case WafPackage.PAGE__URI_ELEMENT:
