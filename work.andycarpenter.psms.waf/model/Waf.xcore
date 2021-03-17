@@ -625,7 +625,7 @@ abstract class DynamicUnit extends ContentUnit, ActionContainer {
 	}
 	refers derived readonly unsettable transient volatile Repository[] repositoriesUsed get {
 		var repositories = new LinkedList<Repository>()
-		if (!(this instanceof SecurityUnit) || this instanceof LoginUnit)
+		if (!(this instanceof SecurityUnit))
 			repositories.add(contentRepository)
 		if (this instanceof CollectionUnit && isContained) {
 			repositories.add(containerRepository)
