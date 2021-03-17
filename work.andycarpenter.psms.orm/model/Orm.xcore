@@ -191,7 +191,6 @@ class Entity extends Classifier {
 	}
 	boolean implementsUserInterface = "false"
 	boolean implementForumUser = "false"
-	boolean allowFormTypeCustomisation = "false"
 }
 
 
