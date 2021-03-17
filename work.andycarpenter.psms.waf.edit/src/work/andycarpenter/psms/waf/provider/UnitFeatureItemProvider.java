@@ -81,6 +81,7 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 			addIsEncryptedFieldPropertyDescriptor(object);
 			addIsEnumerationFieldPropertyDescriptor(object);
 			addEnumerationTypePropertyDescriptor(object);
+			addIsFeatureFieldPropertyDescriptor(object);
 			addIsInterfaceFieldPropertyDescriptor(object);
 			addIsIntegerFieldPropertyDescriptor(object);
 			addIsLocationFieldPropertyDescriptor(object);
@@ -904,6 +905,28 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 				 false,
 				 false,
 				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Is Feature Field feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIsFeatureFieldPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_UnitField_isFeatureField_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_isFeatureField_feature", "_UI_UnitField_type"),
+				 WafPackage.eINSTANCE.getUnitField_IsFeatureField(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -2027,6 +2050,7 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 			case WafPackage.UNIT_FEATURE__IS_EMAIL_FIELD:
 			case WafPackage.UNIT_FEATURE__IS_ENCRYPTED_FIELD:
 			case WafPackage.UNIT_FEATURE__IS_ENUMERATION_FIELD:
+			case WafPackage.UNIT_FEATURE__IS_FEATURE_FIELD:
 			case WafPackage.UNIT_FEATURE__IS_INTERFACE_FIELD:
 			case WafPackage.UNIT_FEATURE__IS_INTEGER_FIELD:
 			case WafPackage.UNIT_FEATURE__IS_LOCATION_FIELD:

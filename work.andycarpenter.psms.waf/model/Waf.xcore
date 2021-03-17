@@ -1028,6 +1028,9 @@ interface UnitField extends DisplayElement {
 	refers derived readonly transient volatile EnumerationType enumerationType get {
 		persistentFeature?.enumerationType
 	}
+	derived readonly transient volatile boolean isFeatureField get {
+		this instanceof UnitFeature
+	}
 	derived readonly transient volatile boolean isInterfaceField get {
 		this instanceof InterfaceField
 	}
