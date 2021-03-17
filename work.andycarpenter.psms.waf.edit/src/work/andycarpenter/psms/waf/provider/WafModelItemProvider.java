@@ -85,13 +85,15 @@ public class WafModelItemProvider
 			addSiteTemplatePropertyDescriptor(object);
 			addStaticUnitsEditablePropertyDescriptor(object);
 			addHasAPIPropertyDescriptor(object);
+			addEditUnitsPropertyDescriptor(object);
+			addHasEditUnitsPropertyDescriptor(object);
 			addFormUnitsPropertyDescriptor(object);
 			addHasFormUnitsPropertyDescriptor(object);
 			addImageUnitsPropertyDescriptor(object);
 			addHasImageUnitsPropertyDescriptor(object);
 			addImageCardsUnitsPropertyDescriptor(object);
 			addHasImageCardsUnitsPropertyDescriptor(object);
-			addHasDynamicChoiceFieldsPropertyDescriptor(object);
+			addHasAutocompleteFieldsPropertyDescriptor(object);
 			addFormFieldsPropertyDescriptor(object);
 			addHasFormFieldsPropertyDescriptor(object);
 			addHasFormAssociationsPropertyDescriptor(object);
@@ -648,6 +650,50 @@ public class WafModelItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Edit Units feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addEditUnitsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_WafModel_editUnits_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WafModel_editUnits_feature", "_UI_WafModel_type"),
+				 WafPackage.eINSTANCE.getWafModel_EditUnits(),
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Has Edit Units feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasEditUnitsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_WafModel_hasEditUnits_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WafModel_hasEditUnits_feature", "_UI_WafModel_type"),
+				 WafPackage.eINSTANCE.getWafModel_HasEditUnits(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Form Units feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -780,19 +826,19 @@ public class WafModelItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Has Dynamic Choice Fields feature.
+	 * This adds a property descriptor for the Has Autocomplete Fields feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addHasDynamicChoiceFieldsPropertyDescriptor(Object object) {
+	protected void addHasAutocompleteFieldsPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_WafModel_hasDynamicChoiceFields_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafModel_hasDynamicChoiceFields_feature", "_UI_WafModel_type"),
-				 WafPackage.eINSTANCE.getWafModel_HasDynamicChoiceFields(),
+				 getString("_UI_WafModel_hasAutocompleteFields_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WafModel_hasAutocompleteFields_feature", "_UI_WafModel_type"),
+				 WafPackage.eINSTANCE.getWafModel_HasAutocompleteFields(),
 				 false,
 				 false,
 				 false,
@@ -2363,10 +2409,11 @@ public class WafModelItemProvider
 			case WafPackage.WAF_MODEL__SITE_TEMPLATE:
 			case WafPackage.WAF_MODEL__STATIC_UNITS_EDITABLE:
 			case WafPackage.WAF_MODEL__HAS_API:
+			case WafPackage.WAF_MODEL__HAS_EDIT_UNITS:
 			case WafPackage.WAF_MODEL__HAS_FORM_UNITS:
 			case WafPackage.WAF_MODEL__HAS_IMAGE_UNITS:
 			case WafPackage.WAF_MODEL__HAS_IMAGE_CARDS_UNITS:
-			case WafPackage.WAF_MODEL__HAS_DYNAMIC_CHOICE_FIELDS:
+			case WafPackage.WAF_MODEL__HAS_AUTOCOMPLETE_FIELDS:
 			case WafPackage.WAF_MODEL__HAS_FORM_FIELDS:
 			case WafPackage.WAF_MODEL__HAS_FORM_ASSOCIATIONS:
 			case WafPackage.WAF_MODEL__HAS_RESOURCE_FIELDS:

@@ -8,16 +8,12 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
 import work.andycarpenter.psms.expression.ExpressionFactory;
-
 import work.andycarpenter.psms.waf.DynamicUnit;
 import work.andycarpenter.psms.waf.WafFactory;
 import work.andycarpenter.psms.waf.WafPackage;
@@ -82,6 +78,9 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 			addFooterPropertyDescriptor(object);
 			addAssociationFieldsPropertyDescriptor(object);
 			addHasAssociationFieldsPropertyDescriptor(object);
+			addAutocompleteFieldsPropertyDescriptor(object);
+			addHasAutocompleteFieldsPropertyDescriptor(object);
+			addAutocompleteThresholdPropertyDescriptor(object);
 			addHasBooleanFieldsPropertyDescriptor(object);
 			addHasCaptchaFieldsPropertyDescriptor(object);
 			addHasChangableCollectionsPropertyDescriptor(object);
@@ -90,9 +89,8 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 			addDataTypeFieldsPropertyDescriptor(object);
 			addDateFieldsPropertyDescriptor(object);
 			addDefaultValueFieldsPropertyDescriptor(object);
-			addHasDisabledFieldsPropertyDescriptor(object);
 			addHasDefaultValueFieldsPropertyDescriptor(object);
-			addHasDynamicChoiceFieldsPropertyDescriptor(object);
+			addHasDisabledFieldsPropertyDescriptor(object);
 			addHasEmailFieldsPropertyDescriptor(object);
 			addEncryptedFieldsPropertyDescriptor(object);
 			addHasEncryptedFieldsPropertyDescriptor(object);
@@ -202,6 +200,28 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Has Actions Messages feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasActionsMessagesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ActionContainer_hasActionsMessages_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ActionContainer_hasActionsMessages_feature", "_UI_ActionContainer_type"),
+				 WafPackage.eINSTANCE.getActionContainer_HasActionsMessages(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Actions Without Target feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -303,28 +323,6 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 				 getString("_UI_ActionContainer_hasInstanceActions_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ActionContainer_hasInstanceActions_feature", "_UI_ActionContainer_type"),
 				 WafPackage.eINSTANCE.getActionContainer_HasInstanceActions(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Has Actions Messages feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addHasActionsMessagesPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ActionContainer_hasActionsMessages_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ActionContainer_hasActionsMessages_feature", "_UI_ActionContainer_type"),
-				 WafPackage.eINSTANCE.getActionContainer_HasActionsMessages(),
 				 false,
 				 false,
 				 false,
@@ -664,138 +662,6 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Content Repository feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addContentRepositoryPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_DynamicUnit_contentRepository_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DynamicUnit_contentRepository_feature", "_UI_DynamicUnit_type"),
-				 WafPackage.eINSTANCE.getDynamicUnit_ContentRepository(),
-				 false,
-				 false,
-				 false,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Containing Association feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addContainingAssociationPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_DynamicUnit_containingAssociation_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DynamicUnit_containingAssociation_feature", "_UI_DynamicUnit_type"),
-				 WafPackage.eINSTANCE.getDynamicUnit_ContainingAssociation(),
-				 false,
-				 false,
-				 false,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Containing Type feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addContainingTypePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_DynamicUnit_containingType_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DynamicUnit_containingType_feature", "_UI_DynamicUnit_type"),
-				 WafPackage.eINSTANCE.getDynamicUnit_ContainingType(),
-				 false,
-				 false,
-				 false,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Is Contained feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addIsContainedPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_DynamicUnit_isContained_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DynamicUnit_isContained_feature", "_UI_DynamicUnit_type"),
-				 WafPackage.eINSTANCE.getDynamicUnit_IsContained(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Container Repository feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addContainerRepositoryPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_DynamicUnit_containerRepository_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DynamicUnit_containerRepository_feature", "_UI_DynamicUnit_type"),
-				 WafPackage.eINSTANCE.getDynamicUnit_ContainerRepository(),
-				 false,
-				 false,
-				 false,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Has Explicitly Edited Container feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addHasExplicitlyEditedContainerPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_DynamicUnit_hasExplicitlyEditedContainer_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DynamicUnit_hasExplicitlyEditedContainer_feature", "_UI_DynamicUnit_type"),
-				 WafPackage.eINSTANCE.getDynamicUnit_HasExplicitlyEditedContainer(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Association Fields feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -835,6 +701,72 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Autocomplete Fields feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAutocompleteFieldsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DynamicUnit_autocompleteFields_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DynamicUnit_autocompleteFields_feature", "_UI_DynamicUnit_type"),
+				 WafPackage.eINSTANCE.getDynamicUnit_AutocompleteFields(),
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Has Autocomplete Fields feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasAutocompleteFieldsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DynamicUnit_hasAutocompleteFields_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DynamicUnit_hasAutocompleteFields_feature", "_UI_DynamicUnit_type"),
+				 WafPackage.eINSTANCE.getDynamicUnit_HasAutocompleteFields(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Autocomplete Threshold feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAutocompleteThresholdPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DynamicUnit_autocompleteThreshold_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DynamicUnit_autocompleteThreshold_feature", "_UI_DynamicUnit_type"),
+				 WafPackage.eINSTANCE.getDynamicUnit_AutocompleteThreshold(),
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -1051,28 +983,6 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 				 getString("_UI_DynamicUnit_hasDefaultValueFields_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_DynamicUnit_hasDefaultValueFields_feature", "_UI_DynamicUnit_type"),
 				 WafPackage.eINSTANCE.getDynamicUnit_HasDefaultValueFields(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Has Dynamic Choice Fields feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addHasDynamicChoiceFieldsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_DynamicUnit_hasDynamicChoiceFields_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DynamicUnit_hasDynamicChoiceFields_feature", "_UI_DynamicUnit_type"),
-				 WafPackage.eINSTANCE.getDynamicUnit_HasDynamicChoiceFields(),
 				 false,
 				 false,
 				 false,
@@ -1951,6 +1861,138 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Content Repository feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addContentRepositoryPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DynamicUnit_contentRepository_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DynamicUnit_contentRepository_feature", "_UI_DynamicUnit_type"),
+				 WafPackage.eINSTANCE.getDynamicUnit_ContentRepository(),
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Containing Association feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addContainingAssociationPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DynamicUnit_containingAssociation_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DynamicUnit_containingAssociation_feature", "_UI_DynamicUnit_type"),
+				 WafPackage.eINSTANCE.getDynamicUnit_ContainingAssociation(),
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Containing Type feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addContainingTypePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DynamicUnit_containingType_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DynamicUnit_containingType_feature", "_UI_DynamicUnit_type"),
+				 WafPackage.eINSTANCE.getDynamicUnit_ContainingType(),
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Is Contained feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIsContainedPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DynamicUnit_isContained_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DynamicUnit_isContained_feature", "_UI_DynamicUnit_type"),
+				 WafPackage.eINSTANCE.getDynamicUnit_IsContained(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Container Repository feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addContainerRepositoryPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DynamicUnit_containerRepository_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DynamicUnit_containerRepository_feature", "_UI_DynamicUnit_type"),
+				 WafPackage.eINSTANCE.getDynamicUnit_ContainerRepository(),
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Has Explicitly Edited Container feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasExplicitlyEditedContainerPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DynamicUnit_hasExplicitlyEditedContainer_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DynamicUnit_hasExplicitlyEditedContainer_feature", "_UI_DynamicUnit_type"),
+				 WafPackage.eINSTANCE.getDynamicUnit_HasExplicitlyEditedContainer(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1993,12 +2035,13 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 			case WafPackage.DYNAMIC_UNIT__HEADER:
 			case WafPackage.DYNAMIC_UNIT__FOOTER:
 			case WafPackage.DYNAMIC_UNIT__HAS_ASSOCIATION_FIELDS:
+			case WafPackage.DYNAMIC_UNIT__HAS_AUTOCOMPLETE_FIELDS:
+			case WafPackage.DYNAMIC_UNIT__AUTOCOMPLETE_THRESHOLD:
 			case WafPackage.DYNAMIC_UNIT__HAS_BOOLEAN_FIELDS:
 			case WafPackage.DYNAMIC_UNIT__HAS_CAPTCHA_FIELDS:
 			case WafPackage.DYNAMIC_UNIT__HAS_CHANGABLE_COLLECTIONS:
-			case WafPackage.DYNAMIC_UNIT__HAS_DISABLED_FIELDS:
 			case WafPackage.DYNAMIC_UNIT__HAS_DEFAULT_VALUE_FIELDS:
-			case WafPackage.DYNAMIC_UNIT__HAS_DYNAMIC_CHOICE_FIELDS:
+			case WafPackage.DYNAMIC_UNIT__HAS_DISABLED_FIELDS:
 			case WafPackage.DYNAMIC_UNIT__HAS_EMAIL_FIELDS:
 			case WafPackage.DYNAMIC_UNIT__HAS_ENCRYPTED_FIELDS:
 			case WafPackage.DYNAMIC_UNIT__HAS_ENUMERATION_FIELDS:

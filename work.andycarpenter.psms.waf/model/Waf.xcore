@@ -89,6 +89,12 @@ class WafModel {
 	derived readonly transient volatile boolean hasAPI get {
 		api !== null
 	}
+	refers readonly transient volatile unsettable derived EditUnit[] editUnits get {
+		return pages.flatMap[it.editUnits].toEList()
+	}
+	derived readonly transient volatile boolean hasEditUnits get {
+		!editUnits.isEmpty()
+	}
 	refers readonly transient volatile unsettable derived DynamicUnit[] formUnits get {
 		return pages.flatMap[it.formUnits].toEList()
 	}
@@ -107,8 +113,8 @@ class WafModel {
 	derived readonly transient volatile boolean hasImageCardsUnits get {
 		!imageCardsUnits.isEmpty()
 	}
-	derived readonly transient volatile boolean hasDynamicChoiceFields get {
-		!pages.filter[it.hasDynamicChoiceFields].isEmpty()
+	derived readonly transient volatile boolean hasAutocompleteFields get {
+		!pages.filter[it.hasAutocompleteFields].isEmpty()
 	}
 	refers derived readonly transient volatile UnitField[] formFields get {
 		pages.flatMap[it.formFields].toEList()
@@ -446,14 +452,20 @@ class Page extends NamedDisplayElement {
 	derived readonly transient volatile boolean hasPagination get {
 		!collectionUnits.filter[it.hasPagination].isEmpty()
 	}
+	refers derived readonly unsettable transient volatile UnitAssociation[] associationFields get {
+		dynamicUnits.flatMap[it.associationFields].toEList()
+	}
+	refers derived readonly transient volatile UnitField[] autocompleteFields get {
+		dynamicUnits.flatMap[it.autocompleteFields].toEList()
+	}
+	derived readonly transient volatile boolean hasAutocompleteFields get {
+		!autocompleteFields.isEmpty()
+	}
 	derived readonly transient volatile boolean hasCaptchaFields get {
 		!dynamicUnits.filter[it.hasCaptchaFields].isEmpty()
 	}
 	refers derived readonly transient volatile UnitField[] formFields get {
 		dynamicUnits.flatMap[it.formFields].toEList()
-	}
-	derived readonly transient volatile boolean hasDynamicChoiceFields get {
-		!dynamicUnits.filter[it.hasDynamicChoiceFields].isEmpty()
 	}
 	derived readonly transient volatile boolean hasInterfaceFields get {
 		!dynamicUnits.filter[it.hasInterfaceFields].isEmpty()
@@ -615,8 +627,9 @@ abstract class DynamicUnit extends ContentUnit, ActionContainer {
 		var repositories = new LinkedList<Repository>()
 		if (!(this instanceof SecurityUnit) || this instanceof LoginUnit)
 			repositories.add(contentRepository)
-		if (this instanceof CollectionUnit && isContained)
+		if (this instanceof CollectionUnit && isContained) {
 			repositories.add(containerRepository)
+		}
 		return repositories.toEList()
 	}
 	refers Service[] servicesUsed
@@ -639,6 +652,16 @@ abstract class DynamicUnit extends ContentUnit, ActionContainer {
 	derived readonly transient volatile boolean hasAssociationFields get {
 		!associationFields.isEmpty()
 	}
+	refers derived readonly transient volatile UnitField[] autocompleteFields get {
+		if (this instanceof EditUnit) 
+			displayFields.filter[it.hasAutocomplete].toEList()
+		else
+			CollectionLiterals::emptyList().toEList()
+	}
+	derived readonly transient volatile boolean hasAutocompleteFields get {
+		!autocompleteFields.isEmpty()
+	}
+	int autocompleteThreshold = "0"
 	derived readonly transient volatile boolean hasBooleanFields get {
 		!displayFields.filter[isBooleanField].isEmpty()
 	}
@@ -666,14 +689,11 @@ abstract class DynamicUnit extends ContentUnit, ActionContainer {
 	refers readonly transient volatile unsettable derived UnitField[] defaultValueFields get {
 		return displayFields.filter[hasDefaultValue].toEList
 	}
-	derived readonly transient volatile boolean hasDisabledFields get {
-		!displayFields.filter[isDisabled].isEmpty()
-	}
 	derived readonly transient volatile boolean hasDefaultValueFields get {
 		!defaultValueFields.isEmpty()
 	}
-	derived readonly transient volatile boolean hasDynamicChoiceFields get {
-		!displayFields.filter[hasDynamicChoices].isEmpty()
+	derived readonly transient volatile boolean hasDisabledFields get {
+		!displayFields.filter[isDisabled].isEmpty()
 	}
 	derived readonly transient volatile boolean hasEmailFields get {
 		!displayFields.filter[isEmailField].isEmpty()
@@ -1076,7 +1096,7 @@ interface UnitField extends DisplayElement {
 		else
 			false
 	}
-	derived readonly transient volatile boolean hasDynamicChoices get {
+	derived readonly transient volatile boolean hasAutocomplete get {
 		if (this instanceof UnitAssociation) 
 			(this as UnitAssociation).optionsFilter !== null
 		else

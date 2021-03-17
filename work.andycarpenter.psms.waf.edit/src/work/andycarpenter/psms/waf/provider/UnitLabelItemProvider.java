@@ -90,7 +90,7 @@ public class UnitLabelItemProvider extends DisplayElementItemProvider {
 			addDefaultValuePropertyDescriptor(object);
 			addHasDefaultValuePropertyDescriptor(object);
 			addHasForcedValuePropertyDescriptor(object);
-			addHasDynamicChoicesPropertyDescriptor(object);
+			addHasAutocompletePropertyDescriptor(object);
 			addEscapeHTMLPropertyDescriptor(object);
 			addCollectionDisplayOptionPropertyDescriptor(object);
 			addTruncatePropertyDescriptor(object);
@@ -601,19 +601,19 @@ public class UnitLabelItemProvider extends DisplayElementItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Has Dynamic Choices feature.
+	 * This adds a property descriptor for the Has Autocomplete feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addHasDynamicChoicesPropertyDescriptor(Object object) {
+	protected void addHasAutocompletePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_UnitField_hasDynamicChoices_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_hasDynamicChoices_feature", "_UI_UnitField_type"),
-				 WafPackage.eINSTANCE.getUnitField_HasDynamicChoices(),
+				 getString("_UI_UnitField_hasAutocomplete_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_hasAutocomplete_feature", "_UI_UnitField_type"),
+				 WafPackage.eINSTANCE.getUnitField_HasAutocomplete(),
 				 false,
 				 false,
 				 false,
@@ -1606,7 +1606,7 @@ public class UnitLabelItemProvider extends DisplayElementItemProvider {
 			case WafPackage.UNIT_LABEL__IS_URL_FIELD:
 			case WafPackage.UNIT_LABEL__HAS_DEFAULT_VALUE:
 			case WafPackage.UNIT_LABEL__HAS_FORCED_VALUE:
-			case WafPackage.UNIT_LABEL__HAS_DYNAMIC_CHOICES:
+			case WafPackage.UNIT_LABEL__HAS_AUTOCOMPLETE:
 			case WafPackage.UNIT_LABEL__ESCAPE_HTML:
 			case WafPackage.UNIT_LABEL__COLLECTION_DISPLAY_OPTION:
 			case WafPackage.UNIT_LABEL__TRUNCATE:
