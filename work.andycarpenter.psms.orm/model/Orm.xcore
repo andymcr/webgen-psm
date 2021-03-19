@@ -190,7 +190,8 @@ class Entity extends Classifier {
 		!labels.filter[name == 'default'].isEmpty()
 	}
 	boolean implementsUserInterface = "false"
-	boolean implementForumUser = "false"
+	boolean implementsForumUser = "false"
+	boolean implementsResetPasswordInterface = "false"
 }
 
 

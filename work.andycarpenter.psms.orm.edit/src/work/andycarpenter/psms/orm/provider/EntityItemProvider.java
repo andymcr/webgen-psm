@@ -90,8 +90,8 @@ public class EntityItemProvider extends ClassifierItemProvider {
 			addContainerUniquePropertyDescriptor(object);
 			addHasDefaultLabelPropertyDescriptor(object);
 			addImplementsUserInterfacePropertyDescriptor(object);
-			addImplementForumUserPropertyDescriptor(object);
-			addImplementResetPasswordInterfacePropertyDescriptor(object);
+			addImplementsForumUserPropertyDescriptor(object);
+			addImplementsResetPasswordInterfacePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -999,19 +999,19 @@ public class EntityItemProvider extends ClassifierItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Implement Forum User feature.
+	 * This adds a property descriptor for the Implements Forum User feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addImplementForumUserPropertyDescriptor(Object object) {
+	protected void addImplementsForumUserPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Entity_implementForumUser_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Entity_implementForumUser_feature", "_UI_Entity_type"),
-				 OrmPackage.Literals.ENTITY__IMPLEMENT_FORUM_USER,
+				 getString("_UI_Entity_implementsForumUser_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Entity_implementsForumUser_feature", "_UI_Entity_type"),
+				 OrmPackage.Literals.ENTITY__IMPLEMENTS_FORUM_USER,
 				 true,
 				 false,
 				 false,
@@ -1021,19 +1021,19 @@ public class EntityItemProvider extends ClassifierItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Implement Reset Password Interface feature.
+	 * This adds a property descriptor for the Implements Reset Password Interface feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addImplementResetPasswordInterfacePropertyDescriptor(Object object) {
+	protected void addImplementsResetPasswordInterfacePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Entity_implementResetPasswordInterface_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Entity_implementResetPasswordInterface_feature", "_UI_Entity_type"),
-				 OrmPackage.Literals.ENTITY__IMPLEMENT_RESET_PASSWORD_INTERFACE,
+				 getString("_UI_Entity_implementsResetPasswordInterface_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Entity_implementsResetPasswordInterface_feature", "_UI_Entity_type"),
+				 OrmPackage.Literals.ENTITY__IMPLEMENTS_RESET_PASSWORD_INTERFACE,
 				 true,
 				 false,
 				 false,
@@ -1131,8 +1131,8 @@ public class EntityItemProvider extends ClassifierItemProvider {
 			case OrmPackage.ENTITY__AUTO_KEY_GENERATION_STRATEGY:
 			case OrmPackage.ENTITY__HAS_DEFAULT_LABEL:
 			case OrmPackage.ENTITY__IMPLEMENTS_USER_INTERFACE:
-			case OrmPackage.ENTITY__IMPLEMENT_FORUM_USER:
-			case OrmPackage.ENTITY__IMPLEMENT_RESET_PASSWORD_INTERFACE:
+			case OrmPackage.ENTITY__IMPLEMENTS_FORUM_USER:
+			case OrmPackage.ENTITY__IMPLEMENTS_RESET_PASSWORD_INTERFACE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case OrmPackage.ENTITY__ALL_FEATURES:
