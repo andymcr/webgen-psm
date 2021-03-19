@@ -59,7 +59,6 @@ public class EditUnitItemProvider extends SingletonUnitItemProvider {
 			addCancelDestinationPropertyDescriptor(object);
 			addCancelLabelPropertyDescriptor(object);
 			addHasCustomCancelLabelPropertyDescriptor(object);
-			addCustomiseValuesPropertyDescriptor(object);
 			addContentClassPropertyDescriptor(object);
 			addHasContentClassPropertyDescriptor(object);
 			addFormFieldListClassPropertyDescriptor(object);
@@ -262,28 +261,6 @@ public class EditUnitItemProvider extends SingletonUnitItemProvider {
 				 getString("_UI_EditUnit_hasCustomCancelLabel_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_EditUnit_hasCustomCancelLabel_feature", "_UI_EditUnit_type"),
 				 WafPackage.eINSTANCE.getEditUnit_HasCustomCancelLabel(),
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Customise Values feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addCustomiseValuesPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_EditUnit_customiseValues_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_EditUnit_customiseValues_feature", "_UI_EditUnit_type"),
-				 WafPackage.eINSTANCE.getEditUnit_CustomiseValues(),
 				 true,
 				 false,
 				 false,
@@ -534,7 +511,6 @@ public class EditUnitItemProvider extends SingletonUnitItemProvider {
 			case WafPackage.EDIT_UNIT__HAS_SUCCESS_MESSAGE:
 			case WafPackage.EDIT_UNIT__CANCEL_LABEL:
 			case WafPackage.EDIT_UNIT__HAS_CUSTOM_CANCEL_LABEL:
-			case WafPackage.EDIT_UNIT__CUSTOMISE_VALUES:
 			case WafPackage.EDIT_UNIT__CONTENT_CLASS:
 			case WafPackage.EDIT_UNIT__HAS_CONTENT_CLASS:
 			case WafPackage.EDIT_UNIT__FORM_FIELD_LIST_CLASS:

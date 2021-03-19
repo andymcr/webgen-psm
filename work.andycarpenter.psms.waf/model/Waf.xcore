@@ -1362,7 +1362,6 @@ abstract class EditUnit extends SingletonUnit {
 	refers Page cancelDestination
 	String cancelLabel
 	boolean hasCustomCancelLabel
-	boolean customiseValues
 	derived readonly transient volatile String contentClass get {
 		if (localContentClass.trim() != '')
 			localContentClass.trim()

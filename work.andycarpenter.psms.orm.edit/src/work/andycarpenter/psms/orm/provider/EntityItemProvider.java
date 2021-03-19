@@ -91,6 +91,7 @@ public class EntityItemProvider extends ClassifierItemProvider {
 			addHasDefaultLabelPropertyDescriptor(object);
 			addImplementsUserInterfacePropertyDescriptor(object);
 			addImplementForumUserPropertyDescriptor(object);
+			addImplementResetPasswordInterfacePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -1020,6 +1021,28 @@ public class EntityItemProvider extends ClassifierItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Implement Reset Password Interface feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addImplementResetPasswordInterfacePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Entity_implementResetPasswordInterface_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Entity_implementResetPasswordInterface_feature", "_UI_Entity_type"),
+				 OrmPackage.Literals.ENTITY__IMPLEMENT_RESET_PASSWORD_INTERFACE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -1109,6 +1132,7 @@ public class EntityItemProvider extends ClassifierItemProvider {
 			case OrmPackage.ENTITY__HAS_DEFAULT_LABEL:
 			case OrmPackage.ENTITY__IMPLEMENTS_USER_INTERFACE:
 			case OrmPackage.ENTITY__IMPLEMENT_FORUM_USER:
+			case OrmPackage.ENTITY__IMPLEMENT_RESET_PASSWORD_INTERFACE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case OrmPackage.ENTITY__ALL_FEATURES:
