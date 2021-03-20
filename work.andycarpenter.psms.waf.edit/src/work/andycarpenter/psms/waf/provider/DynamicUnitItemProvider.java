@@ -113,6 +113,9 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 			addLocalFieldListClassPropertyDescriptor(object);
 			addFieldListClassPropertyDescriptor(object);
 			addHasFieldListClassPropertyDescriptor(object);
+			addLocalDefinitionFieldListClassPropertyDescriptor(object);
+			addDefinitionFieldListClassPropertyDescriptor(object);
+			addHasDefinitionFieldListClassPropertyDescriptor(object);
 			addLocalInputGroupClassPropertyDescriptor(object);
 			addInputGroupClassPropertyDescriptor(object);
 			addHasInputGroupClassPropertyDescriptor(object);
@@ -1476,6 +1479,72 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Local Definition Field List Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addLocalDefinitionFieldListClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DynamicUnit_localDefinitionFieldListClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DynamicUnit_localDefinitionFieldListClass_feature", "_UI_DynamicUnit_type"),
+				 WafPackage.eINSTANCE.getDynamicUnit_LocalDefinitionFieldListClass(),
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Definition Field List Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDefinitionFieldListClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DynamicUnit_definitionFieldListClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DynamicUnit_definitionFieldListClass_feature", "_UI_DynamicUnit_type"),
+				 WafPackage.eINSTANCE.getDynamicUnit_DefinitionFieldListClass(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Has Definition Field List Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasDefinitionFieldListClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DynamicUnit_hasDefinitionFieldListClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DynamicUnit_hasDefinitionFieldListClass_feature", "_UI_DynamicUnit_type"),
+				 WafPackage.eINSTANCE.getDynamicUnit_HasDefinitionFieldListClass(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Local Input Group Class feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2058,6 +2127,9 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 			case WafPackage.DYNAMIC_UNIT__LOCAL_FIELD_LIST_CLASS:
 			case WafPackage.DYNAMIC_UNIT__FIELD_LIST_CLASS:
 			case WafPackage.DYNAMIC_UNIT__HAS_FIELD_LIST_CLASS:
+			case WafPackage.DYNAMIC_UNIT__LOCAL_DEFINITION_FIELD_LIST_CLASS:
+			case WafPackage.DYNAMIC_UNIT__DEFINITION_FIELD_LIST_CLASS:
+			case WafPackage.DYNAMIC_UNIT__HAS_DEFINITION_FIELD_LIST_CLASS:
 			case WafPackage.DYNAMIC_UNIT__LOCAL_INPUT_GROUP_CLASS:
 			case WafPackage.DYNAMIC_UNIT__INPUT_GROUP_CLASS:
 			case WafPackage.DYNAMIC_UNIT__HAS_INPUT_GROUP_CLASS:

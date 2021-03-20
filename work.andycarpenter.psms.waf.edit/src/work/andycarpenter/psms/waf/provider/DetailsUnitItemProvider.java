@@ -51,6 +51,7 @@ public class DetailsUnitItemProvider extends SingletonUnitItemProvider {
 			addContentClassPropertyDescriptor(object);
 			addHasContentClassPropertyDescriptor(object);
 			addDetailsFieldListClassPropertyDescriptor(object);
+			addDetailsDefinitionFieldListClassPropertyDescriptor(object);
 			addDetailsFieldLabelClassPropertyDescriptor(object);
 			addDetailsFieldValueClassPropertyDescriptor(object);
 			addDetailsControlClassPropertyDescriptor(object);
@@ -192,6 +193,28 @@ public class DetailsUnitItemProvider extends SingletonUnitItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Details Definition Field List Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDetailsDefinitionFieldListClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DetailsUnit_DetailsDefinitionFieldListClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DetailsUnit_DetailsDefinitionFieldListClass_feature", "_UI_DetailsUnit_type"),
+				 WafPackage.eINSTANCE.getDetailsUnit_DetailsDefinitionFieldListClass(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Details Field Label Class feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -321,6 +344,7 @@ public class DetailsUnitItemProvider extends SingletonUnitItemProvider {
 			case WafPackage.DETAILS_UNIT__CONTENT_CLASS:
 			case WafPackage.DETAILS_UNIT__HAS_CONTENT_CLASS:
 			case WafPackage.DETAILS_UNIT__DETAILS_FIELD_LIST_CLASS:
+			case WafPackage.DETAILS_UNIT__DETAILS_DEFINITION_FIELD_LIST_CLASS:
 			case WafPackage.DETAILS_UNIT__DETAILS_FIELD_LABEL_CLASS:
 			case WafPackage.DETAILS_UNIT__DETAILS_FIELD_VALUE_CLASS:
 			case WafPackage.DETAILS_UNIT__DETAILS_CONTROL_CLASS:

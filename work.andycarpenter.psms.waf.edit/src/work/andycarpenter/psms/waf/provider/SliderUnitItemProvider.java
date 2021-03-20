@@ -50,6 +50,7 @@ public class SliderUnitItemProvider extends ImageUnitItemProvider {
 			addContentClassPropertyDescriptor(object);
 			addHasContentClassPropertyDescriptor(object);
 			addSliderFieldListClassPropertyDescriptor(object);
+			addSliderDefinitionFieldListClassPropertyDescriptor(object);
 			addSliderFieldLabelClassPropertyDescriptor(object);
 			addSliderFieldValueClassPropertyDescriptor(object);
 			addSliderControlClassPropertyDescriptor(object);
@@ -160,6 +161,28 @@ public class SliderUnitItemProvider extends ImageUnitItemProvider {
 				 getString("_UI_SliderUnit_sliderFieldListClass_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_SliderUnit_sliderFieldListClass_feature", "_UI_SliderUnit_type"),
 				 WafPackage.eINSTANCE.getSliderUnit_SliderFieldListClass(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Slider Definition Field List Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSliderDefinitionFieldListClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_SliderUnit_sliderDefinitionFieldListClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_SliderUnit_sliderDefinitionFieldListClass_feature", "_UI_SliderUnit_type"),
+				 WafPackage.eINSTANCE.getSliderUnit_SliderDefinitionFieldListClass(),
 				 false,
 				 false,
 				 false,
@@ -299,6 +322,7 @@ public class SliderUnitItemProvider extends ImageUnitItemProvider {
 			case WafPackage.SLIDER_UNIT__CONTENT_CLASS:
 			case WafPackage.SLIDER_UNIT__HAS_CONTENT_CLASS:
 			case WafPackage.SLIDER_UNIT__SLIDER_FIELD_LIST_CLASS:
+			case WafPackage.SLIDER_UNIT__SLIDER_DEFINITION_FIELD_LIST_CLASS:
 			case WafPackage.SLIDER_UNIT__SLIDER_FIELD_LABEL_CLASS:
 			case WafPackage.SLIDER_UNIT__SLIDER_FIELD_VALUE_CLASS:
 			case WafPackage.SLIDER_UNIT__SLIDER_CONTROL_CLASS:

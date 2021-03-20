@@ -51,6 +51,7 @@ public class CardsUnitItemProvider extends CollectionUnitItemProvider {
 			addContentClassPropertyDescriptor(object);
 			addHasContentClassPropertyDescriptor(object);
 			addCardsFieldListClassPropertyDescriptor(object);
+			addCardsDefinitionFieldListClassPropertyDescriptor(object);
 			addCardsFieldLabelClassPropertyDescriptor(object);
 			addCardsFieldValueClassPropertyDescriptor(object);
 			addLocalRowClassPropertyDescriptor(object);
@@ -607,6 +608,28 @@ public class CardsUnitItemProvider extends CollectionUnitItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Cards Definition Field List Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCardsDefinitionFieldListClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_CardsUnit_cardsDefinitionFieldListClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CardsUnit_cardsDefinitionFieldListClass_feature", "_UI_CardsUnit_type"),
+				 WafPackage.eINSTANCE.getCardsUnit_CardsDefinitionFieldListClass(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Cards Field Label Class feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -733,6 +756,7 @@ public class CardsUnitItemProvider extends CollectionUnitItemProvider {
 			case WafPackage.CARDS_UNIT__CONTENT_CLASS:
 			case WafPackage.CARDS_UNIT__HAS_CONTENT_CLASS:
 			case WafPackage.CARDS_UNIT__CARDS_FIELD_LIST_CLASS:
+			case WafPackage.CARDS_UNIT__CARDS_DEFINITION_FIELD_LIST_CLASS:
 			case WafPackage.CARDS_UNIT__CARDS_FIELD_LABEL_CLASS:
 			case WafPackage.CARDS_UNIT__CARDS_FIELD_VALUE_CLASS:
 			case WafPackage.CARDS_UNIT__LOCAL_ROW_CLASS:

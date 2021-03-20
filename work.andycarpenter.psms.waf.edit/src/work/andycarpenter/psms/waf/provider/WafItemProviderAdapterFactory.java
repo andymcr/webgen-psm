@@ -118,6 +118,29 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.waf.WafStyle} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected WafStyleItemProvider wafStyleItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link work.andycarpenter.psms.waf.WafStyle}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createWafStyleAdapter() {
+		if (wafStyleItemProvider == null) {
+			wafStyleItemProvider = new WafStyleItemProvider(this);
+		}
+
+		return wafStyleItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.waf.LocalAuthenticationSystem} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1413,6 +1436,7 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 	 */
 	public void dispose() {
 		if (wafModelItemProvider != null) wafModelItemProvider.dispose();
+		if (wafStyleItemProvider != null) wafStyleItemProvider.dispose();
 		if (localAuthenticationSystemItemProvider != null) localAuthenticationSystemItemProvider.dispose();
 		if (casAuthenticationItemProvider != null) casAuthenticationItemProvider.dispose();
 		if (imageManipulationItemProvider != null) imageManipulationItemProvider.dispose();

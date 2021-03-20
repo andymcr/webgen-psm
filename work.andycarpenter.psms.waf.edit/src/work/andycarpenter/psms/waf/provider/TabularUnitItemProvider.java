@@ -50,6 +50,7 @@ public class TabularUnitItemProvider extends CollectionUnitItemProvider {
 			addContentClassPropertyDescriptor(object);
 			addHasContentClassPropertyDescriptor(object);
 			addTabularFieldListClassPropertyDescriptor(object);
+			addTabularDefinitionFieldListClassPropertyDescriptor(object);
 			addTabularFieldLabelClassPropertyDescriptor(object);
 			addTabularFieldValueClassPropertyDescriptor(object);
 			addTabularControlClassPropertyDescriptor(object);
@@ -160,6 +161,28 @@ public class TabularUnitItemProvider extends CollectionUnitItemProvider {
 				 getString("_UI_TabularUnit_tabularFieldListClass_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_TabularUnit_tabularFieldListClass_feature", "_UI_TabularUnit_type"),
 				 WafPackage.eINSTANCE.getTabularUnit_TabularFieldListClass(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Tabular Definition Field List Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTabularDefinitionFieldListClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_TabularUnit_tabularDefinitionFieldListClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_TabularUnit_tabularDefinitionFieldListClass_feature", "_UI_TabularUnit_type"),
+				 WafPackage.eINSTANCE.getTabularUnit_TabularDefinitionFieldListClass(),
 				 false,
 				 false,
 				 false,
@@ -298,6 +321,7 @@ public class TabularUnitItemProvider extends CollectionUnitItemProvider {
 			case WafPackage.TABULAR_UNIT__CONTENT_CLASS:
 			case WafPackage.TABULAR_UNIT__HAS_CONTENT_CLASS:
 			case WafPackage.TABULAR_UNIT__TABULAR_FIELD_LIST_CLASS:
+			case WafPackage.TABULAR_UNIT__TABULAR_DEFINITION_FIELD_LIST_CLASS:
 			case WafPackage.TABULAR_UNIT__TABULAR_FIELD_LABEL_CLASS:
 			case WafPackage.TABULAR_UNIT__TABULAR_FIELD_VALUE_CLASS:
 			case WafPackage.TABULAR_UNIT__TABULAR_CONTROL_CLASS:

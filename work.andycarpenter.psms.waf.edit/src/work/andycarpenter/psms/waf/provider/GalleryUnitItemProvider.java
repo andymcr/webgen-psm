@@ -51,6 +51,7 @@ public class GalleryUnitItemProvider extends ImageUnitItemProvider {
 			addContentClassPropertyDescriptor(object);
 			addHasContentClassPropertyDescriptor(object);
 			addGalleryFieldListClassPropertyDescriptor(object);
+			addGalleryDefinitionFieldListClassPropertyDescriptor(object);
 			addGalleryFieldLabelClassPropertyDescriptor(object);
 			addGalleryFieldValueClassPropertyDescriptor(object);
 			addGalleryControlClassPropertyDescriptor(object);
@@ -192,6 +193,28 @@ public class GalleryUnitItemProvider extends ImageUnitItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Gallery Definition Field List Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addGalleryDefinitionFieldListClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_GalleryUnit_galleryDefinitionFieldListClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_GalleryUnit_galleryDefinitionFieldListClass_feature", "_UI_GalleryUnit_type"),
+				 WafPackage.eINSTANCE.getGalleryUnit_GalleryDefinitionFieldListClass(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Gallery Field Label Class feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -322,6 +345,7 @@ public class GalleryUnitItemProvider extends ImageUnitItemProvider {
 			case WafPackage.GALLERY_UNIT__CONTENT_CLASS:
 			case WafPackage.GALLERY_UNIT__HAS_CONTENT_CLASS:
 			case WafPackage.GALLERY_UNIT__GALLERY_FIELD_LIST_CLASS:
+			case WafPackage.GALLERY_UNIT__GALLERY_DEFINITION_FIELD_LIST_CLASS:
 			case WafPackage.GALLERY_UNIT__GALLERY_FIELD_LABEL_CLASS:
 			case WafPackage.GALLERY_UNIT__GALLERY_FIELD_VALUE_CLASS:
 			case WafPackage.GALLERY_UNIT__GALLERY_CONTROL_CLASS:
