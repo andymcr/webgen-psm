@@ -118,26 +118,49 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.waf.WafStyle} instances.
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.waf.Navigation} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected WafStyleItemProvider wafStyleItemProvider;
+	protected NavigationItemProvider navigationItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link work.andycarpenter.psms.waf.WafStyle}.
+	 * This creates an adapter for a {@link work.andycarpenter.psms.waf.Navigation}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createWafStyleAdapter() {
-		if (wafStyleItemProvider == null) {
-			wafStyleItemProvider = new WafStyleItemProvider(this);
+	public Adapter createNavigationAdapter() {
+		if (navigationItemProvider == null) {
+			navigationItemProvider = new NavigationItemProvider(this);
 		}
 
-		return wafStyleItemProvider;
+		return navigationItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.waf.WafStyles} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected WafStylesItemProvider wafStylesItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link work.andycarpenter.psms.waf.WafStyles}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createWafStylesAdapter() {
+		if (wafStylesItemProvider == null) {
+			wafStylesItemProvider = new WafStylesItemProvider(this);
+		}
+
+		return wafStylesItemProvider;
 	}
 
 	/**
@@ -1436,16 +1459,17 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 	 */
 	public void dispose() {
 		if (wafModelItemProvider != null) wafModelItemProvider.dispose();
-		if (wafStyleItemProvider != null) wafStyleItemProvider.dispose();
+		if (navigationItemProvider != null) navigationItemProvider.dispose();
+		if (menuItemProvider != null) menuItemProvider.dispose();
+		if (submenuEntryItemProvider != null) submenuEntryItemProvider.dispose();
+		if (actionMenuEntryItemProvider != null) actionMenuEntryItemProvider.dispose();
+		if (editStaticTextMenuEntryItemProvider != null) editStaticTextMenuEntryItemProvider.dispose();
+		if (wafStylesItemProvider != null) wafStylesItemProvider.dispose();
 		if (localAuthenticationSystemItemProvider != null) localAuthenticationSystemItemProvider.dispose();
 		if (casAuthenticationItemProvider != null) casAuthenticationItemProvider.dispose();
 		if (imageManipulationItemProvider != null) imageManipulationItemProvider.dispose();
 		if (backgroundFilterItemProvider != null) backgroundFilterItemProvider.dispose();
 		if (thumbnailFilterItemProvider != null) thumbnailFilterItemProvider.dispose();
-		if (menuItemProvider != null) menuItemProvider.dispose();
-		if (submenuEntryItemProvider != null) submenuEntryItemProvider.dispose();
-		if (actionMenuEntryItemProvider != null) actionMenuEntryItemProvider.dispose();
-		if (editStaticTextMenuEntryItemProvider != null) editStaticTextMenuEntryItemProvider.dispose();
 		if (pageItemProvider != null) pageItemProvider.dispose();
 		if (queryItemProvider != null) queryItemProvider.dispose();
 		if (queryParameterItemProvider != null) queryParameterItemProvider.dispose();

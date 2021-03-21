@@ -49,41 +49,24 @@ enum FrameworkTechnologies {
 	Symfony = 5
 }
 
-enum InputTechnologies {
-	Html
-	jQueryUI = 1
-}
-
-enum AjaxTechnologies {
-	None
-	jQuery = 1
-	AngularJS = 2
-}
-
 class WafModel {
 	refers OrmModel[1] persistence
 	refers ServiceModel[1] business
 	contains ImageManipulation[] imageManipulations
+	contains Navigation navigation opposite partOf
 	contains Page[] pages opposite partOf
-	contains Menu[] menus
 	refers API api
 	String[1] siteName
 	String[1] siteTitle
 	String webmasterEmail
 	String copyrightText
 	String metaDescription
-	String logoImage
-	refers ImageManipulation logoFilters
 	FrameworkTechnologies frameworkTechnology
 	boolean useDbSessionStorage
-	InputTechnologies inputTechnology
-	AjaxTechnologies ajaxTechnology
 	contains Authentication authentication opposite authorises
 	String defaultSaveLabel
 	String defaultCancelLabel
 	String textEditorURL
-	String topNavigationId
-	refers Menu sideMenu
 	String siteTemplate
 	boolean staticUnitsEditable
 	derived readonly transient volatile boolean hasAPI get {
@@ -151,7 +134,7 @@ class WafModel {
 		if (isLocallyAuthenticated)
 			authentication as LocalAuthenticationSystem
 	}
-    contains WafStyle defaultStyles
+    contains WafStyles defaultStyles
    	refers readonly transient volatile unsettable derived WafModel genModel get {
 		this
 	}
@@ -163,7 +146,57 @@ class WafModel {
 	}
 }
 
-class WafStyle {
+class Navigation {
+	refers WafModel[1] partOf opposite navigation
+	contains Menu[] menus opposite definedBy
+	String navbarClass = "navbar"
+	derived readonly unsettable transient volatile boolean hasNavbarClass get {
+		navbarClass.trim() != ''
+	}
+	String logoImage
+	refers ImageManipulation logoFilters
+	AuthenticationMenuPlacement authenticationMenuPlacement
+	String authenticationBarClass = "nav"
+	derived readonly unsettable transient volatile boolean hasAuthenticationBarClass get {
+		authenticationBarClass.trim() != ''
+	}
+}
+
+enum AuthenticationMenuPlacement {
+	Above = 0
+	Below = 1
+	Integrated = 2
+}
+
+class Menu extends NamedDisplayElement {
+	refers Navigation[1] definedBy opposite menus
+	contains MenuEntry[] entries opposite partOf
+	boolean omitCaption
+	String styleClass
+	String captionClass
+	String layoutClass
+}
+
+abstract class MenuEntry {
+	container Menu[1] partOf opposite entries
+}
+
+class SubmenuEntry extends Menu, MenuEntry {
+	String authorisationRoles = ''
+	derived readonly transient volatile boolean isAuthorised get {
+		authorisationRoles.trim() != ''
+	}
+}
+
+class ActionMenuEntry extends MenuEntry, NamedDisplayElement {
+	refers ContentUnit[1] action
+	contains Query query
+}
+
+class EditStaticTextMenuEntry extends MenuEntry, NamedDisplayElement {
+}
+
+class WafStyles {
 	String styleClass = ''
 	String sectionClass = ''
 	String captionClass = ''
@@ -308,33 +341,6 @@ class ThumbnailFilter extends ImageFilter {
 	ThumbnailModes mode
 }
 
-
-class Menu extends NamedDisplayElement {
-	contains MenuEntry[] entries opposite partOf
-	boolean omitCaption
-	String styleClass
-	String captionClass
-	String layoutClass
-}
-
-abstract class MenuEntry {
-	container Menu[1] partOf opposite entries
-}
-
-class SubmenuEntry extends Menu, MenuEntry {
-	String authorisationRoles = ''
-	derived readonly transient volatile boolean isAuthorised get {
-		authorisationRoles.trim() != ''
-	}
-}
-
-class ActionMenuEntry extends MenuEntry, NamedDisplayElement {
-	refers ContentUnit[1] action
-	contains Query query
-}
-
-class EditStaticTextMenuEntry extends MenuEntry, NamedDisplayElement {
-}
 
 class Page extends NamedDisplayElement {
 	container WafModel partOf opposite pages

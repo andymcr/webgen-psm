@@ -23,15 +23,15 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import work.andycarpenter.psms.waf.WafPackage;
-import work.andycarpenter.psms.waf.WafStyle;
+import work.andycarpenter.psms.waf.WafStyles;
 
 /**
- * This is the item provider adapter for a {@link work.andycarpenter.psms.waf.WafStyle} object.
+ * This is the item provider adapter for a {@link work.andycarpenter.psms.waf.WafStyles} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class WafStyleItemProvider 
+public class WafStylesItemProvider 
 	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
@@ -45,7 +45,7 @@ public class WafStyleItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public WafStyleItemProvider(AdapterFactory adapterFactory) {
+	public WafStylesItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -137,9 +137,9 @@ public class WafStyleItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_WafStyle_styleClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyle_styleClass_feature", "_UI_WafStyle_type"),
-				 WafPackage.eINSTANCE.getWafStyle_StyleClass(),
+				 getString("_UI_WafStyles_styleClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyles_styleClass_feature", "_UI_WafStyles_type"),
+				 WafPackage.eINSTANCE.getWafStyles_StyleClass(),
 				 true,
 				 false,
 				 false,
@@ -159,9 +159,9 @@ public class WafStyleItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_WafStyle_sectionClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyle_sectionClass_feature", "_UI_WafStyle_type"),
-				 WafPackage.eINSTANCE.getWafStyle_SectionClass(),
+				 getString("_UI_WafStyles_sectionClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyles_sectionClass_feature", "_UI_WafStyles_type"),
+				 WafPackage.eINSTANCE.getWafStyles_SectionClass(),
 				 true,
 				 false,
 				 false,
@@ -181,9 +181,9 @@ public class WafStyleItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_WafStyle_captionClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyle_captionClass_feature", "_UI_WafStyle_type"),
-				 WafPackage.eINSTANCE.getWafStyle_CaptionClass(),
+				 getString("_UI_WafStyles_captionClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyles_captionClass_feature", "_UI_WafStyles_type"),
+				 WafPackage.eINSTANCE.getWafStyles_CaptionClass(),
 				 true,
 				 false,
 				 false,
@@ -203,9 +203,9 @@ public class WafStyleItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_WafStyle_contentClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyle_contentClass_feature", "_UI_WafStyle_type"),
-				 WafPackage.eINSTANCE.getWafStyle_ContentClass(),
+				 getString("_UI_WafStyles_contentClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyles_contentClass_feature", "_UI_WafStyles_type"),
+				 WafPackage.eINSTANCE.getWafStyles_ContentClass(),
 				 true,
 				 false,
 				 false,
@@ -225,9 +225,9 @@ public class WafStyleItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_WafStyle_cardsContentClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyle_cardsContentClass_feature", "_UI_WafStyle_type"),
-				 WafPackage.eINSTANCE.getWafStyle_CardsContentClass(),
+				 getString("_UI_WafStyles_cardsContentClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyles_cardsContentClass_feature", "_UI_WafStyles_type"),
+				 WafPackage.eINSTANCE.getWafStyles_CardsContentClass(),
 				 true,
 				 false,
 				 false,
@@ -247,9 +247,9 @@ public class WafStyleItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_WafStyle_detailsContentClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyle_detailsContentClass_feature", "_UI_WafStyle_type"),
-				 WafPackage.eINSTANCE.getWafStyle_DetailsContentClass(),
+				 getString("_UI_WafStyles_detailsContentClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyles_detailsContentClass_feature", "_UI_WafStyles_type"),
+				 WafPackage.eINSTANCE.getWafStyles_DetailsContentClass(),
 				 true,
 				 false,
 				 false,
@@ -269,9 +269,9 @@ public class WafStyleItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_WafStyle_formContentClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyle_formContentClass_feature", "_UI_WafStyle_type"),
-				 WafPackage.eINSTANCE.getWafStyle_FormContentClass(),
+				 getString("_UI_WafStyles_formContentClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyles_formContentClass_feature", "_UI_WafStyles_type"),
+				 WafPackage.eINSTANCE.getWafStyles_FormContentClass(),
 				 true,
 				 false,
 				 false,
@@ -291,9 +291,9 @@ public class WafStyleItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_WafStyle_galleryContentClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyle_galleryContentClass_feature", "_UI_WafStyle_type"),
-				 WafPackage.eINSTANCE.getWafStyle_GalleryContentClass(),
+				 getString("_UI_WafStyles_galleryContentClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyles_galleryContentClass_feature", "_UI_WafStyles_type"),
+				 WafPackage.eINSTANCE.getWafStyles_GalleryContentClass(),
 				 true,
 				 false,
 				 false,
@@ -313,9 +313,9 @@ public class WafStyleItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_WafStyle_sliderContentClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyle_sliderContentClass_feature", "_UI_WafStyle_type"),
-				 WafPackage.eINSTANCE.getWafStyle_SliderContentClass(),
+				 getString("_UI_WafStyles_sliderContentClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyles_sliderContentClass_feature", "_UI_WafStyles_type"),
+				 WafPackage.eINSTANCE.getWafStyles_SliderContentClass(),
 				 true,
 				 false,
 				 false,
@@ -335,9 +335,9 @@ public class WafStyleItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_WafStyle_staticContentClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyle_staticContentClass_feature", "_UI_WafStyle_type"),
-				 WafPackage.eINSTANCE.getWafStyle_StaticContentClass(),
+				 getString("_UI_WafStyles_staticContentClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyles_staticContentClass_feature", "_UI_WafStyles_type"),
+				 WafPackage.eINSTANCE.getWafStyles_StaticContentClass(),
 				 true,
 				 false,
 				 false,
@@ -357,9 +357,9 @@ public class WafStyleItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_WafStyle_tabularContentClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyle_tabularContentClass_feature", "_UI_WafStyle_type"),
-				 WafPackage.eINSTANCE.getWafStyle_TabularContentClass(),
+				 getString("_UI_WafStyles_tabularContentClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyles_tabularContentClass_feature", "_UI_WafStyles_type"),
+				 WafPackage.eINSTANCE.getWafStyles_TabularContentClass(),
 				 true,
 				 false,
 				 false,
@@ -379,9 +379,9 @@ public class WafStyleItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_WafStyle_fieldListClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyle_fieldListClass_feature", "_UI_WafStyle_type"),
-				 WafPackage.eINSTANCE.getWafStyle_FieldListClass(),
+				 getString("_UI_WafStyles_fieldListClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyles_fieldListClass_feature", "_UI_WafStyles_type"),
+				 WafPackage.eINSTANCE.getWafStyles_FieldListClass(),
 				 true,
 				 false,
 				 false,
@@ -401,9 +401,9 @@ public class WafStyleItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_WafStyle_cardsFieldListClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyle_cardsFieldListClass_feature", "_UI_WafStyle_type"),
-				 WafPackage.eINSTANCE.getWafStyle_CardsFieldListClass(),
+				 getString("_UI_WafStyles_cardsFieldListClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyles_cardsFieldListClass_feature", "_UI_WafStyles_type"),
+				 WafPackage.eINSTANCE.getWafStyles_CardsFieldListClass(),
 				 true,
 				 false,
 				 false,
@@ -423,9 +423,9 @@ public class WafStyleItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_WafStyle_detailsFieldListClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyle_detailsFieldListClass_feature", "_UI_WafStyle_type"),
-				 WafPackage.eINSTANCE.getWafStyle_DetailsFieldListClass(),
+				 getString("_UI_WafStyles_detailsFieldListClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyles_detailsFieldListClass_feature", "_UI_WafStyles_type"),
+				 WafPackage.eINSTANCE.getWafStyles_DetailsFieldListClass(),
 				 true,
 				 false,
 				 false,
@@ -445,9 +445,9 @@ public class WafStyleItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_WafStyle_formFieldListClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyle_formFieldListClass_feature", "_UI_WafStyle_type"),
-				 WafPackage.eINSTANCE.getWafStyle_FormFieldListClass(),
+				 getString("_UI_WafStyles_formFieldListClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyles_formFieldListClass_feature", "_UI_WafStyles_type"),
+				 WafPackage.eINSTANCE.getWafStyles_FormFieldListClass(),
 				 true,
 				 false,
 				 false,
@@ -467,9 +467,9 @@ public class WafStyleItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_WafStyle_galleryFieldListClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyle_galleryFieldListClass_feature", "_UI_WafStyle_type"),
-				 WafPackage.eINSTANCE.getWafStyle_GalleryFieldListClass(),
+				 getString("_UI_WafStyles_galleryFieldListClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyles_galleryFieldListClass_feature", "_UI_WafStyles_type"),
+				 WafPackage.eINSTANCE.getWafStyles_GalleryFieldListClass(),
 				 true,
 				 false,
 				 false,
@@ -489,9 +489,9 @@ public class WafStyleItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_WafStyle_sliderFieldListClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyle_sliderFieldListClass_feature", "_UI_WafStyle_type"),
-				 WafPackage.eINSTANCE.getWafStyle_SliderFieldListClass(),
+				 getString("_UI_WafStyles_sliderFieldListClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyles_sliderFieldListClass_feature", "_UI_WafStyles_type"),
+				 WafPackage.eINSTANCE.getWafStyles_SliderFieldListClass(),
 				 true,
 				 false,
 				 false,
@@ -511,9 +511,9 @@ public class WafStyleItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_WafStyle_tabularFieldListClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyle_tabularFieldListClass_feature", "_UI_WafStyle_type"),
-				 WafPackage.eINSTANCE.getWafStyle_TabularFieldListClass(),
+				 getString("_UI_WafStyles_tabularFieldListClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyles_tabularFieldListClass_feature", "_UI_WafStyles_type"),
+				 WafPackage.eINSTANCE.getWafStyles_TabularFieldListClass(),
 				 true,
 				 false,
 				 false,
@@ -533,9 +533,9 @@ public class WafStyleItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_WafStyle_definitionFieldListClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyle_definitionFieldListClass_feature", "_UI_WafStyle_type"),
-				 WafPackage.eINSTANCE.getWafStyle_DefinitionFieldListClass(),
+				 getString("_UI_WafStyles_definitionFieldListClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyles_definitionFieldListClass_feature", "_UI_WafStyles_type"),
+				 WafPackage.eINSTANCE.getWafStyles_DefinitionFieldListClass(),
 				 true,
 				 false,
 				 false,
@@ -555,9 +555,9 @@ public class WafStyleItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_WafStyle_cardsDefinitionFieldListClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyle_cardsDefinitionFieldListClass_feature", "_UI_WafStyle_type"),
-				 WafPackage.eINSTANCE.getWafStyle_CardsDefinitionFieldListClass(),
+				 getString("_UI_WafStyles_cardsDefinitionFieldListClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyles_cardsDefinitionFieldListClass_feature", "_UI_WafStyles_type"),
+				 WafPackage.eINSTANCE.getWafStyles_CardsDefinitionFieldListClass(),
 				 true,
 				 false,
 				 false,
@@ -577,9 +577,9 @@ public class WafStyleItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_WafStyle_detailsDefinitionFieldListClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyle_detailsDefinitionFieldListClass_feature", "_UI_WafStyle_type"),
-				 WafPackage.eINSTANCE.getWafStyle_DetailsDefinitionFieldListClass(),
+				 getString("_UI_WafStyles_detailsDefinitionFieldListClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyles_detailsDefinitionFieldListClass_feature", "_UI_WafStyles_type"),
+				 WafPackage.eINSTANCE.getWafStyles_DetailsDefinitionFieldListClass(),
 				 true,
 				 false,
 				 false,
@@ -599,9 +599,9 @@ public class WafStyleItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_WafStyle_formDefinitionFieldListClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyle_formDefinitionFieldListClass_feature", "_UI_WafStyle_type"),
-				 WafPackage.eINSTANCE.getWafStyle_FormDefinitionFieldListClass(),
+				 getString("_UI_WafStyles_formDefinitionFieldListClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyles_formDefinitionFieldListClass_feature", "_UI_WafStyles_type"),
+				 WafPackage.eINSTANCE.getWafStyles_FormDefinitionFieldListClass(),
 				 true,
 				 false,
 				 false,
@@ -621,9 +621,9 @@ public class WafStyleItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_WafStyle_galleryDefinitionFieldListClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyle_galleryDefinitionFieldListClass_feature", "_UI_WafStyle_type"),
-				 WafPackage.eINSTANCE.getWafStyle_GalleryDefinitionFieldListClass(),
+				 getString("_UI_WafStyles_galleryDefinitionFieldListClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyles_galleryDefinitionFieldListClass_feature", "_UI_WafStyles_type"),
+				 WafPackage.eINSTANCE.getWafStyles_GalleryDefinitionFieldListClass(),
 				 true,
 				 false,
 				 false,
@@ -643,9 +643,9 @@ public class WafStyleItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_WafStyle_sliderDefinitionFieldListClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyle_sliderDefinitionFieldListClass_feature", "_UI_WafStyle_type"),
-				 WafPackage.eINSTANCE.getWafStyle_SliderDefinitionFieldListClass(),
+				 getString("_UI_WafStyles_sliderDefinitionFieldListClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyles_sliderDefinitionFieldListClass_feature", "_UI_WafStyles_type"),
+				 WafPackage.eINSTANCE.getWafStyles_SliderDefinitionFieldListClass(),
 				 true,
 				 false,
 				 false,
@@ -665,9 +665,9 @@ public class WafStyleItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_WafStyle_tabularDefinitionFieldListClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyle_tabularDefinitionFieldListClass_feature", "_UI_WafStyle_type"),
-				 WafPackage.eINSTANCE.getWafStyle_TabularDefinitionFieldListClass(),
+				 getString("_UI_WafStyles_tabularDefinitionFieldListClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyles_tabularDefinitionFieldListClass_feature", "_UI_WafStyles_type"),
+				 WafPackage.eINSTANCE.getWafStyles_TabularDefinitionFieldListClass(),
 				 true,
 				 false,
 				 false,
@@ -687,9 +687,9 @@ public class WafStyleItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_WafStyle_rowClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyle_rowClass_feature", "_UI_WafStyle_type"),
-				 WafPackage.eINSTANCE.getWafStyle_RowClass(),
+				 getString("_UI_WafStyles_rowClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyles_rowClass_feature", "_UI_WafStyles_type"),
+				 WafPackage.eINSTANCE.getWafStyles_RowClass(),
 				 true,
 				 false,
 				 false,
@@ -709,9 +709,9 @@ public class WafStyleItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_WafStyle_columnClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyle_columnClass_feature", "_UI_WafStyle_type"),
-				 WafPackage.eINSTANCE.getWafStyle_ColumnClass(),
+				 getString("_UI_WafStyles_columnClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyles_columnClass_feature", "_UI_WafStyles_type"),
+				 WafPackage.eINSTANCE.getWafStyles_ColumnClass(),
 				 true,
 				 false,
 				 false,
@@ -731,9 +731,9 @@ public class WafStyleItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_WafStyle_cardClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyle_cardClass_feature", "_UI_WafStyle_type"),
-				 WafPackage.eINSTANCE.getWafStyle_CardClass(),
+				 getString("_UI_WafStyles_cardClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyles_cardClass_feature", "_UI_WafStyles_type"),
+				 WafPackage.eINSTANCE.getWafStyles_CardClass(),
 				 true,
 				 false,
 				 false,
@@ -753,9 +753,9 @@ public class WafStyleItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_WafStyle_cardHeaderClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyle_cardHeaderClass_feature", "_UI_WafStyle_type"),
-				 WafPackage.eINSTANCE.getWafStyle_CardHeaderClass(),
+				 getString("_UI_WafStyles_cardHeaderClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyles_cardHeaderClass_feature", "_UI_WafStyles_type"),
+				 WafPackage.eINSTANCE.getWafStyles_CardHeaderClass(),
 				 true,
 				 false,
 				 false,
@@ -775,9 +775,9 @@ public class WafStyleItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_WafStyle_cardBodyClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyle_cardBodyClass_feature", "_UI_WafStyle_type"),
-				 WafPackage.eINSTANCE.getWafStyle_CardBodyClass(),
+				 getString("_UI_WafStyles_cardBodyClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyles_cardBodyClass_feature", "_UI_WafStyles_type"),
+				 WafPackage.eINSTANCE.getWafStyles_CardBodyClass(),
 				 true,
 				 false,
 				 false,
@@ -797,9 +797,9 @@ public class WafStyleItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_WafStyle_cardFooterClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyle_cardFooterClass_feature", "_UI_WafStyle_type"),
-				 WafPackage.eINSTANCE.getWafStyle_CardFooterClass(),
+				 getString("_UI_WafStyles_cardFooterClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyles_cardFooterClass_feature", "_UI_WafStyles_type"),
+				 WafPackage.eINSTANCE.getWafStyles_CardFooterClass(),
 				 true,
 				 false,
 				 false,
@@ -819,9 +819,9 @@ public class WafStyleItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_WafStyle_badgeClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyle_badgeClass_feature", "_UI_WafStyle_type"),
-				 WafPackage.eINSTANCE.getWafStyle_BadgeClass(),
+				 getString("_UI_WafStyles_badgeClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyles_badgeClass_feature", "_UI_WafStyles_type"),
+				 WafPackage.eINSTANCE.getWafStyles_BadgeClass(),
 				 true,
 				 false,
 				 false,
@@ -841,9 +841,9 @@ public class WafStyleItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_WafStyle_controlClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyle_controlClass_feature", "_UI_WafStyle_type"),
-				 WafPackage.eINSTANCE.getWafStyle_ControlClass(),
+				 getString("_UI_WafStyles_controlClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyles_controlClass_feature", "_UI_WafStyles_type"),
+				 WafPackage.eINSTANCE.getWafStyles_ControlClass(),
 				 true,
 				 false,
 				 false,
@@ -863,9 +863,9 @@ public class WafStyleItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_WafStyle_cardsControlClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyle_cardsControlClass_feature", "_UI_WafStyle_type"),
-				 WafPackage.eINSTANCE.getWafStyle_CardsControlClass(),
+				 getString("_UI_WafStyles_cardsControlClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyles_cardsControlClass_feature", "_UI_WafStyles_type"),
+				 WafPackage.eINSTANCE.getWafStyles_CardsControlClass(),
 				 true,
 				 false,
 				 false,
@@ -885,9 +885,9 @@ public class WafStyleItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_WafStyle_detailsControlClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyle_detailsControlClass_feature", "_UI_WafStyle_type"),
-				 WafPackage.eINSTANCE.getWafStyle_DetailsControlClass(),
+				 getString("_UI_WafStyles_detailsControlClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyles_detailsControlClass_feature", "_UI_WafStyles_type"),
+				 WafPackage.eINSTANCE.getWafStyles_DetailsControlClass(),
 				 true,
 				 false,
 				 false,
@@ -907,9 +907,9 @@ public class WafStyleItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_WafStyle_formControlClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyle_formControlClass_feature", "_UI_WafStyle_type"),
-				 WafPackage.eINSTANCE.getWafStyle_FormControlClass(),
+				 getString("_UI_WafStyles_formControlClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyles_formControlClass_feature", "_UI_WafStyles_type"),
+				 WafPackage.eINSTANCE.getWafStyles_FormControlClass(),
 				 true,
 				 false,
 				 false,
@@ -929,9 +929,9 @@ public class WafStyleItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_WafStyle_galleryControlClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyle_galleryControlClass_feature", "_UI_WafStyle_type"),
-				 WafPackage.eINSTANCE.getWafStyle_GalleryControlClass(),
+				 getString("_UI_WafStyles_galleryControlClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyles_galleryControlClass_feature", "_UI_WafStyles_type"),
+				 WafPackage.eINSTANCE.getWafStyles_GalleryControlClass(),
 				 true,
 				 false,
 				 false,
@@ -951,9 +951,9 @@ public class WafStyleItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_WafStyle_sliderControlClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyle_sliderControlClass_feature", "_UI_WafStyle_type"),
-				 WafPackage.eINSTANCE.getWafStyle_SliderControlClass(),
+				 getString("_UI_WafStyles_sliderControlClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyles_sliderControlClass_feature", "_UI_WafStyles_type"),
+				 WafPackage.eINSTANCE.getWafStyles_SliderControlClass(),
 				 true,
 				 false,
 				 false,
@@ -973,9 +973,9 @@ public class WafStyleItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_WafStyle_tabularControlClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyle_tabularControlClass_feature", "_UI_WafStyle_type"),
-				 WafPackage.eINSTANCE.getWafStyle_TabularControlClass(),
+				 getString("_UI_WafStyles_tabularControlClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyles_tabularControlClass_feature", "_UI_WafStyles_type"),
+				 WafPackage.eINSTANCE.getWafStyles_TabularControlClass(),
 				 true,
 				 false,
 				 false,
@@ -995,9 +995,9 @@ public class WafStyleItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_WafStyle_inputGroupClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyle_inputGroupClass_feature", "_UI_WafStyle_type"),
-				 WafPackage.eINSTANCE.getWafStyle_InputGroupClass(),
+				 getString("_UI_WafStyles_inputGroupClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyles_inputGroupClass_feature", "_UI_WafStyles_type"),
+				 WafPackage.eINSTANCE.getWafStyles_InputGroupClass(),
 				 true,
 				 false,
 				 false,
@@ -1017,9 +1017,9 @@ public class WafStyleItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_WafStyle_fieldLabelClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyle_fieldLabelClass_feature", "_UI_WafStyle_type"),
-				 WafPackage.eINSTANCE.getWafStyle_FieldLabelClass(),
+				 getString("_UI_WafStyles_fieldLabelClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyles_fieldLabelClass_feature", "_UI_WafStyles_type"),
+				 WafPackage.eINSTANCE.getWafStyles_FieldLabelClass(),
 				 true,
 				 false,
 				 false,
@@ -1039,9 +1039,9 @@ public class WafStyleItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_WafStyle_cardsFieldLabelClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyle_cardsFieldLabelClass_feature", "_UI_WafStyle_type"),
-				 WafPackage.eINSTANCE.getWafStyle_CardsFieldLabelClass(),
+				 getString("_UI_WafStyles_cardsFieldLabelClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyles_cardsFieldLabelClass_feature", "_UI_WafStyles_type"),
+				 WafPackage.eINSTANCE.getWafStyles_CardsFieldLabelClass(),
 				 true,
 				 false,
 				 false,
@@ -1061,9 +1061,9 @@ public class WafStyleItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_WafStyle_detailsFieldLabelClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyle_detailsFieldLabelClass_feature", "_UI_WafStyle_type"),
-				 WafPackage.eINSTANCE.getWafStyle_DetailsFieldLabelClass(),
+				 getString("_UI_WafStyles_detailsFieldLabelClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyles_detailsFieldLabelClass_feature", "_UI_WafStyles_type"),
+				 WafPackage.eINSTANCE.getWafStyles_DetailsFieldLabelClass(),
 				 true,
 				 false,
 				 false,
@@ -1083,9 +1083,9 @@ public class WafStyleItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_WafStyle_formFieldLabelClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyle_formFieldLabelClass_feature", "_UI_WafStyle_type"),
-				 WafPackage.eINSTANCE.getWafStyle_FormFieldLabelClass(),
+				 getString("_UI_WafStyles_formFieldLabelClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyles_formFieldLabelClass_feature", "_UI_WafStyles_type"),
+				 WafPackage.eINSTANCE.getWafStyles_FormFieldLabelClass(),
 				 true,
 				 false,
 				 false,
@@ -1105,9 +1105,9 @@ public class WafStyleItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_WafStyle_galleryFieldLabelClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyle_galleryFieldLabelClass_feature", "_UI_WafStyle_type"),
-				 WafPackage.eINSTANCE.getWafStyle_GalleryFieldLabelClass(),
+				 getString("_UI_WafStyles_galleryFieldLabelClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyles_galleryFieldLabelClass_feature", "_UI_WafStyles_type"),
+				 WafPackage.eINSTANCE.getWafStyles_GalleryFieldLabelClass(),
 				 true,
 				 false,
 				 false,
@@ -1127,9 +1127,9 @@ public class WafStyleItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_WafStyle_sliderFieldLabelClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyle_sliderFieldLabelClass_feature", "_UI_WafStyle_type"),
-				 WafPackage.eINSTANCE.getWafStyle_SliderFieldLabelClass(),
+				 getString("_UI_WafStyles_sliderFieldLabelClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyles_sliderFieldLabelClass_feature", "_UI_WafStyles_type"),
+				 WafPackage.eINSTANCE.getWafStyles_SliderFieldLabelClass(),
 				 true,
 				 false,
 				 false,
@@ -1149,9 +1149,9 @@ public class WafStyleItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_WafStyle_tabularFieldLabelClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyle_tabularFieldLabelClass_feature", "_UI_WafStyle_type"),
-				 WafPackage.eINSTANCE.getWafStyle_TabularFieldLabelClass(),
+				 getString("_UI_WafStyles_tabularFieldLabelClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyles_tabularFieldLabelClass_feature", "_UI_WafStyles_type"),
+				 WafPackage.eINSTANCE.getWafStyles_TabularFieldLabelClass(),
 				 true,
 				 false,
 				 false,
@@ -1171,9 +1171,9 @@ public class WafStyleItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_WafStyle_fieldValueClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyle_fieldValueClass_feature", "_UI_WafStyle_type"),
-				 WafPackage.eINSTANCE.getWafStyle_FieldValueClass(),
+				 getString("_UI_WafStyles_fieldValueClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyles_fieldValueClass_feature", "_UI_WafStyles_type"),
+				 WafPackage.eINSTANCE.getWafStyles_FieldValueClass(),
 				 true,
 				 false,
 				 false,
@@ -1193,9 +1193,9 @@ public class WafStyleItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_WafStyle_cardsFieldValueClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyle_cardsFieldValueClass_feature", "_UI_WafStyle_type"),
-				 WafPackage.eINSTANCE.getWafStyle_CardsFieldValueClass(),
+				 getString("_UI_WafStyles_cardsFieldValueClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyles_cardsFieldValueClass_feature", "_UI_WafStyles_type"),
+				 WafPackage.eINSTANCE.getWafStyles_CardsFieldValueClass(),
 				 true,
 				 false,
 				 false,
@@ -1215,9 +1215,9 @@ public class WafStyleItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_WafStyle_detailsFieldValueClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyle_detailsFieldValueClass_feature", "_UI_WafStyle_type"),
-				 WafPackage.eINSTANCE.getWafStyle_DetailsFieldValueClass(),
+				 getString("_UI_WafStyles_detailsFieldValueClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyles_detailsFieldValueClass_feature", "_UI_WafStyles_type"),
+				 WafPackage.eINSTANCE.getWafStyles_DetailsFieldValueClass(),
 				 true,
 				 false,
 				 false,
@@ -1237,9 +1237,9 @@ public class WafStyleItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_WafStyle_formFieldValueClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyle_formFieldValueClass_feature", "_UI_WafStyle_type"),
-				 WafPackage.eINSTANCE.getWafStyle_FormFieldValueClass(),
+				 getString("_UI_WafStyles_formFieldValueClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyles_formFieldValueClass_feature", "_UI_WafStyles_type"),
+				 WafPackage.eINSTANCE.getWafStyles_FormFieldValueClass(),
 				 true,
 				 false,
 				 false,
@@ -1259,9 +1259,9 @@ public class WafStyleItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_WafStyle_galleryFieldValueClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyle_galleryFieldValueClass_feature", "_UI_WafStyle_type"),
-				 WafPackage.eINSTANCE.getWafStyle_GalleryFieldValueClass(),
+				 getString("_UI_WafStyles_galleryFieldValueClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyles_galleryFieldValueClass_feature", "_UI_WafStyles_type"),
+				 WafPackage.eINSTANCE.getWafStyles_GalleryFieldValueClass(),
 				 true,
 				 false,
 				 false,
@@ -1281,9 +1281,9 @@ public class WafStyleItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_WafStyle_sliderFieldValueClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyle_sliderFieldValueClass_feature", "_UI_WafStyle_type"),
-				 WafPackage.eINSTANCE.getWafStyle_SliderFieldValueClass(),
+				 getString("_UI_WafStyles_sliderFieldValueClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyles_sliderFieldValueClass_feature", "_UI_WafStyles_type"),
+				 WafPackage.eINSTANCE.getWafStyles_SliderFieldValueClass(),
 				 true,
 				 false,
 				 false,
@@ -1303,9 +1303,9 @@ public class WafStyleItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_WafStyle_tabularFieldValueClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyle_tabularFieldValueClass_feature", "_UI_WafStyle_type"),
-				 WafPackage.eINSTANCE.getWafStyle_TabularFieldValueClass(),
+				 getString("_UI_WafStyles_tabularFieldValueClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyles_tabularFieldValueClass_feature", "_UI_WafStyles_type"),
+				 WafPackage.eINSTANCE.getWafStyles_TabularFieldValueClass(),
 				 true,
 				 false,
 				 false,
@@ -1325,9 +1325,9 @@ public class WafStyleItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_WafStyle_actionNavigationClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyle_actionNavigationClass_feature", "_UI_WafStyle_type"),
-				 WafPackage.eINSTANCE.getWafStyle_ActionNavigationClass(),
+				 getString("_UI_WafStyles_actionNavigationClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyles_actionNavigationClass_feature", "_UI_WafStyles_type"),
+				 WafPackage.eINSTANCE.getWafStyles_ActionNavigationClass(),
 				 true,
 				 false,
 				 false,
@@ -1347,9 +1347,9 @@ public class WafStyleItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_WafStyle_anchorClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyle_anchorClass_feature", "_UI_WafStyle_type"),
-				 WafPackage.eINSTANCE.getWafStyle_AnchorClass(),
+				 getString("_UI_WafStyles_anchorClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyles_anchorClass_feature", "_UI_WafStyles_type"),
+				 WafPackage.eINSTANCE.getWafStyles_AnchorClass(),
 				 true,
 				 false,
 				 false,
@@ -1369,9 +1369,9 @@ public class WafStyleItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_WafStyle_cardsAnchorClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyle_cardsAnchorClass_feature", "_UI_WafStyle_type"),
-				 WafPackage.eINSTANCE.getWafStyle_CardsAnchorClass(),
+				 getString("_UI_WafStyles_cardsAnchorClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyles_cardsAnchorClass_feature", "_UI_WafStyles_type"),
+				 WafPackage.eINSTANCE.getWafStyles_CardsAnchorClass(),
 				 true,
 				 false,
 				 false,
@@ -1391,9 +1391,9 @@ public class WafStyleItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_WafStyle_detailsAnchorClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyle_detailsAnchorClass_feature", "_UI_WafStyle_type"),
-				 WafPackage.eINSTANCE.getWafStyle_DetailsAnchorClass(),
+				 getString("_UI_WafStyles_detailsAnchorClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyles_detailsAnchorClass_feature", "_UI_WafStyles_type"),
+				 WafPackage.eINSTANCE.getWafStyles_DetailsAnchorClass(),
 				 true,
 				 false,
 				 false,
@@ -1413,9 +1413,9 @@ public class WafStyleItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_WafStyle_formAnchorClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyle_formAnchorClass_feature", "_UI_WafStyle_type"),
-				 WafPackage.eINSTANCE.getWafStyle_FormAnchorClass(),
+				 getString("_UI_WafStyles_formAnchorClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyles_formAnchorClass_feature", "_UI_WafStyles_type"),
+				 WafPackage.eINSTANCE.getWafStyles_FormAnchorClass(),
 				 true,
 				 false,
 				 false,
@@ -1435,9 +1435,9 @@ public class WafStyleItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_WafStyle_galleryAnchorClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyle_galleryAnchorClass_feature", "_UI_WafStyle_type"),
-				 WafPackage.eINSTANCE.getWafStyle_GalleryAnchorClass(),
+				 getString("_UI_WafStyles_galleryAnchorClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyles_galleryAnchorClass_feature", "_UI_WafStyles_type"),
+				 WafPackage.eINSTANCE.getWafStyles_GalleryAnchorClass(),
 				 true,
 				 false,
 				 false,
@@ -1457,9 +1457,9 @@ public class WafStyleItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_WafStyle_sliderAnchorClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyle_sliderAnchorClass_feature", "_UI_WafStyle_type"),
-				 WafPackage.eINSTANCE.getWafStyle_SliderAnchorClass(),
+				 getString("_UI_WafStyles_sliderAnchorClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyles_sliderAnchorClass_feature", "_UI_WafStyles_type"),
+				 WafPackage.eINSTANCE.getWafStyles_SliderAnchorClass(),
 				 true,
 				 false,
 				 false,
@@ -1479,9 +1479,9 @@ public class WafStyleItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_WafStyle_tabularAnchorClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyle_tabularAnchorClass_feature", "_UI_WafStyle_type"),
-				 WafPackage.eINSTANCE.getWafStyle_TabularAnchorClass(),
+				 getString("_UI_WafStyles_tabularAnchorClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WafStyles_tabularAnchorClass_feature", "_UI_WafStyles_type"),
+				 WafPackage.eINSTANCE.getWafStyles_TabularAnchorClass(),
 				 true,
 				 false,
 				 false,
@@ -1491,14 +1491,14 @@ public class WafStyleItemProvider
 	}
 
 	/**
-	 * This returns WafStyle.gif.
+	 * This returns WafStyles.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/WafStyle"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/WafStyles"));
 	}
 
 	/**
@@ -1509,10 +1509,10 @@ public class WafStyleItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((WafStyle)object).getStyleClass();
+		String label = ((WafStyles)object).getStyleClass();
 		return label == null || label.length() == 0 ?
-			getString("_UI_WafStyle_type") :
-			getString("_UI_WafStyle_type") + " " + label;
+			getString("_UI_WafStyles_type") :
+			getString("_UI_WafStyles_type") + " " + label;
 	}
 
 
@@ -1527,69 +1527,69 @@ public class WafStyleItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(WafStyle.class)) {
-			case WafPackage.WAF_STYLE__STYLE_CLASS:
-			case WafPackage.WAF_STYLE__SECTION_CLASS:
-			case WafPackage.WAF_STYLE__CAPTION_CLASS:
-			case WafPackage.WAF_STYLE__CONTENT_CLASS:
-			case WafPackage.WAF_STYLE__CARDS_CONTENT_CLASS:
-			case WafPackage.WAF_STYLE__DETAILS_CONTENT_CLASS:
-			case WafPackage.WAF_STYLE__FORM_CONTENT_CLASS:
-			case WafPackage.WAF_STYLE__GALLERY_CONTENT_CLASS:
-			case WafPackage.WAF_STYLE__SLIDER_CONTENT_CLASS:
-			case WafPackage.WAF_STYLE__STATIC_CONTENT_CLASS:
-			case WafPackage.WAF_STYLE__TABULAR_CONTENT_CLASS:
-			case WafPackage.WAF_STYLE__FIELD_LIST_CLASS:
-			case WafPackage.WAF_STYLE__CARDS_FIELD_LIST_CLASS:
-			case WafPackage.WAF_STYLE__DETAILS_FIELD_LIST_CLASS:
-			case WafPackage.WAF_STYLE__FORM_FIELD_LIST_CLASS:
-			case WafPackage.WAF_STYLE__GALLERY_FIELD_LIST_CLASS:
-			case WafPackage.WAF_STYLE__SLIDER_FIELD_LIST_CLASS:
-			case WafPackage.WAF_STYLE__TABULAR_FIELD_LIST_CLASS:
-			case WafPackage.WAF_STYLE__DEFINITION_FIELD_LIST_CLASS:
-			case WafPackage.WAF_STYLE__CARDS_DEFINITION_FIELD_LIST_CLASS:
-			case WafPackage.WAF_STYLE__DETAILS_DEFINITION_FIELD_LIST_CLASS:
-			case WafPackage.WAF_STYLE__FORM_DEFINITION_FIELD_LIST_CLASS:
-			case WafPackage.WAF_STYLE__GALLERY_DEFINITION_FIELD_LIST_CLASS:
-			case WafPackage.WAF_STYLE__SLIDER_DEFINITION_FIELD_LIST_CLASS:
-			case WafPackage.WAF_STYLE__TABULAR_DEFINITION_FIELD_LIST_CLASS:
-			case WafPackage.WAF_STYLE__ROW_CLASS:
-			case WafPackage.WAF_STYLE__COLUMN_CLASS:
-			case WafPackage.WAF_STYLE__CARD_CLASS:
-			case WafPackage.WAF_STYLE__CARD_HEADER_CLASS:
-			case WafPackage.WAF_STYLE__CARD_BODY_CLASS:
-			case WafPackage.WAF_STYLE__CARD_FOOTER_CLASS:
-			case WafPackage.WAF_STYLE__BADGE_CLASS:
-			case WafPackage.WAF_STYLE__CONTROL_CLASS:
-			case WafPackage.WAF_STYLE__CARDS_CONTROL_CLASS:
-			case WafPackage.WAF_STYLE__DETAILS_CONTROL_CLASS:
-			case WafPackage.WAF_STYLE__FORM_CONTROL_CLASS:
-			case WafPackage.WAF_STYLE__GALLERY_CONTROL_CLASS:
-			case WafPackage.WAF_STYLE__SLIDER_CONTROL_CLASS:
-			case WafPackage.WAF_STYLE__TABULAR_CONTROL_CLASS:
-			case WafPackage.WAF_STYLE__INPUT_GROUP_CLASS:
-			case WafPackage.WAF_STYLE__FIELD_LABEL_CLASS:
-			case WafPackage.WAF_STYLE__CARDS_FIELD_LABEL_CLASS:
-			case WafPackage.WAF_STYLE__DETAILS_FIELD_LABEL_CLASS:
-			case WafPackage.WAF_STYLE__FORM_FIELD_LABEL_CLASS:
-			case WafPackage.WAF_STYLE__GALLERY_FIELD_LABEL_CLASS:
-			case WafPackage.WAF_STYLE__SLIDER_FIELD_LABEL_CLASS:
-			case WafPackage.WAF_STYLE__TABULAR_FIELD_LABEL_CLASS:
-			case WafPackage.WAF_STYLE__FIELD_VALUE_CLASS:
-			case WafPackage.WAF_STYLE__CARDS_FIELD_VALUE_CLASS:
-			case WafPackage.WAF_STYLE__DETAILS_FIELD_VALUE_CLASS:
-			case WafPackage.WAF_STYLE__FORM_FIELD_VALUE_CLASS:
-			case WafPackage.WAF_STYLE__GALLERY_FIELD_VALUE_CLASS:
-			case WafPackage.WAF_STYLE__SLIDER_FIELD_VALUE_CLASS:
-			case WafPackage.WAF_STYLE__TABULAR_FIELD_VALUE_CLASS:
-			case WafPackage.WAF_STYLE__ACTION_NAVIGATION_CLASS:
-			case WafPackage.WAF_STYLE__ANCHOR_CLASS:
-			case WafPackage.WAF_STYLE__CARDS_ANCHOR_CLASS:
-			case WafPackage.WAF_STYLE__DETAILS_ANCHOR_CLASS:
-			case WafPackage.WAF_STYLE__FORM_ANCHOR_CLASS:
-			case WafPackage.WAF_STYLE__GALLERY_ANCHOR_CLASS:
-			case WafPackage.WAF_STYLE__SLIDER_ANCHOR_CLASS:
-			case WafPackage.WAF_STYLE__TABULAR_ANCHOR_CLASS:
+		switch (notification.getFeatureID(WafStyles.class)) {
+			case WafPackage.WAF_STYLES__STYLE_CLASS:
+			case WafPackage.WAF_STYLES__SECTION_CLASS:
+			case WafPackage.WAF_STYLES__CAPTION_CLASS:
+			case WafPackage.WAF_STYLES__CONTENT_CLASS:
+			case WafPackage.WAF_STYLES__CARDS_CONTENT_CLASS:
+			case WafPackage.WAF_STYLES__DETAILS_CONTENT_CLASS:
+			case WafPackage.WAF_STYLES__FORM_CONTENT_CLASS:
+			case WafPackage.WAF_STYLES__GALLERY_CONTENT_CLASS:
+			case WafPackage.WAF_STYLES__SLIDER_CONTENT_CLASS:
+			case WafPackage.WAF_STYLES__STATIC_CONTENT_CLASS:
+			case WafPackage.WAF_STYLES__TABULAR_CONTENT_CLASS:
+			case WafPackage.WAF_STYLES__FIELD_LIST_CLASS:
+			case WafPackage.WAF_STYLES__CARDS_FIELD_LIST_CLASS:
+			case WafPackage.WAF_STYLES__DETAILS_FIELD_LIST_CLASS:
+			case WafPackage.WAF_STYLES__FORM_FIELD_LIST_CLASS:
+			case WafPackage.WAF_STYLES__GALLERY_FIELD_LIST_CLASS:
+			case WafPackage.WAF_STYLES__SLIDER_FIELD_LIST_CLASS:
+			case WafPackage.WAF_STYLES__TABULAR_FIELD_LIST_CLASS:
+			case WafPackage.WAF_STYLES__DEFINITION_FIELD_LIST_CLASS:
+			case WafPackage.WAF_STYLES__CARDS_DEFINITION_FIELD_LIST_CLASS:
+			case WafPackage.WAF_STYLES__DETAILS_DEFINITION_FIELD_LIST_CLASS:
+			case WafPackage.WAF_STYLES__FORM_DEFINITION_FIELD_LIST_CLASS:
+			case WafPackage.WAF_STYLES__GALLERY_DEFINITION_FIELD_LIST_CLASS:
+			case WafPackage.WAF_STYLES__SLIDER_DEFINITION_FIELD_LIST_CLASS:
+			case WafPackage.WAF_STYLES__TABULAR_DEFINITION_FIELD_LIST_CLASS:
+			case WafPackage.WAF_STYLES__ROW_CLASS:
+			case WafPackage.WAF_STYLES__COLUMN_CLASS:
+			case WafPackage.WAF_STYLES__CARD_CLASS:
+			case WafPackage.WAF_STYLES__CARD_HEADER_CLASS:
+			case WafPackage.WAF_STYLES__CARD_BODY_CLASS:
+			case WafPackage.WAF_STYLES__CARD_FOOTER_CLASS:
+			case WafPackage.WAF_STYLES__BADGE_CLASS:
+			case WafPackage.WAF_STYLES__CONTROL_CLASS:
+			case WafPackage.WAF_STYLES__CARDS_CONTROL_CLASS:
+			case WafPackage.WAF_STYLES__DETAILS_CONTROL_CLASS:
+			case WafPackage.WAF_STYLES__FORM_CONTROL_CLASS:
+			case WafPackage.WAF_STYLES__GALLERY_CONTROL_CLASS:
+			case WafPackage.WAF_STYLES__SLIDER_CONTROL_CLASS:
+			case WafPackage.WAF_STYLES__TABULAR_CONTROL_CLASS:
+			case WafPackage.WAF_STYLES__INPUT_GROUP_CLASS:
+			case WafPackage.WAF_STYLES__FIELD_LABEL_CLASS:
+			case WafPackage.WAF_STYLES__CARDS_FIELD_LABEL_CLASS:
+			case WafPackage.WAF_STYLES__DETAILS_FIELD_LABEL_CLASS:
+			case WafPackage.WAF_STYLES__FORM_FIELD_LABEL_CLASS:
+			case WafPackage.WAF_STYLES__GALLERY_FIELD_LABEL_CLASS:
+			case WafPackage.WAF_STYLES__SLIDER_FIELD_LABEL_CLASS:
+			case WafPackage.WAF_STYLES__TABULAR_FIELD_LABEL_CLASS:
+			case WafPackage.WAF_STYLES__FIELD_VALUE_CLASS:
+			case WafPackage.WAF_STYLES__CARDS_FIELD_VALUE_CLASS:
+			case WafPackage.WAF_STYLES__DETAILS_FIELD_VALUE_CLASS:
+			case WafPackage.WAF_STYLES__FORM_FIELD_VALUE_CLASS:
+			case WafPackage.WAF_STYLES__GALLERY_FIELD_VALUE_CLASS:
+			case WafPackage.WAF_STYLES__SLIDER_FIELD_VALUE_CLASS:
+			case WafPackage.WAF_STYLES__TABULAR_FIELD_VALUE_CLASS:
+			case WafPackage.WAF_STYLES__ACTION_NAVIGATION_CLASS:
+			case WafPackage.WAF_STYLES__ANCHOR_CLASS:
+			case WafPackage.WAF_STYLES__CARDS_ANCHOR_CLASS:
+			case WafPackage.WAF_STYLES__DETAILS_ANCHOR_CLASS:
+			case WafPackage.WAF_STYLES__FORM_ANCHOR_CLASS:
+			case WafPackage.WAF_STYLES__GALLERY_ANCHOR_CLASS:
+			case WafPackage.WAF_STYLES__SLIDER_ANCHOR_CLASS:
+			case WafPackage.WAF_STYLES__TABULAR_ANCHOR_CLASS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

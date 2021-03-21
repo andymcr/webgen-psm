@@ -71,17 +71,11 @@ public class WafModelItemProvider
 			addWebmasterEmailPropertyDescriptor(object);
 			addCopyrightTextPropertyDescriptor(object);
 			addMetaDescriptionPropertyDescriptor(object);
-			addLogoImagePropertyDescriptor(object);
-			addLogoFiltersPropertyDescriptor(object);
 			addFrameworkTechnologyPropertyDescriptor(object);
 			addUseDbSessionStoragePropertyDescriptor(object);
-			addInputTechnologyPropertyDescriptor(object);
-			addAjaxTechnologyPropertyDescriptor(object);
 			addDefaultSaveLabelPropertyDescriptor(object);
 			addDefaultCancelLabelPropertyDescriptor(object);
 			addTextEditorURLPropertyDescriptor(object);
-			addTopNavigationIdPropertyDescriptor(object);
-			addSideMenuPropertyDescriptor(object);
 			addSiteTemplatePropertyDescriptor(object);
 			addStaticUnitsEditablePropertyDescriptor(object);
 			addHasAPIPropertyDescriptor(object);
@@ -287,50 +281,6 @@ public class WafModelItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Logo Image feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addLogoImagePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_WafModel_logoImage_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafModel_logoImage_feature", "_UI_WafModel_type"),
-				 WafPackage.eINSTANCE.getWafModel_LogoImage(),
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Logo Filters feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addLogoFiltersPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_WafModel_logoFilters_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafModel_logoFilters_feature", "_UI_WafModel_type"),
-				 WafPackage.eINSTANCE.getWafModel_LogoFilters(),
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Framework Technology feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -370,50 +320,6 @@ public class WafModelItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Input Technology feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addInputTechnologyPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_WafModel_inputTechnology_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafModel_inputTechnology_feature", "_UI_WafModel_type"),
-				 WafPackage.eINSTANCE.getWafModel_InputTechnology(),
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Ajax Technology feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addAjaxTechnologyPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_WafModel_ajaxTechnology_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafModel_ajaxTechnology_feature", "_UI_WafModel_type"),
-				 WafPackage.eINSTANCE.getWafModel_AjaxTechnology(),
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -480,50 +386,6 @@ public class WafModelItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Top Navigation Id feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addTopNavigationIdPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_WafModel_topNavigationId_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafModel_topNavigationId_feature", "_UI_WafModel_type"),
-				 WafPackage.eINSTANCE.getWafModel_TopNavigationId(),
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Side Menu feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addSideMenuPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_WafModel_sideMenu_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafModel_sideMenu_feature", "_UI_WafModel_type"),
-				 WafPackage.eINSTANCE.getWafModel_SideMenu(),
-				 true,
-				 false,
-				 true,
-				 null,
 				 null,
 				 null));
 	}
@@ -1069,8 +931,8 @@ public class WafModelItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(WafPackage.eINSTANCE.getWafModel_ImageManipulations());
+			childrenFeatures.add(WafPackage.eINSTANCE.getWafModel_Navigation());
 			childrenFeatures.add(WafPackage.eINSTANCE.getWafModel_Pages());
-			childrenFeatures.add(WafPackage.eINSTANCE.getWafModel_Menus());
 			childrenFeatures.add(WafPackage.eINSTANCE.getWafModel_Authentication());
 			childrenFeatures.add(WafPackage.eINSTANCE.getWafModel_DefaultStyles());
 		}
@@ -1133,15 +995,11 @@ public class WafModelItemProvider
 			case WafPackage.WAF_MODEL__WEBMASTER_EMAIL:
 			case WafPackage.WAF_MODEL__COPYRIGHT_TEXT:
 			case WafPackage.WAF_MODEL__META_DESCRIPTION:
-			case WafPackage.WAF_MODEL__LOGO_IMAGE:
 			case WafPackage.WAF_MODEL__FRAMEWORK_TECHNOLOGY:
 			case WafPackage.WAF_MODEL__USE_DB_SESSION_STORAGE:
-			case WafPackage.WAF_MODEL__INPUT_TECHNOLOGY:
-			case WafPackage.WAF_MODEL__AJAX_TECHNOLOGY:
 			case WafPackage.WAF_MODEL__DEFAULT_SAVE_LABEL:
 			case WafPackage.WAF_MODEL__DEFAULT_CANCEL_LABEL:
 			case WafPackage.WAF_MODEL__TEXT_EDITOR_URL:
-			case WafPackage.WAF_MODEL__TOP_NAVIGATION_ID:
 			case WafPackage.WAF_MODEL__SITE_TEMPLATE:
 			case WafPackage.WAF_MODEL__STATIC_UNITS_EDITABLE:
 			case WafPackage.WAF_MODEL__HAS_API:
@@ -1159,8 +1017,8 @@ public class WafModelItemProvider
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case WafPackage.WAF_MODEL__IMAGE_MANIPULATIONS:
+			case WafPackage.WAF_MODEL__NAVIGATION:
 			case WafPackage.WAF_MODEL__PAGES:
-			case WafPackage.WAF_MODEL__MENUS:
 			case WafPackage.WAF_MODEL__AUTHENTICATION:
 			case WafPackage.WAF_MODEL__DEFAULT_STYLES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
@@ -1187,18 +1045,13 @@ public class WafModelItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
+				(WafPackage.eINSTANCE.getWafModel_Navigation(),
+				 WafFactory.eINSTANCE.createNavigation()));
+
+		newChildDescriptors.add
+			(createChildParameter
 				(WafPackage.eINSTANCE.getWafModel_Pages(),
 				 WafFactory.eINSTANCE.createPage()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.eINSTANCE.getWafModel_Menus(),
-				 WafFactory.eINSTANCE.createMenu()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.eINSTANCE.getWafModel_Menus(),
-				 WafFactory.eINSTANCE.createSubmenuEntry()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -1213,7 +1066,7 @@ public class WafModelItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.eINSTANCE.getWafModel_DefaultStyles(),
-				 WafFactory.eINSTANCE.createWafStyle()));
+				 WafFactory.eINSTANCE.createWafStyles()));
 	}
 
 	/**

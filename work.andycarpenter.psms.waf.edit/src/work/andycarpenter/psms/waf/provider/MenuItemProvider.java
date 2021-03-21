@@ -50,12 +50,35 @@ public class MenuItemProvider extends NamedDisplayElementItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addDefinedByPropertyDescriptor(object);
 			addOmitCaptionPropertyDescriptor(object);
 			addStyleClassPropertyDescriptor(object);
 			addCaptionClassPropertyDescriptor(object);
 			addLayoutClassPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Defined By feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDefinedByPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Menu_definedBy_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Menu_definedBy_feature", "_UI_Menu_type"),
+				 WafPackage.eINSTANCE.getMenu_DefinedBy(),
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
