@@ -66,8 +66,6 @@ public class NavigationItemProvider
 			addPartOfPropertyDescriptor(object);
 			addNavbarClassPropertyDescriptor(object);
 			addHasNavbarClassPropertyDescriptor(object);
-			addLogoImagePropertyDescriptor(object);
-			addLogoFiltersPropertyDescriptor(object);
 			addAuthenticationMenuPlacementPropertyDescriptor(object);
 			addAuthenticationBarClassPropertyDescriptor(object);
 			addHasAuthenticationBarClassPropertyDescriptor(object);
@@ -137,50 +135,6 @@ public class NavigationItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Logo Image feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addLogoImagePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Navigation_logoImage_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Navigation_logoImage_feature", "_UI_Navigation_type"),
-				 WafPackage.eINSTANCE.getNavigation_LogoImage(),
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Logo Filters feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addLogoFiltersPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Navigation_logoFilters_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Navigation_logoFilters_feature", "_UI_Navigation_type"),
-				 WafPackage.eINSTANCE.getNavigation_LogoFilters(),
-				 true,
-				 false,
-				 true,
-				 null,
 				 null,
 				 null));
 	}
@@ -321,7 +275,6 @@ public class NavigationItemProvider
 		switch (notification.getFeatureID(Navigation.class)) {
 			case WafPackage.NAVIGATION__NAVBAR_CLASS:
 			case WafPackage.NAVIGATION__HAS_NAVBAR_CLASS:
-			case WafPackage.NAVIGATION__LOGO_IMAGE:
 			case WafPackage.NAVIGATION__AUTHENTICATION_MENU_PLACEMENT:
 			case WafPackage.NAVIGATION__AUTHENTICATION_BAR_CLASS:
 			case WafPackage.NAVIGATION__HAS_AUTHENTICATION_BAR_CLASS:

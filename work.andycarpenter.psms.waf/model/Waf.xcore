@@ -12,7 +12,6 @@ package work.andycarpenter.psms.waf
 import work.andycarpenter.psms.base.Classifier
 import work.andycarpenter.psms.base.DataType
 import work.andycarpenter.psms.base.EnumerationType
-import work.andycarpenter.psms.base.FormalParameter
 import work.andycarpenter.psms.base.NamedDisplayElement
 import work.andycarpenter.psms.base.NamedElement
 import work.andycarpenter.psms.expression.Expression
@@ -50,25 +49,16 @@ enum FrameworkTechnologies {
 }
 
 class WafModel {
+	contains SiteProperties siteProperties
 	refers OrmModel[1] persistence
 	refers ServiceModel[1] business
 	contains ImageManipulation[] imageManipulations
 	contains Navigation navigation opposite partOf
 	contains Page[] pages opposite partOf
 	refers API api
-	String[1] siteName
-	String[1] siteTitle
-	String webmasterEmail
-	String copyrightText
-	String metaDescription
-	FrameworkTechnologies frameworkTechnology
-	boolean useDbSessionStorage
 	contains Authentication authentication opposite authorises
 	String defaultSaveLabel
 	String defaultCancelLabel
-	String textEditorURL
-	String siteTemplate
-	boolean staticUnitsEditable
 	derived readonly transient volatile boolean hasAPI get {
 		api !== null
 	}
@@ -154,6 +144,22 @@ class WafModel {
 	}
 }
 
+class SiteProperties {
+	String[1] siteName
+	String[1] siteTitle
+	String[1] locale
+	String webmasterEmail
+	String copyrightText
+	String metaDescription
+	String logoImage
+	refers ImageManipulation logoFilters
+	FrameworkTechnologies frameworkTechnology
+	boolean useDbSessionStorage
+	String textEditorURL
+	String siteTemplate
+	boolean staticUnitsEditable
+}
+
 class Navigation {
 	refers WafModel[1] partOf opposite navigation
 	contains Menu[] menus opposite definedBy
@@ -161,8 +167,6 @@ class Navigation {
 	derived readonly unsettable transient volatile boolean hasNavbarClass get {
 		navbarClass.trim() != ''
 	}
-	String logoImage
-	refers ImageManipulation logoFilters
 	AuthenticationMenuPlacement authenticationMenuPlacement
 	String authenticationBarClass = "nav"
 	derived readonly unsettable transient volatile boolean hasAuthenticationBarClass get {

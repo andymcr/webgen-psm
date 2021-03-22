@@ -66,18 +66,8 @@ public class WafModelItemProvider
 			addPersistencePropertyDescriptor(object);
 			addBusinessPropertyDescriptor(object);
 			addApiPropertyDescriptor(object);
-			addSiteNamePropertyDescriptor(object);
-			addSiteTitlePropertyDescriptor(object);
-			addWebmasterEmailPropertyDescriptor(object);
-			addCopyrightTextPropertyDescriptor(object);
-			addMetaDescriptionPropertyDescriptor(object);
-			addFrameworkTechnologyPropertyDescriptor(object);
-			addUseDbSessionStoragePropertyDescriptor(object);
 			addDefaultSaveLabelPropertyDescriptor(object);
 			addDefaultCancelLabelPropertyDescriptor(object);
-			addTextEditorURLPropertyDescriptor(object);
-			addSiteTemplatePropertyDescriptor(object);
-			addStaticUnitsEditablePropertyDescriptor(object);
 			addHasAPIPropertyDescriptor(object);
 			addEditUnitsPropertyDescriptor(object);
 			addHasEditUnitsPropertyDescriptor(object);
@@ -171,160 +161,6 @@ public class WafModelItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Site Name feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addSiteNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_WafModel_siteName_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafModel_siteName_feature", "_UI_WafModel_type"),
-				 WafPackage.eINSTANCE.getWafModel_SiteName(),
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Site Title feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addSiteTitlePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_WafModel_siteTitle_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafModel_siteTitle_feature", "_UI_WafModel_type"),
-				 WafPackage.eINSTANCE.getWafModel_SiteTitle(),
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Webmaster Email feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addWebmasterEmailPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_WafModel_webmasterEmail_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafModel_webmasterEmail_feature", "_UI_WafModel_type"),
-				 WafPackage.eINSTANCE.getWafModel_WebmasterEmail(),
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Copyright Text feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addCopyrightTextPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_WafModel_copyrightText_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafModel_copyrightText_feature", "_UI_WafModel_type"),
-				 WafPackage.eINSTANCE.getWafModel_CopyrightText(),
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Meta Description feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addMetaDescriptionPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_WafModel_metaDescription_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafModel_metaDescription_feature", "_UI_WafModel_type"),
-				 WafPackage.eINSTANCE.getWafModel_MetaDescription(),
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Framework Technology feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addFrameworkTechnologyPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_WafModel_frameworkTechnology_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafModel_frameworkTechnology_feature", "_UI_WafModel_type"),
-				 WafPackage.eINSTANCE.getWafModel_FrameworkTechnology(),
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Use Db Session Storage feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addUseDbSessionStoragePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_WafModel_useDbSessionStorage_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafModel_useDbSessionStorage_feature", "_UI_WafModel_type"),
-				 WafPackage.eINSTANCE.getWafModel_UseDbSessionStorage(),
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Default Cancel Label feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -364,72 +200,6 @@ public class WafModelItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Text Editor URL feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addTextEditorURLPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_WafModel_textEditorURL_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafModel_textEditorURL_feature", "_UI_WafModel_type"),
-				 WafPackage.eINSTANCE.getWafModel_TextEditorURL(),
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Site Template feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addSiteTemplatePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_WafModel_siteTemplate_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafModel_siteTemplate_feature", "_UI_WafModel_type"),
-				 WafPackage.eINSTANCE.getWafModel_SiteTemplate(),
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Static Units Editable feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addStaticUnitsEditablePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_WafModel_staticUnitsEditable_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafModel_staticUnitsEditable_feature", "_UI_WafModel_type"),
-				 WafPackage.eINSTANCE.getWafModel_StaticUnitsEditable(),
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -930,6 +700,7 @@ public class WafModelItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
+			childrenFeatures.add(WafPackage.eINSTANCE.getWafModel_SiteProperties());
 			childrenFeatures.add(WafPackage.eINSTANCE.getWafModel_ImageManipulations());
 			childrenFeatures.add(WafPackage.eINSTANCE.getWafModel_Navigation());
 			childrenFeatures.add(WafPackage.eINSTANCE.getWafModel_Pages());
@@ -978,7 +749,7 @@ public class WafModelItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((WafModel)object).getSiteName();
+		String label = ((WafModel)object).getDefaultSaveLabel();
 		return label == null || label.length() == 0 ?
 			getString("_UI_WafModel_type") :
 			getString("_UI_WafModel_type") + " " + label;
@@ -997,18 +768,8 @@ public class WafModelItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(WafModel.class)) {
-			case WafPackage.WAF_MODEL__SITE_NAME:
-			case WafPackage.WAF_MODEL__SITE_TITLE:
-			case WafPackage.WAF_MODEL__WEBMASTER_EMAIL:
-			case WafPackage.WAF_MODEL__COPYRIGHT_TEXT:
-			case WafPackage.WAF_MODEL__META_DESCRIPTION:
-			case WafPackage.WAF_MODEL__FRAMEWORK_TECHNOLOGY:
-			case WafPackage.WAF_MODEL__USE_DB_SESSION_STORAGE:
 			case WafPackage.WAF_MODEL__DEFAULT_SAVE_LABEL:
 			case WafPackage.WAF_MODEL__DEFAULT_CANCEL_LABEL:
-			case WafPackage.WAF_MODEL__TEXT_EDITOR_URL:
-			case WafPackage.WAF_MODEL__SITE_TEMPLATE:
-			case WafPackage.WAF_MODEL__STATIC_UNITS_EDITABLE:
 			case WafPackage.WAF_MODEL__HAS_API:
 			case WafPackage.WAF_MODEL__HAS_EDIT_UNITS:
 			case WafPackage.WAF_MODEL__HAS_FORM_UNITS:
@@ -1023,6 +784,7 @@ public class WafModelItemProvider
 			case WafPackage.WAF_MODEL__IS_LOCALLY_AUTHENTICATED:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
+			case WafPackage.WAF_MODEL__SITE_PROPERTIES:
 			case WafPackage.WAF_MODEL__IMAGE_MANIPULATIONS:
 			case WafPackage.WAF_MODEL__NAVIGATION:
 			case WafPackage.WAF_MODEL__PAGES:
@@ -1051,6 +813,11 @@ public class WafModelItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.eINSTANCE.getWafModel_SiteProperties(),
+				 WafFactory.eINSTANCE.createSiteProperties()));
 
 		newChildDescriptors.add
 			(createChildParameter

@@ -118,6 +118,29 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.waf.SiteProperties} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected SitePropertiesItemProvider sitePropertiesItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link work.andycarpenter.psms.waf.SiteProperties}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createSitePropertiesAdapter() {
+		if (sitePropertiesItemProvider == null) {
+			sitePropertiesItemProvider = new SitePropertiesItemProvider(this);
+		}
+
+		return sitePropertiesItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.waf.Navigation} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1482,6 +1505,7 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 	 */
 	public void dispose() {
 		if (wafModelItemProvider != null) wafModelItemProvider.dispose();
+		if (sitePropertiesItemProvider != null) sitePropertiesItemProvider.dispose();
 		if (navigationItemProvider != null) navigationItemProvider.dispose();
 		if (menuItemProvider != null) menuItemProvider.dispose();
 		if (submenuEntryItemProvider != null) submenuEntryItemProvider.dispose();
