@@ -141,26 +141,95 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.waf.WafStyles} instances.
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.waf.ContentUnitStyles} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected WafStylesItemProvider wafStylesItemProvider;
+	protected ContentUnitStylesItemProvider contentUnitStylesItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link work.andycarpenter.psms.waf.WafStyles}.
+	 * This creates an adapter for a {@link work.andycarpenter.psms.waf.ContentUnitStyles}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createWafStylesAdapter() {
-		if (wafStylesItemProvider == null) {
-			wafStylesItemProvider = new WafStylesItemProvider(this);
+	public Adapter createContentUnitStylesAdapter() {
+		if (contentUnitStylesItemProvider == null) {
+			contentUnitStylesItemProvider = new ContentUnitStylesItemProvider(this);
 		}
 
-		return wafStylesItemProvider;
+		return contentUnitStylesItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.waf.DynamicUnitStyles} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected DynamicUnitStylesItemProvider dynamicUnitStylesItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link work.andycarpenter.psms.waf.DynamicUnitStyles}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createDynamicUnitStylesAdapter() {
+		if (dynamicUnitStylesItemProvider == null) {
+			dynamicUnitStylesItemProvider = new DynamicUnitStylesItemProvider(this);
+		}
+
+		return dynamicUnitStylesItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.waf.FormUnitStyles} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected FormUnitStylesItemProvider formUnitStylesItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link work.andycarpenter.psms.waf.FormUnitStyles}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createFormUnitStylesAdapter() {
+		if (formUnitStylesItemProvider == null) {
+			formUnitStylesItemProvider = new FormUnitStylesItemProvider(this);
+		}
+
+		return formUnitStylesItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.waf.CardsUnitStyles} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected CardsUnitStylesItemProvider cardsUnitStylesItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link work.andycarpenter.psms.waf.CardsUnitStyles}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createCardsUnitStylesAdapter() {
+		if (cardsUnitStylesItemProvider == null) {
+			cardsUnitStylesItemProvider = new CardsUnitStylesItemProvider(this);
+		}
+
+		return cardsUnitStylesItemProvider;
 	}
 
 	/**
@@ -391,52 +460,6 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 		}
 
 		return pageItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.waf.Query} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected QueryItemProvider queryItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link work.andycarpenter.psms.waf.Query}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createQueryAdapter() {
-		if (queryItemProvider == null) {
-			queryItemProvider = new QueryItemProvider(this);
-		}
-
-		return queryItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.waf.QueryParameter} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected QueryParameterItemProvider queryParameterItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link work.andycarpenter.psms.waf.QueryParameter}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createQueryParameterAdapter() {
-		if (queryParameterItemProvider == null) {
-			queryParameterItemProvider = new QueryParameterItemProvider(this);
-		}
-
-		return queryParameterItemProvider;
 	}
 
 	/**
@@ -1464,15 +1487,16 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 		if (submenuEntryItemProvider != null) submenuEntryItemProvider.dispose();
 		if (actionMenuEntryItemProvider != null) actionMenuEntryItemProvider.dispose();
 		if (editStaticTextMenuEntryItemProvider != null) editStaticTextMenuEntryItemProvider.dispose();
-		if (wafStylesItemProvider != null) wafStylesItemProvider.dispose();
+		if (contentUnitStylesItemProvider != null) contentUnitStylesItemProvider.dispose();
+		if (dynamicUnitStylesItemProvider != null) dynamicUnitStylesItemProvider.dispose();
+		if (formUnitStylesItemProvider != null) formUnitStylesItemProvider.dispose();
+		if (cardsUnitStylesItemProvider != null) cardsUnitStylesItemProvider.dispose();
 		if (localAuthenticationSystemItemProvider != null) localAuthenticationSystemItemProvider.dispose();
 		if (casAuthenticationItemProvider != null) casAuthenticationItemProvider.dispose();
 		if (imageManipulationItemProvider != null) imageManipulationItemProvider.dispose();
 		if (backgroundFilterItemProvider != null) backgroundFilterItemProvider.dispose();
 		if (thumbnailFilterItemProvider != null) thumbnailFilterItemProvider.dispose();
 		if (pageItemProvider != null) pageItemProvider.dispose();
-		if (queryItemProvider != null) queryItemProvider.dispose();
-		if (queryParameterItemProvider != null) queryParameterItemProvider.dispose();
 		if (staticUnitItemProvider != null) staticUnitItemProvider.dispose();
 		if (routeActualItemProvider != null) routeActualItemProvider.dispose();
 		if (unitAttributeItemProvider != null) unitAttributeItemProvider.dispose();

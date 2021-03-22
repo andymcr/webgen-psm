@@ -935,6 +935,13 @@ public class WafModelItemProvider
 			childrenFeatures.add(WafPackage.eINSTANCE.getWafModel_Pages());
 			childrenFeatures.add(WafPackage.eINSTANCE.getWafModel_Authentication());
 			childrenFeatures.add(WafPackage.eINSTANCE.getWafModel_DefaultStyles());
+			childrenFeatures.add(WafPackage.eINSTANCE.getWafModel_DefaultCardsStyles());
+			childrenFeatures.add(WafPackage.eINSTANCE.getWafModel_DefaultDetailsStyles());
+			childrenFeatures.add(WafPackage.eINSTANCE.getWafModel_DefaultFormStyles());
+			childrenFeatures.add(WafPackage.eINSTANCE.getWafModel_DefaultGalleryStyles());
+			childrenFeatures.add(WafPackage.eINSTANCE.getWafModel_DefaultSliderStyles());
+			childrenFeatures.add(WafPackage.eINSTANCE.getWafModel_DefaultStaticStyles());
+			childrenFeatures.add(WafPackage.eINSTANCE.getWafModel_DefaultTabularStyles());
 		}
 		return childrenFeatures;
 	}
@@ -1021,6 +1028,13 @@ public class WafModelItemProvider
 			case WafPackage.WAF_MODEL__PAGES:
 			case WafPackage.WAF_MODEL__AUTHENTICATION:
 			case WafPackage.WAF_MODEL__DEFAULT_STYLES:
+			case WafPackage.WAF_MODEL__DEFAULT_CARDS_STYLES:
+			case WafPackage.WAF_MODEL__DEFAULT_DETAILS_STYLES:
+			case WafPackage.WAF_MODEL__DEFAULT_FORM_STYLES:
+			case WafPackage.WAF_MODEL__DEFAULT_GALLERY_STYLES:
+			case WafPackage.WAF_MODEL__DEFAULT_SLIDER_STYLES:
+			case WafPackage.WAF_MODEL__DEFAULT_STATIC_STYLES:
+			case WafPackage.WAF_MODEL__DEFAULT_TABULAR_STYLES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -1066,7 +1080,136 @@ public class WafModelItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.eINSTANCE.getWafModel_DefaultStyles(),
-				 WafFactory.eINSTANCE.createWafStyles()));
+				 WafFactory.eINSTANCE.createDynamicUnitStyles()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.eINSTANCE.getWafModel_DefaultStyles(),
+				 WafFactory.eINSTANCE.createFormUnitStyles()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.eINSTANCE.getWafModel_DefaultStyles(),
+				 WafFactory.eINSTANCE.createCardsUnitStyles()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.eINSTANCE.getWafModel_DefaultCardsStyles(),
+				 WafFactory.eINSTANCE.createCardsUnitStyles()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.eINSTANCE.getWafModel_DefaultDetailsStyles(),
+				 WafFactory.eINSTANCE.createDynamicUnitStyles()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.eINSTANCE.getWafModel_DefaultDetailsStyles(),
+				 WafFactory.eINSTANCE.createFormUnitStyles()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.eINSTANCE.getWafModel_DefaultDetailsStyles(),
+				 WafFactory.eINSTANCE.createCardsUnitStyles()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.eINSTANCE.getWafModel_DefaultFormStyles(),
+				 WafFactory.eINSTANCE.createFormUnitStyles()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.eINSTANCE.getWafModel_DefaultGalleryStyles(),
+				 WafFactory.eINSTANCE.createDynamicUnitStyles()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.eINSTANCE.getWafModel_DefaultGalleryStyles(),
+				 WafFactory.eINSTANCE.createFormUnitStyles()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.eINSTANCE.getWafModel_DefaultGalleryStyles(),
+				 WafFactory.eINSTANCE.createCardsUnitStyles()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.eINSTANCE.getWafModel_DefaultSliderStyles(),
+				 WafFactory.eINSTANCE.createDynamicUnitStyles()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.eINSTANCE.getWafModel_DefaultSliderStyles(),
+				 WafFactory.eINSTANCE.createFormUnitStyles()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.eINSTANCE.getWafModel_DefaultSliderStyles(),
+				 WafFactory.eINSTANCE.createCardsUnitStyles()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.eINSTANCE.getWafModel_DefaultStaticStyles(),
+				 WafFactory.eINSTANCE.createContentUnitStyles()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.eINSTANCE.getWafModel_DefaultStaticStyles(),
+				 WafFactory.eINSTANCE.createDynamicUnitStyles()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.eINSTANCE.getWafModel_DefaultStaticStyles(),
+				 WafFactory.eINSTANCE.createFormUnitStyles()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.eINSTANCE.getWafModel_DefaultStaticStyles(),
+				 WafFactory.eINSTANCE.createCardsUnitStyles()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.eINSTANCE.getWafModel_DefaultTabularStyles(),
+				 WafFactory.eINSTANCE.createDynamicUnitStyles()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.eINSTANCE.getWafModel_DefaultTabularStyles(),
+				 WafFactory.eINSTANCE.createFormUnitStyles()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.eINSTANCE.getWafModel_DefaultTabularStyles(),
+				 WafFactory.eINSTANCE.createCardsUnitStyles()));
+	}
+
+	/**
+	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
+		Object childFeature = feature;
+		Object childObject = child;
+
+		boolean qualify =
+			childFeature == WafPackage.eINSTANCE.getWafModel_DefaultStyles() ||
+			childFeature == WafPackage.eINSTANCE.getWafModel_DefaultDetailsStyles() ||
+			childFeature == WafPackage.eINSTANCE.getWafModel_DefaultGalleryStyles() ||
+			childFeature == WafPackage.eINSTANCE.getWafModel_DefaultSliderStyles() ||
+			childFeature == WafPackage.eINSTANCE.getWafModel_DefaultStaticStyles() ||
+			childFeature == WafPackage.eINSTANCE.getWafModel_DefaultTabularStyles() ||
+			childFeature == WafPackage.eINSTANCE.getWafModel_DefaultFormStyles() ||
+			childFeature == WafPackage.eINSTANCE.getWafModel_DefaultCardsStyles();
+
+		if (qualify) {
+			return getString
+				("_UI_CreateChild_text2",
+				 new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
+		}
+		return super.getCreateChildText(owner, feature, child, selection);
 	}
 
 	/**
