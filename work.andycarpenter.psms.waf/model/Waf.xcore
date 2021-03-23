@@ -273,6 +273,7 @@ enum AuthenticationKeyTypes {
 class LocalAuthenticationSystem extends Authentication {
 	refers Entity[1] authenticationModel
 	AuthenticationKeyTypes[1] authenticationKey
+	refers Entity[1] resetPasswordRequestModel
 	refers RegistrationUnit registrationUnit
 	refers LoginUnit[1] loginUnit
 	refers LogoutUnit[1] logoutUnit
@@ -2036,7 +2037,11 @@ interface ActionContainer {
 		actions.filter[it instanceof DeleteAction || it instanceof OperationAction].toEList()
 	}
 	refers derived readonly transient volatile unsettable Action[] containerActions get {
-		actions.filter[it instanceof ContainerSelectAction || it instanceof ContainerOperationAction || it instanceof GeneralOperationAction].toEList()
+		actions.filter[it instanceof ContainerSelectAction
+							|| it instanceof ContainerOperationAction
+							|| it instanceof GeneralOperationAction
+							|| it instanceof SecurityAction
+		].toEList()
 	}
 	derived readonly transient volatile boolean hasContainerActions get {
 		!containerActions.isEmpty()
