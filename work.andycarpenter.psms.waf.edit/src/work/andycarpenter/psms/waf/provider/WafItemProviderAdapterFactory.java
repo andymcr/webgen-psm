@@ -164,52 +164,6 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.waf.ContentUnitStyles} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ContentUnitStylesItemProvider contentUnitStylesItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link work.andycarpenter.psms.waf.ContentUnitStyles}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createContentUnitStylesAdapter() {
-		if (contentUnitStylesItemProvider == null) {
-			contentUnitStylesItemProvider = new ContentUnitStylesItemProvider(this);
-		}
-
-		return contentUnitStylesItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.waf.DynamicUnitStyles} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected DynamicUnitStylesItemProvider dynamicUnitStylesItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link work.andycarpenter.psms.waf.DynamicUnitStyles}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createDynamicUnitStylesAdapter() {
-		if (dynamicUnitStylesItemProvider == null) {
-			dynamicUnitStylesItemProvider = new DynamicUnitStylesItemProvider(this);
-		}
-
-		return dynamicUnitStylesItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.waf.FormUnitStyles} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -233,6 +187,98 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.waf.GalleryUnitStyles} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected GalleryUnitStylesItemProvider galleryUnitStylesItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link work.andycarpenter.psms.waf.GalleryUnitStyles}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createGalleryUnitStylesAdapter() {
+		if (galleryUnitStylesItemProvider == null) {
+			galleryUnitStylesItemProvider = new GalleryUnitStylesItemProvider(this);
+		}
+
+		return galleryUnitStylesItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.waf.SliderUnitStyles} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected SliderUnitStylesItemProvider sliderUnitStylesItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link work.andycarpenter.psms.waf.SliderUnitStyles}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createSliderUnitStylesAdapter() {
+		if (sliderUnitStylesItemProvider == null) {
+			sliderUnitStylesItemProvider = new SliderUnitStylesItemProvider(this);
+		}
+
+		return sliderUnitStylesItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.waf.StaticUnitStyles} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected StaticUnitStylesItemProvider staticUnitStylesItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link work.andycarpenter.psms.waf.StaticUnitStyles}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createStaticUnitStylesAdapter() {
+		if (staticUnitStylesItemProvider == null) {
+			staticUnitStylesItemProvider = new StaticUnitStylesItemProvider(this);
+		}
+
+		return staticUnitStylesItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.waf.TabularUnitStyles} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected TabularUnitStylesItemProvider tabularUnitStylesItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link work.andycarpenter.psms.waf.TabularUnitStyles}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createTabularUnitStylesAdapter() {
+		if (tabularUnitStylesItemProvider == null) {
+			tabularUnitStylesItemProvider = new TabularUnitStylesItemProvider(this);
+		}
+
+		return tabularUnitStylesItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.waf.CardsUnitStyles} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -253,6 +299,29 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 		}
 
 		return cardsUnitStylesItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.waf.DetailsUnitStyles} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected DetailsUnitStylesItemProvider detailsUnitStylesItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link work.andycarpenter.psms.waf.DetailsUnitStyles}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createDetailsUnitStylesAdapter() {
+		if (detailsUnitStylesItemProvider == null) {
+			detailsUnitStylesItemProvider = new DetailsUnitStylesItemProvider(this);
+		}
+
+		return detailsUnitStylesItemProvider;
 	}
 
 	/**
@@ -460,6 +529,29 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 		}
 
 		return editStaticTextMenuEntryItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.waf.DefaultUnitStyles} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected DefaultUnitStylesItemProvider defaultUnitStylesItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link work.andycarpenter.psms.waf.DefaultUnitStyles}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createDefaultUnitStylesAdapter() {
+		if (defaultUnitStylesItemProvider == null) {
+			defaultUnitStylesItemProvider = new DefaultUnitStylesItemProvider(this);
+		}
+
+		return defaultUnitStylesItemProvider;
 	}
 
 	/**
@@ -1511,10 +1603,14 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 		if (submenuEntryItemProvider != null) submenuEntryItemProvider.dispose();
 		if (actionMenuEntryItemProvider != null) actionMenuEntryItemProvider.dispose();
 		if (editStaticTextMenuEntryItemProvider != null) editStaticTextMenuEntryItemProvider.dispose();
-		if (contentUnitStylesItemProvider != null) contentUnitStylesItemProvider.dispose();
-		if (dynamicUnitStylesItemProvider != null) dynamicUnitStylesItemProvider.dispose();
-		if (formUnitStylesItemProvider != null) formUnitStylesItemProvider.dispose();
+		if (defaultUnitStylesItemProvider != null) defaultUnitStylesItemProvider.dispose();
 		if (cardsUnitStylesItemProvider != null) cardsUnitStylesItemProvider.dispose();
+		if (detailsUnitStylesItemProvider != null) detailsUnitStylesItemProvider.dispose();
+		if (formUnitStylesItemProvider != null) formUnitStylesItemProvider.dispose();
+		if (galleryUnitStylesItemProvider != null) galleryUnitStylesItemProvider.dispose();
+		if (sliderUnitStylesItemProvider != null) sliderUnitStylesItemProvider.dispose();
+		if (staticUnitStylesItemProvider != null) staticUnitStylesItemProvider.dispose();
+		if (tabularUnitStylesItemProvider != null) tabularUnitStylesItemProvider.dispose();
 		if (localAuthenticationSystemItemProvider != null) localAuthenticationSystemItemProvider.dispose();
 		if (casAuthenticationItemProvider != null) casAuthenticationItemProvider.dispose();
 		if (imageManipulationItemProvider != null) imageManipulationItemProvider.dispose();

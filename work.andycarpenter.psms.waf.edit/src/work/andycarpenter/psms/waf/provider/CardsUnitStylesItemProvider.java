@@ -229,7 +229,7 @@ public class CardsUnitStylesItemProvider extends DynamicUnitStylesItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((CardsUnitStyles)object).getStyleClass();
+		String label = ((CardsUnitStyles)object).getSectionClass();
 		return label == null || label.length() == 0 ?
 			getString("_UI_CardsUnitStyles_type") :
 			getString("_UI_CardsUnitStyles_type") + " " + label;

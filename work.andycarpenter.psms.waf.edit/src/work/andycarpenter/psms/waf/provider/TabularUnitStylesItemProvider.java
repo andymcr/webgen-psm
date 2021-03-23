@@ -9,28 +9,24 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
-import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import work.andycarpenter.psms.waf.FormUnitStyles;
-import work.andycarpenter.psms.waf.WafPackage;
+import work.andycarpenter.psms.waf.TabularUnitStyles;
 
 /**
- * This is the item provider adapter for a {@link work.andycarpenter.psms.waf.FormUnitStyles} object.
+ * This is the item provider adapter for a {@link work.andycarpenter.psms.waf.TabularUnitStyles} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class FormUnitStylesItemProvider extends DynamicUnitStylesItemProvider {
+public class TabularUnitStylesItemProvider extends DynamicUnitStylesItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public FormUnitStylesItemProvider(AdapterFactory adapterFactory) {
+	public TabularUnitStylesItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -45,42 +41,19 @@ public class FormUnitStylesItemProvider extends DynamicUnitStylesItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addInputGroupClassPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Input Group Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addInputGroupClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_FormUnitStyles_inputGroupClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_FormUnitStyles_inputGroupClass_feature", "_UI_FormUnitStyles_type"),
-				 WafPackage.eINSTANCE.getFormUnitStyles_InputGroupClass(),
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This returns FormUnitStyles.gif.
+	 * This returns TabularUnitStyles.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/FormUnitStyles"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/TabularUnitStyles"));
 	}
 
 	/**
@@ -91,10 +64,10 @@ public class FormUnitStylesItemProvider extends DynamicUnitStylesItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((FormUnitStyles)object).getSectionClass();
+		String label = ((TabularUnitStyles)object).getSectionClass();
 		return label == null || label.length() == 0 ?
-			getString("_UI_FormUnitStyles_type") :
-			getString("_UI_FormUnitStyles_type") + " " + label;
+			getString("_UI_TabularUnitStyles_type") :
+			getString("_UI_TabularUnitStyles_type") + " " + label;
 	}
 
 
@@ -108,12 +81,6 @@ public class FormUnitStylesItemProvider extends DynamicUnitStylesItemProvider {
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-
-		switch (notification.getFeatureID(FormUnitStyles.class)) {
-			case WafPackage.FORM_UNIT_STYLES__INPUT_GROUP_CLASS:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-		}
 		super.notifyChanged(notification);
 	}
 

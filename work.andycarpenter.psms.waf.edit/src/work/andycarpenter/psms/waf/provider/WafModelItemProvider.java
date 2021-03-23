@@ -87,6 +87,7 @@ public class WafModelItemProvider
 			addCasAuthenticationPropertyDescriptor(object);
 			addIsLocallyAuthenticatedPropertyDescriptor(object);
 			addLocalAuthenticationPropertyDescriptor(object);
+			addDefaultPageStyleClassPropertyDescriptor(object);
 			addGenModelPropertyDescriptor(object);
 			addUiModelPropertyDescriptor(object);
 			addSecurityModelPropertyDescriptor(object);
@@ -623,6 +624,28 @@ public class WafModelItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Default Page Style Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDefaultPageStyleClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_WafModel_defaultPageStyleClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WafModel_defaultPageStyleClass_feature", "_UI_WafModel_type"),
+				 WafPackage.eINSTANCE.getWafModel_DefaultPageStyleClass(),
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Gen Model feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -782,6 +805,7 @@ public class WafModelItemProvider
 			case WafPackage.WAF_MODEL__IS_AUTHENTICATED:
 			case WafPackage.WAF_MODEL__IS_CAS_AUTHENTICATED:
 			case WafPackage.WAF_MODEL__IS_LOCALLY_AUTHENTICATED:
+			case WafPackage.WAF_MODEL__DEFAULT_PAGE_STYLE_CLASS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case WafPackage.WAF_MODEL__SITE_PROPERTIES:
@@ -847,17 +871,7 @@ public class WafModelItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.eINSTANCE.getWafModel_DefaultStyles(),
-				 WafFactory.eINSTANCE.createDynamicUnitStyles()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.eINSTANCE.getWafModel_DefaultStyles(),
-				 WafFactory.eINSTANCE.createFormUnitStyles()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.eINSTANCE.getWafModel_DefaultStyles(),
-				 WafFactory.eINSTANCE.createCardsUnitStyles()));
+				 WafFactory.eINSTANCE.createDefaultUnitStyles()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -867,17 +881,7 @@ public class WafModelItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.eINSTANCE.getWafModel_DefaultDetailsStyles(),
-				 WafFactory.eINSTANCE.createDynamicUnitStyles()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.eINSTANCE.getWafModel_DefaultDetailsStyles(),
-				 WafFactory.eINSTANCE.createFormUnitStyles()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.eINSTANCE.getWafModel_DefaultDetailsStyles(),
-				 WafFactory.eINSTANCE.createCardsUnitStyles()));
+				 WafFactory.eINSTANCE.createDetailsUnitStyles()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -887,96 +891,22 @@ public class WafModelItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.eINSTANCE.getWafModel_DefaultGalleryStyles(),
-				 WafFactory.eINSTANCE.createDynamicUnitStyles()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.eINSTANCE.getWafModel_DefaultGalleryStyles(),
-				 WafFactory.eINSTANCE.createFormUnitStyles()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.eINSTANCE.getWafModel_DefaultGalleryStyles(),
-				 WafFactory.eINSTANCE.createCardsUnitStyles()));
+				 WafFactory.eINSTANCE.createGalleryUnitStyles()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.eINSTANCE.getWafModel_DefaultSliderStyles(),
-				 WafFactory.eINSTANCE.createDynamicUnitStyles()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.eINSTANCE.getWafModel_DefaultSliderStyles(),
-				 WafFactory.eINSTANCE.createFormUnitStyles()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.eINSTANCE.getWafModel_DefaultSliderStyles(),
-				 WafFactory.eINSTANCE.createCardsUnitStyles()));
+				 WafFactory.eINSTANCE.createSliderUnitStyles()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.eINSTANCE.getWafModel_DefaultStaticStyles(),
-				 WafFactory.eINSTANCE.createContentUnitStyles()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.eINSTANCE.getWafModel_DefaultStaticStyles(),
-				 WafFactory.eINSTANCE.createDynamicUnitStyles()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.eINSTANCE.getWafModel_DefaultStaticStyles(),
-				 WafFactory.eINSTANCE.createFormUnitStyles()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.eINSTANCE.getWafModel_DefaultStaticStyles(),
-				 WafFactory.eINSTANCE.createCardsUnitStyles()));
+				 WafFactory.eINSTANCE.createStaticUnitStyles()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.eINSTANCE.getWafModel_DefaultTabularStyles(),
-				 WafFactory.eINSTANCE.createDynamicUnitStyles()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.eINSTANCE.getWafModel_DefaultTabularStyles(),
-				 WafFactory.eINSTANCE.createFormUnitStyles()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.eINSTANCE.getWafModel_DefaultTabularStyles(),
-				 WafFactory.eINSTANCE.createCardsUnitStyles()));
-	}
-
-	/**
-	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
-		Object childFeature = feature;
-		Object childObject = child;
-
-		boolean qualify =
-			childFeature == WafPackage.eINSTANCE.getWafModel_DefaultStyles() ||
-			childFeature == WafPackage.eINSTANCE.getWafModel_DefaultDetailsStyles() ||
-			childFeature == WafPackage.eINSTANCE.getWafModel_DefaultGalleryStyles() ||
-			childFeature == WafPackage.eINSTANCE.getWafModel_DefaultSliderStyles() ||
-			childFeature == WafPackage.eINSTANCE.getWafModel_DefaultStaticStyles() ||
-			childFeature == WafPackage.eINSTANCE.getWafModel_DefaultTabularStyles() ||
-			childFeature == WafPackage.eINSTANCE.getWafModel_DefaultFormStyles() ||
-			childFeature == WafPackage.eINSTANCE.getWafModel_DefaultCardsStyles();
-
-		if (qualify) {
-			return getString
-				("_UI_CreateChild_text2",
-				 new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
-		}
-		return super.getCreateChildText(owner, feature, child, selection);
+				 WafFactory.eINSTANCE.createTabularUnitStyles()));
 	}
 
 	/**

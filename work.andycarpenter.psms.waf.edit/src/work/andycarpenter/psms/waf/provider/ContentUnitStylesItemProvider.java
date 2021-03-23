@@ -60,34 +60,11 @@ public class ContentUnitStylesItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addStyleClassPropertyDescriptor(object);
 			addSectionClassPropertyDescriptor(object);
 			addCaptionClassPropertyDescriptor(object);
 			addContentClassPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Style Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addStyleClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ContentUnitStyles_styleClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ContentUnitStyles_styleClass_feature", "_UI_ContentUnitStyles_type"),
-				 WafPackage.eINSTANCE.getContentUnitStyles_StyleClass(),
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
 	}
 
 	/**
@@ -157,17 +134,6 @@ public class ContentUnitStylesItemProvider
 	}
 
 	/**
-	 * This returns ContentUnitStyles.gif.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/ContentUnitStyles"));
-	}
-
-	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -175,7 +141,7 @@ public class ContentUnitStylesItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ContentUnitStyles)object).getStyleClass();
+		String label = ((ContentUnitStyles)object).getSectionClass();
 		return label == null || label.length() == 0 ?
 			getString("_UI_ContentUnitStyles_type") :
 			getString("_UI_ContentUnitStyles_type") + " " + label;
@@ -194,7 +160,6 @@ public class ContentUnitStylesItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ContentUnitStyles.class)) {
-			case WafPackage.CONTENT_UNIT_STYLES__STYLE_CLASS:
 			case WafPackage.CONTENT_UNIT_STYLES__SECTION_CLASS:
 			case WafPackage.CONTENT_UNIT_STYLES__CAPTION_CLASS:
 			case WafPackage.CONTENT_UNIT_STYLES__CONTENT_CLASS:

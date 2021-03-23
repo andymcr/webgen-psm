@@ -47,9 +47,9 @@ public class DynamicUnitStylesItemProvider extends ContentUnitStylesItemProvider
 
 			addFieldListClassPropertyDescriptor(object);
 			addDefinitionFieldListClassPropertyDescriptor(object);
-			addControlClassPropertyDescriptor(object);
 			addFieldLabelClassPropertyDescriptor(object);
 			addFieldValueClassPropertyDescriptor(object);
+			addControlClassPropertyDescriptor(object);
 			addActionNavigationClassPropertyDescriptor(object);
 			addAnchorClassPropertyDescriptor(object);
 		}
@@ -211,17 +211,6 @@ public class DynamicUnitStylesItemProvider extends ContentUnitStylesItemProvider
 	}
 
 	/**
-	 * This returns DynamicUnitStyles.gif.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/DynamicUnitStyles"));
-	}
-
-	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -229,7 +218,7 @@ public class DynamicUnitStylesItemProvider extends ContentUnitStylesItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((DynamicUnitStyles)object).getStyleClass();
+		String label = ((DynamicUnitStyles)object).getSectionClass();
 		return label == null || label.length() == 0 ?
 			getString("_UI_DynamicUnitStyles_type") :
 			getString("_UI_DynamicUnitStyles_type") + " " + label;
@@ -250,9 +239,9 @@ public class DynamicUnitStylesItemProvider extends ContentUnitStylesItemProvider
 		switch (notification.getFeatureID(DynamicUnitStyles.class)) {
 			case WafPackage.DYNAMIC_UNIT_STYLES__FIELD_LIST_CLASS:
 			case WafPackage.DYNAMIC_UNIT_STYLES__DEFINITION_FIELD_LIST_CLASS:
-			case WafPackage.DYNAMIC_UNIT_STYLES__CONTROL_CLASS:
 			case WafPackage.DYNAMIC_UNIT_STYLES__FIELD_LABEL_CLASS:
 			case WafPackage.DYNAMIC_UNIT_STYLES__FIELD_VALUE_CLASS:
+			case WafPackage.DYNAMIC_UNIT_STYLES__CONTROL_CLASS:
 			case WafPackage.DYNAMIC_UNIT_STYLES__ACTION_NAVIGATION_CLASS:
 			case WafPackage.DYNAMIC_UNIT_STYLES__ANCHOR_CLASS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));

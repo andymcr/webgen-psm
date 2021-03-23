@@ -124,14 +124,15 @@ class WafModel {
 		if (isLocallyAuthenticated)
 			authentication as LocalAuthenticationSystem
 	}
-    contains DynamicUnitStyles defaultStyles
+	String defaultPageStyleClass = ''
+    contains DefaultUnitStyles defaultStyles
     contains CardsUnitStyles defaultCardsStyles
-    contains DynamicUnitStyles defaultDetailsStyles
+    contains DetailsUnitStyles defaultDetailsStyles
     contains FormUnitStyles defaultFormStyles
-    contains DynamicUnitStyles defaultGalleryStyles
-    contains DynamicUnitStyles defaultSliderStyles
-    contains ContentUnitStyles defaultStaticStyles
-    contains DynamicUnitStyles defaultTabularStyles
+    contains GalleryUnitStyles defaultGalleryStyles
+    contains SliderUnitStyles defaultSliderStyles
+    contains StaticUnitStyles defaultStaticStyles
+    contains TabularUnitStyles defaultTabularStyles
 
    	refers readonly transient volatile unsettable derived WafModel genModel get {
 		this
@@ -208,25 +209,23 @@ class EditStaticTextMenuEntry extends MenuEntry, NamedDisplayElement {
 }
 
 
-class ContentUnitStyles {
-	String styleClass = ''
+abstract class ContentUnitStyles {
 	String sectionClass = ''
 	String captionClass = ''
 	String contentClass = ''
 }
 
-class DynamicUnitStyles extends ContentUnitStyles {
+abstract class DynamicUnitStyles extends ContentUnitStyles {
 	String fieldListClass = ''
 	String definitionFieldListClass = ''
-	String controlClass = ''
 	String fieldLabelClass = ''
 	String fieldValueClass = ''
+	String controlClass = ''
 	String actionNavigationClass = ''
 	String anchorClass = ''
 }
 
-class FormUnitStyles extends DynamicUnitStyles {
-	String inputGroupClass = ''
+class DefaultUnitStyles extends DynamicUnitStyles {
 }
 
 class CardsUnitStyles extends DynamicUnitStyles {
@@ -237,6 +236,25 @@ class CardsUnitStyles extends DynamicUnitStyles {
 	String cardBodyClass = ''
 	String cardFooterClass = ''
 	String badgeClass = ''
+}
+
+class DetailsUnitStyles extends DynamicUnitStyles {
+}
+
+class FormUnitStyles extends DynamicUnitStyles {
+	String inputGroupClass = ''
+}
+
+class GalleryUnitStyles extends DynamicUnitStyles {
+}
+
+class SliderUnitStyles extends DynamicUnitStyles {
+}
+
+class StaticUnitStyles extends ContentUnitStyles {
+}
+
+class TabularUnitStyles extends DynamicUnitStyles {
 }
 
 
@@ -472,17 +490,17 @@ class Page extends NamedDisplayElement {
 		dynamicUnits.flatMap[it.actionsWithoutTarget].toEList()
 	}
 	String uriElement = ''
-	String localStyleClass = ''
-	derived readonly transient volatile String styleClass get {
-		if (localStyleClass.trim() != '')
-			localStyleClass.trim()
-		else if (uiModel.defaultStyles.styleClass.trim() != '')
-			uiModel.defaultStyles.styleClass.trim()
+	String localPageStyleClass = ''
+	derived readonly transient volatile String pageStyleClass get {
+		if (localPageStyleClass.trim() != '')
+			localPageStyleClass.trim()
+		else if (uiModel.defaultPageStyleClass.trim() != '')
+			uiModel.defaultPageStyleClass.trim()
 		else
 			''
 	}
-	derived readonly transient volatile boolean hasStyleClass get {
-		styleClass != ''
+	derived readonly transient volatile boolean hasPageStyleClass get {
+		pageStyleClass != ''
 	}
 	refers readonly transient volatile unsettable derived WafModel genModel get {
 		partOf.genModel
