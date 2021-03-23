@@ -967,6 +967,19 @@ interface UnitField extends DisplayElement {
 		else
 			placeholder != ''
 	}
+	String localHelp = ''
+	derived readonly unsettable transient volatile String help get {
+		if (this instanceof UnitLabel)
+			''
+		else
+			if (localHelp.trim() != '')
+				localHelp.trim()
+			else
+					''
+	}
+	derived readonly unsettable transient volatile boolean hasHelp get {
+		help != ''
+	}
 	contains Predicate hideWhen
 	refers derived readonly transient volatile Feature persistentFeature get {
 		if (this instanceof UnitAttribute) 

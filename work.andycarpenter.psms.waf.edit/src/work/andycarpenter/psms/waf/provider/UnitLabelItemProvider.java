@@ -62,6 +62,9 @@ public class UnitLabelItemProvider extends DisplayElementItemProvider {
 			addPlaceholderPropertyDescriptor(object);
 			addHasPlaceholderPropertyDescriptor(object);
 			addHasCustomisedPlaceholderPropertyDescriptor(object);
+			addLocalHelpPropertyDescriptor(object);
+			addHelpPropertyDescriptor(object);
+			addHasHelpPropertyDescriptor(object);
 			addPersistentFeaturePropertyDescriptor(object);
 			addIsContainsPropertyDescriptor(object);
 			addIsDisabledPropertyDescriptor(object);
@@ -351,6 +354,72 @@ public class UnitLabelItemProvider extends DisplayElementItemProvider {
 				 getString("_UI_UnitField_hasCustomisedPlaceholder_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_hasCustomisedPlaceholder_feature", "_UI_UnitField_type"),
 				 WafPackage.eINSTANCE.getUnitField_HasCustomisedPlaceholder(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Local Help feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addLocalHelpPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_UnitField_localHelp_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_localHelp_feature", "_UI_UnitField_type"),
+				 WafPackage.eINSTANCE.getUnitField_LocalHelp(),
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Help feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHelpPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_UnitField_help_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_help_feature", "_UI_UnitField_type"),
+				 WafPackage.eINSTANCE.getUnitField_Help(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Has Help feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasHelpPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_UnitField_hasHelp_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_hasHelp_feature", "_UI_UnitField_type"),
+				 WafPackage.eINSTANCE.getUnitField_HasHelp(),
 				 false,
 				 false,
 				 false,
@@ -1605,6 +1674,9 @@ public class UnitLabelItemProvider extends DisplayElementItemProvider {
 			case WafPackage.UNIT_LABEL__PLACEHOLDER:
 			case WafPackage.UNIT_LABEL__HAS_PLACEHOLDER:
 			case WafPackage.UNIT_LABEL__HAS_CUSTOMISED_PLACEHOLDER:
+			case WafPackage.UNIT_LABEL__LOCAL_HELP:
+			case WafPackage.UNIT_LABEL__HELP:
+			case WafPackage.UNIT_LABEL__HAS_HELP:
 			case WafPackage.UNIT_LABEL__IS_CONTAINS:
 			case WafPackage.UNIT_LABEL__IS_DISABLED:
 			case WafPackage.UNIT_LABEL__IS_REQUIRED:
