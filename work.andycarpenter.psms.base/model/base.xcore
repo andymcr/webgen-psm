@@ -64,6 +64,39 @@ class ConstantReference extends Variable {
  
 
 abstract class Classifier extends NamedDisplayElement {
+	derived readonly transient volatile boolean isBooleanClassifier get {
+		if (this instanceof DataType)
+			(this as DataType).isBooleanDataType
+		else
+			false
+	}
+	derived readonly transient volatile boolean isEmailClassifier get {
+		if (this instanceof DataType)
+			(this as DataType).isEmailDataType
+		else
+			false
+	}
+	derived readonly transient volatile boolean isEnumerationClassifier get {
+		this instanceof EnumerationType
+	}
+	derived readonly transient volatile boolean isIntegerClassifier get {
+		if (this instanceof DataType)
+			(this as DataType).isIntegerDataType
+		else
+			false
+	}
+	derived readonly transient volatile boolean isStringClassifier get {
+		if (this instanceof DataType)
+			(this as DataType).isStringDataType
+		else
+			false
+	}
+	derived readonly transient volatile boolean isTextareaClassifier get {
+		if (this instanceof DataType)
+			(this as DataType).isTextareaDataType
+		else
+			false
+	}
 }
 
 class DataType extends Classifier {

@@ -97,6 +97,7 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 			addEnumerationFieldsPropertyDescriptor(object);
 			addHasEnumerationFieldsPropertyDescriptor(object);
 			addFeatureFieldsPropertyDescriptor(object);
+			addHasFeatureFieldsPropertyDescriptor(object);
 			addForcedValueFieldsPropertyDescriptor(object);
 			addHasForcedValueFieldsPropertyDescriptor(object);
 			addIsFormUnitPropertyDescriptor(object);
@@ -1127,6 +1128,28 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Has Feature Fields feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasFeatureFieldsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DynamicUnit_hasFeatureFields_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DynamicUnit_hasFeatureFields_feature", "_UI_DynamicUnit_type"),
+				 WafPackage.eINSTANCE.getDynamicUnit_HasFeatureFields(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Forced Value Fields feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2114,6 +2137,7 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 			case WafPackage.DYNAMIC_UNIT__HAS_EMAIL_FIELDS:
 			case WafPackage.DYNAMIC_UNIT__HAS_ENCRYPTED_FIELDS:
 			case WafPackage.DYNAMIC_UNIT__HAS_ENUMERATION_FIELDS:
+			case WafPackage.DYNAMIC_UNIT__HAS_FEATURE_FIELDS:
 			case WafPackage.DYNAMIC_UNIT__HAS_FORCED_VALUE_FIELDS:
 			case WafPackage.DYNAMIC_UNIT__IS_FORM_UNIT:
 			case WafPackage.DYNAMIC_UNIT__HAS_INTEGER_FIELDS:

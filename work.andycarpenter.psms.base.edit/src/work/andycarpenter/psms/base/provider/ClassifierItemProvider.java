@@ -9,8 +9,12 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ViewerNotification;
+import work.andycarpenter.psms.base.BasePackage;
 import work.andycarpenter.psms.base.Classifier;
 
 /**
@@ -41,8 +45,146 @@ public class ClassifierItemProvider extends NamedDisplayElementItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addIsBooleanClassifierPropertyDescriptor(object);
+			addIsEmailClassifierPropertyDescriptor(object);
+			addIsEnumerationClassifierPropertyDescriptor(object);
+			addIsIntegerClassifierPropertyDescriptor(object);
+			addIsStringClassifierPropertyDescriptor(object);
+			addIsTextareaClassifierPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Is Boolean Classifier feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIsBooleanClassifierPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Classifier_isBooleanClassifier_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Classifier_isBooleanClassifier_feature", "_UI_Classifier_type"),
+				 BasePackage.Literals.CLASSIFIER__IS_BOOLEAN_CLASSIFIER,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Is Email Classifier feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIsEmailClassifierPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Classifier_isEmailClassifier_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Classifier_isEmailClassifier_feature", "_UI_Classifier_type"),
+				 BasePackage.Literals.CLASSIFIER__IS_EMAIL_CLASSIFIER,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Is Enumeration Classifier feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIsEnumerationClassifierPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Classifier_isEnumerationClassifier_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Classifier_isEnumerationClassifier_feature", "_UI_Classifier_type"),
+				 BasePackage.Literals.CLASSIFIER__IS_ENUMERATION_CLASSIFIER,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Is Integer Classifier feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIsIntegerClassifierPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Classifier_isIntegerClassifier_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Classifier_isIntegerClassifier_feature", "_UI_Classifier_type"),
+				 BasePackage.Literals.CLASSIFIER__IS_INTEGER_CLASSIFIER,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Is String Classifier feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIsStringClassifierPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Classifier_isStringClassifier_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Classifier_isStringClassifier_feature", "_UI_Classifier_type"),
+				 BasePackage.Literals.CLASSIFIER__IS_STRING_CLASSIFIER,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Is Textarea Classifier feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIsTextareaClassifierPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Classifier_isTextareaClassifier_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Classifier_isTextareaClassifier_feature", "_UI_Classifier_type"),
+				 BasePackage.Literals.CLASSIFIER__IS_TEXTAREA_CLASSIFIER,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -70,6 +212,17 @@ public class ClassifierItemProvider extends NamedDisplayElementItemProvider {
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(Classifier.class)) {
+			case BasePackage.CLASSIFIER__IS_BOOLEAN_CLASSIFIER:
+			case BasePackage.CLASSIFIER__IS_EMAIL_CLASSIFIER:
+			case BasePackage.CLASSIFIER__IS_ENUMERATION_CLASSIFIER:
+			case BasePackage.CLASSIFIER__IS_INTEGER_CLASSIFIER:
+			case BasePackage.CLASSIFIER__IS_STRING_CLASSIFIER:
+			case BasePackage.CLASSIFIER__IS_TEXTAREA_CLASSIFIER:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 

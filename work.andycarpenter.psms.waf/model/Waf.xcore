@@ -717,6 +717,9 @@ abstract class DynamicUnit extends ContentUnit, ActionContainer {
 	refers readonly transient volatile unsettable derived UnitFeature[] featureFields get {
 		displayFields.filter[it instanceof UnitFeature].map[it as UnitFeature].toEList()
 	}
+	derived readonly transient volatile boolean hasFeatureFields get {
+		!featureFields.isEmpty()
+	}
 	refers readonly transient volatile unsettable derived UnitField[] forcedValueFields get {
 		displayFields.filter[hasForcedValue].toEList()
 	}
@@ -1021,49 +1024,60 @@ interface UnitField extends DisplayElement {
 		this instanceof UnitAttribute
 	}
 	derived readonly transient volatile boolean isBooleanField get {
-		if (persistentFeature !== null) 
+		if (this instanceof UnitFeature) 
 			persistentFeature.isBooleanFeature
+		else if (this instanceof DataTypeField)
+			(this as DataTypeField).dataType.isBooleanClassifier
 		else
 			false
 	}
 	derived readonly transient volatile boolean isDataTypeField get {
-		if (persistentFeature !== null) 
+		if (this instanceof UnitFeature) 
 			persistentFeature.isDataTypeFeature
+		else if (this instanceof DataTypeField)
+			true
 		else
 			false
 	}
 	refers derived readonly transient volatile Classifier dataType get {
-		persistentFeature?.dataType
+		if (this instanceof UnitFeature) 
+			persistentFeature.dataType
+		else if (this instanceof DataTypeField)
+			(this as DataTypeField).fieldDataType
 	}
 	derived readonly transient volatile boolean isDateField get {
-		if (persistentFeature !== null) 
+		if (this instanceof UnitFeature) 
 			persistentFeature.isDateFeature
 		else
 			false
 	}
 	derived readonly transient volatile DateDetails dateDetails get {
-		persistentFeature?.dateDetails
+		if (this instanceof UnitFeature) 
+			persistentFeature.dateDetails
 	}
 	derived readonly transient volatile boolean isEmailField get {
-		if (persistentFeature !== null) 
+		if (this instanceof UnitFeature) 
 			persistentFeature.isEmailFeature
+		else if (this instanceof DataTypeField)
+			(this as DataTypeField).dataType.isEmailClassifier
 		else
 			false
 	}
 	derived readonly transient volatile boolean isEncryptedField get {
-		if (persistentFeature !== null) 
+		if (this instanceof UnitFeature) 
 			persistentFeature.isEncrypted
 		else
 			false
 	}
 	derived readonly transient volatile boolean isEnumerationField get {
-		if (persistentFeature !== null) 
+		if (this instanceof UnitFeature) 
 			persistentFeature.isEnumerationFeature
 		else
 			false
 	}
 	refers derived readonly transient volatile EnumerationType enumerationType get {
-		persistentFeature?.enumerationType
+		if (this instanceof UnitFeature) 
+			persistentFeature.enumerationType
 	}
 	derived readonly transient volatile boolean isFeatureField get {
 		this instanceof UnitFeature
@@ -1072,19 +1086,21 @@ interface UnitField extends DisplayElement {
 		this instanceof InterfaceField
 	}
 	derived readonly transient volatile boolean isIntegerField get {
-		if (persistentFeature !== null) 
+		if (this instanceof UnitFeature) 
 			persistentFeature.isIntegerFeature
+		else if (this instanceof DataTypeField)
+			(this as DataTypeField).dataType.isIntegerClassifier
 		else
 			false
 	}
 	derived readonly transient volatile boolean isLocationField get {
-		if (persistentFeature !== null) 
+		if (this instanceof UnitFeature) 
 			persistentFeature.isLocationFeature
 		else
 			false
 	}
 	derived readonly transient volatile boolean isObfuscatedFeature get {
-		if (persistentFeature !== null) 
+		if (this instanceof UnitFeature) 
 			persistentFeature.isObfuscatedFeature
 		else
 			false
@@ -1098,27 +1114,29 @@ interface UnitField extends DisplayElement {
 			isObfuscatedFeature
 	}
 	derived readonly transient volatile boolean isResourceField get {
-		if (persistentFeature !== null) 
+		if (this instanceof UnitFeature) 
 			persistentFeature.isResourceFeature
 		else
 			false
 	}
 	derived readonly transient volatile boolean isStringField get {
-		if (this instanceof DataTypeField) 
-			!(this as DataTypeField).obfuscateFormFields
-		else if (persistentFeature !== null) 
+		if (this instanceof UnitFeature) 
 			persistentFeature.isStringFeature
+		else if (this instanceof DataTypeField)
+			(this as DataTypeField).dataType.isStringClassifier
 		else
 			false
 	}
 	derived readonly transient volatile boolean isTextareaField get {
-		if (persistentFeature !== null) 
+		if (this instanceof UnitFeature) 
 			persistentFeature.isTextareaFeature
+		else if (this instanceof DataTypeField)
+			(this as DataTypeField).dataType.isTextareaClassifier
 		else
 			false
 	}
 	derived readonly transient volatile boolean isUrlField get {
-		if (persistentFeature !== null) 
+		if (this instanceof UnitFeature) 
 			persistentFeature.isUrlFeature
 		else
 			false

@@ -603,13 +603,67 @@ public interface BasePackage extends EPackage {
 	int CLASSIFIER__DISPLAY_LABEL = NAMED_DISPLAY_ELEMENT__DISPLAY_LABEL;
 
 	/**
+	 * The feature id for the '<em><b>Is Boolean Classifier</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLASSIFIER__IS_BOOLEAN_CLASSIFIER = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Is Email Classifier</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLASSIFIER__IS_EMAIL_CLASSIFIER = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Is Enumeration Classifier</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLASSIFIER__IS_ENUMERATION_CLASSIFIER = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Is Integer Classifier</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLASSIFIER__IS_INTEGER_CLASSIFIER = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Is String Classifier</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLASSIFIER__IS_STRING_CLASSIFIER = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Is Textarea Classifier</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLASSIFIER__IS_TEXTAREA_CLASSIFIER = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 5;
+
+	/**
 	 * The number of structural features of the '<em>Classifier</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CLASSIFIER_FEATURE_COUNT = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 0;
+	int CLASSIFIER_FEATURE_COUNT = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of operations of the '<em>Classifier</em>' class.
@@ -647,6 +701,60 @@ public interface BasePackage extends EPackage {
 	 * @ordered
 	 */
 	int DATA_TYPE__DISPLAY_LABEL = CLASSIFIER__DISPLAY_LABEL;
+
+	/**
+	 * The feature id for the '<em><b>Is Boolean Classifier</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_TYPE__IS_BOOLEAN_CLASSIFIER = CLASSIFIER__IS_BOOLEAN_CLASSIFIER;
+
+	/**
+	 * The feature id for the '<em><b>Is Email Classifier</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_TYPE__IS_EMAIL_CLASSIFIER = CLASSIFIER__IS_EMAIL_CLASSIFIER;
+
+	/**
+	 * The feature id for the '<em><b>Is Enumeration Classifier</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_TYPE__IS_ENUMERATION_CLASSIFIER = CLASSIFIER__IS_ENUMERATION_CLASSIFIER;
+
+	/**
+	 * The feature id for the '<em><b>Is Integer Classifier</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_TYPE__IS_INTEGER_CLASSIFIER = CLASSIFIER__IS_INTEGER_CLASSIFIER;
+
+	/**
+	 * The feature id for the '<em><b>Is String Classifier</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_TYPE__IS_STRING_CLASSIFIER = CLASSIFIER__IS_STRING_CLASSIFIER;
+
+	/**
+	 * The feature id for the '<em><b>Is Textarea Classifier</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_TYPE__IS_TEXTAREA_CLASSIFIER = CLASSIFIER__IS_TEXTAREA_CLASSIFIER;
 
 	/**
 	 * The feature id for the '<em><b>Is Boolean Data Type</b></em>' attribute.
@@ -747,6 +855,60 @@ public interface BasePackage extends EPackage {
 	 * @ordered
 	 */
 	int ENUMERATION_TYPE__DISPLAY_LABEL = DATA_TYPE__DISPLAY_LABEL;
+
+	/**
+	 * The feature id for the '<em><b>Is Boolean Classifier</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENUMERATION_TYPE__IS_BOOLEAN_CLASSIFIER = DATA_TYPE__IS_BOOLEAN_CLASSIFIER;
+
+	/**
+	 * The feature id for the '<em><b>Is Email Classifier</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENUMERATION_TYPE__IS_EMAIL_CLASSIFIER = DATA_TYPE__IS_EMAIL_CLASSIFIER;
+
+	/**
+	 * The feature id for the '<em><b>Is Enumeration Classifier</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENUMERATION_TYPE__IS_ENUMERATION_CLASSIFIER = DATA_TYPE__IS_ENUMERATION_CLASSIFIER;
+
+	/**
+	 * The feature id for the '<em><b>Is Integer Classifier</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENUMERATION_TYPE__IS_INTEGER_CLASSIFIER = DATA_TYPE__IS_INTEGER_CLASSIFIER;
+
+	/**
+	 * The feature id for the '<em><b>Is String Classifier</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENUMERATION_TYPE__IS_STRING_CLASSIFIER = DATA_TYPE__IS_STRING_CLASSIFIER;
+
+	/**
+	 * The feature id for the '<em><b>Is Textarea Classifier</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENUMERATION_TYPE__IS_TEXTAREA_CLASSIFIER = DATA_TYPE__IS_TEXTAREA_CLASSIFIER;
 
 	/**
 	 * The feature id for the '<em><b>Is Boolean Data Type</b></em>' attribute.
@@ -1273,6 +1435,72 @@ public interface BasePackage extends EPackage {
 	EClass getClassifier();
 
 	/**
+	 * Returns the meta object for the attribute '{@link work.andycarpenter.psms.base.Classifier#isIsBooleanClassifier <em>Is Boolean Classifier</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Is Boolean Classifier</em>'.
+	 * @see work.andycarpenter.psms.base.Classifier#isIsBooleanClassifier()
+	 * @see #getClassifier()
+	 * @generated
+	 */
+	EAttribute getClassifier_IsBooleanClassifier();
+
+	/**
+	 * Returns the meta object for the attribute '{@link work.andycarpenter.psms.base.Classifier#isIsEmailClassifier <em>Is Email Classifier</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Is Email Classifier</em>'.
+	 * @see work.andycarpenter.psms.base.Classifier#isIsEmailClassifier()
+	 * @see #getClassifier()
+	 * @generated
+	 */
+	EAttribute getClassifier_IsEmailClassifier();
+
+	/**
+	 * Returns the meta object for the attribute '{@link work.andycarpenter.psms.base.Classifier#isIsEnumerationClassifier <em>Is Enumeration Classifier</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Is Enumeration Classifier</em>'.
+	 * @see work.andycarpenter.psms.base.Classifier#isIsEnumerationClassifier()
+	 * @see #getClassifier()
+	 * @generated
+	 */
+	EAttribute getClassifier_IsEnumerationClassifier();
+
+	/**
+	 * Returns the meta object for the attribute '{@link work.andycarpenter.psms.base.Classifier#isIsIntegerClassifier <em>Is Integer Classifier</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Is Integer Classifier</em>'.
+	 * @see work.andycarpenter.psms.base.Classifier#isIsIntegerClassifier()
+	 * @see #getClassifier()
+	 * @generated
+	 */
+	EAttribute getClassifier_IsIntegerClassifier();
+
+	/**
+	 * Returns the meta object for the attribute '{@link work.andycarpenter.psms.base.Classifier#isIsStringClassifier <em>Is String Classifier</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Is String Classifier</em>'.
+	 * @see work.andycarpenter.psms.base.Classifier#isIsStringClassifier()
+	 * @see #getClassifier()
+	 * @generated
+	 */
+	EAttribute getClassifier_IsStringClassifier();
+
+	/**
+	 * Returns the meta object for the attribute '{@link work.andycarpenter.psms.base.Classifier#isIsTextareaClassifier <em>Is Textarea Classifier</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Is Textarea Classifier</em>'.
+	 * @see work.andycarpenter.psms.base.Classifier#isIsTextareaClassifier()
+	 * @see #getClassifier()
+	 * @generated
+	 */
+	EAttribute getClassifier_IsTextareaClassifier();
+
+	/**
 	 * Returns the meta object for class '{@link work.andycarpenter.psms.base.DataType <em>Data Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1707,6 +1935,54 @@ public interface BasePackage extends EPackage {
 		 * @generated
 		 */
 		EClass CLASSIFIER = eINSTANCE.getClassifier();
+
+		/**
+		 * The meta object literal for the '<em><b>Is Boolean Classifier</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CLASSIFIER__IS_BOOLEAN_CLASSIFIER = eINSTANCE.getClassifier_IsBooleanClassifier();
+
+		/**
+		 * The meta object literal for the '<em><b>Is Email Classifier</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CLASSIFIER__IS_EMAIL_CLASSIFIER = eINSTANCE.getClassifier_IsEmailClassifier();
+
+		/**
+		 * The meta object literal for the '<em><b>Is Enumeration Classifier</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CLASSIFIER__IS_ENUMERATION_CLASSIFIER = eINSTANCE.getClassifier_IsEnumerationClassifier();
+
+		/**
+		 * The meta object literal for the '<em><b>Is Integer Classifier</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CLASSIFIER__IS_INTEGER_CLASSIFIER = eINSTANCE.getClassifier_IsIntegerClassifier();
+
+		/**
+		 * The meta object literal for the '<em><b>Is String Classifier</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CLASSIFIER__IS_STRING_CLASSIFIER = eINSTANCE.getClassifier_IsStringClassifier();
+
+		/**
+		 * The meta object literal for the '<em><b>Is Textarea Classifier</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CLASSIFIER__IS_TEXTAREA_CLASSIFIER = eINSTANCE.getClassifier_IsTextareaClassifier();
 
 		/**
 		 * The meta object literal for the '{@link work.andycarpenter.psms.base.impl.DataTypeImpl <em>Data Type</em>}' class.

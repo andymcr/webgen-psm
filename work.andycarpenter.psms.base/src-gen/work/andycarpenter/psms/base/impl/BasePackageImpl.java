@@ -451,6 +451,60 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getClassifier_IsBooleanClassifier() {
+		return (EAttribute)classifierEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getClassifier_IsEmailClassifier() {
+		return (EAttribute)classifierEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getClassifier_IsEnumerationClassifier() {
+		return (EAttribute)classifierEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getClassifier_IsIntegerClassifier() {
+		return (EAttribute)classifierEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getClassifier_IsStringClassifier() {
+		return (EAttribute)classifierEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getClassifier_IsTextareaClassifier() {
+		return (EAttribute)classifierEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getDataType() {
 		return dataTypeEClass;
 	}
@@ -680,6 +734,12 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 		createEReference(constantReferenceEClass, CONSTANT_REFERENCE__VALUE);
 
 		classifierEClass = createEClass(CLASSIFIER);
+		createEAttribute(classifierEClass, CLASSIFIER__IS_BOOLEAN_CLASSIFIER);
+		createEAttribute(classifierEClass, CLASSIFIER__IS_EMAIL_CLASSIFIER);
+		createEAttribute(classifierEClass, CLASSIFIER__IS_ENUMERATION_CLASSIFIER);
+		createEAttribute(classifierEClass, CLASSIFIER__IS_INTEGER_CLASSIFIER);
+		createEAttribute(classifierEClass, CLASSIFIER__IS_STRING_CLASSIFIER);
+		createEAttribute(classifierEClass, CLASSIFIER__IS_TEXTAREA_CLASSIFIER);
 
 		dataTypeEClass = createEClass(DATA_TYPE);
 		createEAttribute(dataTypeEClass, DATA_TYPE__IS_BOOLEAN_DATA_TYPE);
@@ -792,6 +852,12 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 		initEReference(getConstantReference_Value(), this.getConstant(), null, "value", null, 1, 1, ConstantReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(classifierEClass, Classifier.class, "Classifier", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getClassifier_IsBooleanClassifier(), theEcorePackage.getEBoolean(), "isBooleanClassifier", null, 0, 1, Classifier.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEAttribute(getClassifier_IsEmailClassifier(), theEcorePackage.getEBoolean(), "isEmailClassifier", null, 0, 1, Classifier.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEAttribute(getClassifier_IsEnumerationClassifier(), theEcorePackage.getEBoolean(), "isEnumerationClassifier", null, 0, 1, Classifier.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEAttribute(getClassifier_IsIntegerClassifier(), theEcorePackage.getEBoolean(), "isIntegerClassifier", null, 0, 1, Classifier.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEAttribute(getClassifier_IsStringClassifier(), theEcorePackage.getEBoolean(), "isStringClassifier", null, 0, 1, Classifier.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEAttribute(getClassifier_IsTextareaClassifier(), theEcorePackage.getEBoolean(), "isTextareaClassifier", null, 0, 1, Classifier.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(dataTypeEClass, DataType.class, "DataType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDataType_IsBooleanDataType(), theEcorePackage.getEBoolean(), "isBooleanDataType", null, 0, 1, DataType.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, IS_DERIVED, IS_ORDERED);
