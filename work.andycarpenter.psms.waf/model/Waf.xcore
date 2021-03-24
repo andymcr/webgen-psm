@@ -2049,6 +2049,9 @@ class LogoutUnit extends DynamicUnit, SecurityUnit {
 }
 
 class ForgottenPasswordUnit extends EditUnit, SecurityUnit {
+	String[1] uriEmailSent
+	String[1] uriResetPassword
+	String[1] emailSubject
 }
 
 
