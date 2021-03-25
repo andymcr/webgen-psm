@@ -50,6 +50,7 @@ public class EditUnitItemProvider extends SingletonUnitItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addUseCaptchaPropertyDescriptor(object);
 			addOnSaveContinueEditingPropertyDescriptor(object);
 			addConfirmDestinationPropertyDescriptor(object);
 			addConfirmLabelPropertyDescriptor(object);
@@ -70,6 +71,28 @@ public class EditUnitItemProvider extends SingletonUnitItemProvider {
 			addFormAnchorClassPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Use Captcha feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addUseCaptchaPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EditUnit_useCaptcha_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EditUnit_useCaptcha_feature", "_UI_EditUnit_type"),
+				 WafPackage.eINSTANCE.getEditUnit_UseCaptcha(),
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -527,6 +550,7 @@ public class EditUnitItemProvider extends SingletonUnitItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(EditUnit.class)) {
+			case WafPackage.EDIT_UNIT__USE_CAPTCHA:
 			case WafPackage.EDIT_UNIT__ON_SAVE_CONTINUE_EDITING:
 			case WafPackage.EDIT_UNIT__CONFIRM_LABEL:
 			case WafPackage.EDIT_UNIT__HAS_CUSTOM_CONFIRM_LABEL:

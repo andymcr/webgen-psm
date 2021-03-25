@@ -854,29 +854,6 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.waf.CaptchaField} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected CaptchaFieldItemProvider captchaFieldItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link work.andycarpenter.psms.waf.CaptchaField}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createCaptchaFieldAdapter() {
-		if (captchaFieldItemProvider == null) {
-			captchaFieldItemProvider = new CaptchaFieldItemProvider(this);
-		}
-
-		return captchaFieldItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.waf.SingletonUnit} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1629,7 +1606,6 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 		if (unitLabelItemProvider != null) unitLabelItemProvider.dispose();
 		if (dataTypeFieldItemProvider != null) dataTypeFieldItemProvider.dispose();
 		if (dateFieldItemProvider != null) dateFieldItemProvider.dispose();
-		if (captchaFieldItemProvider != null) captchaFieldItemProvider.dispose();
 		if (singletonUnitItemProvider != null) singletonUnitItemProvider.dispose();
 		if (collectionUnitItemProvider != null) collectionUnitItemProvider.dispose();
 		if (createUnitItemProvider != null) createUnitItemProvider.dispose();

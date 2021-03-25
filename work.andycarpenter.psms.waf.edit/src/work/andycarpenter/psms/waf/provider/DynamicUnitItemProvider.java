@@ -82,7 +82,7 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 			addHasAutocompleteFieldsPropertyDescriptor(object);
 			addAutocompleteThresholdPropertyDescriptor(object);
 			addHasBooleanFieldsPropertyDescriptor(object);
-			addHasCaptchaFieldsPropertyDescriptor(object);
+			addHasCaptchaPropertyDescriptor(object);
 			addHasChangableCollectionsPropertyDescriptor(object);
 			addCollectionFieldsPropertyDescriptor(object);
 			addCollectionFeaturesPropertyDescriptor(object);
@@ -798,19 +798,19 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Has Captcha Fields feature.
+	 * This adds a property descriptor for the Has Captcha feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addHasCaptchaFieldsPropertyDescriptor(Object object) {
+	protected void addHasCaptchaPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_DynamicUnit_hasCaptchaFields_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DynamicUnit_hasCaptchaFields_feature", "_UI_DynamicUnit_type"),
-				 WafPackage.eINSTANCE.getDynamicUnit_HasCaptchaFields(),
+				 getString("_UI_DynamicUnit_hasCaptcha_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DynamicUnit_hasCaptcha_feature", "_UI_DynamicUnit_type"),
+				 WafPackage.eINSTANCE.getDynamicUnit_HasCaptcha(),
 				 false,
 				 false,
 				 false,
@@ -2130,7 +2130,7 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 			case WafPackage.DYNAMIC_UNIT__HAS_AUTOCOMPLETE_FIELDS:
 			case WafPackage.DYNAMIC_UNIT__AUTOCOMPLETE_THRESHOLD:
 			case WafPackage.DYNAMIC_UNIT__HAS_BOOLEAN_FIELDS:
-			case WafPackage.DYNAMIC_UNIT__HAS_CAPTCHA_FIELDS:
+			case WafPackage.DYNAMIC_UNIT__HAS_CAPTCHA:
 			case WafPackage.DYNAMIC_UNIT__HAS_CHANGABLE_COLLECTIONS:
 			case WafPackage.DYNAMIC_UNIT__HAS_DEFAULT_VALUE_FIELDS:
 			case WafPackage.DYNAMIC_UNIT__HAS_DISABLED_FIELDS:
@@ -2257,11 +2257,6 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 			(createChildParameter
 				(WafPackage.eINSTANCE.getDynamicUnit_DisplayFields(),
 				 WafFactory.eINSTANCE.createDateField()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.eINSTANCE.getDynamicUnit_DisplayFields(),
-				 WafFactory.eINSTANCE.createCaptchaField()));
 
 		newChildDescriptors.add
 			(createChildParameter

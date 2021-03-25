@@ -57,6 +57,7 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 			addIsAuthorisedPropertyDescriptor(object);
 			addHasCommonUnitAuthenticationPropertyDescriptor(object);
 			addHasChangableCollectionsPropertyDescriptor(object);
+			addHasCaptchaUnitsPropertyDescriptor(object);
 			addCollectionUnitsPropertyDescriptor(object);
 			addHasCollectionUnitsPropertyDescriptor(object);
 			addDynamicUnitsPropertyDescriptor(object);
@@ -94,7 +95,6 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 			addAssociationFieldsPropertyDescriptor(object);
 			addAutocompleteFieldsPropertyDescriptor(object);
 			addHasAutocompleteFieldsPropertyDescriptor(object);
-			addHasCaptchaFieldsPropertyDescriptor(object);
 			addFormFieldsPropertyDescriptor(object);
 			addHasInterfaceFieldsPropertyDescriptor(object);
 			addHasResourceFieldsPropertyDescriptor(object);
@@ -1102,19 +1102,19 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Has Captcha Fields feature.
+	 * This adds a property descriptor for the Has Captcha Units feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addHasCaptchaFieldsPropertyDescriptor(Object object) {
+	protected void addHasCaptchaUnitsPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Page_hasCaptchaFields_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Page_hasCaptchaFields_feature", "_UI_Page_type"),
-				 WafPackage.eINSTANCE.getPage_HasCaptchaFields(),
+				 getString("_UI_Page_hasCaptchaUnits_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Page_hasCaptchaUnits_feature", "_UI_Page_type"),
+				 WafPackage.eINSTANCE.getPage_HasCaptchaUnits(),
 				 false,
 				 false,
 				 false,
@@ -1437,6 +1437,7 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 			case WafPackage.PAGE__IS_AUTHORISED:
 			case WafPackage.PAGE__HAS_COMMON_UNIT_AUTHENTICATION:
 			case WafPackage.PAGE__HAS_CHANGABLE_COLLECTIONS:
+			case WafPackage.PAGE__HAS_CAPTCHA_UNITS:
 			case WafPackage.PAGE__HAS_COLLECTION_UNITS:
 			case WafPackage.PAGE__HAS_DYNAMIC_UNITS:
 			case WafPackage.PAGE__HAS_EDIT_UNITS:
@@ -1456,7 +1457,6 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 			case WafPackage.PAGE__HAS_SERVICES_USED:
 			case WafPackage.PAGE__HAS_PAGINATION:
 			case WafPackage.PAGE__HAS_AUTOCOMPLETE_FIELDS:
-			case WafPackage.PAGE__HAS_CAPTCHA_FIELDS:
 			case WafPackage.PAGE__HAS_INTERFACE_FIELDS:
 			case WafPackage.PAGE__HAS_RESOURCE_FIELDS:
 			case WafPackage.PAGE__URI_ELEMENT:

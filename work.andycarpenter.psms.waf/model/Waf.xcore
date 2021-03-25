@@ -364,6 +364,9 @@ class Page extends NamedDisplayElement {
 	derived readonly transient volatile boolean hasChangableCollections get {
 		!editUnits.filter[it.hasChangableCollections].isEmpty()
 	}
+	derived readonly transient volatile boolean hasCaptchaUnits get {
+		!editUnits.filter[it.hasCaptcha].isEmpty()
+	}
 	refers readonly transient volatile unsettable derived CollectionUnit[] collectionUnits get {
 		return units.filter[it instanceof CollectionUnit].map[it as CollectionUnit].toEList
 	}
@@ -474,9 +477,6 @@ class Page extends NamedDisplayElement {
 	}
 	derived readonly transient volatile boolean hasAutocompleteFields get {
 		!autocompleteFields.isEmpty()
-	}
-	derived readonly transient volatile boolean hasCaptchaFields get {
-		!dynamicUnits.filter[it.hasCaptchaFields].isEmpty()
 	}
 	refers derived readonly transient volatile UnitField[] formFields get {
 		dynamicUnits.flatMap[it.formFields].toEList()
@@ -669,8 +669,11 @@ abstract class DynamicUnit extends ContentUnit, ActionContainer {
 	derived readonly transient volatile boolean hasBooleanFields get {
 		!displayFields.filter[isBooleanField].isEmpty()
 	}
-	derived readonly transient volatile boolean hasCaptchaFields get {
-		!displayFields.filter[it instanceof CaptchaField].isEmpty()
+	derived readonly transient unsettable volatile boolean hasCaptcha get {
+		if (this instanceof EditUnit)
+			(this as EditUnit).useCaptcha
+		else
+			false
 	}
 	derived readonly transient volatile boolean hasChangableCollections get {
 		(this instanceof EditUnit)
@@ -1337,9 +1340,6 @@ class DateField extends InterfaceField {
 	String format
 }
 
-class CaptchaField extends InterfaceField {
-}
-
 interface SelectableUnit {
 	refers SelectAction[] selectors opposite target
 }
@@ -1403,7 +1403,8 @@ class CollectionUnit extends DynamicUnit, SelectableUnit {
 }
 
 abstract class EditUnit extends SingletonUnit {
-	boolean onSaveContinueEditing = "false"
+	boolean useCaptcha = 'false'
+	boolean onSaveContinueEditing = 'false'
 	contains Predicate disableWhen
 	refers Page confirmDestination
 	String[1] confirmLabel
