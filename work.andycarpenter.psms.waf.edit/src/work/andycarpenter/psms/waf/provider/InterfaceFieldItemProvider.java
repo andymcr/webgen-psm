@@ -60,17 +60,21 @@ public class InterfaceFieldItemProvider extends NamedElementItemProvider {
 			addAuthorisationRolesPropertyDescriptor(object);
 			addIsAuthorisedPropertyDescriptor(object);
 			addHasCustomisedDisplayLabelPropertyDescriptor(object);
+			addIsRepeatedPropertyDescriptor(object);
 			addLocalTitlePropertyDescriptor(object);
 			addTitlePropertyDescriptor(object);
 			addHasTitlePropertyDescriptor(object);
 			addHasCustomisedTitlePropertyDescriptor(object);
+			addHasSecondTitlePropertyDescriptor(object);
 			addLocalPlaceholderPropertyDescriptor(object);
 			addPlaceholderPropertyDescriptor(object);
 			addHasPlaceholderPropertyDescriptor(object);
 			addHasCustomisedPlaceholderPropertyDescriptor(object);
+			addHasSecondPlaceholderPropertyDescriptor(object);
 			addLocalHelpPropertyDescriptor(object);
 			addHelpPropertyDescriptor(object);
 			addHasHelpPropertyDescriptor(object);
+			addHasSecondHelpPropertyDescriptor(object);
 			addPersistentFeaturePropertyDescriptor(object);
 			addIsContainsPropertyDescriptor(object);
 			addIsDisabledPropertyDescriptor(object);
@@ -121,10 +125,13 @@ public class InterfaceFieldItemProvider extends NamedElementItemProvider {
 			addUiModelPropertyDescriptor(object);
 			addSecurityModelPropertyDescriptor(object);
 			addRequiredPropertyDescriptor(object);
-			addMustMatchPropertyDescriptor(object);
 			addInterfaceTypePropertyDescriptor(object);
 			addValidationPatternPropertyDescriptor(object);
-			addInputClassPropertyDescriptor(object);
+			addRepeatedFieldPropertyDescriptor(object);
+			addSecondDisplayLabelPropertyDescriptor(object);
+			addSecondTitlePropertyDescriptor(object);
+			addSecondPlaceholderPropertyDescriptor(object);
+			addSecondHelpPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -306,6 +313,28 @@ public class InterfaceFieldItemProvider extends NamedElementItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Has Second Title feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasSecondTitlePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_UnitField_hasSecondTitle_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_hasSecondTitle_feature", "_UI_UnitField_type"),
+				 WafPackage.eINSTANCE.getUnitField_HasSecondTitle(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Local Placeholder feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -473,6 +502,28 @@ public class InterfaceFieldItemProvider extends NamedElementItemProvider {
 				 getString("_UI_UnitField_hasCustomisedDisplayLabel_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_hasCustomisedDisplayLabel_feature", "_UI_UnitField_type"),
 				 WafPackage.eINSTANCE.getUnitField_HasCustomisedDisplayLabel(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Is Repeated feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIsRepeatedPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_UnitField_isRepeated_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_isRepeated_feature", "_UI_UnitField_type"),
+				 WafPackage.eINSTANCE.getUnitField_IsRepeated(),
 				 false,
 				 false,
 				 false,
@@ -1472,28 +1523,6 @@ public class InterfaceFieldItemProvider extends NamedElementItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Must Match feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addMustMatchPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_InterfaceField_mustMatch_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_InterfaceField_mustMatch_feature", "_UI_InterfaceField_type"),
-				 WafPackage.eINSTANCE.getInterfaceField_MustMatch(),
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Interface Type feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1582,6 +1611,28 @@ public class InterfaceFieldItemProvider extends NamedElementItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Has Second Placeholder feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasSecondPlaceholderPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_UnitField_hasSecondPlaceholder_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_hasSecondPlaceholder_feature", "_UI_UnitField_type"),
+				 WafPackage.eINSTANCE.getUnitField_HasSecondPlaceholder(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Local Help feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1648,6 +1699,28 @@ public class InterfaceFieldItemProvider extends NamedElementItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Has Second Help feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasSecondHelpPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_UnitField_hasSecondHelp_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_hasSecondHelp_feature", "_UI_UnitField_type"),
+				 WafPackage.eINSTANCE.getUnitField_HasSecondHelp(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Validation Pattern feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1670,19 +1743,107 @@ public class InterfaceFieldItemProvider extends NamedElementItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Input Class feature.
+	 * This adds a property descriptor for the Repeated Field feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addInputClassPropertyDescriptor(Object object) {
+	protected void addRepeatedFieldPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_InterfaceField_inputClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_InterfaceField_inputClass_feature", "_UI_InterfaceField_type"),
-				 WafPackage.eINSTANCE.getInterfaceField_InputClass(),
+				 getString("_UI_InterfaceField_repeatedField_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_InterfaceField_repeatedField_feature", "_UI_InterfaceField_type"),
+				 WafPackage.eINSTANCE.getInterfaceField_RepeatedField(),
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Second Display Label feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSecondDisplayLabelPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_InterfaceField_secondDisplayLabel_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_InterfaceField_secondDisplayLabel_feature", "_UI_InterfaceField_type"),
+				 WafPackage.eINSTANCE.getInterfaceField_SecondDisplayLabel(),
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Second Title feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSecondTitlePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_InterfaceField_secondTitle_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_InterfaceField_secondTitle_feature", "_UI_InterfaceField_type"),
+				 WafPackage.eINSTANCE.getInterfaceField_SecondTitle(),
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Second Placeholder feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSecondPlaceholderPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_InterfaceField_secondPlaceholder_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_InterfaceField_secondPlaceholder_feature", "_UI_InterfaceField_type"),
+				 WafPackage.eINSTANCE.getInterfaceField_SecondPlaceholder(),
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Second Help feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSecondHelpPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_InterfaceField_secondHelp_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_InterfaceField_secondHelp_feature", "_UI_InterfaceField_type"),
+				 WafPackage.eINSTANCE.getInterfaceField_SecondHelp(),
 				 true,
 				 false,
 				 false,
@@ -1754,17 +1915,21 @@ public class InterfaceFieldItemProvider extends NamedElementItemProvider {
 			case WafPackage.INTERFACE_FIELD__AUTHORISATION_ROLES:
 			case WafPackage.INTERFACE_FIELD__IS_AUTHORISED:
 			case WafPackage.INTERFACE_FIELD__HAS_CUSTOMISED_DISPLAY_LABEL:
+			case WafPackage.INTERFACE_FIELD__IS_REPEATED:
 			case WafPackage.INTERFACE_FIELD__LOCAL_TITLE:
 			case WafPackage.INTERFACE_FIELD__TITLE:
 			case WafPackage.INTERFACE_FIELD__HAS_TITLE:
 			case WafPackage.INTERFACE_FIELD__HAS_CUSTOMISED_TITLE:
+			case WafPackage.INTERFACE_FIELD__HAS_SECOND_TITLE:
 			case WafPackage.INTERFACE_FIELD__LOCAL_PLACEHOLDER:
 			case WafPackage.INTERFACE_FIELD__PLACEHOLDER:
 			case WafPackage.INTERFACE_FIELD__HAS_PLACEHOLDER:
 			case WafPackage.INTERFACE_FIELD__HAS_CUSTOMISED_PLACEHOLDER:
+			case WafPackage.INTERFACE_FIELD__HAS_SECOND_PLACEHOLDER:
 			case WafPackage.INTERFACE_FIELD__LOCAL_HELP:
 			case WafPackage.INTERFACE_FIELD__HELP:
 			case WafPackage.INTERFACE_FIELD__HAS_HELP:
+			case WafPackage.INTERFACE_FIELD__HAS_SECOND_HELP:
 			case WafPackage.INTERFACE_FIELD__IS_CONTAINS:
 			case WafPackage.INTERFACE_FIELD__IS_DISABLED:
 			case WafPackage.INTERFACE_FIELD__IS_REQUIRED:
@@ -1810,7 +1975,11 @@ public class InterfaceFieldItemProvider extends NamedElementItemProvider {
 			case WafPackage.INTERFACE_FIELD__REQUIRED:
 			case WafPackage.INTERFACE_FIELD__INTERFACE_TYPE:
 			case WafPackage.INTERFACE_FIELD__VALIDATION_PATTERN:
-			case WafPackage.INTERFACE_FIELD__INPUT_CLASS:
+			case WafPackage.INTERFACE_FIELD__REPEATED_FIELD:
+			case WafPackage.INTERFACE_FIELD__SECOND_DISPLAY_LABEL:
+			case WafPackage.INTERFACE_FIELD__SECOND_TITLE:
+			case WafPackage.INTERFACE_FIELD__SECOND_PLACEHOLDER:
+			case WafPackage.INTERFACE_FIELD__SECOND_HELP:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case WafPackage.INTERFACE_FIELD__HIDE_WHEN:

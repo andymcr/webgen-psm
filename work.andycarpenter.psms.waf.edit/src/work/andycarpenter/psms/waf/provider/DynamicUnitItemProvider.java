@@ -106,6 +106,7 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 			addInterfaceFieldsPropertyDescriptor(object);
 			addHasInterfaceFieldsPropertyDescriptor(object);
 			addHasObfuscatedFieldsPropertyDescriptor(object);
+			addHasRepeatedFieldsPropertyDescriptor(object);
 			addHasResourceFieldsPropertyDescriptor(object);
 			addHasStringFieldsPropertyDescriptor(object);
 			addHasTextareaFieldsPropertyDescriptor(object);
@@ -1326,6 +1327,28 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Has Repeated Fields feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasRepeatedFieldsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DynamicUnit_hasRepeatedFields_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DynamicUnit_hasRepeatedFields_feature", "_UI_DynamicUnit_type"),
+				 WafPackage.eINSTANCE.getDynamicUnit_HasRepeatedFields(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Has Resource Fields feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2143,6 +2166,7 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 			case WafPackage.DYNAMIC_UNIT__HAS_INTEGER_FIELDS:
 			case WafPackage.DYNAMIC_UNIT__HAS_INTERFACE_FIELDS:
 			case WafPackage.DYNAMIC_UNIT__HAS_OBFUSCATED_FIELDS:
+			case WafPackage.DYNAMIC_UNIT__HAS_REPEATED_FIELDS:
 			case WafPackage.DYNAMIC_UNIT__HAS_RESOURCE_FIELDS:
 			case WafPackage.DYNAMIC_UNIT__HAS_STRING_FIELDS:
 			case WafPackage.DYNAMIC_UNIT__HAS_TEXTAREA_FIELDS:

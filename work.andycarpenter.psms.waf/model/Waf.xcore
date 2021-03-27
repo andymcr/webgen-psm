@@ -744,27 +744,30 @@ abstract class DynamicUnit extends ContentUnit, ActionContainer {
 	refers readonly transient volatile unsettable derived InterfaceField[] interfaceFields get {
 		return displayFields.filter[it instanceof InterfaceField].map[it as InterfaceField].toEList
 	}
-	derived readonly transient volatile boolean hasInterfaceFields get {
+	derived readonly transient unsettable volatile boolean hasInterfaceFields get {
 		!interfaceFields.isEmpty()
 	}
-	derived readonly transient volatile boolean hasObfuscatedFields get {
+	derived readonly transient unsettable volatile boolean hasObfuscatedFields get {
 		!displayFields.filter[isObfuscatedField].isEmpty()
+	}
+	derived readonly transient unsettable volatile boolean hasRepeatedFields get {
+		!displayFields.filter[isRepeated].isEmpty()
 	}
 	readonly transient volatile unsettable derived boolean hasResourceFields get {
 		!displayFields.filter[isResourceField].isEmpty()
 	}
-	derived readonly transient volatile boolean hasStringFields get {
+	derived readonly transient unsettable volatile boolean hasStringFields get {
 		!displayFields.filter[isStringField].isEmpty()
 	}
-	derived readonly transient volatile boolean hasTextareaFields get {
+	derived readonly transient unsettable volatile boolean hasTextareaFields get {
 		!displayFields.filter[isTextareaField].isEmpty()
 	}
-	derived readonly transient volatile boolean hasUrlFields get {
+	derived readonly transient unsettable volatile boolean hasUrlFields get {
 		!displayFields.filter[isUrlField].isEmpty()
 	}
 	String headerClass
 	String localFieldListClass = ''
-	derived readonly transient volatile String fieldListClass get {
+	derived readonly transient unsettable volatile String fieldListClass get {
 		if (this instanceof CardsUnit) 
 			(this as CardsUnit).cardsFieldListClass
 		else if (this instanceof DetailsUnit) 
@@ -780,7 +783,7 @@ abstract class DynamicUnit extends ContentUnit, ActionContainer {
 		else
 			''
 	}
-	derived readonly transient volatile boolean hasFieldListClass get {
+	derived readonly transient unsettable volatile boolean hasFieldListClass get {
 		fieldListClass != ''
 	}
 	String localDefinitionFieldListClass = ''
@@ -931,6 +934,12 @@ interface UnitField extends DisplayElement {
 		else // UnitLabel
 			false
 	}
+	derived readonly unsettable transient volatile boolean isRepeated get {
+		if (this instanceof InterfaceField)
+			(this as InterfaceField).repeatedField
+		else
+			false
+	}
 	String localTitle = ''
 	derived readonly unsettable transient volatile String title get {
 		if (this instanceof UnitLabel)
@@ -951,6 +960,12 @@ interface UnitField extends DisplayElement {
 			title != (this as UnitFeature).persistentFeature.displayLabel.trim()
 		else
 			title.trim() != ''
+	}
+	derived readonly unsettable transient volatile boolean hasSecondTitle get {
+		if (this instanceof InterfaceField && this.isRepeated)
+			(this as InterfaceField).secondTitle != ''
+		else
+			false
 	}
 	String localPlaceholder = ''
 	derived readonly unsettable transient volatile String placeholder get {
@@ -973,6 +988,12 @@ interface UnitField extends DisplayElement {
 		else
 			placeholder != ''
 	}
+	derived readonly unsettable transient volatile boolean hasSecondPlaceholder get {
+		if (this instanceof InterfaceField && this.isRepeated)
+			(this as InterfaceField).secondPlaceholder != ''
+		else
+			false
+	}
 	String localHelp = ''
 	derived readonly unsettable transient volatile String help get {
 		if (this instanceof UnitLabel)
@@ -985,6 +1006,12 @@ interface UnitField extends DisplayElement {
 	}
 	derived readonly unsettable transient volatile boolean hasHelp get {
 		help != ''
+	}
+	derived readonly unsettable transient volatile boolean hasSecondHelp get {
+		if (this instanceof InterfaceField && this.isRepeated)
+			(this as InterfaceField).secondHelp != ''
+		else
+			false
 	}
 	contains Predicate hideWhen
 	refers derived readonly transient volatile Feature persistentFeature get {
@@ -1322,10 +1349,13 @@ class UnitLabel extends UnitField {
 abstract class InterfaceField extends NamedElement, UnitField {
 	boolean required
 	contains Expression fieldDefaultValue
-	refers UnitField mustMatch
 	String interfaceType
 	String validationPattern = ''
-	String inputClass
+	boolean repeatedField = 'false'
+	String secondDisplayLabel = ''
+	String secondTitle = ''
+	String secondPlaceholder = ''
+	String secondHelp = ''
 }
 
 class DataTypeField extends InterfaceField {

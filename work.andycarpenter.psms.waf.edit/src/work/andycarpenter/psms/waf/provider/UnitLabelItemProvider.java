@@ -54,17 +54,21 @@ public class UnitLabelItemProvider extends DisplayElementItemProvider {
 			addAuthorisationRolesPropertyDescriptor(object);
 			addIsAuthorisedPropertyDescriptor(object);
 			addHasCustomisedDisplayLabelPropertyDescriptor(object);
+			addIsRepeatedPropertyDescriptor(object);
 			addLocalTitlePropertyDescriptor(object);
 			addTitlePropertyDescriptor(object);
 			addHasTitlePropertyDescriptor(object);
 			addHasCustomisedTitlePropertyDescriptor(object);
+			addHasSecondTitlePropertyDescriptor(object);
 			addLocalPlaceholderPropertyDescriptor(object);
 			addPlaceholderPropertyDescriptor(object);
 			addHasPlaceholderPropertyDescriptor(object);
 			addHasCustomisedPlaceholderPropertyDescriptor(object);
+			addHasSecondPlaceholderPropertyDescriptor(object);
 			addLocalHelpPropertyDescriptor(object);
 			addHelpPropertyDescriptor(object);
 			addHasHelpPropertyDescriptor(object);
+			addHasSecondHelpPropertyDescriptor(object);
 			addPersistentFeaturePropertyDescriptor(object);
 			addIsContainsPropertyDescriptor(object);
 			addIsDisabledPropertyDescriptor(object);
@@ -275,6 +279,28 @@ public class UnitLabelItemProvider extends DisplayElementItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Has Second Title feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasSecondTitlePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_UnitField_hasSecondTitle_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_hasSecondTitle_feature", "_UI_UnitField_type"),
+				 WafPackage.eINSTANCE.getUnitField_HasSecondTitle(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Local Placeholder feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -363,6 +389,28 @@ public class UnitLabelItemProvider extends DisplayElementItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Has Second Placeholder feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasSecondPlaceholderPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_UnitField_hasSecondPlaceholder_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_hasSecondPlaceholder_feature", "_UI_UnitField_type"),
+				 WafPackage.eINSTANCE.getUnitField_HasSecondPlaceholder(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Local Help feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -420,6 +468,28 @@ public class UnitLabelItemProvider extends DisplayElementItemProvider {
 				 getString("_UI_UnitField_hasHelp_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_hasHelp_feature", "_UI_UnitField_type"),
 				 WafPackage.eINSTANCE.getUnitField_HasHelp(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Has Second Help feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasSecondHelpPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_UnitField_hasSecondHelp_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_hasSecondHelp_feature", "_UI_UnitField_type"),
+				 WafPackage.eINSTANCE.getUnitField_HasSecondHelp(),
 				 false,
 				 false,
 				 false,
@@ -574,6 +644,28 @@ public class UnitLabelItemProvider extends DisplayElementItemProvider {
 				 getString("_UI_UnitField_hasCustomisedDisplayLabel_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_hasCustomisedDisplayLabel_feature", "_UI_UnitField_type"),
 				 WafPackage.eINSTANCE.getUnitField_HasCustomisedDisplayLabel(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Is Repeated feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIsRepeatedPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_UnitField_isRepeated_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_isRepeated_feature", "_UI_UnitField_type"),
+				 WafPackage.eINSTANCE.getUnitField_IsRepeated(),
 				 false,
 				 false,
 				 false,
@@ -1666,17 +1758,21 @@ public class UnitLabelItemProvider extends DisplayElementItemProvider {
 			case WafPackage.UNIT_LABEL__AUTHORISATION_ROLES:
 			case WafPackage.UNIT_LABEL__IS_AUTHORISED:
 			case WafPackage.UNIT_LABEL__HAS_CUSTOMISED_DISPLAY_LABEL:
+			case WafPackage.UNIT_LABEL__IS_REPEATED:
 			case WafPackage.UNIT_LABEL__LOCAL_TITLE:
 			case WafPackage.UNIT_LABEL__TITLE:
 			case WafPackage.UNIT_LABEL__HAS_TITLE:
 			case WafPackage.UNIT_LABEL__HAS_CUSTOMISED_TITLE:
+			case WafPackage.UNIT_LABEL__HAS_SECOND_TITLE:
 			case WafPackage.UNIT_LABEL__LOCAL_PLACEHOLDER:
 			case WafPackage.UNIT_LABEL__PLACEHOLDER:
 			case WafPackage.UNIT_LABEL__HAS_PLACEHOLDER:
 			case WafPackage.UNIT_LABEL__HAS_CUSTOMISED_PLACEHOLDER:
+			case WafPackage.UNIT_LABEL__HAS_SECOND_PLACEHOLDER:
 			case WafPackage.UNIT_LABEL__LOCAL_HELP:
 			case WafPackage.UNIT_LABEL__HELP:
 			case WafPackage.UNIT_LABEL__HAS_HELP:
+			case WafPackage.UNIT_LABEL__HAS_SECOND_HELP:
 			case WafPackage.UNIT_LABEL__IS_CONTAINS:
 			case WafPackage.UNIT_LABEL__IS_DISABLED:
 			case WafPackage.UNIT_LABEL__IS_REQUIRED:
