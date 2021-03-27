@@ -2050,9 +2050,15 @@ class LogoutUnit extends DynamicUnit, SecurityUnit {
 }
 
 class ForgottenPasswordUnit extends EditUnit, SecurityUnit {
+	refers ResetPasswordUnit[1] resetPasswordUnit
 	String[1] uriEmailSent
-	String[1] uriResetPassword
 	String[1] emailSubject
+	String[1] emailMessage
+	String[1] emailSentCaption
+	String[1] emailSentMessage
+}
+
+class ResetPasswordUnit extends EditUnit, SecurityUnit {
 }
 
 

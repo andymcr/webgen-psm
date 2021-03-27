@@ -1577,6 +1577,11 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 			(createChildParameter
 				(WafPackage.eINSTANCE.getPage_Units(),
 				 WafFactory.eINSTANCE.createForgottenPasswordUnit()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.eINSTANCE.getPage_Units(),
+				 WafFactory.eINSTANCE.createResetPasswordUnit()));
 	}
 
 	/**

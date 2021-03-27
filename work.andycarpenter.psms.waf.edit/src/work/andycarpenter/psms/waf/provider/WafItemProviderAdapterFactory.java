@@ -1291,6 +1291,29 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.waf.ResetPasswordUnit} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ResetPasswordUnitItemProvider resetPasswordUnitItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link work.andycarpenter.psms.waf.ResetPasswordUnit}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createResetPasswordUnitAdapter() {
+		if (resetPasswordUnitItemProvider == null) {
+			resetPasswordUnitItemProvider = new ResetPasswordUnitItemProvider(this);
+		}
+
+		return resetPasswordUnitItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.waf.SecurityAction} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1625,6 +1648,7 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 		if (loginUnitItemProvider != null) loginUnitItemProvider.dispose();
 		if (logoutUnitItemProvider != null) logoutUnitItemProvider.dispose();
 		if (forgottenPasswordUnitItemProvider != null) forgottenPasswordUnitItemProvider.dispose();
+		if (resetPasswordUnitItemProvider != null) resetPasswordUnitItemProvider.dispose();
 		if (securityActionItemProvider != null) securityActionItemProvider.dispose();
 		if (deleteActionItemProvider != null) deleteActionItemProvider.dispose();
 		if (containerSelectActionItemProvider != null) containerSelectActionItemProvider.dispose();
