@@ -53,6 +53,7 @@ public class LocalAuthenticationSystemItemProvider extends AuthenticationItemPro
 			addLoginUnitPropertyDescriptor(object);
 			addLogoutUnitPropertyDescriptor(object);
 			addForgottenPasswordUnitPropertyDescriptor(object);
+			addResetPasswordUnitPropertyDescriptor(object);
 			addUseCaptchaPropertyDescriptor(object);
 			addAllowRememberMePropertyDescriptor(object);
 			addAllowSelfRegistrationPropertyDescriptor(object);
@@ -208,6 +209,28 @@ public class LocalAuthenticationSystemItemProvider extends AuthenticationItemPro
 				 getString("_UI_LocalAuthenticationSystem_forgottenPasswordUnit_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_LocalAuthenticationSystem_forgottenPasswordUnit_feature", "_UI_LocalAuthenticationSystem_type"),
 				 WafPackage.eINSTANCE.getLocalAuthenticationSystem_ForgottenPasswordUnit(),
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Reset Password Unit feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addResetPasswordUnitPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_LocalAuthenticationSystem_resetPasswordUnit_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_LocalAuthenticationSystem_resetPasswordUnit_feature", "_UI_LocalAuthenticationSystem_type"),
+				 WafPackage.eINSTANCE.getLocalAuthenticationSystem_ResetPasswordUnit(),
 				 true,
 				 false,
 				 true,

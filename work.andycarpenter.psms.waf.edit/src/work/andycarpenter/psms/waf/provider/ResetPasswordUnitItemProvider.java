@@ -9,6 +9,7 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
 import work.andycarpenter.psms.waf.ResetPasswordUnit;
@@ -42,8 +43,31 @@ public class ResetPasswordUnitItemProvider extends EditUnitItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addForgottenPasswordUnitPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Forgotten Password Unit feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addForgottenPasswordUnitPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ResetPasswordUnit_forgottenPasswordUnit_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ResetPasswordUnit_forgottenPasswordUnit_feature", "_UI_ResetPasswordUnit_type"),
+				 WafPackage.eINSTANCE.getResetPasswordUnit_ForgottenPasswordUnit(),
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**

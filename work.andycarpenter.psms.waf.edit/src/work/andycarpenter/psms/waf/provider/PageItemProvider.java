@@ -85,6 +85,12 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 			addHasMapUnitsPropertyDescriptor(object);
 			addNonSecurityUnitsPropertyDescriptor(object);
 			addHasNonSecurityUnitsPropertyDescriptor(object);
+			addRegistrationUnitsPropertyDescriptor(object);
+			addHasRegistrationUnitsPropertyDescriptor(object);
+			addResetPasswordUnitsPropertyDescriptor(object);
+			addHasResetPasswordUnitsPropertyDescriptor(object);
+			addSecurityUnitsPropertyDescriptor(object);
+			addHasSecurityUnitsPropertyDescriptor(object);
 			addSliderUnitsPropertyDescriptor(object);
 			addHasSliderUnitsPropertyDescriptor(object);
 			addRepositoriesUsedPropertyDescriptor(object);
@@ -97,6 +103,7 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 			addHasAutocompleteFieldsPropertyDescriptor(object);
 			addFormFieldsPropertyDescriptor(object);
 			addHasInterfaceFieldsPropertyDescriptor(object);
+			addHasRequiredInterfaceFieldsPropertyDescriptor(object);
 			addHasResourceFieldsPropertyDescriptor(object);
 			addActionsWithoutTargetPropertyDescriptor(object);
 			addUriElementPropertyDescriptor(object);
@@ -860,6 +867,138 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Registration Units feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRegistrationUnitsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Page_registrationUnits_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Page_registrationUnits_feature", "_UI_Page_type"),
+				 WafPackage.eINSTANCE.getPage_RegistrationUnits(),
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Has Registration Units feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasRegistrationUnitsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Page_hasRegistrationUnits_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Page_hasRegistrationUnits_feature", "_UI_Page_type"),
+				 WafPackage.eINSTANCE.getPage_HasRegistrationUnits(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Reset Password Units feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addResetPasswordUnitsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Page_resetPasswordUnits_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Page_resetPasswordUnits_feature", "_UI_Page_type"),
+				 WafPackage.eINSTANCE.getPage_ResetPasswordUnits(),
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Has Reset Password Units feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasResetPasswordUnitsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Page_hasResetPasswordUnits_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Page_hasResetPasswordUnits_feature", "_UI_Page_type"),
+				 WafPackage.eINSTANCE.getPage_HasResetPasswordUnits(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Security Units feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSecurityUnitsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Page_securityUnits_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Page_securityUnits_feature", "_UI_Page_type"),
+				 WafPackage.eINSTANCE.getPage_SecurityUnits(),
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Has Security Units feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasSecurityUnitsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Page_hasSecurityUnits_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Page_hasSecurityUnits_feature", "_UI_Page_type"),
+				 WafPackage.eINSTANCE.getPage_HasSecurityUnits(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Slider Units feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1137,6 +1276,28 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 				 getString("_UI_Page_hasInterfaceFields_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Page_hasInterfaceFields_feature", "_UI_Page_type"),
 				 WafPackage.eINSTANCE.getPage_HasInterfaceFields(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Has Required Interface Fields feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasRequiredInterfaceFieldsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Page_hasRequiredInterfaceFields_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Page_hasRequiredInterfaceFields_feature", "_UI_Page_type"),
+				 WafPackage.eINSTANCE.getPage_HasRequiredInterfaceFields(),
 				 false,
 				 false,
 				 false,
@@ -1452,12 +1613,16 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 			case WafPackage.PAGE__HAS_LOGIN_UNITS:
 			case WafPackage.PAGE__HAS_MAP_UNITS:
 			case WafPackage.PAGE__HAS_NON_SECURITY_UNITS:
+			case WafPackage.PAGE__HAS_REGISTRATION_UNITS:
+			case WafPackage.PAGE__HAS_RESET_PASSWORD_UNITS:
+			case WafPackage.PAGE__HAS_SECURITY_UNITS:
 			case WafPackage.PAGE__HAS_SLIDER_UNITS:
 			case WafPackage.PAGE__HAS_REPOSITORIES_USED:
 			case WafPackage.PAGE__HAS_SERVICES_USED:
 			case WafPackage.PAGE__HAS_PAGINATION:
 			case WafPackage.PAGE__HAS_AUTOCOMPLETE_FIELDS:
 			case WafPackage.PAGE__HAS_INTERFACE_FIELDS:
+			case WafPackage.PAGE__HAS_REQUIRED_INTERFACE_FIELDS:
 			case WafPackage.PAGE__HAS_RESOURCE_FIELDS:
 			case WafPackage.PAGE__URI_ELEMENT:
 			case WafPackage.PAGE__LOCAL_PAGE_STYLE_CLASS:

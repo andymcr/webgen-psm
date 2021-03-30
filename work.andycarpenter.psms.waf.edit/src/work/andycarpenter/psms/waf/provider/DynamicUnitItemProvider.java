@@ -105,6 +105,7 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 			addHasIntegerFieldsPropertyDescriptor(object);
 			addInterfaceFieldsPropertyDescriptor(object);
 			addHasInterfaceFieldsPropertyDescriptor(object);
+			addHasRequiredInterfaceFieldsPropertyDescriptor(object);
 			addHasObfuscatedFieldsPropertyDescriptor(object);
 			addHasRepeatedFieldsPropertyDescriptor(object);
 			addHasResourceFieldsPropertyDescriptor(object);
@@ -1305,6 +1306,28 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Has Required Interface Fields feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasRequiredInterfaceFieldsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DynamicUnit_hasRequiredInterfaceFields_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DynamicUnit_hasRequiredInterfaceFields_feature", "_UI_DynamicUnit_type"),
+				 WafPackage.eINSTANCE.getDynamicUnit_HasRequiredInterfaceFields(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Has Obfuscated Fields feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2165,6 +2188,7 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 			case WafPackage.DYNAMIC_UNIT__IS_FORM_UNIT:
 			case WafPackage.DYNAMIC_UNIT__HAS_INTEGER_FIELDS:
 			case WafPackage.DYNAMIC_UNIT__HAS_INTERFACE_FIELDS:
+			case WafPackage.DYNAMIC_UNIT__HAS_REQUIRED_INTERFACE_FIELDS:
 			case WafPackage.DYNAMIC_UNIT__HAS_OBFUSCATED_FIELDS:
 			case WafPackage.DYNAMIC_UNIT__HAS_REPEATED_FIELDS:
 			case WafPackage.DYNAMIC_UNIT__HAS_RESOURCE_FIELDS:

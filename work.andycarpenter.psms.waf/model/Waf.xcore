@@ -68,7 +68,7 @@ class WafModel {
 	derived readonly transient volatile boolean hasEditUnits get {
 		!editUnits.isEmpty()
 	}
-	refers readonly transient volatile unsettable derived DynamicUnit[] formUnits get {
+	refers readonly transient volatile unsettable derived SingletonUnit[] formUnits get {
 		return pages.flatMap[it.formUnits].toEList()
 	}
 	derived readonly transient volatile boolean hasFormUnits get {
@@ -158,6 +158,8 @@ class SiteProperties {
 	boolean useDbSessionStorage
 	String textEditorURL
 	String siteTemplate
+	String securityFromEmail = ''
+	String securityFromName = ''
 	boolean staticUnitsEditable
 }
 
@@ -278,6 +280,7 @@ class LocalAuthenticationSystem extends Authentication {
 	refers LoginUnit[1] loginUnit
 	refers LogoutUnit[1] logoutUnit
 	refers ForgottenPasswordUnit forgottenPasswordUnit
+	refers ResetPasswordUnit[1] resetPasswordUnit
 	boolean useCaptcha
 	boolean allowRememberMe
 	boolean allowSelfRegistration
@@ -397,8 +400,8 @@ class Page extends NamedDisplayElement {
 	derived readonly transient volatile boolean hasForgottenPasswordUnits get {
 		!forgottenPasswordUnits.isEmpty()
 	}
-	refers readonly transient volatile unsettable derived DynamicUnit[] formUnits get {
-		return dynamicUnits.filter[isFormUnit].toEList
+	refers readonly transient volatile unsettable derived SingletonUnit[] formUnits get {
+		return dynamicUnits.filter[isFormUnit].map[it as SingletonUnit].toEList
 	}
 	derived readonly transient volatile boolean hasFormUnits get {
 		!formUnits.isEmpty()
@@ -448,6 +451,24 @@ class Page extends NamedDisplayElement {
 	derived readonly transient volatile boolean hasNonSecurityUnits get {
 		!nonSecurityUnits.isEmpty()
 	}
+	refers readonly transient volatile unsettable derived RegistrationUnit[] registrationUnits get {
+		return units.filter[it instanceof RegistrationUnit].map[it as RegistrationUnit].toEList
+	}
+	derived readonly transient volatile boolean hasRegistrationUnits get {
+		!registrationUnits.isEmpty()
+	}
+	refers readonly transient volatile unsettable derived ResetPasswordUnit[] resetPasswordUnits get {
+		return units.filter[it instanceof ResetPasswordUnit].map[it as ResetPasswordUnit].toEList
+	}
+	derived readonly transient volatile boolean hasResetPasswordUnits get {
+		!resetPasswordUnits.isEmpty()
+	}
+	refers readonly transient volatile unsettable derived SecurityUnit[] securityUnits get {
+		units.filter[it instanceof SecurityUnit].map[it as SecurityUnit].toEList
+	}
+	derived readonly transient volatile boolean hasSecurityUnits get {
+		!securityUnits.isEmpty()
+	}
 	refers readonly transient volatile unsettable derived SliderUnit[] sliderUnits get {
 		return units.filter[it instanceof SliderUnit].map[it as SliderUnit].toEList
 	}
@@ -483,6 +504,9 @@ class Page extends NamedDisplayElement {
 	}
 	derived readonly transient volatile boolean hasInterfaceFields get {
 		!dynamicUnits.filter[it.hasInterfaceFields].isEmpty()
+	}
+	derived readonly transient volatile boolean hasRequiredInterfaceFields get {
+		!dynamicUnits.filter[it.hasRequiredInterfaceFields].isEmpty()
 	}
 	derived readonly transient volatile boolean hasResourceFields get {
 		!dynamicUnits.filter[it.hasResourceFields].isEmpty()
@@ -746,6 +770,9 @@ abstract class DynamicUnit extends ContentUnit, ActionContainer {
 	}
 	derived readonly transient unsettable volatile boolean hasInterfaceFields get {
 		!interfaceFields.isEmpty()
+	}
+	derived readonly transient unsettable volatile boolean hasRequiredInterfaceFields get {
+		!interfaceFields.filter[it.isRequired].isEmpty()
 	}
 	derived readonly transient unsettable volatile boolean hasObfuscatedFields get {
 		!displayFields.filter[isObfuscatedField].isEmpty()
@@ -1036,14 +1063,18 @@ interface UnitField extends DisplayElement {
 		disabledInput
 	}
 	derived readonly transient volatile boolean isRequired get {
-		if (persistentFeature !== null) 
+		if (this instanceof UnitFeature) 
 			persistentFeature.isRequired
+		else if (this instanceof InterfaceField)
+			(this as InterfaceField).localRequired
 		else
 			false
 	}
 	derived readonly transient volatile boolean isSingleton get {
-		if (persistentFeature !== null) 
+		if (this instanceof UnitFeature) 
 			persistentFeature.isSingleton
+		else if (this instanceof InterfaceField)
+			true
 		else
 			false
 	}
@@ -1347,7 +1378,7 @@ class UnitLabel extends UnitField {
 }
 
 abstract class InterfaceField extends NamedElement, UnitField {
-	boolean required
+	boolean localRequired
 	contains Expression fieldDefaultValue
 	String interfaceType
 	String validationPattern = ''
@@ -2070,7 +2101,7 @@ class SearchUnit extends ControlUnit {
 }
 
 
-class RegistrationUnit extends DynamicUnit, SecurityUnit {
+class RegistrationUnit extends EditUnit, SecurityUnit {
 }
 
 class LoginUnit extends EditUnit, SecurityUnit {
@@ -2080,7 +2111,7 @@ class LogoutUnit extends DynamicUnit, SecurityUnit {
 }
 
 class ForgottenPasswordUnit extends EditUnit, SecurityUnit {
-	refers ResetPasswordUnit[1] resetPasswordUnit
+	refers ResetPasswordUnit[1] resetPasswordUnit opposite forgottenPasswordUnit
 	String[1] uriEmailSent
 	String[1] emailSubject
 	String[1] emailMessage
@@ -2089,6 +2120,7 @@ class ForgottenPasswordUnit extends EditUnit, SecurityUnit {
 }
 
 class ResetPasswordUnit extends EditUnit, SecurityUnit {
+	refers ForgottenPasswordUnit[1] forgottenPasswordUnit opposite resetPasswordUnit
 }
 
 

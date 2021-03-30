@@ -124,7 +124,7 @@ public class InterfaceFieldItemProvider extends NamedElementItemProvider {
 			addGenModelPropertyDescriptor(object);
 			addUiModelPropertyDescriptor(object);
 			addSecurityModelPropertyDescriptor(object);
-			addRequiredPropertyDescriptor(object);
+			addLocalRequiredPropertyDescriptor(object);
 			addInterfaceTypePropertyDescriptor(object);
 			addValidationPatternPropertyDescriptor(object);
 			addRepeatedFieldPropertyDescriptor(object);
@@ -1501,19 +1501,19 @@ public class InterfaceFieldItemProvider extends NamedElementItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Required feature.
+	 * This adds a property descriptor for the Local Required feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addRequiredPropertyDescriptor(Object object) {
+	protected void addLocalRequiredPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_InterfaceField_required_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_InterfaceField_required_feature", "_UI_InterfaceField_type"),
-				 WafPackage.eINSTANCE.getInterfaceField_Required(),
+				 getString("_UI_InterfaceField_localRequired_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_InterfaceField_localRequired_feature", "_UI_InterfaceField_type"),
+				 WafPackage.eINSTANCE.getInterfaceField_LocalRequired(),
 				 true,
 				 false,
 				 false,
@@ -1972,7 +1972,7 @@ public class InterfaceFieldItemProvider extends NamedElementItemProvider {
 			case WafPackage.INTERFACE_FIELD__FIELD_VALUE_CLASS:
 			case WafPackage.INTERFACE_FIELD__HAS_FIELD_VALUE_CLASS:
 			case WafPackage.INTERFACE_FIELD__FOOTER_CLASS:
-			case WafPackage.INTERFACE_FIELD__REQUIRED:
+			case WafPackage.INTERFACE_FIELD__LOCAL_REQUIRED:
 			case WafPackage.INTERFACE_FIELD__INTERFACE_TYPE:
 			case WafPackage.INTERFACE_FIELD__VALIDATION_PATTERN:
 			case WafPackage.INTERFACE_FIELD__REPEATED_FIELD:
