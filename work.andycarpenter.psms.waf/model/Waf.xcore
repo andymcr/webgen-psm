@@ -124,6 +124,7 @@ class WafModel {
 		if (isLocallyAuthenticated)
 			authentication as LocalAuthenticationSystem
 	}
+	Boolean useFormFloatingLabels = 'false'
 	String defaultPageStyleClass = ''
     contains DefaultUnitStyles defaultStyles
     contains CardsUnitStyles defaultCardsStyles
@@ -2124,7 +2125,14 @@ class ResetPasswordUnit extends EditUnit, SecurityUnit {
 }
 
 
+enum ContainerActionsPlacement {
+	Above = 0
+	Below = 1
+	Float = 2
+}
+
 interface ActionContainer {
+	ContainerActionsPlacement containerActionsPlacement
 	contains Action[] allActions opposite usedBy
 	refers derived readonly transient volatile unsettable Action[] actions get {
 		return allActions.filter[!disable].toEList

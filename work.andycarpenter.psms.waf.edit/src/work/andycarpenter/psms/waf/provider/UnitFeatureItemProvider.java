@@ -121,6 +121,7 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 			addGenModelPropertyDescriptor(object);
 			addUiModelPropertyDescriptor(object);
 			addSecurityModelPropertyDescriptor(object);
+			addContainerActionsPlacementPropertyDescriptor(object);
 			addActionsPropertyDescriptor(object);
 			addHasActionsPropertyDescriptor(object);
 			addActionsWithMessagesPropertyDescriptor(object);
@@ -1797,6 +1798,28 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Container Actions Placement feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addContainerActionsPlacementPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ActionContainer_containerActionsPlacement_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ActionContainer_containerActionsPlacement_feature", "_UI_ActionContainer_type"),
+				 WafPackage.eINSTANCE.getActionContainer_ContainerActionsPlacement(),
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Actions feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2247,6 +2270,7 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 			case WafPackage.UNIT_FEATURE__FIELD_VALUE_CLASS:
 			case WafPackage.UNIT_FEATURE__HAS_FIELD_VALUE_CLASS:
 			case WafPackage.UNIT_FEATURE__FOOTER_CLASS:
+			case WafPackage.UNIT_FEATURE__CONTAINER_ACTIONS_PLACEMENT:
 			case WafPackage.UNIT_FEATURE__HAS_ACTIONS:
 			case WafPackage.UNIT_FEATURE__HAS_ACTIONS_MESSAGES:
 			case WafPackage.UNIT_FEATURE__HAS_CONTAINER_ACTIONS:

@@ -46,6 +46,7 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addContainerActionsPlacementPropertyDescriptor(object);
 			addActionsPropertyDescriptor(object);
 			addHasActionsPropertyDescriptor(object);
 			addActionsWithMessagesPropertyDescriptor(object);
@@ -137,6 +138,28 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 			addFooterClassPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Container Actions Placement feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addContainerActionsPlacementPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ActionContainer_containerActionsPlacement_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ActionContainer_containerActionsPlacement_feature", "_UI_ActionContainer_type"),
+				 WafPackage.eINSTANCE.getActionContainer_ContainerActionsPlacement(),
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -2157,6 +2180,7 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(DynamicUnit.class)) {
+			case WafPackage.DYNAMIC_UNIT__CONTAINER_ACTIONS_PLACEMENT:
 			case WafPackage.DYNAMIC_UNIT__HAS_ACTIONS:
 			case WafPackage.DYNAMIC_UNIT__HAS_ACTIONS_MESSAGES:
 			case WafPackage.DYNAMIC_UNIT__HAS_CONTAINER_ACTIONS:

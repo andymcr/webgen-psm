@@ -87,6 +87,7 @@ public class WafModelItemProvider
 			addCasAuthenticationPropertyDescriptor(object);
 			addIsLocallyAuthenticatedPropertyDescriptor(object);
 			addLocalAuthenticationPropertyDescriptor(object);
+			addUseFormFloatingLabelsPropertyDescriptor(object);
 			addDefaultPageStyleClassPropertyDescriptor(object);
 			addGenModelPropertyDescriptor(object);
 			addUiModelPropertyDescriptor(object);
@@ -624,6 +625,28 @@ public class WafModelItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Use Form Floating Labels feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addUseFormFloatingLabelsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_WafModel_useFormFloatingLabels_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WafModel_useFormFloatingLabels_feature", "_UI_WafModel_type"),
+				 WafPackage.eINSTANCE.getWafModel_UseFormFloatingLabels(),
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Default Page Style Class feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -805,6 +828,7 @@ public class WafModelItemProvider
 			case WafPackage.WAF_MODEL__IS_AUTHENTICATED:
 			case WafPackage.WAF_MODEL__IS_CAS_AUTHENTICATED:
 			case WafPackage.WAF_MODEL__IS_LOCALLY_AUTHENTICATED:
+			case WafPackage.WAF_MODEL__USE_FORM_FLOATING_LABELS:
 			case WafPackage.WAF_MODEL__DEFAULT_PAGE_STYLE_CLASS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
