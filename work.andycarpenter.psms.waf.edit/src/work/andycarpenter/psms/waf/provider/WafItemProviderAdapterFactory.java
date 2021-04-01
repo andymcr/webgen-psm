@@ -555,6 +555,29 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.waf.CollectionUnitStyles} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected CollectionUnitStylesItemProvider collectionUnitStylesItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link work.andycarpenter.psms.waf.CollectionUnitStyles}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createCollectionUnitStylesAdapter() {
+		if (collectionUnitStylesItemProvider == null) {
+			collectionUnitStylesItemProvider = new CollectionUnitStylesItemProvider(this);
+		}
+
+		return collectionUnitStylesItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.waf.Page} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1603,6 +1626,7 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 		if (submenuEntryItemProvider != null) submenuEntryItemProvider.dispose();
 		if (actionMenuEntryItemProvider != null) actionMenuEntryItemProvider.dispose();
 		if (editStaticTextMenuEntryItemProvider != null) editStaticTextMenuEntryItemProvider.dispose();
+		if (collectionUnitStylesItemProvider != null) collectionUnitStylesItemProvider.dispose();
 		if (defaultUnitStylesItemProvider != null) defaultUnitStylesItemProvider.dispose();
 		if (cardsUnitStylesItemProvider != null) cardsUnitStylesItemProvider.dispose();
 		if (detailsUnitStylesItemProvider != null) detailsUnitStylesItemProvider.dispose();

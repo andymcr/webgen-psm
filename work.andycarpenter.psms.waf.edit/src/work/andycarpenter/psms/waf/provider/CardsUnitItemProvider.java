@@ -72,9 +72,11 @@ public class CardsUnitItemProvider extends CollectionUnitItemProvider {
 			addLocalCardFooterClassPropertyDescriptor(object);
 			addCardFooterClassPropertyDescriptor(object);
 			addHasCardFooterClassPropertyDescriptor(object);
-			addLocalBadgeClassPropertyDescriptor(object);
 			addCardsControlClassPropertyDescriptor(object);
+			addCardsInstanceControlClassPropertyDescriptor(object);
 			addCardsAnchorClassPropertyDescriptor(object);
+			addCardsInstanceAnchorClassPropertyDescriptor(object);
+			addLocalBadgeClassPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -520,6 +522,28 @@ public class CardsUnitItemProvider extends CollectionUnitItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Cards Instance Control Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCardsInstanceControlClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_CardsUnit_cardsInstanceControlClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CardsUnit_cardsInstanceControlClass_feature", "_UI_CardsUnit_type"),
+				 WafPackage.eINSTANCE.getCardsUnit_CardsInstanceControlClass(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Cards Anchor Class feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -533,6 +557,28 @@ public class CardsUnitItemProvider extends CollectionUnitItemProvider {
 				 getString("_UI_CardsUnit_cardsAnchorClass_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_CardsUnit_cardsAnchorClass_feature", "_UI_CardsUnit_type"),
 				 WafPackage.eINSTANCE.getCardsUnit_CardsAnchorClass(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Cards Instance Anchor Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCardsInstanceAnchorClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_CardsUnit_cardsInstanceAnchorClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CardsUnit_cardsInstanceAnchorClass_feature", "_UI_CardsUnit_type"),
+				 WafPackage.eINSTANCE.getCardsUnit_CardsInstanceAnchorClass(),
 				 false,
 				 false,
 				 false,
@@ -777,9 +823,11 @@ public class CardsUnitItemProvider extends CollectionUnitItemProvider {
 			case WafPackage.CARDS_UNIT__LOCAL_CARD_FOOTER_CLASS:
 			case WafPackage.CARDS_UNIT__CARD_FOOTER_CLASS:
 			case WafPackage.CARDS_UNIT__HAS_CARD_FOOTER_CLASS:
-			case WafPackage.CARDS_UNIT__LOCAL_BADGE_CLASS:
 			case WafPackage.CARDS_UNIT__CARDS_CONTROL_CLASS:
+			case WafPackage.CARDS_UNIT__CARDS_INSTANCE_CONTROL_CLASS:
 			case WafPackage.CARDS_UNIT__CARDS_ANCHOR_CLASS:
+			case WafPackage.CARDS_UNIT__CARDS_INSTANCE_ANCHOR_CLASS:
+			case WafPackage.CARDS_UNIT__LOCAL_BADGE_CLASS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case WafPackage.CARDS_UNIT__BADGES:

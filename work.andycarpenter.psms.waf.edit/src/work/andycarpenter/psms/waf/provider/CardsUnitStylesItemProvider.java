@@ -23,7 +23,7 @@ import work.andycarpenter.psms.waf.WafPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class CardsUnitStylesItemProvider extends DynamicUnitStylesItemProvider {
+public class CardsUnitStylesItemProvider extends CollectionUnitStylesItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

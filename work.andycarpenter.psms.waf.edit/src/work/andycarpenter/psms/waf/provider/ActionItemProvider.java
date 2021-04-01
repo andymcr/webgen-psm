@@ -58,6 +58,8 @@ public class ActionItemProvider extends NamedDisplayElementItemProvider {
 			addAuthorisationRolesPropertyDescriptor(object);
 			addIsAuthorisedPropertyDescriptor(object);
 			addHasCustomisedAuthorisationPropertyDescriptor(object);
+			addIsInstanceActionPropertyDescriptor(object);
+			addIconNamePropertyDescriptor(object);
 			addDisablePropertyDescriptor(object);
 			addConfirmMessagePropertyDescriptor(object);
 			addHasConfirmMessagePropertyDescriptor(object);
@@ -181,6 +183,50 @@ public class ActionItemProvider extends NamedDisplayElementItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Is Instance Action feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIsInstanceActionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Action_isInstanceAction_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Action_isInstanceAction_feature", "_UI_Action_type"),
+				 WafPackage.eINSTANCE.getAction_IsInstanceAction(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Icon Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIconNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Action_iconName_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Action_iconName_feature", "_UI_Action_type"),
+				 WafPackage.eINSTANCE.getAction_IconName(),
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -532,6 +578,8 @@ public class ActionItemProvider extends NamedDisplayElementItemProvider {
 			case WafPackage.ACTION__AUTHORISATION_ROLES:
 			case WafPackage.ACTION__IS_AUTHORISED:
 			case WafPackage.ACTION__HAS_CUSTOMISED_AUTHORISATION:
+			case WafPackage.ACTION__IS_INSTANCE_ACTION:
+			case WafPackage.ACTION__ICON_NAME:
 			case WafPackage.ACTION__DISABLE:
 			case WafPackage.ACTION__CONFIRM_MESSAGE:
 			case WafPackage.ACTION__HAS_CONFIRM_MESSAGE:

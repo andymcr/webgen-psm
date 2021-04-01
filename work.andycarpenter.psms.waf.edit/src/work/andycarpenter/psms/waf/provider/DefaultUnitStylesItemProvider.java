@@ -19,7 +19,7 @@ import work.andycarpenter.psms.waf.DefaultUnitStyles;
  * <!-- end-user-doc -->
  * @generated
  */
-public class DefaultUnitStylesItemProvider extends DynamicUnitStylesItemProvider {
+public class DefaultUnitStylesItemProvider extends CollectionUnitStylesItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

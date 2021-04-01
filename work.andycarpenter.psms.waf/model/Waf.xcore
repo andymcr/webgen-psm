@@ -224,14 +224,18 @@ abstract class DynamicUnitStyles extends ContentUnitStyles {
 	String fieldLabelClass = ''
 	String fieldValueClass = ''
 	String controlClass = ''
-	String actionNavigationClass = ''
 	String anchorClass = ''
 }
 
-class DefaultUnitStyles extends DynamicUnitStyles {
+class CollectionUnitStyles extends DynamicUnitStyles {
+	String instanceControlClass = ''
+	String instanceAnchorClass = ''
 }
 
-class CardsUnitStyles extends DynamicUnitStyles {
+class DefaultUnitStyles extends CollectionUnitStyles {
+}
+
+class CardsUnitStyles extends CollectionUnitStyles {
 	String rowClass = ''
 	String columnClass = ''
 	String cardClass = ''
@@ -248,16 +252,16 @@ class FormUnitStyles extends DynamicUnitStyles {
 	String inputGroupClass = ''
 }
 
-class GalleryUnitStyles extends DynamicUnitStyles {
+class GalleryUnitStyles extends CollectionUnitStyles {
 }
 
-class SliderUnitStyles extends DynamicUnitStyles {
+class SliderUnitStyles extends CollectionUnitStyles {
 }
 
 class StaticUnitStyles extends ContentUnitStyles {
 }
 
-class TabularUnitStyles extends DynamicUnitStyles {
+class TabularUnitStyles extends CollectionUnitStyles {
 }
 
 
@@ -894,15 +898,31 @@ abstract class DynamicUnit extends ContentUnit, ActionContainer {
 			(this as EditUnit).formControlClass
 		else if (this instanceof GalleryUnit) 
 			(this as GalleryUnit).galleryControlClass
-		else if (this instanceof TabularUnit) 
-			(this as TabularUnit).tabularControlClass
 		else if (this instanceof SliderUnit) 
 			(this as SliderUnit).sliderControlClass
+		else if (this instanceof TabularUnit) 
+			(this as TabularUnit).tabularControlClass
 		else
 			''
 	}
 	derived readonly transient volatile boolean hasControlClass get {
 		controlClass != ''
+	}
+	String localInstanceControlClass = ''
+	derived readonly transient volatile String instanceControlClass get {
+		if (this instanceof CardsUnit) 
+			(this as CardsUnit).cardsInstanceControlClass
+		else if (this instanceof GalleryUnit) 
+			(this as GalleryUnit).galleryInstanceControlClass
+		else if (this instanceof SliderUnit) 
+			(this as SliderUnit).sliderInstanceControlClass
+		else if (this instanceof TabularUnit) 
+			(this as TabularUnit).tabularInstanceControlClass
+		else
+			''
+	}
+	derived readonly transient volatile boolean hasInstanceControlClass get {
+		instanceControlClass != ''
 	}
 	String localAnchorClass = ''
 	derived readonly transient volatile String anchorClass get {
@@ -923,6 +943,22 @@ abstract class DynamicUnit extends ContentUnit, ActionContainer {
 	}
 	derived readonly transient volatile boolean hasAnchorClass get {
 		anchorClass != ''
+	}
+	String localInstanceAnchorClass = ''
+	derived readonly transient volatile String instanceAnchorClass get {
+		if (this instanceof CardsUnit) 
+			(this as CardsUnit).cardsInstanceAnchorClass
+		else if (this instanceof GalleryUnit) 
+			(this as GalleryUnit).galleryInstanceAnchorClass
+		else if (this instanceof SliderUnit) 
+			(this as SliderUnit).sliderInstanceAnchorClass
+		else if (this instanceof TabularUnit) 
+			(this as TabularUnit).tabularInstanceAnchorClass
+		else
+			''
+	}
+	derived readonly transient volatile boolean hasInstanceAnchorClass get {
+		instanceAnchorClass != ''
 	}
 	String footerClass
 }
@@ -1728,6 +1764,16 @@ class TabularUnit extends CollectionUnit {
 		else
 			''
 	}
+	derived readonly transient volatile String tabularInstanceControlClass get {
+		if (localInstanceControlClass.trim() != '')
+			localInstanceControlClass.trim()
+		else if (uiModel.defaultTabularStyles.instanceControlClass.trim() != '')
+			uiModel.defaultTabularStyles.instanceControlClass.trim()
+		else if (uiModel.defaultStyles.instanceControlClass.trim() != '')
+			uiModel.defaultStyles.instanceControlClass.trim()
+		else
+			''
+	}
 	derived readonly transient volatile String tabularAnchorClass get {
 		if (localAnchorClass.trim() != '')
 			localAnchorClass.trim()
@@ -1735,6 +1781,16 @@ class TabularUnit extends CollectionUnit {
 			uiModel.defaultTabularStyles.anchorClass.trim()
 		else if (uiModel.defaultStyles.anchorClass.trim() != '')
 			uiModel.defaultStyles.anchorClass.trim()
+		else
+			''
+	}
+	derived readonly transient volatile String tabularInstanceAnchorClass get {
+		if (localInstanceAnchorClass.trim() != '')
+			localInstanceAnchorClass.trim()
+		else if (uiModel.defaultTabularStyles.instanceAnchorClass.trim() != '')
+			uiModel.defaultTabularStyles.instanceAnchorClass.trim()
+		else if (uiModel.defaultStyles.instanceAnchorClass.trim() != '')
+			uiModel.defaultStyles.instanceAnchorClass.trim()
 		else
 			''
 	}
@@ -1868,7 +1924,6 @@ abstract class CardsUnit extends CollectionUnit {
 	derived readonly transient volatile boolean hasCardFooterClass get {
 		cardFooterClass != ''
 	}
-	String localBadgeClass = ''
 	derived readonly transient volatile String cardsControlClass get {
 		if (localControlClass.trim() != '')
 			localControlClass.trim()
@@ -1876,6 +1931,16 @@ abstract class CardsUnit extends CollectionUnit {
 			uiModel.defaultCardsStyles.controlClass.trim()
 		else if (uiModel.defaultStyles.controlClass.trim() != '')
 			uiModel.defaultStyles.controlClass.trim()
+		else
+			''
+	}
+	derived readonly transient volatile String cardsInstanceControlClass get {
+		if (localInstanceControlClass.trim() != '')
+			localInstanceControlClass.trim()
+		else if (uiModel.defaultCardsStyles.instanceControlClass.trim() != '')
+			uiModel.defaultCardsStyles.instanceControlClass.trim()
+		else if (uiModel.defaultStyles.instanceControlClass.trim() != '')
+			uiModel.defaultStyles.instanceControlClass.trim()
 		else
 			''
 	}
@@ -1889,6 +1954,17 @@ abstract class CardsUnit extends CollectionUnit {
 		else
 			''
 	}
+	derived readonly transient volatile String cardsInstanceAnchorClass get {
+		if (localInstanceAnchorClass.trim() != '')
+			localInstanceAnchorClass.trim()
+		else if (uiModel.defaultCardsStyles.instanceAnchorClass.trim() != '')
+			uiModel.defaultCardsStyles.instanceAnchorClass.trim()
+		else if (uiModel.defaultStyles.instanceAnchorClass.trim() != '')
+			uiModel.defaultStyles.instanceAnchorClass.trim()
+		else
+			''
+	}
+	String localBadgeClass = ''
 }
 
 class Badge {
@@ -2000,6 +2076,16 @@ class SliderUnit extends ImageUnit {
 		else
 			''
 	}
+	derived readonly transient volatile String sliderInstanceControlClass get {
+		if (localInstanceControlClass.trim() != '')
+			localInstanceControlClass.trim()
+		else if (uiModel.defaultSliderStyles.instanceControlClass.trim() != '')
+			uiModel.defaultSliderStyles.instanceControlClass.trim()
+		else if (uiModel.defaultStyles.instanceControlClass.trim() != '')
+			uiModel.defaultStyles.instanceControlClass.trim()
+		else
+			''
+	}
 	derived readonly transient volatile String sliderAnchorClass get {
 		if (localAnchorClass.trim() != '')
 			localAnchorClass.trim()
@@ -2007,6 +2093,16 @@ class SliderUnit extends ImageUnit {
 			uiModel.defaultSliderStyles.anchorClass.trim()
 		else if (uiModel.defaultStyles.anchorClass.trim() != '')
 			uiModel.defaultStyles.anchorClass.trim()
+		else
+			''
+	}
+	derived readonly transient volatile String sliderInstanceAnchorClass get {
+		if (localInstanceAnchorClass.trim() != '')
+			localInstanceAnchorClass.trim()
+		else if (uiModel.defaultSliderStyles.instanceAnchorClass.trim() != '')
+			uiModel.defaultSliderStyles.instanceAnchorClass.trim()
+		else if (uiModel.defaultStyles.instanceAnchorClass.trim() != '')
+			uiModel.defaultStyles.instanceAnchorClass.trim()
 		else
 			''
 	}
@@ -2079,6 +2175,16 @@ class GalleryUnit extends ImageUnit {
 		else
 			''
 	}
+	derived readonly transient volatile String galleryInstanceControlClass get {
+		if (localInstanceControlClass.trim() != '')
+			localInstanceControlClass.trim()
+		else if (uiModel.defaultGalleryStyles.instanceControlClass.trim() != '')
+			uiModel.defaultGalleryStyles.instanceControlClass.trim()
+		else if (uiModel.defaultStyles.instanceControlClass.trim() != '')
+			uiModel.defaultStyles.instanceControlClass.trim()
+		else
+			''
+	}
 	derived readonly transient volatile String galleryAnchorClass get {
 		if (localAnchorClass.trim() != '')
 			localAnchorClass.trim()
@@ -2086,6 +2192,16 @@ class GalleryUnit extends ImageUnit {
 			uiModel.defaultGalleryStyles.anchorClass.trim()
 		else if (uiModel.defaultStyles.anchorClass.trim() != '')
 			uiModel.defaultStyles.anchorClass.trim()
+		else
+			''
+	}
+	derived readonly transient volatile String galleryInstanceAnchorClass get {
+		if (localInstanceAnchorClass.trim() != '')
+			localInstanceAnchorClass.trim()
+		else if (uiModel.defaultGalleryStyles.instanceAnchorClass.trim() != '')
+			uiModel.defaultGalleryStyles.instanceAnchorClass.trim()
+		else if (uiModel.defaultStyles.instanceAnchorClass.trim() != '')
+			uiModel.defaultStyles.instanceAnchorClass.trim()
 		else
 			''
 	}
@@ -2134,62 +2250,46 @@ enum ContainerActionsPlacement {
 interface ActionContainer {
 	ContainerActionsPlacement containerActionsPlacement
 	contains Action[] allActions opposite usedBy
-	refers derived readonly transient volatile unsettable Action[] actions get {
+	refers derived readonly unsettable transient volatile Action[] actions get {
 		return allActions.filter[!disable].toEList
 	}
-	derived readonly transient volatile boolean hasActions get {
+	derived readonly unsettable transient volatile boolean hasActions get {
 		!actions.isEmpty()
 	}
-	refers derived readonly transient volatile unsettable Action[] actionsWithMessages get {
+	refers derived readonly unsettable transient volatile Action[] actionsWithMessages get {
 		actions.filter[hasMessages].toEList()
 	}
-	derived readonly transient volatile boolean hasActionsMessages get {
+	derived readonly unsettable transient volatile boolean hasActionsMessages get {
 		!actionsWithMessages.isEmpty()
 	}
-	refers derived readonly transient volatile unsettable Action[] actionsWithoutTarget get {
+	refers derived readonly unsettable transient volatile Action[] actionsWithoutTarget get {
 		actions.filter[it instanceof DeleteAction || it instanceof OperationAction].toEList()
 	}
-	refers derived readonly transient volatile unsettable Action[] containerActions get {
-		actions.filter[it instanceof ContainerSelectAction
-							|| it instanceof ContainerOperationAction
-							|| it instanceof GeneralOperationAction
-							|| it instanceof SecurityAction
-		].toEList()
+	refers derived readonly unsettable transient volatile Action[] containerActions get {
+		actions.filter[!it.isInstanceAction].toEList()
 	}
-	derived readonly transient volatile boolean hasContainerActions get {
+	derived readonly unsettable transient volatile boolean hasContainerActions get {
 		!containerActions.isEmpty()
 	}
-	refers derived readonly transient volatile unsettable Action[] instanceActions get {
-		actions.filter[it instanceof DeleteAction || it instanceof InstanceSelectAction || it instanceof InstanceOperationAction].toEList()
+	refers derived readonly unsettable transient volatile Action[] instanceActions get {
+		actions.filter[it.isInstanceAction].toEList()
 	}
-	derived readonly transient volatile boolean hasInstanceActions get {
+	derived readonly unsettable transient volatile boolean hasInstanceActions get {
 		!instanceActions.isEmpty()
 	}
-	String localActionNavigationClass = ''
-	derived readonly transient volatile String actionNavigationClass get {
-		if (localActionNavigationClass.trim() != '')
-			localActionNavigationClass.trim()
-		else if (uiModelRef.defaultStyles.actionNavigationClass.trim() != '')
-			uiModelRef.defaultStyles.actionNavigationClass.trim()
-		else
-			''
-	}
-	derived readonly transient volatile boolean hasActionNavigationClassClass get {
-		actionNavigationClass != ''
-	}
-	refers readonly transient volatile unsettable derived WafModel genModelRef get {
+	refers readonly unsettable transient volatile derived WafModel genModelRef get {
 		if (this instanceof DynamicUnit)
 			(this as DynamicUnit).genModel
 		else if (this instanceof UnitFeature)
 			(this as UnitFeature).genModel
 	}
-	refers readonly transient volatile unsettable derived WafModel uiModelRef get {
+	refers readonly unsettable transient volatile derived WafModel uiModelRef get {
 		if (this instanceof DynamicUnit)
 			(this as DynamicUnit).uiModel
 		else if (this instanceof UnitFeature)
 			(this as UnitFeature).uiModel
 	}
-	refers readonly transient volatile unsettable derived Authentication securityModelRef get {
+	refers readonly unsettable transient volatile derived Authentication securityModelRef get {
 		if (this instanceof DynamicUnit)
 			(this as DynamicUnit).securityModel
 		else if (this instanceof UnitFeature)
@@ -2215,12 +2315,18 @@ abstract class Action extends NamedDisplayElement {
 		else if (this instanceof OperationAction)
 			(this as OperationAction).operationAuthorisationRoles
 	}
-	derived readonly transient volatile boolean isAuthorised get {
+	derived readonly transient unsettable volatile boolean isAuthorised get {
 		authorisationRoles.trim() != ''
 	}
-	derived readonly transient volatile boolean hasCustomisedAuthorisation get {
+	derived readonly transient unsettable volatile boolean hasCustomisedAuthorisation get {
 		authorisationRoles.trim() != parentUnit.authorisationRoles.trim()
 	}
+	derived readonly transient unsettable volatile boolean isInstanceAction get {
+		this instanceof DeleteAction
+			|| this instanceof InstanceOperationAction
+			|| this instanceof InstanceSelectAction
+	}
+	String iconName = ''
 	boolean disable
 	contains Predicate displayWhen
 	contains Predicate enableWhen
@@ -2244,10 +2350,16 @@ abstract class Action extends NamedDisplayElement {
 		if (localAnchorClass.trim() != '')
 			localAnchorClass.trim()
 		else if (usedBy instanceof DynamicUnit)
-			if (parentUnit.anchorClass.trim() != '')
-				parentUnit.anchorClass.trim()
+			if (this.isInstanceAction)
+				if (parentUnit.instanceAnchorClass.trim() != '')
+					parentUnit.instanceAnchorClass.trim()
+				else
+					''
 			else
-				''
+				if (parentUnit.anchorClass.trim() != '')
+					parentUnit.anchorClass.trim()
+				else
+					''
 		else
 			''
 	}

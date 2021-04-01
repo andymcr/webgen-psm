@@ -56,9 +56,6 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 			addHasContainerActionsPropertyDescriptor(object);
 			addInstanceActionsPropertyDescriptor(object);
 			addHasInstanceActionsPropertyDescriptor(object);
-			addLocalActionNavigationClassPropertyDescriptor(object);
-			addActionNavigationClassPropertyDescriptor(object);
-			addHasActionNavigationClassClassPropertyDescriptor(object);
 			addGenModelRefPropertyDescriptor(object);
 			addUiModelRefPropertyDescriptor(object);
 			addSecurityModelRefPropertyDescriptor(object);
@@ -132,9 +129,15 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 			addLocalControlClassPropertyDescriptor(object);
 			addControlClassPropertyDescriptor(object);
 			addHasControlClassPropertyDescriptor(object);
+			addLocalInstanceControlClassPropertyDescriptor(object);
+			addInstanceControlClassPropertyDescriptor(object);
+			addHasInstanceControlClassPropertyDescriptor(object);
 			addLocalAnchorClassPropertyDescriptor(object);
 			addAnchorClassPropertyDescriptor(object);
 			addHasAnchorClassPropertyDescriptor(object);
+			addLocalInstanceAnchorClassPropertyDescriptor(object);
+			addInstanceAnchorClassPropertyDescriptor(object);
+			addHasInstanceAnchorClassPropertyDescriptor(object);
 			addFooterClassPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -352,72 +355,6 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 				 getString("_UI_ActionContainer_hasInstanceActions_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ActionContainer_hasInstanceActions_feature", "_UI_ActionContainer_type"),
 				 WafPackage.eINSTANCE.getActionContainer_HasInstanceActions(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Local Action Navigation Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addLocalActionNavigationClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ActionContainer_localActionNavigationClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ActionContainer_localActionNavigationClass_feature", "_UI_ActionContainer_type"),
-				 WafPackage.eINSTANCE.getActionContainer_LocalActionNavigationClass(),
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Action Navigation Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addActionNavigationClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ActionContainer_actionNavigationClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ActionContainer_actionNavigationClass_feature", "_UI_ActionContainer_type"),
-				 WafPackage.eINSTANCE.getActionContainer_ActionNavigationClass(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Has Action Navigation Class Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addHasActionNavigationClassClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ActionContainer_hasActionNavigationClassClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ActionContainer_hasActionNavigationClassClass_feature", "_UI_ActionContainer_type"),
-				 WafPackage.eINSTANCE.getActionContainer_HasActionNavigationClassClass(),
 				 false,
 				 false,
 				 false,
@@ -1901,6 +1838,72 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Local Instance Control Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addLocalInstanceControlClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DynamicUnit_localInstanceControlClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DynamicUnit_localInstanceControlClass_feature", "_UI_DynamicUnit_type"),
+				 WafPackage.eINSTANCE.getDynamicUnit_LocalInstanceControlClass(),
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Instance Control Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addInstanceControlClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DynamicUnit_instanceControlClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DynamicUnit_instanceControlClass_feature", "_UI_DynamicUnit_type"),
+				 WafPackage.eINSTANCE.getDynamicUnit_InstanceControlClass(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Has Instance Control Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasInstanceControlClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DynamicUnit_hasInstanceControlClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DynamicUnit_hasInstanceControlClass_feature", "_UI_DynamicUnit_type"),
+				 WafPackage.eINSTANCE.getDynamicUnit_HasInstanceControlClass(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Local Anchor Class feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1958,6 +1961,72 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 				 getString("_UI_DynamicUnit_hasAnchorClass_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_DynamicUnit_hasAnchorClass_feature", "_UI_DynamicUnit_type"),
 				 WafPackage.eINSTANCE.getDynamicUnit_HasAnchorClass(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Local Instance Anchor Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addLocalInstanceAnchorClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DynamicUnit_localInstanceAnchorClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DynamicUnit_localInstanceAnchorClass_feature", "_UI_DynamicUnit_type"),
+				 WafPackage.eINSTANCE.getDynamicUnit_LocalInstanceAnchorClass(),
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Instance Anchor Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addInstanceAnchorClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DynamicUnit_instanceAnchorClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DynamicUnit_instanceAnchorClass_feature", "_UI_DynamicUnit_type"),
+				 WafPackage.eINSTANCE.getDynamicUnit_InstanceAnchorClass(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Has Instance Anchor Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasInstanceAnchorClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DynamicUnit_hasInstanceAnchorClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DynamicUnit_hasInstanceAnchorClass_feature", "_UI_DynamicUnit_type"),
+				 WafPackage.eINSTANCE.getDynamicUnit_HasInstanceAnchorClass(),
 				 false,
 				 false,
 				 false,
@@ -2185,9 +2254,6 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 			case WafPackage.DYNAMIC_UNIT__HAS_ACTIONS_MESSAGES:
 			case WafPackage.DYNAMIC_UNIT__HAS_CONTAINER_ACTIONS:
 			case WafPackage.DYNAMIC_UNIT__HAS_INSTANCE_ACTIONS:
-			case WafPackage.DYNAMIC_UNIT__LOCAL_ACTION_NAVIGATION_CLASS:
-			case WafPackage.DYNAMIC_UNIT__ACTION_NAVIGATION_CLASS:
-			case WafPackage.DYNAMIC_UNIT__HAS_ACTION_NAVIGATION_CLASS_CLASS:
 			case WafPackage.DYNAMIC_UNIT__IS_CONTAINED:
 			case WafPackage.DYNAMIC_UNIT__HAS_EXPLICITLY_EDITED_CONTAINER:
 			case WafPackage.DYNAMIC_UNIT__HAS_WHEN_FIELDS_EMPTY_ADD_IMPLICIT_FIELDS:
@@ -2238,9 +2304,15 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 			case WafPackage.DYNAMIC_UNIT__LOCAL_CONTROL_CLASS:
 			case WafPackage.DYNAMIC_UNIT__CONTROL_CLASS:
 			case WafPackage.DYNAMIC_UNIT__HAS_CONTROL_CLASS:
+			case WafPackage.DYNAMIC_UNIT__LOCAL_INSTANCE_CONTROL_CLASS:
+			case WafPackage.DYNAMIC_UNIT__INSTANCE_CONTROL_CLASS:
+			case WafPackage.DYNAMIC_UNIT__HAS_INSTANCE_CONTROL_CLASS:
 			case WafPackage.DYNAMIC_UNIT__LOCAL_ANCHOR_CLASS:
 			case WafPackage.DYNAMIC_UNIT__ANCHOR_CLASS:
 			case WafPackage.DYNAMIC_UNIT__HAS_ANCHOR_CLASS:
+			case WafPackage.DYNAMIC_UNIT__LOCAL_INSTANCE_ANCHOR_CLASS:
+			case WafPackage.DYNAMIC_UNIT__INSTANCE_ANCHOR_CLASS:
+			case WafPackage.DYNAMIC_UNIT__HAS_INSTANCE_ANCHOR_CLASS:
 			case WafPackage.DYNAMIC_UNIT__FOOTER_CLASS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;

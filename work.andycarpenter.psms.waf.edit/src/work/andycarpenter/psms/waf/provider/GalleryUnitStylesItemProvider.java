@@ -19,7 +19,7 @@ import work.andycarpenter.psms.waf.GalleryUnitStyles;
  * <!-- end-user-doc -->
  * @generated
  */
-public class GalleryUnitStylesItemProvider extends DynamicUnitStylesItemProvider {
+public class GalleryUnitStylesItemProvider extends CollectionUnitStylesItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

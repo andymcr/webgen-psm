@@ -55,7 +55,9 @@ public class GalleryUnitItemProvider extends ImageUnitItemProvider {
 			addGalleryFieldLabelClassPropertyDescriptor(object);
 			addGalleryFieldValueClassPropertyDescriptor(object);
 			addGalleryControlClassPropertyDescriptor(object);
+			addGalleryInstanceControlClassPropertyDescriptor(object);
 			addGalleryAnchorClassPropertyDescriptor(object);
+			addGalleryInstanceAnchorClassPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -281,6 +283,28 @@ public class GalleryUnitItemProvider extends ImageUnitItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Gallery Instance Control Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addGalleryInstanceControlClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_GalleryUnit_galleryInstanceControlClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_GalleryUnit_galleryInstanceControlClass_feature", "_UI_GalleryUnit_type"),
+				 WafPackage.eINSTANCE.getGalleryUnit_GalleryInstanceControlClass(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Gallery Anchor Class feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -294,6 +318,28 @@ public class GalleryUnitItemProvider extends ImageUnitItemProvider {
 				 getString("_UI_GalleryUnit_galleryAnchorClass_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_GalleryUnit_galleryAnchorClass_feature", "_UI_GalleryUnit_type"),
 				 WafPackage.eINSTANCE.getGalleryUnit_GalleryAnchorClass(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Gallery Instance Anchor Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addGalleryInstanceAnchorClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_GalleryUnit_galleryInstanceAnchorClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_GalleryUnit_galleryInstanceAnchorClass_feature", "_UI_GalleryUnit_type"),
+				 WafPackage.eINSTANCE.getGalleryUnit_GalleryInstanceAnchorClass(),
 				 false,
 				 false,
 				 false,
@@ -349,7 +395,9 @@ public class GalleryUnitItemProvider extends ImageUnitItemProvider {
 			case WafPackage.GALLERY_UNIT__GALLERY_FIELD_LABEL_CLASS:
 			case WafPackage.GALLERY_UNIT__GALLERY_FIELD_VALUE_CLASS:
 			case WafPackage.GALLERY_UNIT__GALLERY_CONTROL_CLASS:
+			case WafPackage.GALLERY_UNIT__GALLERY_INSTANCE_CONTROL_CLASS:
 			case WafPackage.GALLERY_UNIT__GALLERY_ANCHOR_CLASS:
+			case WafPackage.GALLERY_UNIT__GALLERY_INSTANCE_ANCHOR_CLASS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

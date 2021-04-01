@@ -54,7 +54,9 @@ public class SliderUnitItemProvider extends ImageUnitItemProvider {
 			addSliderFieldLabelClassPropertyDescriptor(object);
 			addSliderFieldValueClassPropertyDescriptor(object);
 			addSliderControlClassPropertyDescriptor(object);
+			addSliderInstanceControlClassPropertyDescriptor(object);
 			addSliderAnchorClassPropertyDescriptor(object);
+			addSliderInstanceAnchorClassPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -258,6 +260,28 @@ public class SliderUnitItemProvider extends ImageUnitItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Slider Instance Control Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSliderInstanceControlClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_SliderUnit_sliderInstanceControlClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_SliderUnit_sliderInstanceControlClass_feature", "_UI_SliderUnit_type"),
+				 WafPackage.eINSTANCE.getSliderUnit_SliderInstanceControlClass(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Slider Anchor Class feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -271,6 +295,28 @@ public class SliderUnitItemProvider extends ImageUnitItemProvider {
 				 getString("_UI_SliderUnit_sliderAnchorClass_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_SliderUnit_sliderAnchorClass_feature", "_UI_SliderUnit_type"),
 				 WafPackage.eINSTANCE.getSliderUnit_SliderAnchorClass(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Slider Instance Anchor Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSliderInstanceAnchorClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_SliderUnit_sliderInstanceAnchorClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_SliderUnit_sliderInstanceAnchorClass_feature", "_UI_SliderUnit_type"),
+				 WafPackage.eINSTANCE.getSliderUnit_SliderInstanceAnchorClass(),
 				 false,
 				 false,
 				 false,
@@ -326,7 +372,9 @@ public class SliderUnitItemProvider extends ImageUnitItemProvider {
 			case WafPackage.SLIDER_UNIT__SLIDER_FIELD_LABEL_CLASS:
 			case WafPackage.SLIDER_UNIT__SLIDER_FIELD_VALUE_CLASS:
 			case WafPackage.SLIDER_UNIT__SLIDER_CONTROL_CLASS:
+			case WafPackage.SLIDER_UNIT__SLIDER_INSTANCE_CONTROL_CLASS:
 			case WafPackage.SLIDER_UNIT__SLIDER_ANCHOR_CLASS:
+			case WafPackage.SLIDER_UNIT__SLIDER_INSTANCE_ANCHOR_CLASS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

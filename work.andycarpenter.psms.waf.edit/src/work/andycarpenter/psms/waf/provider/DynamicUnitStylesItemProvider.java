@@ -50,7 +50,6 @@ public class DynamicUnitStylesItemProvider extends ContentUnitStylesItemProvider
 			addFieldLabelClassPropertyDescriptor(object);
 			addFieldValueClassPropertyDescriptor(object);
 			addControlClassPropertyDescriptor(object);
-			addActionNavigationClassPropertyDescriptor(object);
 			addAnchorClassPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -167,28 +166,6 @@ public class DynamicUnitStylesItemProvider extends ContentUnitStylesItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Action Navigation Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addActionNavigationClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_DynamicUnitStyles_actionNavigationClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DynamicUnitStyles_actionNavigationClass_feature", "_UI_DynamicUnitStyles_type"),
-				 WafPackage.eINSTANCE.getDynamicUnitStyles_ActionNavigationClass(),
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Anchor Class feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -242,7 +219,6 @@ public class DynamicUnitStylesItemProvider extends ContentUnitStylesItemProvider
 			case WafPackage.DYNAMIC_UNIT_STYLES__FIELD_LABEL_CLASS:
 			case WafPackage.DYNAMIC_UNIT_STYLES__FIELD_VALUE_CLASS:
 			case WafPackage.DYNAMIC_UNIT_STYLES__CONTROL_CLASS:
-			case WafPackage.DYNAMIC_UNIT_STYLES__ACTION_NAVIGATION_CLASS:
 			case WafPackage.DYNAMIC_UNIT_STYLES__ANCHOR_CLASS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;

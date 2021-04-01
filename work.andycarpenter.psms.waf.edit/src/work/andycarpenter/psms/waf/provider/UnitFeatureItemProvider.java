@@ -131,9 +131,6 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 			addHasContainerActionsPropertyDescriptor(object);
 			addInstanceActionsPropertyDescriptor(object);
 			addHasInstanceActionsPropertyDescriptor(object);
-			addLocalActionNavigationClassPropertyDescriptor(object);
-			addActionNavigationClassPropertyDescriptor(object);
-			addHasActionNavigationClassClassPropertyDescriptor(object);
 			addGenModelRefPropertyDescriptor(object);
 			addUiModelRefPropertyDescriptor(object);
 			addSecurityModelRefPropertyDescriptor(object);
@@ -1886,50 +1883,6 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Actions Without Target feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addActionsWithoutTargetPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ActionContainer_actionsWithoutTarget_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ActionContainer_actionsWithoutTarget_feature", "_UI_ActionContainer_type"),
-				 WafPackage.eINSTANCE.getActionContainer_ActionsWithoutTarget(),
-				 false,
-				 false,
-				 false,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Container Actions feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addContainerActionsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ActionContainer_containerActions_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ActionContainer_containerActions_feature", "_UI_ActionContainer_type"),
-				 WafPackage.eINSTANCE.getActionContainer_ContainerActions(),
-				 false,
-				 false,
-				 false,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Has Container Actions feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2018,67 +1971,45 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Local Action Navigation Class feature.
+	 * This adds a property descriptor for the Actions Without Target feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addLocalActionNavigationClassPropertyDescriptor(Object object) {
+	protected void addActionsWithoutTargetPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ActionContainer_localActionNavigationClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ActionContainer_localActionNavigationClass_feature", "_UI_ActionContainer_type"),
-				 WafPackage.eINSTANCE.getActionContainer_LocalActionNavigationClass(),
-				 true,
+				 getString("_UI_ActionContainer_actionsWithoutTarget_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ActionContainer_actionsWithoutTarget_feature", "_UI_ActionContainer_type"),
+				 WafPackage.eINSTANCE.getActionContainer_ActionsWithoutTarget(),
 				 false,
 				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 false,
+				 null,
 				 null,
 				 null));
 	}
 
 	/**
-	 * This adds a property descriptor for the Action Navigation Class feature.
+	 * This adds a property descriptor for the Container Actions feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addActionNavigationClassPropertyDescriptor(Object object) {
+	protected void addContainerActionsPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ActionContainer_actionNavigationClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ActionContainer_actionNavigationClass_feature", "_UI_ActionContainer_type"),
-				 WafPackage.eINSTANCE.getActionContainer_ActionNavigationClass(),
+				 getString("_UI_ActionContainer_containerActions_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ActionContainer_containerActions_feature", "_UI_ActionContainer_type"),
+				 WafPackage.eINSTANCE.getActionContainer_ContainerActions(),
 				 false,
 				 false,
 				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Has Action Navigation Class Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addHasActionNavigationClassClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ActionContainer_hasActionNavigationClassClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ActionContainer_hasActionNavigationClassClass_feature", "_UI_ActionContainer_type"),
-				 WafPackage.eINSTANCE.getActionContainer_HasActionNavigationClassClass(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -2275,9 +2206,6 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 			case WafPackage.UNIT_FEATURE__HAS_ACTIONS_MESSAGES:
 			case WafPackage.UNIT_FEATURE__HAS_CONTAINER_ACTIONS:
 			case WafPackage.UNIT_FEATURE__HAS_INSTANCE_ACTIONS:
-			case WafPackage.UNIT_FEATURE__LOCAL_ACTION_NAVIGATION_CLASS:
-			case WafPackage.UNIT_FEATURE__ACTION_NAVIGATION_CLASS:
-			case WafPackage.UNIT_FEATURE__HAS_ACTION_NAVIGATION_CLASS_CLASS:
 			case WafPackage.UNIT_FEATURE__COLLECTION_UI_ALLOW_ADD:
 			case WafPackage.UNIT_FEATURE__COLLECTION_UI_ALLOW_REMOVE:
 			case WafPackage.UNIT_FEATURE__DEFAULT_DISPLAY_VALUE:

@@ -54,7 +54,9 @@ public class TabularUnitItemProvider extends CollectionUnitItemProvider {
 			addTabularFieldLabelClassPropertyDescriptor(object);
 			addTabularFieldValueClassPropertyDescriptor(object);
 			addTabularControlClassPropertyDescriptor(object);
+			addTabularInstanceControlClassPropertyDescriptor(object);
 			addTabularAnchorClassPropertyDescriptor(object);
+			addTabularInstanceAnchorClassPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -258,6 +260,28 @@ public class TabularUnitItemProvider extends CollectionUnitItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Tabular Instance Control Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTabularInstanceControlClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_TabularUnit_tabularInstanceControlClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_TabularUnit_tabularInstanceControlClass_feature", "_UI_TabularUnit_type"),
+				 WafPackage.eINSTANCE.getTabularUnit_TabularInstanceControlClass(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Tabular Anchor Class feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -271,6 +295,28 @@ public class TabularUnitItemProvider extends CollectionUnitItemProvider {
 				 getString("_UI_TabularUnit_tabularAnchorClass_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_TabularUnit_tabularAnchorClass_feature", "_UI_TabularUnit_type"),
 				 WafPackage.eINSTANCE.getTabularUnit_TabularAnchorClass(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Tabular Instance Anchor Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTabularInstanceAnchorClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_TabularUnit_tabularInstanceAnchorClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_TabularUnit_tabularInstanceAnchorClass_feature", "_UI_TabularUnit_type"),
+				 WafPackage.eINSTANCE.getTabularUnit_TabularInstanceAnchorClass(),
 				 false,
 				 false,
 				 false,
@@ -325,7 +371,9 @@ public class TabularUnitItemProvider extends CollectionUnitItemProvider {
 			case WafPackage.TABULAR_UNIT__TABULAR_FIELD_LABEL_CLASS:
 			case WafPackage.TABULAR_UNIT__TABULAR_FIELD_VALUE_CLASS:
 			case WafPackage.TABULAR_UNIT__TABULAR_CONTROL_CLASS:
+			case WafPackage.TABULAR_UNIT__TABULAR_INSTANCE_CONTROL_CLASS:
 			case WafPackage.TABULAR_UNIT__TABULAR_ANCHOR_CLASS:
+			case WafPackage.TABULAR_UNIT__TABULAR_INSTANCE_ANCHOR_CLASS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}
