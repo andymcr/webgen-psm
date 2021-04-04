@@ -26,6 +26,12 @@ class Service extends NamedElement, ConstantContainer {
 	contains BusinessOperation[] operations opposite partOf
 	refers Repository[] requires
 	refers Service[] uses
+	refers derived readonly unsettable transient volatile BusinessOperation[] fileOperations get {
+		operations.filter[it.resultType.literal == "File"].toEList()
+	}
+	derived readonly transient unsettable volatile boolean hasFileOperations get {
+		!fileOperations.isEmpty()
+	}
 }
 
 class BusinessOperation extends NamedElement, FormalParameterList {

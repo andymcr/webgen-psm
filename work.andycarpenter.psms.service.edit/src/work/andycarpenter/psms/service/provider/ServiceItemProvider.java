@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import work.andycarpenter.psms.base.BaseFactory;
 import work.andycarpenter.psms.base.BasePackage;
@@ -54,6 +55,8 @@ public class ServiceItemProvider extends NamedElementItemProvider {
 			addPartOfPropertyDescriptor(object);
 			addRequiresPropertyDescriptor(object);
 			addUsesPropertyDescriptor(object);
+			addFileOperationsPropertyDescriptor(object);
+			addHasFileOperationsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -120,6 +123,50 @@ public class ServiceItemProvider extends NamedElementItemProvider {
 				 false,
 				 true,
 				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the File Operations feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addFileOperationsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Service_fileOperations_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Service_fileOperations_feature", "_UI_Service_type"),
+				 ServicePackage.Literals.SERVICE__FILE_OPERATIONS,
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Has File Operations feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasFileOperationsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Service_hasFileOperations_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Service_hasFileOperations_feature", "_UI_Service_type"),
+				 ServicePackage.Literals.SERVICE__HAS_FILE_OPERATIONS,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -193,6 +240,9 @@ public class ServiceItemProvider extends NamedElementItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Service.class)) {
+			case ServicePackage.SERVICE__HAS_FILE_OPERATIONS:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
 			case ServicePackage.SERVICE__CONSTANTS:
 			case ServicePackage.SERVICE__OPERATIONS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
