@@ -122,6 +122,7 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 			addUiModelPropertyDescriptor(object);
 			addSecurityModelPropertyDescriptor(object);
 			addContainerActionsPlacementPropertyDescriptor(object);
+			addInstanceActionsPlacementPropertyDescriptor(object);
 			addActionsPropertyDescriptor(object);
 			addHasActionsPropertyDescriptor(object);
 			addActionsWithMessagesPropertyDescriptor(object);
@@ -129,8 +130,12 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 			addActionsWithoutTargetPropertyDescriptor(object);
 			addContainerActionsPropertyDescriptor(object);
 			addHasContainerActionsPropertyDescriptor(object);
+			addFileActionsPropertyDescriptor(object);
+			addHasFileActionsPropertyDescriptor(object);
 			addInstanceActionsPropertyDescriptor(object);
 			addHasInstanceActionsPropertyDescriptor(object);
+			addOperationActionsPropertyDescriptor(object);
+			addHasOperationActionsPropertyDescriptor(object);
 			addGenModelRefPropertyDescriptor(object);
 			addUiModelRefPropertyDescriptor(object);
 			addSecurityModelRefPropertyDescriptor(object);
@@ -1817,6 +1822,28 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Instance Actions Placement feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addInstanceActionsPlacementPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ActionContainer_instanceActionsPlacement_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ActionContainer_instanceActionsPlacement_feature", "_UI_ActionContainer_type"),
+				 WafPackage.eINSTANCE.getActionContainer_InstanceActionsPlacement(),
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Actions feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1905,6 +1932,50 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the File Actions feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addFileActionsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ActionContainer_fileActions_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ActionContainer_fileActions_feature", "_UI_ActionContainer_type"),
+				 WafPackage.eINSTANCE.getActionContainer_FileActions(),
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Has File Actions feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasFileActionsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ActionContainer_hasFileActions_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ActionContainer_hasFileActions_feature", "_UI_ActionContainer_type"),
+				 WafPackage.eINSTANCE.getActionContainer_HasFileActions(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Instance Actions feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1940,6 +2011,50 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 				 getString("_UI_ActionContainer_hasInstanceActions_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ActionContainer_hasInstanceActions_feature", "_UI_ActionContainer_type"),
 				 WafPackage.eINSTANCE.getActionContainer_HasInstanceActions(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Operation Actions feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addOperationActionsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ActionContainer_operationActions_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ActionContainer_operationActions_feature", "_UI_ActionContainer_type"),
+				 WafPackage.eINSTANCE.getActionContainer_OperationActions(),
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Has Operation Actions feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasOperationActionsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ActionContainer_hasOperationActions_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ActionContainer_hasOperationActions_feature", "_UI_ActionContainer_type"),
+				 WafPackage.eINSTANCE.getActionContainer_HasOperationActions(),
 				 false,
 				 false,
 				 false,
@@ -2202,10 +2317,13 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 			case WafPackage.UNIT_FEATURE__HAS_FIELD_VALUE_CLASS:
 			case WafPackage.UNIT_FEATURE__FOOTER_CLASS:
 			case WafPackage.UNIT_FEATURE__CONTAINER_ACTIONS_PLACEMENT:
+			case WafPackage.UNIT_FEATURE__INSTANCE_ACTIONS_PLACEMENT:
 			case WafPackage.UNIT_FEATURE__HAS_ACTIONS:
 			case WafPackage.UNIT_FEATURE__HAS_ACTIONS_MESSAGES:
 			case WafPackage.UNIT_FEATURE__HAS_CONTAINER_ACTIONS:
+			case WafPackage.UNIT_FEATURE__HAS_FILE_ACTIONS:
 			case WafPackage.UNIT_FEATURE__HAS_INSTANCE_ACTIONS:
+			case WafPackage.UNIT_FEATURE__HAS_OPERATION_ACTIONS:
 			case WafPackage.UNIT_FEATURE__COLLECTION_UI_ALLOW_ADD:
 			case WafPackage.UNIT_FEATURE__COLLECTION_UI_ALLOW_REMOVE:
 			case WafPackage.UNIT_FEATURE__DEFAULT_DISPLAY_VALUE:

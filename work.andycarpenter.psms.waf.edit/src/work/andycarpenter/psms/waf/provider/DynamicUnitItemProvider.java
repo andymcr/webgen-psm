@@ -47,6 +47,7 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addContainerActionsPlacementPropertyDescriptor(object);
+			addInstanceActionsPlacementPropertyDescriptor(object);
 			addActionsPropertyDescriptor(object);
 			addHasActionsPropertyDescriptor(object);
 			addActionsWithMessagesPropertyDescriptor(object);
@@ -54,8 +55,12 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 			addActionsWithoutTargetPropertyDescriptor(object);
 			addContainerActionsPropertyDescriptor(object);
 			addHasContainerActionsPropertyDescriptor(object);
+			addFileActionsPropertyDescriptor(object);
+			addHasFileActionsPropertyDescriptor(object);
 			addInstanceActionsPropertyDescriptor(object);
 			addHasInstanceActionsPropertyDescriptor(object);
+			addOperationActionsPropertyDescriptor(object);
+			addHasOperationActionsPropertyDescriptor(object);
 			addGenModelRefPropertyDescriptor(object);
 			addUiModelRefPropertyDescriptor(object);
 			addSecurityModelRefPropertyDescriptor(object);
@@ -157,6 +162,28 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 				 getString("_UI_ActionContainer_containerActionsPlacement_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ActionContainer_containerActionsPlacement_feature", "_UI_ActionContainer_type"),
 				 WafPackage.eINSTANCE.getActionContainer_ContainerActionsPlacement(),
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Instance Actions Placement feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addInstanceActionsPlacementPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ActionContainer_instanceActionsPlacement_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ActionContainer_instanceActionsPlacement_feature", "_UI_ActionContainer_type"),
+				 WafPackage.eINSTANCE.getActionContainer_InstanceActionsPlacement(),
 				 true,
 				 false,
 				 false,
@@ -320,6 +347,50 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the File Actions feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addFileActionsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ActionContainer_fileActions_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ActionContainer_fileActions_feature", "_UI_ActionContainer_type"),
+				 WafPackage.eINSTANCE.getActionContainer_FileActions(),
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Has File Actions feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasFileActionsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ActionContainer_hasFileActions_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ActionContainer_hasFileActions_feature", "_UI_ActionContainer_type"),
+				 WafPackage.eINSTANCE.getActionContainer_HasFileActions(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Instance Actions feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -355,6 +426,50 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 				 getString("_UI_ActionContainer_hasInstanceActions_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ActionContainer_hasInstanceActions_feature", "_UI_ActionContainer_type"),
 				 WafPackage.eINSTANCE.getActionContainer_HasInstanceActions(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Operation Actions feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addOperationActionsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ActionContainer_operationActions_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ActionContainer_operationActions_feature", "_UI_ActionContainer_type"),
+				 WafPackage.eINSTANCE.getActionContainer_OperationActions(),
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Has Operation Actions feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasOperationActionsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ActionContainer_hasOperationActions_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ActionContainer_hasOperationActions_feature", "_UI_ActionContainer_type"),
+				 WafPackage.eINSTANCE.getActionContainer_HasOperationActions(),
 				 false,
 				 false,
 				 false,
@@ -2250,10 +2365,13 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 
 		switch (notification.getFeatureID(DynamicUnit.class)) {
 			case WafPackage.DYNAMIC_UNIT__CONTAINER_ACTIONS_PLACEMENT:
+			case WafPackage.DYNAMIC_UNIT__INSTANCE_ACTIONS_PLACEMENT:
 			case WafPackage.DYNAMIC_UNIT__HAS_ACTIONS:
 			case WafPackage.DYNAMIC_UNIT__HAS_ACTIONS_MESSAGES:
 			case WafPackage.DYNAMIC_UNIT__HAS_CONTAINER_ACTIONS:
+			case WafPackage.DYNAMIC_UNIT__HAS_FILE_ACTIONS:
 			case WafPackage.DYNAMIC_UNIT__HAS_INSTANCE_ACTIONS:
+			case WafPackage.DYNAMIC_UNIT__HAS_OPERATION_ACTIONS:
 			case WafPackage.DYNAMIC_UNIT__IS_CONTAINED:
 			case WafPackage.DYNAMIC_UNIT__HAS_EXPLICITLY_EDITED_CONTAINER:
 			case WafPackage.DYNAMIC_UNIT__HAS_WHEN_FIELDS_EMPTY_ADD_IMPLICIT_FIELDS:

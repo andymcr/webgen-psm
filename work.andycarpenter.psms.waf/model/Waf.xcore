@@ -489,35 +489,41 @@ class Page extends NamedDisplayElement {
 	refers readonly transient volatile unsettable derived Service[] servicesUsed get {
 		return dynamicUnits.flatMap[servicesUsed].toSet().toEList()
 	}
-	derived readonly transient volatile boolean hasServicesUsed get {
+	derived readonly unsettable transient volatile boolean hasServicesUsed get {
 		!servicesUsed.isEmpty()
 	}
-	derived readonly transient volatile boolean hasPagination get {
+	derived readonly unsettable transient volatile boolean hasPagination get {
 		!collectionUnits.filter[it.hasPagination].isEmpty()
 	}
 	refers derived readonly unsettable transient volatile UnitAssociation[] associationFields get {
 		dynamicUnits.flatMap[it.associationFields].toEList()
 	}
-	refers derived readonly transient volatile UnitField[] autocompleteFields get {
+	refers derived readonly unsettable transient volatile UnitField[] autocompleteFields get {
 		dynamicUnits.flatMap[it.autocompleteFields].toEList()
 	}
-	derived readonly transient volatile boolean hasAutocompleteFields get {
+	derived readonly unsettable transient volatile boolean hasAutocompleteFields get {
 		!autocompleteFields.isEmpty()
 	}
-	refers derived readonly transient volatile UnitField[] formFields get {
+	refers derived unsettable readonly transient volatile UnitField[] formFields get {
 		dynamicUnits.flatMap[it.formFields].toEList()
 	}
-	derived readonly transient volatile boolean hasInterfaceFields get {
+	derived readonly unsettable transient volatile boolean hasInterfaceFields get {
 		!dynamicUnits.filter[it.hasInterfaceFields].isEmpty()
 	}
-	derived readonly transient volatile boolean hasRequiredInterfaceFields get {
+	derived readonly unsettable transient volatile boolean hasRequiredInterfaceFields get {
 		!dynamicUnits.filter[it.hasRequiredInterfaceFields].isEmpty()
 	}
-	derived readonly transient volatile boolean hasResourceFields get {
+	derived readonly unsettable transient volatile boolean hasResourceFields get {
 		!dynamicUnits.filter[it.hasResourceFields].isEmpty()
 	}
-	refers derived readonly transient volatile Action[] actionsWithoutTarget get {
+	refers derived readonly unsettable transient volatile Action[] actionsWithoutTarget get {
 		dynamicUnits.flatMap[it.actionsWithoutTarget].toEList()
+	}
+	refers derived readonly unsettable transient volatile OperationAction[] fileActions get {
+		dynamicUnits.flatMap[it.fileActions].toEList()
+	}
+	derived readonly transient unsettable volatile boolean hasFileActions get {
+		!fileActions.isEmpty()
 	}
 	String uriElement = ''
 	String localPageStyleClass = ''
@@ -1457,7 +1463,6 @@ class CollectionUnit extends DynamicUnit, SelectableUnit {
 	contains FeaturePath elementTitle
 	boolean truncateElementTitle = "false"
 	refers Selection selection
-	boolean omitContainerLoad
 	refers Entity containerType
 	refers Selection findContainerSelection
 	refers Selection findElementSelection
@@ -2247,8 +2252,14 @@ enum ContainerActionsPlacement {
 	Float = 2
 }
 
+enum InstanceActionsPlacement {
+	Footer = 0
+	Float = 1
+}
+
 interface ActionContainer {
 	ContainerActionsPlacement containerActionsPlacement
+	InstanceActionsPlacement instanceActionsPlacement
 	contains Action[] allActions opposite usedBy
 	refers derived readonly unsettable transient volatile Action[] actions get {
 		return allActions.filter[!disable].toEList
@@ -2271,11 +2282,23 @@ interface ActionContainer {
 	derived readonly unsettable transient volatile boolean hasContainerActions get {
 		!containerActions.isEmpty()
 	}
+	refers derived readonly unsettable transient volatile OperationAction[] fileActions get {
+		operationActions.filter[it.operation.resultType.literal == 'File'].toEList()
+	}
+	derived readonly unsettable transient volatile boolean hasFileActions get {
+		!fileActions.isEmpty()
+	}
 	refers derived readonly unsettable transient volatile Action[] instanceActions get {
 		actions.filter[it.isInstanceAction].toEList()
 	}
 	derived readonly unsettable transient volatile boolean hasInstanceActions get {
 		!instanceActions.isEmpty()
+	}
+	refers derived readonly unsettable transient volatile OperationAction[] operationActions get {
+		actions.filter[it instanceof OperationAction].map[it as OperationAction].toEList()
+	}
+	derived readonly unsettable transient volatile boolean hasOperationActions get {
+		!operationActions.isEmpty()
 	}
 	refers readonly unsettable transient volatile derived WafModel genModelRef get {
 		if (this instanceof DynamicUnit)

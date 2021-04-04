@@ -106,6 +106,8 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 			addHasRequiredInterfaceFieldsPropertyDescriptor(object);
 			addHasResourceFieldsPropertyDescriptor(object);
 			addActionsWithoutTargetPropertyDescriptor(object);
+			addFileActionsPropertyDescriptor(object);
+			addHasFileActionsPropertyDescriptor(object);
 			addUriElementPropertyDescriptor(object);
 			addLocalPageStyleClassPropertyDescriptor(object);
 			addPageStyleClassPropertyDescriptor(object);
@@ -1351,6 +1353,50 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the File Actions feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addFileActionsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Page_fileActions_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Page_fileActions_feature", "_UI_Page_type"),
+				 WafPackage.eINSTANCE.getPage_FileActions(),
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Has File Actions feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasFileActionsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Page_hasFileActions_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Page_hasFileActions_feature", "_UI_Page_type"),
+				 WafPackage.eINSTANCE.getPage_HasFileActions(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Uri Element feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1624,6 +1670,7 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 			case WafPackage.PAGE__HAS_INTERFACE_FIELDS:
 			case WafPackage.PAGE__HAS_REQUIRED_INTERFACE_FIELDS:
 			case WafPackage.PAGE__HAS_RESOURCE_FIELDS:
+			case WafPackage.PAGE__HAS_FILE_ACTIONS:
 			case WafPackage.PAGE__URI_ELEMENT:
 			case WafPackage.PAGE__LOCAL_PAGE_STYLE_CLASS:
 			case WafPackage.PAGE__PAGE_STYLE_CLASS:
