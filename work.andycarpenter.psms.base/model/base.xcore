@@ -100,6 +100,10 @@ abstract class Classifier extends NamedDisplayElement {
 }
 
 class DataType extends Classifier {
+	String[1] persistentType
+	String[1] ormType
+	String[1] interfaceType
+	String validationPattern = ''
 	derived readonly transient volatile boolean isBooleanDataType get {
 		name == 'Boolean'
 	}
@@ -133,10 +137,10 @@ interface FormalParameterList {
 }
 
 class FormalParameter extends NamedElement {
-	refers DataType dataType
+	refers Classifier[1] dataType
 	String defaultValue
-	String placeholder
-	String description
+	String placeholder = ''
+	String description = ''
 }
 
 class ParameterReference extends Variable { 

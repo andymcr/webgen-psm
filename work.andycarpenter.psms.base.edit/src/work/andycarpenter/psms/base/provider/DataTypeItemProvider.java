@@ -45,6 +45,10 @@ public class DataTypeItemProvider extends ClassifierItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addPersistentTypePropertyDescriptor(object);
+			addOrmTypePropertyDescriptor(object);
+			addInterfaceTypePropertyDescriptor(object);
+			addValidationPatternPropertyDescriptor(object);
 			addIsBooleanDataTypePropertyDescriptor(object);
 			addIsEmailDataTypePropertyDescriptor(object);
 			addIsEnumerationTypePropertyDescriptor(object);
@@ -53,6 +57,94 @@ public class DataTypeItemProvider extends ClassifierItemProvider {
 			addIsTextareaDataTypePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Persistent Type feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPersistentTypePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DataType_persistentType_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DataType_persistentType_feature", "_UI_DataType_type"),
+				 BasePackage.Literals.DATA_TYPE__PERSISTENT_TYPE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Orm Type feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addOrmTypePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DataType_ormType_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DataType_ormType_feature", "_UI_DataType_type"),
+				 BasePackage.Literals.DATA_TYPE__ORM_TYPE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Interface Type feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addInterfaceTypePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DataType_interfaceType_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DataType_interfaceType_feature", "_UI_DataType_type"),
+				 BasePackage.Literals.DATA_TYPE__INTERFACE_TYPE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Validation Pattern feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addValidationPatternPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DataType_validationPattern_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DataType_validationPattern_feature", "_UI_DataType_type"),
+				 BasePackage.Literals.DATA_TYPE__VALIDATION_PATTERN,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -225,6 +317,10 @@ public class DataTypeItemProvider extends ClassifierItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(DataType.class)) {
+			case BasePackage.DATA_TYPE__PERSISTENT_TYPE:
+			case BasePackage.DATA_TYPE__ORM_TYPE:
+			case BasePackage.DATA_TYPE__INTERFACE_TYPE:
+			case BasePackage.DATA_TYPE__VALIDATION_PATTERN:
 			case BasePackage.DATA_TYPE__IS_BOOLEAN_DATA_TYPE:
 			case BasePackage.DATA_TYPE__IS_EMAIL_DATA_TYPE:
 			case BasePackage.DATA_TYPE__IS_ENUMERATION_TYPE:
