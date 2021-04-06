@@ -47,6 +47,7 @@ public class DataTypeItemProvider extends ClassifierItemProvider {
 
 			addPersistentTypePropertyDescriptor(object);
 			addOrmTypePropertyDescriptor(object);
+			addWafTypePropertyDescriptor(object);
 			addInterfaceTypePropertyDescriptor(object);
 			addValidationPatternPropertyDescriptor(object);
 			addIsBooleanDataTypePropertyDescriptor(object);
@@ -55,6 +56,7 @@ public class DataTypeItemProvider extends ClassifierItemProvider {
 			addIsIntegerDataTypePropertyDescriptor(object);
 			addIsStringDataTypePropertyDescriptor(object);
 			addIsTextareaDataTypePropertyDescriptor(object);
+			addIsUrlDataTypePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -95,6 +97,28 @@ public class DataTypeItemProvider extends ClassifierItemProvider {
 				 getString("_UI_DataType_ormType_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_DataType_ormType_feature", "_UI_DataType_type"),
 				 BasePackage.Literals.DATA_TYPE__ORM_TYPE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Waf Type feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addWafTypePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DataType_wafType_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DataType_wafType_feature", "_UI_DataType_type"),
+				 BasePackage.Literals.DATA_TYPE__WAF_TYPE,
 				 true,
 				 false,
 				 false,
@@ -280,6 +304,28 @@ public class DataTypeItemProvider extends ClassifierItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Is Url Data Type feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIsUrlDataTypePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DataType_isUrlDataType_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DataType_isUrlDataType_feature", "_UI_DataType_type"),
+				 BasePackage.Literals.DATA_TYPE__IS_URL_DATA_TYPE,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns DataType.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -319,6 +365,7 @@ public class DataTypeItemProvider extends ClassifierItemProvider {
 		switch (notification.getFeatureID(DataType.class)) {
 			case BasePackage.DATA_TYPE__PERSISTENT_TYPE:
 			case BasePackage.DATA_TYPE__ORM_TYPE:
+			case BasePackage.DATA_TYPE__WAF_TYPE:
 			case BasePackage.DATA_TYPE__INTERFACE_TYPE:
 			case BasePackage.DATA_TYPE__VALIDATION_PATTERN:
 			case BasePackage.DATA_TYPE__IS_BOOLEAN_DATA_TYPE:
@@ -327,6 +374,7 @@ public class DataTypeItemProvider extends ClassifierItemProvider {
 			case BasePackage.DATA_TYPE__IS_INTEGER_DATA_TYPE:
 			case BasePackage.DATA_TYPE__IS_STRING_DATA_TYPE:
 			case BasePackage.DATA_TYPE__IS_TEXTAREA_DATA_TYPE:
+			case BasePackage.DATA_TYPE__IS_URL_DATA_TYPE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

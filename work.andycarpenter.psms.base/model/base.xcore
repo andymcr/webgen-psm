@@ -97,11 +97,18 @@ abstract class Classifier extends NamedDisplayElement {
 		else
 			false
 	}
+	derived readonly transient volatile boolean isUrlClassifier get {
+		if (this instanceof DataType)
+			(this as DataType).isUrlDataType
+		else
+			false
+	}
 }
 
 class DataType extends Classifier {
 	String[1] persistentType
 	String[1] ormType
+	String[1] wafType
 	String[1] interfaceType
 	String validationPattern = ''
 	derived readonly transient volatile boolean isBooleanDataType get {
@@ -121,6 +128,9 @@ class DataType extends Classifier {
 	}
 	derived readonly transient volatile boolean isTextareaDataType get {
 		name == 'Textarea'
+	}
+	derived readonly transient volatile boolean isUrlDataType get {
+		name == 'URL'
 	}
 }
 

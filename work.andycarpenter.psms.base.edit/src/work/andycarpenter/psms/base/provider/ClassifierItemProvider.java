@@ -51,6 +51,7 @@ public class ClassifierItemProvider extends NamedDisplayElementItemProvider {
 			addIsIntegerClassifierPropertyDescriptor(object);
 			addIsStringClassifierPropertyDescriptor(object);
 			addIsTextareaClassifierPropertyDescriptor(object);
+			addIsUrlClassifierPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -188,6 +189,28 @@ public class ClassifierItemProvider extends NamedDisplayElementItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Is Url Classifier feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIsUrlClassifierPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Classifier_isUrlClassifier_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Classifier_isUrlClassifier_feature", "_UI_Classifier_type"),
+				 BasePackage.Literals.CLASSIFIER__IS_URL_CLASSIFIER,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -220,6 +243,7 @@ public class ClassifierItemProvider extends NamedDisplayElementItemProvider {
 			case BasePackage.CLASSIFIER__IS_INTEGER_CLASSIFIER:
 			case BasePackage.CLASSIFIER__IS_STRING_CLASSIFIER:
 			case BasePackage.CLASSIFIER__IS_TEXTAREA_CLASSIFIER:
+			case BasePackage.CLASSIFIER__IS_URL_CLASSIFIER:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}
