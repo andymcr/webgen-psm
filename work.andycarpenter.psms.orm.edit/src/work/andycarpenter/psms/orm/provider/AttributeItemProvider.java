@@ -15,8 +15,11 @@ import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+
 import work.andycarpenter.psms.base.BaseFactory;
+
 import work.andycarpenter.psms.expression.ExpressionFactory;
+
 import work.andycarpenter.psms.orm.Attribute;
 import work.andycarpenter.psms.orm.OrmFactory;
 import work.andycarpenter.psms.orm.OrmPackage;
@@ -49,56 +52,11 @@ public class AttributeItemProvider extends FeatureItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addSlugFieldsPropertyDescriptor(object);
-			addValidationPatternPropertyDescriptor(object);
 			addHiddenPropertyDescriptor(object);
+			addSlugFieldsPropertyDescriptor(object);
 			addHasSerializationControlAttributePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Slug Fields feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addSlugFieldsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Attribute_slugFields_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Attribute_slugFields_feature", "_UI_Attribute_type"),
-				 OrmPackage.Literals.ATTRIBUTE__SLUG_FIELDS,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Validation Pattern feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addValidationPatternPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Attribute_validationPattern_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Attribute_validationPattern_feature", "_UI_Attribute_type"),
-				 OrmPackage.Literals.ATTRIBUTE__VALIDATION_PATTERN,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
 	}
 
 	/**
@@ -119,6 +77,28 @@ public class AttributeItemProvider extends FeatureItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Slug Fields feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSlugFieldsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Attribute_slugFields_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Attribute_slugFields_feature", "_UI_Attribute_type"),
+				 OrmPackage.Literals.ATTRIBUTE__SLUG_FIELDS,
+				 true,
+				 false,
+				 true,
+				 null,
 				 null,
 				 null));
 	}
@@ -188,7 +168,7 @@ public class AttributeItemProvider extends FeatureItemProvider {
 			getString("_UI_Attribute_type") :
 			getString("_UI_Attribute_type") + " " + label;
 	}
-	
+
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -202,7 +182,6 @@ public class AttributeItemProvider extends FeatureItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Attribute.class)) {
-			case OrmPackage.ATTRIBUTE__VALIDATION_PATTERN:
 			case OrmPackage.ATTRIBUTE__HIDDEN:
 			case OrmPackage.ATTRIBUTE__HAS_SERIALIZATION_CONTROL_ATTRIBUTE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));

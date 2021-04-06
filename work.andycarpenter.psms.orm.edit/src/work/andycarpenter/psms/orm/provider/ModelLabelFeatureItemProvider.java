@@ -68,7 +68,7 @@ public class ModelLabelFeatureItemProvider
 	public String getText(Object object) {
 		return getString("_UI_ModelLabelFeature_type");
 	}
-	
+
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached

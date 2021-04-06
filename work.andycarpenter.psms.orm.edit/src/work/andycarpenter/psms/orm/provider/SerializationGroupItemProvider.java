@@ -10,8 +10,11 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
+
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+
 import work.andycarpenter.psms.base.provider.NamedElementItemProvider;
+
 import work.andycarpenter.psms.orm.SerializationGroup;
 
 /**
@@ -70,7 +73,7 @@ public class SerializationGroupItemProvider extends NamedElementItemProvider {
 			getString("_UI_SerializationGroup_type") :
 			getString("_UI_SerializationGroup_type") + " " + label;
 	}
-	
+
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached

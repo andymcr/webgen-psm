@@ -8,23 +8,25 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import work.andycarpenter.psms.orm.SingletonAssociation;
+
+import work.andycarpenter.psms.orm.ImageResource;
 
 /**
- * This is the item provider adapter for a {@link work.andycarpenter.psms.orm.SingletonAssociation} object.
+ * This is the item provider adapter for a {@link work.andycarpenter.psms.orm.ImageResource} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class SingletonAssociationItemProvider extends AssociationItemProvider {
+public class ImageResourceItemProvider extends ResourceFeatureItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SingletonAssociationItemProvider(AdapterFactory adapterFactory) {
+	public ImageResourceItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -44,14 +46,14 @@ public class SingletonAssociationItemProvider extends AssociationItemProvider {
 	}
 
 	/**
-	 * This returns SingletonAssociation.gif.
+	 * This returns ImageResource.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/SingletonAssociation"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/ImageResource"));
 	}
 
 	/**
@@ -62,10 +64,10 @@ public class SingletonAssociationItemProvider extends AssociationItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((SingletonAssociation)object).getName();
+		String label = ((ImageResource)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_SingletonAssociation_type") :
-			getString("_UI_SingletonAssociation_type") + " " + label;
+			getString("_UI_ImageResource_type") :
+			getString("_UI_ImageResource_type") + " " + label;
 	}
 
 

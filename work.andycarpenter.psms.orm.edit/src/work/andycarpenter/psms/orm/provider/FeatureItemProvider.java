@@ -10,11 +10,14 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+
 import work.andycarpenter.psms.base.provider.NamedDisplayElementItemProvider;
+
 import work.andycarpenter.psms.orm.Feature;
 import work.andycarpenter.psms.orm.OrmPackage;
 
@@ -48,6 +51,7 @@ public class FeatureItemProvider extends NamedDisplayElementItemProvider {
 
 			addPartOfPropertyDescriptor(object);
 			addCardinalityPropertyDescriptor(object);
+			addCollectionTypePropertyDescriptor(object);
 			addIsPrimaryKeyPropertyDescriptor(object);
 			addIsDerivedPropertyDescriptor(object);
 			addCustomiseSetPropertyDescriptor(object);
@@ -136,6 +140,72 @@ public class FeatureItemProvider extends NamedDisplayElementItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Collection Type feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCollectionTypePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Feature_collectionType_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Feature_collectionType_feature", "_UI_Feature_type"),
+				 OrmPackage.Literals.FEATURE__COLLECTION_TYPE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Is Primary Key feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIsPrimaryKeyPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Feature_isPrimaryKey_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Feature_isPrimaryKey_feature", "_UI_Feature_type"),
+				 OrmPackage.Literals.FEATURE__IS_PRIMARY_KEY,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Is Derived feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIsDerivedPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Feature_isDerived_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Feature_isDerived_feature", "_UI_Feature_type"),
+				 OrmPackage.Literals.FEATURE__IS_DERIVED,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -251,6 +321,28 @@ public class FeatureItemProvider extends NamedDisplayElementItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Encode Uri Key feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addEncodeUriKeyPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Feature_encodeUriKey_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Feature_encodeUriKey_feature", "_UI_Feature_type"),
+				 OrmPackage.Literals.FEATURE__ENCODE_URI_KEY,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Collection Orm Allow Add feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -286,28 +378,6 @@ public class FeatureItemProvider extends NamedDisplayElementItemProvider {
 				 getString("_UI_Feature_collectionOrmAllowRemove_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Feature_collectionOrmAllowRemove_feature", "_UI_Feature_type"),
 				 OrmPackage.Literals.FEATURE__COLLECTION_ORM_ALLOW_REMOVE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Encode Uri Key feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addEncodeUriKeyPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Feature_encodeUriKey_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Feature_encodeUriKey_feature", "_UI_Feature_type"),
-				 OrmPackage.Literals.FEATURE__ENCODE_URI_KEY,
 				 true,
 				 false,
 				 false,
@@ -933,50 +1003,6 @@ public class FeatureItemProvider extends NamedDisplayElementItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Is Primary Key feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addIsPrimaryKeyPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Feature_isPrimaryKey_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Feature_isPrimaryKey_feature", "_UI_Feature_type"),
-				 OrmPackage.Literals.FEATURE__IS_PRIMARY_KEY,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Is Derived feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addIsDerivedPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Feature_isDerived_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Feature_isDerived_feature", "_UI_Feature_type"),
-				 OrmPackage.Literals.FEATURE__IS_DERIVED,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Is Required feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1121,7 +1147,7 @@ public class FeatureItemProvider extends NamedDisplayElementItemProvider {
 			getString("_UI_Feature_type") :
 			getString("_UI_Feature_type") + " " + label;
 	}
-	
+
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -1136,6 +1162,7 @@ public class FeatureItemProvider extends NamedDisplayElementItemProvider {
 
 		switch (notification.getFeatureID(Feature.class)) {
 			case OrmPackage.FEATURE__CARDINALITY:
+			case OrmPackage.FEATURE__COLLECTION_TYPE:
 			case OrmPackage.FEATURE__IS_PRIMARY_KEY:
 			case OrmPackage.FEATURE__IS_DERIVED:
 			case OrmPackage.FEATURE__CUSTOMISE_SET:

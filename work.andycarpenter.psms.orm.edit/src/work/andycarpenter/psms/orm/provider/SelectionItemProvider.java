@@ -10,15 +10,19 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
+
 import org.eclipse.emf.ecore.EStructuralFeature;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+
 import work.andycarpenter.psms.base.BaseFactory;
 import work.andycarpenter.psms.base.BasePackage;
+
 import work.andycarpenter.psms.base.provider.NamedElementItemProvider;
+
 import work.andycarpenter.psms.expression.ExpressionFactory;
 
 import work.andycarpenter.psms.orm.OrmFactory;

@@ -4,12 +4,10 @@ package work.andycarpenter.psms.orm.provider;
 
 import java.util.ArrayList;
 import java.util.Collection;
-
 import java.util.List;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.edit.command.CommandParameter;
@@ -253,118 +251,49 @@ public class OrmItemProviderAdapterFactory extends OrmAdapterFactory implements 
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.orm.SingletonElement} instances.
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.orm.DataTypeAttribute} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected SingletonElementItemProvider singletonElementItemProvider;
+	protected DataTypeAttributeItemProvider dataTypeAttributeItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link work.andycarpenter.psms.orm.SingletonElement}.
+	 * This creates an adapter for a {@link work.andycarpenter.psms.orm.DataTypeAttribute}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createSingletonElementAdapter() {
-		if (singletonElementItemProvider == null) {
-			singletonElementItemProvider = new SingletonElementItemProvider(this);
+	public Adapter createDataTypeAttributeAdapter() {
+		if (dataTypeAttributeItemProvider == null) {
+			dataTypeAttributeItemProvider = new DataTypeAttributeItemProvider(this);
 		}
 
-		return singletonElementItemProvider;
+		return dataTypeAttributeItemProvider;
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.orm.CollectionElement} instances.
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.orm.DateAttribute} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected CollectionElementItemProvider collectionElementItemProvider;
+	protected DateAttributeItemProvider dateAttributeItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link work.andycarpenter.psms.orm.CollectionElement}.
+	 * This creates an adapter for a {@link work.andycarpenter.psms.orm.DateAttribute}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createCollectionElementAdapter() {
-		if (collectionElementItemProvider == null) {
-			collectionElementItemProvider = new CollectionElementItemProvider(this);
+	public Adapter createDateAttributeAdapter() {
+		if (dateAttributeItemProvider == null) {
+			dateAttributeItemProvider = new DateAttributeItemProvider(this);
 		}
 
-		return collectionElementItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.orm.SingletonDate} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected SingletonDateItemProvider singletonDateItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link work.andycarpenter.psms.orm.SingletonDate}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createSingletonDateAdapter() {
-		if (singletonDateItemProvider == null) {
-			singletonDateItemProvider = new SingletonDateItemProvider(this);
-		}
-
-		return singletonDateItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.orm.CollectionDate} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected CollectionDateItemProvider collectionDateItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link work.andycarpenter.psms.orm.CollectionDate}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createCollectionDateAdapter() {
-		if (collectionDateItemProvider == null) {
-			collectionDateItemProvider = new CollectionDateItemProvider(this);
-		}
-
-		return collectionDateItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.orm.SingletonURL} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected SingletonURLItemProvider singletonURLItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link work.andycarpenter.psms.orm.SingletonURL}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createSingletonURLAdapter() {
-		if (singletonURLItemProvider == null) {
-			singletonURLItemProvider = new SingletonURLItemProvider(this);
-		}
-
-		return singletonURLItemProvider;
+		return dateAttributeItemProvider;
 	}
 
 	/**
@@ -414,72 +343,95 @@ public class OrmItemProviderAdapterFactory extends OrmAdapterFactory implements 
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.orm.SingletonFile} instances.
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.orm.FileResource} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected SingletonFileItemProvider singletonFileItemProvider;
+	protected FileResourceItemProvider fileResourceItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link work.andycarpenter.psms.orm.SingletonFile}.
+	 * This creates an adapter for a {@link work.andycarpenter.psms.orm.FileResource}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createSingletonFileAdapter() {
-		if (singletonFileItemProvider == null) {
-			singletonFileItemProvider = new SingletonFileItemProvider(this);
+	public Adapter createFileResourceAdapter() {
+		if (fileResourceItemProvider == null) {
+			fileResourceItemProvider = new FileResourceItemProvider(this);
 		}
 
-		return singletonFileItemProvider;
+		return fileResourceItemProvider;
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.orm.SingletonImage} instances.
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.orm.ImageResource} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected SingletonImageItemProvider singletonImageItemProvider;
+	protected ImageResourceItemProvider imageResourceItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link work.andycarpenter.psms.orm.SingletonImage}.
+	 * This creates an adapter for a {@link work.andycarpenter.psms.orm.ImageResource}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createSingletonImageAdapter() {
-		if (singletonImageItemProvider == null) {
-			singletonImageItemProvider = new SingletonImageItemProvider(this);
+	public Adapter createImageResourceAdapter() {
+		if (imageResourceItemProvider == null) {
+			imageResourceItemProvider = new ImageResourceItemProvider(this);
 		}
 
-		return singletonImageItemProvider;
+		return imageResourceItemProvider;
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.orm.SingletonLocation} instances.
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.orm.LocationFeature} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected SingletonLocationItemProvider singletonLocationItemProvider;
+	protected LocationFeatureItemProvider locationFeatureItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link work.andycarpenter.psms.orm.SingletonLocation}.
+	 * This creates an adapter for a {@link work.andycarpenter.psms.orm.LocationFeature}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createSingletonLocationAdapter() {
-		if (singletonLocationItemProvider == null) {
-			singletonLocationItemProvider = new SingletonLocationItemProvider(this);
+	public Adapter createLocationFeatureAdapter() {
+		if (locationFeatureItemProvider == null) {
+			locationFeatureItemProvider = new LocationFeatureItemProvider(this);
 		}
 
-		return singletonLocationItemProvider;
+		return locationFeatureItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.orm.Association} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected AssociationItemProvider associationItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link work.andycarpenter.psms.orm.Association}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createAssociationAdapter() {
+		if (associationItemProvider == null) {
+			associationItemProvider = new AssociationItemProvider(this);
+		}
+
+		return associationItemProvider;
 	}
 
 	/**
@@ -503,29 +455,6 @@ public class OrmItemProviderAdapterFactory extends OrmAdapterFactory implements 
 		}
 
 		return singletonAssociationItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.orm.CollectionAssociation} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected CollectionAssociationItemProvider collectionAssociationItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link work.andycarpenter.psms.orm.CollectionAssociation}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createCollectionAssociationAdapter() {
-		if (collectionAssociationItemProvider == null) {
-			collectionAssociationItemProvider = new CollectionAssociationItemProvider(this);
-		}
-
-		return collectionAssociationItemProvider;
 	}
 
 	/**
@@ -598,26 +527,26 @@ public class OrmItemProviderAdapterFactory extends OrmAdapterFactory implements 
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.orm.Filter} instances.
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.orm.FeatureReference} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected FilterItemProvider filterItemProvider;
+	protected FeatureReferenceItemProvider featureReferenceItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link work.andycarpenter.psms.orm.Filter}.
+	 * This creates an adapter for a {@link work.andycarpenter.psms.orm.FeatureReference}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createFilterAdapter() {
-		if (filterItemProvider == null) {
-			filterItemProvider = new FilterItemProvider(this);
+	public Adapter createFeatureReferenceAdapter() {
+		if (featureReferenceItemProvider == null) {
+			featureReferenceItemProvider = new FeatureReferenceItemProvider(this);
 		}
 
-		return filterItemProvider;
+		return featureReferenceItemProvider;
 	}
 
 	/**
@@ -667,26 +596,26 @@ public class OrmItemProviderAdapterFactory extends OrmAdapterFactory implements 
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.orm.FeatureReference} instances.
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.orm.Filter} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected FeatureReferenceItemProvider featureReferenceItemProvider;
+	protected FilterItemProvider filterItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link work.andycarpenter.psms.orm.FeatureReference}.
+	 * This creates an adapter for a {@link work.andycarpenter.psms.orm.Filter}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createFeatureReferenceAdapter() {
-		if (featureReferenceItemProvider == null) {
-			featureReferenceItemProvider = new FeatureReferenceItemProvider(this);
+	public Adapter createFilterAdapter() {
+		if (filterItemProvider == null) {
+			filterItemProvider = new FilterItemProvider(this);
 		}
 
-		return featureReferenceItemProvider;
+		return filterItemProvider;
 	}
 
 	/**
@@ -801,18 +730,15 @@ public class OrmItemProviderAdapterFactory extends OrmAdapterFactory implements 
 		if (modelLabelItemProvider != null) modelLabelItemProvider.dispose();
 		if (modelLabelAttributeItemProvider != null) modelLabelAttributeItemProvider.dispose();
 		if (modelLabelAssociationItemProvider != null) modelLabelAssociationItemProvider.dispose();
-		if (singletonElementItemProvider != null) singletonElementItemProvider.dispose();
-		if (collectionElementItemProvider != null) collectionElementItemProvider.dispose();
-		if (singletonDateItemProvider != null) singletonDateItemProvider.dispose();
-		if (collectionDateItemProvider != null) collectionDateItemProvider.dispose();
-		if (singletonURLItemProvider != null) singletonURLItemProvider.dispose();
+		if (dataTypeAttributeItemProvider != null) dataTypeAttributeItemProvider.dispose();
+		if (dateAttributeItemProvider != null) dateAttributeItemProvider.dispose();
 		if (staticPathElementItemProvider != null) staticPathElementItemProvider.dispose();
 		if (datePathElementItemProvider != null) datePathElementItemProvider.dispose();
-		if (singletonFileItemProvider != null) singletonFileItemProvider.dispose();
-		if (singletonImageItemProvider != null) singletonImageItemProvider.dispose();
-		if (singletonLocationItemProvider != null) singletonLocationItemProvider.dispose();
+		if (fileResourceItemProvider != null) fileResourceItemProvider.dispose();
+		if (imageResourceItemProvider != null) imageResourceItemProvider.dispose();
+		if (locationFeatureItemProvider != null) locationFeatureItemProvider.dispose();
+		if (associationItemProvider != null) associationItemProvider.dispose();
 		if (singletonAssociationItemProvider != null) singletonAssociationItemProvider.dispose();
-		if (collectionAssociationItemProvider != null) collectionAssociationItemProvider.dispose();
 		if (associationKeyItemProvider != null) associationKeyItemProvider.dispose();
 		if (repositoryItemProvider != null) repositoryItemProvider.dispose();
 		if (selectionItemProvider != null) selectionItemProvider.dispose();

@@ -119,7 +119,7 @@ public class ModelLabelAttributeItemProvider extends ModelLabelFeatureItemProvid
 			getString("_UI_ModelLabelAttribute_type") :
 			getString("_UI_ModelLabelAttribute_type") + " " + label;
 	}
-	
+
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached

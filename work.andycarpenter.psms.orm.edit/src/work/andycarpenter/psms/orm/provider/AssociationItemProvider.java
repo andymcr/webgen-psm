@@ -10,6 +10,7 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
@@ -52,6 +53,7 @@ public class AssociationItemProvider extends FeatureItemProvider {
 			addAssociationContainsPropertyDescriptor(object);
 			addAssociationOwningEndPropertyDescriptor(object);
 			addVisiblePropertyDescriptor(object);
+			addAssociationRelationshipPropertyDescriptor(object);
 			addSerializationMaxDepthPropertyDescriptor(object);
 			addPivotTableNamePropertyDescriptor(object);
 			addIsOppositeSingletonPropertyDescriptor(object);
@@ -169,6 +171,28 @@ public class AssociationItemProvider extends FeatureItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Association Relationship feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAssociationRelationshipPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Association_associationRelationship_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Association_associationRelationship_feature", "_UI_Association_type"),
+				 OrmPackage.Literals.ASSOCIATION__ASSOCIATION_RELATIONSHIP,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -358,6 +382,17 @@ public class AssociationItemProvider extends FeatureItemProvider {
 	}
 
 	/**
+	 * This returns Association.gif.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object getImage(Object object) {
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Association"));
+	}
+
+	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -370,7 +405,7 @@ public class AssociationItemProvider extends FeatureItemProvider {
 			getString("_UI_Association_type") :
 			getString("_UI_Association_type") + " " + label;
 	}
-	
+
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -388,6 +423,7 @@ public class AssociationItemProvider extends FeatureItemProvider {
 			case OrmPackage.ASSOCIATION__ASSOCIATION_CONTAINS:
 			case OrmPackage.ASSOCIATION__ASSOCIATION_OWNING_END:
 			case OrmPackage.ASSOCIATION__VISIBLE:
+			case OrmPackage.ASSOCIATION__ASSOCIATION_RELATIONSHIP:
 			case OrmPackage.ASSOCIATION__SERIALIZATION_MAX_DEPTH:
 			case OrmPackage.ASSOCIATION__PIVOT_TABLE_NAME:
 			case OrmPackage.ASSOCIATION__IS_OPPOSITE_SINGLETON:

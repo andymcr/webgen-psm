@@ -10,11 +10,14 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+
 import work.andycarpenter.psms.base.provider.NamedElementItemProvider;
+
 import work.andycarpenter.psms.orm.CollectionType;
 import work.andycarpenter.psms.orm.OrmPackage;
 
@@ -48,10 +51,6 @@ public class CollectionTypeItemProvider extends NamedElementItemProvider {
 
 			addCollectionTypePropertyDescriptor(object);
 			addElementTypePropertyDescriptor(object);
-			addPersistenceTypePropertyDescriptor(object);
-			addOrmTypePropertyDescriptor(object);
-			addJavaInterfaceTypePropertyDescriptor(object);
-			addJavaImplementationTypePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -101,94 +100,6 @@ public class CollectionTypeItemProvider extends NamedElementItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Persistence Type feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addPersistenceTypePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_CollectionType_persistenceType_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionType_persistenceType_feature", "_UI_CollectionType_type"),
-				 OrmPackage.Literals.COLLECTION_TYPE__PERSISTENCE_TYPE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Orm Type feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addOrmTypePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_CollectionType_ormType_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionType_ormType_feature", "_UI_CollectionType_type"),
-				 OrmPackage.Literals.COLLECTION_TYPE__ORM_TYPE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Java Interface Type feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addJavaInterfaceTypePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_CollectionType_javaInterfaceType_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionType_javaInterfaceType_feature", "_UI_CollectionType_type"),
-				 OrmPackage.Literals.COLLECTION_TYPE__JAVA_INTERFACE_TYPE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Java Implementation Type feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addJavaImplementationTypePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_CollectionType_javaImplementationType_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionType_javaImplementationType_feature", "_UI_CollectionType_type"),
-				 OrmPackage.Literals.COLLECTION_TYPE__JAVA_IMPLEMENTATION_TYPE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This returns CollectionType.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -212,7 +123,7 @@ public class CollectionTypeItemProvider extends NamedElementItemProvider {
 			getString("_UI_CollectionType_type") :
 			getString("_UI_CollectionType_type") + " " + label;
 	}
-	
+
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -227,10 +138,6 @@ public class CollectionTypeItemProvider extends NamedElementItemProvider {
 
 		switch (notification.getFeatureID(CollectionType.class)) {
 			case OrmPackage.COLLECTION_TYPE__COLLECTION_TYPE:
-			case OrmPackage.COLLECTION_TYPE__PERSISTENCE_TYPE:
-			case OrmPackage.COLLECTION_TYPE__ORM_TYPE:
-			case OrmPackage.COLLECTION_TYPE__JAVA_INTERFACE_TYPE:
-			case OrmPackage.COLLECTION_TYPE__JAVA_IMPLEMENTATION_TYPE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

@@ -96,7 +96,7 @@ public class DatePathElementItemProvider extends PathElementItemProvider {
 			getString("_UI_DatePathElement_type") :
 			getString("_UI_DatePathElement_type") + " " + label;
 	}
-	
+
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached

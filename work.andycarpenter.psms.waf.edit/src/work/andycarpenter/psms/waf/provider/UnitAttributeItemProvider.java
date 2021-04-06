@@ -18,7 +18,6 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import work.andycarpenter.psms.base.BaseFactory;
 import work.andycarpenter.psms.expression.ExpressionFactory;
-
 import work.andycarpenter.psms.orm.OrmFactory;
 import work.andycarpenter.psms.waf.UnitAttribute;
 import work.andycarpenter.psms.waf.WafFactory;

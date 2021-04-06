@@ -113,7 +113,7 @@ public class ModelLabelAssociationItemProvider extends ModelLabelFeatureItemProv
 	public String getText(Object object) {
 		return getString("_UI_ModelLabelAssociation_type");
 	}
-	
+
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached

@@ -23,7 +23,9 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+
 import work.andycarpenter.psms.base.BaseFactory;
+
 import work.andycarpenter.psms.orm.DatabaseTechnologies;
 import work.andycarpenter.psms.orm.OrmFactory;
 import work.andycarpenter.psms.orm.OrmModel;
@@ -265,7 +267,7 @@ public class OrmModelItemProvider
 			getString("_UI_OrmModel_type") :
 			getString("_UI_OrmModel_type") + " " + label;
 	}
-	
+
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached

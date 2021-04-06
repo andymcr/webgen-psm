@@ -26,11 +26,11 @@ import work.andycarpenter.psms.orm.Feature
 import work.andycarpenter.psms.orm.FeatureChildPath
 import work.andycarpenter.psms.orm.Filter
 import work.andycarpenter.psms.orm.Label
+import work.andycarpenter.psms.orm.LocationFeature
 import work.andycarpenter.psms.orm.ModelLabel
 import work.andycarpenter.psms.orm.OrmModel
 import work.andycarpenter.psms.orm.Repository
 import work.andycarpenter.psms.orm.Selection
-import work.andycarpenter.psms.orm.SingletonLocation
 import work.andycarpenter.psms.api.API
 import work.andycarpenter.psms.service.BusinessOperation
 import work.andycarpenter.psms.service.Service
@@ -1621,7 +1621,7 @@ class CreateUpdateUnit extends EditUnit, SelectableUnit {
 class MapUnit extends EditUnit, SelectableUnit {
 	boolean readOnly
 	int defaultZoomLevel
-	refers SingletonLocation[1] location
+	refers LocationFeature[1] location
 	refers Attribute placeName
 }
 

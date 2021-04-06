@@ -96,7 +96,7 @@ public class StaticPathElementItemProvider extends PathElementItemProvider {
 			getString("_UI_StaticPathElement_type") :
 			getString("_UI_StaticPathElement_type") + " " + label;
 	}
-	
+
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached

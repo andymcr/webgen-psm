@@ -10,13 +10,16 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
+
 import org.eclipse.emf.ecore.EStructuralFeature;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+
 import work.andycarpenter.psms.base.provider.ClassifierItemProvider;
+
 import work.andycarpenter.psms.orm.Entity;
 import work.andycarpenter.psms.orm.OrmFactory;
 import work.andycarpenter.psms.orm.OrmPackage;
@@ -63,7 +66,7 @@ public class EntityItemProvider extends ClassifierItemProvider {
 			addHasAttributesPropertyDescriptor(object);
 			addAttributeKeysPropertyDescriptor(object);
 			addHasAttributeKeysPropertyDescriptor(object);
-			addResourceAttributesPropertyDescriptor(object);
+			addResourceFeaturesPropertyDescriptor(object);
 			addHasResourceAttributesPropertyDescriptor(object);
 			addUniqueAttributesPropertyDescriptor(object);
 			addHasUniqueAttributesPropertyDescriptor(object);
@@ -405,19 +408,19 @@ public class EntityItemProvider extends ClassifierItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Resource Attributes feature.
+	 * This adds a property descriptor for the Resource Features feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addResourceAttributesPropertyDescriptor(Object object) {
+	protected void addResourceFeaturesPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Entity_resourceAttributes_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Entity_resourceAttributes_feature", "_UI_Entity_type"),
-				 OrmPackage.Literals.ENTITY__RESOURCE_ATTRIBUTES,
+				 getString("_UI_Entity_resourceFeatures_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Entity_resourceFeatures_feature", "_UI_Entity_type"),
+				 OrmPackage.Literals.ENTITY__RESOURCE_FEATURES,
 				 false,
 				 false,
 				 false,
@@ -1097,7 +1100,7 @@ public class EntityItemProvider extends ClassifierItemProvider {
 			getString("_UI_Entity_type") :
 			getString("_UI_Entity_type") + " " + label;
 	}
-	
+
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -1157,52 +1160,37 @@ public class EntityItemProvider extends ClassifierItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(OrmPackage.Literals.ENTITY__ALL_FEATURES,
-				 OrmFactory.eINSTANCE.createSingletonElement()));
+				 OrmFactory.eINSTANCE.createDataTypeAttribute()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(OrmPackage.Literals.ENTITY__ALL_FEATURES,
-				 OrmFactory.eINSTANCE.createCollectionElement()));
+				 OrmFactory.eINSTANCE.createDateAttribute()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(OrmPackage.Literals.ENTITY__ALL_FEATURES,
-				 OrmFactory.eINSTANCE.createSingletonDate()));
+				 OrmFactory.eINSTANCE.createFileResource()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(OrmPackage.Literals.ENTITY__ALL_FEATURES,
-				 OrmFactory.eINSTANCE.createCollectionDate()));
+				 OrmFactory.eINSTANCE.createImageResource()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(OrmPackage.Literals.ENTITY__ALL_FEATURES,
-				 OrmFactory.eINSTANCE.createSingletonURL()));
+				 OrmFactory.eINSTANCE.createLocationFeature()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(OrmPackage.Literals.ENTITY__ALL_FEATURES,
-				 OrmFactory.eINSTANCE.createSingletonFile()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OrmPackage.Literals.ENTITY__ALL_FEATURES,
-				 OrmFactory.eINSTANCE.createSingletonImage()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OrmPackage.Literals.ENTITY__ALL_FEATURES,
-				 OrmFactory.eINSTANCE.createSingletonLocation()));
+				 OrmFactory.eINSTANCE.createAssociation()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(OrmPackage.Literals.ENTITY__ALL_FEATURES,
 				 OrmFactory.eINSTANCE.createSingletonAssociation()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OrmPackage.Literals.ENTITY__ALL_FEATURES,
-				 OrmFactory.eINSTANCE.createCollectionAssociation()));
 
 		newChildDescriptors.add
 			(createChildParameter

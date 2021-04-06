@@ -77,10 +77,6 @@ enum CollectionTypes {
 class CollectionType extends NamedElement {
 	CollectionTypes collectionType
 	refers Classifier[1] elementType
-	String[1] persistenceType
-	String[1] ormType
-	String[1] javaInterfaceType
-	String[1] javaImplementationType
 }
 
 class SerializationGroup extends NamedElement {
@@ -122,11 +118,11 @@ class Entity extends Classifier {
 	derived readonly transient volatile boolean hasAttributeKeys get {
 		!attributeKeys.isEmpty()
 	}
-	refers derived readonly transient volatile SingletonResource[] resourceAttributes get {
-		attributes.filter[it instanceof SingletonResource].map[it as SingletonResource].toEList()
+	refers derived readonly transient volatile ResourceFeature[] resourceFeatures get {
+		features.filter[it instanceof ResourceFeature].map[it as ResourceFeature].toEList()
 	}
 	derived readonly transient volatile boolean hasResourceAttributes get {
-		!resourceAttributes.isEmpty()
+		!resourceFeatures.isEmpty()
 	}
 	refers derived readonly transient volatile Attribute[] uniqueAttributes get {
 		attributes.filter[isUnique].toEList()
@@ -222,6 +218,7 @@ class ModelLabelAssociation extends ModelLabelFeature {
 abstract class Feature extends NamedDisplayElement {
 	container Entity[1] partOf opposite allFeatures
 	Cardinality cardinality
+	CollectionTypes collectionType
 	boolean isPrimaryKey
 	boolean isDerived
 	boolean customiseSet
@@ -234,21 +231,17 @@ abstract class Feature extends NamedDisplayElement {
 	boolean collectionOrmAllowRemove
 	refers SerializationGroup[] serializationGroups
 	derived readonly transient volatile boolean isBooleanFeature get {
-		if (this instanceof SingletonElement)
-			(this as SingletonElement).attributeDataType.isBooleanDataType
+		if (this instanceof DataTypeAttribute)
+			(this as DataTypeAttribute).attributeDataType.isBooleanDataType
 		else
 			false
 	}
 	derived readonly transient volatile boolean isDataTypeFeature get {
-		this instanceof SingletonElement || this instanceof CollectionElement
+		this instanceof DataTypeAttribute
 	}
 	refers derived readonly transient volatile Classifier dataType get {
 		if (isDataTypeFeature)
-			if (this instanceof SingletonElement)
-				(this as SingletonElement).dataType
-			else if (this instanceof CollectionElement)
-				(this as CollectionElement).collectionType.elementType
-			
+			(this as DataTypeAttribute).attributeDataType
 	}
 	derived readonly transient volatile boolean isDateFeature get {
 		this instanceof DateAttribute
@@ -258,53 +251,56 @@ abstract class Feature extends NamedDisplayElement {
 			(this as DateAttribute).details
 	}
 	derived readonly transient volatile boolean isEmailFeature get {
-		if (this instanceof SingletonElement)
-			(this as SingletonElement).attributeDataType.isEmailDataType
+		if (this instanceof DataTypeAttribute)
+			(this as DataTypeAttribute).attributeDataType.isEmailDataType
 		else
 			false
 	}
 	derived readonly transient volatile boolean isEnumerationFeature get {
-		if (this instanceof SingletonElement)
-			(this as SingletonElement).attributeDataType.isEnumerationType
+		if (this instanceof DataTypeAttribute)
+			(this as DataTypeAttribute).attributeDataType.isEnumerationType
 		else
 			false
 	}
 	refers derived readonly transient volatile EnumerationType enumerationType get {
 		if (isEnumerationFeature)
-			(this as SingletonElement).attributeDataType as EnumerationType
+			(this as DataTypeAttribute).attributeDataType as EnumerationType
 	}
 	derived readonly transient volatile boolean isIntegerFeature get {
-		if (this instanceof SingletonElement)
-			(this as SingletonElement).attributeDataType.isIntegerDataType
+		if (this instanceof DataTypeAttribute)
+			(this as DataTypeAttribute).attributeDataType.isIntegerDataType
 		else
 			false
 	}
 	derived readonly transient volatile boolean isLocationFeature get {
-		this instanceof SingletonLocation
+		this instanceof LocationFeature
 	}
 	derived readonly transient volatile boolean isObfuscatedFeature get {
-		if (this instanceof SingletonElement)
-			(this as SingletonElement).obfuscateFormFields
+		if (this instanceof DataTypeAttribute)
+			(this as DataTypeAttribute).obfuscateFormFields
 		else
 			false
 	}
 	derived readonly transient volatile boolean isResourceFeature get {
-		this instanceof SingletonResource
+		this instanceof ResourceFeature
 	}
 	derived readonly transient volatile boolean isStringFeature get {
-		if (this instanceof SingletonElement)
-			(this as SingletonElement).attributeDataType.isStringDataType
+		if (this instanceof DataTypeAttribute)
+			(this as DataTypeAttribute).attributeDataType.isStringDataType
 		else
 			false
 	}
 	derived readonly transient volatile boolean isTextareaFeature get {
-		if (this instanceof SingletonElement)
-			(this as SingletonElement).attributeDataType.isTextareaDataType
+		if (this instanceof DataTypeAttribute)
+			(this as DataTypeAttribute).attributeDataType.isTextareaDataType
 		else
 			false
 	}
 	derived readonly transient volatile boolean isUrlFeature get {
-		this instanceof SingletonURL
+		if (this instanceof DataTypeAttribute)
+			(this as DataTypeAttribute).attributeDataType.isUrlDataType
+		else
+			false
 	}
 	refers derived readonly transient volatile Expression defaultValue get {
 		if (this instanceof Attribute)
@@ -332,14 +328,14 @@ abstract class Feature extends NamedDisplayElement {
 			false
 	}
 	derived readonly transient volatile boolean hasValidationPattern get {
-		if (this instanceof Attribute)
-			(this as Attribute).validationPattern !== null
+		if (this instanceof DataTypeAttribute)
+			(this as DataTypeAttribute).validationPattern !== null
 		else
 			false
 	}
 	derived readonly transient volatile boolean isCaseInsensitive get {
-		if (this instanceof SingletonElement)
-			(this as SingletonElement).caseInsensitive
+		if (this instanceof DataTypeAttribute)
+			(this as DataTypeAttribute).caseInsensitive
 		else
 			false
 	}
@@ -350,8 +346,8 @@ abstract class Feature extends NamedDisplayElement {
 			false
 	}
 	derived readonly transient volatile boolean isContainerUnique get {
-		if (this instanceof SingletonAttribute)
-			(this as SingletonAttribute).containerUnique
+		if (this instanceof DataTypeAttribute)
+			(this as DataTypeAttribute).containerUnique
 		else
 			false
 	}
@@ -362,8 +358,8 @@ abstract class Feature extends NamedDisplayElement {
 			false
 	}
 	derived readonly transient volatile boolean isEncrypted get {
-		if (this instanceof SingletonElement)
-			(this as SingletonElement).encrypt
+		if (this instanceof DataTypeAttribute)
+			(this as DataTypeAttribute).encrypt
 		else
 			false
 	}
@@ -371,11 +367,11 @@ abstract class Feature extends NamedDisplayElement {
 		cardinality.literal == 'Required'
 	}
 	derived readonly transient volatile boolean isSingleton get {
-		(this instanceof SingletonAttribute) || (this instanceof SingletonAssociation)
+		cardinality.literal !== 'Many'
 	}
 	derived readonly transient volatile boolean isUnique get {
-		if (this instanceof SingletonAttribute)
-			(this as SingletonAttribute).unique
+		if (this instanceof DataTypeAttribute)
+			(this as DataTypeAttribute).unique
 		else
 			false
 	}
@@ -402,33 +398,21 @@ abstract class Feature extends NamedDisplayElement {
 
 abstract class Attribute extends Feature, Label {
 	contains Expression attributeDefaultValue
-	refers Attribute[] slugFields
-	String validationPattern
 	boolean hidden
+	refers Attribute[] slugFields
 	derived readonly transient volatile boolean hasSerializationControlAttribute get {
 		serializationGroups.size > 0 
 	}
 }
 
-abstract class SingletonAttribute extends Attribute {
-	boolean ^unique
-	boolean containerUnique
-	String[1] persistentType
-	String[1] ormType
-}
-
-abstract class CollectionAttribute extends Attribute {
-}
-
-class SingletonElement extends SingletonAttribute {
+class DataTypeAttribute extends Attribute {
 	refers DataType[1] attributeDataType
 	boolean obfuscateFormFields
 	boolean caseInsensitive
 	boolean encrypt
-}
-
-class CollectionElement extends CollectionAttribute {
-	refers CollectionType[1] collectionType
+	boolean ^unique
+	boolean containerUnique
+	String validationPattern
 }
 
 enum DateDetails {
@@ -437,21 +421,11 @@ enum DateDetails {
 	DateAndTime = 3
 }
 
-interface DateAttribute {
+class DateAttribute extends Attribute {
 	DateDetails details
 }
 
-class SingletonDate extends SingletonAttribute, DateAttribute {
-}
-
-class CollectionDate extends CollectionAttribute, DateAttribute {
-}
-
-class SingletonURL extends SingletonAttribute {
-	String displayValue
-}
-
-abstract class SingletonResource extends SingletonAttribute {
+abstract class ResourceFeature extends Feature {
 	int maximumUploadSize
 	unique String[] validUploadMimeTypes
 	unique String[] validUploadExtensions
@@ -470,24 +444,32 @@ class DatePathElement extends PathElement {
 	String[1] format
 }
 
-class SingletonFile extends SingletonResource {
+class FileResource extends ResourceFeature {
 }
 
-class SingletonImage extends SingletonResource {
+class ImageResource extends ResourceFeature {
 }
 
-class SingletonLocation extends SingletonAttribute {
+class LocationFeature extends Feature {
+}
+
+enum AssociationRelationships {
+	OneToOne = 0
+	ManyToOne = 1
+	OneToMany = 2
+	ManyToMany = 3
 }
 
 @Ecore(constraints="onlyOneOwningEnd")
 @OCL(onlyOneOwningEnd="associationOwningEnd xor opposite.associationOwningEnd")
-abstract class Association extends Feature {
+class Association extends Feature {
 	refers Association[1] ^opposite
 	contains AssociationKey[] ^keys opposite keyFor
 	boolean[1] associationContainer
 	boolean[1] associationContains
 	boolean[1] associationOwningEnd
 	boolean[1] visible = "true"
+	AssociationRelationships associationRelationship
 	int[1] serializationMaxDepth = "1"
 	String pivotTableName
 	derived readonly transient volatile boolean isOppositeSingleton get {
@@ -519,25 +501,7 @@ abstract class AssociationReference {
 abstract class FeatureChildPath {
 }
 
-enum SingletonAssociationRelationships {
-	OneToOne
-	ManyToOne = 1
-}
-
 class SingletonAssociation extends Association {
-	SingletonAssociationRelationships associationRelationship
-}
-
-enum CollectionAssociationRelationships {
-	OneToMany
-	ManyToMany = 1
-}
-
-@Ecore(constraints="x")
-@OCL(x="collectionType.elementType = opposite.partOf")
-class CollectionAssociation extends Association {
-	refers CollectionType[1] collectionType
-	CollectionAssociationRelationships associationRelationship
 }
 
 class AssociationKey {

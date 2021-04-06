@@ -68,7 +68,7 @@ public class PathElementItemProvider
 	public String getText(Object object) {
 		return getString("_UI_PathElement_type");
 	}
-	
+
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached

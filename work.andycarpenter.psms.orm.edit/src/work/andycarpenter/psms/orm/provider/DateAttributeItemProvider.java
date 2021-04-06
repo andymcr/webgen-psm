@@ -8,23 +8,29 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import work.andycarpenter.psms.orm.SingletonAssociation;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ViewerNotification;
+
+import work.andycarpenter.psms.orm.DateAttribute;
+import work.andycarpenter.psms.orm.OrmPackage;
 
 /**
- * This is the item provider adapter for a {@link work.andycarpenter.psms.orm.SingletonAssociation} object.
+ * This is the item provider adapter for a {@link work.andycarpenter.psms.orm.DateAttribute} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class SingletonAssociationItemProvider extends AssociationItemProvider {
+public class DateAttributeItemProvider extends AttributeItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SingletonAssociationItemProvider(AdapterFactory adapterFactory) {
+	public DateAttributeItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -39,19 +45,42 @@ public class SingletonAssociationItemProvider extends AssociationItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addDetailsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This returns SingletonAssociation.gif.
+	 * This adds a property descriptor for the Details feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDetailsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DateAttribute_details_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DateAttribute_details_feature", "_UI_DateAttribute_type"),
+				 OrmPackage.Literals.DATE_ATTRIBUTE__DETAILS,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This returns DateAttribute.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/SingletonAssociation"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/DateAttribute"));
 	}
 
 	/**
@@ -62,10 +91,10 @@ public class SingletonAssociationItemProvider extends AssociationItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((SingletonAssociation)object).getName();
+		String label = ((DateAttribute)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_SingletonAssociation_type") :
-			getString("_UI_SingletonAssociation_type") + " " + label;
+			getString("_UI_DateAttribute_type") :
+			getString("_UI_DateAttribute_type") + " " + label;
 	}
 
 
@@ -79,6 +108,12 @@ public class SingletonAssociationItemProvider extends AssociationItemProvider {
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(DateAttribute.class)) {
+			case OrmPackage.DATE_ATTRIBUTE__DETAILS:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 
