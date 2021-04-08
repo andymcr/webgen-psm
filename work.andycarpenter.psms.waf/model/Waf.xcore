@@ -1479,7 +1479,7 @@ class CollectionUnit extends DynamicUnit, SelectableUnit {
 	}
 	derived readonly transient volatile boolean hasPagination get {
 		if (selection === null)
-			defaultPaginationSize > 0
+			false
 		else
 			defaultPaginationSize > 0 && selection.hasPaginationSupport
 	}
