@@ -160,6 +160,12 @@ class Entity extends Classifier {
 	derived readonly transient volatile boolean hasCollectionAssociations get {
 		!collectionAssociations.isEmpty()
 	}
+	refers derived readonly transient volatile Attribute[] dateAttributes get {
+		attributes.filter[it.isDateFeature].toEList()
+	}
+	derived readonly transient volatile boolean hasDateAttributes get {
+		!dateAttributes.isEmpty()
+	}
 	refers derived readonly transient volatile Attribute[] slugAttributes get {
 		attributes.filter[hasSlugFields].toEList()
 	}

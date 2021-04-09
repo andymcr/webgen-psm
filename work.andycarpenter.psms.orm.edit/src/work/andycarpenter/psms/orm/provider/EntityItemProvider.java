@@ -80,6 +80,8 @@ public class EntityItemProvider extends ClassifierItemProvider {
 			addIsContainedPropertyDescriptor(object);
 			addCollectionAssociationsPropertyDescriptor(object);
 			addHasCollectionAssociationsPropertyDescriptor(object);
+			addDateAttributesPropertyDescriptor(object);
+			addHasDateAttributesPropertyDescriptor(object);
 			addSlugAttributesPropertyDescriptor(object);
 			addHasSlugAttributesPropertyDescriptor(object);
 			addValidatedFeaturesPropertyDescriptor(object);
@@ -716,6 +718,50 @@ public class EntityItemProvider extends ClassifierItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Date Attributes feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDateAttributesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Entity_dateAttributes_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Entity_dateAttributes_feature", "_UI_Entity_type"),
+				 OrmPackage.Literals.ENTITY__DATE_ATTRIBUTES,
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Has Date Attributes feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasDateAttributesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Entity_hasDateAttributes_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Entity_hasDateAttributes_feature", "_UI_Entity_type"),
+				 OrmPackage.Literals.ENTITY__HAS_DATE_ATTRIBUTES,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Slug Attributes feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1126,6 +1172,7 @@ public class EntityItemProvider extends ClassifierItemProvider {
 			case OrmPackage.ENTITY__HAS_ASSOCIATION_KEYS:
 			case OrmPackage.ENTITY__IS_CONTAINED:
 			case OrmPackage.ENTITY__HAS_COLLECTION_ASSOCIATIONS:
+			case OrmPackage.ENTITY__HAS_DATE_ATTRIBUTES:
 			case OrmPackage.ENTITY__HAS_SLUG_ATTRIBUTES:
 			case OrmPackage.ENTITY__HAS_VALIDATED_FEATURES:
 			case OrmPackage.ENTITY__TABLE_NAME:
