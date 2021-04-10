@@ -9,8 +9,8 @@
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <!-- @generated base -->
       <factory
-            uri="http://andycarpenter.work/psm/Base"
-            class="work.andycarpenter.psms.base.provider.BaseItemProviderAdapterFactory"
+            uri="http://andycarpenter.work/metamodel/base"
+            class="work.andycarpenter.metamodel.base.provider.BaseItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider
@@ -22,8 +22,7 @@
    <extension point="org.eclipse.emf.edit.childCreationExtenders">
       <!-- @generated base -->
       <extender
-            uri="http://andycarpenter.work/psm/Expression"
-            class="work.andycarpenter.psms.base.provider.BaseItemProviderAdapterFactory$ExpressionChildCreationExtender"/>
+            uri="http://andycarpenter.work/metamodel/expression"
+            class="work.andycarpenter.metamodel.base.provider.BaseItemProviderAdapterFactory$ExpressionChildCreationExtender"/>
    </extension>
-
 </plugin>

@@ -1,15 +1,15 @@
 @Ecore(
-		nsPrefix="api",
-		nsURI="http://cs.manchester.ac.uk/mdsd/API"
+		nsURI="http://andycarpenter.work/metamodel/api",
+		nsPrefix="api"
 )
 @GenModel(
-	editDirectory="/work.andycarpenter.psms.api.edit/src",
-	editPluginID="work.andycarpenter.psms.api.edit")
-package work.andycarpenter.psms.api
+	editDirectory="/work.andycarpenter.metamodel.api.edit/src",
+	editPluginID="work.andycarpenter.metamodel.api.edit")
+package work.andycarpenter.metamodel.api
 
-import work.andycarpenter.psms.orm.Repository
-import work.andycarpenter.psms.orm.SerializationGroup
-import work.andycarpenter.psms.orm.Selection
+import work.andycarpenter.metamodel.orm.Repository
+import work.andycarpenter.metamodel.orm.SerializationGroup
+import work.andycarpenter.metamodel.orm.Selection
 
 
 class API {

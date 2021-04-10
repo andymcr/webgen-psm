@@ -9,8 +9,8 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated Expression -->
       <package
-            uri="http://andycarpenter.work/psm/Expression"
-            class="work.andycarpenter.psms.expression.ExpressionPackage"
+            uri="http://andycarpenter.work/metamodel/expression"
+            class="work.andycarpenter.metamodel.expression.ExpressionPackage"
             genModel="model/Expression.xcore"/>
    </extension>
 

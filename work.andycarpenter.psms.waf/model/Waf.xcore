@@ -1,44 +1,44 @@
 @Ecore(
-	nsURI="http://andycarpenter.work/psm/WebApplicationFramework",
+	nsURI="http://andycarpenter.work/metamodel/WebApplicationFramework",
 	nsPrefix="waf"
 )
 @GenModel(
-	editDirectory="/work.andycarpenter.psms.waf.edit/src",
-	editPluginID="work.andycarpenter.psms.waf.edit",
+	editDirectory="/work.andycarpenter.metamodel.waf.edit/src",
+	editPluginID="work.andycarpenter.metamodel.waf.edit",
 	childCreationExtenders="true",
-	editorDirectory="/work.andycarpenter.psms.waf.editor/src")
-package work.andycarpenter.psms.waf
+	editorDirectory="/work.andycarpenter.metamodel.waf.editor/src")
+package work.andycarpenter.metamodel.waf
 
 import work.andycarpenter.metamodel.security.CasAuthentication
 import work.andycarpenter.metamodel.security.LocalAuthenticationSystem
 import work.andycarpenter.metamodel.security.Security
 import work.andycarpenter.metamodel.security.SecurityUnit
-import work.andycarpenter.psms.base.Classifier
-import work.andycarpenter.psms.base.DataType
-import work.andycarpenter.psms.base.EnumerationType
-import work.andycarpenter.psms.base.NamedDisplayElement
-import work.andycarpenter.psms.base.NamedElement
-import work.andycarpenter.psms.expression.Expression
-import work.andycarpenter.psms.expression.Predicate
-import work.andycarpenter.psms.expression.Variable
-import work.andycarpenter.psms.orm.Association
-import work.andycarpenter.psms.orm.AssociationReference
-import work.andycarpenter.psms.orm.Attribute
-import work.andycarpenter.psms.orm.DateDetails
-import work.andycarpenter.psms.orm.Entity
-import work.andycarpenter.psms.orm.Feature
-import work.andycarpenter.psms.orm.FeatureChildPath
-import work.andycarpenter.psms.orm.Filter
-import work.andycarpenter.psms.orm.Label
-import work.andycarpenter.psms.orm.LocationFeature
-import work.andycarpenter.psms.orm.ModelLabel
-import work.andycarpenter.psms.orm.OrmModel
-import work.andycarpenter.psms.orm.Repository
-import work.andycarpenter.psms.orm.Selection
-import work.andycarpenter.psms.api.API
-import work.andycarpenter.psms.service.BusinessOperation
-import work.andycarpenter.psms.service.Service
-import work.andycarpenter.psms.service.ServiceModel
+import work.andycarpenter.metamodel.base.Classifier
+import work.andycarpenter.metamodel.base.DataType
+import work.andycarpenter.metamodel.base.EnumerationType
+import work.andycarpenter.metamodel.base.NamedDisplayElement
+import work.andycarpenter.metamodel.base.NamedElement
+import work.andycarpenter.metamodel.expression.Expression
+import work.andycarpenter.metamodel.expression.Predicate
+import work.andycarpenter.metamodel.expression.Variable
+import work.andycarpenter.metamodel.orm.Association
+import work.andycarpenter.metamodel.orm.AssociationReference
+import work.andycarpenter.metamodel.orm.Attribute
+import work.andycarpenter.metamodel.orm.DateDetails
+import work.andycarpenter.metamodel.orm.Entity
+import work.andycarpenter.metamodel.orm.Feature
+import work.andycarpenter.metamodel.orm.FeatureChildPath
+import work.andycarpenter.metamodel.orm.Filter
+import work.andycarpenter.metamodel.orm.Label
+import work.andycarpenter.metamodel.orm.LocationFeature
+import work.andycarpenter.metamodel.orm.ModelLabel
+import work.andycarpenter.metamodel.orm.OrmModel
+import work.andycarpenter.metamodel.orm.Repository
+import work.andycarpenter.metamodel.orm.Selection
+import work.andycarpenter.metamodel.api.API
+import work.andycarpenter.metamodel.service.BusinessOperation
+import work.andycarpenter.metamodel.service.Service
+import work.andycarpenter.metamodel.service.ServiceModel
 import java.util.LinkedList
 import org.eclipse.xtext.xbase.lib.CollectionLiterals
 

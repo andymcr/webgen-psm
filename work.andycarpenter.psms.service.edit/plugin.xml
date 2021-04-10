@@ -9,8 +9,8 @@
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <!-- @generated Service -->
       <factory
-            uri="http://andycarpenter.work/psm/service"
-            class="work.andycarpenter.psms.service.provider.ServiceItemProviderAdapterFactory"
+            uri="http://andycarpenter.work/metamodel/service"
+            class="work.andycarpenter.metamodel.service.provider.ServiceItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider

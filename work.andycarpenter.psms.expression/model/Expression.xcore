@@ -1,13 +1,13 @@
 @Ecore(
-	nsURI="http://andycarpenter.work/psm/Expression",
+	nsURI="http://andycarpenter.work/metamodel/expression",
 	nsPrefix="expression"
 )
 @GenModel(
-	editDirectory="/work.andycarpenter.psms.expression.edit/src",
-	editPluginID="work.andycarpenter.psms.expression.edit",
+	editDirectory="/work.andycarpenter.metamodel.expression.edit/src",
+	editPluginID="work.andycarpenter.metamodel.expression.edit",
 	extensibleProviderFactory="true"
 )
-package work.andycarpenter.psms.expression
+package work.andycarpenter.metamodel.expression
 
 enum BooleanOperator {
 	And

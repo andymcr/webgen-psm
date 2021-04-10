@@ -1,23 +1,23 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
-Bundle-SymbolicName: work.andycarpenter.psms.service.edit;singleton:=true
-Automatic-Module-Name: work.andycarpenter.psms.service.edit
+Bundle-SymbolicName: work.andycarpenter.metamodel.service.edit;singleton:=true
+Automatic-Module-Name: work.andycarpenter.metamodel.service.edit
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
-Bundle-Activator: work.andycarpenter.psms.service.provider.ServiceEditPlugin$Implementation
+Bundle-Activator: work.andycarpenter.metamodel.service.provider.ServiceEditPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-11
-Export-Package: work.andycarpenter.psms.service.provider
+Export-Package: work.andycarpenter.metamodel.service.provider
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.edit;visibility:=reexport,
  org.eclipse.emf.ecore;visibility:=reexport,
- work.andycarpenter.psms.expression;bundle-version="1.0.0";visibility:=reexport,
- work.andycarpenter.psms.expression.edit;bundle-version="1.0.0";visibility:=reexport,
- work.andycarpenter.psms.base;bundle-version="1.0.0";visibility:=reexport,
- work.andycarpenter.psms.base.edit;bundle-version="1.0.0";visibility:=reexport,
- work.andycarpenter.psms.orm;bundle-version="1.0.0";visibility:=reexport,
- work.andycarpenter.psms.orm.edit;bundle-version="1.0.0";visibility:=reexport,
- work.andycarpenter.psms.service;bundle-version="1.0.0";visibility:=reexport
+ work.andycarpenter.metamodel.expression;bundle-version="1.0.0";visibility:=reexport,
+ work.andycarpenter.metamodel.expression.edit;visibility:=reexport,
+ work.andycarpenter.metamodel.base;visibility:=reexport,
+ work.andycarpenter.metamodel.base.edit;visibility:=reexport,
+ work.andycarpenter.metamodel.orm;bundle-version="1.0.0";visibility:=reexport,
+ work.andycarpenter.metamodel.orm.edit;bundle-version="1.0.0";visibility:=reexport,
+ work.andycarpenter.metamodel.service;visibility:=reexport
 Bundle-ActivationPolicy: lazy

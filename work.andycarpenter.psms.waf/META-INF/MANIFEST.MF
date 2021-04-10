@@ -1,26 +1,26 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
-Bundle-SymbolicName: work.andycarpenter.psms.waf;singleton:=true
-Automatic-Module-Name: work.andycarpenter.psms.waf
+Bundle-SymbolicName: work.andycarpenter.metamodel.waf;singleton:=true
+Automatic-Module-Name: work.andycarpenter.metamodel.waf
 Bundle-Version: 1.0.0
 Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-11
-Export-Package: work.andycarpenter.psms.waf,
- work.andycarpenter.psms.waf.impl,
- work.andycarpenter.psms.waf.util
+Export-Package: work.andycarpenter.metamodel.waf,
+ work.andycarpenter.metamodel.waf.impl,
+ work.andycarpenter.metamodel.waf.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.eclipse.emf.ecore.xcore.lib;visibility:=reexport,
  org.eclipse.emf.ecore.xmi;visibility:=reexport,
  org.eclipse.xtext.xbase.lib;visibility:=reexport,
  org.eclipse.ocl.ecore;visibility:=reexport,
- work.andycarpenter.psms.expression;visibility:=reexport,
- work.andycarpenter.psms.base;visibility:=reexport,
+ work.andycarpenter.metamodel.expression;visibility:=reexport,
+ work.andycarpenter.metamodel.base;visibility:=reexport,
  work.andycarpenter.metamodel.security;visibility:=reexport,
- work.andycarpenter.psms.orm;visibility:=reexport,
- work.andycarpenter.psms.service;visibility:=reexport,
- work.andycarpenter.psms.api;visibility:=reexport
+ work.andycarpenter.metamodel.orm;visibility:=reexport,
+ work.andycarpenter.metamodel.service;visibility:=reexport,
+ work.andycarpenter.metamodel.api;visibility:=reexport
 Bundle-ActivationPolicy: lazy

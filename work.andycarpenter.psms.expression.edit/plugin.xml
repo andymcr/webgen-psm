@@ -9,8 +9,8 @@
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <!-- @generated Expression -->
       <factory
-            uri="http://andycarpenter.work/psm/Expression"
-            class="work.andycarpenter.psms.expression.provider.ExpressionItemProviderAdapterFactory"
+            uri="http://andycarpenter.work/metamodel/expression"
+            class="work.andycarpenter.metamodel.expression.provider.ExpressionItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider

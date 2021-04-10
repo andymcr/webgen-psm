@@ -1,25 +1,25 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
-Bundle-SymbolicName: work.andycarpenter.psms.waf.editor;singleton:=true
-Automatic-Module-Name: work.andycarpenter.psms.waf.editor
+Bundle-SymbolicName: work.andycarpenter.metamodel.waf.editor;singleton:=true
+Automatic-Module-Name: work.andycarpenter.metamodel.waf.editor
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
-Bundle-Activator: work.andycarpenter.psms.waf.presentation.WafEditorPlugin$Implementation
+Bundle-Activator: work.andycarpenter.metamodel.waf.presentation.WafEditorPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-11
-Export-Package: work.andycarpenter.psms.waf.presentation
+Export-Package: work.andycarpenter.metamodel.waf.presentation
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources;visibility:=reexport,
- work.andycarpenter.metamodel.security.edit;visibility:=reexport,
- work.andycarpenter.psms.waf.edit;visibility:=reexport,
+ org.eclipse.ui.ide;visibility:=reexport,
  org.eclipse.emf.ecore.xmi;visibility:=reexport,
  org.eclipse.emf.edit.ui;visibility:=reexport,
- org.eclipse.ui.ide;visibility:=reexport,
- work.andycarpenter.psms.orm.edit;visibility:=reexport,
- work.andycarpenter.psms.service.edit;visibility:=reexport,
- work.andycarpenter.psms.api.edit;visibility:=reexport,
- work.andycarpenter.psms.expression.edit;visibility:=reexport,
- work.andycarpenter.psms.base.edit;visibility:=reexport
+ work.andycarpenter.metamodel.base.edit;visibility:=reexport,
+ work.andycarpenter.metamodel.expression.edit;visibility:=reexport,
+ work.andycarpenter.metamodel.security.edit;visibility:=reexport,
+ work.andycarpenter.metamodel.orm.edit;visibility:=reexport,
+ work.andycarpenter.metamodel.service.edit;visibility:=reexport,
+ work.andycarpenter.metamodel.api.edit;visibility:=reexport,
+ work.andycarpenter.metamodel.waf.edit;visibility:=reexport
 Bundle-ActivationPolicy: lazy

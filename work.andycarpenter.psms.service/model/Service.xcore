@@ -1,19 +1,18 @@
 @Ecore(
-	nsURI="http://andycarpenter.work/psm/service",
+	nsURI="http://andycarpenter.work/metamodel/service",
 	nsPrefix="service"
 )
 @GenModel(
-	editDirectory="/work.andycarpenter.psms.service.edit/src",
-	editPluginID="work.andycarpenter.psms.service.edit",
-	childCreationExtenders="true",
-	editorDirectory="/work.andycarpenter.psms.service.editor/src")
-package work.andycarpenter.psms.service
+	editDirectory="/work.andycarpenter.metamodel.service.edit/src",
+	editPluginID="work.andycarpenter.metamodel.service.edit",
+	childCreationExtenders="true")
+package work.andycarpenter.metamodel.service
 
-import work.andycarpenter.psms.base.ConstantContainer
-import work.andycarpenter.psms.base.FormalParameterList
-import work.andycarpenter.psms.base.NamedElement
-import work.andycarpenter.psms.orm.OrmModel
-import work.andycarpenter.psms.orm.Repository
+import work.andycarpenter.metamodel.base.ConstantContainer
+import work.andycarpenter.metamodel.base.FormalParameterList
+import work.andycarpenter.metamodel.base.NamedElement
+import work.andycarpenter.metamodel.orm.OrmModel
+import work.andycarpenter.metamodel.orm.Repository
 
 
 class ServiceModel {

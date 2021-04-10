@@ -9,8 +9,8 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated Orm -->
       <package
-            uri="http://andycarpenter.work/psm/ObjectRelationalMapping"
-            class="work.andycarpenter.psms.orm.OrmPackage"
+            uri="http://andycarpenter.work/metamodel/ObjectRelationalMapping"
+            class="work.andycarpenter.metamodel.orm.OrmPackage"
             genModel="model/Orm.xcore"/>
    </extension>
 

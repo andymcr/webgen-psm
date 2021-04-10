@@ -9,8 +9,8 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated base -->
       <package
-            uri="http://andycarpenter.work/psm/Base"
-            class="work.andycarpenter.psms.base.BasePackage"
+            uri="http://andycarpenter.work/metamodel/base"
+            class="work.andycarpenter.metamodel.base.BasePackage"
             genModel="model/base.xcore"/>
    </extension>
 

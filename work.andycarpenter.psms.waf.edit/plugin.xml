@@ -6,19 +6,6 @@
 
 <plugin>
 
-   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
-      <!-- @generated Waf -->
-      <factory
-            uri="http://andycarpenter.work/psm/WebApplicationFramework"
-            class="work.andycarpenter.psms.waf.provider.WafItemProviderAdapterFactory"
-            supportedTypes=
-              "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
-               org.eclipse.emf.edit.provider.IStructuredItemContentProvider
-               org.eclipse.emf.edit.provider.ITreeItemContentProvider
-               org.eclipse.emf.edit.provider.IItemLabelProvider
-               org.eclipse.emf.edit.provider.IItemPropertySource"/>
-   </extension>
-
    <extension point="org.eclipse.emf.edit.childCreationExtenders">
       <!-- @generated Security -->
       <extender
@@ -32,4 +19,29 @@
             class="work.andycarpenter.psms.waf.provider.WafItemProviderAdapterFactory$ExpressionChildCreationExtender"/>
    </extension>
 
+   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <!-- @generated Waf -->
+      <factory
+            uri="http://andycarpenter.work/metamodel/WebApplicationFramework"
+            class="work.andycarpenter.metamodel.waf.provider.WafItemProviderAdapterFactory"
+            supportedTypes=
+              "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
+               org.eclipse.emf.edit.provider.IStructuredItemContentProvider
+               org.eclipse.emf.edit.provider.ITreeItemContentProvider
+               org.eclipse.emf.edit.provider.IItemLabelProvider
+               org.eclipse.emf.edit.provider.IItemPropertySource"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.edit.childCreationExtenders">
+      <!-- @generated Waf -->
+      <extender
+            uri="http://andycarpenter.work/metamodel/ObjectRelationalMapping"
+            class="work.andycarpenter.metamodel.waf.provider.WafItemProviderAdapterFactory$OrmChildCreationExtender"/>
+      <extender
+            uri="http://andycarpenter.work/metamodel/base"
+            class="work.andycarpenter.metamodel.waf.provider.WafItemProviderAdapterFactory$BaseChildCreationExtender"/>
+      <extender
+            uri="http://andycarpenter.work/metamodel/expression"
+            class="work.andycarpenter.metamodel.waf.provider.WafItemProviderAdapterFactory$ExpressionChildCreationExtender"/>
+   </extension>
 </plugin>

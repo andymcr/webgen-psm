@@ -1,27 +1,27 @@
 @Ecore(
-	nsURI="http://andycarpenter.work/psm/ObjectRelationalMapping",
+	nsURI="http://andycarpenter.work/metamodel/ObjectRelationalMapping",
 	nsPrefix="orm"
 )
 @Ecore(
 	validationDelegates="http://www.eclipse.org/emf/2002/Ecore/OCL"
 )
 @GenModel(
-	editDirectory="/work.andycarpenter.psms.orm.edit/src",
-	editPluginID="work.andycarpenter.psms.orm.edit",
+	editDirectory="/work.andycarpenter.metamodel.orm.edit/src",
+	editPluginID="work.andycarpenter.metamodel.orm.edit",
 	childCreationExtenders="true",
 	complianceLevel="6.0")
-package work.andycarpenter.psms.orm
+package work.andycarpenter.metamodel.orm
 
-import work.andycarpenter.psms.base.Classifier
-import work.andycarpenter.psms.base.ConstantContainer
-import work.andycarpenter.psms.base.DataType
-import work.andycarpenter.psms.base.EnumerationType
-import work.andycarpenter.psms.base.FormalParameterList
-import work.andycarpenter.psms.base.NamedDisplayElement
-import work.andycarpenter.psms.base.NamedElement
-import work.andycarpenter.psms.expression.Expression
-import work.andycarpenter.psms.expression.Predicate
-import work.andycarpenter.psms.expression.Variable
+import work.andycarpenter.metamodel.base.Classifier
+import work.andycarpenter.metamodel.base.ConstantContainer
+import work.andycarpenter.metamodel.base.DataType
+import work.andycarpenter.metamodel.base.EnumerationType
+import work.andycarpenter.metamodel.base.FormalParameterList
+import work.andycarpenter.metamodel.base.NamedDisplayElement
+import work.andycarpenter.metamodel.base.NamedElement
+import work.andycarpenter.metamodel.expression.Expression
+import work.andycarpenter.metamodel.expression.Predicate
+import work.andycarpenter.metamodel.expression.Variable
 
 annotation "http://www.eclipse.org/emf/2002/Ecore/OCL" as OCL
 
@@ -466,8 +466,8 @@ enum AssociationRelationships {
 	ManyToMany = 3
 }
 
-@Ecore(constraints="onlyOneOwningEnd")
-@OCL(onlyOneOwningEnd="associationOwningEnd xor opposite.associationOwningEnd")
+//@Ecore(constraints="onlyOneOwningEnd")
+//@OCL(onlyOneOwningEnd="associationOwningEnd xor opposite.associationOwningEnd")
 class Association extends Feature {
 	refers Association[1] ^opposite
 	contains AssociationKey[] ^keys opposite keyFor

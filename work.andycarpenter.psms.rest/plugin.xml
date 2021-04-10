@@ -10,8 +10,8 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated api -->
       <package
-            uri="http://cs.manchester.ac.uk/mdsd/API"
-            class="work.andycarpenter.psms.api.ApiPackage"
+            uri="http://andycarpenter.work/metamodel/api"
+            class="work.andycarpenter.metamodel.api.ApiPackage"
             genModel="model/api.xcore"/>
    </extension>
 

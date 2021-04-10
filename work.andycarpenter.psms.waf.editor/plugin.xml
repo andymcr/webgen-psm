@@ -12,9 +12,9 @@
             id="org.eclipse.emf.ecore.Wizard.category.ID"
             name="%_UI_Wizard_category"/>
       <wizard
-            id="work.andycarpenter.psms.waf.presentation.WafModelWizardID"
+            id="work.andycarpenter.metamodel.waf.presentation.WafModelWizardID"
             name="%_UI_WafModelWizard_label"
-            class="work.andycarpenter.psms.waf.presentation.WafModelWizard"
+            class="work.andycarpenter.metamodel.waf.presentation.WafModelWizard"
             category="org.eclipse.emf.ecore.Wizard.category.ID"
             icon="icons/full/obj16/WafModelFile.gif">
          <description>%_UI_WafModelWizard_description</description>
@@ -25,13 +25,12 @@
    <extension point="org.eclipse.ui.editors">
       <!-- @generated Waf -->
       <editor
-            id="work.andycarpenter.psms.waf.presentation.WafEditorID"
+            id="work.andycarpenter.metamodel.waf.presentation.WafEditorID"
             name="%_UI_WafEditor_label"
             icon="icons/full/obj16/WafModelFile.gif"
             extensions="waf"
-            class="work.andycarpenter.psms.waf.presentation.WafEditor"
-            contributorClass="work.andycarpenter.psms.waf.presentation.WafActionBarContributor">
+            class="work.andycarpenter.metamodel.waf.presentation.WafEditor"
+            contributorClass="work.andycarpenter.metamodel.waf.presentation.WafActionBarContributor">
       </editor>
    </extension>
-
 </plugin>

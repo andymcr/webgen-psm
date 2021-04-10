@@ -1,17 +1,17 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
-Bundle-SymbolicName: work.andycarpenter.psms.expression.edit;singleton:=true
-Automatic-Module-Name: work.andycarpenter.psms.expression.edit
+Bundle-SymbolicName: work.andycarpenter.metamodel.expression.edit;singleton:=true
+Automatic-Module-Name: work.andycarpenter.metamodel.expression.edit
 Bundle-Version: 1.0.0
 Bundle-ClassPath: .
-Bundle-Activator: work.andycarpenter.psms.expression.provider.ExpressionEditPlugin$Implementation
+Bundle-Activator: work.andycarpenter.metamodel.expression.provider.ExpressionEditPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-11
-Export-Package: work.andycarpenter.psms.expression.provider
+Export-Package: work.andycarpenter.metamodel.expression.provider
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.edit;visibility:=reexport,
  org.eclipse.emf.ecore;visibility:=reexport,
- work.andycarpenter.psms.expression;bundle-version="1.0.0";visibility:=reexport
+ work.andycarpenter.metamodel.expression;visibility:=reexport
 Bundle-ActivationPolicy: lazy

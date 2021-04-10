@@ -1,16 +1,16 @@
 @Ecore(
-	nsURI="http://andycarpenter.work/psm/Base",
+	nsURI="http://andycarpenter.work/metamodel/base",
 	nsPrefix="base"
 )
 @GenModel(
-	editDirectory="/work.andycarpenter.psms.base.edit/src",
-	editPluginID="work.andycarpenter.psms.base.edit",
+	editDirectory="/work.andycarpenter.metamodel.base.edit/src",
+	editPluginID="work.andycarpenter.metamodel.base.edit",
 	childCreationExtenders="true")
-package work.andycarpenter.psms.base
+package work.andycarpenter.metamodel.base
 
-import work.andycarpenter.psms.expression.Expression
-import work.andycarpenter.psms.expression.Literal
-import work.andycarpenter.psms.expression.Variable
+import work.andycarpenter.metamodel.expression.Expression
+import work.andycarpenter.metamodel.expression.Literal
+import work.andycarpenter.metamodel.expression.Variable
 
 
 class NullLiteral extends Literal {

@@ -1,22 +1,22 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
-Bundle-SymbolicName: work.andycarpenter.psms.api;singleton:=true
-Automatic-Module-Name: work.andycarpenter.psms.api
+Bundle-SymbolicName: work.andycarpenter.metamodel.api;singleton:=true
+Automatic-Module-Name: work.andycarpenter.metamodel.api
 Bundle-Version: 0.1.0.qualifier
 Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-11
-Export-Package: work.andycarpenter.psms.api,
- work.andycarpenter.psms.api.impl,
- work.andycarpenter.psms.api.util
+Export-Package: work.andycarpenter.metamodel.api,
+ work.andycarpenter.metamodel.api.impl,
+ work.andycarpenter.metamodel.api.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.eclipse.emf.ecore.xcore.lib,
  org.eclipse.xtext.xbase.lib,
- work.andycarpenter.psms.expression;visibility:=reexport,
- work.andycarpenter.psms.base;bundle-version="1.0.0";visibility:=reexport,
- work.andycarpenter.psms.orm;bundle-version="1.0.0";visibility:=reexport,
- work.andycarpenter.psms.service;bundle-version="1.0.0";visibility:=reexport
+ work.andycarpenter.metamodel.expression;visibility:=reexport,
+ work.andycarpenter.metamodel.base;visibility:=reexport,
+ work.andycarpenter.metamodel.orm;bundle-version="1.0.0";visibility:=reexport,
+ work.andycarpenter.metamodel.service;bundle-version="1.0.0";visibility:=reexport
 Bundle-ActivationPolicy: lazy
