@@ -15,9 +15,7 @@ import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
 import work.andycarpenter.psms.expression.ExpressionFactory;
-
 import work.andycarpenter.psms.waf.UnitLabel;
 import work.andycarpenter.psms.waf.WafPackage;
 
@@ -117,7 +115,6 @@ public class UnitLabelItemProvider extends DisplayElementItemProvider {
 			addFooterClassPropertyDescriptor(object);
 			addGenModelPropertyDescriptor(object);
 			addUiModelPropertyDescriptor(object);
-			addSecurityModelPropertyDescriptor(object);
 			addLabelPropertyDescriptor(object);
 			addNamePropertyDescriptor(object);
 		}
@@ -1612,28 +1609,6 @@ public class UnitLabelItemProvider extends DisplayElementItemProvider {
 				 getString("_UI_UnitField_uiModel_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_uiModel_feature", "_UI_UnitField_type"),
 				 WafPackage.eINSTANCE.getUnitField_UiModel(),
-				 false,
-				 false,
-				 false,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Security Model feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addSecurityModelPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_UnitField_securityModel_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_securityModel_feature", "_UI_UnitField_type"),
-				 WafPackage.eINSTANCE.getUnitField_SecurityModel(),
 				 false,
 				 false,
 				 false,

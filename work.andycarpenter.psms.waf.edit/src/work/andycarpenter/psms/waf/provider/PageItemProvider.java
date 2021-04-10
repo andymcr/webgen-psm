@@ -114,7 +114,6 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 			addHasPageStyleClassPropertyDescriptor(object);
 			addGenModelPropertyDescriptor(object);
 			addUiModelPropertyDescriptor(object);
-			addSecurityModelPropertyDescriptor(object);
 			addRootPagePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -1520,28 +1519,6 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 				 getString("_UI_Page_uiModel_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Page_uiModel_feature", "_UI_Page_type"),
 				 WafPackage.eINSTANCE.getPage_UiModel(),
-				 false,
-				 false,
-				 false,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Security Model feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addSecurityModelPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Page_securityModel_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Page_securityModel_feature", "_UI_Page_type"),
-				 WafPackage.eINSTANCE.getPage_SecurityModel(),
 				 false,
 				 false,
 				 false,

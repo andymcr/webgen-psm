@@ -50,7 +50,6 @@ public class ContentUnitItemProvider extends NamedDisplayElementItemProvider {
 			addUriElementPropertyDescriptor(object);
 			addAuthorisationRolesPropertyDescriptor(object);
 			addIsAuthorisedPropertyDescriptor(object);
-			addLocalAuthenticationPropertyDescriptor(object);
 			addPurposeSummaryPropertyDescriptor(object);
 			addAlternativePropertyDescriptor(object);
 			addOmitCaptionPropertyDescriptor(object);
@@ -63,7 +62,6 @@ public class ContentUnitItemProvider extends NamedDisplayElementItemProvider {
 			addLocalContentClassPropertyDescriptor(object);
 			addGenModelPropertyDescriptor(object);
 			addUiModelPropertyDescriptor(object);
-			addSecurityModelPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -152,28 +150,6 @@ public class ContentUnitItemProvider extends NamedDisplayElementItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Local Authentication feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addLocalAuthenticationPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ContentUnit_localAuthentication_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ContentUnit_localAuthentication_feature", "_UI_ContentUnit_type"),
-				 WafPackage.eINSTANCE.getContentUnit_LocalAuthentication(),
-				 false,
-				 false,
-				 false,
-				 null,
 				 null,
 				 null));
 	}
@@ -390,28 +366,6 @@ public class ContentUnitItemProvider extends NamedDisplayElementItemProvider {
 				 getString("_UI_ContentUnit_uiModel_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ContentUnit_uiModel_feature", "_UI_ContentUnit_type"),
 				 WafPackage.eINSTANCE.getContentUnit_UiModel(),
-				 false,
-				 false,
-				 false,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Security Model feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addSecurityModelPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ContentUnit_securityModel_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ContentUnit_securityModel_feature", "_UI_ContentUnit_type"),
-				 WafPackage.eINSTANCE.getContentUnit_SecurityModel(),
 				 false,
 				 false,
 				 false,

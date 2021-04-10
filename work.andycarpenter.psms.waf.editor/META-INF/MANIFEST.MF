@@ -12,6 +12,7 @@ Bundle-RequiredExecutionEnvironment: JavaSE-11
 Export-Package: work.andycarpenter.psms.waf.presentation
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources;visibility:=reexport,
+ work.andycarpenter.metamodel.security.edit;visibility:=reexport,
  work.andycarpenter.psms.waf.edit;visibility:=reexport,
  org.eclipse.emf.ecore.xmi;visibility:=reexport,
  org.eclipse.emf.edit.ui;visibility:=reexport,

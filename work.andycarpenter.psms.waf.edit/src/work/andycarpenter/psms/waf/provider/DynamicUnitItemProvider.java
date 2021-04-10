@@ -63,7 +63,6 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 			addHasOperationActionsPropertyDescriptor(object);
 			addGenModelRefPropertyDescriptor(object);
 			addUiModelRefPropertyDescriptor(object);
-			addSecurityModelRefPropertyDescriptor(object);
 			addContentTypePropertyDescriptor(object);
 			addContentRepositoryPropertyDescriptor(object);
 			addContainingAssociationPropertyDescriptor(object);
@@ -514,28 +513,6 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 				 getString("_UI_ActionContainer_uiModelRef_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ActionContainer_uiModelRef_feature", "_UI_ActionContainer_type"),
 				 WafPackage.eINSTANCE.getActionContainer_UiModelRef(),
-				 false,
-				 false,
-				 false,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Security Model Ref feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addSecurityModelRefPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ActionContainer_securityModelRef_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ActionContainer_securityModelRef_feature", "_UI_ActionContainer_type"),
-				 WafPackage.eINSTANCE.getActionContainer_SecurityModelRef(),
 				 false,
 				 false,
 				 false,

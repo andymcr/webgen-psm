@@ -7,14 +7,11 @@ import org.eclipse.emf.common.EMFPlugin;
 import org.eclipse.emf.common.ui.EclipseUIPlugin;
 
 import org.eclipse.emf.common.util.ResourceLocator;
-
+import work.andycarpenter.metamodel.security.provider.SecurityEditPlugin;
 import work.andycarpenter.psms.api.provider.ApiEditPlugin;
-
 import work.andycarpenter.psms.base.provider.BaseEditPlugin;
 import work.andycarpenter.psms.expression.provider.ExpressionEditPlugin;
-
 import work.andycarpenter.psms.orm.provider.OrmEditPlugin;
-
 import work.andycarpenter.psms.service.provider.ServiceEditPlugin;
 
 /**
@@ -49,6 +46,7 @@ public final class WafEditorPlugin extends EMFPlugin {
 	public WafEditorPlugin() {
 		super
 			(new ResourceLocator [] {
+				SecurityEditPlugin.INSTANCE,
 				OrmEditPlugin.INSTANCE,
 				ServiceEditPlugin.INSTANCE,
 				ApiEditPlugin.INSTANCE,

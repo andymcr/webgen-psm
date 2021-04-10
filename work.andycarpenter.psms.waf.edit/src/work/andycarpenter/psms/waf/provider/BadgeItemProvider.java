@@ -23,7 +23,6 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
 import work.andycarpenter.psms.expression.ExpressionFactory;
 import work.andycarpenter.psms.waf.Badge;
 import work.andycarpenter.psms.waf.WafFactory;

@@ -158,14 +158,11 @@ import org.eclipse.emf.edit.ui.view.ExtendedPropertySheetPage;
 import work.andycarpenter.psms.waf.provider.WafItemProviderAdapterFactory;
 
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
-
+import work.andycarpenter.metamodel.security.provider.SecurityItemProviderAdapterFactory;
 import work.andycarpenter.psms.api.provider.ApiItemProviderAdapterFactory;
-
 import work.andycarpenter.psms.base.provider.BaseItemProviderAdapterFactory;
 import work.andycarpenter.psms.expression.provider.ExpressionItemProviderAdapterFactory;
-
 import work.andycarpenter.psms.orm.provider.OrmItemProviderAdapterFactory;
-
 import work.andycarpenter.psms.service.provider.ServiceItemProviderAdapterFactory;
 
 
@@ -710,6 +707,7 @@ public class WafEditor
 
 		adapterFactory.addAdapterFactory(new ResourceItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new WafItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new SecurityItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new OrmItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ServiceItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ApiItemProviderAdapterFactory());

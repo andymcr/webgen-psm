@@ -325,52 +325,6 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.waf.LocalAuthenticationSystem} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected LocalAuthenticationSystemItemProvider localAuthenticationSystemItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link work.andycarpenter.psms.waf.LocalAuthenticationSystem}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createLocalAuthenticationSystemAdapter() {
-		if (localAuthenticationSystemItemProvider == null) {
-			localAuthenticationSystemItemProvider = new LocalAuthenticationSystemItemProvider(this);
-		}
-
-		return localAuthenticationSystemItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.waf.CasAuthentication} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected CasAuthenticationItemProvider casAuthenticationItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link work.andycarpenter.psms.waf.CasAuthentication}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createCasAuthenticationAdapter() {
-		if (casAuthenticationItemProvider == null) {
-			casAuthenticationItemProvider = new CasAuthenticationItemProvider(this);
-		}
-
-		return casAuthenticationItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link work.andycarpenter.psms.waf.ImageManipulation} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1635,8 +1589,6 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 		if (sliderUnitStylesItemProvider != null) sliderUnitStylesItemProvider.dispose();
 		if (staticUnitStylesItemProvider != null) staticUnitStylesItemProvider.dispose();
 		if (tabularUnitStylesItemProvider != null) tabularUnitStylesItemProvider.dispose();
-		if (localAuthenticationSystemItemProvider != null) localAuthenticationSystemItemProvider.dispose();
-		if (casAuthenticationItemProvider != null) casAuthenticationItemProvider.dispose();
 		if (imageManipulationItemProvider != null) imageManipulationItemProvider.dispose();
 		if (backgroundFilterItemProvider != null) backgroundFilterItemProvider.dispose();
 		if (thumbnailFilterItemProvider != null) thumbnailFilterItemProvider.dispose();

@@ -24,6 +24,7 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import work.andycarpenter.metamodel.security.SecurityFactory;
 import work.andycarpenter.psms.waf.WafFactory;
 import work.andycarpenter.psms.waf.WafModel;
 import work.andycarpenter.psms.waf.WafPackage;
@@ -91,7 +92,6 @@ public class WafModelItemProvider
 			addDefaultPageStyleClassPropertyDescriptor(object);
 			addGenModelPropertyDescriptor(object);
 			addUiModelPropertyDescriptor(object);
-			addSecurityModelPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -713,28 +713,6 @@ public class WafModelItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Security Model feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addSecurityModelPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_WafModel_securityModel_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafModel_securityModel_feature", "_UI_WafModel_type"),
-				 WafPackage.eINSTANCE.getWafModel_SecurityModel(),
-				 false,
-				 false,
-				 false,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -747,10 +725,10 @@ public class WafModelItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(WafPackage.eINSTANCE.getWafModel_SiteProperties());
+			childrenFeatures.add(WafPackage.eINSTANCE.getWafModel_Security());
 			childrenFeatures.add(WafPackage.eINSTANCE.getWafModel_ImageManipulations());
 			childrenFeatures.add(WafPackage.eINSTANCE.getWafModel_Navigation());
 			childrenFeatures.add(WafPackage.eINSTANCE.getWafModel_Pages());
-			childrenFeatures.add(WafPackage.eINSTANCE.getWafModel_Authentication());
 			childrenFeatures.add(WafPackage.eINSTANCE.getWafModel_DefaultStyles());
 			childrenFeatures.add(WafPackage.eINSTANCE.getWafModel_DefaultCardsStyles());
 			childrenFeatures.add(WafPackage.eINSTANCE.getWafModel_DefaultDetailsStyles());
@@ -833,10 +811,10 @@ public class WafModelItemProvider
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case WafPackage.WAF_MODEL__SITE_PROPERTIES:
+			case WafPackage.WAF_MODEL__SECURITY:
 			case WafPackage.WAF_MODEL__IMAGE_MANIPULATIONS:
 			case WafPackage.WAF_MODEL__NAVIGATION:
 			case WafPackage.WAF_MODEL__PAGES:
-			case WafPackage.WAF_MODEL__AUTHENTICATION:
 			case WafPackage.WAF_MODEL__DEFAULT_STYLES:
 			case WafPackage.WAF_MODEL__DEFAULT_CARDS_STYLES:
 			case WafPackage.WAF_MODEL__DEFAULT_DETAILS_STYLES:
@@ -869,6 +847,11 @@ public class WafModelItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
+				(WafPackage.eINSTANCE.getWafModel_Security(),
+				 SecurityFactory.eINSTANCE.createSecurity()));
+
+		newChildDescriptors.add
+			(createChildParameter
 				(WafPackage.eINSTANCE.getWafModel_ImageManipulations(),
 				 WafFactory.eINSTANCE.createImageManipulation()));
 
@@ -881,16 +864,6 @@ public class WafModelItemProvider
 			(createChildParameter
 				(WafPackage.eINSTANCE.getWafModel_Pages(),
 				 WafFactory.eINSTANCE.createPage()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.eINSTANCE.getWafModel_Authentication(),
-				 WafFactory.eINSTANCE.createLocalAuthenticationSystem()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.eINSTANCE.getWafModel_Authentication(),
-				 WafFactory.eINSTANCE.createCasAuthentication()));
 
 		newChildDescriptors.add
 			(createChildParameter

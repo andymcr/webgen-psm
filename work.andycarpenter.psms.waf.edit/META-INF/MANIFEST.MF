@@ -11,6 +11,8 @@ Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-11
 Export-Package: work.andycarpenter.psms.waf.provider
 Require-Bundle: org.eclipse.core.runtime,
+ work.andycarpenter.metamodel.security;visibility:=reexport,
+ work.andycarpenter.metamodel.security.edit;visibility:=reexport,
  work.andycarpenter.psms.waf;visibility:=reexport,
  org.eclipse.emf.edit;visibility:=reexport,
  org.eclipse.emf.ecore;visibility:=reexport,

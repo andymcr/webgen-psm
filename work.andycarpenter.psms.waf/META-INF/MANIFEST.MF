@@ -17,9 +17,10 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore.xmi;visibility:=reexport,
  org.eclipse.xtext.xbase.lib;visibility:=reexport,
  org.eclipse.ocl.ecore;visibility:=reexport,
- work.andycarpenter.psms.expression;bundle-version="1.0.0";visibility:=reexport,
- work.andycarpenter.psms.base;bundle-version="1.0.0";visibility:=reexport,
- work.andycarpenter.psms.orm;bundle-version="1.0.0";visibility:=reexport,
- work.andycarpenter.psms.service;bundle-version="1.0.0";visibility:=reexport,
- work.andycarpenter.psms.api;bundle-version="0.1.0";visibility:=reexport
+ work.andycarpenter.psms.expression;visibility:=reexport,
+ work.andycarpenter.psms.base;visibility:=reexport,
+ work.andycarpenter.metamodel.security;visibility:=reexport,
+ work.andycarpenter.psms.orm;visibility:=reexport,
+ work.andycarpenter.psms.service;visibility:=reexport,
+ work.andycarpenter.psms.api;visibility:=reexport
 Bundle-ActivationPolicy: lazy

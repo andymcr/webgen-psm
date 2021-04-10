@@ -15,7 +15,6 @@ import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
 import work.andycarpenter.psms.base.BaseFactory;
 import work.andycarpenter.psms.expression.ExpressionFactory;
 import work.andycarpenter.psms.orm.OrmFactory;
@@ -119,7 +118,6 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 			addFooterClassPropertyDescriptor(object);
 			addGenModelPropertyDescriptor(object);
 			addUiModelPropertyDescriptor(object);
-			addSecurityModelPropertyDescriptor(object);
 			addContainerActionsPlacementPropertyDescriptor(object);
 			addInstanceActionsPlacementPropertyDescriptor(object);
 			addActionsPropertyDescriptor(object);
@@ -137,7 +135,6 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 			addHasOperationActionsPropertyDescriptor(object);
 			addGenModelRefPropertyDescriptor(object);
 			addUiModelRefPropertyDescriptor(object);
-			addSecurityModelRefPropertyDescriptor(object);
 			addCollectionUiAllowAddPropertyDescriptor(object);
 			addCollectionUiAllowRemovePropertyDescriptor(object);
 			addDefaultDisplayValuePropertyDescriptor(object);
@@ -1777,28 +1774,6 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Security Model feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addSecurityModelPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_UnitField_securityModel_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_securityModel_feature", "_UI_UnitField_type"),
-				 WafPackage.eINSTANCE.getUnitField_SecurityModel(),
-				 false,
-				 false,
-				 false,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Container Actions Placement feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2164,28 +2139,6 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 				 getString("_UI_ActionContainer_uiModelRef_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ActionContainer_uiModelRef_feature", "_UI_ActionContainer_type"),
 				 WafPackage.eINSTANCE.getActionContainer_UiModelRef(),
-				 false,
-				 false,
-				 false,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Security Model Ref feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addSecurityModelRefPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ActionContainer_securityModelRef_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ActionContainer_securityModelRef_feature", "_UI_ActionContainer_type"),
-				 WafPackage.eINSTANCE.getActionContainer_SecurityModelRef(),
 				 false,
 				 false,
 				 false,
