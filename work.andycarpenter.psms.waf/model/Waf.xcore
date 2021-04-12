@@ -11,7 +11,7 @@ package work.andycarpenter.metamodel.waf
 
 import work.andycarpenter.metamodel.security.CasAuthentication
 import work.andycarpenter.metamodel.security.LocalAuthenticationSystem
-import work.andycarpenter.metamodel.security.Security
+import work.andycarpenter.metamodel.security.SecurityModel
 import work.andycarpenter.metamodel.security.SecurityUnit
 import work.andycarpenter.metamodel.base.Classifier
 import work.andycarpenter.metamodel.base.DataType
@@ -54,13 +54,13 @@ enum FrameworkTechnologies {
 
 class WafModel {
 	contains SiteProperties siteProperties
-	contains Security security
 	refers OrmModel[1] persistence
+	refers SecurityModel security
 	refers ServiceModel[1] business
+	refers API api
 	contains ImageManipulation[] imageManipulations
 	contains Navigation navigation opposite partOf
 	contains Page[] pages opposite partOf
-	refers API api
 	String defaultSaveLabel
 	String defaultCancelLabel
 	derived readonly unsettable transient volatile boolean hasAPI get {

@@ -52,8 +52,8 @@ public final class WafEditorPlugin extends EMFPlugin {
 	public WafEditorPlugin() {
 		super
 			(new ResourceLocator [] {
-				SecurityEditPlugin.INSTANCE,
 				OrmEditPlugin.INSTANCE,
+				SecurityEditPlugin.INSTANCE,
 				ServiceEditPlugin.INSTANCE,
 				ApiEditPlugin.INSTANCE,
 				BaseEditPlugin.INSTANCE,

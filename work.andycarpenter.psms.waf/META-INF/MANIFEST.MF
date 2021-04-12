@@ -17,10 +17,10 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore.xmi;visibility:=reexport,
  org.eclipse.xtext.xbase.lib;visibility:=reexport,
  org.eclipse.ocl.ecore;visibility:=reexport,
- work.andycarpenter.metamodel.expression;visibility:=reexport,
  work.andycarpenter.metamodel.base;visibility:=reexport,
- work.andycarpenter.metamodel.security;visibility:=reexport,
+ work.andycarpenter.metamodel.expression;visibility:=reexport,
  work.andycarpenter.metamodel.orm;visibility:=reexport,
+ work.andycarpenter.metamodel.security;visibility:=reexport,
  work.andycarpenter.metamodel.service;visibility:=reexport,
  work.andycarpenter.metamodel.api;visibility:=reexport
 Bundle-ActivationPolicy: lazy

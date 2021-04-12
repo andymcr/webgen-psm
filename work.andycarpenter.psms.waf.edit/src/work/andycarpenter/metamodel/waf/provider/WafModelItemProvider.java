@@ -23,9 +23,6 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
-import work.andycarpenter.metamodel.security.SecurityFactory;
-
 import work.andycarpenter.metamodel.waf.WafFactory;
 import work.andycarpenter.metamodel.waf.WafModel;
 import work.andycarpenter.metamodel.waf.WafPackage;
@@ -66,6 +63,7 @@ public class WafModelItemProvider
 			super.getPropertyDescriptors(object);
 
 			addPersistencePropertyDescriptor(object);
+			addSecurityPropertyDescriptor(object);
 			addBusinessPropertyDescriptor(object);
 			addApiPropertyDescriptor(object);
 			addDefaultSaveLabelPropertyDescriptor(object);
@@ -95,6 +93,28 @@ public class WafModelItemProvider
 			addUiModelPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Security feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSecurityPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_WafModel_security_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WafModel_security_feature", "_UI_WafModel_type"),
+				 WafPackage.eINSTANCE.getWafModel_Security(),
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
@@ -726,7 +746,6 @@ public class WafModelItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(WafPackage.eINSTANCE.getWafModel_SiteProperties());
-			childrenFeatures.add(WafPackage.eINSTANCE.getWafModel_Security());
 			childrenFeatures.add(WafPackage.eINSTANCE.getWafModel_ImageManipulations());
 			childrenFeatures.add(WafPackage.eINSTANCE.getWafModel_Navigation());
 			childrenFeatures.add(WafPackage.eINSTANCE.getWafModel_Pages());
@@ -812,7 +831,6 @@ public class WafModelItemProvider
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case WafPackage.WAF_MODEL__SITE_PROPERTIES:
-			case WafPackage.WAF_MODEL__SECURITY:
 			case WafPackage.WAF_MODEL__IMAGE_MANIPULATIONS:
 			case WafPackage.WAF_MODEL__NAVIGATION:
 			case WafPackage.WAF_MODEL__PAGES:
@@ -845,11 +863,6 @@ public class WafModelItemProvider
 			(createChildParameter
 				(WafPackage.eINSTANCE.getWafModel_SiteProperties(),
 				 WafFactory.eINSTANCE.createSiteProperties()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.eINSTANCE.getWafModel_Security(),
-				 SecurityFactory.eINSTANCE.createSecurity()));
 
 		newChildDescriptors.add
 			(createChildParameter

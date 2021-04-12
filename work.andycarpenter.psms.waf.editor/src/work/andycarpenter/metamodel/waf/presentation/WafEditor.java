@@ -713,8 +713,8 @@ public class WafEditor
 
 		adapterFactory.addAdapterFactory(new ResourceItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new WafItemProviderAdapterFactory());
-		adapterFactory.addAdapterFactory(new SecurityItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new OrmItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new SecurityItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ServiceItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ApiItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new BaseItemProviderAdapterFactory());
