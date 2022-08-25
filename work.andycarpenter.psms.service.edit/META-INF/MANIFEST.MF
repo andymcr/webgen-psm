@@ -8,12 +8,12 @@ Bundle-ClassPath: .
 Bundle-Activator: work.andycarpenter.metamodel.service.provider.ServiceEditPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: JavaSE-11
+Bundle-RequiredExecutionEnvironment: JavaSE-14
 Export-Package: work.andycarpenter.metamodel.service.provider
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.edit;visibility:=reexport,
  org.eclipse.emf.ecore;visibility:=reexport,
- work.andycarpenter.metamodel.expression;bundle-version="1.0.0";visibility:=reexport,
+ work.andycarpenter.metamodel.expression;visibility:=reexport,
  work.andycarpenter.metamodel.expression.edit;visibility:=reexport,
  work.andycarpenter.metamodel.base;visibility:=reexport,
  work.andycarpenter.metamodel.base.edit;visibility:=reexport,
