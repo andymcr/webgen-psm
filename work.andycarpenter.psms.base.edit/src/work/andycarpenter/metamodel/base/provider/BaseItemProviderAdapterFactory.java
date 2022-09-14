@@ -43,7 +43,6 @@ import work.andycarpenter.metamodel.expression.PredicateEqualityOperator;
 import work.andycarpenter.metamodel.expression.PredicateInOperator;
 import work.andycarpenter.metamodel.expression.PredicateIsEmpty;
 import work.andycarpenter.metamodel.expression.PredicateIsNull;
-import work.andycarpenter.metamodel.expression.PredicateIsOperator;
 import work.andycarpenter.metamodel.expression.PredicateLikeOperator;
 
 import work.andycarpenter.metamodel.expression.util.ExpressionSwitch;
@@ -94,6 +93,29 @@ public class BaseItemProviderAdapterFactory extends BaseAdapterFactory implement
 		supportedTypes.add(ITreeItemContentProvider.class);
 		supportedTypes.add(IItemLabelProvider.class);
 		supportedTypes.add(IItemPropertySource.class);
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.base.BaseModel} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected BaseModelItemProvider baseModelItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link work.andycarpenter.metamodel.base.BaseModel}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createBaseModelAdapter() {
+		if (baseModelItemProvider == null) {
+			baseModelItemProvider = new BaseModelItemProvider(this);
+		}
+
+		return baseModelItemProvider;
 	}
 
 	/**
@@ -517,6 +539,7 @@ public class BaseItemProviderAdapterFactory extends BaseAdapterFactory implement
 	 * @generated
 	 */
 	public void dispose() {
+		if (baseModelItemProvider != null) baseModelItemProvider.dispose();
 		if (nullLiteralItemProvider != null) nullLiteralItemProvider.dispose();
 		if (booleanLiteralItemProvider != null) booleanLiteralItemProvider.dispose();
 		if (integerLiteralItemProvider != null) integerLiteralItemProvider.dispose();
@@ -964,132 +987,7 @@ public class BaseItemProviderAdapterFactory extends BaseAdapterFactory implement
 			 * @generated
 			 */
 			@Override
-			public Object casePredicateIsOperator(PredicateIsOperator object) {
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.PREDICATE_IS_OPERATOR__LEFT,
-						 BaseFactory.eINSTANCE.createNullLiteral()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.PREDICATE_IS_OPERATOR__LEFT,
-						 BaseFactory.eINSTANCE.createBooleanLiteral()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.PREDICATE_IS_OPERATOR__LEFT,
-						 BaseFactory.eINSTANCE.createIntegerLiteral()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.PREDICATE_IS_OPERATOR__LEFT,
-						 BaseFactory.eINSTANCE.createStringLiteral()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.PREDICATE_IS_OPERATOR__LEFT,
-						 BaseFactory.eINSTANCE.createTimeLiteral()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.PREDICATE_IS_OPERATOR__LEFT,
-						 BaseFactory.eINSTANCE.createCurrentTime()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.PREDICATE_IS_OPERATOR__LEFT,
-						 BaseFactory.eINSTANCE.createCurrentUser()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.PREDICATE_IS_OPERATOR__LEFT,
-						 BaseFactory.eINSTANCE.createConstantReference()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.PREDICATE_IS_OPERATOR__LEFT,
-						 BaseFactory.eINSTANCE.createParameterReference()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.PREDICATE_IS_OPERATOR__RIGHT,
-						 BaseFactory.eINSTANCE.createNullLiteral()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.PREDICATE_IS_OPERATOR__RIGHT,
-						 BaseFactory.eINSTANCE.createBooleanLiteral()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.PREDICATE_IS_OPERATOR__RIGHT,
-						 BaseFactory.eINSTANCE.createIntegerLiteral()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.PREDICATE_IS_OPERATOR__RIGHT,
-						 BaseFactory.eINSTANCE.createStringLiteral()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.PREDICATE_IS_OPERATOR__RIGHT,
-						 BaseFactory.eINSTANCE.createTimeLiteral()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.PREDICATE_IS_OPERATOR__RIGHT,
-						 BaseFactory.eINSTANCE.createCurrentTime()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.PREDICATE_IS_OPERATOR__RIGHT,
-						 BaseFactory.eINSTANCE.createCurrentUser()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.PREDICATE_IS_OPERATOR__RIGHT,
-						 BaseFactory.eINSTANCE.createConstantReference()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.PREDICATE_IS_OPERATOR__RIGHT,
-						 BaseFactory.eINSTANCE.createParameterReference()));
-
-				return null;
-			}
- 
-			/**
-			 * <!-- begin-user-doc -->
-			 * <!-- end-user-doc -->
-			 * @generated
-			 */
-			@Override
 			public Object casePredicateLikeOperator(PredicateLikeOperator object) {
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.PREDICATE_LIKE_OPERATOR__LEFT,
-						 BaseFactory.eINSTANCE.createNullLiteral()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.PREDICATE_LIKE_OPERATOR__LEFT,
-						 BaseFactory.eINSTANCE.createBooleanLiteral()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.PREDICATE_LIKE_OPERATOR__LEFT,
-						 BaseFactory.eINSTANCE.createIntegerLiteral()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.PREDICATE_LIKE_OPERATOR__LEFT,
-						 BaseFactory.eINSTANCE.createStringLiteral()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.PREDICATE_LIKE_OPERATOR__LEFT,
-						 BaseFactory.eINSTANCE.createTimeLiteral()));
-
 				newChildDescriptors.add
 					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_LIKE_OPERATOR__LEFT,

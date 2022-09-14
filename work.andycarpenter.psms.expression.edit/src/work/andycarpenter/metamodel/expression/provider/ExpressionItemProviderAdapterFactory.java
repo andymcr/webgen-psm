@@ -227,29 +227,6 @@ public class ExpressionItemProviderAdapterFactory extends ExpressionAdapterFacto
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.expression.PredicateIsOperator} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected PredicateIsOperatorItemProvider predicateIsOperatorItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link work.andycarpenter.metamodel.expression.PredicateIsOperator}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createPredicateIsOperatorAdapter() {
-		if (predicateIsOperatorItemProvider == null) {
-			predicateIsOperatorItemProvider = new PredicateIsOperatorItemProvider(this);
-		}
-
-		return predicateIsOperatorItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.expression.PredicateLikeOperator} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -450,7 +427,6 @@ public class ExpressionItemProviderAdapterFactory extends ExpressionAdapterFacto
 		if (predicateEqualityOperatorItemProvider != null) predicateEqualityOperatorItemProvider.dispose();
 		if (predicateComparisonOperatorItemProvider != null) predicateComparisonOperatorItemProvider.dispose();
 		if (predicateInOperatorItemProvider != null) predicateInOperatorItemProvider.dispose();
-		if (predicateIsOperatorItemProvider != null) predicateIsOperatorItemProvider.dispose();
 		if (predicateLikeOperatorItemProvider != null) predicateLikeOperatorItemProvider.dispose();
 		if (predicateIsEmptyItemProvider != null) predicateIsEmptyItemProvider.dispose();
 		if (predicateIsNullItemProvider != null) predicateIsNullItemProvider.dispose();

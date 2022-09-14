@@ -240,11 +240,6 @@ public class ConstantItemProvider extends NamedElementItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(BasePackage.Literals.CONSTANT__VALUE,
-				 ExpressionFactory.eINSTANCE.createPredicateIsOperator()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(BasePackage.Literals.CONSTANT__VALUE,
 				 ExpressionFactory.eINSTANCE.createPredicateLikeOperator()));
 
 		newChildDescriptors.add

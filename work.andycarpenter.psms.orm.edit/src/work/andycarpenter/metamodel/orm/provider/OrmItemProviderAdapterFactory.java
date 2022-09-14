@@ -44,7 +44,6 @@ import work.andycarpenter.metamodel.expression.PredicateEqualityOperator;
 import work.andycarpenter.metamodel.expression.PredicateInOperator;
 import work.andycarpenter.metamodel.expression.PredicateIsEmpty;
 import work.andycarpenter.metamodel.expression.PredicateIsNull;
-import work.andycarpenter.metamodel.expression.PredicateIsOperator;
 import work.andycarpenter.metamodel.expression.PredicateLikeOperator;
 
 import work.andycarpenter.metamodel.expression.util.ExpressionSwitch;
@@ -972,26 +971,6 @@ public class OrmItemProviderAdapterFactory extends OrmAdapterFactory implements 
 				newChildDescriptors.add
 					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_IN_OPERATOR__RIGHT,
-						 OrmFactory.eINSTANCE.createFeatureReference()));
-
-				return null;
-			}
- 
-			/**
-			 * <!-- begin-user-doc -->
-			 * <!-- end-user-doc -->
-			 * @generated
-			 */
-			@Override
-			public Object casePredicateIsOperator(PredicateIsOperator object) {
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.PREDICATE_IS_OPERATOR__LEFT,
-						 OrmFactory.eINSTANCE.createFeatureReference()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.PREDICATE_IS_OPERATOR__RIGHT,
 						 OrmFactory.eINSTANCE.createFeatureReference()));
 
 				return null;

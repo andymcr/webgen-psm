@@ -230,11 +230,6 @@ public class FilterItemProvider extends NamedDisplayElementItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(OrmPackage.Literals.FILTER__CONDITION,
-				 ExpressionFactory.eINSTANCE.createPredicateIsOperator()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OrmPackage.Literals.FILTER__CONDITION,
 				 ExpressionFactory.eINSTANCE.createPredicateLikeOperator()));
 
 		newChildDescriptors.add
