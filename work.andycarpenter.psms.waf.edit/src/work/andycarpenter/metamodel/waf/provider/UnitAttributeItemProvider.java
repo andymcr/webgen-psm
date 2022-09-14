@@ -98,7 +98,7 @@ public class UnitAttributeItemProvider extends UnitFeatureItemProvider {
 				 getString("_UI_UnitAttribute_name_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_UnitAttribute_name_feature", "_UI_UnitAttribute_type"),
 				 WafPackage.eINSTANCE.getUnitAttribute_Name(),
-				 false,
+				 true,
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
@@ -335,11 +335,6 @@ public class UnitAttributeItemProvider extends UnitFeatureItemProvider {
 			(createChildParameter
 				(WafPackage.eINSTANCE.getUnitAttribute_AttributeDefaultValue(),
 				 ExpressionFactory.eINSTANCE.createPredicateInOperator()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.eINSTANCE.getUnitAttribute_AttributeDefaultValue(),
-				 ExpressionFactory.eINSTANCE.createPredicateIsOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter

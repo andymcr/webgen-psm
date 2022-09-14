@@ -2,6 +2,11 @@
 	nsURI="http://andycarpenter.work/metamodel/service",
 	nsPrefix="service"
 )
+@Ecore(
+	validationDelegates="http://www.eclipse.org/emf/2002/Ecore/OCL",
+	settingDelegates="http://www.eclipse.org/emf/2002/Ecore/OCL",
+	invocationDelegates="http://www.eclipse.org/emf/2002/Ecore/OCL"
+)
 @GenModel(
 	editDirectory="/work.andycarpenter.metamodel.service.edit/src",
 	editPluginID="work.andycarpenter.metamodel.service.edit",
@@ -14,6 +19,8 @@ import work.andycarpenter.metamodel.base.NamedElement
 import work.andycarpenter.metamodel.orm.OrmModel
 import work.andycarpenter.metamodel.orm.Repository
 
+annotation "http://www.eclipse.org/emf/2002/Ecore/OCL" as OCL
+
 
 class ServiceModel {
 	refers OrmModel[1] persistence
@@ -25,12 +32,10 @@ class Service extends NamedElement, ConstantContainer {
 	contains BusinessOperation[] operations opposite partOf
 	refers Repository[] requires
 	refers Service[] uses
-	refers derived readonly unsettable transient volatile BusinessOperation[] fileOperations get {
-		operations.filter[it.resultType.literal == "File"].toEList()
-	}
-	derived readonly transient unsettable volatile boolean hasFileOperations get {
-		!fileOperations.isEmpty()
-	}
+	@OCL(derivation="operations->select(o | o.resultType = OperationResultTypes::File)")
+	refers derived readonly unsettable transient volatile BusinessOperation[] fileOperations
+	@OCL(derivation="fileOperations->notEmpty()")
+	derived readonly transient unsettable volatile boolean hasFileOperations
 }
 
 class BusinessOperation extends NamedElement, FormalParameterList {

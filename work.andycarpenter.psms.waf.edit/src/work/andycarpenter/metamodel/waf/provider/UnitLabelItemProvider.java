@@ -8,16 +8,12 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
 import work.andycarpenter.metamodel.expression.ExpressionFactory;
-
 import work.andycarpenter.metamodel.waf.UnitLabel;
 import work.andycarpenter.metamodel.waf.WafPackage;
 
@@ -1655,7 +1651,7 @@ public class UnitLabelItemProvider extends DisplayElementItemProvider {
 				 getString("_UI_UnitLabel_name_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_UnitLabel_name_feature", "_UI_UnitLabel_type"),
 				 WafPackage.eINSTANCE.getUnitLabel_Name(),
-				 false,
+				 true,
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
@@ -1837,11 +1833,6 @@ public class UnitLabelItemProvider extends DisplayElementItemProvider {
 			(createChildParameter
 				(WafPackage.eINSTANCE.getUnitField_HideWhen(),
 				 ExpressionFactory.eINSTANCE.createPredicateInOperator()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.eINSTANCE.getUnitField_HideWhen(),
-				 ExpressionFactory.eINSTANCE.createPredicateIsOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter

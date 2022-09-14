@@ -87,7 +87,7 @@ public class FeaturePathLabelItemProvider extends FeaturePathItemProvider {
 				 getString("_UI_FeaturePathLabel_name_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_FeaturePathLabel_name_feature", "_UI_FeaturePathLabel_type"),
 				 WafPackage.eINSTANCE.getFeaturePathLabel_Name(),
-				 false,
+				 true,
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,

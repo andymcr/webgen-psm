@@ -80,6 +80,12 @@ public class CollectionUnitItemProvider extends DynamicUnitItemProvider {
 			addPaginationClassPropertyDescriptor(object);
 			addPaginationElementClassPropertyDescriptor(object);
 			addPaginationAnchorClassPropertyDescriptor(object);
+			addLocalInstanceControlClassPropertyDescriptor(object);
+			addLocalInstanceAnchorClassPropertyDescriptor(object);
+			addCommonInstanceControlClassPropertyDescriptor(object);
+			addHasCommonInstanceControlClassPropertyDescriptor(object);
+			addCommonInstanceAnchorClassPropertyDescriptor(object);
+			addHasCommonInstanceAnchorClassPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -789,6 +795,138 @@ public class CollectionUnitItemProvider extends DynamicUnitItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Local Instance Control Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addLocalInstanceControlClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_CollectionUnit_localInstanceControlClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_localInstanceControlClass_feature", "_UI_CollectionUnit_type"),
+				 WafPackage.eINSTANCE.getCollectionUnit_LocalInstanceControlClass(),
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Local Instance Anchor Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addLocalInstanceAnchorClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_CollectionUnit_localInstanceAnchorClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_localInstanceAnchorClass_feature", "_UI_CollectionUnit_type"),
+				 WafPackage.eINSTANCE.getCollectionUnit_LocalInstanceAnchorClass(),
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Common Instance Control Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCommonInstanceControlClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_CollectionUnit_commonInstanceControlClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_commonInstanceControlClass_feature", "_UI_CollectionUnit_type"),
+				 WafPackage.eINSTANCE.getCollectionUnit_CommonInstanceControlClass(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Has Common Instance Control Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasCommonInstanceControlClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_CollectionUnit_hasCommonInstanceControlClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_hasCommonInstanceControlClass_feature", "_UI_CollectionUnit_type"),
+				 WafPackage.eINSTANCE.getCollectionUnit_HasCommonInstanceControlClass(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Common Instance Anchor Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCommonInstanceAnchorClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_CollectionUnit_commonInstanceAnchorClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_commonInstanceAnchorClass_feature", "_UI_CollectionUnit_type"),
+				 WafPackage.eINSTANCE.getCollectionUnit_CommonInstanceAnchorClass(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Has Common Instance Anchor Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasCommonInstanceAnchorClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_CollectionUnit_hasCommonInstanceAnchorClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_hasCommonInstanceAnchorClass_feature", "_UI_CollectionUnit_type"),
+				 WafPackage.eINSTANCE.getCollectionUnit_HasCommonInstanceAnchorClass(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -880,6 +1018,12 @@ public class CollectionUnitItemProvider extends DynamicUnitItemProvider {
 			case WafPackage.COLLECTION_UNIT__PAGINATION_CLASS:
 			case WafPackage.COLLECTION_UNIT__PAGINATION_ELEMENT_CLASS:
 			case WafPackage.COLLECTION_UNIT__PAGINATION_ANCHOR_CLASS:
+			case WafPackage.COLLECTION_UNIT__LOCAL_INSTANCE_CONTROL_CLASS:
+			case WafPackage.COLLECTION_UNIT__LOCAL_INSTANCE_ANCHOR_CLASS:
+			case WafPackage.COLLECTION_UNIT__COMMON_INSTANCE_CONTROL_CLASS:
+			case WafPackage.COLLECTION_UNIT__HAS_COMMON_INSTANCE_CONTROL_CLASS:
+			case WafPackage.COLLECTION_UNIT__COMMON_INSTANCE_ANCHOR_CLASS:
+			case WafPackage.COLLECTION_UNIT__HAS_COMMON_INSTANCE_ANCHOR_CLASS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case WafPackage.COLLECTION_UNIT__ELEMENT_TITLE:

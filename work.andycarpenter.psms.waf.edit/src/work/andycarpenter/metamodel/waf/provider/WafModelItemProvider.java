@@ -88,7 +88,7 @@ public class WafModelItemProvider
 			addIsLocallyAuthenticatedPropertyDescriptor(object);
 			addLocalAuthenticationPropertyDescriptor(object);
 			addUseFormFloatingLabelsPropertyDescriptor(object);
-			addDefaultPageStyleClassPropertyDescriptor(object);
+			addDefaultPageClassPropertyDescriptor(object);
 			addGenModelPropertyDescriptor(object);
 			addUiModelPropertyDescriptor(object);
 		}
@@ -668,19 +668,19 @@ public class WafModelItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Default Page Style Class feature.
+	 * This adds a property descriptor for the Default Page Class feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addDefaultPageStyleClassPropertyDescriptor(Object object) {
+	protected void addDefaultPageClassPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_WafModel_defaultPageStyleClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafModel_defaultPageStyleClass_feature", "_UI_WafModel_type"),
-				 WafPackage.eINSTANCE.getWafModel_DefaultPageStyleClass(),
+				 getString("_UI_WafModel_defaultPageClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WafModel_defaultPageClass_feature", "_UI_WafModel_type"),
+				 WafPackage.eINSTANCE.getWafModel_DefaultPageClass(),
 				 true,
 				 false,
 				 false,
@@ -749,8 +749,9 @@ public class WafModelItemProvider
 			childrenFeatures.add(WafPackage.eINSTANCE.getWafModel_ImageManipulations());
 			childrenFeatures.add(WafPackage.eINSTANCE.getWafModel_Navigation());
 			childrenFeatures.add(WafPackage.eINSTANCE.getWafModel_Pages());
-			childrenFeatures.add(WafPackage.eINSTANCE.getWafModel_DefaultStyles());
+			childrenFeatures.add(WafPackage.eINSTANCE.getWafModel_DefaultUnitStyles());
 			childrenFeatures.add(WafPackage.eINSTANCE.getWafModel_DefaultCardsStyles());
+			childrenFeatures.add(WafPackage.eINSTANCE.getWafModel_DefaultControlStyles());
 			childrenFeatures.add(WafPackage.eINSTANCE.getWafModel_DefaultDetailsStyles());
 			childrenFeatures.add(WafPackage.eINSTANCE.getWafModel_DefaultFormStyles());
 			childrenFeatures.add(WafPackage.eINSTANCE.getWafModel_DefaultGalleryStyles());
@@ -827,15 +828,16 @@ public class WafModelItemProvider
 			case WafPackage.WAF_MODEL__IS_CAS_AUTHENTICATED:
 			case WafPackage.WAF_MODEL__IS_LOCALLY_AUTHENTICATED:
 			case WafPackage.WAF_MODEL__USE_FORM_FLOATING_LABELS:
-			case WafPackage.WAF_MODEL__DEFAULT_PAGE_STYLE_CLASS:
+			case WafPackage.WAF_MODEL__DEFAULT_PAGE_CLASS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case WafPackage.WAF_MODEL__SITE_PROPERTIES:
 			case WafPackage.WAF_MODEL__IMAGE_MANIPULATIONS:
 			case WafPackage.WAF_MODEL__NAVIGATION:
 			case WafPackage.WAF_MODEL__PAGES:
-			case WafPackage.WAF_MODEL__DEFAULT_STYLES:
+			case WafPackage.WAF_MODEL__DEFAULT_UNIT_STYLES:
 			case WafPackage.WAF_MODEL__DEFAULT_CARDS_STYLES:
+			case WafPackage.WAF_MODEL__DEFAULT_CONTROL_STYLES:
 			case WafPackage.WAF_MODEL__DEFAULT_DETAILS_STYLES:
 			case WafPackage.WAF_MODEL__DEFAULT_FORM_STYLES:
 			case WafPackage.WAF_MODEL__DEFAULT_GALLERY_STYLES:
@@ -881,13 +883,18 @@ public class WafModelItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.eINSTANCE.getWafModel_DefaultStyles(),
+				(WafPackage.eINSTANCE.getWafModel_DefaultUnitStyles(),
 				 WafFactory.eINSTANCE.createDefaultUnitStyles()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.eINSTANCE.getWafModel_DefaultCardsStyles(),
 				 WafFactory.eINSTANCE.createCardsUnitStyles()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.eINSTANCE.getWafModel_DefaultControlStyles(),
+				 WafFactory.eINSTANCE.createControlUnitStyles()));
 
 		newChildDescriptors.add
 			(createChildParameter

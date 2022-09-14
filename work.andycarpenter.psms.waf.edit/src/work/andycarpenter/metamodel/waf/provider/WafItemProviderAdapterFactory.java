@@ -5,19 +5,13 @@ package work.andycarpenter.metamodel.waf.provider;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
-
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.emf.edit.command.CommandParameter;
-
 import org.eclipse.emf.edit.domain.EditingDomain;
-
 import org.eclipse.emf.edit.provider.ChangeNotifier;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
@@ -30,12 +24,9 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.INotifyChangedListener;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-
 import work.andycarpenter.metamodel.base.BasePackage;
 import work.andycarpenter.metamodel.base.Constant;
-
 import work.andycarpenter.metamodel.base.util.BaseSwitch;
-
 import work.andycarpenter.metamodel.expression.ExpressionPackage;
 import work.andycarpenter.metamodel.expression.FunctionCall;
 import work.andycarpenter.metamodel.expression.PredicateBooleanVariable;
@@ -44,20 +35,14 @@ import work.andycarpenter.metamodel.expression.PredicateEqualityOperator;
 import work.andycarpenter.metamodel.expression.PredicateInOperator;
 import work.andycarpenter.metamodel.expression.PredicateIsEmpty;
 import work.andycarpenter.metamodel.expression.PredicateIsNull;
-import work.andycarpenter.metamodel.expression.PredicateIsOperator;
 import work.andycarpenter.metamodel.expression.PredicateLikeOperator;
-
 import work.andycarpenter.metamodel.expression.util.ExpressionSwitch;
-
 import work.andycarpenter.metamodel.orm.AssociationReference;
 import work.andycarpenter.metamodel.orm.Attribute;
 import work.andycarpenter.metamodel.orm.Order;
 import work.andycarpenter.metamodel.orm.OrmPackage;
-
 import work.andycarpenter.metamodel.orm.util.OrmSwitch;
-
 import work.andycarpenter.metamodel.waf.WafFactory;
-
 import work.andycarpenter.metamodel.waf.util.WafAdapterFactory;
 
 /**
@@ -336,6 +321,29 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 		}
 
 		return cardsUnitStylesItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.waf.ControlUnitStyles} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ControlUnitStylesItemProvider controlUnitStylesItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link work.andycarpenter.metamodel.waf.ControlUnitStyles}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createControlUnitStylesAdapter() {
+		if (controlUnitStylesItemProvider == null) {
+			controlUnitStylesItemProvider = new ControlUnitStylesItemProvider(this);
+		}
+
+		return controlUnitStylesItemProvider;
 	}
 
 	/**
@@ -1597,6 +1605,7 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 		if (collectionUnitStylesItemProvider != null) collectionUnitStylesItemProvider.dispose();
 		if (defaultUnitStylesItemProvider != null) defaultUnitStylesItemProvider.dispose();
 		if (cardsUnitStylesItemProvider != null) cardsUnitStylesItemProvider.dispose();
+		if (controlUnitStylesItemProvider != null) controlUnitStylesItemProvider.dispose();
 		if (detailsUnitStylesItemProvider != null) detailsUnitStylesItemProvider.dispose();
 		if (formUnitStylesItemProvider != null) formUnitStylesItemProvider.dispose();
 		if (galleryUnitStylesItemProvider != null) galleryUnitStylesItemProvider.dispose();
@@ -2093,46 +2102,6 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 				newChildDescriptors.add
 					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_IN_OPERATOR__RIGHT,
-						 WafFactory.eINSTANCE.createFeaturePathLabel()));
-
-				return null;
-			}
- 
-			/**
-			 * <!-- begin-user-doc -->
-			 * <!-- end-user-doc -->
-			 * @generated
-			 */
-			@Override
-			public Object casePredicateIsOperator(PredicateIsOperator object) {
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.PREDICATE_IS_OPERATOR__LEFT,
-						 WafFactory.eINSTANCE.createFeaturePathAttribute()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.PREDICATE_IS_OPERATOR__LEFT,
-						 WafFactory.eINSTANCE.createFeaturePathAssociation()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.PREDICATE_IS_OPERATOR__LEFT,
-						 WafFactory.eINSTANCE.createFeaturePathLabel()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.PREDICATE_IS_OPERATOR__RIGHT,
-						 WafFactory.eINSTANCE.createFeaturePathAttribute()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.PREDICATE_IS_OPERATOR__RIGHT,
-						 WafFactory.eINSTANCE.createFeaturePathAssociation()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.PREDICATE_IS_OPERATOR__RIGHT,
 						 WafFactory.eINSTANCE.createFeaturePathLabel()));
 
 				return null;

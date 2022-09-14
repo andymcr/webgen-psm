@@ -2,6 +2,11 @@
 	nsURI="http://andycarpenter.work/metamodel/expression",
 	nsPrefix="expression"
 )
+@Ecore(
+	validationDelegates="http://www.eclipse.org/emf/2002/Ecore/OCL",
+	settingDelegates="http://www.eclipse.org/emf/2002/Ecore/OCL",
+	invocationDelegates="http://www.eclipse.org/emf/2002/Ecore/OCL"
+)
 @GenModel(
 	editDirectory="/work.andycarpenter.metamodel.expression.edit/src",
 	editPluginID="work.andycarpenter.metamodel.expression.edit",
@@ -19,14 +24,14 @@ enum ComparisionOperator {
 	LessThan = 1
 }
 
-interface Expression {
+abstract class Expression {
 	String[] suffixes
 }
 
-interface Literal extends Expression {
+abstract class Literal extends Expression {
 }
 
-interface Variable extends Expression {
+abstract class Variable extends Expression {
 }
 
 class FunctionCall extends Expression {
@@ -44,7 +49,7 @@ class PredicateBooleanVariable extends Predicate {
 }
 
 class PredicateBooleanOperator extends Predicate {
-	contains Predicate[+] expressions
+	contains Predicate[+] predicates
 	BooleanOperator[1] operator = "And"
 }
 
@@ -64,13 +69,8 @@ class PredicateInOperator extends Predicate {
 	contains Expression[1] right
 }
 
-class PredicateIsOperator extends Predicate {
-	contains Expression[1] left
-	contains Expression[1] right
-}
-
 class PredicateLikeOperator extends Predicate {
-	contains Expression[1] left
+	contains Variable[1] left
 	contains Expression[1] right
 }
 

@@ -48,14 +48,24 @@ public class DetailsUnitItemProvider extends SingletonUnitItemProvider {
 			addSelectorsPropertyDescriptor(object);
 			addSelectionPropertyDescriptor(object);
 			addOmitFieldLabelsPropertyDescriptor(object);
+			addSectionClassPropertyDescriptor(object);
+			addHasSectionClassPropertyDescriptor(object);
+			addCaptionClassPropertyDescriptor(object);
+			addHasCaptionClassPropertyDescriptor(object);
 			addContentClassPropertyDescriptor(object);
 			addHasContentClassPropertyDescriptor(object);
-			addDetailsFieldListClassPropertyDescriptor(object);
-			addDetailsDefinitionFieldListClassPropertyDescriptor(object);
-			addDetailsFieldLabelClassPropertyDescriptor(object);
-			addDetailsFieldValueClassPropertyDescriptor(object);
-			addDetailsControlClassPropertyDescriptor(object);
-			addDetailsAnchorClassPropertyDescriptor(object);
+			addFieldListClassPropertyDescriptor(object);
+			addHasFieldListClassPropertyDescriptor(object);
+			addDefinitionFieldListClassPropertyDescriptor(object);
+			addHasDefinitionFieldListClassPropertyDescriptor(object);
+			addFieldLabelClassPropertyDescriptor(object);
+			addHasFieldLabelClassPropertyDescriptor(object);
+			addFieldValueClassPropertyDescriptor(object);
+			addHasFieldValueClassPropertyDescriptor(object);
+			addControlClassPropertyDescriptor(object);
+			addHasControlClassPropertyDescriptor(object);
+			addAnchorClassPropertyDescriptor(object);
+			addHasAnchorClassPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -127,6 +137,94 @@ public class DetailsUnitItemProvider extends SingletonUnitItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Section Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSectionClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DetailsUnit_sectionClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DetailsUnit_sectionClass_feature", "_UI_DetailsUnit_type"),
+				 WafPackage.eINSTANCE.getDetailsUnit_SectionClass(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Has Section Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasSectionClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DetailsUnit_hasSectionClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DetailsUnit_hasSectionClass_feature", "_UI_DetailsUnit_type"),
+				 WafPackage.eINSTANCE.getDetailsUnit_HasSectionClass(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Caption Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCaptionClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DetailsUnit_captionClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DetailsUnit_captionClass_feature", "_UI_DetailsUnit_type"),
+				 WafPackage.eINSTANCE.getDetailsUnit_CaptionClass(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Has Caption Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasCaptionClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DetailsUnit_hasCaptionClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DetailsUnit_hasCaptionClass_feature", "_UI_DetailsUnit_type"),
+				 WafPackage.eINSTANCE.getDetailsUnit_HasCaptionClass(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Content Class feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -171,19 +269,19 @@ public class DetailsUnitItemProvider extends SingletonUnitItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Details Field List Class feature.
+	 * This adds a property descriptor for the Field List Class feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addDetailsFieldListClassPropertyDescriptor(Object object) {
+	protected void addFieldListClassPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_DetailsUnit_DetailsFieldListClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DetailsUnit_DetailsFieldListClass_feature", "_UI_DetailsUnit_type"),
-				 WafPackage.eINSTANCE.getDetailsUnit_DetailsFieldListClass(),
+				 getString("_UI_DetailsUnit_fieldListClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DetailsUnit_fieldListClass_feature", "_UI_DetailsUnit_type"),
+				 WafPackage.eINSTANCE.getDetailsUnit_FieldListClass(),
 				 false,
 				 false,
 				 false,
@@ -193,19 +291,41 @@ public class DetailsUnitItemProvider extends SingletonUnitItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Details Definition Field List Class feature.
+	 * This adds a property descriptor for the Has Field List Class feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addDetailsDefinitionFieldListClassPropertyDescriptor(Object object) {
+	protected void addHasFieldListClassPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_DetailsUnit_DetailsDefinitionFieldListClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DetailsUnit_DetailsDefinitionFieldListClass_feature", "_UI_DetailsUnit_type"),
-				 WafPackage.eINSTANCE.getDetailsUnit_DetailsDefinitionFieldListClass(),
+				 getString("_UI_DetailsUnit_hasFieldListClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DetailsUnit_hasFieldListClass_feature", "_UI_DetailsUnit_type"),
+				 WafPackage.eINSTANCE.getDetailsUnit_HasFieldListClass(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Definition Field List Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDefinitionFieldListClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DetailsUnit_definitionFieldListClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DetailsUnit_definitionFieldListClass_feature", "_UI_DetailsUnit_type"),
+				 WafPackage.eINSTANCE.getDetailsUnit_DefinitionFieldListClass(),
 				 false,
 				 false,
 				 false,
@@ -215,19 +335,41 @@ public class DetailsUnitItemProvider extends SingletonUnitItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Details Field Label Class feature.
+	 * This adds a property descriptor for the Has Definition Field List Class feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addDetailsFieldLabelClassPropertyDescriptor(Object object) {
+	protected void addHasDefinitionFieldListClassPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_DetailsUnit_detailsFieldLabelClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DetailsUnit_detailsFieldLabelClass_feature", "_UI_DetailsUnit_type"),
-				 WafPackage.eINSTANCE.getDetailsUnit_DetailsFieldLabelClass(),
+				 getString("_UI_DetailsUnit_hasDefinitionFieldListClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DetailsUnit_hasDefinitionFieldListClass_feature", "_UI_DetailsUnit_type"),
+				 WafPackage.eINSTANCE.getDetailsUnit_HasDefinitionFieldListClass(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Field Label Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addFieldLabelClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DetailsUnit_fieldLabelClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DetailsUnit_fieldLabelClass_feature", "_UI_DetailsUnit_type"),
+				 WafPackage.eINSTANCE.getDetailsUnit_FieldLabelClass(),
 				 false,
 				 false,
 				 false,
@@ -237,19 +379,41 @@ public class DetailsUnitItemProvider extends SingletonUnitItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Details Field Value Class feature.
+	 * This adds a property descriptor for the Has Field Label Class feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addDetailsFieldValueClassPropertyDescriptor(Object object) {
+	protected void addHasFieldLabelClassPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_DetailsUnit_detailsFieldValueClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DetailsUnit_detailsFieldValueClass_feature", "_UI_DetailsUnit_type"),
-				 WafPackage.eINSTANCE.getDetailsUnit_DetailsFieldValueClass(),
+				 getString("_UI_DetailsUnit_hasFieldLabelClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DetailsUnit_hasFieldLabelClass_feature", "_UI_DetailsUnit_type"),
+				 WafPackage.eINSTANCE.getDetailsUnit_HasFieldLabelClass(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Field Value Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addFieldValueClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DetailsUnit_fieldValueClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DetailsUnit_fieldValueClass_feature", "_UI_DetailsUnit_type"),
+				 WafPackage.eINSTANCE.getDetailsUnit_FieldValueClass(),
 				 false,
 				 false,
 				 false,
@@ -259,19 +423,41 @@ public class DetailsUnitItemProvider extends SingletonUnitItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Details Control Class feature.
+	 * This adds a property descriptor for the Has Field Value Class feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addDetailsControlClassPropertyDescriptor(Object object) {
+	protected void addHasFieldValueClassPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_DetailsUnit_detailsControlClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DetailsUnit_detailsControlClass_feature", "_UI_DetailsUnit_type"),
-				 WafPackage.eINSTANCE.getDetailsUnit_DetailsControlClass(),
+				 getString("_UI_DetailsUnit_hasFieldValueClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DetailsUnit_hasFieldValueClass_feature", "_UI_DetailsUnit_type"),
+				 WafPackage.eINSTANCE.getDetailsUnit_HasFieldValueClass(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Control Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addControlClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DetailsUnit_controlClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DetailsUnit_controlClass_feature", "_UI_DetailsUnit_type"),
+				 WafPackage.eINSTANCE.getDetailsUnit_ControlClass(),
 				 false,
 				 false,
 				 false,
@@ -281,23 +467,67 @@ public class DetailsUnitItemProvider extends SingletonUnitItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Details Anchor Class feature.
+	 * This adds a property descriptor for the Has Control Class feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addDetailsAnchorClassPropertyDescriptor(Object object) {
+	protected void addHasControlClassPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_DetailsUnit_detailsAnchorClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DetailsUnit_detailsAnchorClass_feature", "_UI_DetailsUnit_type"),
-				 WafPackage.eINSTANCE.getDetailsUnit_DetailsAnchorClass(),
+				 getString("_UI_DetailsUnit_hasControlClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DetailsUnit_hasControlClass_feature", "_UI_DetailsUnit_type"),
+				 WafPackage.eINSTANCE.getDetailsUnit_HasControlClass(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Anchor Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAnchorClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DetailsUnit_anchorClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DetailsUnit_anchorClass_feature", "_UI_DetailsUnit_type"),
+				 WafPackage.eINSTANCE.getDetailsUnit_AnchorClass(),
 				 false,
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Has Anchor Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasAnchorClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DetailsUnit_hasAnchorClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DetailsUnit_hasAnchorClass_feature", "_UI_DetailsUnit_type"),
+				 WafPackage.eINSTANCE.getDetailsUnit_HasAnchorClass(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -341,14 +571,24 @@ public class DetailsUnitItemProvider extends SingletonUnitItemProvider {
 
 		switch (notification.getFeatureID(DetailsUnit.class)) {
 			case WafPackage.DETAILS_UNIT__OMIT_FIELD_LABELS:
+			case WafPackage.DETAILS_UNIT__SECTION_CLASS:
+			case WafPackage.DETAILS_UNIT__HAS_SECTION_CLASS:
+			case WafPackage.DETAILS_UNIT__CAPTION_CLASS:
+			case WafPackage.DETAILS_UNIT__HAS_CAPTION_CLASS:
 			case WafPackage.DETAILS_UNIT__CONTENT_CLASS:
 			case WafPackage.DETAILS_UNIT__HAS_CONTENT_CLASS:
-			case WafPackage.DETAILS_UNIT__DETAILS_FIELD_LIST_CLASS:
-			case WafPackage.DETAILS_UNIT__DETAILS_DEFINITION_FIELD_LIST_CLASS:
-			case WafPackage.DETAILS_UNIT__DETAILS_FIELD_LABEL_CLASS:
-			case WafPackage.DETAILS_UNIT__DETAILS_FIELD_VALUE_CLASS:
-			case WafPackage.DETAILS_UNIT__DETAILS_CONTROL_CLASS:
-			case WafPackage.DETAILS_UNIT__DETAILS_ANCHOR_CLASS:
+			case WafPackage.DETAILS_UNIT__FIELD_LIST_CLASS:
+			case WafPackage.DETAILS_UNIT__HAS_FIELD_LIST_CLASS:
+			case WafPackage.DETAILS_UNIT__DEFINITION_FIELD_LIST_CLASS:
+			case WafPackage.DETAILS_UNIT__HAS_DEFINITION_FIELD_LIST_CLASS:
+			case WafPackage.DETAILS_UNIT__FIELD_LABEL_CLASS:
+			case WafPackage.DETAILS_UNIT__HAS_FIELD_LABEL_CLASS:
+			case WafPackage.DETAILS_UNIT__FIELD_VALUE_CLASS:
+			case WafPackage.DETAILS_UNIT__HAS_FIELD_VALUE_CLASS:
+			case WafPackage.DETAILS_UNIT__CONTROL_CLASS:
+			case WafPackage.DETAILS_UNIT__HAS_CONTROL_CLASS:
+			case WafPackage.DETAILS_UNIT__ANCHOR_CLASS:
+			case WafPackage.DETAILS_UNIT__HAS_ANCHOR_CLASS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

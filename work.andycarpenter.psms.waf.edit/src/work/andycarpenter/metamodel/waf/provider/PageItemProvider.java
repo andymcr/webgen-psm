@@ -111,9 +111,9 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 			addFileActionsPropertyDescriptor(object);
 			addHasFileActionsPropertyDescriptor(object);
 			addUriElementPropertyDescriptor(object);
-			addLocalPageStyleClassPropertyDescriptor(object);
-			addPageStyleClassPropertyDescriptor(object);
-			addHasPageStyleClassPropertyDescriptor(object);
+			addLocalPageClassPropertyDescriptor(object);
+			addPageClassPropertyDescriptor(object);
+			addHasPageClassPropertyDescriptor(object);
 			addGenModelPropertyDescriptor(object);
 			addUiModelPropertyDescriptor(object);
 			addRootPagePropertyDescriptor(object);
@@ -1420,19 +1420,19 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Local Page Style Class feature.
+	 * This adds a property descriptor for the Local Page Class feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addLocalPageStyleClassPropertyDescriptor(Object object) {
+	protected void addLocalPageClassPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Page_localPageStyleClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Page_localPageStyleClass_feature", "_UI_Page_type"),
-				 WafPackage.eINSTANCE.getPage_LocalPageStyleClass(),
+				 getString("_UI_Page_localPageClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Page_localPageClass_feature", "_UI_Page_type"),
+				 WafPackage.eINSTANCE.getPage_LocalPageClass(),
 				 true,
 				 false,
 				 false,
@@ -1442,19 +1442,19 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Page Style Class feature.
+	 * This adds a property descriptor for the Page Class feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addPageStyleClassPropertyDescriptor(Object object) {
+	protected void addPageClassPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Page_pageStyleClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Page_pageStyleClass_feature", "_UI_Page_type"),
-				 WafPackage.eINSTANCE.getPage_PageStyleClass(),
+				 getString("_UI_Page_pageClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Page_pageClass_feature", "_UI_Page_type"),
+				 WafPackage.eINSTANCE.getPage_PageClass(),
 				 false,
 				 false,
 				 false,
@@ -1464,19 +1464,19 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Has Page Style Class feature.
+	 * This adds a property descriptor for the Has Page Class feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addHasPageStyleClassPropertyDescriptor(Object object) {
+	protected void addHasPageClassPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Page_hasPageStyleClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Page_hasPageStyleClass_feature", "_UI_Page_type"),
-				 WafPackage.eINSTANCE.getPage_HasPageStyleClass(),
+				 getString("_UI_Page_hasPageClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Page_hasPageClass_feature", "_UI_Page_type"),
+				 WafPackage.eINSTANCE.getPage_HasPageClass(),
 				 false,
 				 false,
 				 false,
@@ -1651,9 +1651,9 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 			case WafPackage.PAGE__HAS_RESOURCE_FIELDS:
 			case WafPackage.PAGE__HAS_FILE_ACTIONS:
 			case WafPackage.PAGE__URI_ELEMENT:
-			case WafPackage.PAGE__LOCAL_PAGE_STYLE_CLASS:
-			case WafPackage.PAGE__PAGE_STYLE_CLASS:
-			case WafPackage.PAGE__HAS_PAGE_STYLE_CLASS:
+			case WafPackage.PAGE__LOCAL_PAGE_CLASS:
+			case WafPackage.PAGE__PAGE_CLASS:
+			case WafPackage.PAGE__HAS_PAGE_CLASS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case WafPackage.PAGE__UNITS:

@@ -50,8 +50,8 @@ public class UnitAssociationItemProvider extends UnitFeatureItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addNamePropertyDescriptor(object);
 			addAssociationPropertyDescriptor(object);
+			addNamePropertyDescriptor(object);
 			addValueDisplayPropertyDescriptor(object);
 			addOptionsPropertyDescriptor(object);
 			addOptionsFilterPropertyDescriptor(object);
@@ -73,7 +73,7 @@ public class UnitAssociationItemProvider extends UnitFeatureItemProvider {
 				 getString("_UI_AssociationReference_name_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_AssociationReference_name_feature", "_UI_AssociationReference_type"),
 				 OrmPackage.Literals.ASSOCIATION_REFERENCE__NAME,
-				 false,
+				 true,
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,

@@ -12,18 +12,10 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
-import work.andycarpenter.metamodel.expression.ExpressionPackage;
-
+import work.andycarpenter.metamodel.expression.provider.VariableItemProvider;
 import work.andycarpenter.metamodel.waf.FeaturePath;
 import work.andycarpenter.metamodel.waf.WafPackage;
 
@@ -34,13 +26,7 @@ import work.andycarpenter.metamodel.waf.WafPackage;
  * @generated
  */
 public class FeaturePathItemProvider 
-	extends ItemProviderAdapter
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+	extends VariableItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -62,35 +48,12 @@ public class FeaturePathItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addSuffixesPropertyDescriptor(object);
 			addUseContainerAsContextPropertyDescriptor(object);
 			addHasChildPropertyDescriptor(object);
 			addIsRequiredPropertyDescriptor(object);
 			addIsSingletonPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Suffixes feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addSuffixesPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Expression_suffixes_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Expression_suffixes_feature", "_UI_Expression_type"),
-				 ExpressionPackage.Literals.EXPRESSION__SUFFIXES,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
 	}
 
 	/**
@@ -206,7 +169,6 @@ public class FeaturePathItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(FeaturePath.class)) {
-			case WafPackage.FEATURE_PATH__SUFFIXES:
 			case WafPackage.FEATURE_PATH__USE_CONTAINER_AS_CONTEXT:
 			case WafPackage.FEATURE_PATH__HAS_CHILD:
 			case WafPackage.FEATURE_PATH__IS_REQUIRED:

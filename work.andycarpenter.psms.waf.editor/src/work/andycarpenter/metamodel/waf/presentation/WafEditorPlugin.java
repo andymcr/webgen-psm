@@ -15,9 +15,7 @@ import work.andycarpenter.metamodel.base.provider.BaseEditPlugin;
 import work.andycarpenter.metamodel.expression.provider.ExpressionEditPlugin;
 
 import work.andycarpenter.metamodel.orm.provider.OrmEditPlugin;
-
 import work.andycarpenter.metamodel.security.provider.SecurityEditPlugin;
-
 import work.andycarpenter.metamodel.service.provider.ServiceEditPlugin;
 
 /**

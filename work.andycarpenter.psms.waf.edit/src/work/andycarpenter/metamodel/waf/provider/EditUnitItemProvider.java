@@ -60,15 +60,27 @@ public class EditUnitItemProvider extends SingletonUnitItemProvider {
 			addCancelDestinationPropertyDescriptor(object);
 			addCancelLabelPropertyDescriptor(object);
 			addHasCustomCancelLabelPropertyDescriptor(object);
+			addLocalInputGroupClassPropertyDescriptor(object);
+			addSectionClassPropertyDescriptor(object);
+			addHasSectionClassPropertyDescriptor(object);
+			addCaptionClassPropertyDescriptor(object);
+			addHasCaptionClassPropertyDescriptor(object);
 			addContentClassPropertyDescriptor(object);
 			addHasContentClassPropertyDescriptor(object);
-			addFormFieldListClassPropertyDescriptor(object);
-			addFormDefinitionFieldListClassPropertyDescriptor(object);
-			addFormInputGroupClassPropertyDescriptor(object);
-			addFormFieldLabelClassPropertyDescriptor(object);
-			addFormFieldValueClassPropertyDescriptor(object);
-			addFormControlClassPropertyDescriptor(object);
-			addFormAnchorClassPropertyDescriptor(object);
+			addFieldListClassPropertyDescriptor(object);
+			addHasFieldListClassPropertyDescriptor(object);
+			addDefinitionFieldListClassPropertyDescriptor(object);
+			addHasDefinitionFieldListClassPropertyDescriptor(object);
+			addFieldLabelClassPropertyDescriptor(object);
+			addHasFieldLabelClassPropertyDescriptor(object);
+			addFieldValueClassPropertyDescriptor(object);
+			addHasFieldValueClassPropertyDescriptor(object);
+			addControlClassPropertyDescriptor(object);
+			addHasControlClassPropertyDescriptor(object);
+			addAnchorClassPropertyDescriptor(object);
+			addHasAnchorClassPropertyDescriptor(object);
+			addInputGroupClassPropertyDescriptor(object);
+			addHasInputGroupClassPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -294,6 +306,116 @@ public class EditUnitItemProvider extends SingletonUnitItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Local Input Group Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addLocalInputGroupClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EditUnit_localInputGroupClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EditUnit_localInputGroupClass_feature", "_UI_EditUnit_type"),
+				 WafPackage.eINSTANCE.getEditUnit_LocalInputGroupClass(),
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Section Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSectionClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EditUnit_sectionClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EditUnit_sectionClass_feature", "_UI_EditUnit_type"),
+				 WafPackage.eINSTANCE.getEditUnit_SectionClass(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Has Section Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasSectionClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EditUnit_hasSectionClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EditUnit_hasSectionClass_feature", "_UI_EditUnit_type"),
+				 WafPackage.eINSTANCE.getEditUnit_HasSectionClass(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Caption Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCaptionClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EditUnit_captionClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EditUnit_captionClass_feature", "_UI_EditUnit_type"),
+				 WafPackage.eINSTANCE.getEditUnit_CaptionClass(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Has Caption Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasCaptionClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EditUnit_hasCaptionClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EditUnit_hasCaptionClass_feature", "_UI_EditUnit_type"),
+				 WafPackage.eINSTANCE.getEditUnit_HasCaptionClass(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Content Class feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -338,19 +460,19 @@ public class EditUnitItemProvider extends SingletonUnitItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Form Field List Class feature.
+	 * This adds a property descriptor for the Field List Class feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addFormFieldListClassPropertyDescriptor(Object object) {
+	protected void addFieldListClassPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_EditUnit_formFieldListClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_EditUnit_formFieldListClass_feature", "_UI_EditUnit_type"),
-				 WafPackage.eINSTANCE.getEditUnit_FormFieldListClass(),
+				 getString("_UI_EditUnit_fieldListClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EditUnit_fieldListClass_feature", "_UI_EditUnit_type"),
+				 WafPackage.eINSTANCE.getEditUnit_FieldListClass(),
 				 false,
 				 false,
 				 false,
@@ -360,19 +482,41 @@ public class EditUnitItemProvider extends SingletonUnitItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Form Definition Field List Class feature.
+	 * This adds a property descriptor for the Has Field List Class feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addFormDefinitionFieldListClassPropertyDescriptor(Object object) {
+	protected void addHasFieldListClassPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_EditUnit_formDefinitionFieldListClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_EditUnit_formDefinitionFieldListClass_feature", "_UI_EditUnit_type"),
-				 WafPackage.eINSTANCE.getEditUnit_FormDefinitionFieldListClass(),
+				 getString("_UI_EditUnit_hasFieldListClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EditUnit_hasFieldListClass_feature", "_UI_EditUnit_type"),
+				 WafPackage.eINSTANCE.getEditUnit_HasFieldListClass(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Definition Field List Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDefinitionFieldListClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EditUnit_definitionFieldListClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EditUnit_definitionFieldListClass_feature", "_UI_EditUnit_type"),
+				 WafPackage.eINSTANCE.getEditUnit_DefinitionFieldListClass(),
 				 false,
 				 false,
 				 false,
@@ -382,19 +526,41 @@ public class EditUnitItemProvider extends SingletonUnitItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Form Input Group Class feature.
+	 * This adds a property descriptor for the Has Definition Field List Class feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addFormInputGroupClassPropertyDescriptor(Object object) {
+	protected void addHasDefinitionFieldListClassPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_EditUnit_formInputGroupClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_EditUnit_formInputGroupClass_feature", "_UI_EditUnit_type"),
-				 WafPackage.eINSTANCE.getEditUnit_FormInputGroupClass(),
+				 getString("_UI_EditUnit_hasDefinitionFieldListClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EditUnit_hasDefinitionFieldListClass_feature", "_UI_EditUnit_type"),
+				 WafPackage.eINSTANCE.getEditUnit_HasDefinitionFieldListClass(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Field Label Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addFieldLabelClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EditUnit_fieldLabelClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EditUnit_fieldLabelClass_feature", "_UI_EditUnit_type"),
+				 WafPackage.eINSTANCE.getEditUnit_FieldLabelClass(),
 				 false,
 				 false,
 				 false,
@@ -404,19 +570,41 @@ public class EditUnitItemProvider extends SingletonUnitItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Form Field Label Class feature.
+	 * This adds a property descriptor for the Has Field Label Class feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addFormFieldLabelClassPropertyDescriptor(Object object) {
+	protected void addHasFieldLabelClassPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_EditUnit_formFieldLabelClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_EditUnit_formFieldLabelClass_feature", "_UI_EditUnit_type"),
-				 WafPackage.eINSTANCE.getEditUnit_FormFieldLabelClass(),
+				 getString("_UI_EditUnit_hasFieldLabelClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EditUnit_hasFieldLabelClass_feature", "_UI_EditUnit_type"),
+				 WafPackage.eINSTANCE.getEditUnit_HasFieldLabelClass(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Field Value Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addFieldValueClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EditUnit_fieldValueClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EditUnit_fieldValueClass_feature", "_UI_EditUnit_type"),
+				 WafPackage.eINSTANCE.getEditUnit_FieldValueClass(),
 				 false,
 				 false,
 				 false,
@@ -426,19 +614,41 @@ public class EditUnitItemProvider extends SingletonUnitItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Form Field Value Class feature.
+	 * This adds a property descriptor for the Has Field Value Class feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addFormFieldValueClassPropertyDescriptor(Object object) {
+	protected void addHasFieldValueClassPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_EditUnit_formFieldValueClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_EditUnit_formFieldValueClass_feature", "_UI_EditUnit_type"),
-				 WafPackage.eINSTANCE.getEditUnit_FormFieldValueClass(),
+				 getString("_UI_EditUnit_hasFieldValueClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EditUnit_hasFieldValueClass_feature", "_UI_EditUnit_type"),
+				 WafPackage.eINSTANCE.getEditUnit_HasFieldValueClass(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Control Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addControlClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EditUnit_controlClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EditUnit_controlClass_feature", "_UI_EditUnit_type"),
+				 WafPackage.eINSTANCE.getEditUnit_ControlClass(),
 				 false,
 				 false,
 				 false,
@@ -448,19 +658,41 @@ public class EditUnitItemProvider extends SingletonUnitItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Form Control Class feature.
+	 * This adds a property descriptor for the Has Control Class feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addFormControlClassPropertyDescriptor(Object object) {
+	protected void addHasControlClassPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_EditUnit_formControlClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_EditUnit_formControlClass_feature", "_UI_EditUnit_type"),
-				 WafPackage.eINSTANCE.getEditUnit_FormControlClass(),
+				 getString("_UI_EditUnit_hasControlClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EditUnit_hasControlClass_feature", "_UI_EditUnit_type"),
+				 WafPackage.eINSTANCE.getEditUnit_HasControlClass(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Anchor Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAnchorClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EditUnit_anchorClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EditUnit_anchorClass_feature", "_UI_EditUnit_type"),
+				 WafPackage.eINSTANCE.getEditUnit_AnchorClass(),
 				 false,
 				 false,
 				 false,
@@ -470,23 +702,67 @@ public class EditUnitItemProvider extends SingletonUnitItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Form Anchor Class feature.
+	 * This adds a property descriptor for the Has Anchor Class feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addFormAnchorClassPropertyDescriptor(Object object) {
+	protected void addHasAnchorClassPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_EditUnit_formAnchorClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_EditUnit_formAnchorClass_feature", "_UI_EditUnit_type"),
-				 WafPackage.eINSTANCE.getEditUnit_FormAnchorClass(),
+				 getString("_UI_EditUnit_hasAnchorClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EditUnit_hasAnchorClass_feature", "_UI_EditUnit_type"),
+				 WafPackage.eINSTANCE.getEditUnit_HasAnchorClass(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Input Group Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addInputGroupClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EditUnit_inputGroupClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EditUnit_inputGroupClass_feature", "_UI_EditUnit_type"),
+				 WafPackage.eINSTANCE.getEditUnit_InputGroupClass(),
 				 false,
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Has Input Group Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasInputGroupClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EditUnit_hasInputGroupClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EditUnit_hasInputGroupClass_feature", "_UI_EditUnit_type"),
+				 WafPackage.eINSTANCE.getEditUnit_HasInputGroupClass(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -558,15 +834,27 @@ public class EditUnitItemProvider extends SingletonUnitItemProvider {
 			case WafPackage.EDIT_UNIT__HAS_SUCCESS_MESSAGE:
 			case WafPackage.EDIT_UNIT__CANCEL_LABEL:
 			case WafPackage.EDIT_UNIT__HAS_CUSTOM_CANCEL_LABEL:
+			case WafPackage.EDIT_UNIT__LOCAL_INPUT_GROUP_CLASS:
+			case WafPackage.EDIT_UNIT__SECTION_CLASS:
+			case WafPackage.EDIT_UNIT__HAS_SECTION_CLASS:
+			case WafPackage.EDIT_UNIT__CAPTION_CLASS:
+			case WafPackage.EDIT_UNIT__HAS_CAPTION_CLASS:
 			case WafPackage.EDIT_UNIT__CONTENT_CLASS:
 			case WafPackage.EDIT_UNIT__HAS_CONTENT_CLASS:
-			case WafPackage.EDIT_UNIT__FORM_FIELD_LIST_CLASS:
-			case WafPackage.EDIT_UNIT__FORM_DEFINITION_FIELD_LIST_CLASS:
-			case WafPackage.EDIT_UNIT__FORM_INPUT_GROUP_CLASS:
-			case WafPackage.EDIT_UNIT__FORM_FIELD_LABEL_CLASS:
-			case WafPackage.EDIT_UNIT__FORM_FIELD_VALUE_CLASS:
-			case WafPackage.EDIT_UNIT__FORM_CONTROL_CLASS:
-			case WafPackage.EDIT_UNIT__FORM_ANCHOR_CLASS:
+			case WafPackage.EDIT_UNIT__FIELD_LIST_CLASS:
+			case WafPackage.EDIT_UNIT__HAS_FIELD_LIST_CLASS:
+			case WafPackage.EDIT_UNIT__DEFINITION_FIELD_LIST_CLASS:
+			case WafPackage.EDIT_UNIT__HAS_DEFINITION_FIELD_LIST_CLASS:
+			case WafPackage.EDIT_UNIT__FIELD_LABEL_CLASS:
+			case WafPackage.EDIT_UNIT__HAS_FIELD_LABEL_CLASS:
+			case WafPackage.EDIT_UNIT__FIELD_VALUE_CLASS:
+			case WafPackage.EDIT_UNIT__HAS_FIELD_VALUE_CLASS:
+			case WafPackage.EDIT_UNIT__CONTROL_CLASS:
+			case WafPackage.EDIT_UNIT__HAS_CONTROL_CLASS:
+			case WafPackage.EDIT_UNIT__ANCHOR_CLASS:
+			case WafPackage.EDIT_UNIT__HAS_ANCHOR_CLASS:
+			case WafPackage.EDIT_UNIT__INPUT_GROUP_CLASS:
+			case WafPackage.EDIT_UNIT__HAS_INPUT_GROUP_CLASS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case WafPackage.EDIT_UNIT__DISABLE_WHEN:
@@ -613,11 +901,6 @@ public class EditUnitItemProvider extends SingletonUnitItemProvider {
 			(createChildParameter
 				(WafPackage.eINSTANCE.getEditUnit_DisableWhen(),
 				 ExpressionFactory.eINSTANCE.createPredicateInOperator()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.eINSTANCE.getEditUnit_DisableWhen(),
-				 ExpressionFactory.eINSTANCE.createPredicateIsOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter

@@ -2,6 +2,11 @@
 	nsURI="http://andycarpenter.work/metamodel/base",
 	nsPrefix="base"
 )
+@Ecore(
+	validationDelegates="http://www.eclipse.org/emf/2002/Ecore/OCL",
+	settingDelegates="http://www.eclipse.org/emf/2002/Ecore/OCL",
+	invocationDelegates="http://www.eclipse.org/emf/2002/Ecore/OCL"
+)
 @GenModel(
 	editDirectory="/work.andycarpenter.metamodel.base.edit/src",
 	editPluginID="work.andycarpenter.metamodel.base.edit",
@@ -11,6 +16,14 @@ package work.andycarpenter.metamodel.base
 import work.andycarpenter.metamodel.expression.Expression
 import work.andycarpenter.metamodel.expression.Literal
 import work.andycarpenter.metamodel.expression.Variable
+
+annotation "http://www.eclipse.org/emf/2002/Ecore/OCL" as OCL
+
+
+class BaseModel {
+	contains Literal[] literals
+	contains DataType[] dataTypes
+}
 
 
 class NullLiteral extends Literal {
@@ -45,7 +58,7 @@ abstract class NamedElement {
 }
 
 abstract class NamedDisplayElement extends NamedElement {
-	String[1] displayLabel
+	String displayLabel
 }
 
 
@@ -64,74 +77,42 @@ class ConstantReference extends Variable {
  
 
 abstract class Classifier extends NamedDisplayElement {
-	derived readonly transient volatile boolean isBooleanClassifier get {
-		if (this instanceof DataType)
-			(this as DataType).isBooleanDataType
-		else
-			false
-	}
-	derived readonly transient volatile boolean isEmailClassifier get {
-		if (this instanceof DataType)
-			(this as DataType).isEmailDataType
-		else
-			false
-	}
-	derived readonly transient volatile boolean isEnumerationClassifier get {
-		this instanceof EnumerationType
-	}
-	derived readonly transient volatile boolean isIntegerClassifier get {
-		if (this instanceof DataType)
-			(this as DataType).isIntegerDataType
-		else
-			false
-	}
-	derived readonly transient volatile boolean isStringClassifier get {
-		if (this instanceof DataType)
-			(this as DataType).isStringDataType
-		else
-			false
-	}
-	derived readonly transient volatile boolean isTextareaClassifier get {
-		if (this instanceof DataType)
-			(this as DataType).isTextareaDataType
-		else
-			false
-	}
-	derived readonly transient volatile boolean isUrlClassifier get {
-		if (this instanceof DataType)
-			(this as DataType).isUrlDataType
-		else
-			false
-	}
+	@OCL(derivation="if self.oclIsKindOf(DataType) then self.oclAsType(DataType).isBooleanDataType else false endif")
+	derived readonly unsettable transient volatile boolean isBooleanClassifier
+	@OCL(derivation="if self.oclIsKindOf(DataType) then self.oclAsType(DataType).isEmailDataType else false endif")
+	derived readonly unsettable transient volatile boolean isEmailClassifier
+	@OCL(derivation="self.oclIsTypeOf(EnumerationType)")
+	derived readonly unsettable transient volatile boolean isEnumerationClassifier
+	@OCL(derivation="if self.oclIsKindOf(DataType) then self.oclAsType(DataType).isIntegerDataType else false endif")
+	derived readonly unsettable transient volatile boolean isIntegerClassifier
+	@OCL(derivation="if self.oclIsKindOf(DataType) then self.oclAsType(DataType).isStringDataType else false endif")
+	derived readonly unsettable transient volatile boolean isStringClassifier
+	@OCL(derivation="if self.oclIsKindOf(DataType) then self.oclAsType(DataType).isTextareaDataType else false endif")
+	derived readonly unsettable transient volatile boolean isTextareaClassifier
+	@OCL(derivation="if self.oclIsKindOf(DataType) then self.oclAsType(DataType).isUrlDataType else false endif")
+	derived readonly unsettable transient volatile boolean isUrlClassifier
 }
 
 class DataType extends Classifier {
-	String[1] persistentType
-	String[1] ormType
-	String[1] wafType
-	String[1] interfaceType
+	String persistentType
+	String ormType
+	String wafType
+	String interfaceType
 	String validationPattern = ''
-	derived readonly transient volatile boolean isBooleanDataType get {
-		name == 'Boolean'
-	}
-	derived readonly transient volatile boolean isEmailDataType get {
-		name == 'Email'
-	}
-	derived readonly transient volatile boolean isEnumerationType get {
-		this instanceof EnumerationType
-	}
-	derived readonly transient volatile boolean isIntegerDataType get {
-		name == 'Integer'
-	}
-	derived readonly transient volatile boolean isStringDataType get {
-		name == 'String'
-	}
-	derived readonly transient volatile boolean isTextareaDataType get {
-		name == 'Textarea'
-	}
-	derived readonly transient volatile boolean isUrlDataType get {
-		name == 'URL'
-	}
+	@OCL(derivation="name = 'Boolean'")
+	derived readonly unsettable transient volatile boolean isBooleanDataType
+	@OCL(derivation="name = 'Email'")
+	derived readonly unsettable transient volatile boolean isEmailDataType
+	@OCL(derivation="self.oclIsTypeOf(EnumerationType)")
+	derived readonly unsettable transient volatile boolean isEnumerationType
+	@OCL(derivation="name = 'Integer'")
+	derived readonly unsettable transient volatile boolean isIntegerDataType
+	@OCL(derivation="name = 'String'")
+	derived readonly unsettable transient volatile boolean isStringDataType
+	@OCL(derivation="name = 'Textarea'")
+	derived readonly unsettable transient volatile boolean isTextareaDataType
+	@OCL(derivation="name = 'URL'")
+	derived readonly unsettable transient volatile boolean isUrlDataType
 }
 
 class EnumerationType extends DataType {

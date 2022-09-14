@@ -2,11 +2,17 @@
 	nsURI="http://andycarpenter.work/metamodel/WebApplicationFramework",
 	nsPrefix="waf"
 )
+@Ecore(
+	validationDelegates="http://www.eclipse.org/emf/2002/Ecore/OCL",
+	settingDelegates="http://www.eclipse.org/emf/2002/Ecore/OCL",
+	invocationDelegates="http://www.eclipse.org/emf/2002/Ecore/OCL"
+)
 @GenModel(
 	editDirectory="/work.andycarpenter.metamodel.waf.edit/src",
 	editPluginID="work.andycarpenter.metamodel.waf.edit",
 	childCreationExtenders="true",
-	editorDirectory="/work.andycarpenter.metamodel.waf.editor/src")
+	editorDirectory="/work.andycarpenter.metamodel.waf.editor/src",
+	testsDirectory="/work.andycarpenter.metamodel.waf.tests/src")
 package work.andycarpenter.metamodel.waf
 
 import work.andycarpenter.metamodel.security.CasAuthentication
@@ -39,8 +45,8 @@ import work.andycarpenter.metamodel.api.API
 import work.andycarpenter.metamodel.service.BusinessOperation
 import work.andycarpenter.metamodel.service.Service
 import work.andycarpenter.metamodel.service.ServiceModel
-import java.util.LinkedList
-import org.eclipse.xtext.xbase.lib.CollectionLiterals
+
+annotation "http://www.eclipse.org/emf/2002/Ecore/OCL" as OCL
 
 
 enum FrameworkTechnologies {
@@ -63,78 +69,70 @@ class WafModel {
 	contains Page[] pages opposite partOf
 	String defaultSaveLabel
 	String defaultCancelLabel
-	derived readonly unsettable transient volatile boolean hasAPI get {
-		api !== null
-	}
-	refers readonly unsettable transient volatile derived EditUnit[] editUnits get {
-		return pages.flatMap[it.editUnits].toEList()
-	}
-	derived readonly unsettable transient volatile boolean hasEditUnits get {
-		!editUnits.isEmpty()
-	}
-	refers readonly unsettable transient volatile derived SingletonUnit[] formUnits get {
-		return pages.flatMap[it.formUnits].toEList()
-	}
-	derived readonly unsettable transient volatile boolean hasFormUnits get {
-		!formUnits.isEmpty()
-	}
-	refers readonly unsettable transient volatile derived ImageUnit[] imageUnits get {
-		return pages.flatMap[it.imageUnits].toEList()
-	}
-	derived readonly unsettable transient volatile boolean hasImageUnits get {
-		!imageUnits.isEmpty()
-	}
-	refers readonly unsettable transient volatile derived ImageCardsUnit[] imageCardsUnits get {
-		return pages.flatMap[it.imageCardsUnits].toEList()
-	}
-	derived readonly unsettable transient volatile boolean hasImageCardsUnits get {
-		!imageCardsUnits.isEmpty()
-	}
-	derived readonly unsettable transient volatile boolean hasAutocompleteFields get {
-		!pages.filter[it.hasAutocompleteFields].isEmpty()
-	}
-	refers derived readonly unsettable transient volatile UnitField[] formFields get {
-		pages.flatMap[it.formFields].toEList()
-	}
-	derived readonly unsettable transient volatile boolean hasFormFields get {
-		!formFields.isEmpty()
-	}
-	derived readonly unsettable transient volatile boolean hasFormAssociations get {
-		!formFields.filter[it instanceof UnitAssociation].isEmpty()
-	}
-	derived readonly unsettable transient volatile boolean hasResourceFields get {
-		!pages.filter[it.hasResourceFields].isEmpty()
-	}
-	derived readonly unsettable transient volatile boolean isAuthenticated get {
-		if (security === null)
-			false
-		else
-			security.isAuthenticated
-	}
-	derived readonly unsettable transient volatile boolean isCasAuthenticated get {
-		if (isAuthenticated)
-			security.isCasAuthenticated
-		else
-			false
-	}
-	refers derived readonly unsettable transient volatile CasAuthentication casAuthentication get {
-		if (isCasAuthenticated)
-			security.casAuthentication
-	}
-	derived readonly unsettable transient volatile boolean isLocallyAuthenticated get {
-		if (isAuthenticated)
-			security.isLocallyAuthenticated
-		else
-			false
-	}
-	refers derived readonly unsettable transient volatile LocalAuthenticationSystem localAuthentication get {
-		if (isLocallyAuthenticated)
-			security.localAuthentication
-	}
+
+	@OCL(derivation="not api.oclIsUndefined()")
+	derived readonly unsettable transient volatile boolean hasAPI
+
+	@OCL(derivation="pages->collect(p | p.editUnits)->asOrderedSet()")
+	refers derived readonly unsettable transient volatile EditUnit[] editUnits
+
+	@OCL(derivation="editUnits->notEmpty()")
+	derived readonly unsettable transient volatile boolean hasEditUnits
+
+	@OCL(derivation="pages->collect(p | p.formUnits)->asOrderedSet()")
+	refers derived readonly unsettable transient volatile SingletonUnit[] formUnits
+
+	@OCL(derivation="formUnits->notEmpty()")
+	derived readonly unsettable transient volatile boolean hasFormUnits
+
+	@OCL(derivation="pages->collect(p | p.imageUnits)->asOrderedSet()")
+	refers derived readonly unsettable transient volatile ImageUnit[] imageUnits
+
+	@OCL(derivation="imageUnits->notEmpty()")
+	derived readonly unsettable transient volatile boolean hasImageUnits
+
+	@OCL(derivation="pages->collect(p | p.imageCardsUnits)->asOrderedSet()")
+	refers derived readonly unsettable transient volatile ImageCardsUnit[] imageCardsUnits
+
+	@OCL(derivation="imageCardsUnits->notEmpty()")
+	derived readonly unsettable transient volatile boolean hasImageCardsUnits
+
+	@OCL(derivation="pages->select(p | p.hasAutocompleteFields)->notEmpty()")
+	derived readonly unsettable transient volatile boolean hasAutocompleteFields
+
+	@OCL(derivation="pages->collect(p | p.formFields)->asOrderedSet()")
+	refers derived readonly unsettable transient volatile UnitField[] formFields
+
+	@OCL(derivation="formFields->notEmpty()")
+	derived readonly unsettable transient volatile boolean hasFormFields
+
+	@OCL(derivation="formFields->select(f | f.oclIsKindOf(UnitAssociation))->notEmpty()")
+	derived readonly unsettable transient volatile boolean hasFormAssociations
+
+	@OCL(derivation="pages->select(p | p.hasResourceFields)->notEmpty()")
+	derived readonly unsettable transient volatile boolean hasResourceFields
+
+	@OCL(derivation="if self.security.oclIsUndefined() then false else security.isAuthenticated endif")
+	derived readonly unsettable transient volatile boolean isAuthenticated
+
+	@OCL(derivation="if self.isAuthenticated = true then security.isCasAuthenticated else false endif")
+	derived readonly unsettable transient volatile boolean isCasAuthenticated
+
+	@OCL(derivation="if self.isCasAuthenticated = true then security.casAuthentication else null endif")
+	refers derived readonly unsettable transient volatile CasAuthentication casAuthentication
+
+	@OCL(derivation="if self.isAuthenticated = true then security.isLocallyAuthenticated else false endif")
+	derived readonly unsettable transient volatile boolean isLocallyAuthenticated
+
+	@OCL(derivation="if self.isLocallyAuthenticated = true then security.localAuthentication else null endif")
+	refers derived readonly unsettable transient volatile LocalAuthenticationSystem localAuthentication
+
 	Boolean useFormFloatingLabels = 'false'
-	String defaultPageStyleClass = ''
-    contains DefaultUnitStyles defaultStyles
+
+	String defaultPageClass = ''
+    contains DefaultUnitStyles defaultUnitStyles
     contains CardsUnitStyles defaultCardsStyles
+    contains ControlUnitStyles defaultControlStyles
     contains DetailsUnitStyles defaultDetailsStyles
     contains FormUnitStyles defaultFormStyles
     contains GalleryUnitStyles defaultGalleryStyles
@@ -142,12 +140,11 @@ class WafModel {
     contains StaticUnitStyles defaultStaticStyles
     contains TabularUnitStyles defaultTabularStyles
 
-   	refers readonly transient volatile unsettable derived WafModel genModel get {
-		this
-	}
-	refers readonly transient volatile unsettable derived WafModel uiModel get {
-		this
-	}
+	@OCL(derivation="self")
+   	refers readonly transient volatile unsettable derived WafModel genModel
+
+	@OCL(derivation="self")
+	refers readonly transient volatile unsettable derived WafModel uiModel
 }
 
 class SiteProperties {
@@ -171,15 +168,15 @@ class SiteProperties {
 class Navigation {
 	refers WafModel[1] partOf opposite navigation
 	contains Menu[] menus opposite definedBy
+	
 	String navbarClass = "navbar"
-	derived readonly unsettable transient volatile boolean hasNavbarClass get {
-		navbarClass.trim() != ''
-	}
+	@OCL(derivation="navbarClass.trim() <> ''")
+	derived readonly unsettable transient volatile boolean hasNavbarClass
+
 	AuthenticationMenuPlacement authenticationMenuPlacement
 	String authenticationBarClass = "nav"
-	derived readonly unsettable transient volatile boolean hasAuthenticationBarClass get {
-		authenticationBarClass.trim() != ''
-	}
+	@OCL(derivation="authenticationBarClass.trim() <> ''")
+	derived readonly unsettable transient volatile boolean hasAuthenticationBarClass
 }
 
 enum AuthenticationMenuPlacement {
@@ -203,9 +200,8 @@ abstract class MenuEntry {
 
 class SubmenuEntry extends Menu, MenuEntry {
 	String authorisationRoles = ''
-	derived readonly transient volatile boolean isAuthorised get {
-		authorisationRoles.trim() != ''
-	}
+	@OCL(derivation="authorisationRoles.trim() <> ''")
+	derived readonly transient volatile boolean isAuthorised
 }
 
 class ActionMenuEntry extends MenuEntry, NamedDisplayElement {
@@ -249,6 +245,9 @@ class CardsUnitStyles extends CollectionUnitStyles {
 	String badgeClass = ''
 }
 
+class ControlUnitStyles extends DynamicUnitStyles {
+}
+
 class DetailsUnitStyles extends DynamicUnitStyles {
 }
 
@@ -266,6 +265,8 @@ class StaticUnitStyles extends ContentUnitStyles {
 }
 
 class TabularUnitStyles extends CollectionUnitStyles {
+	String headerClass = ''
+	String footerClass = ''
 }
 
 
@@ -318,613 +319,690 @@ class Page extends NamedDisplayElement {
 	container WafModel partOf opposite pages
 	refers Page parentPage opposite childPages
 	refers Page[] childPages opposite parentPage
-	derived readonly transient volatile String commonRole get {
-		if (units.isEmpty())
+
+	@OCL(derivation="if units->isEmpty() then
 			''
-		else if (hasCommonUnitAuthentication)
-			units.head.authorisationRoles
+		else if self.hasCommonUnitAuthentication = true then
+			units->first().authorisationRoles
 		else
 			''
-	}
-	derived readonly transient volatile boolean isAuthorised get {
-		commonRole.trim() != ''
-	}
-	derived readonly transient volatile boolean hasCommonUnitAuthentication get {
-		if (units.size() < 2)
+		endif endif")
+	derived readonly transient volatile String commonRole
+
+	@OCL(derivation="commonRole.trim() <> ''")
+	derived readonly transient volatile boolean isAuthorised
+
+	@OCL(derivation="if units->size() < 2 then
 			true
 		else
-			units.drop(1).forall[authorisationRoles.trim() == units.head.authorisationRoles.trim()]
-	}
+			units->subOrderedSet(2, units->size())->forAll(u | u.authorisationRoles.trim() = units->first().authorisationRoles.trim())
+		endif")
+	derived readonly transient volatile boolean hasCommonUnitAuthentication
+
 	contains ContentUnit[] units opposite displayedOn
-	derived readonly transient volatile boolean hasChangableCollections get {
-		!editUnits.filter[it.hasChangableCollections].isEmpty()
-	}
-	derived readonly transient volatile boolean hasCaptchaUnits get {
-		!editUnits.filter[it.hasCaptcha].isEmpty()
-	}
-	refers readonly transient volatile unsettable derived CollectionUnit[] collectionUnits get {
-		return units.filter[it instanceof CollectionUnit].map[it as CollectionUnit].toEList
-	}
-	derived readonly transient volatile boolean hasCollectionUnits get {
-		!collectionUnits.isEmpty()
-	}
-	refers readonly transient volatile unsettable derived DynamicUnit[] dynamicUnits get {
-		units.filter[it instanceof DynamicUnit].map[it as DynamicUnit].toEList
-	}
-	derived readonly transient volatile boolean hasDynamicUnits get {
-		!dynamicUnits.isEmpty()
-	}
-	refers readonly transient volatile unsettable derived EditUnit[] editUnits get {
-		units.filter[it instanceof EditUnit].map[it as EditUnit].toEList
-	}
-	derived readonly transient volatile boolean hasEditUnits get {
-		!editUnits.isEmpty()
-	}
+	
+	@OCL(derivation="editUnits->select(u | u.hasChangableCollections)->notEmpty()")
+	derived readonly transient volatile boolean hasChangableCollections
+
+	@OCL(derivation="editUnits->select(u | u.hasCaptcha)->notEmpty()")
+	derived readonly transient volatile boolean hasCaptchaUnits
+
+	@OCL(derivation="units->select(u | u.oclIsKindOf(CollectionUnit)).oclAsType(CollectionUnit)->asOrderedSet()")
+	refers readonly transient volatile unsettable derived CollectionUnit[] collectionUnits
+	@OCL(derivation="collectionUnits->notEmpty()")
+	derived readonly transient volatile boolean hasCollectionUnits
+
+	@OCL(derivation="units->select(u | u.oclIsKindOf(DynamicUnit)).oclAsType(DynamicUnit)->asOrderedSet()")
+	refers readonly transient volatile unsettable derived DynamicUnit[] dynamicUnits
+	@OCL(derivation="dynamicUnits->notEmpty()")
+	derived readonly transient volatile boolean hasDynamicUnits
+
+	@OCL(derivation="units->select(u | u.oclIsKindOf(EditUnit)).oclAsType(EditUnit)->asOrderedSet()")
+	refers readonly transient volatile unsettable derived EditUnit[] editUnits
+	@OCL(derivation="editUnits->notEmpty()")
+	derived readonly transient volatile boolean hasEditUnits
+
+// TODO	@OCL(derivation="editUnits->union(childPages->collect(c | c.editUnits))->asOrderedSet()")
+// TODO	refers readonly transient volatile unsettable derived EditUnit[] anyEditUnits
 	refers readonly transient volatile unsettable derived EditUnit[] anyEditUnits get {
 		(editUnits + childPages.flatMap[editUnits]).toEList()
 	}
-	derived readonly transient volatile boolean hasAnyEditUnits get {
-		!anyEditUnits.isEmpty()
-	}
-	refers readonly transient volatile unsettable derived ForgottenPasswordUnit[] forgottenPasswordUnits get {
-		return units.filter[it instanceof ForgottenPasswordUnit].map[it as ForgottenPasswordUnit].toEList
-	}
-	derived readonly transient volatile boolean hasForgottenPasswordUnits get {
-		!forgottenPasswordUnits.isEmpty()
-	}
-	refers readonly transient volatile unsettable derived SingletonUnit[] formUnits get {
-		return dynamicUnits.filter[isFormUnit].map[it as SingletonUnit].toEList
-	}
-	derived readonly transient volatile boolean hasFormUnits get {
-		!formUnits.isEmpty()
-	}
-	derived readonly transient volatile boolean hasFilters get {
-		!collectionUnits.filter[it.hasFilters].isEmpty()
-	}
-	refers readonly transient volatile unsettable derived GalleryUnit[] galleryUnits get {
-		return units.filter[it instanceof GalleryUnit].map[it as GalleryUnit].toEList
-	}
-	derived readonly transient volatile boolean hasGalleryUnits get {
-		!galleryUnits.isEmpty()
-	}
-	refers readonly transient volatile unsettable derived TabularUnit[] tabularUnits get {
-		return units.filter[it instanceof TabularUnit].map[it as TabularUnit].toEList
-	}
-	derived readonly transient volatile boolean hasTabularUnits get {
-		!tabularUnits.isEmpty()
-	}
-	refers readonly transient volatile unsettable derived ImageUnit[] imageUnits get {
-		return units.filter[it instanceof ImageUnit].map[it as ImageUnit].toEList
-	}
-	derived readonly transient volatile boolean hasImageUnits get {
-		!imageUnits.isEmpty()
-	}
-	refers readonly transient volatile unsettable derived ImageCardsUnit[] imageCardsUnits get {
-		return units.filter[it instanceof ImageCardsUnit].map[it as ImageCardsUnit].toEList
-	}
-	derived readonly transient volatile boolean hasImageCardsUnits get {
-		!imageCardsUnits.isEmpty()
-	}
-	refers readonly transient volatile unsettable derived LoginUnit[] loginUnits get {
-		return units.filter[it instanceof LoginUnit].map[it as LoginUnit].toEList
-	}
-	derived readonly transient volatile boolean hasLoginUnits get {
-		!loginUnits.isEmpty()
-	}
-	refers readonly transient volatile unsettable derived MapUnit[] mapUnits get {
-		return units.filter[it instanceof MapUnit].map[it as MapUnit].toEList
-	}
-	derived readonly transient volatile boolean hasMapUnits get {
-		!mapUnits.isEmpty()
-	}
-	refers readonly transient volatile unsettable derived ContentUnit[] nonSecurityUnits get {
-		units.filter[!(it instanceof SecurityUnit)].toEList
-	}
-	derived readonly transient volatile boolean hasNonSecurityUnits get {
-		!nonSecurityUnits.isEmpty()
-	}
-	refers readonly transient volatile unsettable derived RegistrationUnit[] registrationUnits get {
-		return units.filter[it instanceof RegistrationUnit].map[it as RegistrationUnit].toEList
-	}
-	derived readonly transient volatile boolean hasRegistrationUnits get {
-		!registrationUnits.isEmpty()
-	}
-	refers readonly transient volatile unsettable derived ResetPasswordUnit[] resetPasswordUnits get {
-		return units.filter[it instanceof ResetPasswordUnit].map[it as ResetPasswordUnit].toEList
-	}
-	derived readonly transient volatile boolean hasResetPasswordUnits get {
-		!resetPasswordUnits.isEmpty()
-	}
-	refers readonly transient volatile unsettable derived SecurityUnit[] securityUnits get {
-		units.filter[it instanceof SecurityUnit].map[it as SecurityUnit].toEList
-	}
-	derived readonly transient volatile boolean hasSecurityUnits get {
-		!securityUnits.isEmpty()
-	}
-	refers readonly transient volatile unsettable derived SliderUnit[] sliderUnits get {
-		return units.filter[it instanceof SliderUnit].map[it as SliderUnit].toEList
-	}
-	derived readonly transient volatile boolean hasSliderUnits get {
-		!sliderUnits.isEmpty()
-	}
-	refers readonly derived unsettable transient volatile Repository[] repositoriesUsed get {
-		dynamicUnits.flatMap[repositoriesUsed].toSet().toEList()
-	}
-	derived readonly transient volatile boolean hasRepositoriesUsed get {
-		!repositoriesUsed.isEmpty()
-	}
-	refers readonly transient volatile unsettable derived Service[] servicesUsed get {
-		return dynamicUnits.flatMap[servicesUsed].toSet().toEList()
-	}
-	derived readonly unsettable transient volatile boolean hasServicesUsed get {
-		!servicesUsed.isEmpty()
-	}
-	derived readonly unsettable transient volatile boolean hasPagination get {
-		!collectionUnits.filter[it.hasPagination].isEmpty()
-	}
-	refers derived readonly unsettable transient volatile UnitAssociation[] associationFields get {
-		dynamicUnits.flatMap[it.associationFields].toEList()
-	}
-	refers derived readonly unsettable transient volatile UnitField[] autocompleteFields get {
-		dynamicUnits.flatMap[it.autocompleteFields].toEList()
-	}
-	derived readonly unsettable transient volatile boolean hasAutocompleteFields get {
-		!autocompleteFields.isEmpty()
-	}
-	refers derived unsettable readonly transient volatile UnitField[] formFields get {
-		dynamicUnits.flatMap[it.formFields].toEList()
-	}
-	derived readonly unsettable transient volatile boolean hasInterfaceFields get {
-		!dynamicUnits.filter[it.hasInterfaceFields].isEmpty()
-	}
-	derived readonly unsettable transient volatile boolean hasRequiredInterfaceFields get {
-		!dynamicUnits.filter[it.hasRequiredInterfaceFields].isEmpty()
-	}
-	derived readonly unsettable transient volatile boolean hasResourceFields get {
-		!dynamicUnits.filter[it.hasResourceFields].isEmpty()
-	}
-	refers derived readonly unsettable transient volatile Action[] actionsWithoutTarget get {
-		dynamicUnits.flatMap[it.actionsWithoutTarget].toEList()
-	}
-	refers derived readonly unsettable transient volatile OperationAction[] fileActions get {
-		dynamicUnits.flatMap[it.fileActions].toEList()
-	}
-	derived readonly transient unsettable volatile boolean hasFileActions get {
-		!fileActions.isEmpty()
-	}
+	@OCL(derivation="anyEditUnits->notEmpty()")
+	derived readonly transient volatile boolean hasAnyEditUnits
+
+	@OCL(derivation="units->select(u | u.oclIsTypeOf(ForgottenPasswordUnit)).oclAsType(ForgottenPasswordUnit)->asOrderedSet()")
+	refers readonly transient volatile unsettable derived ForgottenPasswordUnit[] forgottenPasswordUnits
+	@OCL(derivation="forgottenPasswordUnits->notEmpty()")
+	derived readonly transient volatile boolean hasForgottenPasswordUnits
+
+	@OCL(derivation="units->select(u | u.isFormUnit).oclAsType(SingletonUnit)->asOrderedSet()")
+	refers readonly transient volatile unsettable derived SingletonUnit[] formUnits
+	@OCL(derivation="formUnits->notEmpty()")
+	derived readonly transient volatile boolean hasFormUnits
+
+	@OCL(derivation="collectionUnits->select(u | u.hasFilters)->notEmpty()")
+	derived readonly transient volatile boolean hasFilters
+
+	@OCL(derivation="units->select(u | u.oclIsKindOf(GalleryUnit)).oclAsType(GalleryUnit)->asOrderedSet()")
+	refers readonly transient volatile unsettable derived GalleryUnit[] galleryUnits
+	@OCL(derivation="galleryUnits->notEmpty()")
+	derived readonly transient volatile boolean hasGalleryUnits
+
+	@OCL(derivation="units->select(u | u.oclIsKindOf(TabularUnit)).oclAsType(TabularUnit)->asOrderedSet()")
+	refers readonly transient volatile unsettable derived TabularUnit[] tabularUnits
+	@OCL(derivation="tabularUnits->notEmpty()")
+	derived readonly transient volatile boolean hasTabularUnits
+
+	@OCL(derivation="units->select(u | u.oclIsKindOf(ImageUnit)).oclAsType(ImageUnit)->asOrderedSet()")
+	refers readonly transient volatile unsettable derived ImageUnit[] imageUnits
+	@OCL(derivation="imageUnits->notEmpty()")
+	derived readonly transient volatile boolean hasImageUnits
+
+	@OCL(derivation="units->select(u | u.oclIsKindOf(ImageCardsUnit)).oclAsType(ImageCardsUnit)->asOrderedSet()")
+	refers readonly transient volatile unsettable derived ImageCardsUnit[] imageCardsUnits
+	@OCL(derivation="imageCardsUnits->notEmpty()")
+	derived readonly transient volatile boolean hasImageCardsUnits
+
+	@OCL(derivation="units->select(u | u.oclIsKindOf(LoginUnit)).oclAsType(LoginUnit)->asOrderedSet()")
+	refers readonly transient volatile unsettable derived LoginUnit[] loginUnits
+	@OCL(derivation="loginUnits->notEmpty()")
+	derived readonly transient volatile boolean hasLoginUnits
+
+	@OCL(derivation="units->select(u | u.oclIsKindOf(MapUnit)).oclAsType(MapUnit)->asOrderedSet()")
+	refers readonly transient volatile unsettable derived MapUnit[] mapUnits
+	@OCL(derivation="mapUnits->notEmpty()")
+	derived readonly transient volatile boolean hasMapUnits
+
+	@OCL(derivation="units->select(u | not u.oclIsKindOf(security::SecurityUnit))->asOrderedSet()")
+	refers readonly transient volatile unsettable derived ContentUnit[] nonSecurityUnits
+	@OCL(derivation="nonSecurityUnits->notEmpty()")
+	derived readonly transient volatile boolean hasNonSecurityUnits
+
+	@OCL(derivation="units->select(u | u.oclIsKindOf(RegistrationUnit)).oclAsType(RegistrationUnit)->asOrderedSet()")
+	refers readonly transient volatile unsettable derived RegistrationUnit[] registrationUnits
+	@OCL(derivation="registrationUnits->notEmpty()")
+	derived readonly transient volatile boolean hasRegistrationUnits
+	
+	@OCL(derivation="units->select(u | u.oclIsKindOf(ResetPasswordUnit)).oclAsType(ResetPasswordUnit)->asOrderedSet()")
+	refers readonly transient volatile unsettable derived ResetPasswordUnit[] resetPasswordUnits
+	@OCL(derivation="resetPasswordUnits->notEmpty()")
+	derived readonly transient volatile boolean hasResetPasswordUnits
+
+	@OCL(derivation="units->select(u | u.oclIsKindOf(security::SecurityUnit)).oclAsType(security::SecurityUnit)->asOrderedSet()")
+	refers readonly transient volatile unsettable derived SecurityUnit[] securityUnits
+	@OCL(derivation="securityUnits->notEmpty()")
+	derived readonly transient volatile boolean hasSecurityUnits
+
+	@OCL(derivation="units->select(u | u.oclIsKindOf(SliderUnit)).oclAsType(SliderUnit)->asOrderedSet()")
+	refers readonly transient volatile unsettable derived SliderUnit[] sliderUnits
+	@OCL(derivation="sliderUnits->notEmpty()")
+	derived readonly transient volatile boolean hasSliderUnits
+
+	@OCL(derivation="dynamicUnits->collect(u | u.repositoriesUsed)->asOrderedSet()")
+	refers readonly derived unsettable transient volatile Repository[] repositoriesUsed
+	@OCL(derivation="repositoriesUsed->notEmpty()")
+	derived readonly transient volatile boolean hasRepositoriesUsed
+
+	@OCL(derivation="dynamicUnits->collect(u | u.servicesUsed)->asOrderedSet()")
+	refers readonly transient volatile unsettable derived Service[] servicesUsed
+	@OCL(derivation="servicesUsed->notEmpty()")
+	derived readonly unsettable transient volatile boolean hasServicesUsed
+
+	@OCL(derivation="collectionUnits->select(u | u.hasPagination)->notEmpty()")
+	derived readonly unsettable transient volatile boolean hasPagination
+
+	@OCL(derivation="dynamicUnits->collect(u | u.associationFields)->asOrderedSet()")
+	refers derived readonly unsettable transient volatile UnitAssociation[] associationFields
+
+	@OCL(derivation="dynamicUnits->collect(u | u.autocompleteFields)->asOrderedSet()")
+	refers derived readonly unsettable transient volatile UnitField[] autocompleteFields
+	@OCL(derivation="autocompleteFields->notEmpty()")
+	derived readonly unsettable transient volatile boolean hasAutocompleteFields
+
+	@OCL(derivation="dynamicUnits->collect(u | u.formFields)->asOrderedSet()")
+	refers derived unsettable readonly transient volatile UnitField[] formFields
+
+	@OCL(derivation="dynamicUnits->select(u | u.hasInterfaceFields)->notEmpty()")
+	derived readonly unsettable transient volatile boolean hasInterfaceFields
+
+	@OCL(derivation="dynamicUnits->select(u | u.hasRequiredInterfaceFields)->notEmpty()")
+	derived readonly unsettable transient volatile boolean hasRequiredInterfaceFields
+
+	@OCL(derivation="dynamicUnits->select(u | u.hasResourceFields)->notEmpty()")
+	derived readonly unsettable transient volatile boolean hasResourceFields
+
+	@OCL(derivation="dynamicUnits->collect(u | u.actionsWithoutTarget)->asOrderedSet()")
+	refers derived readonly unsettable transient volatile Action[] actionsWithoutTarget
+	
+	@OCL(derivation="dynamicUnits->collect(u | u.fileActions)->asOrderedSet()")
+	refers derived readonly unsettable transient volatile OperationAction[] fileActions
+	@OCL(derivation="fileActions->notEmpty()")
+	derived readonly transient unsettable volatile boolean hasFileActions
+
 	String uriElement = ''
-	String localPageStyleClass = ''
-	derived readonly transient volatile String pageStyleClass get {
-		if (localPageStyleClass.trim() != '')
-			localPageStyleClass.trim()
-		else if (uiModel.defaultPageStyleClass.trim() != '')
-			uiModel.defaultPageStyleClass.trim()
+
+	String[1] localPageClass = ''
+	@OCL(derivation="if localPageClass.trim() <> '' then
+			localPageClass.trim()
+		else if uiModel.defaultPageClass.trim() <> '' then
+			uiModel.defaultPageClass.trim()
 		else
 			''
-	}
-	derived readonly transient volatile boolean hasPageStyleClass get {
-		pageStyleClass != ''
-	}
-	refers readonly transient volatile unsettable derived WafModel genModel get {
-		partOf.genModel
-	}
-	refers readonly transient volatile unsettable derived WafModel uiModel get {
-		partOf.uiModel
-	}
-	refers readonly transient volatile unsettable derived Page rootPage get {
-		if (parentPage === null) {
-			this
-		} else {
+		endif endif")
+	derived readonly transient volatile String pageClass
+	@OCL(derivation="pageClass <> ''")
+	derived readonly transient volatile boolean hasPageClass
+
+	@OCL(derivation="partOf.genModel")
+	refers readonly transient volatile unsettable derived WafModel genModel
+
+	@OCL(derivation="partOf.uiModel")
+	refers readonly transient volatile unsettable derived WafModel uiModel
+
+	@OCL(derivation="if parentPage = null then
+			self
+		else
 			parentPage.rootPage
-		}
-	}
+		endif")
+	refers readonly transient volatile unsettable derived Page rootPage
 }
 
 abstract class ContentUnit extends NamedDisplayElement {
 	container Page[1] displayedOn opposite units
 	String uriElement = ''
+
 	String authorisationRoles = ''
-	derived readonly transient volatile boolean isAuthorised get {
-		authorisationRoles.trim() != ''
-	}
+	@OCL(derivation="authorisationRoles.trim() <> ''")
+	derived readonly transient volatile boolean isAuthorised
+
 	String purposeSummary
 	String alternative
 	boolean omitCaption
+
+	@OCL(derivation="self.oclIsKindOf(EditUnit) or self.oclIsKindOf(ControlUnit)")
+	derived readonly transient volatile boolean isFormUnit
+
 	String localSectionClass = ''
-	derived readonly transient volatile String sectionClass get {
-		if (localSectionClass.trim() != '')
-			localSectionClass.trim()
-		else if (uiModel.defaultStyles.sectionClass.trim() != '')
-			uiModel.defaultStyles.sectionClass.trim()
-		else
-			''
-	}
-	derived readonly transient volatile boolean hasSectionClass get {
-		sectionClass != ''
-	}
 	String localCaptionClass = ''
-	derived readonly transient volatile String captionClass get {
-		if (localCaptionClass.trim() != '')
-			localCaptionClass.trim()
-		else if (uiModel.defaultStyles.captionClass.trim() != '')
-			uiModel.defaultStyles.captionClass.trim()
-		else
-			''
-	}
-	derived readonly transient volatile boolean hasCaptionClass get {
-		captionClass != ''
-	}
 	String localContentClass = ''
-	refers readonly transient volatile unsettable derived WafModel genModel get {
-		displayedOn.genModel
-	}
-	refers readonly transient volatile unsettable derived WafModel uiModel get {
-		displayedOn.uiModel
-	}
+
+	@OCL(derivation="displayedOn.genModel")
+	refers readonly transient volatile unsettable derived WafModel genModel
+	@OCL(derivation="displayedOn.uiModel")
+	refers readonly transient volatile unsettable derived WafModel uiModel
 }
 
 class StaticUnit extends ContentUnit {
 	refers Repository repository
 	String[1] content
-	derived readonly transient volatile String contentClass get {
-		if (localContentClass.trim() != '')
-			localContentClass.trim()
-		else if (uiModel.defaultStaticStyles.contentClass.trim() != '')
-			uiModel.defaultStaticStyles.contentClass.trim()
-		else if (uiModel.defaultStyles.contentClass.trim() != '')
-			uiModel.defaultStyles.contentClass.trim()
+
+	@OCL(derivation="if localSectionClass.trim() <> '' then
+			localSectionClass.trim()
+		else if uiModel.defaultStaticStyles.sectionClass.trim() <> '' then
+			uiModel.defaultStaticStyles.sectionClass.trim()
+		else if uiModel.defaultUnitStyles.sectionClass.trim() <> '' then
+			uiModel.defaultUnitStyles.sectionClass.trim()
 		else
 			''
-	}
-	derived readonly transient volatile boolean hasContentClass get {
-		contentClass != ''
-	}
+		endif endif endif")
+	derived readonly transient volatile String sectionClass
+	@OCL(derivation="sectionClass <> ''")
+	derived readonly transient volatile boolean hasSectionClass
+
+	@OCL(derivation="if localSectionClass.trim() <> '' then
+			localCaptionClass.trim()
+		else if uiModel.defaultStaticStyles.captionClass.trim() <> '' then
+			uiModel.defaultStaticStyles.captionClass.trim()
+		else if uiModel.defaultUnitStyles.captionClass.trim() <> '' then
+			uiModel.defaultUnitStyles.captionClass.trim()
+		else
+			''
+		endif endif endif")
+	derived readonly transient volatile String captionClass
+	@OCL(derivation="captionClass <> ''")
+	derived readonly transient volatile boolean hasCaptionClass
+
+	@OCL(derivation="if localContentClass.trim() <> '' then
+			localContentClass.trim()
+		else if uiModel.defaultStaticStyles.contentClass.trim() <> '' then
+			uiModel.defaultStaticStyles.contentClass.trim()
+		else if uiModel.defaultUnitStyles.contentClass.trim() <> '' then
+			uiModel.defaultUnitStyles.contentClass.trim()
+		else
+			''
+		endif endif endif")
+	derived readonly transient volatile String contentClass
+	@OCL(derivation="contentClass <> ''")
+	derived readonly transient volatile boolean hasContentClass
 }
 
 abstract class DynamicUnit extends ContentUnit, ActionContainer {
 	refers Entity[1] contentType
-	refers derived readonly unsettable transient volatile Repository contentRepository get {
-		contentType?.repository
-	}
-	refers derived readonly unsettable transient volatile Association containingAssociation get {
-		contentType?.containingAssociation
-	}
-	refers derived readonly unsettable transient volatile Entity containingType get {
-		if (this instanceof CollectionUnit) {
-			if ((this as CollectionUnit).findContainerSelection !== null)
-				(this as CollectionUnit).findContainerSelection.definedBy.serves
-			else if ((this as CollectionUnit).selection !== null) {
-				if (!(this as CollectionUnit).selection.selectPath.isEmpty())
-					(this as CollectionUnit).selection.selectPath.last().targetType
-			}
-		} else if (this instanceof DetailsUnit) {
-			if ((this as DetailsUnit).selection !== null)
-				if (!(this as DetailsUnit).selection.selectPath.isEmpty())
-					(this as DetailsUnit).selection.selectPath.last().targetType
+
+	@OCL(derivation="if not contentType.oclIsUndefined() then
+			contentType.repository
+		else
+			null
+		endif")
+	refers derived readonly unsettable transient volatile Repository contentRepository
+
+	@OCL(derivation="if not contentType.oclIsUndefined() then
+			contentType.containingAssociation
+		else
+			null
+		endif")
+	refers derived readonly unsettable transient volatile Association containingAssociation
+
+	@OCL(derivation="if self.oclIsKindOf(CollectionUnit) then
+			if not self.oclAsType(CollectionUnit).findContainerSelection.oclIsUndefined() then
+				self.oclAsType(CollectionUnit).findContainerSelection.definedBy.serves
+			else if not self.oclAsType(CollectionUnit).selection.oclIsUndefined() then
+				if self.oclAsType(CollectionUnit).selection.selectPath->notEmpty() then
+					self.oclAsType(CollectionUnit).selection.selectPath->last().targetType
+				else
+					null
+				endif
+			else
+				null
+			endif endif
+		else if self.oclIsKindOf(DetailsUnit) then
+			if not self.oclAsType(DetailsUnit).selection.oclIsUndefined() then
+				if self.oclAsType(DetailsUnit).selection.selectPath->notEmpty() then
+					self.oclAsType(DetailsUnit).selection.selectPath->last().targetType
 				else
 					contentType.containingType
+				endif
 			else
 				contentType.containingType
-		} else
+			endif
+		else
 			contentType.containingType
-	}
-	derived readonly unsettable transient volatile boolean isContained get {
-		containingType !== null
-	}
-	refers derived readonly unsettable transient volatile Repository containerRepository get {
-		containingType?.repository
-	}
-	derived readonly unsettable transient volatile boolean hasExplicitlyEditedContainer get {
-		if (this instanceof EditUnit && (containingAssociation !== null))
-			featureFields.exists[persistentFeature == containingAssociation]
+		endif endif")
+	refers derived readonly unsettable transient volatile Entity containingType
+
+	@OCL(derivation="not containingType.oclIsUndefined()")
+	derived readonly unsettable transient volatile boolean isContained
+
+	@OCL(derivation="if not containingType.oclIsUndefined() then
+			containingType.repository
+		else
+			null
+		endif")
+	refers derived readonly unsettable transient volatile Repository containerRepository
+
+	@OCL(derivation="if self.oclIsKindOf(EditUnit) and not containingAssociation.oclIsUndefined() then
+			featureFields->exists(f | f.persistentFeature = containingAssociation)
 		else
 			false
-	}
-	refers derived readonly unsettable transient volatile Repository[] repositoriesUsed get {
-		var repositories = new LinkedList<Repository>()
-		if (!(this instanceof SecurityUnit))
-			repositories.add(contentRepository)
-		if (this instanceof CollectionUnit && isContained) {
-			repositories.add(containerRepository)
-		}
-		return repositories.toEList()
-	}
+		endif")
+	derived readonly unsettable transient volatile boolean hasExplicitlyEditedContainer
+
+	@OCL(derivation="if self.oclIsKindOf(security::SecurityUnit) then
+			OrderedSet{}
+		else
+			OrderedSet{contentRepository}->union(
+				if self.oclIsKindOf(CollectionUnit) and isContained = true then
+					OrderedSet{containerRepository}
+				else
+					OrderedSet{}
+				endif)
+				->asOrderedSet()
+		endif")
+	refers derived readonly unsettable transient volatile Repository[] repositoriesUsed
+
 	refers Service[] servicesUsed
 	contains RouteActual[] routeActuals
 	contains UnitField[] displayFields opposite displayedOn
 	boolean hasWhenFieldsEmptyAddImplicitFields = "true"
+
 	contains Predicate hideWhen
-	derived readonly unsettable transient volatile Boolean isConditionallyDisplayed get {
-		hideWhen !== null
-	}
+	@OCL(derivation="not hideWhen.oclIsUndefined()")
+	derived readonly unsettable transient volatile Boolean isConditionallyDisplayed
+
 	String messageWhenHidden = ''
-	derived readonly unsettable transient volatile Boolean hasHiddenMessage get {
-		hideWhen !== null && messageWhenHidden.trim() != ''
-	}
+	@OCL(derivation="self.isConditionallyDisplayed = true and messageWhenHidden.trim() <> ''")
+	derived readonly unsettable transient volatile Boolean hasHiddenMessage
+
 	String header
 	String footer
-	refers readonly transient volatile unsettable derived UnitAssociation[] associationFields get {
-		return displayFields.filter[it instanceof UnitAssociation].map[it as UnitAssociation].toEList
-	}
-	derived readonly transient volatile boolean hasAssociationFields get {
-		!associationFields.isEmpty()
-	}
-	refers derived readonly transient volatile UnitField[] autocompleteFields get {
-		if (this instanceof EditUnit) 
-			displayFields.filter[it.hasAutocomplete].toEList()
-		else
-			CollectionLiterals::emptyList().toEList()
-	}
-	derived readonly transient volatile boolean hasAutocompleteFields get {
-		!autocompleteFields.isEmpty()
-	}
+
+	@OCL(derivation="displayFields->select(f | f.oclIsKindOf(UnitAssociation)).oclAsType(UnitAssociation)->asOrderedSet()")
+	refers readonly transient volatile unsettable derived UnitAssociation[] associationFields
+	@OCL(derivation="associationFields->notEmpty()")
+	derived readonly transient volatile boolean hasAssociationFields
+
+	@OCL(derivation="if self.oclIsKindOf(EditUnit) then
+				displayFields->select(f | f.hasAutocomplete)->asOrderedSet()
+			else
+				OrderedSet{}
+			endif")
+	refers derived readonly transient volatile UnitField[] autocompleteFields
+	@OCL(derivation="autocompleteFields->notEmpty()")
+	derived readonly transient volatile boolean hasAutocompleteFields
+
 	int autocompleteThreshold = "0"
-	derived readonly transient volatile boolean hasBooleanFields get {
-		!displayFields.filter[isBooleanField].isEmpty()
-	}
-	derived readonly transient unsettable volatile boolean hasCaptcha get {
-		if (this instanceof EditUnit)
-			(this as EditUnit).useCaptcha
-		else
-			false
-	}
-	derived readonly transient volatile boolean hasChangableCollections get {
-		(this instanceof EditUnit)
-			&& !displayFields.filter[isSingleton]
-				.filter[it instanceof UnitFeature].map[it as UnitFeature]
-				.filter[collectionUiAllowAdd || collectionUiAllowRemove].isEmpty()
-	}
-	refers readonly transient volatile unsettable derived UnitField[] collectionFields get {
-		return displayFields.filter[!isSingleton].toEList
-	}
-	refers readonly transient volatile unsettable derived UnitFeature[] collectionFeatures get {
-		return collectionFields.filter[it instanceof UnitFeature].map[it as UnitFeature].toEList
-	}
-	refers readonly transient volatile unsettable derived UnitField[] dataTypeFields get {
-		return displayFields.filter[isDataTypeField].toEList
-	}
-	refers readonly transient volatile unsettable derived UnitField[] dateFields get {
-		return displayFields.filter[isDateField].toEList
-	}
-	refers readonly transient volatile unsettable derived UnitField[] defaultValueFields get {
-		return displayFields.filter[hasDefaultValue].toEList
-	}
-	derived readonly transient volatile boolean hasDefaultValueFields get {
-		!defaultValueFields.isEmpty()
-	}
-	derived readonly transient volatile boolean hasDisabledFields get {
-		!displayFields.filter[isDisabled].isEmpty()
-	}
-	derived readonly transient volatile boolean hasEmailFields get {
-		!displayFields.filter[isEmailField].isEmpty()
-	}
-	refers readonly transient volatile unsettable derived UnitField[] encryptedFields get {
-		displayFields.filter[isEncryptedField].toEList()
-	}
-	derived readonly transient volatile boolean hasEncryptedFields get {
-		!encryptedFields.isEmpty()
-	}
-	refers readonly transient volatile unsettable derived UnitField[] enumerationFields get {
-		displayFields.filter[isEnumerationField].toEList()
-	}
-	derived readonly transient volatile boolean hasEnumerationFields get {
-		!enumerationFields.isEmpty()
-	}
-	refers readonly transient volatile unsettable derived UnitFeature[] featureFields get {
-		displayFields.filter[it instanceof UnitFeature].map[it as UnitFeature].toEList()
-	}
-	derived readonly transient volatile boolean hasFeatureFields get {
-		!featureFields.isEmpty()
-	}
-	refers readonly transient volatile unsettable derived UnitField[] forcedValueFields get {
-		displayFields.filter[hasForcedValue].toEList()
-	}
-	derived readonly transient volatile boolean hasForcedValueFields get {
-		!forcedValueFields.isEmpty()
-	}
-	derived readonly transient volatile boolean isFormUnit get {
-		this instanceof EditUnit || this instanceof ControlUnit
-	}
-	refers readonly transient volatile unsettable derived UnitField[] formFields get {
-		if (isFormUnit)
-			displayFields
-		else
-			CollectionLiterals::emptyList().toEList()
-	}
-	derived readonly transient volatile boolean hasIntegerFields get {
-		!displayFields.filter[isIntegerField].isEmpty()
-	}
-	refers readonly transient volatile unsettable derived InterfaceField[] interfaceFields get {
-		return displayFields.filter[it instanceof InterfaceField].map[it as InterfaceField].toEList
-	}
-	derived readonly transient unsettable volatile boolean hasInterfaceFields get {
-		!interfaceFields.isEmpty()
-	}
-	derived readonly transient unsettable volatile boolean hasRequiredInterfaceFields get {
-		!interfaceFields.filter[it.isRequired].isEmpty()
-	}
-	derived readonly transient unsettable volatile boolean hasObfuscatedFields get {
-		!displayFields.filter[isObfuscatedField].isEmpty()
-	}
-	derived readonly transient unsettable volatile boolean hasRepeatedFields get {
-		!displayFields.filter[isRepeated].isEmpty()
-	}
-	readonly transient volatile unsettable derived boolean hasResourceFields get {
-		!displayFields.filter[isResourceField].isEmpty()
-	}
-	derived readonly transient unsettable volatile boolean hasStringFields get {
-		!displayFields.filter[isStringField].isEmpty()
-	}
-	derived readonly transient unsettable volatile boolean hasTextareaFields get {
-		!displayFields.filter[isTextareaField].isEmpty()
-	}
-	derived readonly transient unsettable volatile boolean hasUrlFields get {
-		!displayFields.filter[isUrlField].isEmpty()
-	}
-	String headerClass
+	@OCL(derivation="displayFields->select(f | f.isBooleanField = true)->notEmpty()")
+	derived readonly transient volatile boolean hasBooleanFields
+
+	@OCL(derivation="if self.oclIsKindOf(EditUnit) then
+				self.oclAsType(EditUnit).useCaptcha
+			else
+				false
+			endif")
+	derived readonly transient unsettable volatile boolean hasCaptcha
+
+	@OCL(derivation="if self.oclIsKindOf(EditUnit) then
+				collectionFields
+					->select(f | f.oclIsKindOf(UnitFeature)).oclAsType(UnitFeature)
+					->select(f | f.collectionUiAllowAdd = true or f.collectionUiAllowRemove = true)
+					->notEmpty()
+			else
+				false
+			endif")
+	derived readonly transient volatile boolean hasChangableCollections
+
+	@OCL(derivation="displayFields->select(f | f.isSingleton = false)")
+	refers readonly transient volatile unsettable derived UnitField[] collectionFields
+
+	@OCL(derivation="collectionFields->select(f | f.oclIsKindOf(UnitFeature)).oclAsType(UnitFeature)->asOrderedSet()")
+	refers readonly transient volatile unsettable derived UnitFeature[] collectionFeatures
+
+	@OCL(derivation="displayFields->select(f | f.isDataTypeField = true)")
+	refers readonly transient volatile unsettable derived UnitField[] dataTypeFields
+
+	@OCL(derivation="displayFields->select(f | f.isDateField = true)")
+	refers readonly transient volatile unsettable derived UnitField[] dateFields
+
+	@OCL(derivation="displayFields->select(f | f.hasDefaultValue = true)")
+	refers readonly transient volatile unsettable derived UnitField[] defaultValueFields
+
+	@OCL(derivation="defaultValueFields->notEmpty()")
+	derived readonly transient volatile boolean hasDefaultValueFields
+
+	@OCL(derivation="displayFields->select(f | f.isDisabled = true)->notEmpty()")
+	derived readonly transient volatile boolean hasDisabledFields
+
+	@OCL(derivation="displayFields->select(f | f.isEmailField = true)->notEmpty()")
+	derived readonly transient volatile boolean hasEmailFields
+
+	@OCL(derivation="displayFields->select(f | f.isEncryptedField = true)")
+	refers readonly transient volatile unsettable derived UnitField[] encryptedFields
+
+	@OCL(derivation="encryptedFields->notEmpty()")
+	derived readonly transient volatile boolean hasEncryptedFields
+
+	@OCL(derivation="displayFields->select(f | f.isEnumerationField = true)")
+	refers readonly transient volatile unsettable derived UnitField[] enumerationFields
+	@OCL(derivation="enumerationFields->notEmpty()")
+	derived readonly transient volatile boolean hasEnumerationFields
+
+	@OCL(derivation="displayFields->select(f | f.oclIsKindOf(UnitFeature)).oclAsType(UnitFeature)->asOrderedSet()")
+	refers readonly transient volatile unsettable derived UnitFeature[] featureFields
+	@OCL(derivation="featureFields->notEmpty()")
+	derived readonly transient volatile boolean hasFeatureFields
+
+	@OCL(derivation="displayFields->select(f | f.hasForcedValue = true)")
+	refers readonly transient volatile unsettable derived UnitField[] forcedValueFields
+	@OCL(derivation="forcedValueFields->notEmpty()")
+	derived readonly transient volatile boolean hasForcedValueFields
+
+	@OCL(derivation="if self.isFormUnit = true then
+				displayFields
+			else
+				OrderedSet{}
+			endif")
+	refers readonly transient volatile unsettable derived UnitField[] formFields
+
+	@OCL(derivation="displayFields->select(f | f.isIntegerField = true)->notEmpty()")
+	derived readonly transient volatile boolean hasIntegerFields
+
+	@OCL(derivation="displayFields->select(f | f.oclIsKindOf(InterfaceField)).oclAsType(InterfaceField)->asOrderedSet()")
+	refers readonly transient volatile unsettable derived InterfaceField[] interfaceFields
+	@OCL(derivation="interfaceFields->notEmpty()")
+	derived readonly transient unsettable volatile boolean hasInterfaceFields
+
+	@OCL(derivation="interfaceFields->select(f | f.isRequired = true)->notEmpty()")
+	derived readonly transient unsettable volatile boolean hasRequiredInterfaceFields
+
+	@OCL(derivation="displayFields->select(f | f.isObfuscatedField = true)->notEmpty()")
+	derived readonly transient unsettable volatile boolean hasObfuscatedFields
+
+	@OCL(derivation="displayFields->select(f | f.isRepeated = true)->notEmpty()")
+	derived readonly transient unsettable volatile boolean hasRepeatedFields
+
+	@OCL(derivation="displayFields->select(f | f.isResourceField = true)->notEmpty()")
+	readonly transient volatile unsettable derived boolean hasResourceFields
+
+	@OCL(derivation="displayFields->select(f | f.isStringField = true)->notEmpty()")
+	derived readonly transient unsettable volatile boolean hasStringFields
+
+	@OCL(derivation="displayFields->select(f | f.isTextareaField = true)->notEmpty()")
+	derived readonly transient unsettable volatile boolean hasTextareaFields
+
+	@OCL(derivation="displayFields->select(f | f.isUrlField = true)->notEmpty()")
+	derived readonly transient unsettable volatile boolean hasUrlFields
+
 	String localFieldListClass = ''
-	derived readonly transient unsettable volatile String fieldListClass get {
-		if (this instanceof CardsUnit) 
-			(this as CardsUnit).cardsFieldListClass
-		else if (this instanceof DetailsUnit) 
-			(this as DetailsUnit).detailsFieldListClass
-		else if (this instanceof EditUnit) 
-			(this as EditUnit).formFieldListClass
-		else if (this instanceof GalleryUnit) 
-			(this as GalleryUnit).galleryFieldListClass
-		else if (this instanceof TabularUnit) 
-			(this as TabularUnit).tabularFieldListClass
-		else if (this instanceof SliderUnit) 
-			(this as SliderUnit).sliderFieldListClass
-		else
-			''
-	}
-	derived readonly transient unsettable volatile boolean hasFieldListClass get {
-		fieldListClass != ''
-	}
 	String localDefinitionFieldListClass = ''
-	derived readonly transient volatile String definitionFieldListClass get {
-		if (this instanceof CardsUnit) 
-			(this as CardsUnit).cardsDefinitionFieldListClass
-		else if (this instanceof DetailsUnit) 
-			(this as DetailsUnit).detailsDefinitionFieldListClass
-		else if (this instanceof EditUnit) 
-			(this as EditUnit).formDefinitionFieldListClass
-		else if (this instanceof GalleryUnit) 
-			(this as GalleryUnit).galleryDefinitionFieldListClass
-		else if (this instanceof TabularUnit) 
-			(this as TabularUnit).tabularDefinitionFieldListClass
-		else if (this instanceof SliderUnit) 
-			(this as SliderUnit).sliderDefinitionFieldListClass
-		else
-			''
-	}
-	derived readonly transient volatile boolean hasDefinitionFieldListClass get {
-		definitionFieldListClass != ''
-	}
-	String localInputGroupClass = ''
-	derived readonly transient volatile String inputGroupClass get {
-		if (this instanceof EditUnit) 
-			(this as EditUnit).formInputGroupClass
-		else
-			''
-	}
-	derived readonly transient volatile boolean hasInputGroupClass get {
-		inputGroupClass != ''
-	}
 	String localFieldLabelClass = ''
-	derived readonly transient volatile String fieldLabelClass get {
-		if (this instanceof CardsUnit) 
-			(this as CardsUnit).cardsFieldLabelClass
-		else if (this instanceof DetailsUnit) 
-			(this as DetailsUnit).detailsFieldLabelClass
-		else if (this instanceof EditUnit) 
-			(this as EditUnit).formFieldLabelClass
-		else if (this instanceof GalleryUnit) 
-			(this as GalleryUnit).galleryFieldLabelClass
-		else if (this instanceof TabularUnit) 
-			(this as TabularUnit).tabularFieldLabelClass
-		else if (this instanceof SliderUnit) 
-			(this as SliderUnit).sliderFieldLabelClass
-		else
-			''
-	}
-	derived readonly transient volatile boolean hasFieldLabelClass get {
-		fieldLabelClass != ''
-	}
 	String localFieldValueClass = ''
-	derived readonly transient volatile String fieldValueClass get {
-		if (this instanceof CardsUnit) 
-			(this as CardsUnit).cardsFieldValueClass
-		else if (this instanceof DetailsUnit) 
-			(this as DetailsUnit).detailsFieldValueClass
-		else if (this instanceof EditUnit) 
-			(this as EditUnit).formFieldValueClass
-		else if (this instanceof GalleryUnit) 
-			(this as GalleryUnit).galleryFieldValueClass
-		else if (this instanceof TabularUnit) 
-			(this as TabularUnit).tabularFieldValueClass
-		else if (this instanceof SliderUnit) 
-			(this as SliderUnit).sliderFieldValueClass
-		else
-			''
-	}
-	derived readonly transient volatile boolean hasFieldValueClass get {
-		fieldValueClass != ''
-	}
 	String localControlClass = ''
-	derived readonly transient volatile String controlClass get {
-		if (this instanceof CardsUnit) 
-			(this as CardsUnit).cardsControlClass
-		else if (this instanceof DetailsUnit) 
-			(this as DetailsUnit).detailsControlClass
-		else if (this instanceof EditUnit) 
-			(this as EditUnit).formControlClass
-		else if (this instanceof GalleryUnit) 
-			(this as GalleryUnit).galleryControlClass
-		else if (this instanceof SliderUnit) 
-			(this as SliderUnit).sliderControlClass
-		else if (this instanceof TabularUnit) 
-			(this as TabularUnit).tabularControlClass
-		else
-			''
-	}
-	derived readonly transient volatile boolean hasControlClass get {
-		controlClass != ''
-	}
-	String localInstanceControlClass = ''
-	derived readonly transient volatile String instanceControlClass get {
-		if (this instanceof CardsUnit) 
-			(this as CardsUnit).cardsInstanceControlClass
-		else if (this instanceof GalleryUnit) 
-			(this as GalleryUnit).galleryInstanceControlClass
-		else if (this instanceof SliderUnit) 
-			(this as SliderUnit).sliderInstanceControlClass
-		else if (this instanceof TabularUnit) 
-			(this as TabularUnit).tabularInstanceControlClass
-		else
-			''
-	}
-	derived readonly transient volatile boolean hasInstanceControlClass get {
-		instanceControlClass != ''
-	}
 	String localAnchorClass = ''
-	derived readonly transient volatile String anchorClass get {
-		if (this instanceof CardsUnit) 
-			(this as CardsUnit).cardsAnchorClass
-		else if (this instanceof DetailsUnit) 
-			(this as DetailsUnit).detailsAnchorClass
-		else if (this instanceof EditUnit) 
-			(this as EditUnit).formAnchorClass
-		else if (this instanceof GalleryUnit) 
-			(this as GalleryUnit).galleryAnchorClass
-		else if (this instanceof TabularUnit) 
-			(this as TabularUnit).tabularAnchorClass
-		else if (this instanceof SliderUnit) 
-			(this as SliderUnit).sliderAnchorClass
-		else
-			''
-	}
-	derived readonly transient volatile boolean hasAnchorClass get {
-		anchorClass != ''
-	}
-	String localInstanceAnchorClass = ''
-	derived readonly transient volatile String instanceAnchorClass get {
-		if (this instanceof CardsUnit) 
-			(this as CardsUnit).cardsInstanceAnchorClass
-		else if (this instanceof GalleryUnit) 
-			(this as GalleryUnit).galleryInstanceAnchorClass
-		else if (this instanceof SliderUnit) 
-			(this as SliderUnit).sliderInstanceAnchorClass
-		else if (this instanceof TabularUnit) 
-			(this as TabularUnit).tabularInstanceAnchorClass
-		else
-			''
-	}
-	derived readonly transient volatile boolean hasInstanceAnchorClass get {
-		instanceAnchorClass != ''
-	}
-	String footerClass
+
+	@OCL(derivation="if self.oclIsKindOf(EditUnit) then
+					if self.oclAsType(EditUnit).hasFieldListClass = true then
+						self.oclAsType(EditUnit).fieldListClass
+					else
+						''
+					endif
+				else if self.oclIsKindOf(DetailsUnit) then
+					if self.oclAsType(DetailsUnit).hasFieldListClass = true then
+						self.oclAsType(DetailsUnit).fieldListClass
+					else
+						''
+					endif
+				else if self.oclIsKindOf(TabularUnit) then
+					if self.oclAsType(TabularUnit).hasFieldListClass = true then
+						self.oclAsType(TabularUnit).fieldListClass
+					else
+						''
+					endif
+				else if self.oclIsKindOf(CardsUnit) then
+					if self.oclAsType(CardsUnit).hasFieldListClass = true then
+						self.oclAsType(CardsUnit).fieldListClass
+					else
+						''
+					endif
+				else if self.oclIsKindOf(SliderUnit) then
+					if self.oclAsType(SliderUnit).hasFieldListClass = true then
+						self.oclAsType(SliderUnit).fieldListClass
+					else
+						''
+					endif
+				else if self.oclIsKindOf(GalleryUnit) then
+					if self.oclAsType(GalleryUnit).hasFieldListClass = true then
+						self.oclAsType(GalleryUnit).fieldListClass
+					else
+						''
+					endif
+				else
+					''
+				endif endif endif endif endif endif")
+	derived readonly unsettable transient volatile String commonFieldListClass
+	@OCL(derivation="commonFieldListClass <> ''")
+	derived readonly transient volatile boolean hasCommonFieldListClass
+
+	@OCL(derivation="if self.oclIsKindOf(EditUnit) then
+					if self.oclAsType(EditUnit).hasDefinitionFieldListClass = true then
+						self.oclAsType(EditUnit).definitionFieldListClass
+					else
+						''
+					endif
+				else if self.oclIsKindOf(DetailsUnit) then
+					if self.oclAsType(DetailsUnit).hasDefinitionFieldListClass = true then
+						self.oclAsType(DetailsUnit).definitionFieldListClass
+					else
+						''
+					endif
+				else if self.oclIsKindOf(TabularUnit) then
+					if self.oclAsType(TabularUnit).hasDefinitionFieldListClass = true then
+						self.oclAsType(TabularUnit).definitionFieldListClass
+					else
+						''
+					endif
+				else if self.oclIsKindOf(CardsUnit) then
+					if self.oclAsType(CardsUnit).hasDefinitionFieldListClass = true then
+						self.oclAsType(CardsUnit).definitionFieldListClass
+					else
+						''
+					endif
+				else if self.oclIsKindOf(SliderUnit) then
+					if self.oclAsType(SliderUnit).hasDefinitionFieldListClass = true then
+						self.oclAsType(SliderUnit).definitionFieldListClass
+					else
+						''
+					endif
+				else if self.oclIsKindOf(GalleryUnit) then
+					if self.oclAsType(GalleryUnit).hasDefinitionFieldListClass = true then
+						self.oclAsType(GalleryUnit).definitionFieldListClass
+					else
+						''
+					endif
+				else
+					''
+				endif endif endif endif endif endif")
+	derived readonly unsettable transient volatile String commonDefinitionFieldListClass
+	@OCL(derivation="commonDefinitionFieldListClass <> ''")
+	derived readonly transient volatile boolean hasCommonDefinitionFieldListClass
+
+	@OCL(derivation="if self.oclIsKindOf(EditUnit) then
+					if self.oclAsType(EditUnit).hasFieldLabelClass = true then
+						self.oclAsType(EditUnit).fieldLabelClass
+					else
+						''
+					endif
+				else if self.oclIsKindOf(DetailsUnit) then
+					if self.oclAsType(DetailsUnit).hasFieldLabelClass = true then
+						self.oclAsType(DetailsUnit).fieldLabelClass
+					else
+						''
+					endif
+				else if self.oclIsKindOf(TabularUnit) then
+					if self.oclAsType(TabularUnit).hasFieldLabelClass = true then
+						self.oclAsType(TabularUnit).fieldLabelClass
+					else
+						''
+					endif
+				else if self.oclIsKindOf(CardsUnit) then
+					if self.oclAsType(CardsUnit).hasFieldLabelClass = true then
+						self.oclAsType(CardsUnit).fieldLabelClass
+					else
+						''
+					endif
+				else if self.oclIsKindOf(SliderUnit) then
+					if self.oclAsType(SliderUnit).hasFieldLabelClass = true then
+						self.oclAsType(SliderUnit).fieldLabelClass
+					else
+						''
+					endif
+				else if self.oclIsKindOf(GalleryUnit) then
+					if self.oclAsType(GalleryUnit).hasFieldLabelClass = true then
+						self.oclAsType(GalleryUnit).fieldLabelClass
+					else
+						''
+					endif
+				else
+					''
+				endif endif endif endif endif endif")
+	derived readonly unsettable transient volatile String commonFieldLabelClass
+	@OCL(derivation="commonFieldLabelClass <> ''")
+	derived readonly transient volatile boolean hasCommonFieldLabelClass
+
+	@OCL(derivation="if self.oclIsKindOf(EditUnit) then
+					if self.oclAsType(EditUnit).hasFieldValueClass = true then
+						self.oclAsType(EditUnit).fieldValueClass
+					else
+						''
+					endif
+				else if self.oclIsKindOf(DetailsUnit) then
+					if self.oclAsType(DetailsUnit).hasFieldValueClass = true then
+						self.oclAsType(DetailsUnit).fieldValueClass
+					else
+						''
+					endif
+				else if self.oclIsKindOf(TabularUnit) then
+					if self.oclAsType(TabularUnit).hasFieldValueClass = true then
+						self.oclAsType(TabularUnit).fieldValueClass
+					else
+						''
+					endif
+				else if self.oclIsKindOf(CardsUnit) then
+					if self.oclAsType(CardsUnit).hasFieldValueClass = true then
+						self.oclAsType(CardsUnit).fieldValueClass
+					else
+						''
+					endif
+				else if self.oclIsKindOf(SliderUnit) then
+					if self.oclAsType(SliderUnit).hasFieldValueClass = true then
+						self.oclAsType(SliderUnit).fieldValueClass
+					else
+						''
+					endif
+				else if self.oclIsKindOf(GalleryUnit) then
+					if self.oclAsType(GalleryUnit).hasFieldValueClass = true then
+						self.oclAsType(GalleryUnit).fieldValueClass
+					else
+						''
+					endif
+				else
+					''
+				endif endif endif endif endif endif")
+	derived readonly unsettable transient volatile String commonFieldValueClass
+	@OCL(derivation="commonFieldValueClass <> ''")
+	derived readonly transient volatile boolean hasCommonFieldValueClass
+
+	@OCL(derivation="if self.oclIsKindOf(EditUnit) then
+					if self.oclAsType(EditUnit).hasAnchorClass = true then
+						self.oclAsType(EditUnit).anchorClass
+					else
+						''
+					endif
+				else if self.oclIsKindOf(DetailsUnit) then
+					if self.oclAsType(DetailsUnit).hasAnchorClass = true then
+						self.oclAsType(DetailsUnit).anchorClass
+					else
+						''
+					endif
+				else if self.oclIsKindOf(TabularUnit) then
+					if self.oclAsType(TabularUnit).hasAnchorClass = true then
+						self.oclAsType(TabularUnit).anchorClass
+					else
+						''
+					endif
+				else if self.oclIsKindOf(CardsUnit) then
+					if self.oclAsType(CardsUnit).hasAnchorClass = true then
+						self.oclAsType(CardsUnit).anchorClass
+					else
+						''
+					endif
+				else if self.oclIsKindOf(SliderUnit) then
+					if self.oclAsType(SliderUnit).hasAnchorClass = true then
+						self.oclAsType(SliderUnit).anchorClass
+					else
+						''
+					endif
+				else if self.oclIsKindOf(GalleryUnit) then
+					if self.oclAsType(GalleryUnit).hasAnchorClass = true then
+						self.oclAsType(GalleryUnit).anchorClass
+					else
+						''
+					endif
+				else
+					''
+				endif endif endif endif endif endif")
+	derived readonly unsettable transient volatile String commonAnchorClass
+	@OCL(derivation="commonAnchorClass <> ''")
+	derived readonly transient volatile boolean hasCommonAnchorClass
 }
 
 class RouteActual {
@@ -939,340 +1017,396 @@ enum CollectionDisplayOptions {
 
 interface UnitField extends DisplayElement {
 	container DynamicUnit[1] displayedOn opposite displayFields
-	derived readonly transient volatile String fieldName get {
-		if (this instanceof UnitAttribute)
-			(this as UnitAttribute).name
-		else if (this instanceof UnitAssociation)
-			(this as UnitAssociation).name
-		else if (this instanceof InterfaceField)
-			(this as InterfaceField).name
-		else if (this instanceof UnitLabel)
-			(this as UnitLabel).name
-	}
+
+	@OCL(derivation="if self.oclIsKindOf(UnitAttribute) then
+			self.oclAsType(UnitAttribute).name
+		else if self.oclIsKindOf(UnitAssociation) then
+			self.oclAsType(UnitAssociation).name
+		else if self.oclIsKindOf(InterfaceField) then
+			self.oclAsType(InterfaceField).name
+		else if self.oclIsKindOf(UnitLabel) then
+			self.oclAsType(UnitLabel).name
+		else
+			''
+		endif endif endif endif")
+	derived readonly transient volatile String fieldName
+
 	String authorisationRoles = ''
-	derived readonly transient volatile boolean isAuthorised get {
-		authorisationRoles.trim() != ''
-	}
-	derived readonly unsettable transient volatile boolean hasCustomisedDisplayLabel get {
-		if (this instanceof UnitFeature)
-			displayLabel.trim() != ''
-				&& displayLabel.trim() != (this as UnitFeature).persistentFeature.displayLabel.trim()
-		else if (this instanceof InterfaceField)
+	@OCL(derivation="authorisationRoles.trim() <> ''")
+	derived readonly transient volatile boolean isAuthorised
+
+	@OCL(derivation="if self.oclIsKindOf(UnitFeature) then
+			(displayLabel.trim() <> '')
+				and (displayLabel.trim() <> self.oclAsType(UnitFeature).persistentFeature.displayLabel.trim())
+		else if self.oclIsKindOf(InterfaceField) then
 			true
-		else // UnitLabel
-			false
-	}
-	derived readonly unsettable transient volatile boolean isRepeated get {
-		if (this instanceof InterfaceField)
-			(this as InterfaceField).repeatedField
 		else
 			false
-	}
+		endif endif")
+	derived readonly unsettable transient volatile boolean hasCustomisedDisplayLabel
+
+	@OCL(derivation="if self.oclIsKindOf(InterfaceField) then
+			self.oclAsType(InterfaceField).repeatedField
+		else
+			false
+		endif")
+	derived readonly unsettable transient volatile boolean isRepeated
+
 	String localTitle = ''
-	derived readonly unsettable transient volatile String title get {
-		if (this instanceof UnitLabel)
+	@OCL(derivation="if self.oclIsKindOf(UnitLabel) then
 			''
 		else
-			if (localTitle.trim() != '')
+			if localTitle.trim() <> '' then
 				localTitle.trim()
-			else if (this instanceof UnitFeature)
-				(this as UnitFeature).persistentFeature.displayLabel.trim()
+			else if self.oclIsKindOf(UnitFeature) then
+				self.oclAsType(UnitFeature).persistentFeature.displayLabel.trim()
 			else
 				''
-	}
-	derived readonly unsettable transient volatile boolean hasTitle get {
-		title != ''
-	}
-	derived readonly unsettable transient volatile boolean hasCustomisedTitle get {
-		if (this instanceof UnitFeature)
-			title != (this as UnitFeature).persistentFeature.displayLabel.trim()
+			endif endif
+		endif")
+	derived readonly unsettable transient volatile String title
+	@OCL(derivation="title <> ''")
+	derived readonly unsettable transient volatile boolean hasTitle
+
+	@OCL(derivation="if self.oclIsKindOf(UnitFeature) then
+			title <> self.oclAsType(UnitFeature).persistentFeature.displayLabel.trim()
 		else
-			title.trim() != ''
-	}
-	derived readonly unsettable transient volatile boolean hasSecondTitle get {
-		if (this instanceof InterfaceField && this.isRepeated)
-			(this as InterfaceField).secondTitle != ''
+			title <> ''
+		endif")
+	derived readonly unsettable transient volatile boolean hasCustomisedTitle
+
+	@OCL(derivation="if self.oclIsKindOf(InterfaceField) and self.isRepeated then
+			self.oclAsType(InterfaceField).secondTitle.trim() <> ''
 		else
 			false
-	}
+		endif")
+	derived readonly unsettable transient volatile boolean hasSecondTitle
+
 	String localPlaceholder = ''
-	derived readonly unsettable transient volatile String placeholder get {
-		if (this instanceof UnitLabel)
+	@OCL(derivation="if self.oclIsKindOf(UnitLabel) then
 			''
 		else
-			if (localPlaceholder.trim() != '')
+			if localPlaceholder.trim() <> '' then
 				localPlaceholder.trim()
-			else if (this instanceof UnitFeature)
-				(this as UnitFeature).persistentFeature.displayLabel.trim()
+			else if self.oclIsKindOf(UnitFeature) then
+				self.oclAsType(UnitFeature).persistentFeature.displayLabel.trim()
 			else
 				''
-	}
-	derived readonly unsettable transient volatile boolean hasPlaceholder get {
-		placeholder != ''
-	}
-	derived readonly unsettable transient volatile boolean hasCustomisedPlaceholder get {
-		if (this instanceof UnitFeature)
-			placeholder != (this as UnitFeature).persistentFeature.displayLabel.trim()
+			endif endif
+		endif")
+	derived readonly unsettable transient volatile String placeholder
+	@OCL(derivation="placeholder <> ''")
+	derived readonly unsettable transient volatile boolean hasPlaceholder
+
+	@OCL(derivation="if self.oclIsKindOf(UnitFeature) then
+			placeholder <> self.oclAsType(UnitFeature).persistentFeature.displayLabel.trim()
 		else
-			placeholder != ''
-	}
-	derived readonly unsettable transient volatile boolean hasSecondPlaceholder get {
-		if (this instanceof InterfaceField && this.isRepeated)
-			(this as InterfaceField).secondPlaceholder != ''
+			placeholder <> ''
+		endif")
+	derived readonly unsettable transient volatile boolean hasCustomisedPlaceholder
+
+	@OCL(derivation="if self.oclIsKindOf(InterfaceField) and self.isRepeated then
+			self.oclAsType(InterfaceField).secondPlaceholder.trim() <> ''
 		else
 			false
-	}
+		endif")
+	derived readonly unsettable transient volatile boolean hasSecondPlaceholder
+
 	String localHelp = ''
-	derived readonly unsettable transient volatile String help get {
-		if (this instanceof UnitLabel)
+	@OCL(derivation="if self.oclIsKindOf(UnitLabel) then
 			''
 		else
-			if (localHelp.trim() != '')
+			if localHelp.trim() <> '' then
 				localHelp.trim()
 			else
-					''
-	}
-	derived readonly unsettable transient volatile boolean hasHelp get {
-		help != ''
-	}
-	derived readonly unsettable transient volatile boolean hasSecondHelp get {
-		if (this instanceof InterfaceField && this.isRepeated)
-			(this as InterfaceField).secondHelp != ''
+				''
+			endif
+		endif")
+	derived readonly unsettable transient volatile String help
+	@OCL(derivation="help <> ''")
+	derived readonly unsettable transient volatile boolean hasHelp
+
+	@OCL(derivation="if self.oclIsKindOf(InterfaceField) and self.isRepeated then
+			self.oclAsType(InterfaceField).secondHelp.trim() <> ''
 		else
 			false
-	}
+		endif")
+	derived readonly unsettable transient volatile boolean hasSecondHelp
+
 	contains Predicate hideWhen
-	refers derived readonly transient volatile Feature persistentFeature get {
-		if (this instanceof UnitAttribute) 
-			(this as UnitAttribute).attribute
-		else if (this instanceof UnitAssociation) {
-			if ((this as UnitAssociation).childFeature instanceof ChildPathAttribute)
-				((this as UnitAssociation).childFeature as ChildPathAttribute).persistentFeature
-			else if ((this as UnitAssociation).childFeature instanceof ChildPathAssociation)
-				((this as UnitAssociation).childFeature as ChildPathAssociation).persistentFeature
+
+	@OCL(derivation="if self.oclIsKindOf(UnitAttribute) then
+			self.oclAsType(UnitAttribute).attribute
+		else if self.oclIsKindOf(UnitAssociation) then
+			if self.oclAsType(UnitAssociation).childFeature.oclIsUndefined() then
+				self.oclAsType(UnitAssociation).association
 			else
-				(this as UnitAssociation).association
-		}
-	}
-	derived readonly transient volatile boolean isContains get {
-		if (this instanceof UnitAssociation) 
-			(this as UnitAssociation).association.isContains
+				if self.oclAsType(UnitAssociation).childFeature.oclIsKindOf(ChildPathAttribute) then
+					self.oclAsType(UnitAssociation).childFeature.oclAsType(ChildPathAttribute).persistentFeature
+				else if self.oclAsType(UnitAssociation).childFeature.oclIsKindOf(ChildPathAssociation) then
+					self.oclAsType(UnitAssociation).childFeature.oclAsType(ChildPathAssociation).persistentFeature
+				else
+					self.oclAsType(UnitAssociation).association
+				endif endif
+			endif
+		else
+			null
+		endif endif")
+	refers derived readonly transient volatile Feature persistentFeature
+
+	@OCL(derivation="if self.oclIsKindOf(UnitAssociation) then
+			self.oclAsType(UnitAssociation).association.isContains
 		else
 			false
-	}
-	derived readonly transient volatile boolean isDisabled get {
-		disabledInput
-	}
-	derived readonly transient volatile boolean isRequired get {
-		if (this instanceof UnitFeature) 
+		endif")
+	derived readonly transient volatile boolean isContains
+
+	@OCL(derivation="disabledInput")
+	derived readonly transient volatile boolean isDisabled
+
+	@OCL(derivation="if self.oclIsKindOf(UnitFeature) then
 			persistentFeature.isRequired
-		else if (this instanceof InterfaceField)
-			(this as InterfaceField).localRequired
+		else if self.oclIsKindOf(InterfaceField) then
+			self.oclAsType(InterfaceField).localRequired
 		else
 			false
-	}
-	derived readonly transient volatile boolean isSingleton get {
-		if (this instanceof UnitFeature) 
-			persistentFeature.isSingleton
-		else if (this instanceof InterfaceField)
+		endif endif")
+	derived readonly transient volatile boolean isRequired
+
+	@OCL(derivation="if self.oclIsKindOf(UnitFeature) then
+			persistentFeature.isSingleton = true
+		else if self.oclIsKindOf(InterfaceField) then
 			true
 		else
 			false
-	}
-	derived readonly transient volatile boolean isAssociationField get {
-		this instanceof UnitAssociation
-	}
-	derived readonly transient volatile boolean isAttributeField get {
-		this instanceof UnitAttribute
-	}
-	derived readonly transient volatile boolean isBooleanField get {
-		if (this instanceof UnitFeature) 
+		endif endif")
+	derived readonly transient volatile boolean isSingleton
+
+	@OCL(derivation="self.oclIsKindOf(UnitAssociation)")
+	derived readonly transient volatile boolean isAssociationField
+
+	@OCL(derivation="self.oclIsKindOf(UnitAttribute)")
+	derived readonly transient volatile boolean isAttributeField
+
+	@OCL(derivation="if self.oclIsKindOf(UnitFeature) then
 			persistentFeature.isBooleanFeature
-		else if (this instanceof DataTypeField)
-			(this as DataTypeField).dataType.isBooleanClassifier
+		else if self.oclIsKindOf(DataTypeField) then
+			self.oclAsType(DataTypeField).dataType.isBooleanClassifier
 		else
 			false
-	}
-	derived readonly transient volatile boolean isDataTypeField get {
-		if (this instanceof UnitFeature) 
+		endif endif")
+	derived readonly transient volatile boolean isBooleanField
+
+	@OCL(derivation="if self.oclIsKindOf(UnitFeature) then
 			persistentFeature.isDataTypeFeature
-		else if (this instanceof DataTypeField)
-			true
 		else
-			false
-	}
-	refers derived readonly transient volatile Classifier dataType get {
-		if (this instanceof UnitFeature) 
+			self.oclIsKindOf(DataTypeField)
+		endif")
+	derived readonly transient volatile boolean isDataTypeField
+
+	@OCL(derivation="if self.oclIsKindOf(UnitFeature) then
 			persistentFeature.dataType
-		else if (this instanceof DataTypeField)
-			(this as DataTypeField).fieldDataType
-	}
-	derived readonly transient volatile boolean isDateField get {
-		if (this instanceof UnitFeature) 
+		else if self.oclIsKindOf(DataTypeField) then
+			self.oclAsType(DataTypeField).fieldDataType
+		else
+			null
+		endif endif")
+	refers derived readonly transient volatile Classifier dataType
+
+	@OCL(derivation="if self.oclIsKindOf(UnitFeature) then
 			persistentFeature.isDateFeature
 		else
 			false
-	}
-	derived readonly transient volatile DateDetails dateDetails get {
-		if (this instanceof UnitFeature) 
+		endif")
+	derived readonly transient volatile boolean isDateField
+
+	@OCL(derivation="if self.oclIsKindOf(UnitFeature) then
 			persistentFeature.dateDetails
-	}
-	derived readonly transient volatile boolean isEmailField get {
-		if (this instanceof UnitFeature) 
+		else
+			null
+		endif")
+	derived readonly transient volatile DateDetails dateDetails
+
+	@OCL(derivation="if self.oclIsKindOf(UnitFeature) then
 			persistentFeature.isEmailFeature
-		else if (this instanceof DataTypeField)
-			(this as DataTypeField).dataType.isEmailClassifier
+		else if self.oclIsKindOf(DataTypeField) then
+			self.oclAsType(DataTypeField).dataType.isEmailClassifier
 		else
 			false
-	}
-	derived readonly transient volatile boolean isEncryptedField get {
-		if (this instanceof UnitFeature) 
+		endif endif")
+	derived readonly transient volatile boolean isEmailField
+
+	@OCL(derivation="if self.oclIsKindOf(UnitFeature) then
 			persistentFeature.isEncrypted
 		else
 			false
-	}
-	derived readonly transient volatile boolean isEnumerationField get {
-		if (this instanceof UnitFeature) 
+		endif")
+	derived readonly transient volatile boolean isEncryptedField
+
+	@OCL(derivation="if self.oclIsKindOf(UnitFeature) then
 			persistentFeature.isEnumerationFeature
 		else
 			false
-	}
-	refers derived readonly transient volatile EnumerationType enumerationType get {
-		if (this instanceof UnitFeature) 
+		endif")
+	derived readonly transient volatile boolean isEnumerationField
+
+	@OCL(derivation="if self.oclIsKindOf(UnitFeature) then
 			persistentFeature.enumerationType
-	}
-	derived readonly transient volatile boolean isFeatureField get {
-		this instanceof UnitFeature
-	}
-	derived readonly transient volatile boolean isInterfaceField get {
-		this instanceof InterfaceField
-	}
-	derived readonly transient volatile boolean isIntegerField get {
-		if (this instanceof UnitFeature) 
+		else
+			null
+		endif")
+	refers derived readonly transient volatile EnumerationType enumerationType
+
+	@OCL(derivation="self.oclIsKindOf(UnitFeature)")
+	derived readonly transient volatile boolean isFeatureField
+
+	@OCL(derivation="self.oclIsKindOf(InterfaceField)")
+	derived readonly transient volatile boolean isInterfaceField
+
+	@OCL(derivation="if self.oclIsKindOf(UnitFeature) then
 			persistentFeature.isIntegerFeature
-		else if (this instanceof DataTypeField)
-			(this as DataTypeField).dataType.isIntegerClassifier
+		else if self.oclIsKindOf(DataTypeField) then
+			self.oclAsType(DataTypeField).dataType.isIntegerClassifier
 		else
 			false
-	}
-	derived readonly transient volatile boolean isLocationField get {
-		if (this instanceof UnitFeature) 
+		endif endif")
+	derived readonly transient volatile boolean isIntegerField
+
+	@OCL(derivation="if self.oclIsKindOf(UnitFeature) then
 			persistentFeature.isLocationFeature
 		else
 			false
-	}
-	derived readonly transient volatile boolean isObfuscatedFeature get {
-		if (this instanceof UnitFeature) 
+		endif")
+	derived readonly transient volatile boolean isLocationField
+
+	@OCL(derivation="if self.oclIsKindOf(UnitFeature) then
 			persistentFeature.isObfuscatedFeature
 		else
 			false
-	}
-	derived readonly transient volatile boolean isObfuscatedField get {
-		if (this instanceof UnitAttribute) 
-			(this as UnitAttribute).obfuscateFormFields || isObfuscatedFeature
-		else if (this instanceof DataTypeField) 
-			(this as DataTypeField).obfuscateFormFields
+		endif")
+	derived readonly transient volatile boolean isObfuscatedFeature
+
+	@OCL(derivation="if self.oclIsKindOf(UnitAttribute) then
+			self.oclAsType(UnitAttribute).obfuscateFormFields or isObfuscatedFeature
+		else if self.oclIsKindOf(DataTypeField) then
+			self.oclAsType(DataTypeField).obfuscateFormFields
 		else
 			isObfuscatedFeature
-	}
-	derived readonly transient volatile boolean isResourceField get {
-		if (this instanceof UnitFeature) 
+		endif endif")
+	derived readonly transient volatile boolean isObfuscatedField
+
+	@OCL(derivation="if self.oclIsKindOf(UnitFeature) then
 			persistentFeature.isResourceFeature
 		else
 			false
-	}
-	derived readonly transient volatile boolean isStringField get {
-		if (this instanceof UnitFeature) 
+		endif")
+	derived readonly transient volatile boolean isResourceField
+
+	@OCL(derivation="if self.oclIsKindOf(UnitFeature) then
 			persistentFeature.isStringFeature
-		else if (this instanceof DataTypeField)
-			(this as DataTypeField).dataType.isStringClassifier
+		else if self.oclIsKindOf(DataTypeField) then
+			self.oclAsType(DataTypeField).dataType.isStringClassifier
 		else
 			false
-	}
-	derived readonly transient volatile boolean isTextareaField get {
-		if (this instanceof UnitFeature) 
+		endif endif")
+	derived readonly transient volatile boolean isStringField
+
+	@OCL(derivation="if self.oclIsKindOf(UnitFeature) then
 			persistentFeature.isTextareaFeature
-		else if (this instanceof DataTypeField)
-			(this as DataTypeField).dataType.isTextareaClassifier
+		else if self.oclIsKindOf(DataTypeField) then
+			self.oclAsType(DataTypeField).dataType.isTextareaClassifier
 		else
 			false
-	}
-	derived readonly transient volatile boolean isUrlField get {
-		if (this instanceof UnitFeature) 
+		endif endif")
+	derived readonly transient volatile boolean isTextareaField
+
+	@OCL(derivation="if self.oclIsKindOf(UnitFeature) then
 			persistentFeature.isUrlFeature
 		else
 			false
-	}
-	refers readonly transient volatile derived Expression defaultValue get {
-		if (this instanceof UnitAttribute)
-			(this as UnitAttribute).attributeDefaultValue
-		else if (this instanceof InterfaceField)
-			(this as InterfaceField).fieldDefaultValue
-	}
-	derived readonly transient volatile boolean hasDefaultValue get {
-		defaultValue !== null
-	}
-	derived readonly transient volatile boolean hasForcedValue get {
-		if (this instanceof UnitFeature) 
-			(this as UnitFeature).forcedValue !== null
+		endif")
+	derived readonly transient volatile boolean isUrlField
+
+	@OCL(derivation="if self.oclIsKindOf(UnitAttribute) then
+			self.oclAsType(UnitAttribute).attributeDefaultValue
+		else if self.oclIsKindOf(InterfaceField) then
+			self.oclAsType(InterfaceField).fieldDefaultValue
+		else
+			null
+		endif endif")
+	refers readonly transient volatile derived Expression defaultValue
+
+	@OCL(derivation="not defaultValue.oclIsUndefined()")
+	derived readonly transient volatile boolean hasDefaultValue
+
+	@OCL(derivation="if self.oclIsKindOf(UnitFeature) then
+			not self.oclAsType(UnitFeature).forcedValue.oclIsUndefined()
 		else
 			false
-	}
-	derived readonly transient volatile boolean hasAutocomplete get {
-		if (this instanceof UnitAssociation) 
-			(this as UnitAssociation).optionsFilter !== null
-		else
-			false
-	}
+		endif")
+	derived readonly transient volatile boolean hasForcedValue
+
+	@OCL(derivation="if self.oclIsKindOf(UnitAssociation) then
+				not self.oclAsType(UnitAssociation).optionsFilter.oclIsUndefined()
+			else
+				false
+			endif")
+	derived readonly transient volatile boolean hasAutocomplete
+
 	boolean escapeHTML = "true"
 	CollectionDisplayOptions collectionDisplayOption
 	boolean truncate
 	String dateFormat
 	boolean disabledInput
 	String headerClass
+
 	String localInputGroupClass = ''
-	derived readonly transient volatile String inputGroupClass get {
-		if (localInputGroupClass.trim() != '')
+	@OCL(derivation="if localInputGroupClass.trim() <> '' then
 			localInputGroupClass.trim()
-		else if (displayedOn.hasInputGroupClass)
-			displayedOn.inputGroupClass
+		else if displayedOn.oclIsKindOf(EditUnit) then
+			if displayedOn.oclAsType(EditUnit).hasInputGroupClass = true then
+				displayedOn.oclAsType(EditUnit).inputGroupClass
+			else
+				''
+			endif
 		else
 			''
-	}
-	derived readonly transient volatile boolean hasInputGroupClass get {
-		inputGroupClass != ''
-	}
+		endif endif")
+	derived readonly transient volatile String inputGroupClass
+	@OCL(derivation="inputGroupClass <> ''")
+	derived readonly transient volatile boolean hasInputGroupClass
+
 	String localFieldLabelClass = ''
-	derived readonly transient volatile String fieldLabelClass get {
-		if (localFieldLabelClass.trim() != '')
+	@OCL(derivation="if localFieldLabelClass.trim() <> '' then
 			localFieldLabelClass.trim()
-		else if (displayedOn.hasFieldLabelClass)
-			displayedOn.fieldLabelClass
+		else if displayedOn.hasCommonFieldLabelClass = true then
+			displayedOn.commonFieldLabelClass
 		else
 			''
-	}
-	derived readonly transient volatile boolean hasFieldLabelClass get {
-		fieldLabelClass != ''
-	}
+		endif endif")
+	derived readonly transient volatile String fieldLabelClass
+	@OCL(derivation="fieldLabelClass <> ''")
+	derived readonly transient volatile boolean hasFieldLabelClass
+
 	String localFieldValueClass = ''
-	derived readonly transient volatile String fieldValueClass get {
-		if (localFieldValueClass.trim() != '')
+	@OCL(derivation="if localFieldValueClass.trim() <> '' then
 			localFieldValueClass.trim()
-		else if (displayedOn.hasFieldValueClass)
-			displayedOn.fieldValueClass
+		else if displayedOn.hasCommonFieldValueClass = true then
+			displayedOn.commonFieldValueClass
 		else
 			''
-	}
-	derived readonly transient volatile boolean hasFieldValueClass get {
-		fieldValueClass != ''
-	}
+		endif endif")
+	derived readonly transient volatile String fieldValueClass
+	@OCL(derivation="fieldValueClass <> ''")
+	derived readonly transient volatile boolean hasFieldValueClass
+
 	String footerClass
-	refers readonly transient volatile unsettable derived WafModel genModel get {
-		displayedOn.genModel
-	}
-	refers readonly transient volatile unsettable derived WafModel uiModel get {
-		displayedOn.uiModel
-	}
+
+	@OCL(derivation="displayedOn.genModel")
+	refers readonly transient volatile unsettable derived WafModel genModel
+
+	@OCL(derivation="displayedOn.uiModel")
+	refers readonly transient volatile unsettable derived WafModel uiModel
 }
 
 abstract class UnitFeature extends UnitField, ActionContainer {
@@ -1288,9 +1422,14 @@ abstract class UnitFeature extends UnitField, ActionContainer {
 
 class UnitAttribute extends UnitFeature {
 	refers Attribute[1] attribute
-	derived String[1] name get {
-		attribute?.name
-	}
+
+	@OCL(derivation="if not attribute.oclIsUndefined() then
+			attribute.name
+		else
+			''
+		endif")
+	derived String[1] name
+
 	contains Expression attributeDefaultValue
 	boolean obfuscateFormFields
 	String validationPattern = ''
@@ -1303,35 +1442,42 @@ class UnitAssociation extends UnitFeature, AssociationReference {
 
 abstract class FeaturePath extends Variable {
 	boolean useContainerAsContext
-	derived readonly transient volatile boolean hasChild get {
-		if (this instanceof FeaturePathAssociation)
-			(this as FeaturePathAssociation).childFeature !== null
+
+	@OCL(derivation="if self.oclIsKindOf(FeaturePathAssociation) then
+			not self.oclAsType(FeaturePathAssociation).childFeature.oclIsUndefined()
 		else
 			false
-	}
-	derived readonly transient volatile boolean isRequired get {
-		if (this instanceof FeaturePathAttribute) 
-			(this as FeaturePathAttribute).attribute.isRequired
-		else if (this instanceof FeaturePathAssociation) 
-			(this as FeaturePathAssociation).association.isRequired
+		endif")
+	derived readonly transient volatile boolean hasChild
+
+	@OCL(derivation="if self.oclIsKindOf(FeaturePathAttribute) then
+			self.oclAsType(FeaturePathAttribute).attribute.isRequired
+		else if self.oclIsKindOf(FeaturePathAssociation) then
+			self.oclAsType(FeaturePathAssociation).association.isRequired
 		else
 			false
-	}
-	derived readonly transient volatile boolean isSingleton get {
-		if (this instanceof FeaturePathAttribute) 
-			(this as FeaturePathAttribute).attribute.isSingleton
-		else if (this instanceof FeaturePathAssociation) 
-			(this as FeaturePathAssociation).association.isSingleton
+		endif endif")
+	derived readonly transient volatile boolean isRequired
+
+	@OCL(derivation="if self.oclIsKindOf(FeaturePathAttribute) then
+			self.oclAsType(FeaturePathAttribute).attribute.isSingleton
+		else if self.oclIsKindOf(FeaturePathAssociation) then
+			self.oclAsType(FeaturePathAssociation).association.isSingleton
 		else
 			false
-	}
+		endif endif")
+	derived readonly transient volatile boolean isSingleton
 }
 
 class FeaturePathAttribute extends FeaturePath {
 	refers Attribute[1] attribute
-	derived String name get {
-		attribute?.name
-	}
+
+	@OCL(derivation="if not attribute.oclIsUndefined() then
+			attribute.name
+		else
+			''
+		endif")
+	derived String name
 }
 
 class FeaturePathAssociation extends FeaturePath, AssociationReference {
@@ -1339,40 +1485,54 @@ class FeaturePathAssociation extends FeaturePath, AssociationReference {
 
 class FeaturePathLabel extends FeaturePath {
 	refers ModelLabel[1] label
-	derived String name get {
-		label?.name
-	}
+
+	@OCL(derivation="if not label.oclIsUndefined() then
+			label.name
+		else
+			''
+		endif")
+	derived String name
 }
 
 class ChildPathAttribute extends FeatureChildPath {
 	refers Attribute[1] attribute
-	derived String name get {
-		attribute?.name
-	}
-	refers derived readonly transient volatile Feature persistentFeature get {
-		attribute
-	}
+
+	@OCL(derivation="if not attribute.oclIsUndefined() then
+			attribute.name
+		else
+			''
+		endif")
+	derived String name
+
+	@OCL(derivation="attribute")
+	refers derived readonly transient volatile Feature persistentFeature
 }
 
 class ChildPathAssociation extends FeatureChildPath, AssociationReference {
-	derived readonly transient volatile boolean hasChild get {
-		childFeature !== null
-	}
-	refers derived readonly transient volatile Feature persistentFeature get {
-		if (!hasChild)
+	@OCL(derivation="not childFeature.oclIsUndefined()")
+	derived readonly transient volatile boolean hasChild
+
+	@OCL(derivation="if hasChild = false then
 			association
-		else if (childFeature instanceof ChildPathAttribute)
-				(childFeature as ChildPathAttribute).persistentFeature
-		else if (childFeature instanceof ChildPathAssociation)
-				(childFeature as ChildPathAssociation).persistentFeature
-	}
+		else if childFeature.oclIsKindOf(ChildPathAttribute) then
+			childFeature.oclAsType(ChildPathAttribute).persistentFeature
+		else if childFeature.oclIsKindOf(ChildPathAssociation) then
+			childFeature.oclAsType(ChildPathAssociation).persistentFeature
+		else
+			null
+		endif endif endif")
+	refers derived readonly transient volatile Feature persistentFeature
 }
 
 class UnitLabel extends UnitField {
 	refers ModelLabel[1] label
-	derived String[1] name get {
-		label?.name
-	}
+
+	@OCL(derivation="if not label.oclIsUndefined() then
+			label.name
+		else
+			''
+		endif")
+	derived String[1] name
 }
 
 abstract class InterfaceField extends NamedElement, UnitField {
@@ -1421,23 +1581,26 @@ class CollectionUnit extends DynamicUnit, SelectableUnit {
 	refers Entity containerType
 	refers Selection findContainerSelection
 	refers Selection findElementSelection
+
 	refers Filter filter
 	refers Filter[] supportedFilters
-	derived readonly transient volatile boolean hasFilters get {
-		!supportedFilters.isEmpty()
-	}
-	derived readonly transient volatile boolean hasGroupedResults get {
-		if (selection !== null)
-			!selection.grouping.isEmpty()
+	@OCL(derivation="supportedFilters->notEmpty()")
+	derived readonly transient volatile boolean hasFilters
+
+	@OCL(derivation="if not selection.oclIsUndefined() then
+			selection.grouping->notEmpty()
 		else
 			false
-	}
-	derived readonly transient volatile boolean hasPagination get {
-		if (selection === null)
+		endif")
+	derived readonly transient volatile boolean hasGroupedResults
+
+	@OCL(derivation="if selection.oclIsUndefined() then
 			false
 		else
-			defaultPaginationSize > 0 && selection.hasPaginationSupport
-	}
+			defaultPaginationSize > 0 and selection.hasPaginationSupport = true
+		endif")
+	derived readonly transient volatile boolean hasPagination
+
 	String emptyMessage
 	boolean omitFieldLabels
 	int defaultPaginationSize
@@ -1458,6 +1621,71 @@ class CollectionUnit extends DynamicUnit, SelectableUnit {
 	String paginationClass
 	String paginationElementClass
 	String paginationAnchorClass
+
+	String localInstanceControlClass = ''
+	String localInstanceAnchorClass = ''
+
+	@OCL(derivation="if self.oclIsKindOf(TabularUnit) then
+					if self.oclAsType(TabularUnit).hasInstanceControlClass = true then
+						self.oclAsType(TabularUnit).instanceControlClass
+					else
+						''
+					endif
+				else if self.oclIsKindOf(CardsUnit) then
+					if self.oclAsType(CardsUnit).hasInstanceControlClass = true then
+						self.oclAsType(CardsUnit).instanceControlClass
+					else
+						''
+					endif
+				else if self.oclIsKindOf(SliderUnit) then
+					if self.oclAsType(SliderUnit).hasInstanceControlClass = true then
+						self.oclAsType(SliderUnit).instanceControlClass
+					else
+						''
+					endif
+				else if self.oclIsKindOf(GalleryUnit) then
+					if self.oclAsType(GalleryUnit).hasInstanceControlClass = true then
+						self.oclAsType(GalleryUnit).instanceControlClass
+					else
+						''
+					endif
+				else
+					''
+				endif endif endif endif")
+	derived readonly unsettable transient volatile String commonInstanceControlClass
+	@OCL(derivation="commonInstanceControlClass <> ''")
+	derived readonly transient volatile boolean hasCommonInstanceControlClass
+
+	@OCL(derivation="if self.oclIsKindOf(TabularUnit) then
+					if self.oclAsType(TabularUnit).hasInstanceAnchorClass = true then
+						self.oclAsType(TabularUnit).instanceAnchorClass
+					else
+						''
+					endif
+				else if self.oclIsKindOf(CardsUnit) then
+					if self.oclAsType(CardsUnit).hasInstanceAnchorClass = true then
+						self.oclAsType(CardsUnit).instanceAnchorClass
+					else
+						''
+					endif
+				else if self.oclIsKindOf(SliderUnit) then
+					if self.oclAsType(SliderUnit).hasInstanceAnchorClass = true then
+						self.oclAsType(SliderUnit).instanceAnchorClass
+					else
+						''
+					endif
+				else if self.oclIsKindOf(GalleryUnit) then
+					if self.oclAsType(GalleryUnit).hasInstanceAnchorClass = true then
+						self.oclAsType(GalleryUnit).instanceAnchorClass
+					else
+						''
+					endif
+				else
+					''
+				endif endif endif endif")
+	derived readonly unsettable transient volatile String commonInstanceAnchorClass
+	@OCL(derivation="commonInstanceAnchorClass <> ''")
+	derived readonly transient volatile boolean hasCommonInstanceAnchorClass
 }
 
 abstract class EditUnit extends SingletonUnit {
@@ -1467,98 +1695,148 @@ abstract class EditUnit extends SingletonUnit {
 	refers Page confirmDestination
 	String[1] confirmLabel
 	boolean hasCustomConfirmLabel
+
 	contains Message confirmMessage
-	derived readonly transient volatile boolean hasConfirmMessage get {
-		confirmMessage !== null
-	}
+	@OCL(derivation="not confirmMessage.oclIsUndefined()")
+	derived readonly transient volatile boolean hasConfirmMessage
+
 	contains Message successMessage
-	derived readonly transient volatile boolean hasSuccessMessage get {
-		successMessage !== null
-	}
+	@OCL(derivation="not successMessage.oclIsUndefined()")
+	derived readonly transient volatile boolean hasSuccessMessage
+
 	refers Page cancelDestination
 	String cancelLabel
 	boolean hasCustomCancelLabel
-	derived readonly transient volatile String contentClass get {
-		if (localContentClass.trim() != '')
+
+	String[1] localInputGroupClass = ''
+
+	@OCL(derivation="if localSectionClass.trim() <> '' then
+			localSectionClass.trim()
+		else if uiModel.defaultFormStyles.sectionClass.trim() <> '' then
+			uiModel.defaultFormStyles.sectionClass.trim()
+		else if uiModel.defaultUnitStyles.sectionClass.trim() <> '' then
+			uiModel.defaultUnitStyles.sectionClass.trim()
+		else
+			''
+		endif endif endif")
+	derived readonly transient volatile String sectionClass
+	@OCL(derivation="sectionClass <> ''")
+	derived readonly transient volatile boolean hasSectionClass
+
+	@OCL(derivation="if localSectionClass.trim() <> '' then
+			localCaptionClass.trim()
+		else if uiModel.defaultFormStyles.captionClass.trim() <> '' then
+			uiModel.defaultFormStyles.captionClass.trim()
+		else if uiModel.defaultUnitStyles.captionClass.trim() <> '' then
+			uiModel.defaultUnitStyles.captionClass.trim()
+		else
+			''
+		endif endif endif")
+	derived readonly transient volatile String captionClass
+	@OCL(derivation="captionClass <> ''")
+	derived readonly transient volatile boolean hasCaptionClass
+
+	@OCL(derivation="if localContentClass.trim() <> '' then
 			localContentClass.trim()
-		else if (uiModel.defaultFormStyles.contentClass.trim() != '')
-			uiModel.defaultFormStyles.contentClass.trim()
-		else if (uiModel.defaultStyles.contentClass.trim() != '')
-			uiModel.defaultStyles.contentClass.trim()
+		else if uiModel.defaultFormStyles.contentClass.trim() <> '' then
+			uiModel.defaultStaticStyles.contentClass.trim()
+		else if uiModel.defaultFormStyles.contentClass.trim() <> '' then
+			uiModel.defaultUnitStyles.contentClass.trim()
 		else
 			''
-	}
-	derived readonly transient volatile boolean hasContentClass get {
-		contentClass != ''
-	}
-	derived readonly transient volatile String formFieldListClass get {
-		if (localFieldListClass.trim() != '')
+		endif endif endif")
+	derived readonly transient volatile String contentClass
+	@OCL(derivation="contentClass <> ''")
+	derived readonly transient volatile boolean hasContentClass
+
+	@OCL(derivation="if localFieldListClass.trim() <> '' then
 			localFieldListClass.trim()
-		else if (uiModel.defaultFormStyles.fieldListClass.trim() != '')
+		else if uiModel.defaultFormStyles.fieldListClass.trim() <> '' then
 			uiModel.defaultFormStyles.fieldListClass.trim()
-		else if (uiModel.defaultStyles.fieldListClass.trim() != '')
-			uiModel.defaultStyles.fieldListClass.trim()
+		else if uiModel.defaultUnitStyles.fieldListClass.trim() <> '' then
+			uiModel.defaultUnitStyles.fieldListClass.trim()
 		else
 			''
-	}
-	derived readonly transient volatile String formDefinitionFieldListClass get {
-		if (localDefinitionFieldListClass.trim() != '')
+		endif endif endif")
+	derived readonly transient volatile String fieldListClass
+	@OCL(derivation="fieldListClass <> ''")
+	derived readonly transient volatile boolean hasFieldListClass
+
+	@OCL(derivation="if localDefinitionFieldListClass.trim() <> '' then
 			localDefinitionFieldListClass.trim()
-		else if (uiModel.defaultFormStyles.definitionFieldListClass.trim() != '')
+		else if uiModel.defaultFormStyles.definitionFieldListClass.trim() <> '' then
 			uiModel.defaultFormStyles.definitionFieldListClass.trim()
-		else if (uiModel.defaultStyles.definitionFieldListClass.trim() != '')
-			uiModel.defaultStyles.definitionFieldListClass.trim()
+		else if uiModel.defaultUnitStyles.definitionFieldListClass.trim() <> '' then
+			uiModel.defaultUnitStyles.definitionFieldListClass.trim()
 		else
 			''
-	}
-	derived readonly transient volatile String formInputGroupClass get {
-		if (localInputGroupClass.trim() != '')
+		endif endif endif")
+	derived readonly transient volatile String definitionFieldListClass
+	@OCL(derivation="definitionFieldListClass <> ''")
+	derived readonly transient volatile boolean hasDefinitionFieldListClass
+
+	@OCL(derivation="if localFieldLabelClass.trim() <> '' then
+			localFieldLabelClass.trim()
+		else if uiModel.defaultFormStyles.fieldLabelClass.trim() <> '' then
+			uiModel.defaultFormStyles.fieldLabelClass.trim()
+		else if uiModel.defaultUnitStyles.fieldLabelClass.trim() <> '' then
+			uiModel.defaultUnitStyles.fieldLabelClass.trim()
+		else
+			''
+		endif endif endif")
+	derived readonly transient volatile String fieldLabelClass
+	@OCL(derivation="fieldLabelClass <> ''")
+	derived readonly transient volatile boolean hasFieldLabelClass
+
+	@OCL(derivation="if localFieldValueClass.trim() <> '' then
+			localFieldValueClass.trim()
+		else if uiModel.defaultFormStyles.fieldValueClass.trim() <> '' then
+			uiModel.defaultFormStyles.fieldValueClass.trim()
+		else if uiModel.defaultUnitStyles.fieldValueClass.trim() <> '' then
+			uiModel.defaultUnitStyles.fieldValueClass.trim()
+		else
+			''
+		endif endif endif")
+	derived readonly transient volatile String fieldValueClass
+	@OCL(derivation="fieldValueClass <> ''")
+	derived readonly transient volatile boolean hasFieldValueClass
+
+	@OCL(derivation="if localControlClass.trim() <> '' then
+			localControlClass.trim()
+		else if uiModel.defaultFormStyles.controlClass.trim() <> '' then
+			uiModel.defaultFormStyles.controlClass.trim()
+		else if uiModel.defaultUnitStyles.controlClass.trim() <> '' then
+			uiModel.defaultUnitStyles.controlClass.trim()
+		else
+			''
+		endif endif endif")
+	derived readonly transient volatile String controlClass
+	@OCL(derivation="controlClass <> ''")
+	derived readonly transient volatile boolean hasControlClass
+
+	@OCL(derivation="if localAnchorClass.trim() <> '' then
+			localAnchorClass.trim()
+		else if uiModel.defaultFormStyles.anchorClass.trim() <> '' then
+			uiModel.defaultFormStyles.anchorClass.trim()
+		else if uiModel.defaultUnitStyles.anchorClass.trim() <> '' then
+			uiModel.defaultUnitStyles.anchorClass.trim()
+		else
+			''
+		endif endif endif")
+	derived readonly transient volatile String anchorClass
+	@OCL(derivation="anchorClass <> ''")
+	derived readonly transient volatile boolean hasAnchorClass
+
+	@OCL(derivation="if localInputGroupClass.trim() <> '' then
 			localInputGroupClass.trim()
-		else if (uiModel.defaultFormStyles.inputGroupClass.trim() != '')
+		else if uiModel.defaultFormStyles.inputGroupClass.trim() <> '' then
 			uiModel.defaultFormStyles.inputGroupClass.trim()
 		else
 			''
-	}
-	derived readonly transient volatile String formFieldLabelClass get {
-		if (localFieldLabelClass.trim() != '')
-			localFieldLabelClass.trim()
-		else if (uiModel.defaultFormStyles.fieldLabelClass.trim() != '')
-			uiModel.defaultFormStyles.fieldLabelClass.trim()
-		else if (uiModel.defaultStyles.fieldLabelClass.trim() != '')
-			uiModel.defaultStyles.fieldLabelClass.trim()
-		else
-			''
-	}
-	derived readonly transient volatile String formFieldValueClass get {
-		if (localFieldValueClass.trim() != '')
-			localFieldValueClass.trim()
-		else if (uiModel.defaultFormStyles.fieldValueClass.trim() != '')
-			uiModel.defaultFormStyles.fieldValueClass.trim()
-		else if (uiModel.defaultStyles.fieldValueClass.trim() != '')
-			uiModel.defaultStyles.fieldValueClass.trim()
-		else
-			''
-	}
-	derived readonly transient volatile String formControlClass get {
-		if (localControlClass.trim() != '')
-			localControlClass.trim()
-		else if (uiModel.defaultFormStyles.controlClass.trim() != '')
-			uiModel.defaultFormStyles.controlClass.trim()
-		else if (uiModel.defaultStyles.controlClass.trim() != '')
-			uiModel.defaultStyles.controlClass.trim()
-		else
-			''
-	}
-	derived readonly transient volatile String formAnchorClass get {
-		if (localAnchorClass.trim() != '')
-			localAnchorClass.trim()
-		else if (uiModel.defaultFormStyles.anchorClass.trim() != '')
-			uiModel.defaultFormStyles.anchorClass.trim()
-		else if (uiModel.defaultStyles.anchorClass.trim() != '')
-			uiModel.defaultStyles.anchorClass.trim()
-		else
-			''
-	}
+		endif endif")
+	derived readonly transient volatile String inputGroupClass
+	@OCL(derivation="inputGroupClass <> ''")
+	derived readonly transient volatile boolean hasInputGroupClass
 }
 
 class CreateUnit extends EditUnit {
@@ -1583,348 +1861,529 @@ class MapUnit extends EditUnit, SelectableUnit {
 class DetailsUnit extends SingletonUnit, SelectableUnit {
 	refers Selection selection
 	boolean omitFieldLabels
-	derived readonly transient volatile String contentClass get {
-		if (localContentClass.trim() != '')
+
+	@OCL(derivation="if localSectionClass.trim() <> '' then
+			localSectionClass.trim()
+		else if uiModel.defaultDetailsStyles.sectionClass.trim() <> '' then
+			uiModel.defaultDetailsStyles.sectionClass.trim()
+		else if uiModel.defaultUnitStyles.sectionClass.trim() <> '' then
+			uiModel.defaultUnitStyles.sectionClass.trim()
+		else
+			''
+		endif endif endif")
+	derived readonly transient volatile String sectionClass
+	@OCL(derivation="sectionClass <> ''")
+	derived readonly transient volatile boolean hasSectionClass
+
+	@OCL(derivation="if localSectionClass.trim() <> '' then
+			localCaptionClass.trim()
+		else if uiModel.defaultDetailsStyles.captionClass.trim() <> '' then
+			uiModel.defaultDetailsStyles.captionClass.trim()
+		else if uiModel.defaultUnitStyles.captionClass.trim() <> '' then
+			uiModel.defaultUnitStyles.captionClass.trim()
+		else
+			''
+		endif endif endif")
+	derived readonly transient volatile String captionClass
+	@OCL(derivation="captionClass <> ''")
+	derived readonly transient volatile boolean hasCaptionClass
+
+	@OCL(derivation="if localContentClass.trim() <> '' then
 			localContentClass.trim()
-		else if (uiModel.defaultDetailsStyles.contentClass.trim() != '')
+		else if uiModel.defaultDetailsStyles.contentClass.trim() <> '' then
 			uiModel.defaultDetailsStyles.contentClass.trim()
-		else if (uiModel.defaultStyles.contentClass.trim() != '')
-			uiModel.defaultStyles.contentClass.trim()
+		else if uiModel.defaultUnitStyles.contentClass.trim() <> '' then
+			uiModel.defaultUnitStyles.contentClass.trim()
 		else
 			''
-	}
-	derived readonly transient volatile boolean hasContentClass get {
-		contentClass != ''
-	}
-	derived readonly transient volatile String DetailsFieldListClass get {
-		if (localFieldListClass.trim() != '')
+		endif endif endif")
+	derived readonly transient volatile String contentClass
+	@OCL(derivation="contentClass <> ''")
+	derived readonly transient volatile boolean hasContentClass
+
+	@OCL(derivation="if localFieldListClass.trim() <> '' then
 			localFieldListClass.trim()
-		else if (uiModel.defaultDetailsStyles.fieldListClass.trim() != '')
+		else if uiModel.defaultDetailsStyles.fieldListClass.trim() <> '' then
 			uiModel.defaultDetailsStyles.fieldListClass.trim()
-		else if (uiModel.defaultStyles.fieldListClass.trim() != '')
-			uiModel.defaultStyles.fieldListClass.trim()
+		else if uiModel.defaultUnitStyles.fieldListClass.trim() <> '' then
+			uiModel.defaultUnitStyles.fieldListClass.trim()
 		else
 			''
-	}
-	derived readonly transient volatile String DetailsDefinitionFieldListClass get {
-		if (localDefinitionFieldListClass.trim() != '')
+		endif endif endif")
+	derived readonly transient volatile String fieldListClass
+	@OCL(derivation="fieldListClass <> ''")
+	derived readonly transient volatile boolean hasFieldListClass
+
+	@OCL(derivation="if localDefinitionFieldListClass.trim() <> '' then
 			localDefinitionFieldListClass.trim()
-		else if (uiModel.defaultDetailsStyles.definitionFieldListClass.trim() != '')
+		else if uiModel.defaultDetailsStyles.definitionFieldListClass.trim() <> '' then
 			uiModel.defaultDetailsStyles.definitionFieldListClass.trim()
-		else if (uiModel.defaultStyles.definitionFieldListClass.trim() != '')
-			uiModel.defaultStyles.definitionFieldListClass.trim()
+		else if uiModel.defaultUnitStyles.definitionFieldListClass.trim() <> '' then
+			uiModel.defaultUnitStyles.definitionFieldListClass.trim()
 		else
 			''
-	}
-	derived readonly transient volatile String detailsFieldLabelClass get {
-		if (localFieldLabelClass.trim() != '')
+		endif endif endif")
+	derived readonly transient volatile String definitionFieldListClass
+	@OCL(derivation="definitionFieldListClass <> ''")
+	derived readonly transient volatile boolean hasDefinitionFieldListClass
+
+	@OCL(derivation="if localFieldLabelClass.trim() <> '' then
 			localFieldLabelClass.trim()
-		else if (uiModel.defaultDetailsStyles.fieldLabelClass.trim() != '')
+		else if uiModel.defaultDetailsStyles.fieldLabelClass.trim() <> '' then
 			uiModel.defaultDetailsStyles.fieldLabelClass.trim()
-		else if (uiModel.defaultStyles.fieldLabelClass.trim() != '')
-			uiModel.defaultStyles.fieldLabelClass.trim()
+		else if uiModel.defaultUnitStyles.fieldLabelClass.trim() <> '' then
+			uiModel.defaultUnitStyles.fieldLabelClass.trim()
 		else
 			''
-	}
-	derived readonly transient volatile String detailsFieldValueClass get {
-		if (localFieldValueClass.trim() != '')
+		endif endif endif")
+	derived readonly transient volatile String fieldLabelClass
+	@OCL(derivation="fieldLabelClass <> ''")
+	derived readonly transient volatile boolean hasFieldLabelClass
+
+	@OCL(derivation="if localFieldValueClass.trim() <> '' then
 			localFieldValueClass.trim()
-		else if (uiModel.defaultDetailsStyles.fieldValueClass.trim() != '')
+		else if uiModel.defaultDetailsStyles.fieldValueClass.trim() <> '' then
 			uiModel.defaultDetailsStyles.fieldValueClass.trim()
-		else if (uiModel.defaultStyles.fieldValueClass.trim() != '')
-			uiModel.defaultStyles.fieldValueClass.trim()
+		else if uiModel.defaultUnitStyles.fieldValueClass.trim() <> '' then
+			uiModel.defaultUnitStyles.fieldValueClass.trim()
 		else
 			''
-	}
-	derived readonly transient volatile String detailsControlClass get {
-		if (localControlClass.trim() != '')
+		endif endif endif")
+	derived readonly transient volatile String fieldValueClass
+	@OCL(derivation="fieldValueClass <> ''")
+	derived readonly transient volatile boolean hasFieldValueClass
+
+	@OCL(derivation="if localControlClass.trim() <> '' then
 			localControlClass.trim()
-		else if (uiModel.defaultStyles.controlClass.trim() != '')
+		else if uiModel.defaultDetailsStyles.controlClass.trim() <> '' then
 			uiModel.defaultDetailsStyles.controlClass.trim()
-		else if (uiModel.defaultDetailsStyles.controlClass.trim() != '')
-			uiModel.defaultStyles.controlClass.trim()
+		else if uiModel.defaultUnitStyles.controlClass.trim() <> '' then
+			uiModel.defaultUnitStyles.controlClass.trim()
 		else
 			''
-	}
-	derived readonly transient volatile String detailsAnchorClass get {
-		if (localAnchorClass.trim() != '')
+		endif endif endif")
+	derived readonly transient volatile String controlClass
+	@OCL(derivation="controlClass <> ''")
+	derived readonly transient volatile boolean hasControlClass
+
+	@OCL(derivation="if localAnchorClass.trim() <> '' then
 			localAnchorClass.trim()
-		else if (uiModel.defaultDetailsStyles.anchorClass.trim() != '')
+		else if uiModel.defaultDetailsStyles.anchorClass.trim() <> '' then
 			uiModel.defaultDetailsStyles.anchorClass.trim()
-		else if (uiModel.defaultStyles.anchorClass.trim() != '')
-			uiModel.defaultStyles.anchorClass.trim()
+		else if uiModel.defaultUnitStyles.anchorClass.trim() <> '' then
+			uiModel.defaultUnitStyles.anchorClass.trim()
 		else
 			''
-	}
+		endif endif endif")
+	derived readonly transient volatile String anchorClass
+	@OCL(derivation="anchorClass <> ''")
+	derived readonly transient volatile boolean hasAnchorClass
 }
 
 class TabularUnit extends CollectionUnit {
 	refers SearchUnit targettingSearches opposite resultsDestination
 	String rowClasses
-	derived readonly transient volatile String contentClass get {
-		if (localContentClass.trim() != '')
+	String localHeaderClass = ''
+	String localFooterClass = ''
+
+	@OCL(derivation="if localSectionClass.trim() <> '' then
+			localSectionClass.trim()
+		else if uiModel.defaultTabularStyles.sectionClass.trim() <> '' then
+			uiModel.defaultTabularStyles.sectionClass.trim()
+		else if uiModel.defaultUnitStyles.sectionClass.trim() <> '' then
+			uiModel.defaultUnitStyles.sectionClass.trim()
+		else
+			''
+		endif endif endif")
+	derived readonly transient volatile String sectionClass
+	@OCL(derivation="sectionClass <> ''")
+	derived readonly transient volatile boolean hasSectionClass
+
+	@OCL(derivation="if localSectionClass.trim() <> '' then
+			localCaptionClass.trim()
+		else if uiModel.defaultTabularStyles.captionClass.trim() <> '' then
+			uiModel.defaultTabularStyles.captionClass.trim()
+		else if uiModel.defaultUnitStyles.captionClass.trim() <> '' then
+			uiModel.defaultUnitStyles.captionClass.trim()
+		else
+			''
+		endif endif endif")
+	derived readonly transient volatile String captionClass
+	@OCL(derivation="captionClass <> ''")
+	derived readonly transient volatile boolean hasCaptionClass
+
+	@OCL(derivation="if localContentClass.trim() <> '' then
 			localContentClass.trim()
-		else if (uiModel.defaultTabularStyles.contentClass.trim() != '')
+		else if uiModel.defaultTabularStyles.contentClass.trim() <> '' then
 			uiModel.defaultTabularStyles.contentClass.trim()
-		else if (uiModel.defaultStyles.contentClass.trim() != '')
-			uiModel.defaultStyles.contentClass.trim()
+		else if uiModel.defaultUnitStyles.contentClass.trim() <> '' then
+			uiModel.defaultUnitStyles.contentClass.trim()
 		else
 			''
-	}
-	derived readonly transient volatile boolean hasContentClass get {
-		contentClass != ''
-	}
-	derived readonly transient volatile String tabularFieldListClass get {
-		if (localFieldListClass.trim() != '')
+		endif endif endif")
+	derived readonly transient volatile String contentClass
+	@OCL(derivation="contentClass <> ''")
+	derived readonly transient volatile boolean hasContentClass
+
+	@OCL(derivation="if localHeaderClass.trim() <> '' then
+			localHeaderClass.trim()
+		else if uiModel.defaultTabularStyles.headerClass.trim() <> '' then
+			uiModel.defaultTabularStyles.headerClass.trim()
+		else
+			''
+		endif endif")
+	derived readonly transient volatile String headerClass
+	@OCL(derivation="headerClass <> ''")
+	derived readonly transient volatile boolean hasHeaderClass
+
+	@OCL(derivation="if localFooterClass.trim() <> '' then
+			localFooterClass.trim()
+		else if uiModel.defaultTabularStyles.footerClass.trim() <> '' then
+			uiModel.defaultTabularStyles.footerClass.trim()
+		else
+			''
+		endif endif")
+	derived readonly transient volatile String footerClass
+	@OCL(derivation="footerClass <> ''")
+	derived readonly transient volatile boolean hasFooterClass
+
+	@OCL(derivation="if localFieldListClass.trim() <> '' then
 			localFieldListClass.trim()
-		else if (uiModel.defaultTabularStyles.fieldListClass.trim() != '')
+		else if uiModel.defaultTabularStyles.fieldListClass.trim() <> '' then
 			uiModel.defaultTabularStyles.fieldListClass.trim()
-		else if (uiModel.defaultStyles.fieldListClass.trim() != '')
-			uiModel.defaultStyles.fieldListClass.trim()
+		else if uiModel.defaultUnitStyles.fieldListClass.trim() <> '' then
+			uiModel.defaultUnitStyles.fieldListClass.trim()
 		else
 			''
-	}
-	derived readonly transient volatile String tabularDefinitionFieldListClass get {
-		if (localDefinitionFieldListClass.trim() != '')
+		endif endif endif")
+	derived readonly transient volatile String fieldListClass
+	@OCL(derivation="fieldListClass <> ''")
+	derived readonly transient volatile boolean hasFieldListClass
+
+	@OCL(derivation="if localDefinitionFieldListClass.trim() <> '' then
 			localDefinitionFieldListClass.trim()
-		else if (uiModel.defaultTabularStyles.definitionFieldListClass.trim() != '')
+		else if uiModel.defaultTabularStyles.definitionFieldListClass.trim() <> '' then
 			uiModel.defaultTabularStyles.definitionFieldListClass.trim()
-		else if (uiModel.defaultStyles.definitionFieldListClass.trim() != '')
-			uiModel.defaultStyles.definitionFieldListClass.trim()
+		else if uiModel.defaultUnitStyles.definitionFieldListClass.trim() <> '' then
+			uiModel.defaultUnitStyles.definitionFieldListClass.trim()
 		else
 			''
-	}
-	derived readonly transient volatile String tabularFieldLabelClass get {
-		if (localFieldLabelClass.trim() != '')
+		endif endif endif")
+	derived readonly transient volatile String definitionFieldListClass
+	@OCL(derivation="definitionFieldListClass <> ''")
+	derived readonly transient volatile boolean hasDefinitionFieldListClass
+
+	@OCL(derivation="if localFieldLabelClass.trim() <> '' then
 			localFieldLabelClass.trim()
-		else if (uiModel.defaultTabularStyles.fieldLabelClass.trim() != '')
+		else if uiModel.defaultTabularStyles.fieldLabelClass.trim() <> '' then
 			uiModel.defaultTabularStyles.fieldLabelClass.trim()
-		else if (uiModel.defaultStyles.fieldLabelClass.trim() != '')
-			uiModel.defaultStyles.fieldLabelClass.trim()
+		else if uiModel.defaultUnitStyles.fieldLabelClass.trim() <> '' then
+			uiModel.defaultUnitStyles.fieldLabelClass.trim()
 		else
 			''
-	}
-	derived readonly transient volatile String tabularFieldValueClass get {
-		if (localFieldValueClass.trim() != '')
+		endif endif endif")
+	derived readonly transient volatile String fieldLabelClass
+	@OCL(derivation="fieldLabelClass <> ''")
+	derived readonly transient volatile boolean hasFieldLabelClass
+
+	@OCL(derivation="if localFieldValueClass.trim() <> '' then
 			localFieldValueClass.trim()
-		else if (uiModel.defaultTabularStyles.fieldValueClass.trim() != '')
+		else if uiModel.defaultTabularStyles.fieldValueClass.trim() <> '' then
 			uiModel.defaultTabularStyles.fieldValueClass.trim()
-		else if (uiModel.defaultStyles.fieldValueClass.trim() != '')
-			uiModel.defaultStyles.fieldValueClass.trim()
+		else if uiModel.defaultUnitStyles.fieldValueClass.trim() <> '' then
+			uiModel.defaultUnitStyles.fieldValueClass.trim()
 		else
 			''
-	}
-	derived readonly transient volatile String tabularControlClass get {
-		if (localControlClass.trim() != '')
+		endif endif endif")
+	derived readonly transient volatile String fieldValueClass
+	@OCL(derivation="fieldValueClass <> ''")
+	derived readonly transient volatile boolean hasFieldValueClass
+
+	@OCL(derivation="if localControlClass.trim() <> '' then
 			localControlClass.trim()
-		else if (uiModel.defaultTabularStyles.controlClass.trim() != '')
+		else if uiModel.defaultTabularStyles.controlClass.trim() <> '' then
 			uiModel.defaultTabularStyles.controlClass.trim()
-		else if (uiModel.defaultStyles.controlClass.trim() != '')
-			uiModel.defaultStyles.controlClass.trim()
+		else if uiModel.defaultUnitStyles.controlClass.trim() <> '' then
+			uiModel.defaultUnitStyles.controlClass.trim()
 		else
 			''
-	}
-	derived readonly transient volatile String tabularInstanceControlClass get {
-		if (localInstanceControlClass.trim() != '')
-			localInstanceControlClass.trim()
-		else if (uiModel.defaultTabularStyles.instanceControlClass.trim() != '')
-			uiModel.defaultTabularStyles.instanceControlClass.trim()
-		else if (uiModel.defaultStyles.instanceControlClass.trim() != '')
-			uiModel.defaultStyles.instanceControlClass.trim()
-		else
-			''
-	}
-	derived readonly transient volatile String tabularAnchorClass get {
-		if (localAnchorClass.trim() != '')
+		endif endif endif")
+	derived readonly transient volatile String controlClass
+	@OCL(derivation="controlClass <> ''")
+	derived readonly transient volatile boolean hasControlClass
+
+	@OCL(derivation="if localAnchorClass.trim() <> '' then
 			localAnchorClass.trim()
-		else if (uiModel.defaultTabularStyles.anchorClass.trim() != '')
+		else if uiModel.defaultTabularStyles.anchorClass.trim() <> '' then
 			uiModel.defaultTabularStyles.anchorClass.trim()
-		else if (uiModel.defaultStyles.anchorClass.trim() != '')
-			uiModel.defaultStyles.anchorClass.trim()
+		else if uiModel.defaultUnitStyles.anchorClass.trim() <> '' then
+			uiModel.defaultUnitStyles.anchorClass.trim()
 		else
 			''
-	}
-	derived readonly transient volatile String tabularInstanceAnchorClass get {
-		if (localInstanceAnchorClass.trim() != '')
+		endif endif endif")
+	derived readonly transient volatile String anchorClass
+	@OCL(derivation="anchorClass <> ''")
+	derived readonly transient volatile boolean hasAnchorClass
+
+	@OCL(derivation="if localInstanceControlClass.trim() <> '' then
+			localInstanceControlClass.trim()
+		else if uiModel.defaultTabularStyles.instanceControlClass.trim() <> '' then
+			uiModel.defaultTabularStyles.instanceControlClass.trim()
+		else if uiModel.defaultUnitStyles.instanceControlClass.trim() <> '' then
+			uiModel.defaultUnitStyles.instanceControlClass.trim()
+		else
+			''
+		endif endif endif")
+	derived readonly transient volatile String instanceControlClass
+	@OCL(derivation="instanceControlClass <> ''")
+	derived readonly transient volatile boolean hasInstanceControlClass
+
+	@OCL(derivation="if localInstanceAnchorClass.trim() <> '' then
 			localInstanceAnchorClass.trim()
-		else if (uiModel.defaultTabularStyles.instanceAnchorClass.trim() != '')
+		else if uiModel.defaultTabularStyles.instanceAnchorClass.trim() <> '' then
 			uiModel.defaultTabularStyles.instanceAnchorClass.trim()
-		else if (uiModel.defaultStyles.instanceAnchorClass.trim() != '')
-			uiModel.defaultStyles.instanceAnchorClass.trim()
+		else if uiModel.defaultUnitStyles.instanceAnchorClass.trim() <> '' then
+			uiModel.defaultUnitStyles.instanceAnchorClass.trim()
 		else
 			''
-	}
+		endif endif endif")
+	derived readonly transient volatile String instanceAnchorClass
+	@OCL(derivation="instanceAnchorClass <> ''")
+	derived readonly transient volatile boolean hasInstanceAnchorClass
 }
 
 abstract class CardsUnit extends CollectionUnit {
 	contains Badge[] badges opposite displayedOn
 	boolean overlaySingleSelectAction
-	derived readonly transient volatile String contentClass get {
-		if (localContentClass.trim() != '')
+
+	String[1] localRowClass = ''
+	String[1] localColumnClass = ''
+	String[1] localCardClass = ''
+	String[1] localCardHeaderClass = ''
+	String[1] localCardBodyClass = ''
+	String[1] localCardFooterClass = ''
+	String[1] localBadgeClass = ''
+
+	@OCL(derivation="if localSectionClass.trim() <> '' then
+			localSectionClass.trim()
+		else if uiModel.defaultCardsStyles.sectionClass.trim() <> '' then
+			uiModel.defaultCardsStyles.sectionClass.trim()
+		else if uiModel.defaultUnitStyles.sectionClass.trim() <> '' then
+			uiModel.defaultUnitStyles.sectionClass.trim()
+		else
+			''
+		endif endif endif")
+	derived readonly transient volatile String sectionClass
+	@OCL(derivation="sectionClass <> ''")
+	derived readonly transient volatile boolean hasSectionClass
+
+	@OCL(derivation="if localSectionClass.trim() <> '' then
+			localCaptionClass.trim()
+		else if uiModel.defaultCardsStyles.captionClass.trim() <> '' then
+			uiModel.defaultCardsStyles.captionClass.trim()
+		else if uiModel.defaultUnitStyles.captionClass.trim() <> '' then
+			uiModel.defaultUnitStyles.captionClass.trim()
+		else
+			''
+		endif endif endif")
+	derived readonly transient volatile String captionClass
+	@OCL(derivation="captionClass <> ''")
+	derived readonly transient volatile boolean hasCaptionClass
+
+	@OCL(derivation="if localContentClass.trim() <> '' then
 			localContentClass.trim()
-		else if (uiModel.defaultCardsStyles.contentClass.trim() != '')
+		else if uiModel.defaultCardsStyles.contentClass.trim() <> '' then
 			uiModel.defaultCardsStyles.contentClass.trim()
-		else if (uiModel.defaultStyles.contentClass.trim() != '')
-			uiModel.defaultStyles.contentClass.trim()
+		else if uiModel.defaultUnitStyles.contentClass.trim() <> '' then
+			uiModel.defaultUnitStyles.contentClass.trim()
 		else
 			''
-	}
-	derived readonly transient volatile boolean hasContentClass get {
-		contentClass != ''
-	}
-	derived readonly transient volatile String cardsFieldListClass get {
-		if (localFieldListClass.trim() != '')
+		endif endif endif")
+	derived readonly transient volatile String contentClass
+	@OCL(derivation="contentClass <> ''")
+	derived readonly transient volatile boolean hasContentClass
+
+	@OCL(derivation="if localFieldListClass.trim() <> '' then
 			localFieldListClass.trim()
-		else if (uiModel.defaultCardsStyles.fieldListClass.trim() != '')
+		else if uiModel.defaultCardsStyles.fieldListClass.trim() <> '' then
 			uiModel.defaultCardsStyles.fieldListClass.trim()
-		else if (uiModel.defaultStyles.fieldListClass.trim() != '')
-			uiModel.defaultStyles.fieldListClass.trim()
+		else if uiModel.defaultUnitStyles.fieldListClass.trim() <> '' then
+			uiModel.defaultUnitStyles.fieldListClass.trim()
 		else
 			''
-	}
-	derived readonly transient volatile String cardsDefinitionFieldListClass get {
-		if (localDefinitionFieldListClass.trim() != '')
+		endif endif endif")
+	derived readonly transient volatile String fieldListClass
+	@OCL(derivation="fieldListClass <> ''")
+	derived readonly transient volatile boolean hasFieldListClass
+
+	@OCL(derivation="if localDefinitionFieldListClass.trim() <> '' then
 			localDefinitionFieldListClass.trim()
-		else if (uiModel.defaultCardsStyles.definitionFieldListClass.trim() != '')
+		else if uiModel.defaultCardsStyles.definitionFieldListClass.trim() <> '' then
 			uiModel.defaultCardsStyles.definitionFieldListClass.trim()
-		else if (uiModel.defaultStyles.definitionFieldListClass.trim() != '')
-			uiModel.defaultStyles.definitionFieldListClass.trim()
+		else if uiModel.defaultUnitStyles.definitionFieldListClass.trim() <> '' then
+			uiModel.defaultUnitStyles.definitionFieldListClass.trim()
 		else
 			''
-	}
-	derived readonly transient volatile String cardsFieldLabelClass get {
-		if (localFieldLabelClass.trim() != '')
+		endif endif endif")
+	derived readonly transient volatile String definitionFieldListClass
+	@OCL(derivation="definitionFieldListClass <> ''")
+	derived readonly transient volatile boolean hasDefinitionFieldListClass
+
+	@OCL(derivation="if localFieldLabelClass.trim() <> '' then
 			localFieldLabelClass.trim()
-		else if (uiModel.defaultCardsStyles.fieldLabelClass.trim() != '')
+		else if uiModel.defaultCardsStyles.fieldLabelClass.trim() <> '' then
 			uiModel.defaultCardsStyles.fieldLabelClass.trim()
-		else if (uiModel.defaultStyles.fieldLabelClass.trim() != '')
-			uiModel.defaultStyles.fieldLabelClass.trim()
+		else if uiModel.defaultUnitStyles.fieldLabelClass.trim() <> '' then
+			uiModel.defaultUnitStyles.fieldLabelClass.trim()
 		else
 			''
-	}
-	derived readonly transient volatile String cardsFieldValueClass get {
-		if (localFieldValueClass.trim() != '')
+		endif endif endif")
+	derived readonly transient volatile String fieldLabelClass
+	@OCL(derivation="fieldLabelClass <> ''")
+	derived readonly transient volatile boolean hasFieldLabelClass
+
+	@OCL(derivation="if localFieldValueClass.trim() <> '' then
 			localFieldValueClass.trim()
-		else if (uiModel.defaultCardsStyles.fieldValueClass.trim() != '')
+		else if uiModel.defaultCardsStyles.fieldValueClass.trim() <> '' then
 			uiModel.defaultCardsStyles.fieldValueClass.trim()
-		else if (uiModel.defaultStyles.fieldValueClass.trim() != '')
-			uiModel.defaultStyles.fieldValueClass.trim()
+		else if uiModel.defaultUnitStyles.fieldValueClass.trim() <> '' then
+			uiModel.defaultUnitStyles.fieldValueClass.trim()
 		else
 			''
-	}
-	String localRowClass = ''
-	derived readonly unsettable transient volatile String rowClass get {
-		if (localRowClass.trim() != '')
+		endif endif endif")
+	derived readonly transient volatile String fieldValueClass
+	@OCL(derivation="fieldValueClass <> ''")
+	derived readonly transient volatile boolean hasFieldValueClass
+
+	@OCL(derivation="if localControlClass.trim() <> '' then
+			localControlClass.trim()
+		else if uiModel.defaultCardsStyles.controlClass.trim() <> '' then
+			uiModel.defaultCardsStyles.controlClass.trim()
+		else if uiModel.defaultUnitStyles.controlClass.trim() <> '' then
+			uiModel.defaultUnitStyles.controlClass.trim()
+		else
+			''
+		endif endif endif")
+	derived readonly transient volatile String controlClass
+	@OCL(derivation="controlClass <> ''")
+	derived readonly transient volatile boolean hasControlClass
+
+	@OCL(derivation="if localAnchorClass.trim() <> '' then
+			localAnchorClass.trim()
+		else if uiModel.defaultCardsStyles.anchorClass.trim() <> '' then
+			uiModel.defaultCardsStyles.anchorClass.trim()
+		else if uiModel.defaultUnitStyles.anchorClass.trim() <> '' then
+			uiModel.defaultUnitStyles.anchorClass.trim()
+		else
+			''
+		endif endif endif")
+	derived readonly transient volatile String anchorClass
+	@OCL(derivation="anchorClass <> ''")
+	derived readonly transient volatile boolean hasAnchorClass
+
+
+	@OCL(derivation="if localInstanceControlClass.trim() <> '' then
+			localInstanceControlClass.trim()
+		else if uiModel.defaultCardsStyles.instanceControlClass.trim() <> '' then
+			uiModel.defaultCardsStyles.instanceControlClass.trim()
+		else if uiModel.defaultUnitStyles.instanceControlClass.trim() <> '' then
+			uiModel.defaultUnitStyles.instanceControlClass.trim()
+		else
+			''
+		endif endif endif")
+	derived readonly transient volatile String instanceControlClass
+	@OCL(derivation="instanceControlClass <> ''")
+	derived readonly transient volatile boolean hasInstanceControlClass
+
+	@OCL(derivation="if localInstanceAnchorClass.trim() <> '' then
+			localInstanceAnchorClass.trim()
+		else if uiModel.defaultCardsStyles.instanceAnchorClass.trim() <> '' then
+			uiModel.defaultCardsStyles.instanceAnchorClass.trim()
+		else if uiModel.defaultUnitStyles.instanceAnchorClass.trim() <> '' then
+			uiModel.defaultUnitStyles.instanceAnchorClass.trim()
+		else
+			''
+		endif endif endif")
+	derived readonly transient volatile String instanceAnchorClass
+	@OCL(derivation="instanceAnchorClass <> ''")
+	derived readonly transient volatile boolean hasInstanceAnchorClass
+
+	@OCL(derivation="if localRowClass.trim() <> '' then
 			localRowClass.trim()
-		else if (uiModel.defaultCardsStyles.rowClass.trim() != '')
+		else if uiModel.defaultCardsStyles.rowClass.trim() <> '' then
 			uiModel.defaultCardsStyles.rowClass.trim()
 		else
 			''
-	}
-	derived readonly transient volatile boolean hasRowClass get {
-		rowClass != ''
-	}
-	String localColumnClass = ''
-	derived readonly transient volatile String columnClass get {
-		if (localColumnClass.trim() != '')
+		endif endif")
+	derived readonly transient volatile String rowClass
+	@OCL(derivation="rowClass <> ''")
+	derived readonly transient volatile boolean hasRowClass
+
+	@OCL(derivation="if localColumnClass.trim() <> '' then
 			localColumnClass.trim()
-		else if (uiModel.defaultCardsStyles.columnClass.trim() != '')
+		else if uiModel.defaultCardsStyles.columnClass.trim() <> '' then
 			uiModel.defaultCardsStyles.columnClass.trim()
 		else
 			''
-	}
-	derived readonly transient volatile boolean hasColumnClass get {
-		columnClass != ''
-	}
-	String localCardClass = ''
-	derived readonly transient volatile String cardClass get {
-		if (localCardClass.trim() != '')
+		endif endif")
+	derived readonly transient volatile String columnClass
+	@OCL(derivation="columnClass <> ''")
+	derived readonly transient volatile boolean hasColumnClass
+
+	@OCL(derivation="if localCardClass.trim() <> '' then
 			localCardClass.trim()
-		else if (uiModel.defaultCardsStyles.cardClass.trim() != '')
+		else if uiModel.defaultCardsStyles.cardClass.trim() <> '' then
 			uiModel.defaultCardsStyles.cardClass.trim()
 		else
 			''
-	}
-	derived readonly transient volatile boolean hasCardClass get {
-		cardClass != ''
-	}
-	String localCardHeaderClass = ''
-	derived readonly transient volatile String cardHeaderClass get {
-		if (localCardHeaderClass.trim() != '')
+		endif endif")
+	derived readonly transient volatile String cardClass
+	@OCL(derivation="cardClass <> ''")
+	derived readonly transient volatile boolean hasCardClass
+
+	@OCL(derivation="if localCardHeaderClass.trim() <> '' then
 			localCardHeaderClass.trim()
-		else if (uiModel.defaultCardsStyles.cardHeaderClass.trim() != '')
+		else if uiModel.defaultCardsStyles.cardHeaderClass.trim() <> '' then
 			uiModel.defaultCardsStyles.cardHeaderClass.trim()
 		else
 			''
-	}
-	derived readonly transient volatile boolean hasCardHeaderClass get {
-		cardHeaderClass != ''
-	}
-	String localCardBodyClass = ''
-	derived readonly transient volatile String cardBodyClass get {
-		if (localCardBodyClass.trim() != '')
+		endif endif")
+	derived readonly transient volatile String cardHeaderClass
+	@OCL(derivation="cardHeaderClass <> ''")
+	derived readonly transient volatile boolean hasCardHeaderClass
+
+	@OCL(derivation="if localCardBodyClass.trim() <> '' then
 			localCardBodyClass.trim()
-		else if (uiModel.defaultCardsStyles.cardBodyClass.trim() != '')
+		else if uiModel.defaultCardsStyles.cardBodyClass.trim() <> '' then
 			uiModel.defaultCardsStyles.cardBodyClass.trim()
 		else
 			''
-	}
-	derived readonly transient volatile boolean hasCardBodyClass get {
-		cardBodyClass != ''
-	}
-	String localCardFooterClass = ''
-	derived readonly transient volatile String cardFooterClass get {
-		if (localCardFooterClass.trim() != '')
+		endif endif")
+	derived readonly transient volatile String cardBodyClass
+	@OCL(derivation="cardBodyClass <> ''")
+	derived readonly transient volatile boolean hasCardBodyClass
+
+	@OCL(derivation="if localCardFooterClass.trim() <> '' then
 			localCardFooterClass.trim()
-		else if (uiModel.defaultCardsStyles.cardFooterClass.trim() != '')
+		else if uiModel.defaultCardsStyles.cardFooterClass.trim() <> '' then
 			uiModel.defaultCardsStyles.cardFooterClass.trim()
 		else
 			''
-	}
-	derived readonly transient volatile boolean hasCardFooterClass get {
-		cardFooterClass != ''
-	}
-	derived readonly transient volatile String cardsControlClass get {
-		if (localControlClass.trim() != '')
-			localControlClass.trim()
-		else if (uiModel.defaultCardsStyles.controlClass.trim() != '')
-			uiModel.defaultCardsStyles.controlClass.trim()
-		else if (uiModel.defaultStyles.controlClass.trim() != '')
-			uiModel.defaultStyles.controlClass.trim()
+		endif endif")
+	derived readonly transient volatile String cardFooterClass
+	@OCL(derivation="cardFooterClass <> ''")
+	derived readonly transient volatile boolean hasCardFooterClass
+
+	@OCL(derivation="if localBadgeClass.trim() <> '' then
+			localBadgeClass.trim()
+		else if uiModel.defaultCardsStyles.badgeClass.trim() <> '' then
+			uiModel.defaultCardsStyles.badgeClass.trim()
 		else
 			''
-	}
-	derived readonly transient volatile String cardsInstanceControlClass get {
-		if (localInstanceControlClass.trim() != '')
-			localInstanceControlClass.trim()
-		else if (uiModel.defaultCardsStyles.instanceControlClass.trim() != '')
-			uiModel.defaultCardsStyles.instanceControlClass.trim()
-		else if (uiModel.defaultStyles.instanceControlClass.trim() != '')
-			uiModel.defaultStyles.instanceControlClass.trim()
-		else
-			''
-	}
-	derived readonly transient volatile String cardsAnchorClass get {
-		if (localAnchorClass.trim() != '')
-			localAnchorClass.trim()
-		else if (uiModel.defaultCardsStyles.anchorClass.trim() != '')
-			uiModel.defaultCardsStyles.anchorClass.trim()
-		else if (uiModel.defaultStyles.anchorClass.trim() != '')
-			uiModel.defaultStyles.anchorClass.trim()
-		else
-			''
-	}
-	derived readonly transient volatile String cardsInstanceAnchorClass get {
-		if (localInstanceAnchorClass.trim() != '')
-			localInstanceAnchorClass.trim()
-		else if (uiModel.defaultCardsStyles.instanceAnchorClass.trim() != '')
-			uiModel.defaultCardsStyles.instanceAnchorClass.trim()
-		else if (uiModel.defaultStyles.instanceAnchorClass.trim() != '')
-			uiModel.defaultStyles.instanceAnchorClass.trim()
-		else
-			''
-	}
-	String localBadgeClass = ''
+		endif endif")
+	derived readonly transient volatile String badgeClass
+	@OCL(derivation="badgeClass <> ''")
+	derived readonly transient volatile boolean hasBadgeClass
 }
 
 class Badge {
@@ -1933,20 +2392,18 @@ class Badge {
 	contains FeaturePath value
 	refers Attribute title
 	contains Predicate displayWhen
+
 	String localBadgeClass
-	derived readonly unsettable transient volatile String badgeClass get {
-		if (localBadgeClass.trim() != '')
+	@OCL(derivation="if localBadgeClass.trim() <> '' then
 			localBadgeClass.trim()
-		else if (displayedOn.localBadgeClass.trim() != '')
-			displayedOn.localBadgeClass.trim()
-		else if (displayedOn.uiModel.defaultCardsStyles.badgeClass.trim() != '')
-			displayedOn.uiModel.defaultCardsStyles.badgeClass.trim()
+		else if displayedOn.hasBadgeClass = true then
+			displayedOn.badgeClass.trim()
 		else
 			''
-	}
-	derived readonly unsettable transient volatile boolean hasBadgeClass get {
-		badgeClass != ''
-	}
+		endif endif")
+	derived readonly unsettable transient volatile String badgeClass
+	@OCL(derivation="badgeClass <> ''")
+	derived readonly unsettable transient volatile boolean hasBadgeClass
 }
 
 class TextCardsUnit extends CardsUnit {
@@ -1973,204 +2430,421 @@ class ImageCardsUnit extends CardsUnit, ImageUnit {
 class SliderUnit extends ImageUnit {
 	int showTime
 	int transitionTime
-	derived readonly transient volatile String contentClass get {
-		if (localContentClass.trim() != '')
+
+	@OCL(derivation="if localSectionClass.trim() <> '' then
+			localSectionClass.trim()
+		else if uiModel.defaultSliderStyles.sectionClass.trim() <> '' then
+			uiModel.defaultSliderStyles.sectionClass.trim()
+		else if uiModel.defaultUnitStyles.sectionClass.trim() <> '' then
+			uiModel.defaultUnitStyles.sectionClass.trim()
+		else
+			''
+		endif endif endif")
+	derived readonly transient volatile String sectionClass
+	@OCL(derivation="sectionClass <> ''")
+	derived readonly transient volatile boolean hasSectionClass
+
+	@OCL(derivation="if localSectionClass.trim() <> '' then
+			localCaptionClass.trim()
+		else if uiModel.defaultSliderStyles.captionClass.trim() <> '' then
+			uiModel.defaultSliderStyles.captionClass.trim()
+		else if uiModel.defaultUnitStyles.captionClass.trim() <> '' then
+			uiModel.defaultUnitStyles.captionClass.trim()
+		else
+			''
+		endif endif endif")
+	derived readonly transient volatile String captionClass
+	@OCL(derivation="captionClass <> ''")
+	derived readonly transient volatile boolean hasCaptionClass
+
+	@OCL(derivation="if localContentClass.trim() <> '' then
 			localContentClass.trim()
-		else if (uiModel.defaultSliderStyles.contentClass.trim() != '')
+		else if uiModel.defaultSliderStyles.contentClass.trim() <> '' then
 			uiModel.defaultSliderStyles.contentClass.trim()
-		else if (uiModel.defaultStyles.contentClass.trim() != '')
-			uiModel.defaultStyles.contentClass.trim()
+		else if uiModel.defaultUnitStyles.contentClass.trim() <> '' then
+			uiModel.defaultUnitStyles.contentClass.trim()
 		else
 			''
-	}
-	derived readonly transient volatile boolean hasContentClass get {
-		contentClass != ''
-	}
-	derived readonly transient volatile String sliderFieldListClass get {
-		if (localFieldListClass.trim() != '')
+		endif endif endif")
+	derived readonly transient volatile String contentClass
+	@OCL(derivation="contentClass <> ''")
+	derived readonly transient volatile boolean hasContentClass
+
+	@OCL(derivation="if localFieldListClass.trim() <> '' then
 			localFieldListClass.trim()
-		else if (uiModel.defaultSliderStyles.fieldListClass.trim() != '')
+		else if uiModel.defaultSliderStyles.fieldListClass.trim() <> '' then
 			uiModel.defaultSliderStyles.fieldListClass.trim()
-		else if (uiModel.defaultStyles.fieldListClass.trim() != '')
-			uiModel.defaultStyles.fieldListClass.trim()
+		else if uiModel.defaultUnitStyles.fieldListClass.trim() <> '' then
+			uiModel.defaultUnitStyles.fieldListClass.trim()
 		else
 			''
-	}
-	derived readonly transient volatile String sliderDefinitionFieldListClass get {
-		if (localDefinitionFieldListClass.trim() != '')
+		endif endif endif")
+	derived readonly transient volatile String fieldListClass
+	@OCL(derivation="fieldListClass <> ''")
+	derived readonly transient volatile boolean hasFieldListClass
+
+	@OCL(derivation="if localDefinitionFieldListClass.trim() <> '' then
 			localDefinitionFieldListClass.trim()
-		else if (uiModel.defaultSliderStyles.definitionFieldListClass.trim() != '')
+		else if uiModel.defaultSliderStyles.definitionFieldListClass.trim() <> '' then
 			uiModel.defaultSliderStyles.definitionFieldListClass.trim()
-		else if (uiModel.defaultStyles.definitionFieldListClass.trim() != '')
-			uiModel.defaultStyles.definitionFieldListClass.trim()
+		else if uiModel.defaultUnitStyles.definitionFieldListClass.trim() <> '' then
+			uiModel.defaultUnitStyles.definitionFieldListClass.trim()
 		else
 			''
-	}
-	derived readonly transient volatile String sliderFieldLabelClass get {
-		if (localFieldLabelClass.trim() != '')
+		endif endif endif")
+	derived readonly transient volatile String definitionFieldListClass
+	@OCL(derivation="definitionFieldListClass <> ''")
+	derived readonly transient volatile boolean hasDefinitionFieldListClass
+
+	@OCL(derivation="if localFieldLabelClass.trim() <> '' then
 			localFieldLabelClass.trim()
-		else if (uiModel.defaultSliderStyles.fieldLabelClass.trim() != '')
+		else if uiModel.defaultSliderStyles.fieldLabelClass.trim() <> '' then
 			uiModel.defaultSliderStyles.fieldLabelClass.trim()
-		else if (uiModel.defaultStyles.fieldLabelClass.trim() != '')
-			uiModel.defaultStyles.fieldLabelClass.trim()
+		else if uiModel.defaultUnitStyles.fieldLabelClass.trim() <> '' then
+			uiModel.defaultUnitStyles.fieldLabelClass.trim()
 		else
 			''
-	}
-	derived readonly transient volatile String sliderFieldValueClass get {
-		if (localFieldValueClass.trim() != '')
+		endif endif endif")
+	derived readonly transient volatile String fieldLabelClass
+	@OCL(derivation="fieldLabelClass <> ''")
+	derived readonly transient volatile boolean hasFieldLabelClass
+
+	@OCL(derivation="if localFieldValueClass.trim() <> '' then
 			localFieldValueClass.trim()
-		else if (uiModel.defaultSliderStyles.fieldValueClass.trim() != '')
+		else if uiModel.defaultSliderStyles.fieldValueClass.trim() <> '' then
 			uiModel.defaultSliderStyles.fieldValueClass.trim()
-		else if (uiModel.defaultStyles.fieldValueClass.trim() != '')
-			uiModel.defaultStyles.fieldValueClass.trim()
+		else if uiModel.defaultUnitStyles.fieldValueClass.trim() <> '' then
+			uiModel.defaultUnitStyles.fieldValueClass.trim()
 		else
 			''
-	}
-	derived readonly transient volatile String sliderControlClass get {
-		if (localControlClass.trim() != '')
+		endif endif endif")
+	derived readonly transient volatile String fieldValueClass
+	@OCL(derivation="fieldValueClass <> ''")
+	derived readonly transient volatile boolean hasFieldValueClass
+
+	@OCL(derivation="if localControlClass.trim() <> '' then
 			localControlClass.trim()
-		else if (uiModel.defaultSliderStyles.controlClass.trim() != '')
+		else if uiModel.defaultSliderStyles.controlClass.trim() <> '' then
 			uiModel.defaultSliderStyles.controlClass.trim()
-		else if (uiModel.defaultStyles.controlClass.trim() != '')
-			uiModel.defaultStyles.controlClass.trim()
+		else if uiModel.defaultUnitStyles.controlClass.trim() <> '' then
+			uiModel.defaultUnitStyles.controlClass.trim()
 		else
 			''
-	}
-	derived readonly transient volatile String sliderInstanceControlClass get {
-		if (localInstanceControlClass.trim() != '')
-			localInstanceControlClass.trim()
-		else if (uiModel.defaultSliderStyles.instanceControlClass.trim() != '')
-			uiModel.defaultSliderStyles.instanceControlClass.trim()
-		else if (uiModel.defaultStyles.instanceControlClass.trim() != '')
-			uiModel.defaultStyles.instanceControlClass.trim()
-		else
-			''
-	}
-	derived readonly transient volatile String sliderAnchorClass get {
-		if (localAnchorClass.trim() != '')
+		endif endif endif")
+	derived readonly transient volatile String controlClass
+	@OCL(derivation="controlClass <> ''")
+	derived readonly transient volatile boolean hasControlClass
+
+	@OCL(derivation="if localAnchorClass.trim() <> '' then
 			localAnchorClass.trim()
-		else if (uiModel.defaultSliderStyles.anchorClass.trim() != '')
+		else if uiModel.defaultSliderStyles.anchorClass.trim() <> '' then
 			uiModel.defaultSliderStyles.anchorClass.trim()
-		else if (uiModel.defaultStyles.anchorClass.trim() != '')
-			uiModel.defaultStyles.anchorClass.trim()
+		else if uiModel.defaultUnitStyles.anchorClass.trim() <> '' then
+			uiModel.defaultUnitStyles.anchorClass.trim()
 		else
 			''
-	}
-	derived readonly transient volatile String sliderInstanceAnchorClass get {
-		if (localInstanceAnchorClass.trim() != '')
+		endif endif endif")
+	derived readonly transient volatile String anchorClass
+	@OCL(derivation="anchorClass <> ''")
+	derived readonly transient volatile boolean hasAnchorClass
+
+	@OCL(derivation="if localInstanceControlClass.trim() <> '' then
+			localInstanceControlClass.trim()
+		else if uiModel.defaultSliderStyles.instanceControlClass.trim() <> '' then
+			uiModel.defaultSliderStyles.instanceControlClass.trim()
+		else if uiModel.defaultUnitStyles.instanceControlClass.trim() <> '' then
+			uiModel.defaultUnitStyles.instanceControlClass.trim()
+		else
+			''
+		endif endif endif")
+	derived readonly transient volatile String instanceControlClass
+	@OCL(derivation="instanceControlClass <> ''")
+	derived readonly transient volatile boolean hasInstanceControlClass
+
+	@OCL(derivation="if localInstanceAnchorClass.trim() <> '' then
 			localInstanceAnchorClass.trim()
-		else if (uiModel.defaultSliderStyles.instanceAnchorClass.trim() != '')
+		else if uiModel.defaultSliderStyles.instanceAnchorClass.trim() <> '' then
 			uiModel.defaultSliderStyles.instanceAnchorClass.trim()
-		else if (uiModel.defaultStyles.instanceAnchorClass.trim() != '')
-			uiModel.defaultStyles.instanceAnchorClass.trim()
+		else if uiModel.defaultUnitStyles.instanceAnchorClass.trim() <> '' then
+			uiModel.defaultUnitStyles.instanceAnchorClass.trim()
 		else
 			''
-	}
+		endif endif endif")
+	derived readonly transient volatile String instanceAnchorClass
+	@OCL(derivation="instanceAnchorClass <> ''")
+	derived readonly transient volatile boolean hasInstanceAnchorClass
 }
 
 class GalleryUnit extends ImageUnit {
 	refers ImageManipulation fullSizeFilter
 	int showTime
 	int transitionTime
-	derived readonly transient volatile String contentClass get {
-		if (localContentClass.trim() != '')
+
+	@OCL(derivation="if localSectionClass.trim() <> '' then
+			localSectionClass.trim()
+		else if uiModel.defaultGalleryStyles.sectionClass.trim() <> '' then
+			uiModel.defaultGalleryStyles.sectionClass.trim()
+		else if uiModel.defaultUnitStyles.sectionClass.trim() <> '' then
+			uiModel.defaultUnitStyles.sectionClass.trim()
+		else
+			''
+		endif endif endif")
+	derived readonly transient volatile String sectionClass
+	@OCL(derivation="sectionClass <> ''")
+	derived readonly transient volatile boolean hasSectionClass
+
+	@OCL(derivation="if localSectionClass.trim() <> '' then
+			localCaptionClass.trim()
+		else if uiModel.defaultGalleryStyles.captionClass.trim() <> '' then
+			uiModel.defaultGalleryStyles.captionClass.trim()
+		else if uiModel.defaultUnitStyles.captionClass.trim() <> '' then
+			uiModel.defaultUnitStyles.captionClass.trim()
+		else
+			''
+		endif endif endif")
+	derived readonly transient volatile String captionClass
+	@OCL(derivation="captionClass <> ''")
+	derived readonly transient volatile boolean hasCaptionClass
+
+	@OCL(derivation="if localContentClass.trim() <> '' then
 			localContentClass.trim()
-		else if (uiModel.defaultGalleryStyles.contentClass.trim() != '')
+		else if uiModel.defaultGalleryStyles.contentClass.trim() <> '' then
 			uiModel.defaultGalleryStyles.contentClass.trim()
-		else if (uiModel.defaultStyles.contentClass.trim() != '')
-			uiModel.defaultStyles.contentClass.trim()
+		else if uiModel.defaultUnitStyles.contentClass.trim() <> '' then
+			uiModel.defaultUnitStyles.contentClass.trim()
 		else
 			''
-	}
-	derived readonly transient volatile boolean hasContentClass get {
-		contentClass != ''
-	}
-	derived readonly transient volatile String galleryFieldListClass get {
-		if (localFieldListClass.trim() != '')
+		endif endif endif")
+	derived readonly transient volatile String contentClass
+	@OCL(derivation="contentClass <> ''")
+	derived readonly transient volatile boolean hasContentClass
+
+	@OCL(derivation="if localFieldListClass.trim() <> '' then
 			localFieldListClass.trim()
-		else if (uiModel.defaultGalleryStyles.fieldListClass.trim() != '')
-			uiModel.defaultGalleryStyles.fieldListClass.trim()
-		else if (uiModel.defaultStyles.fieldListClass.trim() != '')
-			uiModel.defaultStyles.fieldListClass.trim()
+		else if uiModel.defaultFormStyles.fieldListClass.trim() <> '' then
+			uiModel.defaultFormStyles.fieldListClass.trim()
+		else if uiModel.defaultUnitStyles.fieldListClass.trim() <> '' then
+			uiModel.defaultUnitStyles.fieldListClass.trim()
 		else
 			''
-	}
-	derived readonly transient volatile String galleryDefinitionFieldListClass get {
-		if (localDefinitionFieldListClass.trim() != '')
+		endif endif endif")
+	derived readonly transient volatile String fieldListClass
+	@OCL(derivation="fieldListClass <> ''")
+	derived readonly transient volatile boolean hasFieldListClass
+
+	@OCL(derivation="if localDefinitionFieldListClass.trim() <> '' then
 			localDefinitionFieldListClass.trim()
-		else if (uiModel.defaultGalleryStyles.definitionFieldListClass.trim() != '')
+		else if uiModel.defaultGalleryStyles.definitionFieldListClass.trim() <> '' then
 			uiModel.defaultGalleryStyles.definitionFieldListClass.trim()
-		else if (uiModel.defaultStyles.definitionFieldListClass.trim() != '')
-			uiModel.defaultStyles.definitionFieldListClass.trim()
+		else if uiModel.defaultUnitStyles.definitionFieldListClass.trim() <> '' then
+			uiModel.defaultUnitStyles.definitionFieldListClass.trim()
 		else
 			''
-	}
-	derived readonly transient volatile String galleryFieldLabelClass get {
-		if (localFieldLabelClass.trim() != '')
+		endif endif endif")
+	derived readonly transient volatile String definitionFieldListClass
+	@OCL(derivation="definitionFieldListClass <> ''")
+	derived readonly transient volatile boolean hasDefinitionFieldListClass
+
+	@OCL(derivation="if localFieldLabelClass.trim() <> '' then
 			localFieldLabelClass.trim()
-		else if (uiModel.defaultGalleryStyles.fieldLabelClass.trim() != '')
+		else if uiModel.defaultGalleryStyles.fieldLabelClass.trim() <> '' then
 			uiModel.defaultGalleryStyles.fieldLabelClass.trim()
-		else if (uiModel.defaultStyles.fieldLabelClass.trim() != '')
-			uiModel.defaultStyles.fieldLabelClass.trim()
+		else if uiModel.defaultUnitStyles.fieldLabelClass.trim() <> '' then
+			uiModel.defaultUnitStyles.fieldLabelClass.trim()
 		else
 			''
-	}
-	derived readonly transient volatile String galleryFieldValueClass get {
-		if (localFieldValueClass.trim() != '')
+		endif endif endif")
+	derived readonly transient volatile String fieldLabelClass
+	@OCL(derivation="fieldLabelClass <> ''")
+	derived readonly transient volatile boolean hasFieldLabelClass
+
+	@OCL(derivation="if localFieldValueClass.trim() <> '' then
 			localFieldValueClass.trim()
-		else if (uiModel.defaultGalleryStyles.fieldValueClass.trim() != '')
+		else if uiModel.defaultGalleryStyles.fieldValueClass.trim() <> '' then
 			uiModel.defaultGalleryStyles.fieldValueClass.trim()
-		else if (uiModel.defaultStyles.fieldValueClass.trim() != '')
-			uiModel.defaultStyles.fieldValueClass.trim()
+		else if uiModel.defaultUnitStyles.fieldValueClass.trim() <> '' then
+			uiModel.defaultUnitStyles.fieldValueClass.trim()
 		else
 			''
-	}
-	derived readonly transient volatile String galleryControlClass get {
-		if (localControlClass.trim() != '')
+		endif endif endif")
+	derived readonly transient volatile String fieldValueClass
+	@OCL(derivation="fieldValueClass <> ''")
+	derived readonly transient volatile boolean hasFieldValueClass
+
+	@OCL(derivation="if localControlClass.trim() <> '' then
 			localControlClass.trim()
-		else if (uiModel.defaultGalleryStyles.controlClass.trim() != '')
+		else if uiModel.defaultGalleryStyles.controlClass.trim() <> '' then
 			uiModel.defaultGalleryStyles.controlClass.trim()
-		else if (uiModel.defaultStyles.controlClass.trim() != '')
-			uiModel.defaultStyles.controlClass.trim()
+		else if uiModel.defaultUnitStyles.controlClass.trim() <> '' then
+			uiModel.defaultUnitStyles.controlClass.trim()
 		else
 			''
-	}
-	derived readonly transient volatile String galleryInstanceControlClass get {
-		if (localInstanceControlClass.trim() != '')
-			localInstanceControlClass.trim()
-		else if (uiModel.defaultGalleryStyles.instanceControlClass.trim() != '')
-			uiModel.defaultGalleryStyles.instanceControlClass.trim()
-		else if (uiModel.defaultStyles.instanceControlClass.trim() != '')
-			uiModel.defaultStyles.instanceControlClass.trim()
-		else
-			''
-	}
-	derived readonly transient volatile String galleryAnchorClass get {
-		if (localAnchorClass.trim() != '')
+		endif endif endif")
+	derived readonly transient volatile String controlClass
+	@OCL(derivation="controlClass <> ''")
+	derived readonly transient volatile boolean hasControlClass
+
+	@OCL(derivation="if localAnchorClass.trim() <> '' then
 			localAnchorClass.trim()
-		else if (uiModel.defaultGalleryStyles.anchorClass.trim() != '')
+		else if uiModel.defaultGalleryStyles.anchorClass.trim() <> '' then
 			uiModel.defaultGalleryStyles.anchorClass.trim()
-		else if (uiModel.defaultStyles.anchorClass.trim() != '')
-			uiModel.defaultStyles.anchorClass.trim()
+		else if uiModel.defaultUnitStyles.anchorClass.trim() <> '' then
+			uiModel.defaultUnitStyles.anchorClass.trim()
 		else
 			''
-	}
-	derived readonly transient volatile String galleryInstanceAnchorClass get {
-		if (localInstanceAnchorClass.trim() != '')
+		endif endif endif")
+	derived readonly transient volatile String anchorClass
+	@OCL(derivation="anchorClass <> ''")
+	derived readonly transient volatile boolean hasAnchorClass
+
+	@OCL(derivation="if localInstanceControlClass.trim() <> '' then
+			localInstanceControlClass.trim()
+		else if uiModel.defaultGalleryStyles.instanceControlClass.trim() <> '' then
+			uiModel.defaultGalleryStyles.instanceControlClass.trim()
+		else if uiModel.defaultUnitStyles.instanceControlClass.trim() <> '' then
+			uiModel.defaultUnitStyles.instanceControlClass.trim()
+		else
+			''
+		endif endif endif")
+	derived readonly transient volatile String instanceControlClass
+	@OCL(derivation="instanceControlClass <> ''")
+	derived readonly transient volatile boolean hasInstanceControlClass
+
+	@OCL(derivation="if localInstanceAnchorClass.trim() <> '' then
 			localInstanceAnchorClass.trim()
-		else if (uiModel.defaultGalleryStyles.instanceAnchorClass.trim() != '')
+		else if uiModel.defaultGalleryStyles.instanceAnchorClass.trim() <> '' then
 			uiModel.defaultGalleryStyles.instanceAnchorClass.trim()
-		else if (uiModel.defaultStyles.instanceAnchorClass.trim() != '')
-			uiModel.defaultStyles.instanceAnchorClass.trim()
+		else if uiModel.defaultUnitStyles.instanceAnchorClass.trim() <> '' then
+			uiModel.defaultUnitStyles.instanceAnchorClass.trim()
 		else
 			''
-	}
+		endif endif endif")
+	derived readonly transient volatile String instanceAnchorClass
+	@OCL(derivation="instanceAnchorClass <> ''")
+	derived readonly transient volatile boolean hasInstanceAnchorClass
 }
 
 abstract class ControlUnit extends DynamicUnit {
 	String[1] submitLabel
 	refers Page cancelDestination
 	String cancelLabel
+
+	@OCL(derivation="if localSectionClass.trim() <> '' then
+			localSectionClass.trim()
+		else if uiModel.defaultControlStyles.sectionClass.trim() <> '' then
+			uiModel.defaultControlStyles.sectionClass.trim()
+		else if uiModel.defaultUnitStyles.sectionClass.trim() <> '' then
+			uiModel.defaultUnitStyles.sectionClass.trim()
+		else
+			''
+		endif endif endif")
+	derived readonly transient volatile String sectionClass
+	@OCL(derivation="sectionClass <> ''")
+	derived readonly transient volatile boolean hasSectionClass
+
+	@OCL(derivation="if localSectionClass.trim() <> '' then
+			localCaptionClass.trim()
+		else if uiModel.defaultControlStyles.captionClass.trim() <> '' then
+			uiModel.defaultControlStyles.captionClass.trim()
+		else if uiModel.defaultUnitStyles.captionClass.trim() <> '' then
+			uiModel.defaultUnitStyles.captionClass.trim()
+		else
+			''
+		endif endif endif")
+	derived readonly transient volatile String captionClass
+	@OCL(derivation="captionClass <> ''")
+	derived readonly transient volatile boolean hasCaptionClass
+
+	@OCL(derivation="if localContentClass.trim() <> '' then
+			localContentClass.trim()
+		else if uiModel.defaultControlStyles.contentClass.trim() <> '' then
+			uiModel.defaultControlStyles.contentClass.trim()
+		else if uiModel.defaultUnitStyles.contentClass.trim() <> '' then
+			uiModel.defaultUnitStyles.contentClass.trim()
+		else
+			''
+		endif endif endif")
+	derived readonly transient volatile String contentClass
+	@OCL(derivation="contentClass <> ''")
+	derived readonly transient volatile boolean hasContentClass
+
+	@OCL(derivation="if localFieldListClass.trim() <> '' then
+			localFieldListClass.trim()
+		else if uiModel.defaultControlStyles.fieldListClass.trim() <> '' then
+			uiModel.defaultControlStyles.fieldListClass.trim()
+		else if uiModel.defaultUnitStyles.fieldListClass.trim() <> '' then
+			uiModel.defaultUnitStyles.fieldListClass.trim()
+		else
+			''
+		endif endif endif")
+	derived readonly transient volatile String fieldListClass
+	@OCL(derivation="fieldListClass <> ''")
+	derived readonly transient volatile boolean hasFieldListClass
+
+	@OCL(derivation="if localDefinitionFieldListClass.trim() <> '' then
+			localDefinitionFieldListClass.trim()
+		else if uiModel.defaultControlStyles.definitionFieldListClass.trim() <> '' then
+			uiModel.defaultControlStyles.definitionFieldListClass.trim()
+		else if uiModel.defaultUnitStyles.definitionFieldListClass.trim() <> '' then
+			uiModel.defaultUnitStyles.definitionFieldListClass.trim()
+		else
+			''
+		endif endif endif")
+	derived readonly transient volatile String definitionFieldListClass
+	@OCL(derivation="definitionFieldListClass <> ''")
+	derived readonly transient volatile boolean hasDefinitionFieldListClass
+
+	@OCL(derivation="if localFieldLabelClass.trim() <> '' then
+			localFieldLabelClass.trim()
+		else if uiModel.defaultControlStyles.fieldLabelClass.trim() <> '' then
+			uiModel.defaultControlStyles.fieldLabelClass.trim()
+		else if uiModel.defaultUnitStyles.fieldLabelClass.trim() <> '' then
+			uiModel.defaultUnitStyles.fieldLabelClass.trim()
+		else
+			''
+		endif endif endif")
+	derived readonly transient volatile String fieldLabelClass
+	@OCL(derivation="fieldLabelClass <> ''")
+	derived readonly transient volatile boolean hasFieldLabelClass
+
+	@OCL(derivation="if localFieldValueClass.trim() <> '' then
+			localFieldValueClass.trim()
+		else if uiModel.defaultControlStyles.fieldValueClass.trim() <> '' then
+			uiModel.defaultControlStyles.fieldValueClass.trim()
+		else if uiModel.defaultUnitStyles.fieldValueClass.trim() <> '' then
+			uiModel.defaultUnitStyles.fieldValueClass.trim()
+		else
+			''
+		endif endif endif")
+	derived readonly transient volatile String fieldValueClass
+	@OCL(derivation="fieldValueClass <> ''")
+	derived readonly transient volatile boolean hasFieldValueClass
+
+	@OCL(derivation="if localControlClass.trim() <> '' then
+			localControlClass.trim()
+		else if uiModel.defaultControlStyles.controlClass.trim() <> '' then
+			uiModel.defaultControlStyles.controlClass.trim()
+		else if uiModel.defaultUnitStyles.controlClass.trim() <> '' then
+			uiModel.defaultUnitStyles.controlClass.trim()
+		else
+			''
+		endif endif endif")
+	derived readonly transient volatile String controlClass
+	@OCL(derivation="controlClass <> ''")
+	derived readonly transient volatile boolean hasControlClass
+
+	@OCL(derivation="if localAnchorClass.trim() <> '' then
+			localAnchorClass.trim()
+		else if uiModel.defaultControlStyles.anchorClass.trim() <> '' then
+			uiModel.defaultControlStyles.anchorClass.trim()
+		else if uiModel.defaultUnitStyles.anchorClass.trim() <> '' then
+			uiModel.defaultUnitStyles.anchorClass.trim()
+		else
+			''
+		endif endif endif")
+	derived readonly transient volatile String anchorClass
+	@OCL(derivation="anchorClass <> ''")
+	derived readonly transient volatile boolean hasAnchorClass
 }
 
 class SearchUnit extends ControlUnit {
@@ -2214,161 +2888,198 @@ enum InstanceActionsPlacement {
 
 interface ActionContainer {
 	ContainerActionsPlacement containerActionsPlacement
+
 	InstanceActionsPlacement instanceActionsPlacement
+
 	contains Action[] allActions opposite usedBy
-	refers derived readonly unsettable transient volatile Action[] actions get {
-		return allActions.filter[!disable].toEList
-	}
-	derived readonly unsettable transient volatile boolean hasActions get {
-		!actions.isEmpty()
-	}
-	refers derived readonly unsettable transient volatile Action[] actionsWithMessages get {
-		actions.filter[hasMessages].toEList()
-	}
-	derived readonly unsettable transient volatile boolean hasActionsMessages get {
-		!actionsWithMessages.isEmpty()
-	}
-	refers derived readonly unsettable transient volatile Action[] actionsWithoutTarget get {
-		actions.filter[it instanceof DeleteAction || it instanceof OperationAction].toEList()
-	}
-	refers derived readonly unsettable transient volatile Action[] containerActions get {
-		actions.filter[!it.isInstanceAction].toEList()
-	}
-	derived readonly unsettable transient volatile boolean hasContainerActions get {
-		!containerActions.isEmpty()
-	}
+
+	@OCL(derivation="allActions->select(a | not a.disable)->asOrderedSet()")
+	refers derived readonly unsettable transient volatile Action[] actions
+
+	@OCL(derivation="actions->notEmpty()")
+	derived readonly unsettable transient volatile boolean hasActions
+
+	@OCL(derivation="actions->select(a | a.hasMessages)->asOrderedSet()")
+	refers derived readonly unsettable transient volatile Action[] actionsWithMessages
+
+	@OCL(derivation="actionsWithMessages->notEmpty()")
+	derived readonly unsettable transient volatile boolean hasActionsMessages
+
+	@OCL(derivation="actions->select(a | a.oclIsKindOf(DeleteAction) or a.oclIsKindOf(OperationAction))->asOrderedSet()")
+	refers derived readonly unsettable transient volatile Action[] actionsWithoutTarget
+
+	@OCL(derivation="actions->select(a | a.isContainerAction = true)->asOrderedSet()")
+	refers derived readonly unsettable transient volatile Action[] containerActions
+	@OCL(derivation="containerActions->notEmpty()")
+	derived readonly unsettable transient volatile boolean hasContainerActions
+
+// TODO	@OCL(derivation="operationActions->select(a | a.operation.resultType = service::OperationResultTypes::File)->asOrderedSet()")
+// TODO	refers derived readonly unsettable transient volatile OperationAction[] fileActions
 	refers derived readonly unsettable transient volatile OperationAction[] fileActions get {
 		operationActions.filter[it.operation.resultType.literal == 'File'].toEList()
 	}
-	derived readonly unsettable transient volatile boolean hasFileActions get {
-		!fileActions.isEmpty()
-	}
-	refers derived readonly unsettable transient volatile Action[] instanceActions get {
-		actions.filter[it.isInstanceAction].toEList()
-	}
-	derived readonly unsettable transient volatile boolean hasInstanceActions get {
-		!instanceActions.isEmpty()
-	}
-	refers derived readonly unsettable transient volatile OperationAction[] operationActions get {
-		actions.filter[it instanceof OperationAction].map[it as OperationAction].toEList()
-	}
-	derived readonly unsettable transient volatile boolean hasOperationActions get {
-		!operationActions.isEmpty()
-	}
-	refers readonly unsettable transient volatile derived WafModel genModelRef get {
-		if (this instanceof DynamicUnit)
-			(this as DynamicUnit).genModel
-		else if (this instanceof UnitFeature)
-			(this as UnitFeature).genModel
-	}
-	refers readonly unsettable transient volatile derived WafModel uiModelRef get {
-		if (this instanceof DynamicUnit)
-			(this as DynamicUnit).uiModel
-		else if (this instanceof UnitFeature)
-			(this as UnitFeature).uiModel
-	}
+	@OCL(derivation="fileActions->notEmpty()")
+	derived readonly unsettable transient volatile boolean hasFileActions
+
+	@OCL(derivation="actions->select(a | a.isInstanceAction = true)->asOrderedSet()")
+	refers derived readonly unsettable transient volatile Action[] instanceActions
+	@OCL(derivation="instanceActions->notEmpty()")
+	derived readonly unsettable transient volatile boolean hasInstanceActions
+
+	@OCL(derivation="actions->select(a | a.oclIsKindOf(OperationAction)).oclAsType(OperationAction)->asOrderedSet()")
+	refers derived readonly unsettable transient volatile OperationAction[] operationActions
+	@OCL(derivation="operationActions->notEmpty()")
+	derived readonly unsettable transient volatile boolean hasOperationActions
+
+	@OCL(derivation="if self.oclIsKindOf(DynamicUnit) then
+			self.oclAsType(DynamicUnit).genModel
+		else if self.oclIsKindOf(UnitFeature) then
+			self.oclAsType(UnitFeature).genModel
+		else
+			null
+		endif endif")
+	refers readonly unsettable transient volatile derived WafModel genModelRef
+
+	@OCL(derivation="if self.oclIsKindOf(DynamicUnit) then
+			self.oclAsType(DynamicUnit).uiModel
+		else if self.oclIsKindOf(UnitFeature) then
+			self.oclAsType(UnitFeature).uiModel
+		else
+			null
+		endif endif")
+	refers readonly unsettable transient volatile derived WafModel uiModelRef
 }
 
 abstract class Action extends NamedDisplayElement {
 	refers ActionContainer[1]usedBy opposite allActions
-	refers readonly transient volatile unsettable derived DynamicUnit parentUnit get {
-		if (usedBy instanceof DynamicUnit)
-			(usedBy as DynamicUnit)
-		else if (usedBy instanceof UnitFeature)
-			(usedBy as UnitFeature).displayedOn
-	}
-	derived readonly transient volatile String authorisationRoles get {
-		if (this instanceof SecurityAction)
-			(this as SecurityAction).securityAuthorisationRoles
-		else if (this instanceof SelectAction)
-			(this as SelectAction).selectAuthorisationRoles
-		else if (this instanceof DeleteAction)
-			(this as DeleteAction).deleteAuthorisationRoles
-		else if (this instanceof OperationAction)
-			(this as OperationAction).operationAuthorisationRoles
-	}
-	derived readonly transient unsettable volatile boolean isAuthorised get {
-		authorisationRoles.trim() != ''
-	}
-	derived readonly transient unsettable volatile boolean hasCustomisedAuthorisation get {
-		authorisationRoles.trim() != parentUnit.authorisationRoles.trim()
-	}
-	derived readonly transient unsettable volatile boolean isInstanceAction get {
-		this instanceof DeleteAction
-			|| this instanceof InstanceOperationAction
-			|| this instanceof InstanceSelectAction
-	}
+
+	@OCL(derivation="if usedBy.oclIsKindOf(DynamicUnit) then
+			usedBy.oclAsType(DynamicUnit)
+		else if usedBy.oclIsKindOf(UnitFeature) then
+			usedBy.oclAsType(UnitFeature).displayedOn
+		else
+			null
+		endif endif")
+	refers readonly transient volatile unsettable derived DynamicUnit parentUnit
+
+	@OCL(derivation="if self.oclIsKindOf(SecurityAction) then
+			self.oclAsType(SecurityAction).securityAuthorisationRoles
+		else if self.oclIsKindOf(SelectAction) then
+			self.oclAsType(SelectAction).selectAuthorisationRoles
+		else if self.oclIsKindOf(DeleteAction) then
+			self.oclAsType(DeleteAction).deleteAuthorisationRoles
+		else if self.oclIsKindOf(OperationAction) then
+			self.oclAsType(OperationAction).operationAuthorisationRoles
+		else
+			''
+		endif endif endif endif")
+	derived readonly transient volatile String authorisationRoles
+
+	@OCL(derivation="authorisationRoles <> ''")
+	derived readonly transient unsettable volatile boolean isAuthorised
+
+	@OCL(derivation="authorisationRoles <> parentUnit.authorisationRoles.trim()")
+	derived readonly transient unsettable volatile boolean hasCustomisedAuthorisation
+
+	@OCL(derivation="self.oclIsKindOf(ContainerOperationAction)
+		or self.oclIsKindOf(ContainerSelectAction)")
+	derived readonly transient unsettable volatile boolean isContainerAction
+
+	@OCL(derivation="self.oclIsKindOf(DeleteAction)
+		or self.oclIsKindOf(InstanceOperationAction)
+		or self.oclIsKindOf(InstanceSelectAction)")
+	derived readonly transient unsettable volatile boolean isInstanceAction
+
 	String iconName = ''
 	boolean disable
 	contains Predicate displayWhen
 	contains Predicate enableWhen
+
 	String confirmMessage = ''
-	derived readonly transient volatile boolean hasConfirmMessage get {
-		confirmMessage.trim() != ''
-	}
+	@OCL(derivation="confirmMessage.trim() <> ''")
+	derived readonly transient volatile boolean hasConfirmMessage
+
 	String successMessage = ''
-	derived readonly transient volatile boolean hasSuccessMessage get {
-		successMessage.trim() != ''
-	}
+	@OCL(derivation="successMessage.trim() <> ''")
+	derived readonly transient volatile boolean hasSuccessMessage
+
 	String failureMessage = ''
-	derived readonly transient volatile boolean hasFailureMessage get {
-		failureMessage.trim() != ''
-	}
-	derived readonly transient volatile boolean hasMessages get {
-		hasConfirmMessage || hasSuccessMessage || hasFailureMessage
-	}
+	@OCL(derivation="failureMessage.trim() <> ''")
+	derived readonly transient volatile boolean hasFailureMessage
+
+	@OCL(derivation="hasConfirmMessage = true or hasSuccessMessage = true or hasFailureMessage = true")
+	derived readonly transient volatile boolean hasMessages
+
 	String localAnchorClass = ''
-	derived readonly transient volatile String anchorClass get {
-		if (localAnchorClass.trim() != '')
+	@OCL(derivation="if localAnchorClass.trim() <> '' then
 			localAnchorClass.trim()
-		else if (usedBy instanceof DynamicUnit)
-			if (this.isInstanceAction)
-				if (parentUnit.instanceAnchorClass.trim() != '')
-					parentUnit.instanceAnchorClass.trim()
+		else if usedBy.oclIsKindOf(DynamicUnit) then
+			if self.isInstanceAction = true then
+				if parentUnit.oclIsKindOf(CollectionUnit) then
+					if parentUnit.oclAsType(CollectionUnit).hasCommonInstanceAnchorClass = true then
+						parentUnit.oclAsType(CollectionUnit).commonInstanceAnchorClass
+					else
+						''
+					endif
 				else
 					''
+				endif
 			else
-				if (parentUnit.anchorClass.trim() != '')
-					parentUnit.anchorClass.trim()
+				if parentUnit.hasCommonAnchorClass= true then
+					parentUnit.commonAnchorClass
 				else
 					''
+				endif
+			endif
 		else
 			''
-	}
-	derived readonly transient volatile boolean hasAnchorClass get {
-		anchorClass.trim != ''
-	}
+		endif endif")
+	derived readonly transient volatile String anchorClass
+	@OCL(derivation="anchorClass.trim() <> ''")
+	derived readonly transient volatile boolean hasAnchorClass
+
 	String headerClass
 	String footerClass
 }
 
 class SecurityAction extends Action {
 	refers SecurityUnit[1] target
-	derived readonly transient volatile String securityAuthorisationRoles get {
-		(target as DynamicUnit)?.authorisationRoles
-	}
+	@OCL(derivation="if not target.oclIsUndefined() then
+			target.oclAsType(DynamicUnit).authorisationRoles
+		else
+			''
+		endif")
+	derived readonly transient volatile String securityAuthorisationRoles
 }
 
 class DeleteAction extends Action {
 	String[1] uriElement
+
 	String localAuthorisationRoles = ''
-	derived readonly transient volatile String deleteAuthorisationRoles get {
-		if (localAuthorisationRoles.trim() != '')
+	@OCL(derivation="if localAuthorisationRoles.trim() <> '' then
 			localAuthorisationRoles
 		else
-			if (usedBy instanceof DynamicUnit)
-				(usedBy as DynamicUnit).authorisationRoles
-			else if (usedBy instanceof UnitFeature)
-				(usedBy as UnitFeature).displayedOn.authorisationRoles
-	}
+			if usedBy.oclIsKindOf(DynamicUnit) then
+				usedBy.oclAsType(DynamicUnit).authorisationRoles
+			else if usedBy.oclIsKindOf(UnitFeature) then
+				usedBy.oclAsType(UnitFeature).displayedOn.authorisationRoles
+			else
+				''
+			endif endif
+		endif")
+	derived readonly transient volatile String deleteAuthorisationRoles
 }
 
 abstract class SelectAction extends Action {
 	refers SelectableUnit[1] target opposite selectors
 	contains FeaturePath valuePath
-	derived readonly transient volatile String selectAuthorisationRoles get {
-		(target as DynamicUnit)?.authorisationRoles
-	}
+
+	@OCL(derivation="if not target.oclIsUndefined() then
+			target.oclAsType(DynamicUnit).authorisationRoles
+		else
+			''
+		endif")
+	derived readonly transient volatile String selectAuthorisationRoles
 }
 
 class ContainerSelectAction extends SelectAction {
@@ -2381,16 +3092,20 @@ abstract class OperationAction extends Action {
 	refers BusinessOperation[1] operation
 	String fileExtension
 	String[1] uriElement
+
 	String localAuthorisationRoles = ''
-	derived readonly transient volatile String operationAuthorisationRoles get {
-		if (localAuthorisationRoles.trim() != '')
+	@OCL(derivation="if localAuthorisationRoles.trim() <> '' then
 			localAuthorisationRoles
 		else
-			if (usedBy instanceof DynamicUnit)
-				(usedBy as DynamicUnit).authorisationRoles
-			else if (usedBy instanceof UnitFeature)
-				(usedBy as UnitFeature).displayedOn.authorisationRoles
-	}
+			if usedBy.oclIsKindOf(DynamicUnit) then
+				usedBy.oclAsType(DynamicUnit).authorisationRoles
+			else if usedBy.oclIsKindOf(UnitFeature) then
+				usedBy.oclAsType(UnitFeature).displayedOn.authorisationRoles
+			else
+				''
+			endif endif
+		endif")
+	derived readonly transient volatile String operationAuthorisationRoles
 }
 
 class InstanceOperationAction extends OperationAction {

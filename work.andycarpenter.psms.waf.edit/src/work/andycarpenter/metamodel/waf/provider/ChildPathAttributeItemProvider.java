@@ -92,7 +92,7 @@ public class ChildPathAttributeItemProvider extends FeatureChildPathItemProvider
 				 getString("_UI_ChildPathAttribute_name_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ChildPathAttribute_name_feature", "_UI_ChildPathAttribute_type"),
 				 WafPackage.eINSTANCE.getChildPathAttribute_Name(),
-				 false,
+				 true,
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
