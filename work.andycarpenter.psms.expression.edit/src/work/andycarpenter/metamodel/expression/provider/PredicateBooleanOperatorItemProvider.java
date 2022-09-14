@@ -87,7 +87,7 @@ public class PredicateBooleanOperatorItemProvider extends PredicateItemProvider 
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ExpressionPackage.Literals.PREDICATE_BOOLEAN_OPERATOR__EXPRESSIONS);
+			childrenFeatures.add(ExpressionPackage.Literals.PREDICATE_BOOLEAN_OPERATOR__PREDICATES);
 		}
 		return childrenFeatures;
 	}
@@ -144,7 +144,7 @@ public class PredicateBooleanOperatorItemProvider extends PredicateItemProvider 
 			case ExpressionPackage.PREDICATE_BOOLEAN_OPERATOR__OPERATOR:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case ExpressionPackage.PREDICATE_BOOLEAN_OPERATOR__EXPRESSIONS:
+			case ExpressionPackage.PREDICATE_BOOLEAN_OPERATOR__PREDICATES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -164,47 +164,42 @@ public class PredicateBooleanOperatorItemProvider extends PredicateItemProvider 
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ExpressionPackage.Literals.PREDICATE_BOOLEAN_OPERATOR__EXPRESSIONS,
+				(ExpressionPackage.Literals.PREDICATE_BOOLEAN_OPERATOR__PREDICATES,
 				 ExpressionFactory.eINSTANCE.createPredicateBooleanVariable()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ExpressionPackage.Literals.PREDICATE_BOOLEAN_OPERATOR__EXPRESSIONS,
+				(ExpressionPackage.Literals.PREDICATE_BOOLEAN_OPERATOR__PREDICATES,
 				 ExpressionFactory.eINSTANCE.createPredicateBooleanOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ExpressionPackage.Literals.PREDICATE_BOOLEAN_OPERATOR__EXPRESSIONS,
+				(ExpressionPackage.Literals.PREDICATE_BOOLEAN_OPERATOR__PREDICATES,
 				 ExpressionFactory.eINSTANCE.createPredicateEqualityOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ExpressionPackage.Literals.PREDICATE_BOOLEAN_OPERATOR__EXPRESSIONS,
+				(ExpressionPackage.Literals.PREDICATE_BOOLEAN_OPERATOR__PREDICATES,
 				 ExpressionFactory.eINSTANCE.createPredicateComparisonOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ExpressionPackage.Literals.PREDICATE_BOOLEAN_OPERATOR__EXPRESSIONS,
+				(ExpressionPackage.Literals.PREDICATE_BOOLEAN_OPERATOR__PREDICATES,
 				 ExpressionFactory.eINSTANCE.createPredicateInOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ExpressionPackage.Literals.PREDICATE_BOOLEAN_OPERATOR__EXPRESSIONS,
-				 ExpressionFactory.eINSTANCE.createPredicateIsOperator()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ExpressionPackage.Literals.PREDICATE_BOOLEAN_OPERATOR__EXPRESSIONS,
+				(ExpressionPackage.Literals.PREDICATE_BOOLEAN_OPERATOR__PREDICATES,
 				 ExpressionFactory.eINSTANCE.createPredicateLikeOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ExpressionPackage.Literals.PREDICATE_BOOLEAN_OPERATOR__EXPRESSIONS,
+				(ExpressionPackage.Literals.PREDICATE_BOOLEAN_OPERATOR__PREDICATES,
 				 ExpressionFactory.eINSTANCE.createPredicateIsEmpty()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ExpressionPackage.Literals.PREDICATE_BOOLEAN_OPERATOR__EXPRESSIONS,
+				(ExpressionPackage.Literals.PREDICATE_BOOLEAN_OPERATOR__PREDICATES,
 				 ExpressionFactory.eINSTANCE.createPredicateIsNull()));
 	}
 

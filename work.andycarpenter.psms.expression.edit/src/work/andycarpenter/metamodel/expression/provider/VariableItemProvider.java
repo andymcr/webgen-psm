@@ -1,6 +1,6 @@
 /**
  */
-package work.andycarpenter.metamodel.base.provider;
+package work.andycarpenter.metamodel.expression.provider;
 
 
 import java.util.Collection;
@@ -9,25 +9,22 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
-import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import work.andycarpenter.metamodel.expression.provider.VariableItemProvider;
 
 /**
- * This is the item provider adapter for a {@link work.andycarpenter.metamodel.base.CurrentUser} object.
+ * This is the item provider adapter for a {@link work.andycarpenter.metamodel.expression.Variable} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class CurrentUserItemProvider 
-	extends VariableItemProvider {
+public class VariableItemProvider extends ExpressionItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CurrentUserItemProvider(AdapterFactory adapterFactory) {
+	public VariableItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -47,17 +44,6 @@ public class CurrentUserItemProvider
 	}
 
 	/**
-	 * This returns CurrentUser.gif.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/CurrentUser"));
-	}
-
-	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -65,7 +51,7 @@ public class CurrentUserItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_CurrentUser_type");
+		return getString("_UI_Variable_type");
 	}
 
 
@@ -92,17 +78,6 @@ public class CurrentUserItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-	}
-
-	/**
-	 * Return the resource locator for this item provider's resources.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ResourceLocator getResourceLocator() {
-		return BaseEditPlugin.INSTANCE;
 	}
 
 }

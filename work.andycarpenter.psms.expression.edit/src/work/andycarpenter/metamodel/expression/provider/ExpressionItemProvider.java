@@ -1,6 +1,6 @@
 /**
  */
-package work.andycarpenter.metamodel.base.provider;
+package work.andycarpenter.metamodel.expression.provider;
 
 
 import java.util.Collection;
@@ -12,29 +12,41 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
+import org.eclipse.emf.edit.provider.IChildCreationExtender;
+import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
+import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.IItemPropertySource;
+import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
+import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import work.andycarpenter.metamodel.base.BasePackage;
-import work.andycarpenter.metamodel.base.BooleanLiteral;
-import work.andycarpenter.metamodel.expression.provider.LiteralItemProvider;
+import work.andycarpenter.metamodel.expression.Expression;
+import work.andycarpenter.metamodel.expression.ExpressionPackage;
 
 /**
- * This is the item provider adapter for a {@link work.andycarpenter.metamodel.base.BooleanLiteral} object.
+ * This is the item provider adapter for a {@link work.andycarpenter.metamodel.expression.Expression} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class BooleanLiteralItemProvider 
-	extends LiteralItemProvider {
+public class ExpressionItemProvider 
+	extends ItemProviderAdapter
+	implements
+		IEditingDomainItemProvider,
+		IStructuredItemContentProvider,
+		ITreeItemContentProvider,
+		IItemLabelProvider,
+		IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public BooleanLiteralItemProvider(AdapterFactory adapterFactory) {
+	public ExpressionItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -49,42 +61,31 @@ public class BooleanLiteralItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addValuePropertyDescriptor(object);
+			addSuffixesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Value feature.
+	 * This adds a property descriptor for the Suffixes feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addValuePropertyDescriptor(Object object) {
+	protected void addSuffixesPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_BooleanLiteral_value_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_BooleanLiteral_value_feature", "_UI_BooleanLiteral_type"),
-				 BasePackage.Literals.BOOLEAN_LITERAL__VALUE,
+				 getString("_UI_Expression_suffixes_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Expression_suffixes_feature", "_UI_Expression_type"),
+				 ExpressionPackage.Literals.EXPRESSION__SUFFIXES,
 				 true,
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
-	}
-
-	/**
-	 * This returns BooleanLiteral.gif.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/BooleanLiteral"));
 	}
 
 	/**
@@ -95,11 +96,7 @@ public class BooleanLiteralItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		Boolean labelValue = ((BooleanLiteral)object).getValue();
-		String label = labelValue == null ? null : labelValue.toString();
-		return label == null || label.length() == 0 ?
-			getString("_UI_BooleanLiteral_type") :
-			getString("_UI_BooleanLiteral_type") + " " + label;
+		return getString("_UI_Expression_type");
 	}
 
 
@@ -114,8 +111,8 @@ public class BooleanLiteralItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(BooleanLiteral.class)) {
-			case BasePackage.BOOLEAN_LITERAL__VALUE:
+		switch (notification.getFeatureID(Expression.class)) {
+			case ExpressionPackage.EXPRESSION__SUFFIXES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}
@@ -142,7 +139,7 @@ public class BooleanLiteralItemProvider
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return BaseEditPlugin.INSTANCE;
+		return ((IChildCreationExtender)adapterFactory).getResourceLocator();
 	}
 
 }
