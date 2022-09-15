@@ -3,13 +3,15 @@
 	nsPrefix="orm"
 )
 @Ecore(
-	validationDelegates="http://www.eclipse.org/emf/2002/Ecore/OCL"
+	validationDelegates="http://www.eclipse.org/emf/2002/Ecore/OCL",
+	settingDelegates="http://www.eclipse.org/emf/2002/Ecore/OCL",
+	invocationDelegates="http://www.eclipse.org/emf/2002/Ecore/OCL"
 )
 @GenModel(
 	editDirectory="/work.andycarpenter.metamodel.orm.edit/src",
 	editPluginID="work.andycarpenter.metamodel.orm.edit",
 	childCreationExtenders="true",
-	complianceLevel="6.0")
+	editorDirectory="/work.andycarpenter.metamodel.orm.editor/src")
 package work.andycarpenter.metamodel.orm
 
 import work.andycarpenter.metamodel.base.Classifier
@@ -28,8 +30,10 @@ annotation "http://www.eclipse.org/emf/2002/Ecore/OCL" as OCL
 
 class OrmModel {
 	contains SerializationGroup[] serializationGroups
-	contains DataType[] dataTypes
-	refers derived readonly transient volatile EnumerationType[] enumerationTypes get {
+	contains unique DataType[] dataTypes
+// TODO	@OCL(derivation="dataTypes->select(t | t.oclIsKindOf(base::EnumerationType)).oclAsType(base::EnumerationType)->asOrderedSet()")
+// TODO	refers derived readonly unsettable transient volatile unique EnumerationType[] enumerationTypes
+	refers derived readonly unsettable transient volatile unique EnumerationType[] enumerationTypes get {
 		dataTypes.filter[it instanceof EnumerationType].map[it as EnumerationType].toEList()
 	}
 	contains Entity[] entities opposite partOf
@@ -86,111 +90,85 @@ class SerializationGroup extends NamedElement {
 
 class Entity extends Classifier {
 	container OrmModel[1] partOf opposite entities
-	String[1] singletonName
-	String[1] pluralisedName
+
+	String singletonName
+	String pluralisedName
+
 	refers Repository repository opposite serves
-	contains Feature[] allFeatures opposite partOf
-	refers Feature[] ^keys
-	refers derived readonly transient volatile Feature[] features get {
-		allFeatures.filter[isVisible].toEList()
-	}
-	refers derived readonly transient volatile Feature[] primaryKeys get {
-		features.filter[isPrimaryKey].toEList()
-	}
-	derived readonly transient volatile boolean hasPrimaryKeys get {
-		!primaryKeys.isEmpty()
-	}
-	refers derived readonly transient volatile Feature[] featuresWithDefaultValue get {
-		features.filter[hasDefaultValue].toEList()
-	}
-	derived readonly transient volatile boolean hasFeaturesWithDefaultValue get {
-		!featuresWithDefaultValue.isEmpty()
-	}
-	refers derived readonly transient volatile Attribute[] attributes get {
-		features.filter[it instanceof Attribute].map[it as Attribute].toEList()
-	}
-	derived readonly transient volatile boolean hasAttributes get {
-		!attributes.isEmpty()
-	}
-	refers derived readonly transient volatile Attribute[] attributeKeys get {
-		keys.filter[it instanceof Attribute].map[it as Attribute].toEList()
-	}
-	derived readonly transient volatile boolean hasAttributeKeys get {
-		!attributeKeys.isEmpty()
-	}
-	refers derived readonly transient volatile ResourceFeature[] resourceFeatures get {
-		features.filter[it instanceof ResourceFeature].map[it as ResourceFeature].toEList()
-	}
-	derived readonly transient volatile boolean hasResourceAttributes get {
-		!resourceFeatures.isEmpty()
-	}
-	refers derived readonly transient volatile Attribute[] uniqueAttributes get {
-		attributes.filter[isUnique].toEList()
-	}
-	derived readonly transient volatile boolean hasUniqueAttributes get {
-		!uniqueAttributes.isEmpty()
-	}
-	refers derived readonly transient volatile Attribute[] containerUniqueAttributes get {
-		attributes.filter[isContainerUnique].toEList()
-	}
-	refers derived readonly transient volatile Association[] associations get {
-		features.filter[it instanceof Association].map[it as Association].toEList()
-	}
-	derived readonly transient volatile boolean hasAssociations get {
-		!associations.isEmpty()
-	}
-	refers derived readonly transient volatile Association[] associationKeys get {
-		keys.filter[it instanceof Association].map[it as Association].toEList()
-	}
-	derived readonly transient volatile boolean hasAssociationKeys get {
-		!associationKeys.isEmpty()
-	}
-	refers derived readonly transient volatile Association containingAssociation get {
-		associations.findFirst[isContainer]
-	}
-	refers derived readonly transient volatile Entity containingType get {
-		containingAssociation?.targetType
-	}
-	derived readonly transient volatile boolean isContained get {
-		containingType !== null
-	}
-	refers derived readonly transient volatile Association[] collectionAssociations get {
-		associations.filter[!isSingleton].toEList()
-	}
-	derived readonly transient volatile boolean hasCollectionAssociations get {
-		!collectionAssociations.isEmpty()
-	}
-	refers derived readonly transient volatile Attribute[] dateAttributes get {
-		attributes.filter[it.isDateFeature].toEList()
-	}
-	derived readonly transient volatile boolean hasDateAttributes get {
-		!dateAttributes.isEmpty()
-	}
-	refers derived readonly transient volatile Attribute[] slugAttributes get {
-		attributes.filter[hasSlugFields].toEList()
-	}
-	derived readonly transient volatile boolean hasSlugAttributes get {
-		!slugAttributes.isEmpty()
-	}
-	refers derived readonly transient volatile Feature[] validatedFeatures get {
-		features.filter[isValidated].toEList()
-	}
-	derived readonly transient volatile boolean hasValidatedFeatures get {
-		!validatedFeatures.isEmpty()
-	}
-	refers derived readonly transient volatile Feature[] tableColumns get {
-		features.filter[hasColumn].toEList()
-	}
+	contains unique Feature[] allFeatures opposite partOf
+	refers unique Feature[] ^keys
+	@OCL(derivation="allFeatures->select(f | f.isVisible)->asOrderedSet()")
+	refers derived readonly unsettable transient volatile unique Feature[] features
+	@OCL(derivation="features->select(f | f.isPrimaryKey)->asOrderedSet()")
+	refers derived readonly unsettable transient volatile unique Feature[] primaryKeys
+	@OCL(derivation="primaryKeys->notEmpty()")
+	derived readonly unsettable transient volatile boolean hasPrimaryKeys
+	@OCL(derivation="features->select(f | f.hasDefaultValue)->asOrderedSet()")
+	refers derived readonly unsettable transient volatile unique Feature[] featuresWithDefaultValue
+	@OCL(derivation="featuresWithDefaultValue->notEmpty()")
+	derived readonly unsettable transient volatile boolean hasFeaturesWithDefaultValue
+	@OCL(derivation="features->select(f | f.isAttributeFeature).oclAsType(Attribute)->asOrderedSet()")
+	refers derived readonly unsettable transient volatile unique Attribute[] attributes
+	@OCL(derivation="attributes->notEmpty()")
+	derived readonly unsettable transient volatile boolean hasAttributes
+	@OCL(derivation="keys->select(k | k.isAttributeFeature).oclAsType(Attribute)->asOrderedSet()")
+	refers derived readonly unsettable transient volatile unique Attribute[] attributeKeys
+	@OCL(derivation="attributeKeys->notEmpty()")
+	derived readonly unsettable transient volatile boolean hasAttributeKeys
+	@OCL(derivation="features->select(f | f.isResourceFeature).oclAsType(ResourceFeature)->asOrderedSet()")
+	refers derived readonly unsettable transient volatile unique ResourceFeature[] resourceFeatures
+	@OCL(derivation="resourceFeatures->notEmpty()")
+	derived readonly unsettable transient volatile boolean hasResourceAttributes
+	@OCL(derivation="attributes->select(a | a.isUnique)->asOrderedSet()")
+	refers derived readonly unsettable transient volatile unique Attribute[] uniqueAttributes
+	@OCL(derivation="uniqueAttributes->notEmpty()")
+	derived readonly unsettable transient volatile boolean hasUniqueAttributes
+	@OCL(derivation="attributes->select(a | a.isContainerUnique)->asOrderedSet()")
+	refers derived readonly unsettable transient volatile unique Attribute[] containerUniqueAttributes
+	@OCL(derivation="features->select(f | f.isAssociationFeature).oclAsType(Association)->asOrderedSet()")
+	refers derived readonly unsettable transient volatile unique Association[] associations
+	@OCL(derivation="associations->notEmpty()")
+	derived readonly unsettable transient volatile boolean hasAssociations
+	@OCL(derivation="keys->select(k | k.isAssociationFeature).oclAsType(Association)->asOrderedSet()")
+	refers derived readonly unsettable transient volatile unique Association[] associationKeys
+	@OCL(derivation="associationKeys->notEmpty()")
+	derived readonly unsettable transient volatile boolean hasAssociationKeys
+
+	@OCL(derivation="associations->any(a | a.isContainer = true)")
+	refers derived readonly unsettable transient volatile Association containingAssociation
+
+	@OCL(derivation="if containingAssociation.oclIsUndefined() then null else containingAssociation.targetType endif")
+	refers derived readonly unsettable transient volatile Entity containingType
+
+	@OCL(derivation="not containingType.oclIsUndefined()")
+	derived readonly unsettable transient volatile boolean isContained
+	@OCL(derivation="associations->select(a | not a.isSingleton)->asOrderedSet()")
+	refers derived readonly unsettable transient volatile unique Association[] collectionAssociations
+	@OCL(derivation="collectionAssociations->notEmpty()")
+	derived readonly unsettable transient volatile boolean hasCollectionAssociations
+	@OCL(derivation="attributes->select(a | a.isDateFeature)->asOrderedSet()")
+	refers derived readonly unsettable transient volatile unique Attribute[] dateAttributes
+	@OCL(derivation="dateAttributes->notEmpty()")
+	derived readonly unsettable transient volatile boolean hasDateAttributes
+	@OCL(derivation="attributes->select(a | a.hasSlugFields)->asOrderedSet()")
+	refers derived readonly unsettable transient volatile unique Attribute[] slugAttributes
+	@OCL(derivation="slugAttributes->notEmpty()")
+	derived readonly unsettable transient volatile boolean hasSlugAttributes
+	@OCL(derivation="features->select(f | f.isValidated)->asOrderedSet()")
+	refers derived readonly unsettable  transient volatile unique Feature[] validatedFeatures
+	@OCL(derivation="validatedFeatures->notEmpty()")
+	derived readonly unsettable transient volatile boolean hasValidatedFeatures
+	@OCL(derivation="features->select(f | f.hasColumn)->asOrderedSet()")
+	refers derived readonly unsettable transient volatile unique Feature[] tableColumns
 	String tableName
 	String autoKeyName
 	String autoKeyPersistentType
 	String autoKeyGenerationStrategy
-	refers Feature[] ^unique
-	refers Feature[] containerUnique
+	refers unique Feature[] ^unique
+	refers unique Feature[] containerUnique
 	contains ModelLabel[] labels opposite labelFor
-	derived readonly transient volatile boolean hasDefaultLabel get {
-		!labels.filter[name == 'default'].isEmpty()
-	}
+	@OCL(derivation="labels->select(l | l.name = 'default')->notEmpty()")
+	derived readonly unsettable transient volatile boolean hasDefaultLabel
 	boolean implementsUserInterface = "false"
 	boolean implementsForumUser = "false"
 	boolean implementsResetPasswordInterface = "false"
@@ -212,7 +190,7 @@ abstract class ModelLabelFeature {
 
 class ModelLabelAttribute extends ModelLabelFeature {
 	refers Attribute[1] attribute
-	String[1] dateFormat
+	String dateFormat
 }
 
 class ModelLabelAssociation extends ModelLabelFeature {
@@ -228,187 +206,108 @@ abstract class Feature extends NamedDisplayElement {
 	boolean isPrimaryKey
 	boolean isDerived
 	boolean customiseSet
-	String[1] singletonName
-	String[1] pluralisedName
-	IsHasChoices booleanIsHasChoice
-	String[1] columnName
+	String singletonName
+	String pluralisedName
+	String columnName
 	boolean[1] encodeUriKey
 	boolean collectionOrmAllowAdd
 	boolean collectionOrmAllowRemove
+	@OCL(derivation="self.oclIsTypeOf(Association)")
+	derived readonly unsettable transient volatile boolean isAssociationFeature
+	@OCL(derivation="self.oclIsKindOf(Attribute)")
+	derived readonly unsettable transient volatile boolean isAttributeFeature
 	refers SerializationGroup[] serializationGroups
-	derived readonly transient volatile boolean isBooleanFeature get {
-		if (this instanceof DataTypeAttribute)
-			(this as DataTypeAttribute).attributeDataType.isBooleanDataType
+	@OCL(derivation="if self.oclIsTypeOf(DataTypeAttribute) then self.oclAsType(DataTypeAttribute).attributeDataType.isBooleanDataType else false endif")
+	derived readonly unsettable transient volatile boolean isBooleanFeature
+	@OCL(derivation="self.oclIsTypeOf(DataTypeAttribute)")
+	derived readonly unsettable transient volatile boolean isDataTypeFeature
+	@OCL(derivation="if self.oclIsTypeOf(DataTypeAttribute) then self.oclAsType(DataTypeAttribute).attributeDataType else null endif")
+	refers derived readonly unsettable transient volatile Classifier dataType
+	@OCL(derivation="self.oclIsTypeOf(DateAttribute)")
+	derived readonly unsettable transient volatile boolean isDateFeature
+	@OCL(derivation="if self.oclIsTypeOf(DateAttribute) then self.oclAsType(DateAttribute).details else null endif")
+	derived readonly unsettable transient volatile DateDetails dateDetails
+	@OCL(derivation="if self.oclIsTypeOf(DataTypeAttribute) then self.oclAsType(DataTypeAttribute).attributeDataType.isEmailDataType else false endif")
+	derived readonly unsettable transient volatile boolean isEmailFeature
+
+	@OCL(derivation="if self.oclIsTypeOf(DataTypeAttribute) then
+			self.oclAsType(DataTypeAttribute).attributeDataType.isEnumerationType
 		else
 			false
-	}
-	derived readonly transient volatile boolean isDataTypeFeature get {
-		this instanceof DataTypeAttribute
-	}
-	refers derived readonly transient volatile Classifier dataType get {
-		if (isDataTypeFeature)
-			(this as DataTypeAttribute).attributeDataType
-	}
-	derived readonly transient volatile boolean isDateFeature get {
-		this instanceof DateAttribute
-	}
-	derived readonly transient volatile DateDetails dateDetails get {
-		if (this instanceof DateAttribute)
-			(this as DateAttribute).details
-	}
-	derived readonly transient volatile boolean isEmailFeature get {
-		if (this instanceof DataTypeAttribute)
-			(this as DataTypeAttribute).attributeDataType.isEmailDataType
-		else
-			false
-	}
-	derived readonly transient volatile boolean isEnumerationFeature get {
-		if (this instanceof DataTypeAttribute)
-			(this as DataTypeAttribute).attributeDataType.isEnumerationType
-		else
-			false
-	}
+		endif")
+	derived readonly unsettable transient volatile boolean isEnumerationFeature
+
+	//OCL(derivation="if self.oclIsTypeOf(DataTypeAttribute) then self.oclAsType(DataTypeAttribute).attributeDataType.oclAsType(_'http://andycarpenter.work/metamodel/base'::EnumerationType) else null endif")
+//	refers derived readonly unsettable transient volatile EnumerationType enumerationType
 	refers derived readonly transient volatile EnumerationType enumerationType get {
 		if (isEnumerationFeature)
 			(this as DataTypeAttribute).attributeDataType as EnumerationType
 	}
-	derived readonly transient volatile boolean isIntegerFeature get {
-		if (this instanceof DataTypeAttribute)
-			(this as DataTypeAttribute).attributeDataType.isIntegerDataType
-		else
-			false
-	}
-	derived readonly transient volatile boolean isLocationFeature get {
-		this instanceof LocationFeature
-	}
-	derived readonly transient volatile boolean isObfuscatedFeature get {
-		if (this instanceof DataTypeAttribute)
-			(this as DataTypeAttribute).obfuscateFormFields
-		else
-			false
-	}
-	derived readonly transient volatile boolean isResourceFeature get {
-		this instanceof ResourceFeature
-	}
-	derived readonly transient volatile boolean isStringFeature get {
-		if (this instanceof DataTypeAttribute)
-			(this as DataTypeAttribute).attributeDataType.isStringDataType
-		else
-			false
-	}
-	derived readonly transient volatile boolean isTextareaFeature get {
-		if (this instanceof DataTypeAttribute)
-			(this as DataTypeAttribute).attributeDataType.isTextareaDataType
-		else
-			false
-	}
-	derived readonly transient volatile boolean isUrlFeature get {
-		if (this instanceof DataTypeAttribute)
-			(this as DataTypeAttribute).attributeDataType.isUrlDataType
-		else
-			false
-	}
-	refers derived readonly transient volatile Expression defaultValue get {
-		if (this instanceof Attribute)
-			(this as Attribute).attributeDefaultValue
-	}
-	derived readonly transient volatile boolean hasDefaultValue get {
-		defaultValue !== null
-	}
-	derived readonly transient volatile boolean hasHtml5Attributes get {
-		hasValidationPattern // || hasPlaceholder
-	}
-	derived readonly transient volatile boolean hasColumn get {
-		this instanceof Attribute || isOwningEnd
-	}
-	derived readonly transient volatile boolean isOwningEnd get {
-		if (this instanceof Association)
-			(this as Association).associationOwningEnd
-		else
-			false
-	}
-	derived readonly transient volatile boolean hasSlugFields get {
-		if (this instanceof Attribute)
-			(this as Attribute).slugFields.size > 0
-		else
-			false
-	}
-	derived readonly transient volatile boolean hasValidationPattern get {
-		if (this instanceof DataTypeAttribute)
-			(this as DataTypeAttribute).validationPattern !== null
-		else
-			false
-	}
-	derived readonly transient volatile boolean isCaseInsensitive get {
-		if (this instanceof DataTypeAttribute)
-			(this as DataTypeAttribute).caseInsensitive
-		else
-			false
-	}
-	derived readonly transient volatile boolean isContainer get {
-		if (this instanceof Association)
-			(this as Association).associationContainer
-		else
-			false
-	}
-	derived readonly transient volatile boolean isContainerUnique get {
-		if (this instanceof DataTypeAttribute)
-			(this as DataTypeAttribute).containerUnique
-		else
-			false
-	}
-	derived readonly transient volatile boolean isContains get {
-		if (this instanceof Association)
-			(this as Association).associationContains
-		else
-			false
-	}
-	derived readonly transient volatile boolean isEncrypted get {
-		if (this instanceof DataTypeAttribute)
-			(this as DataTypeAttribute).encrypt
-		else
-			false
-	}
-	derived readonly transient volatile boolean isRequired get {
-		cardinality.literal == 'Required'
-	}
-	derived readonly transient volatile boolean isSingleton get {
-		cardinality.literal !== 'Many'
-	}
-	derived readonly transient volatile boolean isUnique get {
-		if (this instanceof DataTypeAttribute)
-			(this as DataTypeAttribute).unique
-		else
-			false
-	}
-	derived readonly transient volatile boolean isValidated get {
-		isRequired || isContains /* isUnique is an entity property */
-	}
-	derived readonly transient volatile boolean isVisible get {
-		if (this instanceof Attribute)
-			true
-		else if (this instanceof Association)
-			(this as Association).visible
-		else
-			true
-	}
-	derived readonly transient volatile boolean hasSerializationControl get {
-		if (this instanceof Attribute)
-			(this as Attribute).hasSerializationControlAttribute
-		else if (this instanceof Association)
-			(this as Association).hasSerializationControlAssociation
-		else
-			false 
-	}
+	@OCL(derivation="if self.oclIsTypeOf(DataTypeAttribute) then self.oclAsType(DataTypeAttribute).attributeDataType.isIntegerDataType else false endif")
+	derived readonly unsettable transient volatile boolean isIntegerFeature
+	@OCL(derivation="self.oclIsTypeOf(LocationFeature)")
+	derived readonly unsettable transient volatile boolean isLocationFeature
+	@OCL(derivation="if self.oclIsTypeOf(DataTypeAttribute) then self.oclAsType(DataTypeAttribute).obfuscateFormFields else false endif")
+	derived readonly unsettable transient volatile boolean isObfuscatedFeature
+	@OCL(derivation="self.oclIsKindOf(ResourceFeature)")
+	derived readonly unsettable transient volatile boolean isResourceFeature
+	@OCL(derivation="if self.oclIsTypeOf(DataTypeAttribute) then self.oclAsType(DataTypeAttribute).attributeDataType.isStringDataType else false endif")
+	derived readonly unsettable transient volatile boolean isStringFeature
+	@OCL(derivation="if self.oclIsTypeOf(DataTypeAttribute) then self.oclAsType(DataTypeAttribute).attributeDataType.isTextareaDataType else false endif")
+	derived readonly unsettable transient volatile boolean isTextareaFeature
+	@OCL(derivation="if self.oclIsTypeOf(DataTypeAttribute) then self.oclAsType(DataTypeAttribute).attributeDataType.isUrlDataType else false endif")
+	derived readonly unsettable transient volatile boolean isUrlFeature
+	@OCL(derivation="if self.oclIsKindOf(Attribute) then self.oclAsType(Attribute).attributeDefaultValue else null endif")
+	refers derived readonly unsettable transient volatile Expression defaultValue
+	@OCL(derivation="not self.defaultValue.oclIsUndefined()")
+	derived readonly unsettable transient volatile boolean hasDefaultValue
+	@OCL(derivation="hasValidationPattern -- || hasPlaceholder")
+	derived readonly unsettable transient volatile boolean hasHtml5Attributes
+	@OCL(derivation="self.oclIsKindOf(Attribute) or self.isOwningEnd")
+	derived readonly unsettable transient volatile boolean hasColumn
+	@OCL(derivation="if self.oclIsTypeOf(Association) then self.oclAsType(Association).associationOwningEnd else false endif")
+	derived readonly unsettable transient volatile boolean isOwningEnd
+	@OCL(derivation="if self.oclIsKindOf(Attribute) then self.oclAsType(Attribute).slugFields->notEmpty() else false endif")
+	derived readonly unsettable transient volatile boolean hasSlugFields
+	@OCL(derivation="if self.oclIsTypeOf(DataTypeAttribute) then not self.oclAsType(DataTypeAttribute).validationPattern.oclIsUndefined() else false endif")
+	derived readonly unsettable transient volatile boolean hasValidationPattern
+	@OCL(derivation="if self.oclIsTypeOf(DataTypeAttribute) then not self.oclAsType(DataTypeAttribute).caseInsensitive else false endif")
+	derived readonly unsettable transient volatile boolean isCaseInsensitive
+	@OCL(derivation="if self.oclIsTypeOf(Association) then self.oclAsType(Association).associationContainer else false endif")
+	derived readonly unsettable transient volatile boolean isContainer
+	@OCL(derivation="if self.oclIsTypeOf(DataTypeAttribute) then self.oclAsType(DataTypeAttribute).containerUnique else false endif")
+	derived readonly unsettable transient volatile boolean isContainerUnique
+	@OCL(derivation="if self.oclIsTypeOf(Association) then self.oclAsType(Association).associationContains else false endif")
+	derived readonly unsettable transient volatile boolean isContains
+	@OCL(derivation="if self.oclIsTypeOf(DataTypeAttribute) then self.oclAsType(DataTypeAttribute).encrypt else false endif")
+	derived readonly unsettable transient volatile boolean isEncrypted
+	@OCL(derivation="cardinality = Cardinality::Required")
+	derived readonly unsettable transient volatile boolean isRequired
+	@OCL(derivation="cardinality <> Cardinality::Many")
+	derived readonly unsettable transient volatile boolean isSingleton
+	@OCL(derivation="if self.oclIsTypeOf(DataTypeAttribute) then self.oclAsType(DataTypeAttribute).unique else false endif")
+	derived readonly unsettable transient volatile boolean isUnique
+	@OCL(derivation="self.isRequired or self.isContains")
+	derived readonly unsettable transient volatile boolean isValidated
+	@OCL(derivation="if self.oclIsKindOf(Attribute) then true else if self.oclIsKindOf(Association) then self.oclAsType(Association).visible else true endif endif")
+	derived readonly unsettable transient volatile boolean isVisible
+//	derived readonly unsettable transient volatile boolean hasSerializationControl get {
+//		if (this instanceof Attribute)
+//			(this as Attribute).hasSerializationControlAttribute
+//		else if (this instanceof Association)
+//			(this as Association).hasSerializationControlAssociation
+//		else
+//			false 
+//	}
 }
 
 abstract class Attribute extends Feature, Label {
 	contains Expression attributeDefaultValue
 	boolean hidden
+	IsHasChoices booleanIsHasChoice
 	refers Attribute[] slugFields
-	derived readonly transient volatile boolean hasSerializationControlAttribute get {
-		serializationGroups.size > 0 
-	}
+	@OCL(derivation="self.serializationGroups->size() > 0")
+	derived readonly unsettable transient volatile boolean hasSerializationControlAttribute
 }
 
 class DataTypeAttribute extends Attribute {
@@ -466,8 +365,8 @@ enum AssociationRelationships {
 	ManyToMany = 3
 }
 
-//@Ecore(constraints="onlyOneOwningEnd")
-//@OCL(onlyOneOwningEnd="associationOwningEnd xor opposite.associationOwningEnd")
+@Ecore(constraints="onlyOneOwningEnd")
+@OCL(onlyOneOwningEnd="associationOwningEnd xor opposite.associationOwningEnd")
 class Association extends Feature {
 	refers Association[1] ^opposite
 	contains AssociationKey[] ^keys opposite keyFor
@@ -478,28 +377,28 @@ class Association extends Feature {
 	AssociationRelationships associationRelationship
 	int[1] serializationMaxDepth = "1"
 	String pivotTableName
-	derived readonly transient volatile boolean isOppositeSingleton get {
-		opposite.isSingleton
-	}
-	derived readonly transient volatile String oppositeColumnName get {
-		opposite?.columnName
-	}
-	refers derived readonly transient volatile Entity sourceType get {
-		partOf
-	}
-	refers derived readonly transient volatile Entity targetType get {
-		opposite?.sourceType
-	}
-	derived readonly transient volatile boolean hasSerializationControlAssociation get {
-		serializationGroups.size > 0 || serializationMaxDepth > 0
-	}
+	@OCL(derivation="if not opposite.oclIsUndefined() then opposite.isSingleton else false endif")
+	derived readonly unsettable transient volatile boolean isOppositeSingleton
+	@OCL(derivation="if not opposite.oclIsUndefined() then opposite.columnName else null endif")
+	derived readonly unsettable transient volatile String oppositeColumnName
+	@OCL(derivation="self.partOf")
+	refers derived readonly unsettable transient volatile Entity sourceType
+	@OCL(derivation="if not opposite.oclIsUndefined() then opposite.sourceType else null endif")
+	refers derived readonly unsettable transient volatile Entity targetType
+	@OCL(derivation="self.serializationGroups->size() > 0 or self.serializationMaxDepth > 0")
+	derived readonly unsettable transient volatile boolean hasSerializationControlAssociation
 }
 
 abstract class AssociationReference {
-	derived String name get {
-		association?.name
-	}
 	refers Association[1] association
+
+	@OCL(derivation="if not association.oclIsUndefined() then
+			association.name
+		else
+			''
+		endif")
+	derived String name
+
 	refers ModelLabel valueDisplay
 	contains FeatureChildPath childFeature
 }
@@ -537,19 +436,12 @@ class Selection extends NamedElement, FormalParameterList {
 	refers Feature[] grouping
 	refers Association[] selectPath
 	String methodName
-	refers derived readonly transient volatile Entity selectionType get {
-		if (selectPath.isEmpty())
-			definedBy.serves
-		else
-			selectPath.last().targetType
-	}
-	derived readonly transient volatile boolean hasFormals get {
-		!parameters.isEmpty()
-	}
-	derived readonly transient volatile boolean hasPaginationSupport get {
-		(limit == 0 || limit > 1)
-			&& (joins.isEmpty() || fields.isEmpty())
-	}
+	@OCL(derivation="if selectPath->isEmpty() then definedBy.serves else selectPath->last().targetType endif")
+	refers derived readonly unsettable transient volatile Entity selectionType
+	@OCL(derivation="parameters->notEmpty()")
+	derived readonly unsettable transient volatile boolean hasFormals
+	@OCL(derivation="(limit = 0 or limit > 1) and (joins->isEmpty() or fields->isEmpty())")
+	derived readonly unsettable transient volatile boolean hasPaginationSupport
 }
 
 class FeatureReference extends Variable { 
