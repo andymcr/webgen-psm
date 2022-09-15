@@ -7,9 +7,7 @@ import org.eclipse.emf.common.EMFPlugin;
 import org.eclipse.emf.common.ui.EclipseUIPlugin;
 
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import work.andycarpenter.metamodel.base.provider.BaseEditPlugin;
-
 import work.andycarpenter.metamodel.expression.provider.ExpressionEditPlugin;
 
 /**

@@ -158,9 +158,7 @@ import org.eclipse.emf.edit.ui.view.ExtendedPropertySheetPage;
 import work.andycarpenter.metamodel.orm.provider.OrmItemProviderAdapterFactory;
 
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
-
 import work.andycarpenter.metamodel.base.provider.BaseItemProviderAdapterFactory;
-
 import work.andycarpenter.metamodel.expression.provider.ExpressionItemProviderAdapterFactory;
 
 
