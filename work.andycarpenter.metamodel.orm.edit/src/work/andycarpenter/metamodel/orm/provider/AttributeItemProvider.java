@@ -15,11 +15,8 @@ import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
 import work.andycarpenter.metamodel.base.BaseFactory;
-
 import work.andycarpenter.metamodel.expression.ExpressionFactory;
-
 import work.andycarpenter.metamodel.orm.Attribute;
 import work.andycarpenter.metamodel.orm.OrmFactory;
 import work.andycarpenter.metamodel.orm.OrmPackage;

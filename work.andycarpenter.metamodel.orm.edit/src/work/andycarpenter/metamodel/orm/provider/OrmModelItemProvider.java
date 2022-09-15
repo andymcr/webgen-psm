@@ -23,9 +23,7 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
 import work.andycarpenter.metamodel.base.BaseFactory;
-
 import work.andycarpenter.metamodel.orm.DatabaseTechnologies;
 import work.andycarpenter.metamodel.orm.OrmFactory;
 import work.andycarpenter.metamodel.orm.OrmModel;

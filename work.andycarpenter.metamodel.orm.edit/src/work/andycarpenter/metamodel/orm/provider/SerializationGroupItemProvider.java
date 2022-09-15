@@ -12,9 +12,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-
 import work.andycarpenter.metamodel.base.provider.NamedElementItemProvider;
-
 import work.andycarpenter.metamodel.orm.SerializationGroup;
 
 /**

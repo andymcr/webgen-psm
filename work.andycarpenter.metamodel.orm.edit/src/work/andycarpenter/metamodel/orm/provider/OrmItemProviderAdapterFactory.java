@@ -5,19 +5,13 @@ package work.andycarpenter.metamodel.orm.provider;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
-
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.emf.edit.command.CommandParameter;
-
 import org.eclipse.emf.edit.domain.EditingDomain;
-
 import org.eclipse.emf.edit.provider.ChangeNotifier;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
@@ -30,12 +24,9 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.INotifyChangedListener;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-
 import work.andycarpenter.metamodel.base.BasePackage;
 import work.andycarpenter.metamodel.base.Constant;
-
 import work.andycarpenter.metamodel.base.util.BaseSwitch;
-
 import work.andycarpenter.metamodel.expression.ExpressionPackage;
 import work.andycarpenter.metamodel.expression.FunctionCall;
 import work.andycarpenter.metamodel.expression.PredicateBooleanVariable;
@@ -45,11 +36,8 @@ import work.andycarpenter.metamodel.expression.PredicateInOperator;
 import work.andycarpenter.metamodel.expression.PredicateIsEmpty;
 import work.andycarpenter.metamodel.expression.PredicateIsNull;
 import work.andycarpenter.metamodel.expression.PredicateLikeOperator;
-
 import work.andycarpenter.metamodel.expression.util.ExpressionSwitch;
-
 import work.andycarpenter.metamodel.orm.OrmFactory;
-
 import work.andycarpenter.metamodel.orm.util.OrmAdapterFactory;
 
 /**
