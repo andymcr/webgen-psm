@@ -1,20 +1,20 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
-Bundle-SymbolicName: work.andycarpenter.psms.service.editor;singleton:=true
+Bundle-SymbolicName: work.andycarpenter.metamodel.service.editor;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
 Bundle-Activator: work.andycarpenter.psms.service.presentation.ServiceEditorPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-RequiredExecutionEnvironment: JavaSE-1.14
 Export-Package: work.andycarpenter.psms.service.presentation
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources;visibility:=reexport,
- work.andycarpenter.psms.service.edit;visibility:=reexport,
+ work.andycarpenter.metamodel.service.edit;visibility:=reexport,
  org.eclipse.emf.ecore.xmi;visibility:=reexport,
  org.eclipse.emf.edit.ui;visibility:=reexport,
  org.eclipse.ui.ide;visibility:=reexport,
- work.andycarpenter.psms.orm.edit;visibility:=reexport,
- work.andycarpenter.psms.expression.edit;visibility:=reexport
+ work.andycarpenter.metamodel.orm.edit;visibility:=reexport,
+ work.andycarpenter.metamodel.expression.edit;visibility:=reexport
 Bundle-ActivationPolicy: lazy
