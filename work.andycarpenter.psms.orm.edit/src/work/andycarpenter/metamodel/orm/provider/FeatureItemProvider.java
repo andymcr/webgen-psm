@@ -57,11 +57,12 @@ public class FeatureItemProvider extends NamedDisplayElementItemProvider {
 			addCustomiseSetPropertyDescriptor(object);
 			addSingletonNamePropertyDescriptor(object);
 			addPluralisedNamePropertyDescriptor(object);
-			addBooleanIsHasChoicePropertyDescriptor(object);
 			addColumnNamePropertyDescriptor(object);
 			addEncodeUriKeyPropertyDescriptor(object);
 			addCollectionOrmAllowAddPropertyDescriptor(object);
 			addCollectionOrmAllowRemovePropertyDescriptor(object);
+			addIsAssociationFeaturePropertyDescriptor(object);
+			addIsAttributeFeaturePropertyDescriptor(object);
 			addSerializationGroupsPropertyDescriptor(object);
 			addIsBooleanFeaturePropertyDescriptor(object);
 			addIsDataTypeFeaturePropertyDescriptor(object);
@@ -95,7 +96,6 @@ public class FeatureItemProvider extends NamedDisplayElementItemProvider {
 			addIsUniquePropertyDescriptor(object);
 			addIsValidatedPropertyDescriptor(object);
 			addIsVisiblePropertyDescriptor(object);
-			addHasSerializationControlPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -277,28 +277,6 @@ public class FeatureItemProvider extends NamedDisplayElementItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Boolean Is Has Choice feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addBooleanIsHasChoicePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Feature_booleanIsHasChoice_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Feature_booleanIsHasChoice_feature", "_UI_Feature_type"),
-				 OrmPackage.Literals.FEATURE__BOOLEAN_IS_HAS_CHOICE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Column Name feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -379,6 +357,50 @@ public class FeatureItemProvider extends NamedDisplayElementItemProvider {
 				 getString("_UI_PropertyDescriptor_description", "_UI_Feature_collectionOrmAllowRemove_feature", "_UI_Feature_type"),
 				 OrmPackage.Literals.FEATURE__COLLECTION_ORM_ALLOW_REMOVE,
 				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Is Association Feature feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIsAssociationFeaturePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Feature_isAssociationFeature_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Feature_isAssociationFeature_feature", "_UI_Feature_type"),
+				 OrmPackage.Literals.FEATURE__IS_ASSOCIATION_FEATURE,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Is Attribute Feature feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIsAttributeFeaturePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Feature_isAttributeFeature_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Feature_isAttributeFeature_feature", "_UI_Feature_type"),
+				 OrmPackage.Literals.FEATURE__IS_ATTRIBUTE_FEATURE,
+				 false,
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
@@ -1113,28 +1135,6 @@ public class FeatureItemProvider extends NamedDisplayElementItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Has Serialization Control feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addHasSerializationControlPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Feature_hasSerializationControl_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Feature_hasSerializationControl_feature", "_UI_Feature_type"),
-				 OrmPackage.Literals.FEATURE__HAS_SERIALIZATION_CONTROL,
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1168,11 +1168,12 @@ public class FeatureItemProvider extends NamedDisplayElementItemProvider {
 			case OrmPackage.FEATURE__CUSTOMISE_SET:
 			case OrmPackage.FEATURE__SINGLETON_NAME:
 			case OrmPackage.FEATURE__PLURALISED_NAME:
-			case OrmPackage.FEATURE__BOOLEAN_IS_HAS_CHOICE:
 			case OrmPackage.FEATURE__COLUMN_NAME:
 			case OrmPackage.FEATURE__ENCODE_URI_KEY:
 			case OrmPackage.FEATURE__COLLECTION_ORM_ALLOW_ADD:
 			case OrmPackage.FEATURE__COLLECTION_ORM_ALLOW_REMOVE:
+			case OrmPackage.FEATURE__IS_ASSOCIATION_FEATURE:
+			case OrmPackage.FEATURE__IS_ATTRIBUTE_FEATURE:
 			case OrmPackage.FEATURE__IS_BOOLEAN_FEATURE:
 			case OrmPackage.FEATURE__IS_DATA_TYPE_FEATURE:
 			case OrmPackage.FEATURE__IS_DATE_FEATURE:
@@ -1202,7 +1203,6 @@ public class FeatureItemProvider extends NamedDisplayElementItemProvider {
 			case OrmPackage.FEATURE__IS_UNIQUE:
 			case OrmPackage.FEATURE__IS_VALIDATED:
 			case OrmPackage.FEATURE__IS_VISIBLE:
-			case OrmPackage.FEATURE__HAS_SERIALIZATION_CONTROL:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

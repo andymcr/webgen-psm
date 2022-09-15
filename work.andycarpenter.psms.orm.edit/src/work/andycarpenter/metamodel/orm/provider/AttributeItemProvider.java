@@ -53,6 +53,7 @@ public class AttributeItemProvider extends FeatureItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addHiddenPropertyDescriptor(object);
+			addBooleanIsHasChoicePropertyDescriptor(object);
 			addSlugFieldsPropertyDescriptor(object);
 			addHasSerializationControlAttributePropertyDescriptor(object);
 		}
@@ -77,6 +78,28 @@ public class AttributeItemProvider extends FeatureItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Boolean Is Has Choice feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addBooleanIsHasChoicePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Attribute_booleanIsHasChoice_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Attribute_booleanIsHasChoice_feature", "_UI_Attribute_type"),
+				 OrmPackage.Literals.ATTRIBUTE__BOOLEAN_IS_HAS_CHOICE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -183,6 +206,7 @@ public class AttributeItemProvider extends FeatureItemProvider {
 
 		switch (notification.getFeatureID(Attribute.class)) {
 			case OrmPackage.ATTRIBUTE__HIDDEN:
+			case OrmPackage.ATTRIBUTE__BOOLEAN_IS_HAS_CHOICE:
 			case OrmPackage.ATTRIBUTE__HAS_SERIALIZATION_CONTROL_ATTRIBUTE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
@@ -283,11 +307,6 @@ public class AttributeItemProvider extends FeatureItemProvider {
 			(createChildParameter
 				(OrmPackage.Literals.ATTRIBUTE__ATTRIBUTE_DEFAULT_VALUE,
 				 ExpressionFactory.eINSTANCE.createPredicateInOperator()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OrmPackage.Literals.ATTRIBUTE__ATTRIBUTE_DEFAULT_VALUE,
-				 ExpressionFactory.eINSTANCE.createPredicateIsOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
