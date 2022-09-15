@@ -10,13 +10,13 @@
       <!-- @generated Security -->
       <extender
             uri="http://andycarpenter.work/psm/ObjectRelationalMapping"
-            class="work.andycarpenter.psms.waf.provider.WafItemProviderAdapterFactory$OrmChildCreationExtender"/>
+            class="work.andycarpenter.metamodel.waf.provider.WafItemProviderAdapterFactory$OrmChildCreationExtender"/>
       <extender
             uri="http://andycarpenter.work/psm/Base"
-            class="work.andycarpenter.psms.waf.provider.WafItemProviderAdapterFactory$BaseChildCreationExtender"/>
+            class="work.andycarpenter.metamodel.waf.provider.WafItemProviderAdapterFactory$BaseChildCreationExtender"/>
       <extender
             uri="http://andycarpenter.work/psm/Expression"
-            class="work.andycarpenter.psms.waf.provider.WafItemProviderAdapterFactory$ExpressionChildCreationExtender"/>
+            class="work.andycarpenter.metamodel.waf.provider.WafItemProviderAdapterFactory$ExpressionChildCreationExtender"/>
    </extension>
 
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
@@ -32,16 +32,4 @@
                org.eclipse.emf.edit.provider.IItemPropertySource"/>
    </extension>
 
-   <extension point="org.eclipse.emf.edit.childCreationExtenders">
-      <!-- @generated Waf -->
-      <extender
-            uri="http://andycarpenter.work/metamodel/ObjectRelationalMapping"
-            class="work.andycarpenter.metamodel.waf.provider.WafItemProviderAdapterFactory$OrmChildCreationExtender"/>
-      <extender
-            uri="http://andycarpenter.work/metamodel/base"
-            class="work.andycarpenter.metamodel.waf.provider.WafItemProviderAdapterFactory$BaseChildCreationExtender"/>
-      <extender
-            uri="http://andycarpenter.work/metamodel/expression"
-            class="work.andycarpenter.metamodel.waf.provider.WafItemProviderAdapterFactory$ExpressionChildCreationExtender"/>
-   </extension>
 </plugin>
