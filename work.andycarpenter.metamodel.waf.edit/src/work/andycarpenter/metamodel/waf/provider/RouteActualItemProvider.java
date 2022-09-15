@@ -22,13 +22,9 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
 import work.andycarpenter.metamodel.base.BaseFactory;
-
 import work.andycarpenter.metamodel.expression.ExpressionFactory;
-
 import work.andycarpenter.metamodel.orm.OrmFactory;
-
 import work.andycarpenter.metamodel.waf.RouteActual;
 import work.andycarpenter.metamodel.waf.WafFactory;
 import work.andycarpenter.metamodel.waf.WafPackage;

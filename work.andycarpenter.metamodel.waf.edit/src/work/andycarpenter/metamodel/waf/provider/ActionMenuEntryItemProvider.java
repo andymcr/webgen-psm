@@ -13,9 +13,7 @@ import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
 import work.andycarpenter.metamodel.base.BasePackage;
-
 import work.andycarpenter.metamodel.waf.ActionMenuEntry;
 import work.andycarpenter.metamodel.waf.WafPackage;
 
