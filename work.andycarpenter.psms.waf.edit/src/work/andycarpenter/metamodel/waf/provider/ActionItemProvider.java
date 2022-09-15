@@ -58,6 +58,7 @@ public class ActionItemProvider extends NamedDisplayElementItemProvider {
 			addAuthorisationRolesPropertyDescriptor(object);
 			addIsAuthorisedPropertyDescriptor(object);
 			addHasCustomisedAuthorisationPropertyDescriptor(object);
+			addIsContainerActionPropertyDescriptor(object);
 			addIsInstanceActionPropertyDescriptor(object);
 			addIconNamePropertyDescriptor(object);
 			addDisablePropertyDescriptor(object);
@@ -179,6 +180,28 @@ public class ActionItemProvider extends NamedDisplayElementItemProvider {
 				 getString("_UI_Action_hasCustomisedAuthorisation_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Action_hasCustomisedAuthorisation_feature", "_UI_Action_type"),
 				 WafPackage.eINSTANCE.getAction_HasCustomisedAuthorisation(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Is Container Action feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIsContainerActionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Action_isContainerAction_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Action_isContainerAction_feature", "_UI_Action_type"),
+				 WafPackage.eINSTANCE.getAction_IsContainerAction(),
 				 false,
 				 false,
 				 false,
@@ -578,6 +601,7 @@ public class ActionItemProvider extends NamedDisplayElementItemProvider {
 			case WafPackage.ACTION__AUTHORISATION_ROLES:
 			case WafPackage.ACTION__IS_AUTHORISED:
 			case WafPackage.ACTION__HAS_CUSTOMISED_AUTHORISATION:
+			case WafPackage.ACTION__IS_CONTAINER_ACTION:
 			case WafPackage.ACTION__IS_INSTANCE_ACTION:
 			case WafPackage.ACTION__ICON_NAME:
 			case WafPackage.ACTION__DISABLE:
@@ -642,11 +666,6 @@ public class ActionItemProvider extends NamedDisplayElementItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.eINSTANCE.getAction_DisplayWhen(),
-				 ExpressionFactory.eINSTANCE.createPredicateIsOperator()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.eINSTANCE.getAction_DisplayWhen(),
 				 ExpressionFactory.eINSTANCE.createPredicateLikeOperator()));
 
 		newChildDescriptors.add
@@ -683,11 +702,6 @@ public class ActionItemProvider extends NamedDisplayElementItemProvider {
 			(createChildParameter
 				(WafPackage.eINSTANCE.getAction_EnableWhen(),
 				 ExpressionFactory.eINSTANCE.createPredicateInOperator()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.eINSTANCE.getAction_EnableWhen(),
-				 ExpressionFactory.eINSTANCE.createPredicateIsOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
