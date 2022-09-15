@@ -151,16 +151,11 @@ import org.eclipse.emf.edit.ui.provider.UnwrappingSelectionProvider;
 
 import org.eclipse.emf.edit.ui.util.EditUIMarkerHelper;
 import org.eclipse.emf.edit.ui.util.EditUIUtil;
-
 import org.eclipse.emf.edit.ui.view.ExtendedPropertySheetPage;
-
-import work.andycarpenter.psms.service.provider.ServiceItemProviderAdapterFactory;
-
+import work.andycarpenter.metamodel.service.provider.ServiceItemProviderAdapterFactory;
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
-
-import work.andycarpenter.psms.expression.provider.ExpressionItemProviderAdapterFactory;
-
-import work.andycarpenter.psms.orm.provider.OrmItemProviderAdapterFactory;
+import work.andycarpenter.metamodel.expression.provider.ExpressionItemProviderAdapterFactory;
+import work.andycarpenter.metamodel.orm.provider.OrmItemProviderAdapterFactory;
 
 
 /**

@@ -3,14 +3,10 @@
 package work.andycarpenter.psms.service.presentation;
 
 import org.eclipse.emf.common.EMFPlugin;
-
 import org.eclipse.emf.common.ui.EclipseUIPlugin;
-
 import org.eclipse.emf.common.util.ResourceLocator;
-
-import work.andycarpenter.psms.expression.provider.ExpressionEditPlugin;
-
-import work.andycarpenter.psms.orm.provider.OrmEditPlugin;
+import work.andycarpenter.metamodel.expression.provider.ExpressionEditPlugin;
+import work.andycarpenter.metamodel.orm.provider.OrmEditPlugin;
 
 /**
  * This is the central singleton for the Service editor plugin.
