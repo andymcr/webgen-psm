@@ -13,5 +13,11 @@ Export-Package: work.andycarpenter.metamodel.api.provider
 Require-Bundle: org.eclipse.core.runtime,
  work.andycarpenter.metamodel.api;visibility:=reexport,
  org.eclipse.emf.edit;visibility:=reexport,
- org.eclipse.emf.ecore;visibility:=reexport
+ work.andycarpenter.metamodel.orm;visibility:=reexport,
+ work.andycarpenter.metamodel.orm.edit;visibility:=reexport,
+ org.eclipse.emf.ecore;visibility:=reexport,
+ work.andycarpenter.metamodel.base;visibility:=reexport,
+ work.andycarpenter.metamodel.base.edit;visibility:=reexport,
+ work.andycarpenter.metamodel.expression;visibility:=reexport,
+ work.andycarpenter.metamodel.expression.edit;visibility:=reexport
 Bundle-ActivationPolicy: lazy

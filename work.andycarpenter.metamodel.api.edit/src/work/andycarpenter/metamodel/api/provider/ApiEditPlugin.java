@@ -5,6 +5,9 @@ package work.andycarpenter.metamodel.api.provider;
 import org.eclipse.emf.common.EMFPlugin;
 
 import org.eclipse.emf.common.util.ResourceLocator;
+import work.andycarpenter.metamodel.base.provider.BaseEditPlugin;
+import work.andycarpenter.metamodel.expression.provider.ExpressionEditPlugin;
+import work.andycarpenter.metamodel.orm.provider.OrmEditPlugin;
 
 /**
  * This is the central singleton for the Api edit plugin.
@@ -38,6 +41,9 @@ public final class ApiEditPlugin extends EMFPlugin {
 	public ApiEditPlugin() {
 		super
 		  (new ResourceLocator [] {
+		     OrmEditPlugin.INSTANCE,
+		     BaseEditPlugin.INSTANCE,
+		     ExpressionEditPlugin.INSTANCE,
 		   });
 	}
 
