@@ -1,0 +1,90 @@
+@Ecore(
+	nsURI="http://andycarpenter.work/metamodel/security",
+	nsPrefix="security"
+)
+@Ecore(
+	validationDelegates="http://www.eclipse.org/emf/2002/Ecore/OCL",
+	settingDelegates="http://www.eclipse.org/emf/2002/Ecore/OCL",
+	invocationDelegates="http://www.eclipse.org/emf/2002/Ecore/OCL"
+)
+@GenModel(
+	editDirectory="/work.andycarpenter.metamodel.security.edit/src",
+	editPluginID="work.andycarpenter.metamodel.security.edit",
+	childCreationExtenders="true")
+package work.andycarpenter.metamodel.security
+
+import work.andycarpenter.metamodel.orm.Attribute
+import work.andycarpenter.metamodel.orm.Entity
+
+annotation "http://www.eclipse.org/emf/2002/Ecore/OCL" as OCL
+
+
+class SecurityModel {
+	contains Authentication[1] authentication
+
+	@OCL(derivation="not authentication.oclIsUndefined()")
+	derived readonly unsettable transient volatile boolean isAuthenticated
+
+	@OCL(derivation="if self.isAuthenticated = true then
+			authentication.oclIsTypeOf(CasAuthentication)
+		else
+			false
+		endif")
+	derived readonly unsettable transient volatile boolean isCasAuthenticated
+
+	@OCL(derivation="if self.isCasAuthenticated = true then
+			authentication.oclAsType(CasAuthentication)
+		else
+			null
+		endif")
+	refers derived readonly unsettable transient volatile CasAuthentication casAuthentication
+
+	@OCL(derivation="if self.isAuthenticated = true then
+			authentication.oclIsTypeOf(LocalAuthenticationSystem)
+		else
+			false
+		endif")
+	derived readonly unsettable transient volatile boolean isLocallyAuthenticated
+
+	@OCL(derivation="if self.isLocallyAuthenticated = true then
+			authentication.oclAsType(LocalAuthenticationSystem)
+		else
+			null
+		endif")
+	refers derived readonly unsettable transient volatile LocalAuthenticationSystem localAuthentication
+}
+
+abstract class Authentication {
+	refers Entity[1] userModel
+	refers Attribute[1] userKey
+}
+
+enum AuthenticationKeyTypes {
+	Any = 0
+	Email = 1
+	Username = 2
+}
+
+class LocalAuthenticationSystem extends Authentication {
+	refers Entity[1] authenticationModel
+	AuthenticationKeyTypes[1] authenticationKey
+	refers Entity[1] resetPasswordRequestModel
+	refers SecurityUnit registrationUnit
+	refers SecurityUnit[1] loginUnit
+	refers SecurityUnit[1] logoutUnit
+	refers SecurityUnit forgottenPasswordUnit
+	refers SecurityUnit[1] resetPasswordUnit
+	boolean useCaptcha
+	boolean allowRememberMe
+	boolean allowSelfRegistration
+	boolean useEmailActivation = "true"
+	boolean sendWelcomeEmail = "true"
+}
+
+class CasAuthentication extends Authentication {
+	String[1] loginLabel
+	String logoutLabel
+}
+
+interface SecurityUnit {
+}
