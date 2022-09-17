@@ -481,9 +481,9 @@ class Page extends NamedDisplayElement {
 
 	String uriElement = ''
 
-	String[1] localPageClass = ''
-	@OCL(derivation="if localPageClass.trim() <> '' then
-			localPageClass.trim()
+	String[1] pageClassOverride = ''
+	@OCL(derivation="if pageClassOverride.trim() <> '' then
+			pageClassOverride.trim()
 		else if uiModel.defaultPageClass.trim() <> '' then
 			uiModel.defaultPageClass.trim()
 		else
@@ -522,9 +522,9 @@ abstract class ContentUnit extends NamedDisplayElement {
 	@OCL(derivation="self.oclIsKindOf(EditUnit) or self.oclIsKindOf(ControlUnit)")
 	derived readonly transient volatile boolean isFormUnit
 
-	String localSectionClass = ''
-	String localCaptionClass = ''
-	String localContentClass = ''
+	String sectionClassOverride = ''
+	String captionClassOverride = ''
+	String contentClassOverride = ''
 
 	@OCL(derivation="displayedOn.genModel")
 	refers readonly transient volatile unsettable derived WafModel genModel
@@ -536,8 +536,8 @@ class StaticUnit extends ContentUnit {
 	refers Repository repository
 	String[1] content
 
-	@OCL(derivation="if localSectionClass.trim() <> '' then
-			localSectionClass.trim()
+	@OCL(derivation="if sectionClassOverride.trim() <> '' then
+			sectionClassOverride.trim()
 		else if uiModel.defaultStaticStyles.sectionClass.trim() <> '' then
 			uiModel.defaultStaticStyles.sectionClass.trim()
 		else if uiModel.defaultUnitStyles.sectionClass.trim() <> '' then
@@ -549,8 +549,8 @@ class StaticUnit extends ContentUnit {
 	@OCL(derivation="sectionClass <> ''")
 	derived readonly transient volatile boolean hasSectionClass
 
-	@OCL(derivation="if localSectionClass.trim() <> '' then
-			localCaptionClass.trim()
+	@OCL(derivation="if captionClassOverride.trim() <> '' then
+			captionClassOverride.trim()
 		else if uiModel.defaultStaticStyles.captionClass.trim() <> '' then
 			uiModel.defaultStaticStyles.captionClass.trim()
 		else if uiModel.defaultUnitStyles.captionClass.trim() <> '' then
@@ -562,8 +562,8 @@ class StaticUnit extends ContentUnit {
 	@OCL(derivation="captionClass <> ''")
 	derived readonly transient volatile boolean hasCaptionClass
 
-	@OCL(derivation="if localContentClass.trim() <> '' then
-			localContentClass.trim()
+	@OCL(derivation="if contentClassOverride.trim() <> '' then
+			contentClassOverride.trim()
 		else if uiModel.defaultStaticStyles.contentClass.trim() <> '' then
 			uiModel.defaultStaticStyles.contentClass.trim()
 		else if uiModel.defaultUnitStyles.contentClass.trim() <> '' then
@@ -1052,18 +1052,29 @@ interface UnitField extends DisplayElement {
 		endif")
 	derived readonly unsettable transient volatile boolean isRepeated
 
-	String localTitle = ''
-	@OCL(derivation="if self.oclIsKindOf(UnitLabel) then
-			''
+	@OCL(derivation="if self.oclIsKindOf(UnitFeature) then
+			let feature : UnitFeature = self.oclAsType(UnitFeature)
+				in if feature.titleOverride.trim() <> '' then
+						feature.titleOverride.trim()
+					else if feature.displayLabel.trim() <> '' then
+						feature.displayLabel.trim()
+					else if feature.persistentFeature.displayLabel.trim() <> '' then
+						feature.persistentFeature.displayLabel.trim()
+					else
+						feature.persistentFeature.name
+					endif endif endif
+		else if self.oclIsKindOf(InterfaceField) then
+			let field : InterfaceField = self.oclAsType(InterfaceField)
+				in if field.fieldTitle.trim() <> '' then
+						field.fieldTitle.trim()
+					else if field.displayLabel.trim() <> '' then
+						field.displayLabel.trim()
+					else
+						field.name
+					endif endif
 		else
-			if localTitle.trim() <> '' then
-				localTitle.trim()
-			else if self.oclIsKindOf(UnitFeature) then
-				self.oclAsType(UnitFeature).persistentFeature.displayLabel.trim()
-			else
-				''
-			endif endif
-		endif")
+			''
+		endif endif")
 	derived readonly unsettable transient volatile String title
 	@OCL(derivation="title <> ''")
 	derived readonly unsettable transient volatile boolean hasTitle
@@ -1082,18 +1093,29 @@ interface UnitField extends DisplayElement {
 		endif")
 	derived readonly unsettable transient volatile boolean hasSecondTitle
 
-	String localPlaceholder = ''
-	@OCL(derivation="if self.oclIsKindOf(UnitLabel) then
-			''
+	@OCL(derivation="if self.oclIsKindOf(UnitFeature) then
+			let feature : UnitFeature = self.oclAsType(UnitFeature)
+				in if feature.placeholderOverride.trim() <> '' then
+						feature.placeholderOverride.trim()
+					else if feature.displayLabel.trim() <> '' then
+						feature.displayLabel.trim()
+					else if feature.persistentFeature.displayLabel.trim() <> '' then
+						feature.persistentFeature.displayLabel.trim()
+					else
+						feature.persistentFeature.name
+					endif endif endif
+		else if self.oclIsKindOf(InterfaceField) then
+			let field : InterfaceField = self.oclAsType(InterfaceField)
+				in if field.fieldPlaceholder.trim() <> '' then
+						field.fieldPlaceholder.trim()
+					else if field.displayLabel.trim() <> '' then
+						field.displayLabel.trim()
+					else
+						field.name
+					endif endif
 		else
-			if localPlaceholder.trim() <> '' then
-				localPlaceholder.trim()
-			else if self.oclIsKindOf(UnitFeature) then
-				self.oclAsType(UnitFeature).persistentFeature.displayLabel.trim()
-			else
-				''
-			endif endif
-		endif")
+			''
+		endif endif")
 	derived readonly unsettable transient volatile String placeholder
 	@OCL(derivation="placeholder <> ''")
 	derived readonly unsettable transient volatile boolean hasPlaceholder
@@ -1167,7 +1189,7 @@ interface UnitField extends DisplayElement {
 	@OCL(derivation="if self.oclIsKindOf(UnitFeature) then
 			persistentFeature.isRequired
 		else if self.oclIsKindOf(InterfaceField) then
-			self.oclAsType(InterfaceField).localRequired
+			self.oclAsType(InterfaceField).fieldRequired
 		else
 			false
 		endif endif")
@@ -1360,9 +1382,9 @@ interface UnitField extends DisplayElement {
 	boolean disabledInput
 	String headerClass
 
-	String localInputGroupClass = ''
-	@OCL(derivation="if localInputGroupClass.trim() <> '' then
-			localInputGroupClass.trim()
+	String inputGroupClassOverride = ''
+	@OCL(derivation="if inputGroupClassOverride.trim() <> '' then
+			inputGroupClassOverride.trim()
 		else if displayedOn.oclIsKindOf(EditUnit) then
 			if displayedOn.oclAsType(EditUnit).hasInputGroupClass = true then
 				displayedOn.oclAsType(EditUnit).inputGroupClass
@@ -1376,9 +1398,9 @@ interface UnitField extends DisplayElement {
 	@OCL(derivation="inputGroupClass <> ''")
 	derived readonly transient volatile boolean hasInputGroupClass
 
-	String localFieldLabelClass = ''
-	@OCL(derivation="if localFieldLabelClass.trim() <> '' then
-			localFieldLabelClass.trim()
+	String fieldLabelClassOverride = ''
+	@OCL(derivation="if fieldLabelClassOverride.trim() <> '' then
+			fieldLabelClassOverride.trim()
 		else if displayedOn.hasCommonFieldLabelClass = true then
 			displayedOn.commonFieldLabelClass
 		else
@@ -1388,9 +1410,9 @@ interface UnitField extends DisplayElement {
 	@OCL(derivation="fieldLabelClass <> ''")
 	derived readonly transient volatile boolean hasFieldLabelClass
 
-	String localFieldValueClass = ''
-	@OCL(derivation="if localFieldValueClass.trim() <> '' then
-			localFieldValueClass.trim()
+	String fieldValueClassOverride = ''
+	@OCL(derivation="if fieldValueClassOverride.trim() <> '' then
+			fieldValueClassOverride.trim()
 		else if displayedOn.hasCommonFieldValueClass = true then
 			displayedOn.commonFieldValueClass
 		else
@@ -1410,6 +1432,8 @@ interface UnitField extends DisplayElement {
 }
 
 abstract class UnitFeature extends UnitField, ActionContainer {
+	String titleOverride = ''
+	String placeholderOverride = ''
 	contains Expression forcedValue
 	boolean collectionUiAllowAdd = "true"
 	boolean collectionUiAllowRemove = "true"
@@ -1536,7 +1560,9 @@ class UnitLabel extends UnitField {
 }
 
 abstract class InterfaceField extends NamedElement, UnitField {
-	boolean localRequired
+	String fieldTitle = ''
+	String fieldPlaceholder = ''
+	boolean fieldRequired
 	contains Expression fieldDefaultValue
 	String interfaceType
 	String validationPattern = ''
@@ -1710,8 +1736,8 @@ abstract class EditUnit extends SingletonUnit {
 
 	String[1] localInputGroupClass = ''
 
-	@OCL(derivation="if localSectionClass.trim() <> '' then
-			localSectionClass.trim()
+	@OCL(derivation="if sectionClassOverride.trim() <> '' then
+			sectionClassOverride.trim()
 		else if uiModel.defaultFormStyles.sectionClass.trim() <> '' then
 			uiModel.defaultFormStyles.sectionClass.trim()
 		else if uiModel.defaultUnitStyles.sectionClass.trim() <> '' then
@@ -1723,8 +1749,8 @@ abstract class EditUnit extends SingletonUnit {
 	@OCL(derivation="sectionClass <> ''")
 	derived readonly transient volatile boolean hasSectionClass
 
-	@OCL(derivation="if localSectionClass.trim() <> '' then
-			localCaptionClass.trim()
+	@OCL(derivation="if captionClassOverride.trim() <> '' then
+			captionClassOverride.trim()
 		else if uiModel.defaultFormStyles.captionClass.trim() <> '' then
 			uiModel.defaultFormStyles.captionClass.trim()
 		else if uiModel.defaultUnitStyles.captionClass.trim() <> '' then
@@ -1736,8 +1762,8 @@ abstract class EditUnit extends SingletonUnit {
 	@OCL(derivation="captionClass <> ''")
 	derived readonly transient volatile boolean hasCaptionClass
 
-	@OCL(derivation="if localContentClass.trim() <> '' then
-			localContentClass.trim()
+	@OCL(derivation="if contentClassOverride.trim() <> '' then
+			contentClassOverride.trim()
 		else if uiModel.defaultFormStyles.contentClass.trim() <> '' then
 			uiModel.defaultStaticStyles.contentClass.trim()
 		else if uiModel.defaultFormStyles.contentClass.trim() <> '' then
@@ -1862,8 +1888,8 @@ class DetailsUnit extends SingletonUnit, SelectableUnit {
 	refers Selection selection
 	boolean omitFieldLabels
 
-	@OCL(derivation="if localSectionClass.trim() <> '' then
-			localSectionClass.trim()
+	@OCL(derivation="if sectionClassOverride.trim() <> '' then
+			sectionClassOverride.trim()
 		else if uiModel.defaultDetailsStyles.sectionClass.trim() <> '' then
 			uiModel.defaultDetailsStyles.sectionClass.trim()
 		else if uiModel.defaultUnitStyles.sectionClass.trim() <> '' then
@@ -1875,8 +1901,8 @@ class DetailsUnit extends SingletonUnit, SelectableUnit {
 	@OCL(derivation="sectionClass <> ''")
 	derived readonly transient volatile boolean hasSectionClass
 
-	@OCL(derivation="if localSectionClass.trim() <> '' then
-			localCaptionClass.trim()
+	@OCL(derivation="if captionClassOverride.trim() <> '' then
+			captionClassOverride.trim()
 		else if uiModel.defaultDetailsStyles.captionClass.trim() <> '' then
 			uiModel.defaultDetailsStyles.captionClass.trim()
 		else if uiModel.defaultUnitStyles.captionClass.trim() <> '' then
@@ -1888,8 +1914,8 @@ class DetailsUnit extends SingletonUnit, SelectableUnit {
 	@OCL(derivation="captionClass <> ''")
 	derived readonly transient volatile boolean hasCaptionClass
 
-	@OCL(derivation="if localContentClass.trim() <> '' then
-			localContentClass.trim()
+	@OCL(derivation="if contentClassOverride.trim() <> '' then
+			contentClassOverride.trim()
 		else if uiModel.defaultDetailsStyles.contentClass.trim() <> '' then
 			uiModel.defaultDetailsStyles.contentClass.trim()
 		else if uiModel.defaultUnitStyles.contentClass.trim() <> '' then
@@ -1986,8 +2012,8 @@ class TabularUnit extends CollectionUnit {
 	String localHeaderClass = ''
 	String localFooterClass = ''
 
-	@OCL(derivation="if localSectionClass.trim() <> '' then
-			localSectionClass.trim()
+	@OCL(derivation="if sectionClassOverride.trim() <> '' then
+			sectionClassOverride.trim()
 		else if uiModel.defaultTabularStyles.sectionClass.trim() <> '' then
 			uiModel.defaultTabularStyles.sectionClass.trim()
 		else if uiModel.defaultUnitStyles.sectionClass.trim() <> '' then
@@ -1999,8 +2025,8 @@ class TabularUnit extends CollectionUnit {
 	@OCL(derivation="sectionClass <> ''")
 	derived readonly transient volatile boolean hasSectionClass
 
-	@OCL(derivation="if localSectionClass.trim() <> '' then
-			localCaptionClass.trim()
+	@OCL(derivation="if captionClassOverride.trim() <> '' then
+			captionClassOverride.trim()
 		else if uiModel.defaultTabularStyles.captionClass.trim() <> '' then
 			uiModel.defaultTabularStyles.captionClass.trim()
 		else if uiModel.defaultUnitStyles.captionClass.trim() <> '' then
@@ -2012,8 +2038,8 @@ class TabularUnit extends CollectionUnit {
 	@OCL(derivation="captionClass <> ''")
 	derived readonly transient volatile boolean hasCaptionClass
 
-	@OCL(derivation="if localContentClass.trim() <> '' then
-			localContentClass.trim()
+	@OCL(derivation="if contentClassOverride.trim() <> '' then
+			contentClassOverride.trim()
 		else if uiModel.defaultTabularStyles.contentClass.trim() <> '' then
 			uiModel.defaultTabularStyles.contentClass.trim()
 		else if uiModel.defaultUnitStyles.contentClass.trim() <> '' then
@@ -2164,8 +2190,8 @@ abstract class CardsUnit extends CollectionUnit {
 	String[1] localCardFooterClass = ''
 	String[1] localBadgeClass = ''
 
-	@OCL(derivation="if localSectionClass.trim() <> '' then
-			localSectionClass.trim()
+	@OCL(derivation="if sectionClassOverride.trim() <> '' then
+			sectionClassOverride.trim()
 		else if uiModel.defaultCardsStyles.sectionClass.trim() <> '' then
 			uiModel.defaultCardsStyles.sectionClass.trim()
 		else if uiModel.defaultUnitStyles.sectionClass.trim() <> '' then
@@ -2177,8 +2203,8 @@ abstract class CardsUnit extends CollectionUnit {
 	@OCL(derivation="sectionClass <> ''")
 	derived readonly transient volatile boolean hasSectionClass
 
-	@OCL(derivation="if localSectionClass.trim() <> '' then
-			localCaptionClass.trim()
+	@OCL(derivation="if captionClassOverride.trim() <> '' then
+			captionClassOverride.trim()
 		else if uiModel.defaultCardsStyles.captionClass.trim() <> '' then
 			uiModel.defaultCardsStyles.captionClass.trim()
 		else if uiModel.defaultUnitStyles.captionClass.trim() <> '' then
@@ -2190,8 +2216,8 @@ abstract class CardsUnit extends CollectionUnit {
 	@OCL(derivation="captionClass <> ''")
 	derived readonly transient volatile boolean hasCaptionClass
 
-	@OCL(derivation="if localContentClass.trim() <> '' then
-			localContentClass.trim()
+	@OCL(derivation="if contentClassOverride.trim() <> '' then
+			contentClassOverride.trim()
 		else if uiModel.defaultCardsStyles.contentClass.trim() <> '' then
 			uiModel.defaultCardsStyles.contentClass.trim()
 		else if uiModel.defaultUnitStyles.contentClass.trim() <> '' then
@@ -2431,8 +2457,8 @@ class SliderUnit extends ImageUnit {
 	int showTime
 	int transitionTime
 
-	@OCL(derivation="if localSectionClass.trim() <> '' then
-			localSectionClass.trim()
+	@OCL(derivation="if sectionClassOverride.trim() <> '' then
+			sectionClassOverride.trim()
 		else if uiModel.defaultSliderStyles.sectionClass.trim() <> '' then
 			uiModel.defaultSliderStyles.sectionClass.trim()
 		else if uiModel.defaultUnitStyles.sectionClass.trim() <> '' then
@@ -2444,8 +2470,8 @@ class SliderUnit extends ImageUnit {
 	@OCL(derivation="sectionClass <> ''")
 	derived readonly transient volatile boolean hasSectionClass
 
-	@OCL(derivation="if localSectionClass.trim() <> '' then
-			localCaptionClass.trim()
+	@OCL(derivation="if captionClassOverride.trim() <> '' then
+			captionClassOverride.trim()
 		else if uiModel.defaultSliderStyles.captionClass.trim() <> '' then
 			uiModel.defaultSliderStyles.captionClass.trim()
 		else if uiModel.defaultUnitStyles.captionClass.trim() <> '' then
@@ -2457,8 +2483,8 @@ class SliderUnit extends ImageUnit {
 	@OCL(derivation="captionClass <> ''")
 	derived readonly transient volatile boolean hasCaptionClass
 
-	@OCL(derivation="if localContentClass.trim() <> '' then
-			localContentClass.trim()
+	@OCL(derivation="if contentClassOverride.trim() <> '' then
+			contentClassOverride.trim()
 		else if uiModel.defaultSliderStyles.contentClass.trim() <> '' then
 			uiModel.defaultSliderStyles.contentClass.trim()
 		else if uiModel.defaultUnitStyles.contentClass.trim() <> '' then
@@ -2580,8 +2606,8 @@ class GalleryUnit extends ImageUnit {
 	int showTime
 	int transitionTime
 
-	@OCL(derivation="if localSectionClass.trim() <> '' then
-			localSectionClass.trim()
+	@OCL(derivation="if sectionClassOverride.trim() <> '' then
+			sectionClassOverride.trim()
 		else if uiModel.defaultGalleryStyles.sectionClass.trim() <> '' then
 			uiModel.defaultGalleryStyles.sectionClass.trim()
 		else if uiModel.defaultUnitStyles.sectionClass.trim() <> '' then
@@ -2593,8 +2619,8 @@ class GalleryUnit extends ImageUnit {
 	@OCL(derivation="sectionClass <> ''")
 	derived readonly transient volatile boolean hasSectionClass
 
-	@OCL(derivation="if localSectionClass.trim() <> '' then
-			localCaptionClass.trim()
+	@OCL(derivation="if captionClassOverride.trim() <> '' then
+			captionClassOverride.trim()
 		else if uiModel.defaultGalleryStyles.captionClass.trim() <> '' then
 			uiModel.defaultGalleryStyles.captionClass.trim()
 		else if uiModel.defaultUnitStyles.captionClass.trim() <> '' then
@@ -2606,8 +2632,8 @@ class GalleryUnit extends ImageUnit {
 	@OCL(derivation="captionClass <> ''")
 	derived readonly transient volatile boolean hasCaptionClass
 
-	@OCL(derivation="if localContentClass.trim() <> '' then
-			localContentClass.trim()
+	@OCL(derivation="if contentClassOverride.trim() <> '' then
+			contentClassOverride.trim()
 		else if uiModel.defaultGalleryStyles.contentClass.trim() <> '' then
 			uiModel.defaultGalleryStyles.contentClass.trim()
 		else if uiModel.defaultUnitStyles.contentClass.trim() <> '' then
@@ -2729,8 +2755,8 @@ abstract class ControlUnit extends DynamicUnit {
 	refers Page cancelDestination
 	String cancelLabel
 
-	@OCL(derivation="if localSectionClass.trim() <> '' then
-			localSectionClass.trim()
+	@OCL(derivation="if sectionClassOverride.trim() <> '' then
+			sectionClassOverride.trim()
 		else if uiModel.defaultControlStyles.sectionClass.trim() <> '' then
 			uiModel.defaultControlStyles.sectionClass.trim()
 		else if uiModel.defaultUnitStyles.sectionClass.trim() <> '' then
@@ -2742,8 +2768,8 @@ abstract class ControlUnit extends DynamicUnit {
 	@OCL(derivation="sectionClass <> ''")
 	derived readonly transient volatile boolean hasSectionClass
 
-	@OCL(derivation="if localSectionClass.trim() <> '' then
-			localCaptionClass.trim()
+	@OCL(derivation="if captionClassOverride.trim() <> '' then
+			captionClassOverride.trim()
 		else if uiModel.defaultControlStyles.captionClass.trim() <> '' then
 			uiModel.defaultControlStyles.captionClass.trim()
 		else if uiModel.defaultUnitStyles.captionClass.trim() <> '' then
@@ -2755,8 +2781,8 @@ abstract class ControlUnit extends DynamicUnit {
 	@OCL(derivation="captionClass <> ''")
 	derived readonly transient volatile boolean hasCaptionClass
 
-	@OCL(derivation="if localContentClass.trim() <> '' then
-			localContentClass.trim()
+	@OCL(derivation="if contentClassOverride.trim() <> '' then
+			contentClassOverride.trim()
 		else if uiModel.defaultControlStyles.contentClass.trim() <> '' then
 			uiModel.defaultControlStyles.contentClass.trim()
 		else if uiModel.defaultUnitStyles.contentClass.trim() <> '' then

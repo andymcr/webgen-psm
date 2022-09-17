@@ -109,7 +109,7 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 			addFileActionsPropertyDescriptor(object);
 			addHasFileActionsPropertyDescriptor(object);
 			addUriElementPropertyDescriptor(object);
-			addLocalPageClassPropertyDescriptor(object);
+			addPageClassOverridePropertyDescriptor(object);
 			addPageClassPropertyDescriptor(object);
 			addHasPageClassPropertyDescriptor(object);
 			addGenModelPropertyDescriptor(object);
@@ -1418,19 +1418,19 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Local Page Class feature.
+	 * This adds a property descriptor for the Page Class Override feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addLocalPageClassPropertyDescriptor(Object object) {
+	protected void addPageClassOverridePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Page_localPageClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Page_localPageClass_feature", "_UI_Page_type"),
-				 WafPackage.eINSTANCE.getPage_LocalPageClass(),
+				 getString("_UI_Page_pageClassOverride_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Page_pageClassOverride_feature", "_UI_Page_type"),
+				 WafPackage.eINSTANCE.getPage_PageClassOverride(),
 				 true,
 				 false,
 				 false,
@@ -1649,7 +1649,7 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 			case WafPackage.PAGE__HAS_RESOURCE_FIELDS:
 			case WafPackage.PAGE__HAS_FILE_ACTIONS:
 			case WafPackage.PAGE__URI_ELEMENT:
-			case WafPackage.PAGE__LOCAL_PAGE_CLASS:
+			case WafPackage.PAGE__PAGE_CLASS_OVERRIDE:
 			case WafPackage.PAGE__PAGE_CLASS:
 			case WafPackage.PAGE__HAS_PAGE_CLASS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));

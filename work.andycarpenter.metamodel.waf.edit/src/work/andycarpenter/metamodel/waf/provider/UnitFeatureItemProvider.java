@@ -56,12 +56,10 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 			addIsAuthorisedPropertyDescriptor(object);
 			addHasCustomisedDisplayLabelPropertyDescriptor(object);
 			addIsRepeatedPropertyDescriptor(object);
-			addLocalTitlePropertyDescriptor(object);
 			addTitlePropertyDescriptor(object);
 			addHasTitlePropertyDescriptor(object);
 			addHasCustomisedTitlePropertyDescriptor(object);
 			addHasSecondTitlePropertyDescriptor(object);
-			addLocalPlaceholderPropertyDescriptor(object);
 			addPlaceholderPropertyDescriptor(object);
 			addHasPlaceholderPropertyDescriptor(object);
 			addHasCustomisedPlaceholderPropertyDescriptor(object);
@@ -106,13 +104,13 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 			addDateFormatPropertyDescriptor(object);
 			addDisabledInputPropertyDescriptor(object);
 			addHeaderClassPropertyDescriptor(object);
-			addLocalInputGroupClassPropertyDescriptor(object);
+			addInputGroupClassOverridePropertyDescriptor(object);
 			addInputGroupClassPropertyDescriptor(object);
 			addHasInputGroupClassPropertyDescriptor(object);
-			addLocalFieldLabelClassPropertyDescriptor(object);
+			addFieldLabelClassOverridePropertyDescriptor(object);
 			addFieldLabelClassPropertyDescriptor(object);
 			addHasFieldLabelClassPropertyDescriptor(object);
-			addLocalFieldValueClassPropertyDescriptor(object);
+			addFieldValueClassOverridePropertyDescriptor(object);
 			addFieldValueClassPropertyDescriptor(object);
 			addHasFieldValueClassPropertyDescriptor(object);
 			addFooterClassPropertyDescriptor(object);
@@ -135,6 +133,8 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 			addHasOperationActionsPropertyDescriptor(object);
 			addGenModelRefPropertyDescriptor(object);
 			addUiModelRefPropertyDescriptor(object);
+			addTitleOverridePropertyDescriptor(object);
+			addPlaceholderOverridePropertyDescriptor(object);
 			addCollectionUiAllowAddPropertyDescriptor(object);
 			addCollectionUiAllowRemovePropertyDescriptor(object);
 			addDefaultDisplayValuePropertyDescriptor(object);
@@ -278,19 +278,19 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Local Title feature.
+	 * This adds a property descriptor for the Title Override feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addLocalTitlePropertyDescriptor(Object object) {
+	protected void addTitleOverridePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_UnitField_localTitle_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_localTitle_feature", "_UI_UnitField_type"),
-				 WafPackage.eINSTANCE.getUnitField_LocalTitle(),
+				 getString("_UI_UnitFeature_titleOverride_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UnitFeature_titleOverride_feature", "_UI_UnitFeature_type"),
+				 WafPackage.eINSTANCE.getUnitFeature_TitleOverride(),
 				 true,
 				 false,
 				 false,
@@ -388,19 +388,19 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Local Placeholder feature.
+	 * This adds a property descriptor for the Placeholder Override feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addLocalPlaceholderPropertyDescriptor(Object object) {
+	protected void addPlaceholderOverridePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_UnitField_localPlaceholder_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_localPlaceholder_feature", "_UI_UnitField_type"),
-				 WafPackage.eINSTANCE.getUnitField_LocalPlaceholder(),
+				 getString("_UI_UnitFeature_placeholderOverride_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UnitFeature_placeholderOverride_feature", "_UI_UnitFeature_type"),
+				 WafPackage.eINSTANCE.getUnitFeature_PlaceholderOverride(),
 				 true,
 				 false,
 				 false,
@@ -1378,19 +1378,19 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Local Input Group Class feature.
+	 * This adds a property descriptor for the Input Group Class Override feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addLocalInputGroupClassPropertyDescriptor(Object object) {
+	protected void addInputGroupClassOverridePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_UnitField_localInputGroupClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_localInputGroupClass_feature", "_UI_UnitField_type"),
-				 WafPackage.eINSTANCE.getUnitField_LocalInputGroupClass(),
+				 getString("_UI_UnitField_inputGroupClassOverride_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_inputGroupClassOverride_feature", "_UI_UnitField_type"),
+				 WafPackage.eINSTANCE.getUnitField_InputGroupClassOverride(),
 				 true,
 				 false,
 				 false,
@@ -1444,19 +1444,19 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Local Field Label Class feature.
+	 * This adds a property descriptor for the Field Label Class Override feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addLocalFieldLabelClassPropertyDescriptor(Object object) {
+	protected void addFieldLabelClassOverridePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_UnitField_localFieldLabelClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_localFieldLabelClass_feature", "_UI_UnitField_type"),
-				 WafPackage.eINSTANCE.getUnitField_LocalFieldLabelClass(),
+				 getString("_UI_UnitField_fieldLabelClassOverride_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_fieldLabelClassOverride_feature", "_UI_UnitField_type"),
+				 WafPackage.eINSTANCE.getUnitField_FieldLabelClassOverride(),
 				 true,
 				 false,
 				 false,
@@ -1510,19 +1510,19 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Local Field Value Class feature.
+	 * This adds a property descriptor for the Field Value Class Override feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addLocalFieldValueClassPropertyDescriptor(Object object) {
+	protected void addFieldValueClassOverridePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_UnitField_localFieldValueClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_localFieldValueClass_feature", "_UI_UnitField_type"),
-				 WafPackage.eINSTANCE.getUnitField_LocalFieldValueClass(),
+				 getString("_UI_UnitField_fieldValueClassOverride_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_fieldValueClassOverride_feature", "_UI_UnitField_type"),
+				 WafPackage.eINSTANCE.getUnitField_FieldValueClassOverride(),
 				 true,
 				 false,
 				 false,
@@ -2212,12 +2212,10 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 			case WafPackage.UNIT_FEATURE__IS_AUTHORISED:
 			case WafPackage.UNIT_FEATURE__HAS_CUSTOMISED_DISPLAY_LABEL:
 			case WafPackage.UNIT_FEATURE__IS_REPEATED:
-			case WafPackage.UNIT_FEATURE__LOCAL_TITLE:
 			case WafPackage.UNIT_FEATURE__TITLE:
 			case WafPackage.UNIT_FEATURE__HAS_TITLE:
 			case WafPackage.UNIT_FEATURE__HAS_CUSTOMISED_TITLE:
 			case WafPackage.UNIT_FEATURE__HAS_SECOND_TITLE:
-			case WafPackage.UNIT_FEATURE__LOCAL_PLACEHOLDER:
 			case WafPackage.UNIT_FEATURE__PLACEHOLDER:
 			case WafPackage.UNIT_FEATURE__HAS_PLACEHOLDER:
 			case WafPackage.UNIT_FEATURE__HAS_CUSTOMISED_PLACEHOLDER:
@@ -2258,13 +2256,13 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 			case WafPackage.UNIT_FEATURE__DATE_FORMAT:
 			case WafPackage.UNIT_FEATURE__DISABLED_INPUT:
 			case WafPackage.UNIT_FEATURE__HEADER_CLASS:
-			case WafPackage.UNIT_FEATURE__LOCAL_INPUT_GROUP_CLASS:
+			case WafPackage.UNIT_FEATURE__INPUT_GROUP_CLASS_OVERRIDE:
 			case WafPackage.UNIT_FEATURE__INPUT_GROUP_CLASS:
 			case WafPackage.UNIT_FEATURE__HAS_INPUT_GROUP_CLASS:
-			case WafPackage.UNIT_FEATURE__LOCAL_FIELD_LABEL_CLASS:
+			case WafPackage.UNIT_FEATURE__FIELD_LABEL_CLASS_OVERRIDE:
 			case WafPackage.UNIT_FEATURE__FIELD_LABEL_CLASS:
 			case WafPackage.UNIT_FEATURE__HAS_FIELD_LABEL_CLASS:
-			case WafPackage.UNIT_FEATURE__LOCAL_FIELD_VALUE_CLASS:
+			case WafPackage.UNIT_FEATURE__FIELD_VALUE_CLASS_OVERRIDE:
 			case WafPackage.UNIT_FEATURE__FIELD_VALUE_CLASS:
 			case WafPackage.UNIT_FEATURE__HAS_FIELD_VALUE_CLASS:
 			case WafPackage.UNIT_FEATURE__FOOTER_CLASS:
@@ -2276,6 +2274,8 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 			case WafPackage.UNIT_FEATURE__HAS_FILE_ACTIONS:
 			case WafPackage.UNIT_FEATURE__HAS_INSTANCE_ACTIONS:
 			case WafPackage.UNIT_FEATURE__HAS_OPERATION_ACTIONS:
+			case WafPackage.UNIT_FEATURE__TITLE_OVERRIDE:
+			case WafPackage.UNIT_FEATURE__PLACEHOLDER_OVERRIDE:
 			case WafPackage.UNIT_FEATURE__COLLECTION_UI_ALLOW_ADD:
 			case WafPackage.UNIT_FEATURE__COLLECTION_UI_ALLOW_REMOVE:
 			case WafPackage.UNIT_FEATURE__DEFAULT_DISPLAY_VALUE:
