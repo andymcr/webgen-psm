@@ -7,7 +7,7 @@ Bundle-ClassPath: .
 Bundle-Activator: work.andycarpenter.psms.service.presentation.ServiceEditorPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: JavaSE-1.14
+Bundle-RequiredExecutionEnvironment: JavaSE-14
 Export-Package: work.andycarpenter.psms.service.presentation
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources;visibility:=reexport,
