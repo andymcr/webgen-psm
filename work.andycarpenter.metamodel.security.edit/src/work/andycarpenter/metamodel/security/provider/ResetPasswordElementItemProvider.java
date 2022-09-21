@@ -1,6 +1,6 @@
 /**
  */
-package work.andycarpenter.metamodel.waf.provider;
+package work.andycarpenter.metamodel.security.provider;
 
 
 import java.util.Collection;
@@ -9,25 +9,26 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
-import work.andycarpenter.metamodel.waf.LoginUnit;
-import work.andycarpenter.metamodel.waf.WafPackage;
+import work.andycarpenter.metamodel.security.ResetPasswordElement;
+import work.andycarpenter.metamodel.security.SecurityPackage;
 
 /**
- * This is the item provider adapter for a {@link work.andycarpenter.metamodel.waf.LoginUnit} object.
+ * This is the item provider adapter for a {@link work.andycarpenter.metamodel.security.ResetPasswordElement} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class LoginUnitItemProvider extends EditUnitItemProvider {
+public class ResetPasswordElementItemProvider extends AuthenticationElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public LoginUnitItemProvider(AdapterFactory adapterFactory) {
+	public ResetPasswordElementItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -42,19 +43,42 @@ public class LoginUnitItemProvider extends EditUnitItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addAuthenticationPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This returns LoginUnit.gif.
+	 * This adds a property descriptor for the Authentication feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAuthenticationPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ResetPasswordElement_authentication_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ResetPasswordElement_authentication_feature", "_UI_ResetPasswordElement_type"),
+				 SecurityPackage.Literals.RESET_PASSWORD_ELEMENT__AUTHENTICATION,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This returns ResetPasswordElement.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/LoginUnit"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/ResetPasswordElement"));
 	}
 
 	/**
@@ -65,10 +89,10 @@ public class LoginUnitItemProvider extends EditUnitItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((LoginUnit)object).getName();
+		String label = ((ResetPasswordElement)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_LoginUnit_type") :
-			getString("_UI_LoginUnit_type") + " " + label;
+			getString("_UI_ResetPasswordElement_type") :
+			getString("_UI_ResetPasswordElement_type") + " " + label;
 	}
 
 
@@ -95,31 +119,6 @@ public class LoginUnitItemProvider extends EditUnitItemProvider {
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-	}
-
-	/**
-	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
-		Object childFeature = feature;
-		Object childObject = child;
-
-		boolean qualify =
-			childFeature == WafPackage.eINSTANCE.getDynamicUnit_HideWhen() ||
-			childFeature == WafPackage.eINSTANCE.getEditUnit_DisableWhen() ||
-			childFeature == WafPackage.eINSTANCE.getEditUnit_ConfirmMessage() ||
-			childFeature == WafPackage.eINSTANCE.getEditUnit_SuccessMessage();
-
-		if (qualify) {
-			return getString
-				("_UI_CreateChild_text2",
-				 new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
-		}
-		return super.getCreateChildText(owner, feature, child, selection);
 	}
 
 }

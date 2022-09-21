@@ -7,6 +7,9 @@ import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.Switch;
 
+import work.andycarpenter.metamodel.base.NamedDisplayElement;
+import work.andycarpenter.metamodel.base.NamedElement;
+
 import work.andycarpenter.metamodel.security.*;
 
 /**
@@ -85,16 +88,63 @@ public class SecuritySwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case SecurityPackage.AUTHENTICATION_ELEMENT: {
+				AuthenticationElement authenticationElement = (AuthenticationElement)theEObject;
+				T result = caseAuthenticationElement(authenticationElement);
+				if (result == null) result = caseNamedDisplayElement(authenticationElement);
+				if (result == null) result = caseNamedElement(authenticationElement);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case SecurityPackage.REGISTRATION_ELEMENT: {
+				RegistrationElement registrationElement = (RegistrationElement)theEObject;
+				T result = caseRegistrationElement(registrationElement);
+				if (result == null) result = caseAuthenticationElement(registrationElement);
+				if (result == null) result = caseNamedDisplayElement(registrationElement);
+				if (result == null) result = caseNamedElement(registrationElement);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case SecurityPackage.LOGIN_ELEMENT: {
+				LoginElement loginElement = (LoginElement)theEObject;
+				T result = caseLoginElement(loginElement);
+				if (result == null) result = caseAuthenticationElement(loginElement);
+				if (result == null) result = caseNamedDisplayElement(loginElement);
+				if (result == null) result = caseNamedElement(loginElement);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case SecurityPackage.LOGOUT_ELEMENT: {
+				LogoutElement logoutElement = (LogoutElement)theEObject;
+				T result = caseLogoutElement(logoutElement);
+				if (result == null) result = caseAuthenticationElement(logoutElement);
+				if (result == null) result = caseNamedDisplayElement(logoutElement);
+				if (result == null) result = caseNamedElement(logoutElement);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case SecurityPackage.FORGOTTEN_PASSWORD_ELEMENT: {
+				ForgottenPasswordElement forgottenPasswordElement = (ForgottenPasswordElement)theEObject;
+				T result = caseForgottenPasswordElement(forgottenPasswordElement);
+				if (result == null) result = caseAuthenticationElement(forgottenPasswordElement);
+				if (result == null) result = caseNamedDisplayElement(forgottenPasswordElement);
+				if (result == null) result = caseNamedElement(forgottenPasswordElement);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case SecurityPackage.RESET_PASSWORD_ELEMENT: {
+				ResetPasswordElement resetPasswordElement = (ResetPasswordElement)theEObject;
+				T result = caseResetPasswordElement(resetPasswordElement);
+				if (result == null) result = caseAuthenticationElement(resetPasswordElement);
+				if (result == null) result = caseNamedDisplayElement(resetPasswordElement);
+				if (result == null) result = caseNamedElement(resetPasswordElement);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case SecurityPackage.CAS_AUTHENTICATION: {
 				CasAuthentication casAuthentication = (CasAuthentication)theEObject;
 				T result = caseCasAuthentication(casAuthentication);
 				if (result == null) result = caseAuthentication(casAuthentication);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case SecurityPackage.SECURITY_UNIT: {
-				SecurityUnit securityUnit = (SecurityUnit)theEObject;
-				T result = caseSecurityUnit(securityUnit);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -148,6 +198,96 @@ public class SecuritySwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Authentication Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Authentication Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAuthenticationElement(AuthenticationElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Registration Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Registration Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRegistrationElement(RegistrationElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Login Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Login Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseLoginElement(LoginElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Logout Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Logout Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseLogoutElement(LogoutElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Forgotten Password Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Forgotten Password Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseForgottenPasswordElement(ForgottenPasswordElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Reset Password Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Reset Password Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseResetPasswordElement(ResetPasswordElement object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Cas Authentication</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -163,17 +303,32 @@ public class SecuritySwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Unit</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Named Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Unit</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Named Element</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseSecurityUnit(SecurityUnit object) {
+	public T caseNamedElement(NamedElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Named Display Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Named Display Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseNamedDisplayElement(NamedDisplayElement object) {
 		return null;
 	}
 

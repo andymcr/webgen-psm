@@ -15,10 +15,6 @@
 	testsDirectory="/work.andycarpenter.metamodel.waf.tests/src")
 package work.andycarpenter.metamodel.waf
 
-import work.andycarpenter.metamodel.security.CasAuthentication
-import work.andycarpenter.metamodel.security.LocalAuthenticationSystem
-import work.andycarpenter.metamodel.security.SecurityModel
-import work.andycarpenter.metamodel.security.SecurityUnit
 import work.andycarpenter.metamodel.base.Classifier
 import work.andycarpenter.metamodel.base.DataType
 import work.andycarpenter.metamodel.base.EnumerationType
@@ -42,6 +38,7 @@ import work.andycarpenter.metamodel.orm.OrmModel
 import work.andycarpenter.metamodel.orm.Repository
 import work.andycarpenter.metamodel.orm.Selection
 import work.andycarpenter.metamodel.api.API
+import work.andycarpenter.metamodel.security.SecurityModel
 import work.andycarpenter.metamodel.service.BusinessOperation
 import work.andycarpenter.metamodel.service.Service
 import work.andycarpenter.metamodel.service.ServiceModel
@@ -114,18 +111,6 @@ class WafModel {
 
 	@OCL(derivation="if self.security.oclIsUndefined() then false else security.isAuthenticated endif")
 	derived readonly unsettable transient volatile boolean isAuthenticated
-
-	@OCL(derivation="if self.isAuthenticated = true then security.isCasAuthenticated else false endif")
-	derived readonly unsettable transient volatile boolean isCasAuthenticated
-
-	@OCL(derivation="if self.isCasAuthenticated = true then security.casAuthentication else null endif")
-	refers derived readonly unsettable transient volatile CasAuthentication casAuthentication
-
-	@OCL(derivation="if self.isAuthenticated = true then security.isLocallyAuthenticated else false endif")
-	derived readonly unsettable transient volatile boolean isLocallyAuthenticated
-
-	@OCL(derivation="if self.isLocallyAuthenticated = true then security.localAuthentication else null endif")
-	refers derived readonly unsettable transient volatile LocalAuthenticationSystem localAuthentication
 
 	Boolean useFormFloatingLabels = 'false'
 
@@ -340,7 +325,9 @@ class Page extends NamedDisplayElement {
 	derived readonly transient volatile boolean hasCommonUnitAuthentication
 
 	contains ContentUnit[] units opposite displayedOn
-	
+	@OCL(derivation="units->notEmpty()")
+	derived readonly transient volatile boolean hasUnits
+
 	@OCL(derivation="editUnits->select(u | u.hasChangableCollections)->notEmpty()")
 	derived readonly transient volatile boolean hasChangableCollections
 
@@ -370,11 +357,6 @@ class Page extends NamedDisplayElement {
 	@OCL(derivation="anyEditUnits->notEmpty()")
 	derived readonly transient volatile boolean hasAnyEditUnits
 
-	@OCL(derivation="units->select(u | u.oclIsTypeOf(ForgottenPasswordUnit)).oclAsType(ForgottenPasswordUnit)->asOrderedSet()")
-	refers readonly transient volatile unsettable derived ForgottenPasswordUnit[] forgottenPasswordUnits
-	@OCL(derivation="forgottenPasswordUnits->notEmpty()")
-	derived readonly transient volatile boolean hasForgottenPasswordUnits
-
 	@OCL(derivation="units->select(u | u.isFormUnit).oclAsType(SingletonUnit)->asOrderedSet()")
 	refers readonly transient volatile unsettable derived SingletonUnit[] formUnits
 	@OCL(derivation="formUnits->notEmpty()")
@@ -403,35 +385,10 @@ class Page extends NamedDisplayElement {
 	@OCL(derivation="imageCardsUnits->notEmpty()")
 	derived readonly transient volatile boolean hasImageCardsUnits
 
-	@OCL(derivation="units->select(u | u.oclIsKindOf(LoginUnit)).oclAsType(LoginUnit)->asOrderedSet()")
-	refers readonly transient volatile unsettable derived LoginUnit[] loginUnits
-	@OCL(derivation="loginUnits->notEmpty()")
-	derived readonly transient volatile boolean hasLoginUnits
-
 	@OCL(derivation="units->select(u | u.oclIsKindOf(MapUnit)).oclAsType(MapUnit)->asOrderedSet()")
 	refers readonly transient volatile unsettable derived MapUnit[] mapUnits
 	@OCL(derivation="mapUnits->notEmpty()")
 	derived readonly transient volatile boolean hasMapUnits
-
-	@OCL(derivation="units->select(u | not u.oclIsKindOf(security::SecurityUnit))->asOrderedSet()")
-	refers readonly transient volatile unsettable derived ContentUnit[] nonSecurityUnits
-	@OCL(derivation="nonSecurityUnits->notEmpty()")
-	derived readonly transient volatile boolean hasNonSecurityUnits
-
-	@OCL(derivation="units->select(u | u.oclIsKindOf(RegistrationUnit)).oclAsType(RegistrationUnit)->asOrderedSet()")
-	refers readonly transient volatile unsettable derived RegistrationUnit[] registrationUnits
-	@OCL(derivation="registrationUnits->notEmpty()")
-	derived readonly transient volatile boolean hasRegistrationUnits
-	
-	@OCL(derivation="units->select(u | u.oclIsKindOf(ResetPasswordUnit)).oclAsType(ResetPasswordUnit)->asOrderedSet()")
-	refers readonly transient volatile unsettable derived ResetPasswordUnit[] resetPasswordUnits
-	@OCL(derivation="resetPasswordUnits->notEmpty()")
-	derived readonly transient volatile boolean hasResetPasswordUnits
-
-	@OCL(derivation="units->select(u | u.oclIsKindOf(security::SecurityUnit)).oclAsType(security::SecurityUnit)->asOrderedSet()")
-	refers readonly transient volatile unsettable derived SecurityUnit[] securityUnits
-	@OCL(derivation="securityUnits->notEmpty()")
-	derived readonly transient volatile boolean hasSecurityUnits
 
 	@OCL(derivation="units->select(u | u.oclIsKindOf(SliderUnit)).oclAsType(SliderUnit)->asOrderedSet()")
 	refers readonly transient volatile unsettable derived SliderUnit[] sliderUnits
@@ -637,17 +594,13 @@ abstract class DynamicUnit extends ContentUnit, ActionContainer {
 		endif")
 	derived readonly unsettable transient volatile boolean hasExplicitlyEditedContainer
 
-	@OCL(derivation="if self.oclIsKindOf(security::SecurityUnit) then
-			OrderedSet{}
-		else
-			OrderedSet{contentRepository}->union(
-				if self.oclIsKindOf(CollectionUnit) and isContained = true then
-					OrderedSet{containerRepository}
-				else
-					OrderedSet{}
-				endif)
-				->asOrderedSet()
-		endif")
+	@OCL(derivation="OrderedSet{contentRepository}->union(
+			if self.oclIsKindOf(CollectionUnit) and isContained = true then
+				OrderedSet{containerRepository}
+			else
+				OrderedSet{}
+			endif)
+			->asOrderedSet()")
 	refers derived readonly unsettable transient volatile Repository[] repositoriesUsed
 
 	refers Service[] servicesUsed
@@ -2878,29 +2831,6 @@ class SearchUnit extends ControlUnit {
 }
 
 
-class RegistrationUnit extends EditUnit, SecurityUnit {
-}
-
-class LoginUnit extends EditUnit, SecurityUnit {
-}
-
-class LogoutUnit extends DynamicUnit, SecurityUnit {
-}
-
-class ForgottenPasswordUnit extends EditUnit, SecurityUnit {
-	refers ResetPasswordUnit[1] resetPasswordUnit opposite forgottenPasswordUnit
-	String[1] uriEmailSent
-	String[1] emailSubject
-	String[1] emailMessage
-	String[1] emailSentCaption
-	String[1] emailSentMessage
-}
-
-class ResetPasswordUnit extends EditUnit, SecurityUnit {
-	refers ForgottenPasswordUnit[1] forgottenPasswordUnit opposite resetPasswordUnit
-}
-
-
 enum ContainerActionsPlacement {
 	Above = 0
 	Below = 1
@@ -2988,9 +2918,7 @@ abstract class Action extends NamedDisplayElement {
 		endif endif")
 	refers readonly transient volatile unsettable derived DynamicUnit parentUnit
 
-	@OCL(derivation="if self.oclIsKindOf(SecurityAction) then
-			self.oclAsType(SecurityAction).securityAuthorisationRoles
-		else if self.oclIsKindOf(SelectAction) then
+	@OCL(derivation="if self.oclIsKindOf(SelectAction) then
 			self.oclAsType(SelectAction).selectAuthorisationRoles
 		else if self.oclIsKindOf(DeleteAction) then
 			self.oclAsType(DeleteAction).deleteAuthorisationRoles
@@ -2998,7 +2926,7 @@ abstract class Action extends NamedDisplayElement {
 			self.oclAsType(OperationAction).operationAuthorisationRoles
 		else
 			''
-		endif endif endif endif")
+		endif endif endif")
 	derived readonly transient volatile String authorisationRoles
 
 	@OCL(derivation="authorisationRoles <> ''")
@@ -3066,16 +2994,6 @@ abstract class Action extends NamedDisplayElement {
 
 	String headerClass
 	String footerClass
-}
-
-class SecurityAction extends Action {
-	refers SecurityUnit[1] target
-	@OCL(derivation="if not target.oclIsUndefined() then
-			target.oclAsType(DynamicUnit).authorisationRoles
-		else
-			''
-		endif")
-	derived readonly transient volatile String securityAuthorisationRoles
 }
 
 class DeleteAction extends Action {

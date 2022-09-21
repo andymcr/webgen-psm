@@ -40,6 +40,51 @@ public interface SecurityFactory extends EFactory {
 	LocalAuthenticationSystem createLocalAuthenticationSystem();
 
 	/**
+	 * Returns a new object of class '<em>Registration Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Registration Element</em>'.
+	 * @generated
+	 */
+	RegistrationElement createRegistrationElement();
+
+	/**
+	 * Returns a new object of class '<em>Login Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Login Element</em>'.
+	 * @generated
+	 */
+	LoginElement createLoginElement();
+
+	/**
+	 * Returns a new object of class '<em>Logout Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Logout Element</em>'.
+	 * @generated
+	 */
+	LogoutElement createLogoutElement();
+
+	/**
+	 * Returns a new object of class '<em>Forgotten Password Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Forgotten Password Element</em>'.
+	 * @generated
+	 */
+	ForgottenPasswordElement createForgottenPasswordElement();
+
+	/**
+	 * Returns a new object of class '<em>Reset Password Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Reset Password Element</em>'.
+	 * @generated
+	 */
+	ResetPasswordElement createResetPasswordElement();
+
+	/**
 	 * Returns a new object of class '<em>Cas Authentication</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

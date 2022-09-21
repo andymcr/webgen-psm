@@ -56,6 +56,7 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 			addCommonRolePropertyDescriptor(object);
 			addIsAuthorisedPropertyDescriptor(object);
 			addHasCommonUnitAuthenticationPropertyDescriptor(object);
+			addHasUnitsPropertyDescriptor(object);
 			addHasChangableCollectionsPropertyDescriptor(object);
 			addHasCaptchaUnitsPropertyDescriptor(object);
 			addCollectionUnitsPropertyDescriptor(object);
@@ -66,8 +67,6 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 			addHasEditUnitsPropertyDescriptor(object);
 			addAnyEditUnitsPropertyDescriptor(object);
 			addHasAnyEditUnitsPropertyDescriptor(object);
-			addForgottenPasswordUnitsPropertyDescriptor(object);
-			addHasForgottenPasswordUnitsPropertyDescriptor(object);
 			addFormUnitsPropertyDescriptor(object);
 			addHasFormUnitsPropertyDescriptor(object);
 			addHasFiltersPropertyDescriptor(object);
@@ -79,18 +78,8 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 			addHasImageUnitsPropertyDescriptor(object);
 			addImageCardsUnitsPropertyDescriptor(object);
 			addHasImageCardsUnitsPropertyDescriptor(object);
-			addLoginUnitsPropertyDescriptor(object);
-			addHasLoginUnitsPropertyDescriptor(object);
 			addMapUnitsPropertyDescriptor(object);
 			addHasMapUnitsPropertyDescriptor(object);
-			addNonSecurityUnitsPropertyDescriptor(object);
-			addHasNonSecurityUnitsPropertyDescriptor(object);
-			addRegistrationUnitsPropertyDescriptor(object);
-			addHasRegistrationUnitsPropertyDescriptor(object);
-			addResetPasswordUnitsPropertyDescriptor(object);
-			addHasResetPasswordUnitsPropertyDescriptor(object);
-			addSecurityUnitsPropertyDescriptor(object);
-			addHasSecurityUnitsPropertyDescriptor(object);
 			addSliderUnitsPropertyDescriptor(object);
 			addHasSliderUnitsPropertyDescriptor(object);
 			addRepositoriesUsedPropertyDescriptor(object);
@@ -243,6 +232,28 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 				 getString("_UI_Page_hasCommonUnitAuthentication_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Page_hasCommonUnitAuthentication_feature", "_UI_Page_type"),
 				 WafPackage.eINSTANCE.getPage_HasCommonUnitAuthentication(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Has Units feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasUnitsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Page_hasUnits_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Page_hasUnits_feature", "_UI_Page_type"),
+				 WafPackage.eINSTANCE.getPage_HasUnits(),
 				 false,
 				 false,
 				 false,
@@ -463,50 +474,6 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 				 getString("_UI_Page_hasAnyEditUnits_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Page_hasAnyEditUnits_feature", "_UI_Page_type"),
 				 WafPackage.eINSTANCE.getPage_HasAnyEditUnits(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Forgotten Password Units feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addForgottenPasswordUnitsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Page_forgottenPasswordUnits_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Page_forgottenPasswordUnits_feature", "_UI_Page_type"),
-				 WafPackage.eINSTANCE.getPage_ForgottenPasswordUnits(),
-				 false,
-				 false,
-				 false,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Has Forgotten Password Units feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addHasForgottenPasswordUnitsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Page_hasForgottenPasswordUnits_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Page_hasForgottenPasswordUnits_feature", "_UI_Page_type"),
-				 WafPackage.eINSTANCE.getPage_HasForgottenPasswordUnits(),
 				 false,
 				 false,
 				 false,
@@ -758,50 +725,6 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Login Units feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addLoginUnitsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Page_loginUnits_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Page_loginUnits_feature", "_UI_Page_type"),
-				 WafPackage.eINSTANCE.getPage_LoginUnits(),
-				 false,
-				 false,
-				 false,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Has Login Units feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addHasLoginUnitsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Page_hasLoginUnits_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Page_hasLoginUnits_feature", "_UI_Page_type"),
-				 WafPackage.eINSTANCE.getPage_HasLoginUnits(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Map Units feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -837,182 +760,6 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 				 getString("_UI_Page_hasMapUnits_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Page_hasMapUnits_feature", "_UI_Page_type"),
 				 WafPackage.eINSTANCE.getPage_HasMapUnits(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Non Security Units feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addNonSecurityUnitsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Page_nonSecurityUnits_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Page_nonSecurityUnits_feature", "_UI_Page_type"),
-				 WafPackage.eINSTANCE.getPage_NonSecurityUnits(),
-				 false,
-				 false,
-				 false,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Has Non Security Units feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addHasNonSecurityUnitsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Page_hasNonSecurityUnits_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Page_hasNonSecurityUnits_feature", "_UI_Page_type"),
-				 WafPackage.eINSTANCE.getPage_HasNonSecurityUnits(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Registration Units feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addRegistrationUnitsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Page_registrationUnits_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Page_registrationUnits_feature", "_UI_Page_type"),
-				 WafPackage.eINSTANCE.getPage_RegistrationUnits(),
-				 false,
-				 false,
-				 false,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Has Registration Units feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addHasRegistrationUnitsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Page_hasRegistrationUnits_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Page_hasRegistrationUnits_feature", "_UI_Page_type"),
-				 WafPackage.eINSTANCE.getPage_HasRegistrationUnits(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Reset Password Units feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addResetPasswordUnitsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Page_resetPasswordUnits_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Page_resetPasswordUnits_feature", "_UI_Page_type"),
-				 WafPackage.eINSTANCE.getPage_ResetPasswordUnits(),
-				 false,
-				 false,
-				 false,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Has Reset Password Units feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addHasResetPasswordUnitsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Page_hasResetPasswordUnits_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Page_hasResetPasswordUnits_feature", "_UI_Page_type"),
-				 WafPackage.eINSTANCE.getPage_HasResetPasswordUnits(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Security Units feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addSecurityUnitsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Page_securityUnits_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Page_securityUnits_feature", "_UI_Page_type"),
-				 WafPackage.eINSTANCE.getPage_SecurityUnits(),
-				 false,
-				 false,
-				 false,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Has Security Units feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addHasSecurityUnitsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Page_hasSecurityUnits_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Page_hasSecurityUnits_feature", "_UI_Page_type"),
-				 WafPackage.eINSTANCE.getPage_HasSecurityUnits(),
 				 false,
 				 false,
 				 false,
@@ -1620,25 +1367,20 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 			case WafPackage.PAGE__COMMON_ROLE:
 			case WafPackage.PAGE__IS_AUTHORISED:
 			case WafPackage.PAGE__HAS_COMMON_UNIT_AUTHENTICATION:
+			case WafPackage.PAGE__HAS_UNITS:
 			case WafPackage.PAGE__HAS_CHANGABLE_COLLECTIONS:
 			case WafPackage.PAGE__HAS_CAPTCHA_UNITS:
 			case WafPackage.PAGE__HAS_COLLECTION_UNITS:
 			case WafPackage.PAGE__HAS_DYNAMIC_UNITS:
 			case WafPackage.PAGE__HAS_EDIT_UNITS:
 			case WafPackage.PAGE__HAS_ANY_EDIT_UNITS:
-			case WafPackage.PAGE__HAS_FORGOTTEN_PASSWORD_UNITS:
 			case WafPackage.PAGE__HAS_FORM_UNITS:
 			case WafPackage.PAGE__HAS_FILTERS:
 			case WafPackage.PAGE__HAS_GALLERY_UNITS:
 			case WafPackage.PAGE__HAS_TABULAR_UNITS:
 			case WafPackage.PAGE__HAS_IMAGE_UNITS:
 			case WafPackage.PAGE__HAS_IMAGE_CARDS_UNITS:
-			case WafPackage.PAGE__HAS_LOGIN_UNITS:
 			case WafPackage.PAGE__HAS_MAP_UNITS:
-			case WafPackage.PAGE__HAS_NON_SECURITY_UNITS:
-			case WafPackage.PAGE__HAS_REGISTRATION_UNITS:
-			case WafPackage.PAGE__HAS_RESET_PASSWORD_UNITS:
-			case WafPackage.PAGE__HAS_SECURITY_UNITS:
 			case WafPackage.PAGE__HAS_SLIDER_UNITS:
 			case WafPackage.PAGE__HAS_REPOSITORIES_USED:
 			case WafPackage.PAGE__HAS_SERVICES_USED:
@@ -1746,31 +1488,6 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 			(createChildParameter
 				(WafPackage.eINSTANCE.getPage_Units(),
 				 WafFactory.eINSTANCE.createSearchUnit()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.eINSTANCE.getPage_Units(),
-				 WafFactory.eINSTANCE.createRegistrationUnit()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.eINSTANCE.getPage_Units(),
-				 WafFactory.eINSTANCE.createLoginUnit()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.eINSTANCE.getPage_Units(),
-				 WafFactory.eINSTANCE.createLogoutUnit()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.eINSTANCE.getPage_Units(),
-				 WafFactory.eINSTANCE.createForgottenPasswordUnit()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.eINSTANCE.getPage_Units(),
-				 WafFactory.eINSTANCE.createResetPasswordUnit()));
 	}
 
 	/**

@@ -9,6 +9,7 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
@@ -16,6 +17,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import work.andycarpenter.metamodel.security.AuthenticationKeyTypes;
 import work.andycarpenter.metamodel.security.LocalAuthenticationSystem;
+import work.andycarpenter.metamodel.security.SecurityFactory;
 import work.andycarpenter.metamodel.security.SecurityPackage;
 
 /**
@@ -47,18 +49,19 @@ public class LocalAuthenticationSystemItemProvider extends AuthenticationItemPro
 			super.getPropertyDescriptors(object);
 
 			addAuthenticationModelPropertyDescriptor(object);
+			addIdentifierFeturePropertyDescriptor(object);
+			addPasswordFeaturePropertyDescriptor(object);
 			addAuthenticationKeyPropertyDescriptor(object);
 			addResetPasswordRequestModelPropertyDescriptor(object);
-			addRegistrationUnitPropertyDescriptor(object);
-			addLoginUnitPropertyDescriptor(object);
-			addLogoutUnitPropertyDescriptor(object);
-			addForgottenPasswordUnitPropertyDescriptor(object);
-			addResetPasswordUnitPropertyDescriptor(object);
-			addUseCaptchaPropertyDescriptor(object);
+			addHasRegistrationElementPropertyDescriptor(object);
+			addCaptchaPropertyDescriptor(object);
 			addAllowRememberMePropertyDescriptor(object);
 			addAllowSelfRegistrationPropertyDescriptor(object);
 			addUseEmailActivationPropertyDescriptor(object);
 			addSendWelcomeEmailPropertyDescriptor(object);
+			addSectionClassPropertyDescriptor(object);
+			addCaptionClassPropertyDescriptor(object);
+			addContentClassPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -77,6 +80,50 @@ public class LocalAuthenticationSystemItemProvider extends AuthenticationItemPro
 				 getString("_UI_LocalAuthenticationSystem_authenticationModel_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_LocalAuthenticationSystem_authenticationModel_feature", "_UI_LocalAuthenticationSystem_type"),
 				 SecurityPackage.Literals.LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION_MODEL,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Identifier Feture feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIdentifierFeturePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_LocalAuthenticationSystem_identifierFeture_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_LocalAuthenticationSystem_identifierFeture_feature", "_UI_LocalAuthenticationSystem_type"),
+				 SecurityPackage.Literals.LOCAL_AUTHENTICATION_SYSTEM__IDENTIFIER_FETURE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Password Feature feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPasswordFeaturePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_LocalAuthenticationSystem_passwordFeature_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_LocalAuthenticationSystem_passwordFeature_feature", "_UI_LocalAuthenticationSystem_type"),
+				 SecurityPackage.Literals.LOCAL_AUTHENTICATION_SYSTEM__PASSWORD_FEATURE,
 				 true,
 				 false,
 				 true,
@@ -130,129 +177,41 @@ public class LocalAuthenticationSystemItemProvider extends AuthenticationItemPro
 	}
 
 	/**
-	 * This adds a property descriptor for the Registration Unit feature.
+	 * This adds a property descriptor for the Has Registration Element feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addRegistrationUnitPropertyDescriptor(Object object) {
+	protected void addHasRegistrationElementPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_LocalAuthenticationSystem_registrationUnit_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_LocalAuthenticationSystem_registrationUnit_feature", "_UI_LocalAuthenticationSystem_type"),
-				 SecurityPackage.Literals.LOCAL_AUTHENTICATION_SYSTEM__REGISTRATION_UNIT,
-				 true,
+				 getString("_UI_LocalAuthenticationSystem_hasRegistrationElement_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_LocalAuthenticationSystem_hasRegistrationElement_feature", "_UI_LocalAuthenticationSystem_type"),
+				 SecurityPackage.Literals.LOCAL_AUTHENTICATION_SYSTEM__HAS_REGISTRATION_ELEMENT,
 				 false,
-				 true,
-				 null,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 null,
 				 null));
 	}
 
 	/**
-	 * This adds a property descriptor for the Login Unit feature.
+	 * This adds a property descriptor for the Captcha feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addLoginUnitPropertyDescriptor(Object object) {
+	protected void addCaptchaPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_LocalAuthenticationSystem_loginUnit_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_LocalAuthenticationSystem_loginUnit_feature", "_UI_LocalAuthenticationSystem_type"),
-				 SecurityPackage.Literals.LOCAL_AUTHENTICATION_SYSTEM__LOGIN_UNIT,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Logout Unit feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addLogoutUnitPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_LocalAuthenticationSystem_logoutUnit_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_LocalAuthenticationSystem_logoutUnit_feature", "_UI_LocalAuthenticationSystem_type"),
-				 SecurityPackage.Literals.LOCAL_AUTHENTICATION_SYSTEM__LOGOUT_UNIT,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Forgotten Password Unit feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addForgottenPasswordUnitPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_LocalAuthenticationSystem_forgottenPasswordUnit_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_LocalAuthenticationSystem_forgottenPasswordUnit_feature", "_UI_LocalAuthenticationSystem_type"),
-				 SecurityPackage.Literals.LOCAL_AUTHENTICATION_SYSTEM__FORGOTTEN_PASSWORD_UNIT,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Reset Password Unit feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addResetPasswordUnitPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_LocalAuthenticationSystem_resetPasswordUnit_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_LocalAuthenticationSystem_resetPasswordUnit_feature", "_UI_LocalAuthenticationSystem_type"),
-				 SecurityPackage.Literals.LOCAL_AUTHENTICATION_SYSTEM__RESET_PASSWORD_UNIT,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Use Captcha feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addUseCaptchaPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_LocalAuthenticationSystem_useCaptcha_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_LocalAuthenticationSystem_useCaptcha_feature", "_UI_LocalAuthenticationSystem_type"),
-				 SecurityPackage.Literals.LOCAL_AUTHENTICATION_SYSTEM__USE_CAPTCHA,
+				 getString("_UI_LocalAuthenticationSystem_captcha_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_LocalAuthenticationSystem_captcha_feature", "_UI_LocalAuthenticationSystem_type"),
+				 SecurityPackage.Literals.LOCAL_AUTHENTICATION_SYSTEM__CAPTCHA,
 				 true,
 				 false,
 				 false,
@@ -350,6 +309,106 @@ public class LocalAuthenticationSystemItemProvider extends AuthenticationItemPro
 	}
 
 	/**
+	 * This adds a property descriptor for the Section Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSectionClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_LocalAuthenticationSystem_sectionClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_LocalAuthenticationSystem_sectionClass_feature", "_UI_LocalAuthenticationSystem_type"),
+				 SecurityPackage.Literals.LOCAL_AUTHENTICATION_SYSTEM__SECTION_CLASS,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Caption Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCaptionClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_LocalAuthenticationSystem_captionClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_LocalAuthenticationSystem_captionClass_feature", "_UI_LocalAuthenticationSystem_type"),
+				 SecurityPackage.Literals.LOCAL_AUTHENTICATION_SYSTEM__CAPTION_CLASS,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Content Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addContentClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_LocalAuthenticationSystem_contentClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_LocalAuthenticationSystem_contentClass_feature", "_UI_LocalAuthenticationSystem_type"),
+				 SecurityPackage.Literals.LOCAL_AUTHENTICATION_SYSTEM__CONTENT_CLASS,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
+	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		if (childrenFeatures == null) {
+			super.getChildrenFeatures(object);
+			childrenFeatures.add(SecurityPackage.Literals.LOCAL_AUTHENTICATION_SYSTEM__REGISTRATION_ELEMENT);
+			childrenFeatures.add(SecurityPackage.Literals.LOCAL_AUTHENTICATION_SYSTEM__LOGIN_ELEMENT);
+			childrenFeatures.add(SecurityPackage.Literals.LOCAL_AUTHENTICATION_SYSTEM__LOGOUT_ELEMENT);
+			childrenFeatures.add(SecurityPackage.Literals.LOCAL_AUTHENTICATION_SYSTEM__FORGOTTEN_PASSWORD_ELEMENT);
+			childrenFeatures.add(SecurityPackage.Literals.LOCAL_AUTHENTICATION_SYSTEM__RESET_PASSWORD_ELEMENT);
+		}
+		return childrenFeatures;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EStructuralFeature getChildFeature(Object object, Object child) {
+		// Check the type of the specified child object and return the proper feature to use for
+		// adding (see {@link AddCommand}) it as a child.
+
+		return super.getChildFeature(object, child);
+	}
+
+	/**
 	 * This returns LocalAuthenticationSystem.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -389,12 +448,23 @@ public class LocalAuthenticationSystemItemProvider extends AuthenticationItemPro
 
 		switch (notification.getFeatureID(LocalAuthenticationSystem.class)) {
 			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION_KEY:
-			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__USE_CAPTCHA:
+			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__HAS_REGISTRATION_ELEMENT:
+			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__CAPTCHA:
 			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__ALLOW_REMEMBER_ME:
 			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__ALLOW_SELF_REGISTRATION:
 			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__USE_EMAIL_ACTIVATION:
 			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__SEND_WELCOME_EMAIL:
+			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__SECTION_CLASS:
+			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__CAPTION_CLASS:
+			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__CONTENT_CLASS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__REGISTRATION_ELEMENT:
+			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__LOGIN_ELEMENT:
+			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__LOGOUT_ELEMENT:
+			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__FORGOTTEN_PASSWORD_ELEMENT:
+			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__RESET_PASSWORD_ELEMENT:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
 		super.notifyChanged(notification);
@@ -410,6 +480,31 @@ public class LocalAuthenticationSystemItemProvider extends AuthenticationItemPro
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SecurityPackage.Literals.LOCAL_AUTHENTICATION_SYSTEM__REGISTRATION_ELEMENT,
+				 SecurityFactory.eINSTANCE.createRegistrationElement()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SecurityPackage.Literals.LOCAL_AUTHENTICATION_SYSTEM__LOGIN_ELEMENT,
+				 SecurityFactory.eINSTANCE.createLoginElement()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SecurityPackage.Literals.LOCAL_AUTHENTICATION_SYSTEM__LOGOUT_ELEMENT,
+				 SecurityFactory.eINSTANCE.createLogoutElement()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SecurityPackage.Literals.LOCAL_AUTHENTICATION_SYSTEM__FORGOTTEN_PASSWORD_ELEMENT,
+				 SecurityFactory.eINSTANCE.createForgottenPasswordElement()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SecurityPackage.Literals.LOCAL_AUTHENTICATION_SYSTEM__RESET_PASSWORD_ELEMENT,
+				 SecurityFactory.eINSTANCE.createResetPasswordElement()));
 	}
 
 }

@@ -61,12 +61,6 @@ public class WafTests extends TestSuite {
 		suite.addTestSuite(SliderUnitTest.class);
 		suite.addTestSuite(GalleryUnitTest.class);
 		suite.addTestSuite(SearchUnitTest.class);
-		suite.addTestSuite(RegistrationUnitTest.class);
-		suite.addTestSuite(LoginUnitTest.class);
-		suite.addTestSuite(LogoutUnitTest.class);
-		suite.addTestSuite(ForgottenPasswordUnitTest.class);
-		suite.addTestSuite(ResetPasswordUnitTest.class);
-		suite.addTestSuite(SecurityActionTest.class);
 		suite.addTestSuite(DeleteActionTest.class);
 		suite.addTestSuite(ContainerSelectActionTest.class);
 		suite.addTestSuite(InstanceSelectActionTest.class);

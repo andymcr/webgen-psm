@@ -1,6 +1,6 @@
 /**
  */
-package work.andycarpenter.metamodel.waf.provider;
+package work.andycarpenter.metamodel.security.provider;
 
 
 import java.util.Collection;
@@ -9,24 +9,26 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
-import work.andycarpenter.metamodel.waf.LogoutUnit;
+import work.andycarpenter.metamodel.security.LogoutElement;
+import work.andycarpenter.metamodel.security.SecurityPackage;
 
 /**
- * This is the item provider adapter for a {@link work.andycarpenter.metamodel.waf.LogoutUnit} object.
+ * This is the item provider adapter for a {@link work.andycarpenter.metamodel.security.LogoutElement} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class LogoutUnitItemProvider extends DynamicUnitItemProvider {
+public class LogoutElementItemProvider extends AuthenticationElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public LogoutUnitItemProvider(AdapterFactory adapterFactory) {
+	public LogoutElementItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -41,19 +43,42 @@ public class LogoutUnitItemProvider extends DynamicUnitItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addAuthenticationPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This returns LogoutUnit.gif.
+	 * This adds a property descriptor for the Authentication feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAuthenticationPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_LogoutElement_authentication_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_LogoutElement_authentication_feature", "_UI_LogoutElement_type"),
+				 SecurityPackage.Literals.LOGOUT_ELEMENT__AUTHENTICATION,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This returns LogoutElement.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/LogoutUnit"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/LogoutElement"));
 	}
 
 	/**
@@ -64,10 +89,10 @@ public class LogoutUnitItemProvider extends DynamicUnitItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((LogoutUnit)object).getName();
+		String label = ((LogoutElement)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_LogoutUnit_type") :
-			getString("_UI_LogoutUnit_type") + " " + label;
+			getString("_UI_LogoutElement_type") :
+			getString("_UI_LogoutElement_type") + " " + label;
 	}
 
 

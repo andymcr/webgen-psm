@@ -3,18 +3,25 @@
 package work.andycarpenter.metamodel.security.impl;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import work.andycarpenter.metamodel.orm.Attribute;
 import work.andycarpenter.metamodel.orm.Entity;
 
 import work.andycarpenter.metamodel.security.AuthenticationKeyTypes;
+import work.andycarpenter.metamodel.security.ForgottenPasswordElement;
 import work.andycarpenter.metamodel.security.LocalAuthenticationSystem;
+import work.andycarpenter.metamodel.security.LoginElement;
+import work.andycarpenter.metamodel.security.LogoutElement;
+import work.andycarpenter.metamodel.security.RegistrationElement;
+import work.andycarpenter.metamodel.security.ResetPasswordElement;
 import work.andycarpenter.metamodel.security.SecurityPackage;
-import work.andycarpenter.metamodel.security.SecurityUnit;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,18 +32,24 @@ import work.andycarpenter.metamodel.security.SecurityUnit;
  * </p>
  * <ul>
  *   <li>{@link work.andycarpenter.metamodel.security.impl.LocalAuthenticationSystemImpl#getAuthenticationModel <em>Authentication Model</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.security.impl.LocalAuthenticationSystemImpl#getIdentifierFeture <em>Identifier Feture</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.security.impl.LocalAuthenticationSystemImpl#getPasswordFeature <em>Password Feature</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.security.impl.LocalAuthenticationSystemImpl#getAuthenticationKey <em>Authentication Key</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.security.impl.LocalAuthenticationSystemImpl#getResetPasswordRequestModel <em>Reset Password Request Model</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.security.impl.LocalAuthenticationSystemImpl#getRegistrationUnit <em>Registration Unit</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.security.impl.LocalAuthenticationSystemImpl#getLoginUnit <em>Login Unit</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.security.impl.LocalAuthenticationSystemImpl#getLogoutUnit <em>Logout Unit</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.security.impl.LocalAuthenticationSystemImpl#getForgottenPasswordUnit <em>Forgotten Password Unit</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.security.impl.LocalAuthenticationSystemImpl#getResetPasswordUnit <em>Reset Password Unit</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.security.impl.LocalAuthenticationSystemImpl#isUseCaptcha <em>Use Captcha</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.security.impl.LocalAuthenticationSystemImpl#getRegistrationElement <em>Registration Element</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.security.impl.LocalAuthenticationSystemImpl#isHasRegistrationElement <em>Has Registration Element</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.security.impl.LocalAuthenticationSystemImpl#getLoginElement <em>Login Element</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.security.impl.LocalAuthenticationSystemImpl#getLogoutElement <em>Logout Element</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.security.impl.LocalAuthenticationSystemImpl#getForgottenPasswordElement <em>Forgotten Password Element</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.security.impl.LocalAuthenticationSystemImpl#getResetPasswordElement <em>Reset Password Element</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.security.impl.LocalAuthenticationSystemImpl#isCaptcha <em>Captcha</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.security.impl.LocalAuthenticationSystemImpl#isAllowRememberMe <em>Allow Remember Me</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.security.impl.LocalAuthenticationSystemImpl#isAllowSelfRegistration <em>Allow Self Registration</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.security.impl.LocalAuthenticationSystemImpl#isUseEmailActivation <em>Use Email Activation</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.security.impl.LocalAuthenticationSystemImpl#isSendWelcomeEmail <em>Send Welcome Email</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.security.impl.LocalAuthenticationSystemImpl#getSectionClass <em>Section Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.security.impl.LocalAuthenticationSystemImpl#getCaptionClass <em>Caption Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.security.impl.LocalAuthenticationSystemImpl#getContentClass <em>Content Class</em>}</li>
  * </ul>
  *
  * @generated
@@ -51,6 +64,26 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * @ordered
 	 */
 	protected Entity authenticationModel;
+
+	/**
+	 * The cached value of the '{@link #getIdentifierFeture() <em>Identifier Feture</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getIdentifierFeture()
+	 * @generated
+	 * @ordered
+	 */
+	protected Attribute identifierFeture;
+
+	/**
+	 * The cached value of the '{@link #getPasswordFeature() <em>Password Feature</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPasswordFeature()
+	 * @generated
+	 * @ordered
+	 */
+	protected Attribute passwordFeature;
 
 	/**
 	 * The default value of the '{@link #getAuthenticationKey() <em>Authentication Key</em>}' attribute.
@@ -83,74 +116,84 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	protected Entity resetPasswordRequestModel;
 
 	/**
-	 * The cached value of the '{@link #getRegistrationUnit() <em>Registration Unit</em>}' reference.
+	 * The cached value of the '{@link #getRegistrationElement() <em>Registration Element</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRegistrationUnit()
+	 * @see #getRegistrationElement()
 	 * @generated
 	 * @ordered
 	 */
-	protected SecurityUnit registrationUnit;
+	protected RegistrationElement registrationElement;
 
 	/**
-	 * The cached value of the '{@link #getLoginUnit() <em>Login Unit</em>}' reference.
+	 * The cached setting delegate for the '{@link #isHasRegistrationElement() <em>Has Registration Element</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getLoginUnit()
+	 * @see #isHasRegistrationElement()
 	 * @generated
 	 * @ordered
 	 */
-	protected SecurityUnit loginUnit;
+	protected EStructuralFeature.Internal.SettingDelegate HAS_REGISTRATION_ELEMENT__ESETTING_DELEGATE = ((EStructuralFeature.Internal)SecurityPackage.Literals.LOCAL_AUTHENTICATION_SYSTEM__HAS_REGISTRATION_ELEMENT).getSettingDelegate();
 
 	/**
-	 * The cached value of the '{@link #getLogoutUnit() <em>Logout Unit</em>}' reference.
+	 * The cached value of the '{@link #getLoginElement() <em>Login Element</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getLogoutUnit()
+	 * @see #getLoginElement()
 	 * @generated
 	 * @ordered
 	 */
-	protected SecurityUnit logoutUnit;
+	protected LoginElement loginElement;
 
 	/**
-	 * The cached value of the '{@link #getForgottenPasswordUnit() <em>Forgotten Password Unit</em>}' reference.
+	 * The cached value of the '{@link #getLogoutElement() <em>Logout Element</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getForgottenPasswordUnit()
+	 * @see #getLogoutElement()
 	 * @generated
 	 * @ordered
 	 */
-	protected SecurityUnit forgottenPasswordUnit;
+	protected LogoutElement logoutElement;
 
 	/**
-	 * The cached value of the '{@link #getResetPasswordUnit() <em>Reset Password Unit</em>}' reference.
+	 * The cached value of the '{@link #getForgottenPasswordElement() <em>Forgotten Password Element</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getResetPasswordUnit()
+	 * @see #getForgottenPasswordElement()
 	 * @generated
 	 * @ordered
 	 */
-	protected SecurityUnit resetPasswordUnit;
+	protected ForgottenPasswordElement forgottenPasswordElement;
 
 	/**
-	 * The default value of the '{@link #isUseCaptcha() <em>Use Captcha</em>}' attribute.
+	 * The cached value of the '{@link #getResetPasswordElement() <em>Reset Password Element</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isUseCaptcha()
+	 * @see #getResetPasswordElement()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final boolean USE_CAPTCHA_EDEFAULT = false;
+	protected ResetPasswordElement resetPasswordElement;
 
 	/**
-	 * The cached value of the '{@link #isUseCaptcha() <em>Use Captcha</em>}' attribute.
+	 * The default value of the '{@link #isCaptcha() <em>Captcha</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isUseCaptcha()
+	 * @see #isCaptcha()
 	 * @generated
 	 * @ordered
 	 */
-	protected boolean useCaptcha = USE_CAPTCHA_EDEFAULT;
+	protected static final boolean CAPTCHA_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isCaptcha() <em>Captcha</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isCaptcha()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean captcha = CAPTCHA_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #isAllowRememberMe() <em>Allow Remember Me</em>}' attribute.
@@ -233,6 +276,66 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	protected boolean sendWelcomeEmail = SEND_WELCOME_EMAIL_EDEFAULT;
 
 	/**
+	 * The default value of the '{@link #getSectionClass() <em>Section Class</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSectionClass()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String SECTION_CLASS_EDEFAULT = "";
+
+	/**
+	 * The cached value of the '{@link #getSectionClass() <em>Section Class</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSectionClass()
+	 * @generated
+	 * @ordered
+	 */
+	protected String sectionClass = SECTION_CLASS_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getCaptionClass() <em>Caption Class</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCaptionClass()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String CAPTION_CLASS_EDEFAULT = "";
+
+	/**
+	 * The cached value of the '{@link #getCaptionClass() <em>Caption Class</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCaptionClass()
+	 * @generated
+	 * @ordered
+	 */
+	protected String captionClass = CAPTION_CLASS_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getContentClass() <em>Content Class</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContentClass()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String CONTENT_CLASS_EDEFAULT = "";
+
+	/**
+	 * The cached value of the '{@link #getContentClass() <em>Content Class</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContentClass()
+	 * @generated
+	 * @ordered
+	 */
+	protected String contentClass = CONTENT_CLASS_EDEFAULT;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -287,6 +390,82 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 		authenticationModel = newAuthenticationModel;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION_MODEL, oldAuthenticationModel, authenticationModel));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Attribute getIdentifierFeture() {
+		if (identifierFeture != null && identifierFeture.eIsProxy()) {
+			InternalEObject oldIdentifierFeture = (InternalEObject)identifierFeture;
+			identifierFeture = (Attribute)eResolveProxy(oldIdentifierFeture);
+			if (identifierFeture != oldIdentifierFeture) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__IDENTIFIER_FETURE, oldIdentifierFeture, identifierFeture));
+			}
+		}
+		return identifierFeture;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Attribute basicGetIdentifierFeture() {
+		return identifierFeture;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setIdentifierFeture(Attribute newIdentifierFeture) {
+		Attribute oldIdentifierFeture = identifierFeture;
+		identifierFeture = newIdentifierFeture;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__IDENTIFIER_FETURE, oldIdentifierFeture, identifierFeture));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Attribute getPasswordFeature() {
+		if (passwordFeature != null && passwordFeature.eIsProxy()) {
+			InternalEObject oldPasswordFeature = (InternalEObject)passwordFeature;
+			passwordFeature = (Attribute)eResolveProxy(oldPasswordFeature);
+			if (passwordFeature != oldPasswordFeature) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__PASSWORD_FEATURE, oldPasswordFeature, passwordFeature));
+			}
+		}
+		return passwordFeature;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Attribute basicGetPasswordFeature() {
+		return passwordFeature;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPasswordFeature(Attribute newPasswordFeature) {
+		Attribute oldPasswordFeature = passwordFeature;
+		passwordFeature = newPasswordFeature;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__PASSWORD_FEATURE, oldPasswordFeature, passwordFeature));
 	}
 
 	/**
@@ -353,16 +532,23 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SecurityUnit getRegistrationUnit() {
-		if (registrationUnit != null && registrationUnit.eIsProxy()) {
-			InternalEObject oldRegistrationUnit = (InternalEObject)registrationUnit;
-			registrationUnit = (SecurityUnit)eResolveProxy(oldRegistrationUnit);
-			if (registrationUnit != oldRegistrationUnit) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__REGISTRATION_UNIT, oldRegistrationUnit, registrationUnit));
-			}
+	public RegistrationElement getRegistrationElement() {
+		return registrationElement;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetRegistrationElement(RegistrationElement newRegistrationElement, NotificationChain msgs) {
+		RegistrationElement oldRegistrationElement = registrationElement;
+		registrationElement = newRegistrationElement;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__REGISTRATION_ELEMENT, oldRegistrationElement, newRegistrationElement);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
-		return registrationUnit;
+		return msgs;
 	}
 
 	/**
@@ -370,37 +556,18 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SecurityUnit basicGetRegistrationUnit() {
-		return registrationUnit;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setRegistrationUnit(SecurityUnit newRegistrationUnit) {
-		SecurityUnit oldRegistrationUnit = registrationUnit;
-		registrationUnit = newRegistrationUnit;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__REGISTRATION_UNIT, oldRegistrationUnit, registrationUnit));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public SecurityUnit getLoginUnit() {
-		if (loginUnit != null && loginUnit.eIsProxy()) {
-			InternalEObject oldLoginUnit = (InternalEObject)loginUnit;
-			loginUnit = (SecurityUnit)eResolveProxy(oldLoginUnit);
-			if (loginUnit != oldLoginUnit) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__LOGIN_UNIT, oldLoginUnit, loginUnit));
-			}
+	public void setRegistrationElement(RegistrationElement newRegistrationElement) {
+		if (newRegistrationElement != registrationElement) {
+			NotificationChain msgs = null;
+			if (registrationElement != null)
+				msgs = ((InternalEObject)registrationElement).eInverseRemove(this, SecurityPackage.REGISTRATION_ELEMENT__AUTHENTICATION, RegistrationElement.class, msgs);
+			if (newRegistrationElement != null)
+				msgs = ((InternalEObject)newRegistrationElement).eInverseAdd(this, SecurityPackage.REGISTRATION_ELEMENT__AUTHENTICATION, RegistrationElement.class, msgs);
+			msgs = basicSetRegistrationElement(newRegistrationElement, msgs);
+			if (msgs != null) msgs.dispatch();
 		}
-		return loginUnit;
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__REGISTRATION_ELEMENT, newRegistrationElement, newRegistrationElement));
 	}
 
 	/**
@@ -408,8 +575,8 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SecurityUnit basicGetLoginUnit() {
-		return loginUnit;
+	public boolean isHasRegistrationElement() {
+		return (Boolean)HAS_REGISTRATION_ELEMENT__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -417,11 +584,8 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setLoginUnit(SecurityUnit newLoginUnit) {
-		SecurityUnit oldLoginUnit = loginUnit;
-		loginUnit = newLoginUnit;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__LOGIN_UNIT, oldLoginUnit, loginUnit));
+	public LoginElement getLoginElement() {
+		return loginElement;
 	}
 
 	/**
@@ -429,16 +593,14 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SecurityUnit getLogoutUnit() {
-		if (logoutUnit != null && logoutUnit.eIsProxy()) {
-			InternalEObject oldLogoutUnit = (InternalEObject)logoutUnit;
-			logoutUnit = (SecurityUnit)eResolveProxy(oldLogoutUnit);
-			if (logoutUnit != oldLogoutUnit) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__LOGOUT_UNIT, oldLogoutUnit, logoutUnit));
-			}
+	public NotificationChain basicSetLoginElement(LoginElement newLoginElement, NotificationChain msgs) {
+		LoginElement oldLoginElement = loginElement;
+		loginElement = newLoginElement;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__LOGIN_ELEMENT, oldLoginElement, newLoginElement);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
-		return logoutUnit;
+		return msgs;
 	}
 
 	/**
@@ -446,37 +608,18 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SecurityUnit basicGetLogoutUnit() {
-		return logoutUnit;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setLogoutUnit(SecurityUnit newLogoutUnit) {
-		SecurityUnit oldLogoutUnit = logoutUnit;
-		logoutUnit = newLogoutUnit;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__LOGOUT_UNIT, oldLogoutUnit, logoutUnit));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public SecurityUnit getForgottenPasswordUnit() {
-		if (forgottenPasswordUnit != null && forgottenPasswordUnit.eIsProxy()) {
-			InternalEObject oldForgottenPasswordUnit = (InternalEObject)forgottenPasswordUnit;
-			forgottenPasswordUnit = (SecurityUnit)eResolveProxy(oldForgottenPasswordUnit);
-			if (forgottenPasswordUnit != oldForgottenPasswordUnit) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__FORGOTTEN_PASSWORD_UNIT, oldForgottenPasswordUnit, forgottenPasswordUnit));
-			}
+	public void setLoginElement(LoginElement newLoginElement) {
+		if (newLoginElement != loginElement) {
+			NotificationChain msgs = null;
+			if (loginElement != null)
+				msgs = ((InternalEObject)loginElement).eInverseRemove(this, SecurityPackage.LOGIN_ELEMENT__AUTHENTICATION, LoginElement.class, msgs);
+			if (newLoginElement != null)
+				msgs = ((InternalEObject)newLoginElement).eInverseAdd(this, SecurityPackage.LOGIN_ELEMENT__AUTHENTICATION, LoginElement.class, msgs);
+			msgs = basicSetLoginElement(newLoginElement, msgs);
+			if (msgs != null) msgs.dispatch();
 		}
-		return forgottenPasswordUnit;
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__LOGIN_ELEMENT, newLoginElement, newLoginElement));
 	}
 
 	/**
@@ -484,8 +627,8 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SecurityUnit basicGetForgottenPasswordUnit() {
-		return forgottenPasswordUnit;
+	public LogoutElement getLogoutElement() {
+		return logoutElement;
 	}
 
 	/**
@@ -493,28 +636,14 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setForgottenPasswordUnit(SecurityUnit newForgottenPasswordUnit) {
-		SecurityUnit oldForgottenPasswordUnit = forgottenPasswordUnit;
-		forgottenPasswordUnit = newForgottenPasswordUnit;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__FORGOTTEN_PASSWORD_UNIT, oldForgottenPasswordUnit, forgottenPasswordUnit));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public SecurityUnit getResetPasswordUnit() {
-		if (resetPasswordUnit != null && resetPasswordUnit.eIsProxy()) {
-			InternalEObject oldResetPasswordUnit = (InternalEObject)resetPasswordUnit;
-			resetPasswordUnit = (SecurityUnit)eResolveProxy(oldResetPasswordUnit);
-			if (resetPasswordUnit != oldResetPasswordUnit) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__RESET_PASSWORD_UNIT, oldResetPasswordUnit, resetPasswordUnit));
-			}
+	public NotificationChain basicSetLogoutElement(LogoutElement newLogoutElement, NotificationChain msgs) {
+		LogoutElement oldLogoutElement = logoutElement;
+		logoutElement = newLogoutElement;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__LOGOUT_ELEMENT, oldLogoutElement, newLogoutElement);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
-		return resetPasswordUnit;
+		return msgs;
 	}
 
 	/**
@@ -522,8 +651,18 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SecurityUnit basicGetResetPasswordUnit() {
-		return resetPasswordUnit;
+	public void setLogoutElement(LogoutElement newLogoutElement) {
+		if (newLogoutElement != logoutElement) {
+			NotificationChain msgs = null;
+			if (logoutElement != null)
+				msgs = ((InternalEObject)logoutElement).eInverseRemove(this, SecurityPackage.LOGOUT_ELEMENT__AUTHENTICATION, LogoutElement.class, msgs);
+			if (newLogoutElement != null)
+				msgs = ((InternalEObject)newLogoutElement).eInverseAdd(this, SecurityPackage.LOGOUT_ELEMENT__AUTHENTICATION, LogoutElement.class, msgs);
+			msgs = basicSetLogoutElement(newLogoutElement, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__LOGOUT_ELEMENT, newLogoutElement, newLogoutElement));
 	}
 
 	/**
@@ -531,32 +670,106 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setResetPasswordUnit(SecurityUnit newResetPasswordUnit) {
-		SecurityUnit oldResetPasswordUnit = resetPasswordUnit;
-		resetPasswordUnit = newResetPasswordUnit;
+	public ForgottenPasswordElement getForgottenPasswordElement() {
+		return forgottenPasswordElement;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetForgottenPasswordElement(ForgottenPasswordElement newForgottenPasswordElement, NotificationChain msgs) {
+		ForgottenPasswordElement oldForgottenPasswordElement = forgottenPasswordElement;
+		forgottenPasswordElement = newForgottenPasswordElement;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__FORGOTTEN_PASSWORD_ELEMENT, oldForgottenPasswordElement, newForgottenPasswordElement);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setForgottenPasswordElement(ForgottenPasswordElement newForgottenPasswordElement) {
+		if (newForgottenPasswordElement != forgottenPasswordElement) {
+			NotificationChain msgs = null;
+			if (forgottenPasswordElement != null)
+				msgs = ((InternalEObject)forgottenPasswordElement).eInverseRemove(this, SecurityPackage.FORGOTTEN_PASSWORD_ELEMENT__AUTHENTICATION, ForgottenPasswordElement.class, msgs);
+			if (newForgottenPasswordElement != null)
+				msgs = ((InternalEObject)newForgottenPasswordElement).eInverseAdd(this, SecurityPackage.FORGOTTEN_PASSWORD_ELEMENT__AUTHENTICATION, ForgottenPasswordElement.class, msgs);
+			msgs = basicSetForgottenPasswordElement(newForgottenPasswordElement, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__FORGOTTEN_PASSWORD_ELEMENT, newForgottenPasswordElement, newForgottenPasswordElement));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ResetPasswordElement getResetPasswordElement() {
+		return resetPasswordElement;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetResetPasswordElement(ResetPasswordElement newResetPasswordElement, NotificationChain msgs) {
+		ResetPasswordElement oldResetPasswordElement = resetPasswordElement;
+		resetPasswordElement = newResetPasswordElement;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__RESET_PASSWORD_ELEMENT, oldResetPasswordElement, newResetPasswordElement);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setResetPasswordElement(ResetPasswordElement newResetPasswordElement) {
+		if (newResetPasswordElement != resetPasswordElement) {
+			NotificationChain msgs = null;
+			if (resetPasswordElement != null)
+				msgs = ((InternalEObject)resetPasswordElement).eInverseRemove(this, SecurityPackage.RESET_PASSWORD_ELEMENT__AUTHENTICATION, ResetPasswordElement.class, msgs);
+			if (newResetPasswordElement != null)
+				msgs = ((InternalEObject)newResetPasswordElement).eInverseAdd(this, SecurityPackage.RESET_PASSWORD_ELEMENT__AUTHENTICATION, ResetPasswordElement.class, msgs);
+			msgs = basicSetResetPasswordElement(newResetPasswordElement, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__RESET_PASSWORD_ELEMENT, newResetPasswordElement, newResetPasswordElement));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isCaptcha() {
+		return captcha;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setCaptcha(boolean newCaptcha) {
+		boolean oldCaptcha = captcha;
+		captcha = newCaptcha;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__RESET_PASSWORD_UNIT, oldResetPasswordUnit, resetPasswordUnit));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean isUseCaptcha() {
-		return useCaptcha;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setUseCaptcha(boolean newUseCaptcha) {
-		boolean oldUseCaptcha = useCaptcha;
-		useCaptcha = newUseCaptcha;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__USE_CAPTCHA, oldUseCaptcha, useCaptcha));
+			eNotify(new ENotificationImpl(this, Notification.SET, SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__CAPTCHA, oldCaptcha, captcha));
 	}
 
 	/**
@@ -648,34 +861,154 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getSectionClass() {
+		return sectionClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSectionClass(String newSectionClass) {
+		String oldSectionClass = sectionClass;
+		sectionClass = newSectionClass;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__SECTION_CLASS, oldSectionClass, sectionClass));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getCaptionClass() {
+		return captionClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setCaptionClass(String newCaptionClass) {
+		String oldCaptionClass = captionClass;
+		captionClass = newCaptionClass;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__CAPTION_CLASS, oldCaptionClass, captionClass));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getContentClass() {
+		return contentClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setContentClass(String newContentClass) {
+		String oldContentClass = contentClass;
+		contentClass = newContentClass;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__CONTENT_CLASS, oldContentClass, contentClass));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__REGISTRATION_ELEMENT:
+				if (registrationElement != null)
+					msgs = ((InternalEObject)registrationElement).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__REGISTRATION_ELEMENT, null, msgs);
+				return basicSetRegistrationElement((RegistrationElement)otherEnd, msgs);
+			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__LOGIN_ELEMENT:
+				if (loginElement != null)
+					msgs = ((InternalEObject)loginElement).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__LOGIN_ELEMENT, null, msgs);
+				return basicSetLoginElement((LoginElement)otherEnd, msgs);
+			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__LOGOUT_ELEMENT:
+				if (logoutElement != null)
+					msgs = ((InternalEObject)logoutElement).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__LOGOUT_ELEMENT, null, msgs);
+				return basicSetLogoutElement((LogoutElement)otherEnd, msgs);
+			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__FORGOTTEN_PASSWORD_ELEMENT:
+				if (forgottenPasswordElement != null)
+					msgs = ((InternalEObject)forgottenPasswordElement).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__FORGOTTEN_PASSWORD_ELEMENT, null, msgs);
+				return basicSetForgottenPasswordElement((ForgottenPasswordElement)otherEnd, msgs);
+			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__RESET_PASSWORD_ELEMENT:
+				if (resetPasswordElement != null)
+					msgs = ((InternalEObject)resetPasswordElement).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__RESET_PASSWORD_ELEMENT, null, msgs);
+				return basicSetResetPasswordElement((ResetPasswordElement)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__REGISTRATION_ELEMENT:
+				return basicSetRegistrationElement(null, msgs);
+			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__LOGIN_ELEMENT:
+				return basicSetLoginElement(null, msgs);
+			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__LOGOUT_ELEMENT:
+				return basicSetLogoutElement(null, msgs);
+			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__FORGOTTEN_PASSWORD_ELEMENT:
+				return basicSetForgottenPasswordElement(null, msgs);
+			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__RESET_PASSWORD_ELEMENT:
+				return basicSetResetPasswordElement(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION_MODEL:
 				if (resolve) return getAuthenticationModel();
 				return basicGetAuthenticationModel();
+			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__IDENTIFIER_FETURE:
+				if (resolve) return getIdentifierFeture();
+				return basicGetIdentifierFeture();
+			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__PASSWORD_FEATURE:
+				if (resolve) return getPasswordFeature();
+				return basicGetPasswordFeature();
 			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION_KEY:
 				return getAuthenticationKey();
 			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__RESET_PASSWORD_REQUEST_MODEL:
 				if (resolve) return getResetPasswordRequestModel();
 				return basicGetResetPasswordRequestModel();
-			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__REGISTRATION_UNIT:
-				if (resolve) return getRegistrationUnit();
-				return basicGetRegistrationUnit();
-			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__LOGIN_UNIT:
-				if (resolve) return getLoginUnit();
-				return basicGetLoginUnit();
-			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__LOGOUT_UNIT:
-				if (resolve) return getLogoutUnit();
-				return basicGetLogoutUnit();
-			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__FORGOTTEN_PASSWORD_UNIT:
-				if (resolve) return getForgottenPasswordUnit();
-				return basicGetForgottenPasswordUnit();
-			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__RESET_PASSWORD_UNIT:
-				if (resolve) return getResetPasswordUnit();
-				return basicGetResetPasswordUnit();
-			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__USE_CAPTCHA:
-				return isUseCaptcha();
+			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__REGISTRATION_ELEMENT:
+				return getRegistrationElement();
+			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__HAS_REGISTRATION_ELEMENT:
+				return isHasRegistrationElement();
+			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__LOGIN_ELEMENT:
+				return getLoginElement();
+			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__LOGOUT_ELEMENT:
+				return getLogoutElement();
+			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__FORGOTTEN_PASSWORD_ELEMENT:
+				return getForgottenPasswordElement();
+			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__RESET_PASSWORD_ELEMENT:
+				return getResetPasswordElement();
+			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__CAPTCHA:
+				return isCaptcha();
 			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__ALLOW_REMEMBER_ME:
 				return isAllowRememberMe();
 			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__ALLOW_SELF_REGISTRATION:
@@ -684,6 +1017,12 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 				return isUseEmailActivation();
 			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__SEND_WELCOME_EMAIL:
 				return isSendWelcomeEmail();
+			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__SECTION_CLASS:
+				return getSectionClass();
+			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__CAPTION_CLASS:
+				return getCaptionClass();
+			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__CONTENT_CLASS:
+				return getContentClass();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -699,29 +1038,35 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION_MODEL:
 				setAuthenticationModel((Entity)newValue);
 				return;
+			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__IDENTIFIER_FETURE:
+				setIdentifierFeture((Attribute)newValue);
+				return;
+			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__PASSWORD_FEATURE:
+				setPasswordFeature((Attribute)newValue);
+				return;
 			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION_KEY:
 				setAuthenticationKey((AuthenticationKeyTypes)newValue);
 				return;
 			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__RESET_PASSWORD_REQUEST_MODEL:
 				setResetPasswordRequestModel((Entity)newValue);
 				return;
-			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__REGISTRATION_UNIT:
-				setRegistrationUnit((SecurityUnit)newValue);
+			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__REGISTRATION_ELEMENT:
+				setRegistrationElement((RegistrationElement)newValue);
 				return;
-			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__LOGIN_UNIT:
-				setLoginUnit((SecurityUnit)newValue);
+			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__LOGIN_ELEMENT:
+				setLoginElement((LoginElement)newValue);
 				return;
-			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__LOGOUT_UNIT:
-				setLogoutUnit((SecurityUnit)newValue);
+			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__LOGOUT_ELEMENT:
+				setLogoutElement((LogoutElement)newValue);
 				return;
-			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__FORGOTTEN_PASSWORD_UNIT:
-				setForgottenPasswordUnit((SecurityUnit)newValue);
+			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__FORGOTTEN_PASSWORD_ELEMENT:
+				setForgottenPasswordElement((ForgottenPasswordElement)newValue);
 				return;
-			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__RESET_PASSWORD_UNIT:
-				setResetPasswordUnit((SecurityUnit)newValue);
+			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__RESET_PASSWORD_ELEMENT:
+				setResetPasswordElement((ResetPasswordElement)newValue);
 				return;
-			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__USE_CAPTCHA:
-				setUseCaptcha((Boolean)newValue);
+			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__CAPTCHA:
+				setCaptcha((Boolean)newValue);
 				return;
 			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__ALLOW_REMEMBER_ME:
 				setAllowRememberMe((Boolean)newValue);
@@ -734,6 +1079,15 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 				return;
 			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__SEND_WELCOME_EMAIL:
 				setSendWelcomeEmail((Boolean)newValue);
+				return;
+			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__SECTION_CLASS:
+				setSectionClass((String)newValue);
+				return;
+			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__CAPTION_CLASS:
+				setCaptionClass((String)newValue);
+				return;
+			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__CONTENT_CLASS:
+				setContentClass((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -750,29 +1104,35 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION_MODEL:
 				setAuthenticationModel((Entity)null);
 				return;
+			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__IDENTIFIER_FETURE:
+				setIdentifierFeture((Attribute)null);
+				return;
+			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__PASSWORD_FEATURE:
+				setPasswordFeature((Attribute)null);
+				return;
 			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION_KEY:
 				setAuthenticationKey(AUTHENTICATION_KEY_EDEFAULT);
 				return;
 			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__RESET_PASSWORD_REQUEST_MODEL:
 				setResetPasswordRequestModel((Entity)null);
 				return;
-			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__REGISTRATION_UNIT:
-				setRegistrationUnit((SecurityUnit)null);
+			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__REGISTRATION_ELEMENT:
+				setRegistrationElement((RegistrationElement)null);
 				return;
-			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__LOGIN_UNIT:
-				setLoginUnit((SecurityUnit)null);
+			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__LOGIN_ELEMENT:
+				setLoginElement((LoginElement)null);
 				return;
-			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__LOGOUT_UNIT:
-				setLogoutUnit((SecurityUnit)null);
+			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__LOGOUT_ELEMENT:
+				setLogoutElement((LogoutElement)null);
 				return;
-			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__FORGOTTEN_PASSWORD_UNIT:
-				setForgottenPasswordUnit((SecurityUnit)null);
+			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__FORGOTTEN_PASSWORD_ELEMENT:
+				setForgottenPasswordElement((ForgottenPasswordElement)null);
 				return;
-			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__RESET_PASSWORD_UNIT:
-				setResetPasswordUnit((SecurityUnit)null);
+			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__RESET_PASSWORD_ELEMENT:
+				setResetPasswordElement((ResetPasswordElement)null);
 				return;
-			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__USE_CAPTCHA:
-				setUseCaptcha(USE_CAPTCHA_EDEFAULT);
+			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__CAPTCHA:
+				setCaptcha(CAPTCHA_EDEFAULT);
 				return;
 			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__ALLOW_REMEMBER_ME:
 				setAllowRememberMe(ALLOW_REMEMBER_ME_EDEFAULT);
@@ -785,6 +1145,15 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 				return;
 			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__SEND_WELCOME_EMAIL:
 				setSendWelcomeEmail(SEND_WELCOME_EMAIL_EDEFAULT);
+				return;
+			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__SECTION_CLASS:
+				setSectionClass(SECTION_CLASS_EDEFAULT);
+				return;
+			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__CAPTION_CLASS:
+				setCaptionClass(CAPTION_CLASS_EDEFAULT);
+				return;
+			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__CONTENT_CLASS:
+				setContentClass(CONTENT_CLASS_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -800,22 +1169,28 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 		switch (featureID) {
 			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION_MODEL:
 				return authenticationModel != null;
+			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__IDENTIFIER_FETURE:
+				return identifierFeture != null;
+			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__PASSWORD_FEATURE:
+				return passwordFeature != null;
 			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION_KEY:
 				return authenticationKey != AUTHENTICATION_KEY_EDEFAULT;
 			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__RESET_PASSWORD_REQUEST_MODEL:
 				return resetPasswordRequestModel != null;
-			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__REGISTRATION_UNIT:
-				return registrationUnit != null;
-			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__LOGIN_UNIT:
-				return loginUnit != null;
-			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__LOGOUT_UNIT:
-				return logoutUnit != null;
-			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__FORGOTTEN_PASSWORD_UNIT:
-				return forgottenPasswordUnit != null;
-			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__RESET_PASSWORD_UNIT:
-				return resetPasswordUnit != null;
-			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__USE_CAPTCHA:
-				return useCaptcha != USE_CAPTCHA_EDEFAULT;
+			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__REGISTRATION_ELEMENT:
+				return registrationElement != null;
+			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__HAS_REGISTRATION_ELEMENT:
+				return HAS_REGISTRATION_ELEMENT__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__LOGIN_ELEMENT:
+				return loginElement != null;
+			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__LOGOUT_ELEMENT:
+				return logoutElement != null;
+			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__FORGOTTEN_PASSWORD_ELEMENT:
+				return forgottenPasswordElement != null;
+			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__RESET_PASSWORD_ELEMENT:
+				return resetPasswordElement != null;
+			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__CAPTCHA:
+				return captcha != CAPTCHA_EDEFAULT;
 			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__ALLOW_REMEMBER_ME:
 				return allowRememberMe != ALLOW_REMEMBER_ME_EDEFAULT;
 			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__ALLOW_SELF_REGISTRATION:
@@ -824,6 +1199,12 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 				return useEmailActivation != USE_EMAIL_ACTIVATION_EDEFAULT;
 			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__SEND_WELCOME_EMAIL:
 				return sendWelcomeEmail != SEND_WELCOME_EMAIL_EDEFAULT;
+			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__SECTION_CLASS:
+				return SECTION_CLASS_EDEFAULT == null ? sectionClass != null : !SECTION_CLASS_EDEFAULT.equals(sectionClass);
+			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__CAPTION_CLASS:
+				return CAPTION_CLASS_EDEFAULT == null ? captionClass != null : !CAPTION_CLASS_EDEFAULT.equals(captionClass);
+			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__CONTENT_CLASS:
+				return CONTENT_CLASS_EDEFAULT == null ? contentClass != null : !CONTENT_CLASS_EDEFAULT.equals(contentClass);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -840,8 +1221,8 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (authenticationKey: ");
 		result.append(authenticationKey);
-		result.append(", useCaptcha: ");
-		result.append(useCaptcha);
+		result.append(", captcha: ");
+		result.append(captcha);
 		result.append(", allowRememberMe: ");
 		result.append(allowRememberMe);
 		result.append(", allowSelfRegistration: ");
@@ -850,6 +1231,12 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 		result.append(useEmailActivation);
 		result.append(", sendWelcomeEmail: ");
 		result.append(sendWelcomeEmail);
+		result.append(", sectionClass: ");
+		result.append(sectionClass);
+		result.append(", captionClass: ");
+		result.append(captionClass);
+		result.append(", contentClass: ");
+		result.append(contentClass);
 		result.append(')');
 		return result.toString();
 	}

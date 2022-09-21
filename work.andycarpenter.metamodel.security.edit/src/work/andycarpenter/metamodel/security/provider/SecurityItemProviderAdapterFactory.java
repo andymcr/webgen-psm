@@ -118,6 +118,121 @@ public class SecurityItemProviderAdapterFactory extends SecurityAdapterFactory i
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.security.RegistrationElement} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected RegistrationElementItemProvider registrationElementItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link work.andycarpenter.metamodel.security.RegistrationElement}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createRegistrationElementAdapter() {
+		if (registrationElementItemProvider == null) {
+			registrationElementItemProvider = new RegistrationElementItemProvider(this);
+		}
+
+		return registrationElementItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.security.LoginElement} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected LoginElementItemProvider loginElementItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link work.andycarpenter.metamodel.security.LoginElement}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createLoginElementAdapter() {
+		if (loginElementItemProvider == null) {
+			loginElementItemProvider = new LoginElementItemProvider(this);
+		}
+
+		return loginElementItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.security.LogoutElement} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected LogoutElementItemProvider logoutElementItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link work.andycarpenter.metamodel.security.LogoutElement}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createLogoutElementAdapter() {
+		if (logoutElementItemProvider == null) {
+			logoutElementItemProvider = new LogoutElementItemProvider(this);
+		}
+
+		return logoutElementItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.security.ForgottenPasswordElement} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ForgottenPasswordElementItemProvider forgottenPasswordElementItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link work.andycarpenter.metamodel.security.ForgottenPasswordElement}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createForgottenPasswordElementAdapter() {
+		if (forgottenPasswordElementItemProvider == null) {
+			forgottenPasswordElementItemProvider = new ForgottenPasswordElementItemProvider(this);
+		}
+
+		return forgottenPasswordElementItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.security.ResetPasswordElement} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ResetPasswordElementItemProvider resetPasswordElementItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link work.andycarpenter.metamodel.security.ResetPasswordElement}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createResetPasswordElementAdapter() {
+		if (resetPasswordElementItemProvider == null) {
+			resetPasswordElementItemProvider = new ResetPasswordElementItemProvider(this);
+		}
+
+		return resetPasswordElementItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.security.CasAuthentication} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -241,6 +356,11 @@ public class SecurityItemProviderAdapterFactory extends SecurityAdapterFactory i
 	public void dispose() {
 		if (securityModelItemProvider != null) securityModelItemProvider.dispose();
 		if (localAuthenticationSystemItemProvider != null) localAuthenticationSystemItemProvider.dispose();
+		if (registrationElementItemProvider != null) registrationElementItemProvider.dispose();
+		if (loginElementItemProvider != null) loginElementItemProvider.dispose();
+		if (logoutElementItemProvider != null) logoutElementItemProvider.dispose();
+		if (forgottenPasswordElementItemProvider != null) forgottenPasswordElementItemProvider.dispose();
+		if (resetPasswordElementItemProvider != null) resetPasswordElementItemProvider.dispose();
 		if (casAuthenticationItemProvider != null) casAuthenticationItemProvider.dispose();
 	}
 

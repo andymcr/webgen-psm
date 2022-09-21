@@ -59,6 +59,11 @@ public class SecurityFactoryImpl extends EFactoryImpl implements SecurityFactory
 		switch (eClass.getClassifierID()) {
 			case SecurityPackage.SECURITY_MODEL: return createSecurityModel();
 			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM: return createLocalAuthenticationSystem();
+			case SecurityPackage.REGISTRATION_ELEMENT: return createRegistrationElement();
+			case SecurityPackage.LOGIN_ELEMENT: return createLoginElement();
+			case SecurityPackage.LOGOUT_ELEMENT: return createLogoutElement();
+			case SecurityPackage.FORGOTTEN_PASSWORD_ELEMENT: return createForgottenPasswordElement();
+			case SecurityPackage.RESET_PASSWORD_ELEMENT: return createResetPasswordElement();
 			case SecurityPackage.CAS_AUTHENTICATION: return createCasAuthentication();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -113,6 +118,56 @@ public class SecurityFactoryImpl extends EFactoryImpl implements SecurityFactory
 	public LocalAuthenticationSystem createLocalAuthenticationSystem() {
 		LocalAuthenticationSystemImpl localAuthenticationSystem = new LocalAuthenticationSystemImpl();
 		return localAuthenticationSystem;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RegistrationElement createRegistrationElement() {
+		RegistrationElementImpl registrationElement = new RegistrationElementImpl();
+		return registrationElement;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public LoginElement createLoginElement() {
+		LoginElementImpl loginElement = new LoginElementImpl();
+		return loginElement;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public LogoutElement createLogoutElement() {
+		LogoutElementImpl logoutElement = new LogoutElementImpl();
+		return logoutElement;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ForgottenPasswordElement createForgottenPasswordElement() {
+		ForgottenPasswordElementImpl forgottenPasswordElement = new ForgottenPasswordElementImpl();
+		return forgottenPasswordElement;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ResetPasswordElement createResetPasswordElement() {
+		ResetPasswordElementImpl resetPasswordElement = new ResetPasswordElementImpl();
+		return resetPasswordElement;
 	}
 
 	/**

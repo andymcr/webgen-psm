@@ -2099,11 +2099,6 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.eINSTANCE.getActionContainer_AllActions(),
-				 WafFactory.eINSTANCE.createSecurityAction()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.eINSTANCE.getActionContainer_AllActions(),
 				 WafFactory.eINSTANCE.createDeleteAction()));
 
 		newChildDescriptors.add

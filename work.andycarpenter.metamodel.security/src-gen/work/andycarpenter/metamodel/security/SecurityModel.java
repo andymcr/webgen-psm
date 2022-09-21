@@ -15,10 +15,6 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link work.andycarpenter.metamodel.security.SecurityModel#getAuthentication <em>Authentication</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.security.SecurityModel#isIsAuthenticated <em>Is Authenticated</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.security.SecurityModel#isIsCasAuthenticated <em>Is Cas Authenticated</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.security.SecurityModel#getCasAuthentication <em>Cas Authentication</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.security.SecurityModel#isIsLocallyAuthenticated <em>Is Locally Authenticated</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.security.SecurityModel#getLocalAuthentication <em>Local Authentication</em>}</li>
  * </ul>
  *
  * @see work.andycarpenter.metamodel.security.SecurityPackage#getSecurityModel()
@@ -70,97 +66,5 @@ public interface SecurityModel extends EObject {
 	 * @generated
 	 */
 	boolean isSetIsAuthenticated();
-
-	/**
-	 * Returns the value of the '<em><b>Is Cas Authenticated</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Is Cas Authenticated</em>' attribute.
-	 * @see #isSetIsCasAuthenticated()
-	 * @see work.andycarpenter.metamodel.security.SecurityPackage#getSecurityModel_IsCasAuthenticated()
-	 * @model unique="false" unsettable="true" transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if self.isAuthenticated = true then\n\t\t\tauthentication.oclIsTypeOf(CasAuthentication)\n\t\telse\n\t\t\tfalse\n\t\tendif'"
-	 * @generated
-	 */
-	boolean isIsCasAuthenticated();
-
-	/**
-	 * Returns whether the value of the '{@link work.andycarpenter.metamodel.security.SecurityModel#isIsCasAuthenticated <em>Is Cas Authenticated</em>}' attribute is set.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return whether the value of the '<em>Is Cas Authenticated</em>' attribute is set.
-	 * @see #isIsCasAuthenticated()
-	 * @generated
-	 */
-	boolean isSetIsCasAuthenticated();
-
-	/**
-	 * Returns the value of the '<em><b>Cas Authentication</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Cas Authentication</em>' reference.
-	 * @see #isSetCasAuthentication()
-	 * @see work.andycarpenter.metamodel.security.SecurityPackage#getSecurityModel_CasAuthentication()
-	 * @model unsettable="true" transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if self.isCasAuthenticated = true then\n\t\t\tauthentication.oclAsType(CasAuthentication)\n\t\telse\n\t\t\tnull\n\t\tendif'"
-	 * @generated
-	 */
-	CasAuthentication getCasAuthentication();
-
-	/**
-	 * Returns whether the value of the '{@link work.andycarpenter.metamodel.security.SecurityModel#getCasAuthentication <em>Cas Authentication</em>}' reference is set.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return whether the value of the '<em>Cas Authentication</em>' reference is set.
-	 * @see #getCasAuthentication()
-	 * @generated
-	 */
-	boolean isSetCasAuthentication();
-
-	/**
-	 * Returns the value of the '<em><b>Is Locally Authenticated</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Is Locally Authenticated</em>' attribute.
-	 * @see #isSetIsLocallyAuthenticated()
-	 * @see work.andycarpenter.metamodel.security.SecurityPackage#getSecurityModel_IsLocallyAuthenticated()
-	 * @model unique="false" unsettable="true" transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if self.isAuthenticated = true then\n\t\t\tauthentication.oclIsTypeOf(LocalAuthenticationSystem)\n\t\telse\n\t\t\tfalse\n\t\tendif'"
-	 * @generated
-	 */
-	boolean isIsLocallyAuthenticated();
-
-	/**
-	 * Returns whether the value of the '{@link work.andycarpenter.metamodel.security.SecurityModel#isIsLocallyAuthenticated <em>Is Locally Authenticated</em>}' attribute is set.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return whether the value of the '<em>Is Locally Authenticated</em>' attribute is set.
-	 * @see #isIsLocallyAuthenticated()
-	 * @generated
-	 */
-	boolean isSetIsLocallyAuthenticated();
-
-	/**
-	 * Returns the value of the '<em><b>Local Authentication</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Local Authentication</em>' reference.
-	 * @see #isSetLocalAuthentication()
-	 * @see work.andycarpenter.metamodel.security.SecurityPackage#getSecurityModel_LocalAuthentication()
-	 * @model unsettable="true" transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if self.isLocallyAuthenticated = true then\n\t\t\tauthentication.oclAsType(LocalAuthenticationSystem)\n\t\telse\n\t\t\tnull\n\t\tendif'"
-	 * @generated
-	 */
-	LocalAuthenticationSystem getLocalAuthentication();
-
-	/**
-	 * Returns whether the value of the '{@link work.andycarpenter.metamodel.security.SecurityModel#getLocalAuthentication <em>Local Authentication</em>}' reference is set.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return whether the value of the '<em>Local Authentication</em>' reference is set.
-	 * @see #getLocalAuthentication()
-	 * @generated
-	 */
-	boolean isSetLocalAuthentication();
 
 } // SecurityModel

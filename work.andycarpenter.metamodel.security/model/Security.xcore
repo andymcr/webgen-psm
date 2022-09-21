@@ -13,6 +13,7 @@
 	childCreationExtenders="true")
 package work.andycarpenter.metamodel.security
 
+import work.andycarpenter.metamodel.base.NamedDisplayElement
 import work.andycarpenter.metamodel.orm.Attribute
 import work.andycarpenter.metamodel.orm.Entity
 
@@ -24,34 +25,6 @@ class SecurityModel {
 
 	@OCL(derivation="not authentication.oclIsUndefined()")
 	derived readonly unsettable transient volatile boolean isAuthenticated
-
-	@OCL(derivation="if self.isAuthenticated = true then
-			authentication.oclIsTypeOf(CasAuthentication)
-		else
-			false
-		endif")
-	derived readonly unsettable transient volatile boolean isCasAuthenticated
-
-	@OCL(derivation="if self.isCasAuthenticated = true then
-			authentication.oclAsType(CasAuthentication)
-		else
-			null
-		endif")
-	refers derived readonly unsettable transient volatile CasAuthentication casAuthentication
-
-	@OCL(derivation="if self.isAuthenticated = true then
-			authentication.oclIsTypeOf(LocalAuthenticationSystem)
-		else
-			false
-		endif")
-	derived readonly unsettable transient volatile boolean isLocallyAuthenticated
-
-	@OCL(derivation="if self.isLocallyAuthenticated = true then
-			authentication.oclAsType(LocalAuthenticationSystem)
-		else
-			null
-		endif")
-	refers derived readonly unsettable transient volatile LocalAuthenticationSystem localAuthentication
 }
 
 abstract class Authentication {
@@ -67,24 +40,109 @@ enum AuthenticationKeyTypes {
 
 class LocalAuthenticationSystem extends Authentication {
 	refers Entity[1] authenticationModel
+	refers Attribute[1] identifierFeture
+	refers Attribute[1] passwordFeature
+
 	AuthenticationKeyTypes[1] authenticationKey
+
 	refers Entity[1] resetPasswordRequestModel
-	refers SecurityUnit registrationUnit
-	refers SecurityUnit[1] loginUnit
-	refers SecurityUnit[1] logoutUnit
-	refers SecurityUnit forgottenPasswordUnit
-	refers SecurityUnit[1] resetPasswordUnit
-	boolean useCaptcha
+
+	contains RegistrationElement registrationElement opposite authentication
+	@OCL(derivation="not registrationElement.oclIsUndefined()")
+	derived readonly transient volatile boolean hasRegistrationElement
+
+	contains LoginElement[1] loginElement opposite authentication
+
+	contains LogoutElement[1] logoutElement opposite authentication
+
+	contains ForgottenPasswordElement[1] forgottenPasswordElement opposite authentication
+
+	contains ResetPasswordElement[1] resetPasswordElement opposite authentication
+
+	boolean captcha
+
 	boolean allowRememberMe
+
 	boolean allowSelfRegistration
+
 	boolean useEmailActivation = "true"
+
 	boolean sendWelcomeEmail = "true"
+
+	String sectionClass = ''
+	String captionClass = ''
+	String contentClass = ''
 }
+
+abstract class AuthenticationElement extends NamedDisplayElement {
+	String[1] confirmLabel = ''
+
+	String uriElement = ''
+
+	String sectionClassOverride = ''
+	@OCL(derivation="if sectionClassOverride.trim() <> '' then
+			sectionClassOverride.trim()
+		else if self.oclAsType(ecore::EObject).eContainer().sectionClass.trim() <> '' then
+			self.eContainer().sectionClass.trim()
+		else
+			''
+		endif endif")
+	derived readonly transient volatile String sectionClass
+	@OCL(derivation="sectionClass <> ''")
+	derived readonly transient volatile boolean hasSectionClass
+
+	String captionClassOverride = ''
+	@OCL(derivation="if captionClassOverride.trim() <> '' then
+			captionClassOverride.trim()
+		else if self.oclAsType(ecore::EObject).eContainer().captionClass.trim() <> '' then
+			self.eContainer().captionClass.trim()
+		else
+			''
+		endif endif")
+	derived readonly transient volatile String captionClass
+	@OCL(derivation="captionClass <> ''")
+	derived readonly transient volatile boolean hasCaptionClass
+
+	String contentClassOverride = ''
+	@OCL(derivation="if contentClassOverride.trim() <> '' then
+			contentClassOverride.trim()
+		else if self.oclAsType(ecore::EObject).eContainer().contentClass.trim() <> '' then
+			self.eContainer().contentClass.trim()
+		else
+			''
+		endif endif")
+	derived readonly transient volatile String contentClass
+	@OCL(derivation="contentClass <> ''")
+	derived readonly transient volatile boolean hasContentClass
+}
+
+class RegistrationElement extends AuthenticationElement {
+	refers LocalAuthenticationSystem[1] authentication opposite registrationElement
+}
+
+class LoginElement extends AuthenticationElement {
+	refers LocalAuthenticationSystem[1] authentication opposite loginElement
+}
+
+class LogoutElement extends AuthenticationElement {
+	refers LocalAuthenticationSystem[1] authentication opposite logoutElement
+}
+
+class ForgottenPasswordElement extends AuthenticationElement {
+	refers LocalAuthenticationSystem[1] authentication opposite forgottenPasswordElement
+	String[1] uriEmailSent
+	String[1] emailSubject
+	String[1] emailMessage
+	String[1] emailSentCaption
+	String[1] emailSentMessage
+}
+
+class ResetPasswordElement extends AuthenticationElement {
+	refers LocalAuthenticationSystem[1] authentication opposite resetPasswordElement
+}
+
 
 class CasAuthentication extends Authentication {
 	String[1] loginLabel
 	String logoutLabel
-}
-
-interface SecurityUnit {
 }

@@ -13,8 +13,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import work.andycarpenter.metamodel.security.Authentication;
-import work.andycarpenter.metamodel.security.CasAuthentication;
-import work.andycarpenter.metamodel.security.LocalAuthenticationSystem;
 import work.andycarpenter.metamodel.security.SecurityModel;
 import work.andycarpenter.metamodel.security.SecurityPackage;
 
@@ -28,10 +26,6 @@ import work.andycarpenter.metamodel.security.SecurityPackage;
  * <ul>
  *   <li>{@link work.andycarpenter.metamodel.security.impl.SecurityModelImpl#getAuthentication <em>Authentication</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.security.impl.SecurityModelImpl#isIsAuthenticated <em>Is Authenticated</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.security.impl.SecurityModelImpl#isIsCasAuthenticated <em>Is Cas Authenticated</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.security.impl.SecurityModelImpl#getCasAuthentication <em>Cas Authentication</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.security.impl.SecurityModelImpl#isIsLocallyAuthenticated <em>Is Locally Authenticated</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.security.impl.SecurityModelImpl#getLocalAuthentication <em>Local Authentication</em>}</li>
  * </ul>
  *
  * @generated
@@ -56,46 +50,6 @@ public class SecurityModelImpl extends MinimalEObjectImpl.Container implements S
 	 * @ordered
 	 */
 	protected EStructuralFeature.Internal.SettingDelegate IS_AUTHENTICATED__ESETTING_DELEGATE = ((EStructuralFeature.Internal)SecurityPackage.Literals.SECURITY_MODEL__IS_AUTHENTICATED).getSettingDelegate();
-
-	/**
-	 * The cached setting delegate for the '{@link #isIsCasAuthenticated() <em>Is Cas Authenticated</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isIsCasAuthenticated()
-	 * @generated
-	 * @ordered
-	 */
-	protected EStructuralFeature.Internal.SettingDelegate IS_CAS_AUTHENTICATED__ESETTING_DELEGATE = ((EStructuralFeature.Internal)SecurityPackage.Literals.SECURITY_MODEL__IS_CAS_AUTHENTICATED).getSettingDelegate();
-
-	/**
-	 * The cached setting delegate for the '{@link #getCasAuthentication() <em>Cas Authentication</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCasAuthentication()
-	 * @generated
-	 * @ordered
-	 */
-	protected EStructuralFeature.Internal.SettingDelegate CAS_AUTHENTICATION__ESETTING_DELEGATE = ((EStructuralFeature.Internal)SecurityPackage.Literals.SECURITY_MODEL__CAS_AUTHENTICATION).getSettingDelegate();
-
-	/**
-	 * The cached setting delegate for the '{@link #isIsLocallyAuthenticated() <em>Is Locally Authenticated</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isIsLocallyAuthenticated()
-	 * @generated
-	 * @ordered
-	 */
-	protected EStructuralFeature.Internal.SettingDelegate IS_LOCALLY_AUTHENTICATED__ESETTING_DELEGATE = ((EStructuralFeature.Internal)SecurityPackage.Literals.SECURITY_MODEL__IS_LOCALLY_AUTHENTICATED).getSettingDelegate();
-
-	/**
-	 * The cached setting delegate for the '{@link #getLocalAuthentication() <em>Local Authentication</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLocalAuthentication()
-	 * @generated
-	 * @ordered
-	 */
-	protected EStructuralFeature.Internal.SettingDelegate LOCAL_AUTHENTICATION__ESETTING_DELEGATE = ((EStructuralFeature.Internal)SecurityPackage.Literals.SECURITY_MODEL__LOCAL_AUTHENTICATION).getSettingDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -182,96 +136,6 @@ public class SecurityModelImpl extends MinimalEObjectImpl.Container implements S
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isIsCasAuthenticated() {
-		return (Boolean)IS_CAS_AUTHENTICATED__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean isSetIsCasAuthenticated() {
-		return IS_CAS_AUTHENTICATED__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public CasAuthentication getCasAuthentication() {
-		return (CasAuthentication)CAS_AUTHENTICATION__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public CasAuthentication basicGetCasAuthentication() {
-		return (CasAuthentication)CAS_AUTHENTICATION__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean isSetCasAuthentication() {
-		return CAS_AUTHENTICATION__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean isIsLocallyAuthenticated() {
-		return (Boolean)IS_LOCALLY_AUTHENTICATED__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean isSetIsLocallyAuthenticated() {
-		return IS_LOCALLY_AUTHENTICATED__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public LocalAuthenticationSystem getLocalAuthentication() {
-		return (LocalAuthenticationSystem)LOCAL_AUTHENTICATION__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public LocalAuthenticationSystem basicGetLocalAuthentication() {
-		return (LocalAuthenticationSystem)LOCAL_AUTHENTICATION__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean isSetLocalAuthentication() {
-		return LOCAL_AUTHENTICATION__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -293,16 +157,6 @@ public class SecurityModelImpl extends MinimalEObjectImpl.Container implements S
 				return getAuthentication();
 			case SecurityPackage.SECURITY_MODEL__IS_AUTHENTICATED:
 				return isIsAuthenticated();
-			case SecurityPackage.SECURITY_MODEL__IS_CAS_AUTHENTICATED:
-				return isIsCasAuthenticated();
-			case SecurityPackage.SECURITY_MODEL__CAS_AUTHENTICATION:
-				if (resolve) return getCasAuthentication();
-				return basicGetCasAuthentication();
-			case SecurityPackage.SECURITY_MODEL__IS_LOCALLY_AUTHENTICATED:
-				return isIsLocallyAuthenticated();
-			case SecurityPackage.SECURITY_MODEL__LOCAL_AUTHENTICATION:
-				if (resolve) return getLocalAuthentication();
-				return basicGetLocalAuthentication();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -349,14 +203,6 @@ public class SecurityModelImpl extends MinimalEObjectImpl.Container implements S
 				return authentication != null;
 			case SecurityPackage.SECURITY_MODEL__IS_AUTHENTICATED:
 				return isSetIsAuthenticated();
-			case SecurityPackage.SECURITY_MODEL__IS_CAS_AUTHENTICATED:
-				return isSetIsCasAuthenticated();
-			case SecurityPackage.SECURITY_MODEL__CAS_AUTHENTICATION:
-				return isSetCasAuthentication();
-			case SecurityPackage.SECURITY_MODEL__IS_LOCALLY_AUTHENTICATED:
-				return isSetIsLocallyAuthenticated();
-			case SecurityPackage.SECURITY_MODEL__LOCAL_AUTHENTICATION:
-				return isSetLocalAuthentication();
 		}
 		return super.eIsSet(featureID);
 	}

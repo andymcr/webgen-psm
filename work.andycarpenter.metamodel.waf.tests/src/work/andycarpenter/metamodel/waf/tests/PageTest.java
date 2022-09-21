@@ -19,6 +19,7 @@ import work.andycarpenter.metamodel.waf.WafFactory;
  *   <li>{@link work.andycarpenter.metamodel.waf.Page#getCommonRole() <em>Common Role</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.Page#isIsAuthorised() <em>Is Authorised</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.Page#isHasCommonUnitAuthentication() <em>Has Common Unit Authentication</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.Page#isHasUnits() <em>Has Units</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.Page#isHasChangableCollections() <em>Has Changable Collections</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.Page#isHasCaptchaUnits() <em>Has Captcha Units</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.Page#getCollectionUnits() <em>Collection Units</em>}</li>
@@ -29,8 +30,6 @@ import work.andycarpenter.metamodel.waf.WafFactory;
  *   <li>{@link work.andycarpenter.metamodel.waf.Page#isHasEditUnits() <em>Has Edit Units</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.Page#getAnyEditUnits() <em>Any Edit Units</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.Page#isHasAnyEditUnits() <em>Has Any Edit Units</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.Page#getForgottenPasswordUnits() <em>Forgotten Password Units</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.Page#isHasForgottenPasswordUnits() <em>Has Forgotten Password Units</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.Page#getFormUnits() <em>Form Units</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.Page#isHasFormUnits() <em>Has Form Units</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.Page#isHasFilters() <em>Has Filters</em>}</li>
@@ -42,18 +41,8 @@ import work.andycarpenter.metamodel.waf.WafFactory;
  *   <li>{@link work.andycarpenter.metamodel.waf.Page#isHasImageUnits() <em>Has Image Units</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.Page#getImageCardsUnits() <em>Image Cards Units</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.Page#isHasImageCardsUnits() <em>Has Image Cards Units</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.Page#getLoginUnits() <em>Login Units</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.Page#isHasLoginUnits() <em>Has Login Units</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.Page#getMapUnits() <em>Map Units</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.Page#isHasMapUnits() <em>Has Map Units</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.Page#getNonSecurityUnits() <em>Non Security Units</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.Page#isHasNonSecurityUnits() <em>Has Non Security Units</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.Page#getRegistrationUnits() <em>Registration Units</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.Page#isHasRegistrationUnits() <em>Has Registration Units</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.Page#getResetPasswordUnits() <em>Reset Password Units</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.Page#isHasResetPasswordUnits() <em>Has Reset Password Units</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.Page#getSecurityUnits() <em>Security Units</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.Page#isHasSecurityUnits() <em>Has Security Units</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.Page#getSliderUnits() <em>Slider Units</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.Page#isHasSliderUnits() <em>Has Slider Units</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.Page#getRepositoriesUsed() <em>Repositories Used</em>}</li>
@@ -185,6 +174,19 @@ public class PageTest extends TestCase {
 	 * @generated
 	 */
 	public void testIsHasCommonUnitAuthentication() {
+		// TODO: implement this feature getter test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.Page#isHasUnits() <em>Has Units</em>}' feature getter.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.Page#isHasUnits()
+	 * @generated
+	 */
+	public void testIsHasUnits() {
 		// TODO: implement this feature getter test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
@@ -367,45 +369,6 @@ public class PageTest extends TestCase {
 	 * @generated
 	 */
 	public void testIsHasAnyEditUnits() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.Page#getForgottenPasswordUnits() <em>Forgotten Password Units</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.Page#getForgottenPasswordUnits()
-	 * @generated
-	 */
-	public void testGetForgottenPasswordUnits() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.Page#isSetForgottenPasswordUnits() <em>isSetForgottenPasswordUnits()</em>}' method.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.Page#isSetForgottenPasswordUnits()
-	 * @generated
-	 */
-	public void testIsSetForgottenPasswordUnits() {
-		// TODO: implement this test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.Page#isHasForgottenPasswordUnits() <em>Has Forgotten Password Units</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.Page#isHasForgottenPasswordUnits()
-	 * @generated
-	 */
-	public void testIsHasForgottenPasswordUnits() {
 		// TODO: implement this feature getter test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
@@ -620,45 +583,6 @@ public class PageTest extends TestCase {
 	}
 
 	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.Page#getLoginUnits() <em>Login Units</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.Page#getLoginUnits()
-	 * @generated
-	 */
-	public void testGetLoginUnits() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.Page#isSetLoginUnits() <em>isSetLoginUnits()</em>}' method.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.Page#isSetLoginUnits()
-	 * @generated
-	 */
-	public void testIsSetLoginUnits() {
-		// TODO: implement this test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.Page#isHasLoginUnits() <em>Has Login Units</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.Page#isHasLoginUnits()
-	 * @generated
-	 */
-	public void testIsHasLoginUnits() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
 	 * Tests the '{@link work.andycarpenter.metamodel.waf.Page#getMapUnits() <em>Map Units</em>}' feature getter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -692,162 +616,6 @@ public class PageTest extends TestCase {
 	 * @generated
 	 */
 	public void testIsHasMapUnits() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.Page#getNonSecurityUnits() <em>Non Security Units</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.Page#getNonSecurityUnits()
-	 * @generated
-	 */
-	public void testGetNonSecurityUnits() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.Page#isSetNonSecurityUnits() <em>isSetNonSecurityUnits()</em>}' method.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.Page#isSetNonSecurityUnits()
-	 * @generated
-	 */
-	public void testIsSetNonSecurityUnits() {
-		// TODO: implement this test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.Page#isHasNonSecurityUnits() <em>Has Non Security Units</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.Page#isHasNonSecurityUnits()
-	 * @generated
-	 */
-	public void testIsHasNonSecurityUnits() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.Page#getRegistrationUnits() <em>Registration Units</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.Page#getRegistrationUnits()
-	 * @generated
-	 */
-	public void testGetRegistrationUnits() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.Page#isSetRegistrationUnits() <em>isSetRegistrationUnits()</em>}' method.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.Page#isSetRegistrationUnits()
-	 * @generated
-	 */
-	public void testIsSetRegistrationUnits() {
-		// TODO: implement this test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.Page#isHasRegistrationUnits() <em>Has Registration Units</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.Page#isHasRegistrationUnits()
-	 * @generated
-	 */
-	public void testIsHasRegistrationUnits() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.Page#getResetPasswordUnits() <em>Reset Password Units</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.Page#getResetPasswordUnits()
-	 * @generated
-	 */
-	public void testGetResetPasswordUnits() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.Page#isSetResetPasswordUnits() <em>isSetResetPasswordUnits()</em>}' method.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.Page#isSetResetPasswordUnits()
-	 * @generated
-	 */
-	public void testIsSetResetPasswordUnits() {
-		// TODO: implement this test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.Page#isHasResetPasswordUnits() <em>Has Reset Password Units</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.Page#isHasResetPasswordUnits()
-	 * @generated
-	 */
-	public void testIsHasResetPasswordUnits() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.Page#getSecurityUnits() <em>Security Units</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.Page#getSecurityUnits()
-	 * @generated
-	 */
-	public void testGetSecurityUnits() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.Page#isSetSecurityUnits() <em>isSetSecurityUnits()</em>}' method.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.Page#isSetSecurityUnits()
-	 * @generated
-	 */
-	public void testIsSetSecurityUnits() {
-		// TODO: implement this test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.Page#isHasSecurityUnits() <em>Has Security Units</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.Page#isHasSecurityUnits()
-	 * @generated
-	 */
-	public void testIsHasSecurityUnits() {
 		// TODO: implement this feature getter test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

@@ -64,10 +64,6 @@ public class SecurityModelItemProvider
 			super.getPropertyDescriptors(object);
 
 			addIsAuthenticatedPropertyDescriptor(object);
-			addIsCasAuthenticatedPropertyDescriptor(object);
-			addCasAuthenticationPropertyDescriptor(object);
-			addIsLocallyAuthenticatedPropertyDescriptor(object);
-			addLocalAuthenticationPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -90,94 +86,6 @@ public class SecurityModelItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Is Cas Authenticated feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addIsCasAuthenticatedPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_SecurityModel_isCasAuthenticated_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_SecurityModel_isCasAuthenticated_feature", "_UI_SecurityModel_type"),
-				 SecurityPackage.Literals.SECURITY_MODEL__IS_CAS_AUTHENTICATED,
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Cas Authentication feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addCasAuthenticationPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_SecurityModel_casAuthentication_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_SecurityModel_casAuthentication_feature", "_UI_SecurityModel_type"),
-				 SecurityPackage.Literals.SECURITY_MODEL__CAS_AUTHENTICATION,
-				 false,
-				 false,
-				 false,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Is Locally Authenticated feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addIsLocallyAuthenticatedPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_SecurityModel_isLocallyAuthenticated_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_SecurityModel_isLocallyAuthenticated_feature", "_UI_SecurityModel_type"),
-				 SecurityPackage.Literals.SECURITY_MODEL__IS_LOCALLY_AUTHENTICATED,
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Local Authentication feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addLocalAuthenticationPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_SecurityModel_localAuthentication_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_SecurityModel_localAuthentication_feature", "_UI_SecurityModel_type"),
-				 SecurityPackage.Literals.SECURITY_MODEL__LOCAL_AUTHENTICATION,
-				 false,
-				 false,
-				 false,
-				 null,
 				 null,
 				 null));
 	}
@@ -249,8 +157,6 @@ public class SecurityModelItemProvider
 
 		switch (notification.getFeatureID(SecurityModel.class)) {
 			case SecurityPackage.SECURITY_MODEL__IS_AUTHENTICATED:
-			case SecurityPackage.SECURITY_MODEL__IS_CAS_AUTHENTICATED:
-			case SecurityPackage.SECURITY_MODEL__IS_LOCALLY_AUTHENTICATED:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case SecurityPackage.SECURITY_MODEL__AUTHENTICATION:

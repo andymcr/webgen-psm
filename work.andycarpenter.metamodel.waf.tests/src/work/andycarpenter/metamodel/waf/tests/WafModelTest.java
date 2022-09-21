@@ -31,10 +31,6 @@ import work.andycarpenter.metamodel.waf.WafModel;
  *   <li>{@link work.andycarpenter.metamodel.waf.WafModel#isHasFormAssociations() <em>Has Form Associations</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.WafModel#isHasResourceFields() <em>Has Resource Fields</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.WafModel#isIsAuthenticated() <em>Is Authenticated</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.WafModel#isIsCasAuthenticated() <em>Is Cas Authenticated</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.WafModel#getCasAuthentication() <em>Cas Authentication</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.WafModel#isIsLocallyAuthenticated() <em>Is Locally Authenticated</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.WafModel#getLocalAuthentication() <em>Local Authentication</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.WafModel#getGenModel() <em>Gen Model</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.WafModel#getUiModel() <em>Ui Model</em>}</li>
  * </ul>
@@ -497,110 +493,6 @@ public class WafModelTest extends TestCase {
 	 * @generated
 	 */
 	public void testIsSetIsAuthenticated() {
-		// TODO: implement this test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.WafModel#isIsCasAuthenticated() <em>Is Cas Authenticated</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.WafModel#isIsCasAuthenticated()
-	 * @generated
-	 */
-	public void testIsIsCasAuthenticated() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.WafModel#isSetIsCasAuthenticated() <em>isSetIsCasAuthenticated()</em>}' method.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.WafModel#isSetIsCasAuthenticated()
-	 * @generated
-	 */
-	public void testIsSetIsCasAuthenticated() {
-		// TODO: implement this test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.WafModel#getCasAuthentication() <em>Cas Authentication</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.WafModel#getCasAuthentication()
-	 * @generated
-	 */
-	public void testGetCasAuthentication() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.WafModel#isSetCasAuthentication() <em>isSetCasAuthentication()</em>}' method.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.WafModel#isSetCasAuthentication()
-	 * @generated
-	 */
-	public void testIsSetCasAuthentication() {
-		// TODO: implement this test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.WafModel#isIsLocallyAuthenticated() <em>Is Locally Authenticated</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.WafModel#isIsLocallyAuthenticated()
-	 * @generated
-	 */
-	public void testIsIsLocallyAuthenticated() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.WafModel#isSetIsLocallyAuthenticated() <em>isSetIsLocallyAuthenticated()</em>}' method.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.WafModel#isSetIsLocallyAuthenticated()
-	 * @generated
-	 */
-	public void testIsSetIsLocallyAuthenticated() {
-		// TODO: implement this test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.WafModel#getLocalAuthentication() <em>Local Authentication</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.WafModel#getLocalAuthentication()
-	 * @generated
-	 */
-	public void testGetLocalAuthentication() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.WafModel#isSetLocalAuthentication() <em>isSetLocalAuthentication()</em>}' method.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.WafModel#isSetLocalAuthentication()
-	 * @generated
-	 */
-	public void testIsSetLocalAuthentication() {
 		// TODO: implement this test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

@@ -1,6 +1,6 @@
 /**
  */
-package work.andycarpenter.metamodel.waf.provider;
+package work.andycarpenter.metamodel.security.provider;
 
 
 import java.util.Collection;
@@ -12,23 +12,23 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
-import work.andycarpenter.metamodel.waf.ResetPasswordUnit;
-import work.andycarpenter.metamodel.waf.WafPackage;
+import work.andycarpenter.metamodel.security.LoginElement;
+import work.andycarpenter.metamodel.security.SecurityPackage;
 
 /**
- * This is the item provider adapter for a {@link work.andycarpenter.metamodel.waf.ResetPasswordUnit} object.
+ * This is the item provider adapter for a {@link work.andycarpenter.metamodel.security.LoginElement} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ResetPasswordUnitItemProvider extends EditUnitItemProvider {
+public class LoginElementItemProvider extends AuthenticationElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ResetPasswordUnitItemProvider(AdapterFactory adapterFactory) {
+	public LoginElementItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -43,25 +43,25 @@ public class ResetPasswordUnitItemProvider extends EditUnitItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addForgottenPasswordUnitPropertyDescriptor(object);
+			addAuthenticationPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Forgotten Password Unit feature.
+	 * This adds a property descriptor for the Authentication feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addForgottenPasswordUnitPropertyDescriptor(Object object) {
+	protected void addAuthenticationPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ResetPasswordUnit_forgottenPasswordUnit_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ResetPasswordUnit_forgottenPasswordUnit_feature", "_UI_ResetPasswordUnit_type"),
-				 WafPackage.eINSTANCE.getResetPasswordUnit_ForgottenPasswordUnit(),
+				 getString("_UI_LoginElement_authentication_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_LoginElement_authentication_feature", "_UI_LoginElement_type"),
+				 SecurityPackage.Literals.LOGIN_ELEMENT__AUTHENTICATION,
 				 true,
 				 false,
 				 true,
@@ -71,14 +71,14 @@ public class ResetPasswordUnitItemProvider extends EditUnitItemProvider {
 	}
 
 	/**
-	 * This returns ResetPasswordUnit.gif.
+	 * This returns LoginElement.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/ResetPasswordUnit"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/LoginElement"));
 	}
 
 	/**
@@ -89,10 +89,10 @@ public class ResetPasswordUnitItemProvider extends EditUnitItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ResetPasswordUnit)object).getName();
+		String label = ((LoginElement)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_ResetPasswordUnit_type") :
-			getString("_UI_ResetPasswordUnit_type") + " " + label;
+			getString("_UI_LoginElement_type") :
+			getString("_UI_LoginElement_type") + " " + label;
 	}
 
 
@@ -119,31 +119,6 @@ public class ResetPasswordUnitItemProvider extends EditUnitItemProvider {
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-	}
-
-	/**
-	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
-		Object childFeature = feature;
-		Object childObject = child;
-
-		boolean qualify =
-			childFeature == WafPackage.eINSTANCE.getDynamicUnit_HideWhen() ||
-			childFeature == WafPackage.eINSTANCE.getEditUnit_DisableWhen() ||
-			childFeature == WafPackage.eINSTANCE.getEditUnit_ConfirmMessage() ||
-			childFeature == WafPackage.eINSTANCE.getEditUnit_SuccessMessage();
-
-		if (qualify) {
-			return getString
-				("_UI_CreateChild_text2",
-				 new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
-		}
-		return super.getCreateChildText(owner, feature, child, selection);
 	}
 
 }

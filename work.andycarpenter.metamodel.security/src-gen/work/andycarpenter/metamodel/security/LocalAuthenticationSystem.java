@@ -2,6 +2,7 @@
  */
 package work.andycarpenter.metamodel.security;
 
+import work.andycarpenter.metamodel.orm.Attribute;
 import work.andycarpenter.metamodel.orm.Entity;
 
 /**
@@ -14,18 +15,24 @@ import work.andycarpenter.metamodel.orm.Entity;
  * </p>
  * <ul>
  *   <li>{@link work.andycarpenter.metamodel.security.LocalAuthenticationSystem#getAuthenticationModel <em>Authentication Model</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.security.LocalAuthenticationSystem#getIdentifierFeture <em>Identifier Feture</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.security.LocalAuthenticationSystem#getPasswordFeature <em>Password Feature</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.security.LocalAuthenticationSystem#getAuthenticationKey <em>Authentication Key</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.security.LocalAuthenticationSystem#getResetPasswordRequestModel <em>Reset Password Request Model</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.security.LocalAuthenticationSystem#getRegistrationUnit <em>Registration Unit</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.security.LocalAuthenticationSystem#getLoginUnit <em>Login Unit</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.security.LocalAuthenticationSystem#getLogoutUnit <em>Logout Unit</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.security.LocalAuthenticationSystem#getForgottenPasswordUnit <em>Forgotten Password Unit</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.security.LocalAuthenticationSystem#getResetPasswordUnit <em>Reset Password Unit</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.security.LocalAuthenticationSystem#isUseCaptcha <em>Use Captcha</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.security.LocalAuthenticationSystem#getRegistrationElement <em>Registration Element</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.security.LocalAuthenticationSystem#isHasRegistrationElement <em>Has Registration Element</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.security.LocalAuthenticationSystem#getLoginElement <em>Login Element</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.security.LocalAuthenticationSystem#getLogoutElement <em>Logout Element</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.security.LocalAuthenticationSystem#getForgottenPasswordElement <em>Forgotten Password Element</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.security.LocalAuthenticationSystem#getResetPasswordElement <em>Reset Password Element</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.security.LocalAuthenticationSystem#isCaptcha <em>Captcha</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.security.LocalAuthenticationSystem#isAllowRememberMe <em>Allow Remember Me</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.security.LocalAuthenticationSystem#isAllowSelfRegistration <em>Allow Self Registration</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.security.LocalAuthenticationSystem#isUseEmailActivation <em>Use Email Activation</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.security.LocalAuthenticationSystem#isSendWelcomeEmail <em>Send Welcome Email</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.security.LocalAuthenticationSystem#getSectionClass <em>Section Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.security.LocalAuthenticationSystem#getCaptionClass <em>Caption Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.security.LocalAuthenticationSystem#getContentClass <em>Content Class</em>}</li>
  * </ul>
  *
  * @see work.andycarpenter.metamodel.security.SecurityPackage#getLocalAuthenticationSystem()
@@ -54,6 +61,50 @@ public interface LocalAuthenticationSystem extends Authentication {
 	 * @generated
 	 */
 	void setAuthenticationModel(Entity value);
+
+	/**
+	 * Returns the value of the '<em><b>Identifier Feture</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Identifier Feture</em>' reference.
+	 * @see #setIdentifierFeture(Attribute)
+	 * @see work.andycarpenter.metamodel.security.SecurityPackage#getLocalAuthenticationSystem_IdentifierFeture()
+	 * @model required="true"
+	 * @generated
+	 */
+	Attribute getIdentifierFeture();
+
+	/**
+	 * Sets the value of the '{@link work.andycarpenter.metamodel.security.LocalAuthenticationSystem#getIdentifierFeture <em>Identifier Feture</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Identifier Feture</em>' reference.
+	 * @see #getIdentifierFeture()
+	 * @generated
+	 */
+	void setIdentifierFeture(Attribute value);
+
+	/**
+	 * Returns the value of the '<em><b>Password Feature</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Password Feature</em>' reference.
+	 * @see #setPasswordFeature(Attribute)
+	 * @see work.andycarpenter.metamodel.security.SecurityPackage#getLocalAuthenticationSystem_PasswordFeature()
+	 * @model required="true"
+	 * @generated
+	 */
+	Attribute getPasswordFeature();
+
+	/**
+	 * Sets the value of the '{@link work.andycarpenter.metamodel.security.LocalAuthenticationSystem#getPasswordFeature <em>Password Feature</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Password Feature</em>' reference.
+	 * @see #getPasswordFeature()
+	 * @generated
+	 */
+	void setPasswordFeature(Attribute value);
 
 	/**
 	 * Returns the value of the '<em><b>Authentication Key</b></em>' attribute.
@@ -103,136 +154,158 @@ public interface LocalAuthenticationSystem extends Authentication {
 	void setResetPasswordRequestModel(Entity value);
 
 	/**
-	 * Returns the value of the '<em><b>Registration Unit</b></em>' reference.
+	 * Returns the value of the '<em><b>Registration Element</b></em>' containment reference.
+	 * It is bidirectional and its opposite is '{@link work.andycarpenter.metamodel.security.RegistrationElement#getAuthentication <em>Authentication</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Registration Unit</em>' reference.
-	 * @see #setRegistrationUnit(SecurityUnit)
-	 * @see work.andycarpenter.metamodel.security.SecurityPackage#getLocalAuthenticationSystem_RegistrationUnit()
-	 * @model
+	 * @return the value of the '<em>Registration Element</em>' containment reference.
+	 * @see #setRegistrationElement(RegistrationElement)
+	 * @see work.andycarpenter.metamodel.security.SecurityPackage#getLocalAuthenticationSystem_RegistrationElement()
+	 * @see work.andycarpenter.metamodel.security.RegistrationElement#getAuthentication
+	 * @model opposite="authentication" containment="true"
 	 * @generated
 	 */
-	SecurityUnit getRegistrationUnit();
+	RegistrationElement getRegistrationElement();
 
 	/**
-	 * Sets the value of the '{@link work.andycarpenter.metamodel.security.LocalAuthenticationSystem#getRegistrationUnit <em>Registration Unit</em>}' reference.
+	 * Sets the value of the '{@link work.andycarpenter.metamodel.security.LocalAuthenticationSystem#getRegistrationElement <em>Registration Element</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Registration Unit</em>' reference.
-	 * @see #getRegistrationUnit()
+	 * @param value the new value of the '<em>Registration Element</em>' containment reference.
+	 * @see #getRegistrationElement()
 	 * @generated
 	 */
-	void setRegistrationUnit(SecurityUnit value);
+	void setRegistrationElement(RegistrationElement value);
 
 	/**
-	 * Returns the value of the '<em><b>Login Unit</b></em>' reference.
+	 * Returns the value of the '<em><b>Has Registration Element</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Login Unit</em>' reference.
-	 * @see #setLoginUnit(SecurityUnit)
-	 * @see work.andycarpenter.metamodel.security.SecurityPackage#getLocalAuthenticationSystem_LoginUnit()
-	 * @model required="true"
+	 * @return the value of the '<em>Has Registration Element</em>' attribute.
+	 * @see work.andycarpenter.metamodel.security.SecurityPackage#getLocalAuthenticationSystem_HasRegistrationElement()
+	 * @model unique="false" transient="true" changeable="false" volatile="true" derived="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='not registrationElement.oclIsUndefined()'"
 	 * @generated
 	 */
-	SecurityUnit getLoginUnit();
+	boolean isHasRegistrationElement();
 
 	/**
-	 * Sets the value of the '{@link work.andycarpenter.metamodel.security.LocalAuthenticationSystem#getLoginUnit <em>Login Unit</em>}' reference.
+	 * Returns the value of the '<em><b>Login Element</b></em>' containment reference.
+	 * It is bidirectional and its opposite is '{@link work.andycarpenter.metamodel.security.LoginElement#getAuthentication <em>Authentication</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Login Unit</em>' reference.
-	 * @see #getLoginUnit()
+	 * @return the value of the '<em>Login Element</em>' containment reference.
+	 * @see #setLoginElement(LoginElement)
+	 * @see work.andycarpenter.metamodel.security.SecurityPackage#getLocalAuthenticationSystem_LoginElement()
+	 * @see work.andycarpenter.metamodel.security.LoginElement#getAuthentication
+	 * @model opposite="authentication" containment="true" required="true"
 	 * @generated
 	 */
-	void setLoginUnit(SecurityUnit value);
+	LoginElement getLoginElement();
 
 	/**
-	 * Returns the value of the '<em><b>Logout Unit</b></em>' reference.
+	 * Sets the value of the '{@link work.andycarpenter.metamodel.security.LocalAuthenticationSystem#getLoginElement <em>Login Element</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Logout Unit</em>' reference.
-	 * @see #setLogoutUnit(SecurityUnit)
-	 * @see work.andycarpenter.metamodel.security.SecurityPackage#getLocalAuthenticationSystem_LogoutUnit()
-	 * @model required="true"
+	 * @param value the new value of the '<em>Login Element</em>' containment reference.
+	 * @see #getLoginElement()
 	 * @generated
 	 */
-	SecurityUnit getLogoutUnit();
+	void setLoginElement(LoginElement value);
 
 	/**
-	 * Sets the value of the '{@link work.andycarpenter.metamodel.security.LocalAuthenticationSystem#getLogoutUnit <em>Logout Unit</em>}' reference.
+	 * Returns the value of the '<em><b>Logout Element</b></em>' containment reference.
+	 * It is bidirectional and its opposite is '{@link work.andycarpenter.metamodel.security.LogoutElement#getAuthentication <em>Authentication</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Logout Unit</em>' reference.
-	 * @see #getLogoutUnit()
+	 * @return the value of the '<em>Logout Element</em>' containment reference.
+	 * @see #setLogoutElement(LogoutElement)
+	 * @see work.andycarpenter.metamodel.security.SecurityPackage#getLocalAuthenticationSystem_LogoutElement()
+	 * @see work.andycarpenter.metamodel.security.LogoutElement#getAuthentication
+	 * @model opposite="authentication" containment="true" required="true"
 	 * @generated
 	 */
-	void setLogoutUnit(SecurityUnit value);
+	LogoutElement getLogoutElement();
 
 	/**
-	 * Returns the value of the '<em><b>Forgotten Password Unit</b></em>' reference.
+	 * Sets the value of the '{@link work.andycarpenter.metamodel.security.LocalAuthenticationSystem#getLogoutElement <em>Logout Element</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Forgotten Password Unit</em>' reference.
-	 * @see #setForgottenPasswordUnit(SecurityUnit)
-	 * @see work.andycarpenter.metamodel.security.SecurityPackage#getLocalAuthenticationSystem_ForgottenPasswordUnit()
-	 * @model
+	 * @param value the new value of the '<em>Logout Element</em>' containment reference.
+	 * @see #getLogoutElement()
 	 * @generated
 	 */
-	SecurityUnit getForgottenPasswordUnit();
+	void setLogoutElement(LogoutElement value);
 
 	/**
-	 * Sets the value of the '{@link work.andycarpenter.metamodel.security.LocalAuthenticationSystem#getForgottenPasswordUnit <em>Forgotten Password Unit</em>}' reference.
+	 * Returns the value of the '<em><b>Forgotten Password Element</b></em>' containment reference.
+	 * It is bidirectional and its opposite is '{@link work.andycarpenter.metamodel.security.ForgottenPasswordElement#getAuthentication <em>Authentication</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Forgotten Password Unit</em>' reference.
-	 * @see #getForgottenPasswordUnit()
+	 * @return the value of the '<em>Forgotten Password Element</em>' containment reference.
+	 * @see #setForgottenPasswordElement(ForgottenPasswordElement)
+	 * @see work.andycarpenter.metamodel.security.SecurityPackage#getLocalAuthenticationSystem_ForgottenPasswordElement()
+	 * @see work.andycarpenter.metamodel.security.ForgottenPasswordElement#getAuthentication
+	 * @model opposite="authentication" containment="true" required="true"
 	 * @generated
 	 */
-	void setForgottenPasswordUnit(SecurityUnit value);
+	ForgottenPasswordElement getForgottenPasswordElement();
 
 	/**
-	 * Returns the value of the '<em><b>Reset Password Unit</b></em>' reference.
+	 * Sets the value of the '{@link work.andycarpenter.metamodel.security.LocalAuthenticationSystem#getForgottenPasswordElement <em>Forgotten Password Element</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Reset Password Unit</em>' reference.
-	 * @see #setResetPasswordUnit(SecurityUnit)
-	 * @see work.andycarpenter.metamodel.security.SecurityPackage#getLocalAuthenticationSystem_ResetPasswordUnit()
-	 * @model required="true"
+	 * @param value the new value of the '<em>Forgotten Password Element</em>' containment reference.
+	 * @see #getForgottenPasswordElement()
 	 * @generated
 	 */
-	SecurityUnit getResetPasswordUnit();
+	void setForgottenPasswordElement(ForgottenPasswordElement value);
 
 	/**
-	 * Sets the value of the '{@link work.andycarpenter.metamodel.security.LocalAuthenticationSystem#getResetPasswordUnit <em>Reset Password Unit</em>}' reference.
+	 * Returns the value of the '<em><b>Reset Password Element</b></em>' containment reference.
+	 * It is bidirectional and its opposite is '{@link work.andycarpenter.metamodel.security.ResetPasswordElement#getAuthentication <em>Authentication</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Reset Password Unit</em>' reference.
-	 * @see #getResetPasswordUnit()
+	 * @return the value of the '<em>Reset Password Element</em>' containment reference.
+	 * @see #setResetPasswordElement(ResetPasswordElement)
+	 * @see work.andycarpenter.metamodel.security.SecurityPackage#getLocalAuthenticationSystem_ResetPasswordElement()
+	 * @see work.andycarpenter.metamodel.security.ResetPasswordElement#getAuthentication
+	 * @model opposite="authentication" containment="true" required="true"
 	 * @generated
 	 */
-	void setResetPasswordUnit(SecurityUnit value);
+	ResetPasswordElement getResetPasswordElement();
 
 	/**
-	 * Returns the value of the '<em><b>Use Captcha</b></em>' attribute.
+	 * Sets the value of the '{@link work.andycarpenter.metamodel.security.LocalAuthenticationSystem#getResetPasswordElement <em>Reset Password Element</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Use Captcha</em>' attribute.
-	 * @see #setUseCaptcha(boolean)
-	 * @see work.andycarpenter.metamodel.security.SecurityPackage#getLocalAuthenticationSystem_UseCaptcha()
+	 * @param value the new value of the '<em>Reset Password Element</em>' containment reference.
+	 * @see #getResetPasswordElement()
+	 * @generated
+	 */
+	void setResetPasswordElement(ResetPasswordElement value);
+
+	/**
+	 * Returns the value of the '<em><b>Captcha</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Captcha</em>' attribute.
+	 * @see #setCaptcha(boolean)
+	 * @see work.andycarpenter.metamodel.security.SecurityPackage#getLocalAuthenticationSystem_Captcha()
 	 * @model unique="false"
 	 * @generated
 	 */
-	boolean isUseCaptcha();
+	boolean isCaptcha();
 
 	/**
-	 * Sets the value of the '{@link work.andycarpenter.metamodel.security.LocalAuthenticationSystem#isUseCaptcha <em>Use Captcha</em>}' attribute.
+	 * Sets the value of the '{@link work.andycarpenter.metamodel.security.LocalAuthenticationSystem#isCaptcha <em>Captcha</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Use Captcha</em>' attribute.
-	 * @see #isUseCaptcha()
+	 * @param value the new value of the '<em>Captcha</em>' attribute.
+	 * @see #isCaptcha()
 	 * @generated
 	 */
-	void setUseCaptcha(boolean value);
+	void setCaptcha(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Allow Remember Me</b></em>' attribute.
@@ -323,5 +396,74 @@ public interface LocalAuthenticationSystem extends Authentication {
 	 * @generated
 	 */
 	void setSendWelcomeEmail(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Section Class</b></em>' attribute.
+	 * The default value is <code>""</code>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Section Class</em>' attribute.
+	 * @see #setSectionClass(String)
+	 * @see work.andycarpenter.metamodel.security.SecurityPackage#getLocalAuthenticationSystem_SectionClass()
+	 * @model default="" unique="false"
+	 * @generated
+	 */
+	String getSectionClass();
+
+	/**
+	 * Sets the value of the '{@link work.andycarpenter.metamodel.security.LocalAuthenticationSystem#getSectionClass <em>Section Class</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Section Class</em>' attribute.
+	 * @see #getSectionClass()
+	 * @generated
+	 */
+	void setSectionClass(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Caption Class</b></em>' attribute.
+	 * The default value is <code>""</code>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Caption Class</em>' attribute.
+	 * @see #setCaptionClass(String)
+	 * @see work.andycarpenter.metamodel.security.SecurityPackage#getLocalAuthenticationSystem_CaptionClass()
+	 * @model default="" unique="false"
+	 * @generated
+	 */
+	String getCaptionClass();
+
+	/**
+	 * Sets the value of the '{@link work.andycarpenter.metamodel.security.LocalAuthenticationSystem#getCaptionClass <em>Caption Class</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Caption Class</em>' attribute.
+	 * @see #getCaptionClass()
+	 * @generated
+	 */
+	void setCaptionClass(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Content Class</b></em>' attribute.
+	 * The default value is <code>""</code>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Content Class</em>' attribute.
+	 * @see #setContentClass(String)
+	 * @see work.andycarpenter.metamodel.security.SecurityPackage#getLocalAuthenticationSystem_ContentClass()
+	 * @model default="" unique="false"
+	 * @generated
+	 */
+	String getContentClass();
+
+	/**
+	 * Sets the value of the '{@link work.andycarpenter.metamodel.security.LocalAuthenticationSystem#getContentClass <em>Content Class</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Content Class</em>' attribute.
+	 * @see #getContentClass()
+	 * @generated
+	 */
+	void setContentClass(String value);
 
 } // LocalAuthenticationSystem

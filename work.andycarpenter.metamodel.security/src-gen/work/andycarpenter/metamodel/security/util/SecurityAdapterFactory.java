@@ -9,6 +9,9 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 
 import org.eclipse.emf.ecore.EObject;
 
+import work.andycarpenter.metamodel.base.NamedDisplayElement;
+import work.andycarpenter.metamodel.base.NamedElement;
+
 import work.andycarpenter.metamodel.security.*;
 
 /**
@@ -80,12 +83,40 @@ public class SecurityAdapterFactory extends AdapterFactoryImpl {
 				return createLocalAuthenticationSystemAdapter();
 			}
 			@Override
+			public Adapter caseAuthenticationElement(AuthenticationElement object) {
+				return createAuthenticationElementAdapter();
+			}
+			@Override
+			public Adapter caseRegistrationElement(RegistrationElement object) {
+				return createRegistrationElementAdapter();
+			}
+			@Override
+			public Adapter caseLoginElement(LoginElement object) {
+				return createLoginElementAdapter();
+			}
+			@Override
+			public Adapter caseLogoutElement(LogoutElement object) {
+				return createLogoutElementAdapter();
+			}
+			@Override
+			public Adapter caseForgottenPasswordElement(ForgottenPasswordElement object) {
+				return createForgottenPasswordElementAdapter();
+			}
+			@Override
+			public Adapter caseResetPasswordElement(ResetPasswordElement object) {
+				return createResetPasswordElementAdapter();
+			}
+			@Override
 			public Adapter caseCasAuthentication(CasAuthentication object) {
 				return createCasAuthenticationAdapter();
 			}
 			@Override
-			public Adapter caseSecurityUnit(SecurityUnit object) {
-				return createSecurityUnitAdapter();
+			public Adapter caseNamedElement(NamedElement object) {
+				return createNamedElementAdapter();
+			}
+			@Override
+			public Adapter caseNamedDisplayElement(NamedDisplayElement object) {
+				return createNamedDisplayElementAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -150,6 +181,90 @@ public class SecurityAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link work.andycarpenter.metamodel.security.AuthenticationElement <em>Authentication Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see work.andycarpenter.metamodel.security.AuthenticationElement
+	 * @generated
+	 */
+	public Adapter createAuthenticationElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link work.andycarpenter.metamodel.security.RegistrationElement <em>Registration Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see work.andycarpenter.metamodel.security.RegistrationElement
+	 * @generated
+	 */
+	public Adapter createRegistrationElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link work.andycarpenter.metamodel.security.LoginElement <em>Login Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see work.andycarpenter.metamodel.security.LoginElement
+	 * @generated
+	 */
+	public Adapter createLoginElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link work.andycarpenter.metamodel.security.LogoutElement <em>Logout Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see work.andycarpenter.metamodel.security.LogoutElement
+	 * @generated
+	 */
+	public Adapter createLogoutElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link work.andycarpenter.metamodel.security.ForgottenPasswordElement <em>Forgotten Password Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see work.andycarpenter.metamodel.security.ForgottenPasswordElement
+	 * @generated
+	 */
+	public Adapter createForgottenPasswordElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link work.andycarpenter.metamodel.security.ResetPasswordElement <em>Reset Password Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see work.andycarpenter.metamodel.security.ResetPasswordElement
+	 * @generated
+	 */
+	public Adapter createResetPasswordElementAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link work.andycarpenter.metamodel.security.CasAuthentication <em>Cas Authentication</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -164,16 +279,30 @@ public class SecurityAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link work.andycarpenter.metamodel.security.SecurityUnit <em>Unit</em>}'.
+	 * Creates a new adapter for an object of class '{@link work.andycarpenter.metamodel.base.NamedElement <em>Named Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see work.andycarpenter.metamodel.security.SecurityUnit
+	 * @see work.andycarpenter.metamodel.base.NamedElement
 	 * @generated
 	 */
-	public Adapter createSecurityUnitAdapter() {
+	public Adapter createNamedElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link work.andycarpenter.metamodel.base.NamedDisplayElement <em>Named Display Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see work.andycarpenter.metamodel.base.NamedDisplayElement
+	 * @generated
+	 */
+	public Adapter createNamedDisplayElementAdapter() {
 		return null;
 	}
 

@@ -83,10 +83,6 @@ public class WafModelItemProvider
 			addHasFormAssociationsPropertyDescriptor(object);
 			addHasResourceFieldsPropertyDescriptor(object);
 			addIsAuthenticatedPropertyDescriptor(object);
-			addIsCasAuthenticatedPropertyDescriptor(object);
-			addCasAuthenticationPropertyDescriptor(object);
-			addIsLocallyAuthenticatedPropertyDescriptor(object);
-			addLocalAuthenticationPropertyDescriptor(object);
 			addUseFormFloatingLabelsPropertyDescriptor(object);
 			addDefaultPageClassPropertyDescriptor(object);
 			addGenModelPropertyDescriptor(object);
@@ -558,94 +554,6 @@ public class WafModelItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Is Cas Authenticated feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addIsCasAuthenticatedPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_WafModel_isCasAuthenticated_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafModel_isCasAuthenticated_feature", "_UI_WafModel_type"),
-				 WafPackage.eINSTANCE.getWafModel_IsCasAuthenticated(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Cas Authentication feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addCasAuthenticationPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_WafModel_casAuthentication_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafModel_casAuthentication_feature", "_UI_WafModel_type"),
-				 WafPackage.eINSTANCE.getWafModel_CasAuthentication(),
-				 false,
-				 false,
-				 false,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Is Locally Authenticated feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addIsLocallyAuthenticatedPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_WafModel_isLocallyAuthenticated_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafModel_isLocallyAuthenticated_feature", "_UI_WafModel_type"),
-				 WafPackage.eINSTANCE.getWafModel_IsLocallyAuthenticated(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Local Authentication feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addLocalAuthenticationPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_WafModel_localAuthentication_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafModel_localAuthentication_feature", "_UI_WafModel_type"),
-				 WafPackage.eINSTANCE.getWafModel_LocalAuthentication(),
-				 false,
-				 false,
-				 false,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Use Form Floating Labels feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -825,8 +733,6 @@ public class WafModelItemProvider
 			case WafPackage.WAF_MODEL__HAS_FORM_ASSOCIATIONS:
 			case WafPackage.WAF_MODEL__HAS_RESOURCE_FIELDS:
 			case WafPackage.WAF_MODEL__IS_AUTHENTICATED:
-			case WafPackage.WAF_MODEL__IS_CAS_AUTHENTICATED:
-			case WafPackage.WAF_MODEL__IS_LOCALLY_AUTHENTICATED:
 			case WafPackage.WAF_MODEL__USE_FORM_FLOATING_LABELS:
 			case WafPackage.WAF_MODEL__DEFAULT_PAGE_CLASS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));

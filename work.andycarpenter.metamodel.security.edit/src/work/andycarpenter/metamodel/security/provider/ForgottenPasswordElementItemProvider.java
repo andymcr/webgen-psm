@@ -1,6 +1,6 @@
 /**
  */
-package work.andycarpenter.metamodel.waf.provider;
+package work.andycarpenter.metamodel.security.provider;
 
 
 import java.util.Collection;
@@ -14,23 +14,23 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import work.andycarpenter.metamodel.waf.ForgottenPasswordUnit;
-import work.andycarpenter.metamodel.waf.WafPackage;
+import work.andycarpenter.metamodel.security.ForgottenPasswordElement;
+import work.andycarpenter.metamodel.security.SecurityPackage;
 
 /**
- * This is the item provider adapter for a {@link work.andycarpenter.metamodel.waf.ForgottenPasswordUnit} object.
+ * This is the item provider adapter for a {@link work.andycarpenter.metamodel.security.ForgottenPasswordElement} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ForgottenPasswordUnitItemProvider extends EditUnitItemProvider {
+public class ForgottenPasswordElementItemProvider extends AuthenticationElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ForgottenPasswordUnitItemProvider(AdapterFactory adapterFactory) {
+	public ForgottenPasswordElementItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -45,7 +45,7 @@ public class ForgottenPasswordUnitItemProvider extends EditUnitItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addResetPasswordUnitPropertyDescriptor(object);
+			addAuthenticationPropertyDescriptor(object);
 			addUriEmailSentPropertyDescriptor(object);
 			addEmailSubjectPropertyDescriptor(object);
 			addEmailMessagePropertyDescriptor(object);
@@ -56,19 +56,19 @@ public class ForgottenPasswordUnitItemProvider extends EditUnitItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Reset Password Unit feature.
+	 * This adds a property descriptor for the Authentication feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addResetPasswordUnitPropertyDescriptor(Object object) {
+	protected void addAuthenticationPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ForgottenPasswordUnit_resetPasswordUnit_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ForgottenPasswordUnit_resetPasswordUnit_feature", "_UI_ForgottenPasswordUnit_type"),
-				 WafPackage.eINSTANCE.getForgottenPasswordUnit_ResetPasswordUnit(),
+				 getString("_UI_ForgottenPasswordElement_authentication_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ForgottenPasswordElement_authentication_feature", "_UI_ForgottenPasswordElement_type"),
+				 SecurityPackage.Literals.FORGOTTEN_PASSWORD_ELEMENT__AUTHENTICATION,
 				 true,
 				 false,
 				 true,
@@ -88,9 +88,9 @@ public class ForgottenPasswordUnitItemProvider extends EditUnitItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ForgottenPasswordUnit_uriEmailSent_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ForgottenPasswordUnit_uriEmailSent_feature", "_UI_ForgottenPasswordUnit_type"),
-				 WafPackage.eINSTANCE.getForgottenPasswordUnit_UriEmailSent(),
+				 getString("_UI_ForgottenPasswordElement_uriEmailSent_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ForgottenPasswordElement_uriEmailSent_feature", "_UI_ForgottenPasswordElement_type"),
+				 SecurityPackage.Literals.FORGOTTEN_PASSWORD_ELEMENT__URI_EMAIL_SENT,
 				 true,
 				 false,
 				 false,
@@ -110,9 +110,9 @@ public class ForgottenPasswordUnitItemProvider extends EditUnitItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ForgottenPasswordUnit_emailSubject_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ForgottenPasswordUnit_emailSubject_feature", "_UI_ForgottenPasswordUnit_type"),
-				 WafPackage.eINSTANCE.getForgottenPasswordUnit_EmailSubject(),
+				 getString("_UI_ForgottenPasswordElement_emailSubject_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ForgottenPasswordElement_emailSubject_feature", "_UI_ForgottenPasswordElement_type"),
+				 SecurityPackage.Literals.FORGOTTEN_PASSWORD_ELEMENT__EMAIL_SUBJECT,
 				 true,
 				 false,
 				 false,
@@ -132,9 +132,9 @@ public class ForgottenPasswordUnitItemProvider extends EditUnitItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ForgottenPasswordUnit_emailMessage_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ForgottenPasswordUnit_emailMessage_feature", "_UI_ForgottenPasswordUnit_type"),
-				 WafPackage.eINSTANCE.getForgottenPasswordUnit_EmailMessage(),
+				 getString("_UI_ForgottenPasswordElement_emailMessage_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ForgottenPasswordElement_emailMessage_feature", "_UI_ForgottenPasswordElement_type"),
+				 SecurityPackage.Literals.FORGOTTEN_PASSWORD_ELEMENT__EMAIL_MESSAGE,
 				 true,
 				 false,
 				 false,
@@ -154,9 +154,9 @@ public class ForgottenPasswordUnitItemProvider extends EditUnitItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ForgottenPasswordUnit_emailSentCaption_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ForgottenPasswordUnit_emailSentCaption_feature", "_UI_ForgottenPasswordUnit_type"),
-				 WafPackage.eINSTANCE.getForgottenPasswordUnit_EmailSentCaption(),
+				 getString("_UI_ForgottenPasswordElement_emailSentCaption_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ForgottenPasswordElement_emailSentCaption_feature", "_UI_ForgottenPasswordElement_type"),
+				 SecurityPackage.Literals.FORGOTTEN_PASSWORD_ELEMENT__EMAIL_SENT_CAPTION,
 				 true,
 				 false,
 				 false,
@@ -176,9 +176,9 @@ public class ForgottenPasswordUnitItemProvider extends EditUnitItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ForgottenPasswordUnit_emailSentMessage_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ForgottenPasswordUnit_emailSentMessage_feature", "_UI_ForgottenPasswordUnit_type"),
-				 WafPackage.eINSTANCE.getForgottenPasswordUnit_EmailSentMessage(),
+				 getString("_UI_ForgottenPasswordElement_emailSentMessage_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ForgottenPasswordElement_emailSentMessage_feature", "_UI_ForgottenPasswordElement_type"),
+				 SecurityPackage.Literals.FORGOTTEN_PASSWORD_ELEMENT__EMAIL_SENT_MESSAGE,
 				 true,
 				 false,
 				 false,
@@ -188,14 +188,14 @@ public class ForgottenPasswordUnitItemProvider extends EditUnitItemProvider {
 	}
 
 	/**
-	 * This returns ForgottenPasswordUnit.gif.
+	 * This returns ForgottenPasswordElement.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/ForgottenPasswordUnit"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/ForgottenPasswordElement"));
 	}
 
 	/**
@@ -206,10 +206,10 @@ public class ForgottenPasswordUnitItemProvider extends EditUnitItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ForgottenPasswordUnit)object).getName();
+		String label = ((ForgottenPasswordElement)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_ForgottenPasswordUnit_type") :
-			getString("_UI_ForgottenPasswordUnit_type") + " " + label;
+			getString("_UI_ForgottenPasswordElement_type") :
+			getString("_UI_ForgottenPasswordElement_type") + " " + label;
 	}
 
 
@@ -224,12 +224,12 @@ public class ForgottenPasswordUnitItemProvider extends EditUnitItemProvider {
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(ForgottenPasswordUnit.class)) {
-			case WafPackage.FORGOTTEN_PASSWORD_UNIT__URI_EMAIL_SENT:
-			case WafPackage.FORGOTTEN_PASSWORD_UNIT__EMAIL_SUBJECT:
-			case WafPackage.FORGOTTEN_PASSWORD_UNIT__EMAIL_MESSAGE:
-			case WafPackage.FORGOTTEN_PASSWORD_UNIT__EMAIL_SENT_CAPTION:
-			case WafPackage.FORGOTTEN_PASSWORD_UNIT__EMAIL_SENT_MESSAGE:
+		switch (notification.getFeatureID(ForgottenPasswordElement.class)) {
+			case SecurityPackage.FORGOTTEN_PASSWORD_ELEMENT__URI_EMAIL_SENT:
+			case SecurityPackage.FORGOTTEN_PASSWORD_ELEMENT__EMAIL_SUBJECT:
+			case SecurityPackage.FORGOTTEN_PASSWORD_ELEMENT__EMAIL_MESSAGE:
+			case SecurityPackage.FORGOTTEN_PASSWORD_ELEMENT__EMAIL_SENT_CAPTION:
+			case SecurityPackage.FORGOTTEN_PASSWORD_ELEMENT__EMAIL_SENT_MESSAGE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}
@@ -246,31 +246,6 @@ public class ForgottenPasswordUnitItemProvider extends EditUnitItemProvider {
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-	}
-
-	/**
-	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
-		Object childFeature = feature;
-		Object childObject = child;
-
-		boolean qualify =
-			childFeature == WafPackage.eINSTANCE.getDynamicUnit_HideWhen() ||
-			childFeature == WafPackage.eINSTANCE.getEditUnit_DisableWhen() ||
-			childFeature == WafPackage.eINSTANCE.getEditUnit_ConfirmMessage() ||
-			childFeature == WafPackage.eINSTANCE.getEditUnit_SuccessMessage();
-
-		if (qualify) {
-			return getString
-				("_UI_CreateChild_text2",
-				 new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
-		}
-		return super.getCreateChildText(owner, feature, child, selection);
 	}
 
 }
