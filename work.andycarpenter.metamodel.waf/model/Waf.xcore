@@ -412,7 +412,7 @@ class Page extends NamedDisplayElement {
 	refers derived readonly unsettable transient volatile UnitAssociation[] associationFields
 
 	@OCL(derivation="dynamicUnits->collect(u | u.autocompleteFields)->asOrderedSet()")
-	refers derived readonly unsettable transient volatile UnitField[] autocompleteFields
+	refers derived readonly unsettable transient volatile UnitAssociation[] autocompleteFields
 	@OCL(derivation="autocompleteFields->notEmpty()")
 	derived readonly unsettable transient volatile boolean hasAutocompleteFields
 
@@ -625,11 +625,11 @@ abstract class DynamicUnit extends ContentUnit, ActionContainer {
 	derived readonly transient volatile boolean hasAssociationFields
 
 	@OCL(derivation="if self.oclIsKindOf(EditUnit) then
-				displayFields->select(f | f.hasAutocomplete)->asOrderedSet()
+				associationFields->select(f | f.hasAutocomplete)->asOrderedSet()
 			else
 				OrderedSet{}
 			endif")
-	refers derived readonly transient volatile UnitField[] autocompleteFields
+	refers derived readonly transient volatile UnitAssociation[] autocompleteFields
 	@OCL(derivation="autocompleteFields->notEmpty()")
 	derived readonly transient volatile boolean hasAutocompleteFields
 
@@ -1321,13 +1321,6 @@ interface UnitField extends DisplayElement {
 		endif")
 	derived readonly transient volatile boolean hasForcedValue
 
-	@OCL(derivation="if self.oclIsKindOf(UnitAssociation) then
-				not self.oclAsType(UnitAssociation).optionsFilter.oclIsUndefined()
-			else
-				false
-			endif")
-	derived readonly transient volatile boolean hasAutocomplete
-
 	boolean escapeHTML = "true"
 	CollectionDisplayOptions collectionDisplayOption
 	boolean truncate
@@ -1415,6 +1408,9 @@ class UnitAttribute extends UnitFeature {
 class UnitAssociation extends UnitFeature, AssociationReference {
 	refers Selection options
 	refers Filter optionsFilter
+
+	@OCL(derivation="not self.oclAsType(UnitAssociation).optionsFilter.oclIsUndefined()")
+	derived readonly transient volatile boolean hasAutocomplete
 }
 
 abstract class FeaturePath extends Variable {
@@ -1718,8 +1714,8 @@ abstract class EditUnit extends SingletonUnit {
 	@OCL(derivation="if contentClassOverride.trim() <> '' then
 			contentClassOverride.trim()
 		else if uiModel.defaultFormStyles.contentClass.trim() <> '' then
-			uiModel.defaultStaticStyles.contentClass.trim()
-		else if uiModel.defaultFormStyles.contentClass.trim() <> '' then
+			uiModel.defaultFormStyles.contentClass.trim()
+		else if uiModel.defaultUnitStyles.contentClass.trim() <> '' then
 			uiModel.defaultUnitStyles.contentClass.trim()
 		else
 			''
