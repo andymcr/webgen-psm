@@ -236,7 +236,7 @@ public class ContentUnitItemProvider extends NamedDisplayElementItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -324,7 +324,7 @@ public class ContentUnitItemProvider extends NamedDisplayElementItemProvider {
 				 false,
 				 false,
 				 null,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -346,7 +346,7 @@ public class ContentUnitItemProvider extends NamedDisplayElementItemProvider {
 				 false,
 				 false,
 				 null,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 

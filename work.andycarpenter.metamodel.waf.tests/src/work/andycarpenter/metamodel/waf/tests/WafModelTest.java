@@ -25,6 +25,7 @@ import work.andycarpenter.metamodel.waf.WafModel;
  *   <li>{@link work.andycarpenter.metamodel.waf.WafModel#isHasImageUnits() <em>Has Image Units</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.WafModel#getImageCardsUnits() <em>Image Cards Units</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.WafModel#isHasImageCardsUnits() <em>Has Image Cards Units</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.WafModel#getAutocompleteFields() <em>Autocomplete Fields</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.WafModel#isHasAutocompleteFields() <em>Has Autocomplete Fields</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.WafModel#getFormFields() <em>Form Fields</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.WafModel#isHasFormFields() <em>Has Form Fields</em>}</li>
@@ -337,6 +338,32 @@ public class WafModelTest extends TestCase {
 	 * @generated
 	 */
 	public void testIsSetHasImageCardsUnits() {
+		// TODO: implement this test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.WafModel#getAutocompleteFields() <em>Autocomplete Fields</em>}' feature getter.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.WafModel#getAutocompleteFields()
+	 * @generated
+	 */
+	public void testGetAutocompleteFields() {
+		// TODO: implement this feature getter test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.WafModel#isSetAutocompleteFields() <em>isSetAutocompleteFields()</em>}' method.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.WafModel#isSetAutocompleteFields()
+	 * @generated
+	 */
+	public void testIsSetAutocompleteFields() {
 		// TODO: implement this test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

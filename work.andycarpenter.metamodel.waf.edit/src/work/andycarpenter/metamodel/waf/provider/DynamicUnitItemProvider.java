@@ -547,7 +547,7 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 				 false,
 				 false,
 				 null,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -569,7 +569,7 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 				 false,
 				 false,
 				 null,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -591,7 +591,7 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 				 false,
 				 false,
 				 null,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -613,7 +613,7 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -635,7 +635,7 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 				 false,
 				 false,
 				 null,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -657,7 +657,7 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -679,7 +679,7 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 				 false,
 				 false,
 				 null,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -745,7 +745,7 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -789,7 +789,7 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -855,7 +855,7 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 				 false,
 				 false,
 				 null,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -877,7 +877,7 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -899,7 +899,7 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 				 false,
 				 false,
 				 null,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -921,7 +921,7 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -965,7 +965,7 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -987,7 +987,7 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -1009,7 +1009,7 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -1031,7 +1031,7 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 				 false,
 				 false,
 				 null,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -1053,7 +1053,7 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 				 false,
 				 false,
 				 null,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -1075,7 +1075,7 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 				 false,
 				 false,
 				 null,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -1097,7 +1097,7 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 				 false,
 				 false,
 				 null,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -1119,7 +1119,7 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 				 false,
 				 false,
 				 null,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -1141,7 +1141,7 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -1163,7 +1163,7 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -1185,7 +1185,7 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -1207,7 +1207,7 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 				 false,
 				 false,
 				 null,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -1229,7 +1229,7 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -1251,7 +1251,7 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 				 false,
 				 false,
 				 null,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -1273,7 +1273,7 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -1295,7 +1295,7 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 				 false,
 				 false,
 				 null,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -1317,7 +1317,7 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -1339,7 +1339,7 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 				 false,
 				 false,
 				 null,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -1361,7 +1361,7 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -1383,7 +1383,7 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 				 false,
 				 false,
 				 null,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -1405,7 +1405,7 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -1427,7 +1427,7 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 				 false,
 				 false,
 				 null,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -1449,7 +1449,7 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -1471,7 +1471,7 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -1493,7 +1493,7 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -1515,7 +1515,7 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -1537,7 +1537,7 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -1559,7 +1559,7 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -1581,7 +1581,7 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -1603,7 +1603,7 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -1757,7 +1757,7 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -1779,7 +1779,7 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -1801,7 +1801,7 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -1823,7 +1823,7 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -1845,7 +1845,7 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -1867,7 +1867,7 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -1889,7 +1889,7 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -1911,7 +1911,7 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -1933,7 +1933,7 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -1955,7 +1955,7 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 

@@ -55,7 +55,6 @@ import work.andycarpenter.metamodel.waf.UnitFeature;
  *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#getDefaultValue() <em>Default Value</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#isHasDefaultValue() <em>Has Default Value</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#isHasForcedValue() <em>Has Forced Value</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#isHasAutocomplete() <em>Has Autocomplete</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#getInputGroupClass() <em>Input Group Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#isHasInputGroupClass() <em>Has Input Group Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#getFieldLabelClass() <em>Field Label Class</em>}</li>
@@ -842,19 +841,6 @@ public abstract class UnitFeatureTest extends DisplayElementTest {
 	 * @generated
 	 */
 	public void testIsHasForcedValue() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.UnitField#isHasAutocomplete() <em>Has Autocomplete</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.UnitField#isHasAutocomplete()
-	 * @generated
-	 */
-	public void testIsHasAutocomplete() {
 		// TODO: implement this feature getter test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

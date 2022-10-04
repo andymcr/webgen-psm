@@ -192,7 +192,7 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -214,7 +214,7 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -236,7 +236,7 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -258,7 +258,7 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -280,7 +280,7 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -302,7 +302,7 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -324,7 +324,7 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 				 false,
 				 false,
 				 null,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -346,7 +346,7 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -368,7 +368,7 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 				 false,
 				 false,
 				 null,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -390,7 +390,7 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -412,7 +412,7 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 				 false,
 				 false,
 				 null,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -434,7 +434,7 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -478,7 +478,7 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -500,7 +500,7 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 				 false,
 				 false,
 				 null,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -522,7 +522,7 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -544,7 +544,7 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -566,7 +566,7 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 				 false,
 				 false,
 				 null,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -588,7 +588,7 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -610,7 +610,7 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 				 false,
 				 false,
 				 null,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -632,7 +632,7 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -654,7 +654,7 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 				 false,
 				 false,
 				 null,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -676,7 +676,7 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -698,7 +698,7 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 				 false,
 				 false,
 				 null,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -720,7 +720,7 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -742,7 +742,7 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 				 false,
 				 false,
 				 null,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -764,7 +764,7 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -786,7 +786,7 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 				 false,
 				 false,
 				 null,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -808,7 +808,7 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -830,7 +830,7 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 				 false,
 				 false,
 				 null,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -852,7 +852,7 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -874,7 +874,7 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 				 false,
 				 false,
 				 null,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -896,7 +896,7 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -918,7 +918,7 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -940,7 +940,7 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 				 false,
 				 false,
 				 null,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -962,7 +962,7 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 				 false,
 				 false,
 				 null,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -984,7 +984,7 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -1006,7 +1006,7 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 				 false,
 				 false,
 				 null,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -1028,7 +1028,7 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -1050,7 +1050,7 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -1072,7 +1072,7 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -1094,7 +1094,7 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 				 false,
 				 false,
 				 null,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -1116,7 +1116,7 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 				 false,
 				 false,
 				 null,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -1138,7 +1138,7 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -1160,7 +1160,7 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_NavigationPropertyCategory"),
 				 null));
 	}
 
@@ -1182,7 +1182,7 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_StylePropertyCategory"),
 				 null));
 	}
 
@@ -1204,7 +1204,7 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -1226,7 +1226,7 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -1248,7 +1248,7 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 				 false,
 				 false,
 				 null,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -1270,7 +1270,7 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 				 false,
 				 false,
 				 null,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -1292,7 +1292,7 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 				 false,
 				 false,
 				 null,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 

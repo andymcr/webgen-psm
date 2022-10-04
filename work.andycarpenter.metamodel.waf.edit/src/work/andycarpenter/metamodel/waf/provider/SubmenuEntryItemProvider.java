@@ -93,7 +93,7 @@ public class SubmenuEntryItemProvider extends MenuItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_SecurityPropertyCategory"),
 				 null));
 	}
 
@@ -115,7 +115,7 @@ public class SubmenuEntryItemProvider extends MenuItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -137,7 +137,7 @@ public class SubmenuEntryItemProvider extends MenuItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
