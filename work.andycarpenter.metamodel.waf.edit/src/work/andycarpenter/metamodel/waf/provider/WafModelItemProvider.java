@@ -77,6 +77,7 @@ public class WafModelItemProvider
 			addHasImageUnitsPropertyDescriptor(object);
 			addImageCardsUnitsPropertyDescriptor(object);
 			addHasImageCardsUnitsPropertyDescriptor(object);
+			addAutocompleteFieldsPropertyDescriptor(object);
 			addHasAutocompleteFieldsPropertyDescriptor(object);
 			addFormFieldsPropertyDescriptor(object);
 			addHasFormFieldsPropertyDescriptor(object);
@@ -417,6 +418,28 @@ public class WafModelItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Autocomplete Fields feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAutocompleteFieldsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_WafModel_autocompleteFields_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WafModel_autocompleteFields_feature", "_UI_WafModel_type"),
+				 WafPackage.eINSTANCE.getWafModel_AutocompleteFields(),
+				 false,
+				 false,
+				 false,
+				 null,
 				 null,
 				 null));
 	}

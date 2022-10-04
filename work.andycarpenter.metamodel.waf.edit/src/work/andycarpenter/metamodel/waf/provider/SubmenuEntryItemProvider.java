@@ -48,6 +48,7 @@ public class SubmenuEntryItemProvider extends MenuItemProvider {
 			addPartOfPropertyDescriptor(object);
 			addAuthorisationRolesPropertyDescriptor(object);
 			addIsAuthorisedPropertyDescriptor(object);
+			addAlwaysVisiblePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -119,6 +120,28 @@ public class SubmenuEntryItemProvider extends MenuItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Always Visible feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAlwaysVisiblePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_SubmenuEntry_alwaysVisible_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_SubmenuEntry_alwaysVisible_feature", "_UI_SubmenuEntry_type"),
+				 WafPackage.eINSTANCE.getSubmenuEntry_AlwaysVisible(),
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns SubmenuEntry.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -158,6 +181,7 @@ public class SubmenuEntryItemProvider extends MenuItemProvider {
 		switch (notification.getFeatureID(SubmenuEntry.class)) {
 			case WafPackage.SUBMENU_ENTRY__AUTHORISATION_ROLES:
 			case WafPackage.SUBMENU_ENTRY__IS_AUTHORISED:
+			case WafPackage.SUBMENU_ENTRY__ALWAYS_VISIBLE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

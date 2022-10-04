@@ -50,7 +50,7 @@ public class UnitAssociationItemProvider extends UnitFeatureItemProvider {
 			addNamePropertyDescriptor(object);
 			addValueDisplayPropertyDescriptor(object);
 			addOptionsPropertyDescriptor(object);
-			addOptionsFilterPropertyDescriptor(object);
+			addUseAutocompletePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -144,23 +144,23 @@ public class UnitAssociationItemProvider extends UnitFeatureItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Options Filter feature.
+	 * This adds a property descriptor for the Use Autocomplete feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addOptionsFilterPropertyDescriptor(Object object) {
+	protected void addUseAutocompletePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_UnitAssociation_optionsFilter_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UnitAssociation_optionsFilter_feature", "_UI_UnitAssociation_type"),
-				 WafPackage.eINSTANCE.getUnitAssociation_OptionsFilter(),
+				 getString("_UI_UnitAssociation_useAutocomplete_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UnitAssociation_useAutocomplete_feature", "_UI_UnitAssociation_type"),
+				 WafPackage.eINSTANCE.getUnitAssociation_UseAutocomplete(),
 				 true,
 				 false,
-				 true,
-				 null,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -234,6 +234,7 @@ public class UnitAssociationItemProvider extends UnitFeatureItemProvider {
 
 		switch (notification.getFeatureID(UnitAssociation.class)) {
 			case WafPackage.UNIT_ASSOCIATION__NAME:
+			case WafPackage.UNIT_ASSOCIATION__USE_AUTOCOMPLETE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case WafPackage.UNIT_ASSOCIATION__CHILD_FEATURE:

@@ -94,7 +94,9 @@ class WafModel {
 	@OCL(derivation="imageCardsUnits->notEmpty()")
 	derived readonly unsettable transient volatile boolean hasImageCardsUnits
 
-	@OCL(derivation="pages->select(p | p.hasAutocompleteFields)->notEmpty()")
+	@OCL(derivation="pages->collect(p | p.autocompleteFields)->asOrderedSet()")
+	refers derived readonly unsettable transient volatile UnitAssociation[] autocompleteFields
+	@OCL(derivation="autocompleteFields->notEmpty()")
 	derived readonly unsettable transient volatile boolean hasAutocompleteFields
 
 	@OCL(derivation="pages->collect(p | p.formFields)->asOrderedSet()")
@@ -187,6 +189,7 @@ class SubmenuEntry extends Menu, MenuEntry {
 	String authorisationRoles = ''
 	@OCL(derivation="authorisationRoles.trim() <> ''")
 	derived readonly transient volatile boolean isAuthorised
+	boolean alwaysVisible = "false"
 }
 
 class ActionMenuEntry extends MenuEntry, NamedDisplayElement {
@@ -625,7 +628,7 @@ abstract class DynamicUnit extends ContentUnit, ActionContainer {
 	derived readonly transient volatile boolean hasAssociationFields
 
 	@OCL(derivation="if self.oclIsKindOf(EditUnit) then
-				associationFields->select(f | f.hasAutocomplete)->asOrderedSet()
+				associationFields->select(f | f.useAutocomplete)->asOrderedSet()
 			else
 				OrderedSet{}
 			endif")
@@ -1407,10 +1410,7 @@ class UnitAttribute extends UnitFeature {
 
 class UnitAssociation extends UnitFeature, AssociationReference {
 	refers Selection options
-	refers Filter optionsFilter
-
-	@OCL(derivation="not self.oclAsType(UnitAssociation).optionsFilter.oclIsUndefined()")
-	derived readonly transient volatile boolean hasAutocomplete
+	boolean useAutocomplete = "false"
 }
 
 abstract class FeaturePath extends Variable {

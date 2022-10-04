@@ -101,7 +101,6 @@ public class InterfaceFieldItemProvider extends NamedElementItemProvider {
 			addDefaultValuePropertyDescriptor(object);
 			addHasDefaultValuePropertyDescriptor(object);
 			addHasForcedValuePropertyDescriptor(object);
-			addHasAutocompletePropertyDescriptor(object);
 			addEscapeHTMLPropertyDescriptor(object);
 			addCollectionDisplayOptionPropertyDescriptor(object);
 			addTruncatePropertyDescriptor(object);
@@ -1191,28 +1190,6 @@ public class InterfaceFieldItemProvider extends NamedElementItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Has Autocomplete feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addHasAutocompletePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_UnitField_hasAutocomplete_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_hasAutocomplete_feature", "_UI_UnitField_type"),
-				 WafPackage.eINSTANCE.getUnitField_HasAutocomplete(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Escape HTML feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1929,7 +1906,6 @@ public class InterfaceFieldItemProvider extends NamedElementItemProvider {
 			case WafPackage.INTERFACE_FIELD__IS_URL_FIELD:
 			case WafPackage.INTERFACE_FIELD__HAS_DEFAULT_VALUE:
 			case WafPackage.INTERFACE_FIELD__HAS_FORCED_VALUE:
-			case WafPackage.INTERFACE_FIELD__HAS_AUTOCOMPLETE:
 			case WafPackage.INTERFACE_FIELD__ESCAPE_HTML:
 			case WafPackage.INTERFACE_FIELD__COLLECTION_DISPLAY_OPTION:
 			case WafPackage.INTERFACE_FIELD__TRUNCATE:
