@@ -49,8 +49,6 @@ public class AuthenticationElementItemProvider extends NamedDisplayElementItemPr
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addConfirmLabelPropertyDescriptor(object);
-			addUriElementPropertyDescriptor(object);
 			addSectionClassOverridePropertyDescriptor(object);
 			addSectionClassPropertyDescriptor(object);
 			addHasSectionClassPropertyDescriptor(object);
@@ -62,50 +60,6 @@ public class AuthenticationElementItemProvider extends NamedDisplayElementItemPr
 			addHasContentClassPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Confirm Label feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addConfirmLabelPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_AuthenticationElement_confirmLabel_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_AuthenticationElement_confirmLabel_feature", "_UI_AuthenticationElement_type"),
-				 SecurityPackage.Literals.AUTHENTICATION_ELEMENT__CONFIRM_LABEL,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Uri Element feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addUriElementPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_AuthenticationElement_uriElement_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_AuthenticationElement_uriElement_feature", "_UI_AuthenticationElement_type"),
-				 SecurityPackage.Literals.AUTHENTICATION_ELEMENT__URI_ELEMENT,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
 	}
 
 	/**
@@ -333,8 +287,6 @@ public class AuthenticationElementItemProvider extends NamedDisplayElementItemPr
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(AuthenticationElement.class)) {
-			case SecurityPackage.AUTHENTICATION_ELEMENT__CONFIRM_LABEL:
-			case SecurityPackage.AUTHENTICATION_ELEMENT__URI_ELEMENT:
 			case SecurityPackage.AUTHENTICATION_ELEMENT__SECTION_CLASS_OVERRIDE:
 			case SecurityPackage.AUTHENTICATION_ELEMENT__SECTION_CLASS:
 			case SecurityPackage.AUTHENTICATION_ELEMENT__HAS_SECTION_CLASS:

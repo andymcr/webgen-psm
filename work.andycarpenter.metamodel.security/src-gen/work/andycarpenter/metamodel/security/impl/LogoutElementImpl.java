@@ -25,11 +25,74 @@ import work.andycarpenter.metamodel.security.SecurityPackage;
  * </p>
  * <ul>
  *   <li>{@link work.andycarpenter.metamodel.security.impl.LogoutElementImpl#getAuthentication <em>Authentication</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.security.impl.LogoutElementImpl#getInvokeLabel <em>Invoke Label</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.security.impl.LogoutElementImpl#getConfirmLabel <em>Confirm Label</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.security.impl.LogoutElementImpl#getUriElement <em>Uri Element</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class LogoutElementImpl extends AuthenticationElementImpl implements LogoutElement {
+	/**
+	 * The default value of the '{@link #getInvokeLabel() <em>Invoke Label</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInvokeLabel()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String INVOKE_LABEL_EDEFAULT = "Logout";
+
+	/**
+	 * The cached value of the '{@link #getInvokeLabel() <em>Invoke Label</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInvokeLabel()
+	 * @generated
+	 * @ordered
+	 */
+	protected String invokeLabel = INVOKE_LABEL_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getConfirmLabel() <em>Confirm Label</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getConfirmLabel()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String CONFIRM_LABEL_EDEFAULT = "";
+
+	/**
+	 * The cached value of the '{@link #getConfirmLabel() <em>Confirm Label</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getConfirmLabel()
+	 * @generated
+	 * @ordered
+	 */
+	protected String confirmLabel = CONFIRM_LABEL_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getUriElement() <em>Uri Element</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getUriElement()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String URI_ELEMENT_EDEFAULT = "logout";
+
+	/**
+	 * The cached value of the '{@link #getUriElement() <em>Uri Element</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getUriElement()
+	 * @generated
+	 * @ordered
+	 */
+	protected String uriElement = URI_ELEMENT_EDEFAULT;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -105,6 +168,69 @@ public class LogoutElementImpl extends AuthenticationElementImpl implements Logo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getInvokeLabel() {
+		return invokeLabel;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setInvokeLabel(String newInvokeLabel) {
+		String oldInvokeLabel = invokeLabel;
+		invokeLabel = newInvokeLabel;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SecurityPackage.LOGOUT_ELEMENT__INVOKE_LABEL, oldInvokeLabel, invokeLabel));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getConfirmLabel() {
+		return confirmLabel;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setConfirmLabel(String newConfirmLabel) {
+		String oldConfirmLabel = confirmLabel;
+		confirmLabel = newConfirmLabel;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SecurityPackage.LOGOUT_ELEMENT__CONFIRM_LABEL, oldConfirmLabel, confirmLabel));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getUriElement() {
+		return uriElement;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setUriElement(String newUriElement) {
+		String oldUriElement = uriElement;
+		uriElement = newUriElement;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SecurityPackage.LOGOUT_ELEMENT__URI_ELEMENT, oldUriElement, uriElement));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -155,6 +281,12 @@ public class LogoutElementImpl extends AuthenticationElementImpl implements Logo
 			case SecurityPackage.LOGOUT_ELEMENT__AUTHENTICATION:
 				if (resolve) return getAuthentication();
 				return basicGetAuthentication();
+			case SecurityPackage.LOGOUT_ELEMENT__INVOKE_LABEL:
+				return getInvokeLabel();
+			case SecurityPackage.LOGOUT_ELEMENT__CONFIRM_LABEL:
+				return getConfirmLabel();
+			case SecurityPackage.LOGOUT_ELEMENT__URI_ELEMENT:
+				return getUriElement();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -169,6 +301,15 @@ public class LogoutElementImpl extends AuthenticationElementImpl implements Logo
 		switch (featureID) {
 			case SecurityPackage.LOGOUT_ELEMENT__AUTHENTICATION:
 				setAuthentication((LocalAuthenticationSystem)newValue);
+				return;
+			case SecurityPackage.LOGOUT_ELEMENT__INVOKE_LABEL:
+				setInvokeLabel((String)newValue);
+				return;
+			case SecurityPackage.LOGOUT_ELEMENT__CONFIRM_LABEL:
+				setConfirmLabel((String)newValue);
+				return;
+			case SecurityPackage.LOGOUT_ELEMENT__URI_ELEMENT:
+				setUriElement((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -185,6 +326,15 @@ public class LogoutElementImpl extends AuthenticationElementImpl implements Logo
 			case SecurityPackage.LOGOUT_ELEMENT__AUTHENTICATION:
 				setAuthentication((LocalAuthenticationSystem)null);
 				return;
+			case SecurityPackage.LOGOUT_ELEMENT__INVOKE_LABEL:
+				setInvokeLabel(INVOKE_LABEL_EDEFAULT);
+				return;
+			case SecurityPackage.LOGOUT_ELEMENT__CONFIRM_LABEL:
+				setConfirmLabel(CONFIRM_LABEL_EDEFAULT);
+				return;
+			case SecurityPackage.LOGOUT_ELEMENT__URI_ELEMENT:
+				setUriElement(URI_ELEMENT_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -199,8 +349,34 @@ public class LogoutElementImpl extends AuthenticationElementImpl implements Logo
 		switch (featureID) {
 			case SecurityPackage.LOGOUT_ELEMENT__AUTHENTICATION:
 				return basicGetAuthentication() != null;
+			case SecurityPackage.LOGOUT_ELEMENT__INVOKE_LABEL:
+				return INVOKE_LABEL_EDEFAULT == null ? invokeLabel != null : !INVOKE_LABEL_EDEFAULT.equals(invokeLabel);
+			case SecurityPackage.LOGOUT_ELEMENT__CONFIRM_LABEL:
+				return CONFIRM_LABEL_EDEFAULT == null ? confirmLabel != null : !CONFIRM_LABEL_EDEFAULT.equals(confirmLabel);
+			case SecurityPackage.LOGOUT_ELEMENT__URI_ELEMENT:
+				return URI_ELEMENT_EDEFAULT == null ? uriElement != null : !URI_ELEMENT_EDEFAULT.equals(uriElement);
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuilder result = new StringBuilder(super.toString());
+		result.append(" (invokeLabel: ");
+		result.append(invokeLabel);
+		result.append(", confirmLabel: ");
+		result.append(confirmLabel);
+		result.append(", uriElement: ");
+		result.append(uriElement);
+		result.append(')');
+		return result.toString();
 	}
 
 } //LogoutElementImpl

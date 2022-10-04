@@ -21,12 +21,12 @@ import work.andycarpenter.metamodel.security.Authentication;
 import work.andycarpenter.metamodel.security.AuthenticationElement;
 import work.andycarpenter.metamodel.security.AuthenticationKeyTypes;
 import work.andycarpenter.metamodel.security.CasAuthentication;
+import work.andycarpenter.metamodel.security.ChangePasswordElement;
 import work.andycarpenter.metamodel.security.ForgottenPasswordElement;
 import work.andycarpenter.metamodel.security.LocalAuthenticationSystem;
 import work.andycarpenter.metamodel.security.LoginElement;
 import work.andycarpenter.metamodel.security.LogoutElement;
 import work.andycarpenter.metamodel.security.RegistrationElement;
-import work.andycarpenter.metamodel.security.ResetPasswordElement;
 import work.andycarpenter.metamodel.security.SecurityFactory;
 import work.andycarpenter.metamodel.security.SecurityModel;
 import work.andycarpenter.metamodel.security.SecurityPackage;
@@ -99,7 +99,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass resetPasswordElementEClass = null;
+	private EClass changePasswordElementEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -340,7 +340,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getLocalAuthenticationSystem_ResetPasswordElement() {
+	public EReference getLocalAuthenticationSystem_ChangePasswordElement() {
 		return (EReference)localAuthenticationSystemEClass.getEStructuralFeatures().get(10);
 	}
 
@@ -430,7 +430,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getAuthenticationElement_ConfirmLabel() {
+	public EAttribute getAuthenticationElement_SectionClassOverride() {
 		return (EAttribute)authenticationElementEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -439,7 +439,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getAuthenticationElement_UriElement() {
+	public EAttribute getAuthenticationElement_SectionClass() {
 		return (EAttribute)authenticationElementEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -448,7 +448,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getAuthenticationElement_SectionClassOverride() {
+	public EAttribute getAuthenticationElement_HasSectionClass() {
 		return (EAttribute)authenticationElementEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -457,7 +457,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getAuthenticationElement_SectionClass() {
+	public EAttribute getAuthenticationElement_CaptionClassOverride() {
 		return (EAttribute)authenticationElementEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -466,7 +466,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getAuthenticationElement_HasSectionClass() {
+	public EAttribute getAuthenticationElement_CaptionClass() {
 		return (EAttribute)authenticationElementEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -475,7 +475,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getAuthenticationElement_CaptionClassOverride() {
+	public EAttribute getAuthenticationElement_HasCaptionClass() {
 		return (EAttribute)authenticationElementEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -484,7 +484,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getAuthenticationElement_CaptionClass() {
+	public EAttribute getAuthenticationElement_ContentClassOverride() {
 		return (EAttribute)authenticationElementEClass.getEStructuralFeatures().get(6);
 	}
 
@@ -493,7 +493,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getAuthenticationElement_HasCaptionClass() {
+	public EAttribute getAuthenticationElement_ContentClass() {
 		return (EAttribute)authenticationElementEClass.getEStructuralFeatures().get(7);
 	}
 
@@ -502,26 +502,8 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getAuthenticationElement_ContentClassOverride() {
-		return (EAttribute)authenticationElementEClass.getEStructuralFeatures().get(8);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getAuthenticationElement_ContentClass() {
-		return (EAttribute)authenticationElementEClass.getEStructuralFeatures().get(9);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getAuthenticationElement_HasContentClass() {
-		return (EAttribute)authenticationElementEClass.getEStructuralFeatures().get(10);
+		return (EAttribute)authenticationElementEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -547,6 +529,42 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getRegistrationElement_InvokeLabel() {
+		return (EAttribute)registrationElementEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getRegistrationElement_ConfirmLabel() {
+		return (EAttribute)registrationElementEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getRegistrationElement_UriElement() {
+		return (EAttribute)registrationElementEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getRegistrationElement_UriEmailVerification() {
+		return (EAttribute)registrationElementEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getLoginElement() {
 		return loginElementEClass;
 	}
@@ -558,6 +576,33 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 */
 	public EReference getLoginElement_Authentication() {
 		return (EReference)loginElementEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getLoginElement_InvokeLabel() {
+		return (EAttribute)loginElementEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getLoginElement_ConfirmLabel() {
+		return (EAttribute)loginElementEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getLoginElement_UriElement() {
+		return (EAttribute)loginElementEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -583,6 +628,33 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getLogoutElement_InvokeLabel() {
+		return (EAttribute)logoutElementEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getLogoutElement_ConfirmLabel() {
+		return (EAttribute)logoutElementEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getLogoutElement_UriElement() {
+		return (EAttribute)logoutElementEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getForgottenPasswordElement() {
 		return forgottenPasswordElementEClass;
 	}
@@ -601,7 +673,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getForgottenPasswordElement_UriEmailSent() {
+	public EAttribute getForgottenPasswordElement_InvokeLabel() {
 		return (EAttribute)forgottenPasswordElementEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -610,7 +682,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getForgottenPasswordElement_EmailSubject() {
+	public EAttribute getForgottenPasswordElement_RequestLabel() {
 		return (EAttribute)forgottenPasswordElementEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -619,7 +691,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getForgottenPasswordElement_EmailMessage() {
+	public EAttribute getForgottenPasswordElement_ResetLabel() {
 		return (EAttribute)forgottenPasswordElementEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -628,7 +700,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getForgottenPasswordElement_EmailSentCaption() {
+	public EAttribute getForgottenPasswordElement_UriElement() {
 		return (EAttribute)forgottenPasswordElementEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -637,7 +709,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getForgottenPasswordElement_EmailSentMessage() {
+	public EAttribute getForgottenPasswordElement_UriEmailSent() {
 		return (EAttribute)forgottenPasswordElementEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -646,8 +718,8 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getResetPasswordElement() {
-		return resetPasswordElementEClass;
+	public EAttribute getForgottenPasswordElement_UriResetPassword() {
+		return (EAttribute)forgottenPasswordElementEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -655,8 +727,161 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getResetPasswordElement_Authentication() {
-		return (EReference)resetPasswordElementEClass.getEStructuralFeatures().get(0);
+	public EAttribute getForgottenPasswordElement_EmailHelp() {
+		return (EAttribute)forgottenPasswordElementEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getForgottenPasswordElement_PasswordLabel() {
+		return (EAttribute)forgottenPasswordElementEClass.getEStructuralFeatures().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getForgottenPasswordElement_PasswordPlaceholder() {
+		return (EAttribute)forgottenPasswordElementEClass.getEStructuralFeatures().get(9);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getForgottenPasswordElement_PasswordTitle() {
+		return (EAttribute)forgottenPasswordElementEClass.getEStructuralFeatures().get(10);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getForgottenPasswordElement_PasswordConfirmationLabel() {
+		return (EAttribute)forgottenPasswordElementEClass.getEStructuralFeatures().get(11);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getForgottenPasswordElement_PasswordConfirmationPlaceholder() {
+		return (EAttribute)forgottenPasswordElementEClass.getEStructuralFeatures().get(12);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getForgottenPasswordElement_PasswordConfirmationTitle() {
+		return (EAttribute)forgottenPasswordElementEClass.getEStructuralFeatures().get(13);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getForgottenPasswordElement_PasswordMessageRequired() {
+		return (EAttribute)forgottenPasswordElementEClass.getEStructuralFeatures().get(14);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getForgottenPasswordElement_PasswordMessageValueMismatch() {
+		return (EAttribute)forgottenPasswordElementEClass.getEStructuralFeatures().get(15);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getForgottenPasswordElement_EmailCheckSubject() {
+		return (EAttribute)forgottenPasswordElementEClass.getEStructuralFeatures().get(16);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getForgottenPasswordElement_EmailCheckMessage() {
+		return (EAttribute)forgottenPasswordElementEClass.getEStructuralFeatures().get(17);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getForgottenPasswordElement_EmailCheckSentCaption() {
+		return (EAttribute)forgottenPasswordElementEClass.getEStructuralFeatures().get(18);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getForgottenPasswordElement_EmailCheckSentMessage() {
+		return (EAttribute)forgottenPasswordElementEClass.getEStructuralFeatures().get(19);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getChangePasswordElement() {
+		return changePasswordElementEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getChangePasswordElement_Authentication() {
+		return (EReference)changePasswordElementEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getChangePasswordElement_InvokeLabel() {
+		return (EAttribute)changePasswordElementEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getChangePasswordElement_ConfirmLabel() {
+		return (EAttribute)changePasswordElementEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getChangePasswordElement_UriElement() {
+		return (EAttribute)changePasswordElementEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -742,7 +967,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 		createEReference(localAuthenticationSystemEClass, LOCAL_AUTHENTICATION_SYSTEM__LOGIN_ELEMENT);
 		createEReference(localAuthenticationSystemEClass, LOCAL_AUTHENTICATION_SYSTEM__LOGOUT_ELEMENT);
 		createEReference(localAuthenticationSystemEClass, LOCAL_AUTHENTICATION_SYSTEM__FORGOTTEN_PASSWORD_ELEMENT);
-		createEReference(localAuthenticationSystemEClass, LOCAL_AUTHENTICATION_SYSTEM__RESET_PASSWORD_ELEMENT);
+		createEReference(localAuthenticationSystemEClass, LOCAL_AUTHENTICATION_SYSTEM__CHANGE_PASSWORD_ELEMENT);
 		createEAttribute(localAuthenticationSystemEClass, LOCAL_AUTHENTICATION_SYSTEM__CAPTCHA);
 		createEAttribute(localAuthenticationSystemEClass, LOCAL_AUTHENTICATION_SYSTEM__ALLOW_REMEMBER_ME);
 		createEAttribute(localAuthenticationSystemEClass, LOCAL_AUTHENTICATION_SYSTEM__ALLOW_SELF_REGISTRATION);
@@ -753,8 +978,6 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 		createEAttribute(localAuthenticationSystemEClass, LOCAL_AUTHENTICATION_SYSTEM__CONTENT_CLASS);
 
 		authenticationElementEClass = createEClass(AUTHENTICATION_ELEMENT);
-		createEAttribute(authenticationElementEClass, AUTHENTICATION_ELEMENT__CONFIRM_LABEL);
-		createEAttribute(authenticationElementEClass, AUTHENTICATION_ELEMENT__URI_ELEMENT);
 		createEAttribute(authenticationElementEClass, AUTHENTICATION_ELEMENT__SECTION_CLASS_OVERRIDE);
 		createEAttribute(authenticationElementEClass, AUTHENTICATION_ELEMENT__SECTION_CLASS);
 		createEAttribute(authenticationElementEClass, AUTHENTICATION_ELEMENT__HAS_SECTION_CLASS);
@@ -767,23 +990,50 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 
 		registrationElementEClass = createEClass(REGISTRATION_ELEMENT);
 		createEReference(registrationElementEClass, REGISTRATION_ELEMENT__AUTHENTICATION);
+		createEAttribute(registrationElementEClass, REGISTRATION_ELEMENT__INVOKE_LABEL);
+		createEAttribute(registrationElementEClass, REGISTRATION_ELEMENT__CONFIRM_LABEL);
+		createEAttribute(registrationElementEClass, REGISTRATION_ELEMENT__URI_ELEMENT);
+		createEAttribute(registrationElementEClass, REGISTRATION_ELEMENT__URI_EMAIL_VERIFICATION);
 
 		loginElementEClass = createEClass(LOGIN_ELEMENT);
 		createEReference(loginElementEClass, LOGIN_ELEMENT__AUTHENTICATION);
+		createEAttribute(loginElementEClass, LOGIN_ELEMENT__INVOKE_LABEL);
+		createEAttribute(loginElementEClass, LOGIN_ELEMENT__CONFIRM_LABEL);
+		createEAttribute(loginElementEClass, LOGIN_ELEMENT__URI_ELEMENT);
 
 		logoutElementEClass = createEClass(LOGOUT_ELEMENT);
 		createEReference(logoutElementEClass, LOGOUT_ELEMENT__AUTHENTICATION);
+		createEAttribute(logoutElementEClass, LOGOUT_ELEMENT__INVOKE_LABEL);
+		createEAttribute(logoutElementEClass, LOGOUT_ELEMENT__CONFIRM_LABEL);
+		createEAttribute(logoutElementEClass, LOGOUT_ELEMENT__URI_ELEMENT);
 
 		forgottenPasswordElementEClass = createEClass(FORGOTTEN_PASSWORD_ELEMENT);
 		createEReference(forgottenPasswordElementEClass, FORGOTTEN_PASSWORD_ELEMENT__AUTHENTICATION);
+		createEAttribute(forgottenPasswordElementEClass, FORGOTTEN_PASSWORD_ELEMENT__INVOKE_LABEL);
+		createEAttribute(forgottenPasswordElementEClass, FORGOTTEN_PASSWORD_ELEMENT__REQUEST_LABEL);
+		createEAttribute(forgottenPasswordElementEClass, FORGOTTEN_PASSWORD_ELEMENT__RESET_LABEL);
+		createEAttribute(forgottenPasswordElementEClass, FORGOTTEN_PASSWORD_ELEMENT__URI_ELEMENT);
 		createEAttribute(forgottenPasswordElementEClass, FORGOTTEN_PASSWORD_ELEMENT__URI_EMAIL_SENT);
-		createEAttribute(forgottenPasswordElementEClass, FORGOTTEN_PASSWORD_ELEMENT__EMAIL_SUBJECT);
-		createEAttribute(forgottenPasswordElementEClass, FORGOTTEN_PASSWORD_ELEMENT__EMAIL_MESSAGE);
-		createEAttribute(forgottenPasswordElementEClass, FORGOTTEN_PASSWORD_ELEMENT__EMAIL_SENT_CAPTION);
-		createEAttribute(forgottenPasswordElementEClass, FORGOTTEN_PASSWORD_ELEMENT__EMAIL_SENT_MESSAGE);
+		createEAttribute(forgottenPasswordElementEClass, FORGOTTEN_PASSWORD_ELEMENT__URI_RESET_PASSWORD);
+		createEAttribute(forgottenPasswordElementEClass, FORGOTTEN_PASSWORD_ELEMENT__EMAIL_HELP);
+		createEAttribute(forgottenPasswordElementEClass, FORGOTTEN_PASSWORD_ELEMENT__PASSWORD_LABEL);
+		createEAttribute(forgottenPasswordElementEClass, FORGOTTEN_PASSWORD_ELEMENT__PASSWORD_PLACEHOLDER);
+		createEAttribute(forgottenPasswordElementEClass, FORGOTTEN_PASSWORD_ELEMENT__PASSWORD_TITLE);
+		createEAttribute(forgottenPasswordElementEClass, FORGOTTEN_PASSWORD_ELEMENT__PASSWORD_CONFIRMATION_LABEL);
+		createEAttribute(forgottenPasswordElementEClass, FORGOTTEN_PASSWORD_ELEMENT__PASSWORD_CONFIRMATION_PLACEHOLDER);
+		createEAttribute(forgottenPasswordElementEClass, FORGOTTEN_PASSWORD_ELEMENT__PASSWORD_CONFIRMATION_TITLE);
+		createEAttribute(forgottenPasswordElementEClass, FORGOTTEN_PASSWORD_ELEMENT__PASSWORD_MESSAGE_REQUIRED);
+		createEAttribute(forgottenPasswordElementEClass, FORGOTTEN_PASSWORD_ELEMENT__PASSWORD_MESSAGE_VALUE_MISMATCH);
+		createEAttribute(forgottenPasswordElementEClass, FORGOTTEN_PASSWORD_ELEMENT__EMAIL_CHECK_SUBJECT);
+		createEAttribute(forgottenPasswordElementEClass, FORGOTTEN_PASSWORD_ELEMENT__EMAIL_CHECK_MESSAGE);
+		createEAttribute(forgottenPasswordElementEClass, FORGOTTEN_PASSWORD_ELEMENT__EMAIL_CHECK_SENT_CAPTION);
+		createEAttribute(forgottenPasswordElementEClass, FORGOTTEN_PASSWORD_ELEMENT__EMAIL_CHECK_SENT_MESSAGE);
 
-		resetPasswordElementEClass = createEClass(RESET_PASSWORD_ELEMENT);
-		createEReference(resetPasswordElementEClass, RESET_PASSWORD_ELEMENT__AUTHENTICATION);
+		changePasswordElementEClass = createEClass(CHANGE_PASSWORD_ELEMENT);
+		createEReference(changePasswordElementEClass, CHANGE_PASSWORD_ELEMENT__AUTHENTICATION);
+		createEAttribute(changePasswordElementEClass, CHANGE_PASSWORD_ELEMENT__INVOKE_LABEL);
+		createEAttribute(changePasswordElementEClass, CHANGE_PASSWORD_ELEMENT__CONFIRM_LABEL);
+		createEAttribute(changePasswordElementEClass, CHANGE_PASSWORD_ELEMENT__URI_ELEMENT);
 
 		casAuthenticationEClass = createEClass(CAS_AUTHENTICATION);
 		createEAttribute(casAuthenticationEClass, CAS_AUTHENTICATION__LOGIN_LABEL);
@@ -832,7 +1082,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 		loginElementEClass.getESuperTypes().add(this.getAuthenticationElement());
 		logoutElementEClass.getESuperTypes().add(this.getAuthenticationElement());
 		forgottenPasswordElementEClass.getESuperTypes().add(this.getAuthenticationElement());
-		resetPasswordElementEClass.getESuperTypes().add(this.getAuthenticationElement());
+		changePasswordElementEClass.getESuperTypes().add(this.getAuthenticationElement());
 		casAuthenticationEClass.getESuperTypes().add(this.getAuthentication());
 
 		// Initialize classes, features, and operations; add parameters
@@ -855,8 +1105,8 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 		initEReference(getLocalAuthenticationSystem_LoginElement(), this.getLoginElement(), this.getLoginElement_Authentication(), "loginElement", null, 1, 1, LocalAuthenticationSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getLocalAuthenticationSystem_LogoutElement(), this.getLogoutElement(), this.getLogoutElement_Authentication(), "logoutElement", null, 1, 1, LocalAuthenticationSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getLocalAuthenticationSystem_ForgottenPasswordElement(), this.getForgottenPasswordElement(), this.getForgottenPasswordElement_Authentication(), "forgottenPasswordElement", null, 1, 1, LocalAuthenticationSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getLocalAuthenticationSystem_ResetPasswordElement(), this.getResetPasswordElement(), this.getResetPasswordElement_Authentication(), "resetPasswordElement", null, 1, 1, LocalAuthenticationSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getLocalAuthenticationSystem_Captcha(), theEcorePackage.getEBoolean(), "captcha", null, 0, 1, LocalAuthenticationSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getLocalAuthenticationSystem_ChangePasswordElement(), this.getChangePasswordElement(), this.getChangePasswordElement_Authentication(), "changePasswordElement", null, 1, 1, LocalAuthenticationSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getLocalAuthenticationSystem_Captcha(), theEcorePackage.getEBoolean(), "captcha", "true", 0, 1, LocalAuthenticationSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getLocalAuthenticationSystem_AllowRememberMe(), theEcorePackage.getEBoolean(), "allowRememberMe", null, 0, 1, LocalAuthenticationSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getLocalAuthenticationSystem_AllowSelfRegistration(), theEcorePackage.getEBoolean(), "allowSelfRegistration", null, 0, 1, LocalAuthenticationSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getLocalAuthenticationSystem_UseEmailActivation(), theEcorePackage.getEBoolean(), "useEmailActivation", "true", 0, 1, LocalAuthenticationSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -866,8 +1116,6 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 		initEAttribute(getLocalAuthenticationSystem_ContentClass(), theEcorePackage.getEString(), "contentClass", "", 0, 1, LocalAuthenticationSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(authenticationElementEClass, AuthenticationElement.class, "AuthenticationElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getAuthenticationElement_ConfirmLabel(), theEcorePackage.getEString(), "confirmLabel", "", 1, 1, AuthenticationElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAuthenticationElement_UriElement(), theEcorePackage.getEString(), "uriElement", "", 0, 1, AuthenticationElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAuthenticationElement_SectionClassOverride(), theEcorePackage.getEString(), "sectionClassOverride", "", 0, 1, AuthenticationElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAuthenticationElement_SectionClass(), theEcorePackage.getEString(), "sectionClass", null, 0, 1, AuthenticationElement.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAuthenticationElement_HasSectionClass(), theEcorePackage.getEBoolean(), "hasSectionClass", null, 0, 1, AuthenticationElement.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, IS_DERIVED, IS_ORDERED);
@@ -880,23 +1128,50 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 
 		initEClass(registrationElementEClass, RegistrationElement.class, "RegistrationElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRegistrationElement_Authentication(), this.getLocalAuthenticationSystem(), this.getLocalAuthenticationSystem_RegistrationElement(), "authentication", null, 1, 1, RegistrationElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRegistrationElement_InvokeLabel(), theEcorePackage.getEString(), "invokeLabel", "", 1, 1, RegistrationElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRegistrationElement_ConfirmLabel(), theEcorePackage.getEString(), "confirmLabel", "", 1, 1, RegistrationElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRegistrationElement_UriElement(), theEcorePackage.getEString(), "uriElement", "register", 1, 1, RegistrationElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRegistrationElement_UriEmailVerification(), theEcorePackage.getEString(), "uriEmailVerification", "verify", 1, 1, RegistrationElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(loginElementEClass, LoginElement.class, "LoginElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getLoginElement_Authentication(), this.getLocalAuthenticationSystem(), this.getLocalAuthenticationSystem_LoginElement(), "authentication", null, 1, 1, LoginElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getLoginElement_InvokeLabel(), theEcorePackage.getEString(), "invokeLabel", "Login", 1, 1, LoginElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getLoginElement_ConfirmLabel(), theEcorePackage.getEString(), "confirmLabel", "Login", 1, 1, LoginElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getLoginElement_UriElement(), theEcorePackage.getEString(), "uriElement", "login", 1, 1, LoginElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(logoutElementEClass, LogoutElement.class, "LogoutElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getLogoutElement_Authentication(), this.getLocalAuthenticationSystem(), this.getLocalAuthenticationSystem_LogoutElement(), "authentication", null, 1, 1, LogoutElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getLogoutElement_InvokeLabel(), theEcorePackage.getEString(), "invokeLabel", "Logout", 1, 1, LogoutElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getLogoutElement_ConfirmLabel(), theEcorePackage.getEString(), "confirmLabel", "", 1, 1, LogoutElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getLogoutElement_UriElement(), theEcorePackage.getEString(), "uriElement", "logout", 1, 1, LogoutElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(forgottenPasswordElementEClass, ForgottenPasswordElement.class, "ForgottenPasswordElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getForgottenPasswordElement_Authentication(), this.getLocalAuthenticationSystem(), this.getLocalAuthenticationSystem_ForgottenPasswordElement(), "authentication", null, 1, 1, ForgottenPasswordElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getForgottenPasswordElement_UriEmailSent(), theEcorePackage.getEString(), "uriEmailSent", null, 1, 1, ForgottenPasswordElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getForgottenPasswordElement_EmailSubject(), theEcorePackage.getEString(), "emailSubject", null, 1, 1, ForgottenPasswordElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getForgottenPasswordElement_EmailMessage(), theEcorePackage.getEString(), "emailMessage", null, 1, 1, ForgottenPasswordElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getForgottenPasswordElement_EmailSentCaption(), theEcorePackage.getEString(), "emailSentCaption", null, 1, 1, ForgottenPasswordElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getForgottenPasswordElement_EmailSentMessage(), theEcorePackage.getEString(), "emailSentMessage", null, 1, 1, ForgottenPasswordElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getForgottenPasswordElement_InvokeLabel(), theEcorePackage.getEString(), "invokeLabel", "Forgotten Password", 1, 1, ForgottenPasswordElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getForgottenPasswordElement_RequestLabel(), theEcorePackage.getEString(), "requestLabel", "Request Password Reset", 1, 1, ForgottenPasswordElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getForgottenPasswordElement_ResetLabel(), theEcorePackage.getEString(), "resetLabel", "Set Password", 1, 1, ForgottenPasswordElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getForgottenPasswordElement_UriElement(), theEcorePackage.getEString(), "uriElement", "forgotten-password", 1, 1, ForgottenPasswordElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getForgottenPasswordElement_UriEmailSent(), theEcorePackage.getEString(), "uriEmailSent", "check-email", 1, 1, ForgottenPasswordElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getForgottenPasswordElement_UriResetPassword(), theEcorePackage.getEString(), "uriResetPassword", "reset", 1, 1, ForgottenPasswordElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getForgottenPasswordElement_EmailHelp(), theEcorePackage.getEString(), "emailHelp", "Enter your email address and we we will send you a link to reset your password", 1, 1, ForgottenPasswordElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getForgottenPasswordElement_PasswordLabel(), theEcorePackage.getEString(), "passwordLabel", "New Password", 1, 1, ForgottenPasswordElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getForgottenPasswordElement_PasswordPlaceholder(), theEcorePackage.getEString(), "passwordPlaceholder", "New Password", 1, 1, ForgottenPasswordElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getForgottenPasswordElement_PasswordTitle(), theEcorePackage.getEString(), "passwordTitle", "New Password", 1, 1, ForgottenPasswordElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getForgottenPasswordElement_PasswordConfirmationLabel(), theEcorePackage.getEString(), "passwordConfirmationLabel", "Confirm Password", 1, 1, ForgottenPasswordElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getForgottenPasswordElement_PasswordConfirmationPlaceholder(), theEcorePackage.getEString(), "passwordConfirmationPlaceholder", "Confirm Password", 1, 1, ForgottenPasswordElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getForgottenPasswordElement_PasswordConfirmationTitle(), theEcorePackage.getEString(), "passwordConfirmationTitle", "Confirm Password", 1, 1, ForgottenPasswordElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getForgottenPasswordElement_PasswordMessageRequired(), theEcorePackage.getEString(), "passwordMessageRequired", "A password value is required", 1, 1, ForgottenPasswordElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getForgottenPasswordElement_PasswordMessageValueMismatch(), theEcorePackage.getEString(), "passwordMessageValueMismatch", "The two password values do not match", 1, 1, ForgottenPasswordElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getForgottenPasswordElement_EmailCheckSubject(), theEcorePackage.getEString(), "emailCheckSubject", null, 1, 1, ForgottenPasswordElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getForgottenPasswordElement_EmailCheckMessage(), theEcorePackage.getEString(), "emailCheckMessage", null, 1, 1, ForgottenPasswordElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getForgottenPasswordElement_EmailCheckSentCaption(), theEcorePackage.getEString(), "emailCheckSentCaption", null, 1, 1, ForgottenPasswordElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getForgottenPasswordElement_EmailCheckSentMessage(), theEcorePackage.getEString(), "emailCheckSentMessage", null, 1, 1, ForgottenPasswordElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(resetPasswordElementEClass, ResetPasswordElement.class, "ResetPasswordElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getResetPasswordElement_Authentication(), this.getLocalAuthenticationSystem(), this.getLocalAuthenticationSystem_ResetPasswordElement(), "authentication", null, 1, 1, ResetPasswordElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(changePasswordElementEClass, ChangePasswordElement.class, "ChangePasswordElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getChangePasswordElement_Authentication(), this.getLocalAuthenticationSystem(), this.getLocalAuthenticationSystem_ChangePasswordElement(), "authentication", null, 1, 1, ChangePasswordElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getChangePasswordElement_InvokeLabel(), theEcorePackage.getEString(), "invokeLabel", "Change Password", 1, 1, ChangePasswordElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getChangePasswordElement_ConfirmLabel(), theEcorePackage.getEString(), "confirmLabel", "Set Pasword", 1, 1, ChangePasswordElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getChangePasswordElement_UriElement(), theEcorePackage.getEString(), "uriElement", "change-password", 1, 1, ChangePasswordElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(casAuthenticationEClass, CasAuthentication.class, "CasAuthentication", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCasAuthentication_LoginLabel(), theEcorePackage.getEString(), "loginLabel", null, 1, 1, CasAuthentication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -978,7 +1253,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 		  (getAuthenticationElement_SectionClass(),
 		   source,
 		   new String[] {
-			   "derivation", "if sectionClassOverride.trim() <> \'\' then\n\t\t\tsectionClassOverride.trim()\n\t\telse if self.oclAsType(ecore::EObject).eContainer().sectionClass.trim() <> \'\' then\n\t\t\tself.eContainer().sectionClass.trim()\n\t\telse\n\t\t\t\'\'\n\t\tendif endif"
+			   "derivation", "if sectionClassOverride.trim() <> \'\' then\n\t\t\tsectionClassOverride.trim()\n\t\telse if self.oclAsType(ecore::EObject).eContainer().oclAsType(LocalAuthenticationSystem).sectionClass.trim() <> \'\' then\n\t\t\tself.oclAsType(ecore::EObject).eContainer().oclAsType(LocalAuthenticationSystem).sectionClass.trim()\n\t\telse\n\t\t\t\'\'\n\t\tendif endif"
 		   });
 		addAnnotation
 		  (getAuthenticationElement_HasSectionClass(),
@@ -990,7 +1265,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 		  (getAuthenticationElement_CaptionClass(),
 		   source,
 		   new String[] {
-			   "derivation", "if captionClassOverride.trim() <> \'\' then\n\t\t\tcaptionClassOverride.trim()\n\t\telse if self.oclAsType(ecore::EObject).eContainer().captionClass.trim() <> \'\' then\n\t\t\tself.eContainer().captionClass.trim()\n\t\telse\n\t\t\t\'\'\n\t\tendif endif"
+			   "derivation", "if captionClassOverride.trim() <> \'\' then\n\t\t\tcaptionClassOverride.trim()\n\t\telse if self.oclAsType(ecore::EObject).eContainer().oclAsType(LocalAuthenticationSystem).captionClass.trim() <> \'\' then\n\t\t\tself.oclAsType(ecore::EObject).eContainer().oclAsType(LocalAuthenticationSystem).captionClass.trim()\n\t\telse\n\t\t\t\'\'\n\t\tendif endif"
 		   });
 		addAnnotation
 		  (getAuthenticationElement_HasCaptionClass(),
@@ -1002,7 +1277,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 		  (getAuthenticationElement_ContentClass(),
 		   source,
 		   new String[] {
-			   "derivation", "if contentClassOverride.trim() <> \'\' then\n\t\t\tcontentClassOverride.trim()\n\t\telse if self.oclAsType(ecore::EObject).eContainer().contentClass.trim() <> \'\' then\n\t\t\tself.eContainer().contentClass.trim()\n\t\telse\n\t\t\t\'\'\n\t\tendif endif"
+			   "derivation", "if contentClassOverride.trim() <> \'\' then\n\t\t\tcontentClassOverride.trim()\n\t\telse if self.oclAsType(ecore::EObject).eContainer().oclAsType(LocalAuthenticationSystem).contentClass.trim() <> \'\' then\n\t\t\tself.oclAsType(ecore::EObject).eContainer().oclAsType(LocalAuthenticationSystem).contentClass.trim()\n\t\telse\n\t\t\t\'\'\n\t\tendif endif"
 		   });
 		addAnnotation
 		  (getAuthenticationElement_HasContentClass(),

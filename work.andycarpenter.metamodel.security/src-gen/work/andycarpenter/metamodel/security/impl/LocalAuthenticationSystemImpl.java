@@ -15,12 +15,12 @@ import work.andycarpenter.metamodel.orm.Attribute;
 import work.andycarpenter.metamodel.orm.Entity;
 
 import work.andycarpenter.metamodel.security.AuthenticationKeyTypes;
+import work.andycarpenter.metamodel.security.ChangePasswordElement;
 import work.andycarpenter.metamodel.security.ForgottenPasswordElement;
 import work.andycarpenter.metamodel.security.LocalAuthenticationSystem;
 import work.andycarpenter.metamodel.security.LoginElement;
 import work.andycarpenter.metamodel.security.LogoutElement;
 import work.andycarpenter.metamodel.security.RegistrationElement;
-import work.andycarpenter.metamodel.security.ResetPasswordElement;
 import work.andycarpenter.metamodel.security.SecurityPackage;
 
 /**
@@ -41,7 +41,7 @@ import work.andycarpenter.metamodel.security.SecurityPackage;
  *   <li>{@link work.andycarpenter.metamodel.security.impl.LocalAuthenticationSystemImpl#getLoginElement <em>Login Element</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.security.impl.LocalAuthenticationSystemImpl#getLogoutElement <em>Logout Element</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.security.impl.LocalAuthenticationSystemImpl#getForgottenPasswordElement <em>Forgotten Password Element</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.security.impl.LocalAuthenticationSystemImpl#getResetPasswordElement <em>Reset Password Element</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.security.impl.LocalAuthenticationSystemImpl#getChangePasswordElement <em>Change Password Element</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.security.impl.LocalAuthenticationSystemImpl#isCaptcha <em>Captcha</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.security.impl.LocalAuthenticationSystemImpl#isAllowRememberMe <em>Allow Remember Me</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.security.impl.LocalAuthenticationSystemImpl#isAllowSelfRegistration <em>Allow Self Registration</em>}</li>
@@ -166,14 +166,14 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	protected ForgottenPasswordElement forgottenPasswordElement;
 
 	/**
-	 * The cached value of the '{@link #getResetPasswordElement() <em>Reset Password Element</em>}' containment reference.
+	 * The cached value of the '{@link #getChangePasswordElement() <em>Change Password Element</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getResetPasswordElement()
+	 * @see #getChangePasswordElement()
 	 * @generated
 	 * @ordered
 	 */
-	protected ResetPasswordElement resetPasswordElement;
+	protected ChangePasswordElement changePasswordElement;
 
 	/**
 	 * The default value of the '{@link #isCaptcha() <em>Captcha</em>}' attribute.
@@ -183,7 +183,7 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * @generated
 	 * @ordered
 	 */
-	protected static final boolean CAPTCHA_EDEFAULT = false;
+	protected static final boolean CAPTCHA_EDEFAULT = true;
 
 	/**
 	 * The cached value of the '{@link #isCaptcha() <em>Captcha</em>}' attribute.
@@ -713,8 +713,8 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ResetPasswordElement getResetPasswordElement() {
-		return resetPasswordElement;
+	public ChangePasswordElement getChangePasswordElement() {
+		return changePasswordElement;
 	}
 
 	/**
@@ -722,11 +722,11 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetResetPasswordElement(ResetPasswordElement newResetPasswordElement, NotificationChain msgs) {
-		ResetPasswordElement oldResetPasswordElement = resetPasswordElement;
-		resetPasswordElement = newResetPasswordElement;
+	public NotificationChain basicSetChangePasswordElement(ChangePasswordElement newChangePasswordElement, NotificationChain msgs) {
+		ChangePasswordElement oldChangePasswordElement = changePasswordElement;
+		changePasswordElement = newChangePasswordElement;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__RESET_PASSWORD_ELEMENT, oldResetPasswordElement, newResetPasswordElement);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__CHANGE_PASSWORD_ELEMENT, oldChangePasswordElement, newChangePasswordElement);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -737,18 +737,18 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setResetPasswordElement(ResetPasswordElement newResetPasswordElement) {
-		if (newResetPasswordElement != resetPasswordElement) {
+	public void setChangePasswordElement(ChangePasswordElement newChangePasswordElement) {
+		if (newChangePasswordElement != changePasswordElement) {
 			NotificationChain msgs = null;
-			if (resetPasswordElement != null)
-				msgs = ((InternalEObject)resetPasswordElement).eInverseRemove(this, SecurityPackage.RESET_PASSWORD_ELEMENT__AUTHENTICATION, ResetPasswordElement.class, msgs);
-			if (newResetPasswordElement != null)
-				msgs = ((InternalEObject)newResetPasswordElement).eInverseAdd(this, SecurityPackage.RESET_PASSWORD_ELEMENT__AUTHENTICATION, ResetPasswordElement.class, msgs);
-			msgs = basicSetResetPasswordElement(newResetPasswordElement, msgs);
+			if (changePasswordElement != null)
+				msgs = ((InternalEObject)changePasswordElement).eInverseRemove(this, SecurityPackage.CHANGE_PASSWORD_ELEMENT__AUTHENTICATION, ChangePasswordElement.class, msgs);
+			if (newChangePasswordElement != null)
+				msgs = ((InternalEObject)newChangePasswordElement).eInverseAdd(this, SecurityPackage.CHANGE_PASSWORD_ELEMENT__AUTHENTICATION, ChangePasswordElement.class, msgs);
+			msgs = basicSetChangePasswordElement(newChangePasswordElement, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__RESET_PASSWORD_ELEMENT, newResetPasswordElement, newResetPasswordElement));
+			eNotify(new ENotificationImpl(this, Notification.SET, SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__CHANGE_PASSWORD_ELEMENT, newChangePasswordElement, newChangePasswordElement));
 	}
 
 	/**
@@ -943,10 +943,10 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 				if (forgottenPasswordElement != null)
 					msgs = ((InternalEObject)forgottenPasswordElement).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__FORGOTTEN_PASSWORD_ELEMENT, null, msgs);
 				return basicSetForgottenPasswordElement((ForgottenPasswordElement)otherEnd, msgs);
-			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__RESET_PASSWORD_ELEMENT:
-				if (resetPasswordElement != null)
-					msgs = ((InternalEObject)resetPasswordElement).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__RESET_PASSWORD_ELEMENT, null, msgs);
-				return basicSetResetPasswordElement((ResetPasswordElement)otherEnd, msgs);
+			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__CHANGE_PASSWORD_ELEMENT:
+				if (changePasswordElement != null)
+					msgs = ((InternalEObject)changePasswordElement).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__CHANGE_PASSWORD_ELEMENT, null, msgs);
+				return basicSetChangePasswordElement((ChangePasswordElement)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -967,8 +967,8 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 				return basicSetLogoutElement(null, msgs);
 			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__FORGOTTEN_PASSWORD_ELEMENT:
 				return basicSetForgottenPasswordElement(null, msgs);
-			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__RESET_PASSWORD_ELEMENT:
-				return basicSetResetPasswordElement(null, msgs);
+			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__CHANGE_PASSWORD_ELEMENT:
+				return basicSetChangePasswordElement(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -1005,8 +1005,8 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 				return getLogoutElement();
 			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__FORGOTTEN_PASSWORD_ELEMENT:
 				return getForgottenPasswordElement();
-			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__RESET_PASSWORD_ELEMENT:
-				return getResetPasswordElement();
+			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__CHANGE_PASSWORD_ELEMENT:
+				return getChangePasswordElement();
 			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__CAPTCHA:
 				return isCaptcha();
 			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__ALLOW_REMEMBER_ME:
@@ -1062,8 +1062,8 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__FORGOTTEN_PASSWORD_ELEMENT:
 				setForgottenPasswordElement((ForgottenPasswordElement)newValue);
 				return;
-			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__RESET_PASSWORD_ELEMENT:
-				setResetPasswordElement((ResetPasswordElement)newValue);
+			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__CHANGE_PASSWORD_ELEMENT:
+				setChangePasswordElement((ChangePasswordElement)newValue);
 				return;
 			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__CAPTCHA:
 				setCaptcha((Boolean)newValue);
@@ -1128,8 +1128,8 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__FORGOTTEN_PASSWORD_ELEMENT:
 				setForgottenPasswordElement((ForgottenPasswordElement)null);
 				return;
-			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__RESET_PASSWORD_ELEMENT:
-				setResetPasswordElement((ResetPasswordElement)null);
+			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__CHANGE_PASSWORD_ELEMENT:
+				setChangePasswordElement((ChangePasswordElement)null);
 				return;
 			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__CAPTCHA:
 				setCaptcha(CAPTCHA_EDEFAULT);
@@ -1187,8 +1187,8 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 				return logoutElement != null;
 			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__FORGOTTEN_PASSWORD_ELEMENT:
 				return forgottenPasswordElement != null;
-			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__RESET_PASSWORD_ELEMENT:
-				return resetPasswordElement != null;
+			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__CHANGE_PASSWORD_ELEMENT:
+				return changePasswordElement != null;
 			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__CAPTCHA:
 				return captcha != CAPTCHA_EDEFAULT;
 			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__ALLOW_REMEMBER_ME:

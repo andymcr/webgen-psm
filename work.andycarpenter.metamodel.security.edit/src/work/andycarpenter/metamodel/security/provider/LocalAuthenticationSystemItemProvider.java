@@ -390,7 +390,7 @@ public class LocalAuthenticationSystemItemProvider extends AuthenticationItemPro
 			childrenFeatures.add(SecurityPackage.Literals.LOCAL_AUTHENTICATION_SYSTEM__LOGIN_ELEMENT);
 			childrenFeatures.add(SecurityPackage.Literals.LOCAL_AUTHENTICATION_SYSTEM__LOGOUT_ELEMENT);
 			childrenFeatures.add(SecurityPackage.Literals.LOCAL_AUTHENTICATION_SYSTEM__FORGOTTEN_PASSWORD_ELEMENT);
-			childrenFeatures.add(SecurityPackage.Literals.LOCAL_AUTHENTICATION_SYSTEM__RESET_PASSWORD_ELEMENT);
+			childrenFeatures.add(SecurityPackage.Literals.LOCAL_AUTHENTICATION_SYSTEM__CHANGE_PASSWORD_ELEMENT);
 		}
 		return childrenFeatures;
 	}
@@ -463,7 +463,7 @@ public class LocalAuthenticationSystemItemProvider extends AuthenticationItemPro
 			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__LOGIN_ELEMENT:
 			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__LOGOUT_ELEMENT:
 			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__FORGOTTEN_PASSWORD_ELEMENT:
-			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__RESET_PASSWORD_ELEMENT:
+			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__CHANGE_PASSWORD_ELEMENT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -503,8 +503,8 @@ public class LocalAuthenticationSystemItemProvider extends AuthenticationItemPro
 
 		newChildDescriptors.add
 			(createChildParameter
-				(SecurityPackage.Literals.LOCAL_AUTHENTICATION_SYSTEM__RESET_PASSWORD_ELEMENT,
-				 SecurityFactory.eINSTANCE.createResetPasswordElement()));
+				(SecurityPackage.Literals.LOCAL_AUTHENTICATION_SYSTEM__CHANGE_PASSWORD_ELEMENT,
+				 SecurityFactory.eINSTANCE.createChangePasswordElement()));
 	}
 
 }

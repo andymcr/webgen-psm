@@ -132,12 +132,12 @@ public class SecuritySwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case SecurityPackage.RESET_PASSWORD_ELEMENT: {
-				ResetPasswordElement resetPasswordElement = (ResetPasswordElement)theEObject;
-				T result = caseResetPasswordElement(resetPasswordElement);
-				if (result == null) result = caseAuthenticationElement(resetPasswordElement);
-				if (result == null) result = caseNamedDisplayElement(resetPasswordElement);
-				if (result == null) result = caseNamedElement(resetPasswordElement);
+			case SecurityPackage.CHANGE_PASSWORD_ELEMENT: {
+				ChangePasswordElement changePasswordElement = (ChangePasswordElement)theEObject;
+				T result = caseChangePasswordElement(changePasswordElement);
+				if (result == null) result = caseAuthenticationElement(changePasswordElement);
+				if (result == null) result = caseNamedDisplayElement(changePasswordElement);
+				if (result == null) result = caseNamedElement(changePasswordElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -273,17 +273,17 @@ public class SecuritySwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Reset Password Element</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Change Password Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Reset Password Element</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Change Password Element</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseResetPasswordElement(ResetPasswordElement object) {
+	public T caseChangePasswordElement(ChangePasswordElement object) {
 		return null;
 	}
 

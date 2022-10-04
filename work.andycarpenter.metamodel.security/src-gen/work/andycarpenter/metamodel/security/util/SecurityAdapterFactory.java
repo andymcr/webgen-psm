@@ -103,8 +103,8 @@ public class SecurityAdapterFactory extends AdapterFactoryImpl {
 				return createForgottenPasswordElementAdapter();
 			}
 			@Override
-			public Adapter caseResetPasswordElement(ResetPasswordElement object) {
-				return createResetPasswordElementAdapter();
+			public Adapter caseChangePasswordElement(ChangePasswordElement object) {
+				return createChangePasswordElementAdapter();
 			}
 			@Override
 			public Adapter caseCasAuthentication(CasAuthentication object) {
@@ -251,16 +251,16 @@ public class SecurityAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link work.andycarpenter.metamodel.security.ResetPasswordElement <em>Reset Password Element</em>}'.
+	 * Creates a new adapter for an object of class '{@link work.andycarpenter.metamodel.security.ChangePasswordElement <em>Change Password Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see work.andycarpenter.metamodel.security.ResetPasswordElement
+	 * @see work.andycarpenter.metamodel.security.ChangePasswordElement
 	 * @generated
 	 */
-	public Adapter createResetPasswordElementAdapter() {
+	public Adapter createChangePasswordElementAdapter() {
 		return null;
 	}
 

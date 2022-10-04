@@ -11,26 +11,26 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import work.andycarpenter.metamodel.security.RegistrationElement;
+
+import work.andycarpenter.metamodel.security.ChangePasswordElement;
 import work.andycarpenter.metamodel.security.SecurityPackage;
 
 /**
- * This is the item provider adapter for a {@link work.andycarpenter.metamodel.security.RegistrationElement} object.
+ * This is the item provider adapter for a {@link work.andycarpenter.metamodel.security.ChangePasswordElement} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class RegistrationElementItemProvider extends AuthenticationElementItemProvider {
+public class ChangePasswordElementItemProvider extends AuthenticationElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RegistrationElementItemProvider(AdapterFactory adapterFactory) {
+	public ChangePasswordElementItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -49,7 +49,6 @@ public class RegistrationElementItemProvider extends AuthenticationElementItemPr
 			addInvokeLabelPropertyDescriptor(object);
 			addConfirmLabelPropertyDescriptor(object);
 			addUriElementPropertyDescriptor(object);
-			addUriEmailVerificationPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -65,9 +64,9 @@ public class RegistrationElementItemProvider extends AuthenticationElementItemPr
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_RegistrationElement_authentication_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_RegistrationElement_authentication_feature", "_UI_RegistrationElement_type"),
-				 SecurityPackage.Literals.REGISTRATION_ELEMENT__AUTHENTICATION,
+				 getString("_UI_ChangePasswordElement_authentication_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ChangePasswordElement_authentication_feature", "_UI_ChangePasswordElement_type"),
+				 SecurityPackage.Literals.CHANGE_PASSWORD_ELEMENT__AUTHENTICATION,
 				 true,
 				 false,
 				 true,
@@ -87,9 +86,9 @@ public class RegistrationElementItemProvider extends AuthenticationElementItemPr
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_RegistrationElement_invokeLabel_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_RegistrationElement_invokeLabel_feature", "_UI_RegistrationElement_type"),
-				 SecurityPackage.Literals.REGISTRATION_ELEMENT__INVOKE_LABEL,
+				 getString("_UI_ChangePasswordElement_invokeLabel_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ChangePasswordElement_invokeLabel_feature", "_UI_ChangePasswordElement_type"),
+				 SecurityPackage.Literals.CHANGE_PASSWORD_ELEMENT__INVOKE_LABEL,
 				 true,
 				 false,
 				 false,
@@ -109,9 +108,9 @@ public class RegistrationElementItemProvider extends AuthenticationElementItemPr
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_RegistrationElement_confirmLabel_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_RegistrationElement_confirmLabel_feature", "_UI_RegistrationElement_type"),
-				 SecurityPackage.Literals.REGISTRATION_ELEMENT__CONFIRM_LABEL,
+				 getString("_UI_ChangePasswordElement_confirmLabel_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ChangePasswordElement_confirmLabel_feature", "_UI_ChangePasswordElement_type"),
+				 SecurityPackage.Literals.CHANGE_PASSWORD_ELEMENT__CONFIRM_LABEL,
 				 true,
 				 false,
 				 false,
@@ -131,9 +130,9 @@ public class RegistrationElementItemProvider extends AuthenticationElementItemPr
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_RegistrationElement_uriElement_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_RegistrationElement_uriElement_feature", "_UI_RegistrationElement_type"),
-				 SecurityPackage.Literals.REGISTRATION_ELEMENT__URI_ELEMENT,
+				 getString("_UI_ChangePasswordElement_uriElement_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ChangePasswordElement_uriElement_feature", "_UI_ChangePasswordElement_type"),
+				 SecurityPackage.Literals.CHANGE_PASSWORD_ELEMENT__URI_ELEMENT,
 				 true,
 				 false,
 				 false,
@@ -143,36 +142,14 @@ public class RegistrationElementItemProvider extends AuthenticationElementItemPr
 	}
 
 	/**
-	 * This adds a property descriptor for the Uri Email Verification feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addUriEmailVerificationPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_RegistrationElement_uriEmailVerification_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_RegistrationElement_uriEmailVerification_feature", "_UI_RegistrationElement_type"),
-				 SecurityPackage.Literals.REGISTRATION_ELEMENT__URI_EMAIL_VERIFICATION,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This returns RegistrationElement.gif.
+	 * This returns ChangePasswordElement.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/RegistrationElement"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/ChangePasswordElement"));
 	}
 
 	/**
@@ -183,10 +160,10 @@ public class RegistrationElementItemProvider extends AuthenticationElementItemPr
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((RegistrationElement)object).getName();
+		String label = ((ChangePasswordElement)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_RegistrationElement_type") :
-			getString("_UI_RegistrationElement_type") + " " + label;
+			getString("_UI_ChangePasswordElement_type") :
+			getString("_UI_ChangePasswordElement_type") + " " + label;
 	}
 
 
@@ -201,11 +178,10 @@ public class RegistrationElementItemProvider extends AuthenticationElementItemPr
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(RegistrationElement.class)) {
-			case SecurityPackage.REGISTRATION_ELEMENT__INVOKE_LABEL:
-			case SecurityPackage.REGISTRATION_ELEMENT__CONFIRM_LABEL:
-			case SecurityPackage.REGISTRATION_ELEMENT__URI_ELEMENT:
-			case SecurityPackage.REGISTRATION_ELEMENT__URI_EMAIL_VERIFICATION:
+		switch (notification.getFeatureID(ChangePasswordElement.class)) {
+			case SecurityPackage.CHANGE_PASSWORD_ELEMENT__INVOKE_LABEL:
+			case SecurityPackage.CHANGE_PASSWORD_ELEMENT__CONFIRM_LABEL:
+			case SecurityPackage.CHANGE_PASSWORD_ELEMENT__URI_ELEMENT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

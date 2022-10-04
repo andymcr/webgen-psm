@@ -57,9 +57,9 @@ class LocalAuthenticationSystem extends Authentication {
 
 	contains ForgottenPasswordElement[1] forgottenPasswordElement opposite authentication
 
-	contains ResetPasswordElement[1] resetPasswordElement opposite authentication
+	contains ChangePasswordElement[1] changePasswordElement opposite authentication
 
-	boolean captcha
+	boolean captcha = "true"
 
 	boolean allowRememberMe
 
@@ -75,15 +75,11 @@ class LocalAuthenticationSystem extends Authentication {
 }
 
 abstract class AuthenticationElement extends NamedDisplayElement {
-	String[1] confirmLabel = ''
-
-	String uriElement = ''
-
 	String sectionClassOverride = ''
 	@OCL(derivation="if sectionClassOverride.trim() <> '' then
 			sectionClassOverride.trim()
-		else if self.oclAsType(ecore::EObject).eContainer().sectionClass.trim() <> '' then
-			self.eContainer().sectionClass.trim()
+		else if self.oclAsType(ecore::EObject).eContainer().oclAsType(LocalAuthenticationSystem).sectionClass.trim() <> '' then
+			self.oclAsType(ecore::EObject).eContainer().oclAsType(LocalAuthenticationSystem).sectionClass.trim()
 		else
 			''
 		endif endif")
@@ -94,8 +90,8 @@ abstract class AuthenticationElement extends NamedDisplayElement {
 	String captionClassOverride = ''
 	@OCL(derivation="if captionClassOverride.trim() <> '' then
 			captionClassOverride.trim()
-		else if self.oclAsType(ecore::EObject).eContainer().captionClass.trim() <> '' then
-			self.eContainer().captionClass.trim()
+		else if self.oclAsType(ecore::EObject).eContainer().oclAsType(LocalAuthenticationSystem).captionClass.trim() <> '' then
+			self.oclAsType(ecore::EObject).eContainer().oclAsType(LocalAuthenticationSystem).captionClass.trim()
 		else
 			''
 		endif endif")
@@ -106,8 +102,8 @@ abstract class AuthenticationElement extends NamedDisplayElement {
 	String contentClassOverride = ''
 	@OCL(derivation="if contentClassOverride.trim() <> '' then
 			contentClassOverride.trim()
-		else if self.oclAsType(ecore::EObject).eContainer().contentClass.trim() <> '' then
-			self.eContainer().contentClass.trim()
+		else if self.oclAsType(ecore::EObject).eContainer().oclAsType(LocalAuthenticationSystem).contentClass.trim() <> '' then
+			self.oclAsType(ecore::EObject).eContainer().oclAsType(LocalAuthenticationSystem).contentClass.trim()
 		else
 			''
 		endif endif")
@@ -118,27 +114,68 @@ abstract class AuthenticationElement extends NamedDisplayElement {
 
 class RegistrationElement extends AuthenticationElement {
 	refers LocalAuthenticationSystem[1] authentication opposite registrationElement
+
+	String[1] invokeLabel = ''
+	String[1] confirmLabel = ''
+
+	String[1] uriElement = 'register'
+	String[1] uriEmailVerification = 'verify'
 }
 
 class LoginElement extends AuthenticationElement {
 	refers LocalAuthenticationSystem[1] authentication opposite loginElement
+
+	String[1] invokeLabel = 'Login'
+	String[1] confirmLabel = 'Login'
+
+	String[1] uriElement = 'login'
 }
 
 class LogoutElement extends AuthenticationElement {
 	refers LocalAuthenticationSystem[1] authentication opposite logoutElement
+
+	String[1] invokeLabel = 'Logout'
+	String[1] confirmLabel = ''
+
+	String[1] uriElement = 'logout'
 }
 
 class ForgottenPasswordElement extends AuthenticationElement {
 	refers LocalAuthenticationSystem[1] authentication opposite forgottenPasswordElement
-	String[1] uriEmailSent
-	String[1] emailSubject
-	String[1] emailMessage
-	String[1] emailSentCaption
-	String[1] emailSentMessage
+
+	String[1] invokeLabel = 'Forgotten Password'
+	String[1] requestLabel = 'Request Password Reset'
+	String[1] resetLabel = 'Set Password'
+
+	String[1] uriElement = 'forgotten-password'
+	String[1] uriEmailSent = 'check-email'
+	String[1] uriResetPassword = 'reset'
+
+	String[1] emailHelp = "Enter your email address and we we will send you a link to reset your password"
+	String[1] passwordLabel = 'New Password'
+	String[1] passwordPlaceholder = 'New Password'
+	String[1] passwordTitle = 'New Password'
+
+	String[1] passwordConfirmationLabel = 'Confirm Password'
+	String[1] passwordConfirmationPlaceholder = 'Confirm Password'
+	String[1] passwordConfirmationTitle = 'Confirm Password'
+
+	String[1] passwordMessageRequired = "A password value is required"
+	String[1] passwordMessageValueMismatch = "The two password values do not match"
+
+	String[1] emailCheckSubject
+	String[1] emailCheckMessage
+	String[1] emailCheckSentCaption
+	String[1] emailCheckSentMessage
 }
 
-class ResetPasswordElement extends AuthenticationElement {
-	refers LocalAuthenticationSystem[1] authentication opposite resetPasswordElement
+class ChangePasswordElement extends AuthenticationElement {
+	refers LocalAuthenticationSystem[1] authentication opposite changePasswordElement
+
+	String[1] invokeLabel = 'Change Password'
+	String[1] confirmLabel = 'Set Pasword'
+
+	String[1] uriElement = 'change-password'
 }
 
 

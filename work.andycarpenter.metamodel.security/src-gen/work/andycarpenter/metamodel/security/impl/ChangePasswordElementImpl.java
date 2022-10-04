@@ -12,28 +12,27 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
+import work.andycarpenter.metamodel.security.ChangePasswordElement;
 import work.andycarpenter.metamodel.security.LocalAuthenticationSystem;
-import work.andycarpenter.metamodel.security.RegistrationElement;
 import work.andycarpenter.metamodel.security.SecurityPackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Registration Element</b></em>'.
+ * An implementation of the model object '<em><b>Change Password Element</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link work.andycarpenter.metamodel.security.impl.RegistrationElementImpl#getAuthentication <em>Authentication</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.security.impl.RegistrationElementImpl#getInvokeLabel <em>Invoke Label</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.security.impl.RegistrationElementImpl#getConfirmLabel <em>Confirm Label</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.security.impl.RegistrationElementImpl#getUriElement <em>Uri Element</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.security.impl.RegistrationElementImpl#getUriEmailVerification <em>Uri Email Verification</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.security.impl.ChangePasswordElementImpl#getAuthentication <em>Authentication</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.security.impl.ChangePasswordElementImpl#getInvokeLabel <em>Invoke Label</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.security.impl.ChangePasswordElementImpl#getConfirmLabel <em>Confirm Label</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.security.impl.ChangePasswordElementImpl#getUriElement <em>Uri Element</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class RegistrationElementImpl extends AuthenticationElementImpl implements RegistrationElement {
+public class ChangePasswordElementImpl extends AuthenticationElementImpl implements ChangePasswordElement {
 	/**
 	 * The default value of the '{@link #getInvokeLabel() <em>Invoke Label</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -42,7 +41,7 @@ public class RegistrationElementImpl extends AuthenticationElementImpl implement
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String INVOKE_LABEL_EDEFAULT = "";
+	protected static final String INVOKE_LABEL_EDEFAULT = "Change Password";
 
 	/**
 	 * The cached value of the '{@link #getInvokeLabel() <em>Invoke Label</em>}' attribute.
@@ -62,7 +61,7 @@ public class RegistrationElementImpl extends AuthenticationElementImpl implement
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String CONFIRM_LABEL_EDEFAULT = "";
+	protected static final String CONFIRM_LABEL_EDEFAULT = "Set Pasword";
 
 	/**
 	 * The cached value of the '{@link #getConfirmLabel() <em>Confirm Label</em>}' attribute.
@@ -82,7 +81,7 @@ public class RegistrationElementImpl extends AuthenticationElementImpl implement
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String URI_ELEMENT_EDEFAULT = "register";
+	protected static final String URI_ELEMENT_EDEFAULT = "change-password";
 
 	/**
 	 * The cached value of the '{@link #getUriElement() <em>Uri Element</em>}' attribute.
@@ -95,31 +94,11 @@ public class RegistrationElementImpl extends AuthenticationElementImpl implement
 	protected String uriElement = URI_ELEMENT_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getUriEmailVerification() <em>Uri Email Verification</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getUriEmailVerification()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String URI_EMAIL_VERIFICATION_EDEFAULT = "verify";
-
-	/**
-	 * The cached value of the '{@link #getUriEmailVerification() <em>Uri Email Verification</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getUriEmailVerification()
-	 * @generated
-	 * @ordered
-	 */
-	protected String uriEmailVerification = URI_EMAIL_VERIFICATION_EDEFAULT;
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected RegistrationElementImpl() {
+	protected ChangePasswordElementImpl() {
 		super();
 	}
 
@@ -130,7 +109,7 @@ public class RegistrationElementImpl extends AuthenticationElementImpl implement
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return SecurityPackage.Literals.REGISTRATION_ELEMENT;
+		return SecurityPackage.Literals.CHANGE_PASSWORD_ELEMENT;
 	}
 
 	/**
@@ -139,7 +118,7 @@ public class RegistrationElementImpl extends AuthenticationElementImpl implement
 	 * @generated
 	 */
 	public LocalAuthenticationSystem getAuthentication() {
-		if (eContainerFeatureID() != SecurityPackage.REGISTRATION_ELEMENT__AUTHENTICATION) return null;
+		if (eContainerFeatureID() != SecurityPackage.CHANGE_PASSWORD_ELEMENT__AUTHENTICATION) return null;
 		return (LocalAuthenticationSystem)eContainer();
 	}
 
@@ -149,7 +128,7 @@ public class RegistrationElementImpl extends AuthenticationElementImpl implement
 	 * @generated
 	 */
 	public LocalAuthenticationSystem basicGetAuthentication() {
-		if (eContainerFeatureID() != SecurityPackage.REGISTRATION_ELEMENT__AUTHENTICATION) return null;
+		if (eContainerFeatureID() != SecurityPackage.CHANGE_PASSWORD_ELEMENT__AUTHENTICATION) return null;
 		return (LocalAuthenticationSystem)eInternalContainer();
 	}
 
@@ -159,7 +138,7 @@ public class RegistrationElementImpl extends AuthenticationElementImpl implement
 	 * @generated
 	 */
 	public NotificationChain basicSetAuthentication(LocalAuthenticationSystem newAuthentication, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newAuthentication, SecurityPackage.REGISTRATION_ELEMENT__AUTHENTICATION, msgs);
+		msgs = eBasicSetContainer((InternalEObject)newAuthentication, SecurityPackage.CHANGE_PASSWORD_ELEMENT__AUTHENTICATION, msgs);
 		return msgs;
 	}
 
@@ -169,19 +148,19 @@ public class RegistrationElementImpl extends AuthenticationElementImpl implement
 	 * @generated
 	 */
 	public void setAuthentication(LocalAuthenticationSystem newAuthentication) {
-		if (newAuthentication != eInternalContainer() || (eContainerFeatureID() != SecurityPackage.REGISTRATION_ELEMENT__AUTHENTICATION && newAuthentication != null)) {
+		if (newAuthentication != eInternalContainer() || (eContainerFeatureID() != SecurityPackage.CHANGE_PASSWORD_ELEMENT__AUTHENTICATION && newAuthentication != null)) {
 			if (EcoreUtil.isAncestor(this, newAuthentication))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newAuthentication != null)
-				msgs = ((InternalEObject)newAuthentication).eInverseAdd(this, SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__REGISTRATION_ELEMENT, LocalAuthenticationSystem.class, msgs);
+				msgs = ((InternalEObject)newAuthentication).eInverseAdd(this, SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__CHANGE_PASSWORD_ELEMENT, LocalAuthenticationSystem.class, msgs);
 			msgs = basicSetAuthentication(newAuthentication, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SecurityPackage.REGISTRATION_ELEMENT__AUTHENTICATION, newAuthentication, newAuthentication));
+			eNotify(new ENotificationImpl(this, Notification.SET, SecurityPackage.CHANGE_PASSWORD_ELEMENT__AUTHENTICATION, newAuthentication, newAuthentication));
 	}
 
 	/**
@@ -202,7 +181,7 @@ public class RegistrationElementImpl extends AuthenticationElementImpl implement
 		String oldInvokeLabel = invokeLabel;
 		invokeLabel = newInvokeLabel;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SecurityPackage.REGISTRATION_ELEMENT__INVOKE_LABEL, oldInvokeLabel, invokeLabel));
+			eNotify(new ENotificationImpl(this, Notification.SET, SecurityPackage.CHANGE_PASSWORD_ELEMENT__INVOKE_LABEL, oldInvokeLabel, invokeLabel));
 	}
 
 	/**
@@ -223,7 +202,7 @@ public class RegistrationElementImpl extends AuthenticationElementImpl implement
 		String oldConfirmLabel = confirmLabel;
 		confirmLabel = newConfirmLabel;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SecurityPackage.REGISTRATION_ELEMENT__CONFIRM_LABEL, oldConfirmLabel, confirmLabel));
+			eNotify(new ENotificationImpl(this, Notification.SET, SecurityPackage.CHANGE_PASSWORD_ELEMENT__CONFIRM_LABEL, oldConfirmLabel, confirmLabel));
 	}
 
 	/**
@@ -244,28 +223,7 @@ public class RegistrationElementImpl extends AuthenticationElementImpl implement
 		String oldUriElement = uriElement;
 		uriElement = newUriElement;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SecurityPackage.REGISTRATION_ELEMENT__URI_ELEMENT, oldUriElement, uriElement));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getUriEmailVerification() {
-		return uriEmailVerification;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setUriEmailVerification(String newUriEmailVerification) {
-		String oldUriEmailVerification = uriEmailVerification;
-		uriEmailVerification = newUriEmailVerification;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SecurityPackage.REGISTRATION_ELEMENT__URI_EMAIL_VERIFICATION, oldUriEmailVerification, uriEmailVerification));
+			eNotify(new ENotificationImpl(this, Notification.SET, SecurityPackage.CHANGE_PASSWORD_ELEMENT__URI_ELEMENT, oldUriElement, uriElement));
 	}
 
 	/**
@@ -276,7 +234,7 @@ public class RegistrationElementImpl extends AuthenticationElementImpl implement
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case SecurityPackage.REGISTRATION_ELEMENT__AUTHENTICATION:
+			case SecurityPackage.CHANGE_PASSWORD_ELEMENT__AUTHENTICATION:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetAuthentication((LocalAuthenticationSystem)otherEnd, msgs);
@@ -292,7 +250,7 @@ public class RegistrationElementImpl extends AuthenticationElementImpl implement
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case SecurityPackage.REGISTRATION_ELEMENT__AUTHENTICATION:
+			case SecurityPackage.CHANGE_PASSWORD_ELEMENT__AUTHENTICATION:
 				return basicSetAuthentication(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -306,8 +264,8 @@ public class RegistrationElementImpl extends AuthenticationElementImpl implement
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
-			case SecurityPackage.REGISTRATION_ELEMENT__AUTHENTICATION:
-				return eInternalContainer().eInverseRemove(this, SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__REGISTRATION_ELEMENT, LocalAuthenticationSystem.class, msgs);
+			case SecurityPackage.CHANGE_PASSWORD_ELEMENT__AUTHENTICATION:
+				return eInternalContainer().eInverseRemove(this, SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__CHANGE_PASSWORD_ELEMENT, LocalAuthenticationSystem.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -320,17 +278,15 @@ public class RegistrationElementImpl extends AuthenticationElementImpl implement
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case SecurityPackage.REGISTRATION_ELEMENT__AUTHENTICATION:
+			case SecurityPackage.CHANGE_PASSWORD_ELEMENT__AUTHENTICATION:
 				if (resolve) return getAuthentication();
 				return basicGetAuthentication();
-			case SecurityPackage.REGISTRATION_ELEMENT__INVOKE_LABEL:
+			case SecurityPackage.CHANGE_PASSWORD_ELEMENT__INVOKE_LABEL:
 				return getInvokeLabel();
-			case SecurityPackage.REGISTRATION_ELEMENT__CONFIRM_LABEL:
+			case SecurityPackage.CHANGE_PASSWORD_ELEMENT__CONFIRM_LABEL:
 				return getConfirmLabel();
-			case SecurityPackage.REGISTRATION_ELEMENT__URI_ELEMENT:
+			case SecurityPackage.CHANGE_PASSWORD_ELEMENT__URI_ELEMENT:
 				return getUriElement();
-			case SecurityPackage.REGISTRATION_ELEMENT__URI_EMAIL_VERIFICATION:
-				return getUriEmailVerification();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -343,20 +299,17 @@ public class RegistrationElementImpl extends AuthenticationElementImpl implement
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case SecurityPackage.REGISTRATION_ELEMENT__AUTHENTICATION:
+			case SecurityPackage.CHANGE_PASSWORD_ELEMENT__AUTHENTICATION:
 				setAuthentication((LocalAuthenticationSystem)newValue);
 				return;
-			case SecurityPackage.REGISTRATION_ELEMENT__INVOKE_LABEL:
+			case SecurityPackage.CHANGE_PASSWORD_ELEMENT__INVOKE_LABEL:
 				setInvokeLabel((String)newValue);
 				return;
-			case SecurityPackage.REGISTRATION_ELEMENT__CONFIRM_LABEL:
+			case SecurityPackage.CHANGE_PASSWORD_ELEMENT__CONFIRM_LABEL:
 				setConfirmLabel((String)newValue);
 				return;
-			case SecurityPackage.REGISTRATION_ELEMENT__URI_ELEMENT:
+			case SecurityPackage.CHANGE_PASSWORD_ELEMENT__URI_ELEMENT:
 				setUriElement((String)newValue);
-				return;
-			case SecurityPackage.REGISTRATION_ELEMENT__URI_EMAIL_VERIFICATION:
-				setUriEmailVerification((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -370,20 +323,17 @@ public class RegistrationElementImpl extends AuthenticationElementImpl implement
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case SecurityPackage.REGISTRATION_ELEMENT__AUTHENTICATION:
+			case SecurityPackage.CHANGE_PASSWORD_ELEMENT__AUTHENTICATION:
 				setAuthentication((LocalAuthenticationSystem)null);
 				return;
-			case SecurityPackage.REGISTRATION_ELEMENT__INVOKE_LABEL:
+			case SecurityPackage.CHANGE_PASSWORD_ELEMENT__INVOKE_LABEL:
 				setInvokeLabel(INVOKE_LABEL_EDEFAULT);
 				return;
-			case SecurityPackage.REGISTRATION_ELEMENT__CONFIRM_LABEL:
+			case SecurityPackage.CHANGE_PASSWORD_ELEMENT__CONFIRM_LABEL:
 				setConfirmLabel(CONFIRM_LABEL_EDEFAULT);
 				return;
-			case SecurityPackage.REGISTRATION_ELEMENT__URI_ELEMENT:
+			case SecurityPackage.CHANGE_PASSWORD_ELEMENT__URI_ELEMENT:
 				setUriElement(URI_ELEMENT_EDEFAULT);
-				return;
-			case SecurityPackage.REGISTRATION_ELEMENT__URI_EMAIL_VERIFICATION:
-				setUriEmailVerification(URI_EMAIL_VERIFICATION_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -397,16 +347,14 @@ public class RegistrationElementImpl extends AuthenticationElementImpl implement
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case SecurityPackage.REGISTRATION_ELEMENT__AUTHENTICATION:
+			case SecurityPackage.CHANGE_PASSWORD_ELEMENT__AUTHENTICATION:
 				return basicGetAuthentication() != null;
-			case SecurityPackage.REGISTRATION_ELEMENT__INVOKE_LABEL:
+			case SecurityPackage.CHANGE_PASSWORD_ELEMENT__INVOKE_LABEL:
 				return INVOKE_LABEL_EDEFAULT == null ? invokeLabel != null : !INVOKE_LABEL_EDEFAULT.equals(invokeLabel);
-			case SecurityPackage.REGISTRATION_ELEMENT__CONFIRM_LABEL:
+			case SecurityPackage.CHANGE_PASSWORD_ELEMENT__CONFIRM_LABEL:
 				return CONFIRM_LABEL_EDEFAULT == null ? confirmLabel != null : !CONFIRM_LABEL_EDEFAULT.equals(confirmLabel);
-			case SecurityPackage.REGISTRATION_ELEMENT__URI_ELEMENT:
+			case SecurityPackage.CHANGE_PASSWORD_ELEMENT__URI_ELEMENT:
 				return URI_ELEMENT_EDEFAULT == null ? uriElement != null : !URI_ELEMENT_EDEFAULT.equals(uriElement);
-			case SecurityPackage.REGISTRATION_ELEMENT__URI_EMAIL_VERIFICATION:
-				return URI_EMAIL_VERIFICATION_EDEFAULT == null ? uriEmailVerification != null : !URI_EMAIL_VERIFICATION_EDEFAULT.equals(uriEmailVerification);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -427,10 +375,8 @@ public class RegistrationElementImpl extends AuthenticationElementImpl implement
 		result.append(confirmLabel);
 		result.append(", uriElement: ");
 		result.append(uriElement);
-		result.append(", uriEmailVerification: ");
-		result.append(uriEmailVerification);
 		result.append(')');
 		return result.toString();
 	}
 
-} //RegistrationElementImpl
+} //ChangePasswordElementImpl

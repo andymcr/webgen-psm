@@ -272,13 +272,13 @@ public interface SecurityPackage extends EPackage {
 	int LOCAL_AUTHENTICATION_SYSTEM__FORGOTTEN_PASSWORD_ELEMENT = AUTHENTICATION_FEATURE_COUNT + 9;
 
 	/**
-	 * The feature id for the '<em><b>Reset Password Element</b></em>' containment reference.
+	 * The feature id for the '<em><b>Change Password Element</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LOCAL_AUTHENTICATION_SYSTEM__RESET_PASSWORD_ELEMENT = AUTHENTICATION_FEATURE_COUNT + 10;
+	int LOCAL_AUTHENTICATION_SYSTEM__CHANGE_PASSWORD_ELEMENT = AUTHENTICATION_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Captcha</b></em>' attribute.
@@ -399,31 +399,13 @@ public interface SecurityPackage extends EPackage {
 	int AUTHENTICATION_ELEMENT__DISPLAY_LABEL = BasePackage.NAMED_DISPLAY_ELEMENT__DISPLAY_LABEL;
 
 	/**
-	 * The feature id for the '<em><b>Confirm Label</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AUTHENTICATION_ELEMENT__CONFIRM_LABEL = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Uri Element</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AUTHENTICATION_ELEMENT__URI_ELEMENT = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>Section Class Override</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHENTICATION_ELEMENT__SECTION_CLASS_OVERRIDE = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 2;
+	int AUTHENTICATION_ELEMENT__SECTION_CLASS_OVERRIDE = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Section Class</b></em>' attribute.
@@ -432,7 +414,7 @@ public interface SecurityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHENTICATION_ELEMENT__SECTION_CLASS = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 3;
+	int AUTHENTICATION_ELEMENT__SECTION_CLASS = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Has Section Class</b></em>' attribute.
@@ -441,7 +423,7 @@ public interface SecurityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHENTICATION_ELEMENT__HAS_SECTION_CLASS = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 4;
+	int AUTHENTICATION_ELEMENT__HAS_SECTION_CLASS = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Caption Class Override</b></em>' attribute.
@@ -450,7 +432,7 @@ public interface SecurityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHENTICATION_ELEMENT__CAPTION_CLASS_OVERRIDE = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 5;
+	int AUTHENTICATION_ELEMENT__CAPTION_CLASS_OVERRIDE = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Caption Class</b></em>' attribute.
@@ -459,7 +441,7 @@ public interface SecurityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHENTICATION_ELEMENT__CAPTION_CLASS = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 6;
+	int AUTHENTICATION_ELEMENT__CAPTION_CLASS = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Has Caption Class</b></em>' attribute.
@@ -468,7 +450,7 @@ public interface SecurityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHENTICATION_ELEMENT__HAS_CAPTION_CLASS = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 7;
+	int AUTHENTICATION_ELEMENT__HAS_CAPTION_CLASS = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Content Class Override</b></em>' attribute.
@@ -477,7 +459,7 @@ public interface SecurityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHENTICATION_ELEMENT__CONTENT_CLASS_OVERRIDE = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 8;
+	int AUTHENTICATION_ELEMENT__CONTENT_CLASS_OVERRIDE = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Content Class</b></em>' attribute.
@@ -486,7 +468,7 @@ public interface SecurityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHENTICATION_ELEMENT__CONTENT_CLASS = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 9;
+	int AUTHENTICATION_ELEMENT__CONTENT_CLASS = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Has Content Class</b></em>' attribute.
@@ -495,7 +477,7 @@ public interface SecurityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHENTICATION_ELEMENT__HAS_CONTENT_CLASS = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 10;
+	int AUTHENTICATION_ELEMENT__HAS_CONTENT_CLASS = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of structural features of the '<em>Authentication Element</em>' class.
@@ -504,7 +486,7 @@ public interface SecurityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHENTICATION_ELEMENT_FEATURE_COUNT = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 11;
+	int AUTHENTICATION_ELEMENT_FEATURE_COUNT = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
 	 * The number of operations of the '<em>Authentication Element</em>' class.
@@ -542,24 +524,6 @@ public interface SecurityPackage extends EPackage {
 	 * @ordered
 	 */
 	int REGISTRATION_ELEMENT__DISPLAY_LABEL = AUTHENTICATION_ELEMENT__DISPLAY_LABEL;
-
-	/**
-	 * The feature id for the '<em><b>Confirm Label</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REGISTRATION_ELEMENT__CONFIRM_LABEL = AUTHENTICATION_ELEMENT__CONFIRM_LABEL;
-
-	/**
-	 * The feature id for the '<em><b>Uri Element</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REGISTRATION_ELEMENT__URI_ELEMENT = AUTHENTICATION_ELEMENT__URI_ELEMENT;
 
 	/**
 	 * The feature id for the '<em><b>Section Class Override</b></em>' attribute.
@@ -652,13 +616,49 @@ public interface SecurityPackage extends EPackage {
 	int REGISTRATION_ELEMENT__AUTHENTICATION = AUTHENTICATION_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Invoke Label</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGISTRATION_ELEMENT__INVOKE_LABEL = AUTHENTICATION_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Confirm Label</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGISTRATION_ELEMENT__CONFIRM_LABEL = AUTHENTICATION_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Uri Element</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGISTRATION_ELEMENT__URI_ELEMENT = AUTHENTICATION_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Uri Email Verification</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGISTRATION_ELEMENT__URI_EMAIL_VERIFICATION = AUTHENTICATION_ELEMENT_FEATURE_COUNT + 4;
+
+	/**
 	 * The number of structural features of the '<em>Registration Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REGISTRATION_ELEMENT_FEATURE_COUNT = AUTHENTICATION_ELEMENT_FEATURE_COUNT + 1;
+	int REGISTRATION_ELEMENT_FEATURE_COUNT = AUTHENTICATION_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of operations of the '<em>Registration Element</em>' class.
@@ -696,24 +696,6 @@ public interface SecurityPackage extends EPackage {
 	 * @ordered
 	 */
 	int LOGIN_ELEMENT__DISPLAY_LABEL = AUTHENTICATION_ELEMENT__DISPLAY_LABEL;
-
-	/**
-	 * The feature id for the '<em><b>Confirm Label</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LOGIN_ELEMENT__CONFIRM_LABEL = AUTHENTICATION_ELEMENT__CONFIRM_LABEL;
-
-	/**
-	 * The feature id for the '<em><b>Uri Element</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LOGIN_ELEMENT__URI_ELEMENT = AUTHENTICATION_ELEMENT__URI_ELEMENT;
 
 	/**
 	 * The feature id for the '<em><b>Section Class Override</b></em>' attribute.
@@ -806,13 +788,40 @@ public interface SecurityPackage extends EPackage {
 	int LOGIN_ELEMENT__AUTHENTICATION = AUTHENTICATION_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Invoke Label</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOGIN_ELEMENT__INVOKE_LABEL = AUTHENTICATION_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Confirm Label</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOGIN_ELEMENT__CONFIRM_LABEL = AUTHENTICATION_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Uri Element</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOGIN_ELEMENT__URI_ELEMENT = AUTHENTICATION_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
 	 * The number of structural features of the '<em>Login Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LOGIN_ELEMENT_FEATURE_COUNT = AUTHENTICATION_ELEMENT_FEATURE_COUNT + 1;
+	int LOGIN_ELEMENT_FEATURE_COUNT = AUTHENTICATION_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of operations of the '<em>Login Element</em>' class.
@@ -850,24 +859,6 @@ public interface SecurityPackage extends EPackage {
 	 * @ordered
 	 */
 	int LOGOUT_ELEMENT__DISPLAY_LABEL = AUTHENTICATION_ELEMENT__DISPLAY_LABEL;
-
-	/**
-	 * The feature id for the '<em><b>Confirm Label</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LOGOUT_ELEMENT__CONFIRM_LABEL = AUTHENTICATION_ELEMENT__CONFIRM_LABEL;
-
-	/**
-	 * The feature id for the '<em><b>Uri Element</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LOGOUT_ELEMENT__URI_ELEMENT = AUTHENTICATION_ELEMENT__URI_ELEMENT;
 
 	/**
 	 * The feature id for the '<em><b>Section Class Override</b></em>' attribute.
@@ -960,13 +951,40 @@ public interface SecurityPackage extends EPackage {
 	int LOGOUT_ELEMENT__AUTHENTICATION = AUTHENTICATION_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Invoke Label</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOGOUT_ELEMENT__INVOKE_LABEL = AUTHENTICATION_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Confirm Label</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOGOUT_ELEMENT__CONFIRM_LABEL = AUTHENTICATION_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Uri Element</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOGOUT_ELEMENT__URI_ELEMENT = AUTHENTICATION_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
 	 * The number of structural features of the '<em>Logout Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LOGOUT_ELEMENT_FEATURE_COUNT = AUTHENTICATION_ELEMENT_FEATURE_COUNT + 1;
+	int LOGOUT_ELEMENT_FEATURE_COUNT = AUTHENTICATION_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of operations of the '<em>Logout Element</em>' class.
@@ -1004,24 +1022,6 @@ public interface SecurityPackage extends EPackage {
 	 * @ordered
 	 */
 	int FORGOTTEN_PASSWORD_ELEMENT__DISPLAY_LABEL = AUTHENTICATION_ELEMENT__DISPLAY_LABEL;
-
-	/**
-	 * The feature id for the '<em><b>Confirm Label</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FORGOTTEN_PASSWORD_ELEMENT__CONFIRM_LABEL = AUTHENTICATION_ELEMENT__CONFIRM_LABEL;
-
-	/**
-	 * The feature id for the '<em><b>Uri Element</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FORGOTTEN_PASSWORD_ELEMENT__URI_ELEMENT = AUTHENTICATION_ELEMENT__URI_ELEMENT;
 
 	/**
 	 * The feature id for the '<em><b>Section Class Override</b></em>' attribute.
@@ -1114,49 +1114,175 @@ public interface SecurityPackage extends EPackage {
 	int FORGOTTEN_PASSWORD_ELEMENT__AUTHENTICATION = AUTHENTICATION_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Invoke Label</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORGOTTEN_PASSWORD_ELEMENT__INVOKE_LABEL = AUTHENTICATION_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Request Label</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORGOTTEN_PASSWORD_ELEMENT__REQUEST_LABEL = AUTHENTICATION_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Reset Label</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORGOTTEN_PASSWORD_ELEMENT__RESET_LABEL = AUTHENTICATION_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Uri Element</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORGOTTEN_PASSWORD_ELEMENT__URI_ELEMENT = AUTHENTICATION_ELEMENT_FEATURE_COUNT + 4;
+
+	/**
 	 * The feature id for the '<em><b>Uri Email Sent</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FORGOTTEN_PASSWORD_ELEMENT__URI_EMAIL_SENT = AUTHENTICATION_ELEMENT_FEATURE_COUNT + 1;
+	int FORGOTTEN_PASSWORD_ELEMENT__URI_EMAIL_SENT = AUTHENTICATION_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
-	 * The feature id for the '<em><b>Email Subject</b></em>' attribute.
+	 * The feature id for the '<em><b>Uri Reset Password</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FORGOTTEN_PASSWORD_ELEMENT__EMAIL_SUBJECT = AUTHENTICATION_ELEMENT_FEATURE_COUNT + 2;
+	int FORGOTTEN_PASSWORD_ELEMENT__URI_RESET_PASSWORD = AUTHENTICATION_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
-	 * The feature id for the '<em><b>Email Message</b></em>' attribute.
+	 * The feature id for the '<em><b>Email Help</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FORGOTTEN_PASSWORD_ELEMENT__EMAIL_MESSAGE = AUTHENTICATION_ELEMENT_FEATURE_COUNT + 3;
+	int FORGOTTEN_PASSWORD_ELEMENT__EMAIL_HELP = AUTHENTICATION_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
-	 * The feature id for the '<em><b>Email Sent Caption</b></em>' attribute.
+	 * The feature id for the '<em><b>Password Label</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FORGOTTEN_PASSWORD_ELEMENT__EMAIL_SENT_CAPTION = AUTHENTICATION_ELEMENT_FEATURE_COUNT + 4;
+	int FORGOTTEN_PASSWORD_ELEMENT__PASSWORD_LABEL = AUTHENTICATION_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
-	 * The feature id for the '<em><b>Email Sent Message</b></em>' attribute.
+	 * The feature id for the '<em><b>Password Placeholder</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FORGOTTEN_PASSWORD_ELEMENT__EMAIL_SENT_MESSAGE = AUTHENTICATION_ELEMENT_FEATURE_COUNT + 5;
+	int FORGOTTEN_PASSWORD_ELEMENT__PASSWORD_PLACEHOLDER = AUTHENTICATION_ELEMENT_FEATURE_COUNT + 9;
+
+	/**
+	 * The feature id for the '<em><b>Password Title</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORGOTTEN_PASSWORD_ELEMENT__PASSWORD_TITLE = AUTHENTICATION_ELEMENT_FEATURE_COUNT + 10;
+
+	/**
+	 * The feature id for the '<em><b>Password Confirmation Label</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORGOTTEN_PASSWORD_ELEMENT__PASSWORD_CONFIRMATION_LABEL = AUTHENTICATION_ELEMENT_FEATURE_COUNT + 11;
+
+	/**
+	 * The feature id for the '<em><b>Password Confirmation Placeholder</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORGOTTEN_PASSWORD_ELEMENT__PASSWORD_CONFIRMATION_PLACEHOLDER = AUTHENTICATION_ELEMENT_FEATURE_COUNT + 12;
+
+	/**
+	 * The feature id for the '<em><b>Password Confirmation Title</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORGOTTEN_PASSWORD_ELEMENT__PASSWORD_CONFIRMATION_TITLE = AUTHENTICATION_ELEMENT_FEATURE_COUNT + 13;
+
+	/**
+	 * The feature id for the '<em><b>Password Message Required</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORGOTTEN_PASSWORD_ELEMENT__PASSWORD_MESSAGE_REQUIRED = AUTHENTICATION_ELEMENT_FEATURE_COUNT + 14;
+
+	/**
+	 * The feature id for the '<em><b>Password Message Value Mismatch</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORGOTTEN_PASSWORD_ELEMENT__PASSWORD_MESSAGE_VALUE_MISMATCH = AUTHENTICATION_ELEMENT_FEATURE_COUNT + 15;
+
+	/**
+	 * The feature id for the '<em><b>Email Check Subject</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORGOTTEN_PASSWORD_ELEMENT__EMAIL_CHECK_SUBJECT = AUTHENTICATION_ELEMENT_FEATURE_COUNT + 16;
+
+	/**
+	 * The feature id for the '<em><b>Email Check Message</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORGOTTEN_PASSWORD_ELEMENT__EMAIL_CHECK_MESSAGE = AUTHENTICATION_ELEMENT_FEATURE_COUNT + 17;
+
+	/**
+	 * The feature id for the '<em><b>Email Check Sent Caption</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORGOTTEN_PASSWORD_ELEMENT__EMAIL_CHECK_SENT_CAPTION = AUTHENTICATION_ELEMENT_FEATURE_COUNT + 18;
+
+	/**
+	 * The feature id for the '<em><b>Email Check Sent Message</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORGOTTEN_PASSWORD_ELEMENT__EMAIL_CHECK_SENT_MESSAGE = AUTHENTICATION_ELEMENT_FEATURE_COUNT + 19;
 
 	/**
 	 * The number of structural features of the '<em>Forgotten Password Element</em>' class.
@@ -1165,7 +1291,7 @@ public interface SecurityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FORGOTTEN_PASSWORD_ELEMENT_FEATURE_COUNT = AUTHENTICATION_ELEMENT_FEATURE_COUNT + 6;
+	int FORGOTTEN_PASSWORD_ELEMENT_FEATURE_COUNT = AUTHENTICATION_ELEMENT_FEATURE_COUNT + 20;
 
 	/**
 	 * The number of operations of the '<em>Forgotten Password Element</em>' class.
@@ -1177,14 +1303,14 @@ public interface SecurityPackage extends EPackage {
 	int FORGOTTEN_PASSWORD_ELEMENT_OPERATION_COUNT = AUTHENTICATION_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link work.andycarpenter.metamodel.security.impl.ResetPasswordElementImpl <em>Reset Password Element</em>}' class.
+	 * The meta object id for the '{@link work.andycarpenter.metamodel.security.impl.ChangePasswordElementImpl <em>Change Password Element</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.security.impl.ResetPasswordElementImpl
-	 * @see work.andycarpenter.metamodel.security.impl.SecurityPackageImpl#getResetPasswordElement()
+	 * @see work.andycarpenter.metamodel.security.impl.ChangePasswordElementImpl
+	 * @see work.andycarpenter.metamodel.security.impl.SecurityPackageImpl#getChangePasswordElement()
 	 * @generated
 	 */
-	int RESET_PASSWORD_ELEMENT = 8;
+	int CHANGE_PASSWORD_ELEMENT = 8;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1193,7 +1319,7 @@ public interface SecurityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESET_PASSWORD_ELEMENT__NAME = AUTHENTICATION_ELEMENT__NAME;
+	int CHANGE_PASSWORD_ELEMENT__NAME = AUTHENTICATION_ELEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
@@ -1202,25 +1328,7 @@ public interface SecurityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESET_PASSWORD_ELEMENT__DISPLAY_LABEL = AUTHENTICATION_ELEMENT__DISPLAY_LABEL;
-
-	/**
-	 * The feature id for the '<em><b>Confirm Label</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RESET_PASSWORD_ELEMENT__CONFIRM_LABEL = AUTHENTICATION_ELEMENT__CONFIRM_LABEL;
-
-	/**
-	 * The feature id for the '<em><b>Uri Element</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RESET_PASSWORD_ELEMENT__URI_ELEMENT = AUTHENTICATION_ELEMENT__URI_ELEMENT;
+	int CHANGE_PASSWORD_ELEMENT__DISPLAY_LABEL = AUTHENTICATION_ELEMENT__DISPLAY_LABEL;
 
 	/**
 	 * The feature id for the '<em><b>Section Class Override</b></em>' attribute.
@@ -1229,7 +1337,7 @@ public interface SecurityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESET_PASSWORD_ELEMENT__SECTION_CLASS_OVERRIDE = AUTHENTICATION_ELEMENT__SECTION_CLASS_OVERRIDE;
+	int CHANGE_PASSWORD_ELEMENT__SECTION_CLASS_OVERRIDE = AUTHENTICATION_ELEMENT__SECTION_CLASS_OVERRIDE;
 
 	/**
 	 * The feature id for the '<em><b>Section Class</b></em>' attribute.
@@ -1238,7 +1346,7 @@ public interface SecurityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESET_PASSWORD_ELEMENT__SECTION_CLASS = AUTHENTICATION_ELEMENT__SECTION_CLASS;
+	int CHANGE_PASSWORD_ELEMENT__SECTION_CLASS = AUTHENTICATION_ELEMENT__SECTION_CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Has Section Class</b></em>' attribute.
@@ -1247,7 +1355,7 @@ public interface SecurityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESET_PASSWORD_ELEMENT__HAS_SECTION_CLASS = AUTHENTICATION_ELEMENT__HAS_SECTION_CLASS;
+	int CHANGE_PASSWORD_ELEMENT__HAS_SECTION_CLASS = AUTHENTICATION_ELEMENT__HAS_SECTION_CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Caption Class Override</b></em>' attribute.
@@ -1256,7 +1364,7 @@ public interface SecurityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESET_PASSWORD_ELEMENT__CAPTION_CLASS_OVERRIDE = AUTHENTICATION_ELEMENT__CAPTION_CLASS_OVERRIDE;
+	int CHANGE_PASSWORD_ELEMENT__CAPTION_CLASS_OVERRIDE = AUTHENTICATION_ELEMENT__CAPTION_CLASS_OVERRIDE;
 
 	/**
 	 * The feature id for the '<em><b>Caption Class</b></em>' attribute.
@@ -1265,7 +1373,7 @@ public interface SecurityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESET_PASSWORD_ELEMENT__CAPTION_CLASS = AUTHENTICATION_ELEMENT__CAPTION_CLASS;
+	int CHANGE_PASSWORD_ELEMENT__CAPTION_CLASS = AUTHENTICATION_ELEMENT__CAPTION_CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Has Caption Class</b></em>' attribute.
@@ -1274,7 +1382,7 @@ public interface SecurityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESET_PASSWORD_ELEMENT__HAS_CAPTION_CLASS = AUTHENTICATION_ELEMENT__HAS_CAPTION_CLASS;
+	int CHANGE_PASSWORD_ELEMENT__HAS_CAPTION_CLASS = AUTHENTICATION_ELEMENT__HAS_CAPTION_CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Content Class Override</b></em>' attribute.
@@ -1283,7 +1391,7 @@ public interface SecurityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESET_PASSWORD_ELEMENT__CONTENT_CLASS_OVERRIDE = AUTHENTICATION_ELEMENT__CONTENT_CLASS_OVERRIDE;
+	int CHANGE_PASSWORD_ELEMENT__CONTENT_CLASS_OVERRIDE = AUTHENTICATION_ELEMENT__CONTENT_CLASS_OVERRIDE;
 
 	/**
 	 * The feature id for the '<em><b>Content Class</b></em>' attribute.
@@ -1292,7 +1400,7 @@ public interface SecurityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESET_PASSWORD_ELEMENT__CONTENT_CLASS = AUTHENTICATION_ELEMENT__CONTENT_CLASS;
+	int CHANGE_PASSWORD_ELEMENT__CONTENT_CLASS = AUTHENTICATION_ELEMENT__CONTENT_CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Has Content Class</b></em>' attribute.
@@ -1301,7 +1409,7 @@ public interface SecurityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESET_PASSWORD_ELEMENT__HAS_CONTENT_CLASS = AUTHENTICATION_ELEMENT__HAS_CONTENT_CLASS;
+	int CHANGE_PASSWORD_ELEMENT__HAS_CONTENT_CLASS = AUTHENTICATION_ELEMENT__HAS_CONTENT_CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Authentication</b></em>' container reference.
@@ -1310,25 +1418,52 @@ public interface SecurityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESET_PASSWORD_ELEMENT__AUTHENTICATION = AUTHENTICATION_ELEMENT_FEATURE_COUNT + 0;
+	int CHANGE_PASSWORD_ELEMENT__AUTHENTICATION = AUTHENTICATION_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '<em>Reset Password Element</em>' class.
+	 * The feature id for the '<em><b>Invoke Label</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RESET_PASSWORD_ELEMENT_FEATURE_COUNT = AUTHENTICATION_ELEMENT_FEATURE_COUNT + 1;
+	int CHANGE_PASSWORD_ELEMENT__INVOKE_LABEL = AUTHENTICATION_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The number of operations of the '<em>Reset Password Element</em>' class.
+	 * The feature id for the '<em><b>Confirm Label</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RESET_PASSWORD_ELEMENT_OPERATION_COUNT = AUTHENTICATION_ELEMENT_OPERATION_COUNT + 0;
+	int CHANGE_PASSWORD_ELEMENT__CONFIRM_LABEL = AUTHENTICATION_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Uri Element</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHANGE_PASSWORD_ELEMENT__URI_ELEMENT = AUTHENTICATION_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The number of structural features of the '<em>Change Password Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHANGE_PASSWORD_ELEMENT_FEATURE_COUNT = AUTHENTICATION_ELEMENT_FEATURE_COUNT + 4;
+
+	/**
+	 * The number of operations of the '<em>Change Password Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHANGE_PASSWORD_ELEMENT_OPERATION_COUNT = AUTHENTICATION_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link work.andycarpenter.metamodel.security.impl.CasAuthenticationImpl <em>Cas Authentication</em>}' class.
@@ -1590,15 +1725,15 @@ public interface SecurityPackage extends EPackage {
 	EReference getLocalAuthenticationSystem_ForgottenPasswordElement();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link work.andycarpenter.metamodel.security.LocalAuthenticationSystem#getResetPasswordElement <em>Reset Password Element</em>}'.
+	 * Returns the meta object for the containment reference '{@link work.andycarpenter.metamodel.security.LocalAuthenticationSystem#getChangePasswordElement <em>Change Password Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Reset Password Element</em>'.
-	 * @see work.andycarpenter.metamodel.security.LocalAuthenticationSystem#getResetPasswordElement()
+	 * @return the meta object for the containment reference '<em>Change Password Element</em>'.
+	 * @see work.andycarpenter.metamodel.security.LocalAuthenticationSystem#getChangePasswordElement()
 	 * @see #getLocalAuthenticationSystem()
 	 * @generated
 	 */
-	EReference getLocalAuthenticationSystem_ResetPasswordElement();
+	EReference getLocalAuthenticationSystem_ChangePasswordElement();
 
 	/**
 	 * Returns the meta object for the attribute '{@link work.andycarpenter.metamodel.security.LocalAuthenticationSystem#isCaptcha <em>Captcha</em>}'.
@@ -1697,28 +1832,6 @@ public interface SecurityPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getAuthenticationElement();
-
-	/**
-	 * Returns the meta object for the attribute '{@link work.andycarpenter.metamodel.security.AuthenticationElement#getConfirmLabel <em>Confirm Label</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Confirm Label</em>'.
-	 * @see work.andycarpenter.metamodel.security.AuthenticationElement#getConfirmLabel()
-	 * @see #getAuthenticationElement()
-	 * @generated
-	 */
-	EAttribute getAuthenticationElement_ConfirmLabel();
-
-	/**
-	 * Returns the meta object for the attribute '{@link work.andycarpenter.metamodel.security.AuthenticationElement#getUriElement <em>Uri Element</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Uri Element</em>'.
-	 * @see work.andycarpenter.metamodel.security.AuthenticationElement#getUriElement()
-	 * @see #getAuthenticationElement()
-	 * @generated
-	 */
-	EAttribute getAuthenticationElement_UriElement();
 
 	/**
 	 * Returns the meta object for the attribute '{@link work.andycarpenter.metamodel.security.AuthenticationElement#getSectionClassOverride <em>Section Class Override</em>}'.
@@ -1841,6 +1954,50 @@ public interface SecurityPackage extends EPackage {
 	EReference getRegistrationElement_Authentication();
 
 	/**
+	 * Returns the meta object for the attribute '{@link work.andycarpenter.metamodel.security.RegistrationElement#getInvokeLabel <em>Invoke Label</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Invoke Label</em>'.
+	 * @see work.andycarpenter.metamodel.security.RegistrationElement#getInvokeLabel()
+	 * @see #getRegistrationElement()
+	 * @generated
+	 */
+	EAttribute getRegistrationElement_InvokeLabel();
+
+	/**
+	 * Returns the meta object for the attribute '{@link work.andycarpenter.metamodel.security.RegistrationElement#getConfirmLabel <em>Confirm Label</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Confirm Label</em>'.
+	 * @see work.andycarpenter.metamodel.security.RegistrationElement#getConfirmLabel()
+	 * @see #getRegistrationElement()
+	 * @generated
+	 */
+	EAttribute getRegistrationElement_ConfirmLabel();
+
+	/**
+	 * Returns the meta object for the attribute '{@link work.andycarpenter.metamodel.security.RegistrationElement#getUriElement <em>Uri Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Uri Element</em>'.
+	 * @see work.andycarpenter.metamodel.security.RegistrationElement#getUriElement()
+	 * @see #getRegistrationElement()
+	 * @generated
+	 */
+	EAttribute getRegistrationElement_UriElement();
+
+	/**
+	 * Returns the meta object for the attribute '{@link work.andycarpenter.metamodel.security.RegistrationElement#getUriEmailVerification <em>Uri Email Verification</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Uri Email Verification</em>'.
+	 * @see work.andycarpenter.metamodel.security.RegistrationElement#getUriEmailVerification()
+	 * @see #getRegistrationElement()
+	 * @generated
+	 */
+	EAttribute getRegistrationElement_UriEmailVerification();
+
+	/**
 	 * Returns the meta object for class '{@link work.andycarpenter.metamodel.security.LoginElement <em>Login Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1860,6 +2017,39 @@ public interface SecurityPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getLoginElement_Authentication();
+
+	/**
+	 * Returns the meta object for the attribute '{@link work.andycarpenter.metamodel.security.LoginElement#getInvokeLabel <em>Invoke Label</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Invoke Label</em>'.
+	 * @see work.andycarpenter.metamodel.security.LoginElement#getInvokeLabel()
+	 * @see #getLoginElement()
+	 * @generated
+	 */
+	EAttribute getLoginElement_InvokeLabel();
+
+	/**
+	 * Returns the meta object for the attribute '{@link work.andycarpenter.metamodel.security.LoginElement#getConfirmLabel <em>Confirm Label</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Confirm Label</em>'.
+	 * @see work.andycarpenter.metamodel.security.LoginElement#getConfirmLabel()
+	 * @see #getLoginElement()
+	 * @generated
+	 */
+	EAttribute getLoginElement_ConfirmLabel();
+
+	/**
+	 * Returns the meta object for the attribute '{@link work.andycarpenter.metamodel.security.LoginElement#getUriElement <em>Uri Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Uri Element</em>'.
+	 * @see work.andycarpenter.metamodel.security.LoginElement#getUriElement()
+	 * @see #getLoginElement()
+	 * @generated
+	 */
+	EAttribute getLoginElement_UriElement();
 
 	/**
 	 * Returns the meta object for class '{@link work.andycarpenter.metamodel.security.LogoutElement <em>Logout Element</em>}'.
@@ -1883,6 +2073,39 @@ public interface SecurityPackage extends EPackage {
 	EReference getLogoutElement_Authentication();
 
 	/**
+	 * Returns the meta object for the attribute '{@link work.andycarpenter.metamodel.security.LogoutElement#getInvokeLabel <em>Invoke Label</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Invoke Label</em>'.
+	 * @see work.andycarpenter.metamodel.security.LogoutElement#getInvokeLabel()
+	 * @see #getLogoutElement()
+	 * @generated
+	 */
+	EAttribute getLogoutElement_InvokeLabel();
+
+	/**
+	 * Returns the meta object for the attribute '{@link work.andycarpenter.metamodel.security.LogoutElement#getConfirmLabel <em>Confirm Label</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Confirm Label</em>'.
+	 * @see work.andycarpenter.metamodel.security.LogoutElement#getConfirmLabel()
+	 * @see #getLogoutElement()
+	 * @generated
+	 */
+	EAttribute getLogoutElement_ConfirmLabel();
+
+	/**
+	 * Returns the meta object for the attribute '{@link work.andycarpenter.metamodel.security.LogoutElement#getUriElement <em>Uri Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Uri Element</em>'.
+	 * @see work.andycarpenter.metamodel.security.LogoutElement#getUriElement()
+	 * @see #getLogoutElement()
+	 * @generated
+	 */
+	EAttribute getLogoutElement_UriElement();
+
+	/**
 	 * Returns the meta object for class '{@link work.andycarpenter.metamodel.security.ForgottenPasswordElement <em>Forgotten Password Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1904,6 +2127,50 @@ public interface SecurityPackage extends EPackage {
 	EReference getForgottenPasswordElement_Authentication();
 
 	/**
+	 * Returns the meta object for the attribute '{@link work.andycarpenter.metamodel.security.ForgottenPasswordElement#getInvokeLabel <em>Invoke Label</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Invoke Label</em>'.
+	 * @see work.andycarpenter.metamodel.security.ForgottenPasswordElement#getInvokeLabel()
+	 * @see #getForgottenPasswordElement()
+	 * @generated
+	 */
+	EAttribute getForgottenPasswordElement_InvokeLabel();
+
+	/**
+	 * Returns the meta object for the attribute '{@link work.andycarpenter.metamodel.security.ForgottenPasswordElement#getRequestLabel <em>Request Label</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Request Label</em>'.
+	 * @see work.andycarpenter.metamodel.security.ForgottenPasswordElement#getRequestLabel()
+	 * @see #getForgottenPasswordElement()
+	 * @generated
+	 */
+	EAttribute getForgottenPasswordElement_RequestLabel();
+
+	/**
+	 * Returns the meta object for the attribute '{@link work.andycarpenter.metamodel.security.ForgottenPasswordElement#getResetLabel <em>Reset Label</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Reset Label</em>'.
+	 * @see work.andycarpenter.metamodel.security.ForgottenPasswordElement#getResetLabel()
+	 * @see #getForgottenPasswordElement()
+	 * @generated
+	 */
+	EAttribute getForgottenPasswordElement_ResetLabel();
+
+	/**
+	 * Returns the meta object for the attribute '{@link work.andycarpenter.metamodel.security.ForgottenPasswordElement#getUriElement <em>Uri Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Uri Element</em>'.
+	 * @see work.andycarpenter.metamodel.security.ForgottenPasswordElement#getUriElement()
+	 * @see #getForgottenPasswordElement()
+	 * @generated
+	 */
+	EAttribute getForgottenPasswordElement_UriElement();
+
+	/**
 	 * Returns the meta object for the attribute '{@link work.andycarpenter.metamodel.security.ForgottenPasswordElement#getUriEmailSent <em>Uri Email Sent</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1915,69 +2182,212 @@ public interface SecurityPackage extends EPackage {
 	EAttribute getForgottenPasswordElement_UriEmailSent();
 
 	/**
-	 * Returns the meta object for the attribute '{@link work.andycarpenter.metamodel.security.ForgottenPasswordElement#getEmailSubject <em>Email Subject</em>}'.
+	 * Returns the meta object for the attribute '{@link work.andycarpenter.metamodel.security.ForgottenPasswordElement#getUriResetPassword <em>Uri Reset Password</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Email Subject</em>'.
-	 * @see work.andycarpenter.metamodel.security.ForgottenPasswordElement#getEmailSubject()
+	 * @return the meta object for the attribute '<em>Uri Reset Password</em>'.
+	 * @see work.andycarpenter.metamodel.security.ForgottenPasswordElement#getUriResetPassword()
 	 * @see #getForgottenPasswordElement()
 	 * @generated
 	 */
-	EAttribute getForgottenPasswordElement_EmailSubject();
+	EAttribute getForgottenPasswordElement_UriResetPassword();
 
 	/**
-	 * Returns the meta object for the attribute '{@link work.andycarpenter.metamodel.security.ForgottenPasswordElement#getEmailMessage <em>Email Message</em>}'.
+	 * Returns the meta object for the attribute '{@link work.andycarpenter.metamodel.security.ForgottenPasswordElement#getEmailHelp <em>Email Help</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Email Message</em>'.
-	 * @see work.andycarpenter.metamodel.security.ForgottenPasswordElement#getEmailMessage()
+	 * @return the meta object for the attribute '<em>Email Help</em>'.
+	 * @see work.andycarpenter.metamodel.security.ForgottenPasswordElement#getEmailHelp()
 	 * @see #getForgottenPasswordElement()
 	 * @generated
 	 */
-	EAttribute getForgottenPasswordElement_EmailMessage();
+	EAttribute getForgottenPasswordElement_EmailHelp();
 
 	/**
-	 * Returns the meta object for the attribute '{@link work.andycarpenter.metamodel.security.ForgottenPasswordElement#getEmailSentCaption <em>Email Sent Caption</em>}'.
+	 * Returns the meta object for the attribute '{@link work.andycarpenter.metamodel.security.ForgottenPasswordElement#getPasswordLabel <em>Password Label</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Email Sent Caption</em>'.
-	 * @see work.andycarpenter.metamodel.security.ForgottenPasswordElement#getEmailSentCaption()
+	 * @return the meta object for the attribute '<em>Password Label</em>'.
+	 * @see work.andycarpenter.metamodel.security.ForgottenPasswordElement#getPasswordLabel()
 	 * @see #getForgottenPasswordElement()
 	 * @generated
 	 */
-	EAttribute getForgottenPasswordElement_EmailSentCaption();
+	EAttribute getForgottenPasswordElement_PasswordLabel();
 
 	/**
-	 * Returns the meta object for the attribute '{@link work.andycarpenter.metamodel.security.ForgottenPasswordElement#getEmailSentMessage <em>Email Sent Message</em>}'.
+	 * Returns the meta object for the attribute '{@link work.andycarpenter.metamodel.security.ForgottenPasswordElement#getPasswordPlaceholder <em>Password Placeholder</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Email Sent Message</em>'.
-	 * @see work.andycarpenter.metamodel.security.ForgottenPasswordElement#getEmailSentMessage()
+	 * @return the meta object for the attribute '<em>Password Placeholder</em>'.
+	 * @see work.andycarpenter.metamodel.security.ForgottenPasswordElement#getPasswordPlaceholder()
 	 * @see #getForgottenPasswordElement()
 	 * @generated
 	 */
-	EAttribute getForgottenPasswordElement_EmailSentMessage();
+	EAttribute getForgottenPasswordElement_PasswordPlaceholder();
 
 	/**
-	 * Returns the meta object for class '{@link work.andycarpenter.metamodel.security.ResetPasswordElement <em>Reset Password Element</em>}'.
+	 * Returns the meta object for the attribute '{@link work.andycarpenter.metamodel.security.ForgottenPasswordElement#getPasswordTitle <em>Password Title</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Reset Password Element</em>'.
-	 * @see work.andycarpenter.metamodel.security.ResetPasswordElement
+	 * @return the meta object for the attribute '<em>Password Title</em>'.
+	 * @see work.andycarpenter.metamodel.security.ForgottenPasswordElement#getPasswordTitle()
+	 * @see #getForgottenPasswordElement()
 	 * @generated
 	 */
-	EClass getResetPasswordElement();
+	EAttribute getForgottenPasswordElement_PasswordTitle();
 
 	/**
-	 * Returns the meta object for the container reference '{@link work.andycarpenter.metamodel.security.ResetPasswordElement#getAuthentication <em>Authentication</em>}'.
+	 * Returns the meta object for the attribute '{@link work.andycarpenter.metamodel.security.ForgottenPasswordElement#getPasswordConfirmationLabel <em>Password Confirmation Label</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Password Confirmation Label</em>'.
+	 * @see work.andycarpenter.metamodel.security.ForgottenPasswordElement#getPasswordConfirmationLabel()
+	 * @see #getForgottenPasswordElement()
+	 * @generated
+	 */
+	EAttribute getForgottenPasswordElement_PasswordConfirmationLabel();
+
+	/**
+	 * Returns the meta object for the attribute '{@link work.andycarpenter.metamodel.security.ForgottenPasswordElement#getPasswordConfirmationPlaceholder <em>Password Confirmation Placeholder</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Password Confirmation Placeholder</em>'.
+	 * @see work.andycarpenter.metamodel.security.ForgottenPasswordElement#getPasswordConfirmationPlaceholder()
+	 * @see #getForgottenPasswordElement()
+	 * @generated
+	 */
+	EAttribute getForgottenPasswordElement_PasswordConfirmationPlaceholder();
+
+	/**
+	 * Returns the meta object for the attribute '{@link work.andycarpenter.metamodel.security.ForgottenPasswordElement#getPasswordConfirmationTitle <em>Password Confirmation Title</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Password Confirmation Title</em>'.
+	 * @see work.andycarpenter.metamodel.security.ForgottenPasswordElement#getPasswordConfirmationTitle()
+	 * @see #getForgottenPasswordElement()
+	 * @generated
+	 */
+	EAttribute getForgottenPasswordElement_PasswordConfirmationTitle();
+
+	/**
+	 * Returns the meta object for the attribute '{@link work.andycarpenter.metamodel.security.ForgottenPasswordElement#getPasswordMessageRequired <em>Password Message Required</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Password Message Required</em>'.
+	 * @see work.andycarpenter.metamodel.security.ForgottenPasswordElement#getPasswordMessageRequired()
+	 * @see #getForgottenPasswordElement()
+	 * @generated
+	 */
+	EAttribute getForgottenPasswordElement_PasswordMessageRequired();
+
+	/**
+	 * Returns the meta object for the attribute '{@link work.andycarpenter.metamodel.security.ForgottenPasswordElement#getPasswordMessageValueMismatch <em>Password Message Value Mismatch</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Password Message Value Mismatch</em>'.
+	 * @see work.andycarpenter.metamodel.security.ForgottenPasswordElement#getPasswordMessageValueMismatch()
+	 * @see #getForgottenPasswordElement()
+	 * @generated
+	 */
+	EAttribute getForgottenPasswordElement_PasswordMessageValueMismatch();
+
+	/**
+	 * Returns the meta object for the attribute '{@link work.andycarpenter.metamodel.security.ForgottenPasswordElement#getEmailCheckSubject <em>Email Check Subject</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Email Check Subject</em>'.
+	 * @see work.andycarpenter.metamodel.security.ForgottenPasswordElement#getEmailCheckSubject()
+	 * @see #getForgottenPasswordElement()
+	 * @generated
+	 */
+	EAttribute getForgottenPasswordElement_EmailCheckSubject();
+
+	/**
+	 * Returns the meta object for the attribute '{@link work.andycarpenter.metamodel.security.ForgottenPasswordElement#getEmailCheckMessage <em>Email Check Message</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Email Check Message</em>'.
+	 * @see work.andycarpenter.metamodel.security.ForgottenPasswordElement#getEmailCheckMessage()
+	 * @see #getForgottenPasswordElement()
+	 * @generated
+	 */
+	EAttribute getForgottenPasswordElement_EmailCheckMessage();
+
+	/**
+	 * Returns the meta object for the attribute '{@link work.andycarpenter.metamodel.security.ForgottenPasswordElement#getEmailCheckSentCaption <em>Email Check Sent Caption</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Email Check Sent Caption</em>'.
+	 * @see work.andycarpenter.metamodel.security.ForgottenPasswordElement#getEmailCheckSentCaption()
+	 * @see #getForgottenPasswordElement()
+	 * @generated
+	 */
+	EAttribute getForgottenPasswordElement_EmailCheckSentCaption();
+
+	/**
+	 * Returns the meta object for the attribute '{@link work.andycarpenter.metamodel.security.ForgottenPasswordElement#getEmailCheckSentMessage <em>Email Check Sent Message</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Email Check Sent Message</em>'.
+	 * @see work.andycarpenter.metamodel.security.ForgottenPasswordElement#getEmailCheckSentMessage()
+	 * @see #getForgottenPasswordElement()
+	 * @generated
+	 */
+	EAttribute getForgottenPasswordElement_EmailCheckSentMessage();
+
+	/**
+	 * Returns the meta object for class '{@link work.andycarpenter.metamodel.security.ChangePasswordElement <em>Change Password Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Change Password Element</em>'.
+	 * @see work.andycarpenter.metamodel.security.ChangePasswordElement
+	 * @generated
+	 */
+	EClass getChangePasswordElement();
+
+	/**
+	 * Returns the meta object for the container reference '{@link work.andycarpenter.metamodel.security.ChangePasswordElement#getAuthentication <em>Authentication</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the container reference '<em>Authentication</em>'.
-	 * @see work.andycarpenter.metamodel.security.ResetPasswordElement#getAuthentication()
-	 * @see #getResetPasswordElement()
+	 * @see work.andycarpenter.metamodel.security.ChangePasswordElement#getAuthentication()
+	 * @see #getChangePasswordElement()
 	 * @generated
 	 */
-	EReference getResetPasswordElement_Authentication();
+	EReference getChangePasswordElement_Authentication();
+
+	/**
+	 * Returns the meta object for the attribute '{@link work.andycarpenter.metamodel.security.ChangePasswordElement#getInvokeLabel <em>Invoke Label</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Invoke Label</em>'.
+	 * @see work.andycarpenter.metamodel.security.ChangePasswordElement#getInvokeLabel()
+	 * @see #getChangePasswordElement()
+	 * @generated
+	 */
+	EAttribute getChangePasswordElement_InvokeLabel();
+
+	/**
+	 * Returns the meta object for the attribute '{@link work.andycarpenter.metamodel.security.ChangePasswordElement#getConfirmLabel <em>Confirm Label</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Confirm Label</em>'.
+	 * @see work.andycarpenter.metamodel.security.ChangePasswordElement#getConfirmLabel()
+	 * @see #getChangePasswordElement()
+	 * @generated
+	 */
+	EAttribute getChangePasswordElement_ConfirmLabel();
+
+	/**
+	 * Returns the meta object for the attribute '{@link work.andycarpenter.metamodel.security.ChangePasswordElement#getUriElement <em>Uri Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Uri Element</em>'.
+	 * @see work.andycarpenter.metamodel.security.ChangePasswordElement#getUriElement()
+	 * @see #getChangePasswordElement()
+	 * @generated
+	 */
+	EAttribute getChangePasswordElement_UriElement();
 
 	/**
 	 * Returns the meta object for class '{@link work.andycarpenter.metamodel.security.CasAuthentication <em>Cas Authentication</em>}'.
@@ -2187,12 +2597,12 @@ public interface SecurityPackage extends EPackage {
 		EReference LOCAL_AUTHENTICATION_SYSTEM__FORGOTTEN_PASSWORD_ELEMENT = eINSTANCE.getLocalAuthenticationSystem_ForgottenPasswordElement();
 
 		/**
-		 * The meta object literal for the '<em><b>Reset Password Element</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Change Password Element</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference LOCAL_AUTHENTICATION_SYSTEM__RESET_PASSWORD_ELEMENT = eINSTANCE.getLocalAuthenticationSystem_ResetPasswordElement();
+		EReference LOCAL_AUTHENTICATION_SYSTEM__CHANGE_PASSWORD_ELEMENT = eINSTANCE.getLocalAuthenticationSystem_ChangePasswordElement();
 
 		/**
 		 * The meta object literal for the '<em><b>Captcha</b></em>' attribute feature.
@@ -2267,22 +2677,6 @@ public interface SecurityPackage extends EPackage {
 		 * @generated
 		 */
 		EClass AUTHENTICATION_ELEMENT = eINSTANCE.getAuthenticationElement();
-
-		/**
-		 * The meta object literal for the '<em><b>Confirm Label</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute AUTHENTICATION_ELEMENT__CONFIRM_LABEL = eINSTANCE.getAuthenticationElement_ConfirmLabel();
-
-		/**
-		 * The meta object literal for the '<em><b>Uri Element</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute AUTHENTICATION_ELEMENT__URI_ELEMENT = eINSTANCE.getAuthenticationElement_UriElement();
 
 		/**
 		 * The meta object literal for the '<em><b>Section Class Override</b></em>' attribute feature.
@@ -2375,6 +2769,38 @@ public interface SecurityPackage extends EPackage {
 		EReference REGISTRATION_ELEMENT__AUTHENTICATION = eINSTANCE.getRegistrationElement_Authentication();
 
 		/**
+		 * The meta object literal for the '<em><b>Invoke Label</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute REGISTRATION_ELEMENT__INVOKE_LABEL = eINSTANCE.getRegistrationElement_InvokeLabel();
+
+		/**
+		 * The meta object literal for the '<em><b>Confirm Label</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute REGISTRATION_ELEMENT__CONFIRM_LABEL = eINSTANCE.getRegistrationElement_ConfirmLabel();
+
+		/**
+		 * The meta object literal for the '<em><b>Uri Element</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute REGISTRATION_ELEMENT__URI_ELEMENT = eINSTANCE.getRegistrationElement_UriElement();
+
+		/**
+		 * The meta object literal for the '<em><b>Uri Email Verification</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute REGISTRATION_ELEMENT__URI_EMAIL_VERIFICATION = eINSTANCE.getRegistrationElement_UriEmailVerification();
+
+		/**
 		 * The meta object literal for the '{@link work.andycarpenter.metamodel.security.impl.LoginElementImpl <em>Login Element</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2391,6 +2817,30 @@ public interface SecurityPackage extends EPackage {
 		 * @generated
 		 */
 		EReference LOGIN_ELEMENT__AUTHENTICATION = eINSTANCE.getLoginElement_Authentication();
+
+		/**
+		 * The meta object literal for the '<em><b>Invoke Label</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute LOGIN_ELEMENT__INVOKE_LABEL = eINSTANCE.getLoginElement_InvokeLabel();
+
+		/**
+		 * The meta object literal for the '<em><b>Confirm Label</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute LOGIN_ELEMENT__CONFIRM_LABEL = eINSTANCE.getLoginElement_ConfirmLabel();
+
+		/**
+		 * The meta object literal for the '<em><b>Uri Element</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute LOGIN_ELEMENT__URI_ELEMENT = eINSTANCE.getLoginElement_UriElement();
 
 		/**
 		 * The meta object literal for the '{@link work.andycarpenter.metamodel.security.impl.LogoutElementImpl <em>Logout Element</em>}' class.
@@ -2411,6 +2861,30 @@ public interface SecurityPackage extends EPackage {
 		EReference LOGOUT_ELEMENT__AUTHENTICATION = eINSTANCE.getLogoutElement_Authentication();
 
 		/**
+		 * The meta object literal for the '<em><b>Invoke Label</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute LOGOUT_ELEMENT__INVOKE_LABEL = eINSTANCE.getLogoutElement_InvokeLabel();
+
+		/**
+		 * The meta object literal for the '<em><b>Confirm Label</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute LOGOUT_ELEMENT__CONFIRM_LABEL = eINSTANCE.getLogoutElement_ConfirmLabel();
+
+		/**
+		 * The meta object literal for the '<em><b>Uri Element</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute LOGOUT_ELEMENT__URI_ELEMENT = eINSTANCE.getLogoutElement_UriElement();
+
+		/**
 		 * The meta object literal for the '{@link work.andycarpenter.metamodel.security.impl.ForgottenPasswordElementImpl <em>Forgotten Password Element</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2429,6 +2903,38 @@ public interface SecurityPackage extends EPackage {
 		EReference FORGOTTEN_PASSWORD_ELEMENT__AUTHENTICATION = eINSTANCE.getForgottenPasswordElement_Authentication();
 
 		/**
+		 * The meta object literal for the '<em><b>Invoke Label</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FORGOTTEN_PASSWORD_ELEMENT__INVOKE_LABEL = eINSTANCE.getForgottenPasswordElement_InvokeLabel();
+
+		/**
+		 * The meta object literal for the '<em><b>Request Label</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FORGOTTEN_PASSWORD_ELEMENT__REQUEST_LABEL = eINSTANCE.getForgottenPasswordElement_RequestLabel();
+
+		/**
+		 * The meta object literal for the '<em><b>Reset Label</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FORGOTTEN_PASSWORD_ELEMENT__RESET_LABEL = eINSTANCE.getForgottenPasswordElement_ResetLabel();
+
+		/**
+		 * The meta object literal for the '<em><b>Uri Element</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FORGOTTEN_PASSWORD_ELEMENT__URI_ELEMENT = eINSTANCE.getForgottenPasswordElement_UriElement();
+
+		/**
 		 * The meta object literal for the '<em><b>Uri Email Sent</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2437,46 +2943,126 @@ public interface SecurityPackage extends EPackage {
 		EAttribute FORGOTTEN_PASSWORD_ELEMENT__URI_EMAIL_SENT = eINSTANCE.getForgottenPasswordElement_UriEmailSent();
 
 		/**
-		 * The meta object literal for the '<em><b>Email Subject</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Uri Reset Password</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute FORGOTTEN_PASSWORD_ELEMENT__EMAIL_SUBJECT = eINSTANCE.getForgottenPasswordElement_EmailSubject();
+		EAttribute FORGOTTEN_PASSWORD_ELEMENT__URI_RESET_PASSWORD = eINSTANCE.getForgottenPasswordElement_UriResetPassword();
 
 		/**
-		 * The meta object literal for the '<em><b>Email Message</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Email Help</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute FORGOTTEN_PASSWORD_ELEMENT__EMAIL_MESSAGE = eINSTANCE.getForgottenPasswordElement_EmailMessage();
+		EAttribute FORGOTTEN_PASSWORD_ELEMENT__EMAIL_HELP = eINSTANCE.getForgottenPasswordElement_EmailHelp();
 
 		/**
-		 * The meta object literal for the '<em><b>Email Sent Caption</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Password Label</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute FORGOTTEN_PASSWORD_ELEMENT__EMAIL_SENT_CAPTION = eINSTANCE.getForgottenPasswordElement_EmailSentCaption();
+		EAttribute FORGOTTEN_PASSWORD_ELEMENT__PASSWORD_LABEL = eINSTANCE.getForgottenPasswordElement_PasswordLabel();
 
 		/**
-		 * The meta object literal for the '<em><b>Email Sent Message</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Password Placeholder</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute FORGOTTEN_PASSWORD_ELEMENT__EMAIL_SENT_MESSAGE = eINSTANCE.getForgottenPasswordElement_EmailSentMessage();
+		EAttribute FORGOTTEN_PASSWORD_ELEMENT__PASSWORD_PLACEHOLDER = eINSTANCE.getForgottenPasswordElement_PasswordPlaceholder();
 
 		/**
-		 * The meta object literal for the '{@link work.andycarpenter.metamodel.security.impl.ResetPasswordElementImpl <em>Reset Password Element</em>}' class.
+		 * The meta object literal for the '<em><b>Password Title</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see work.andycarpenter.metamodel.security.impl.ResetPasswordElementImpl
-		 * @see work.andycarpenter.metamodel.security.impl.SecurityPackageImpl#getResetPasswordElement()
 		 * @generated
 		 */
-		EClass RESET_PASSWORD_ELEMENT = eINSTANCE.getResetPasswordElement();
+		EAttribute FORGOTTEN_PASSWORD_ELEMENT__PASSWORD_TITLE = eINSTANCE.getForgottenPasswordElement_PasswordTitle();
+
+		/**
+		 * The meta object literal for the '<em><b>Password Confirmation Label</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FORGOTTEN_PASSWORD_ELEMENT__PASSWORD_CONFIRMATION_LABEL = eINSTANCE.getForgottenPasswordElement_PasswordConfirmationLabel();
+
+		/**
+		 * The meta object literal for the '<em><b>Password Confirmation Placeholder</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FORGOTTEN_PASSWORD_ELEMENT__PASSWORD_CONFIRMATION_PLACEHOLDER = eINSTANCE.getForgottenPasswordElement_PasswordConfirmationPlaceholder();
+
+		/**
+		 * The meta object literal for the '<em><b>Password Confirmation Title</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FORGOTTEN_PASSWORD_ELEMENT__PASSWORD_CONFIRMATION_TITLE = eINSTANCE.getForgottenPasswordElement_PasswordConfirmationTitle();
+
+		/**
+		 * The meta object literal for the '<em><b>Password Message Required</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FORGOTTEN_PASSWORD_ELEMENT__PASSWORD_MESSAGE_REQUIRED = eINSTANCE.getForgottenPasswordElement_PasswordMessageRequired();
+
+		/**
+		 * The meta object literal for the '<em><b>Password Message Value Mismatch</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FORGOTTEN_PASSWORD_ELEMENT__PASSWORD_MESSAGE_VALUE_MISMATCH = eINSTANCE.getForgottenPasswordElement_PasswordMessageValueMismatch();
+
+		/**
+		 * The meta object literal for the '<em><b>Email Check Subject</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FORGOTTEN_PASSWORD_ELEMENT__EMAIL_CHECK_SUBJECT = eINSTANCE.getForgottenPasswordElement_EmailCheckSubject();
+
+		/**
+		 * The meta object literal for the '<em><b>Email Check Message</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FORGOTTEN_PASSWORD_ELEMENT__EMAIL_CHECK_MESSAGE = eINSTANCE.getForgottenPasswordElement_EmailCheckMessage();
+
+		/**
+		 * The meta object literal for the '<em><b>Email Check Sent Caption</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FORGOTTEN_PASSWORD_ELEMENT__EMAIL_CHECK_SENT_CAPTION = eINSTANCE.getForgottenPasswordElement_EmailCheckSentCaption();
+
+		/**
+		 * The meta object literal for the '<em><b>Email Check Sent Message</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FORGOTTEN_PASSWORD_ELEMENT__EMAIL_CHECK_SENT_MESSAGE = eINSTANCE.getForgottenPasswordElement_EmailCheckSentMessage();
+
+		/**
+		 * The meta object literal for the '{@link work.andycarpenter.metamodel.security.impl.ChangePasswordElementImpl <em>Change Password Element</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see work.andycarpenter.metamodel.security.impl.ChangePasswordElementImpl
+		 * @see work.andycarpenter.metamodel.security.impl.SecurityPackageImpl#getChangePasswordElement()
+		 * @generated
+		 */
+		EClass CHANGE_PASSWORD_ELEMENT = eINSTANCE.getChangePasswordElement();
 
 		/**
 		 * The meta object literal for the '<em><b>Authentication</b></em>' container reference feature.
@@ -2484,7 +3070,31 @@ public interface SecurityPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference RESET_PASSWORD_ELEMENT__AUTHENTICATION = eINSTANCE.getResetPasswordElement_Authentication();
+		EReference CHANGE_PASSWORD_ELEMENT__AUTHENTICATION = eINSTANCE.getChangePasswordElement_Authentication();
+
+		/**
+		 * The meta object literal for the '<em><b>Invoke Label</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CHANGE_PASSWORD_ELEMENT__INVOKE_LABEL = eINSTANCE.getChangePasswordElement_InvokeLabel();
+
+		/**
+		 * The meta object literal for the '<em><b>Confirm Label</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CHANGE_PASSWORD_ELEMENT__CONFIRM_LABEL = eINSTANCE.getChangePasswordElement_ConfirmLabel();
+
+		/**
+		 * The meta object literal for the '<em><b>Uri Element</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CHANGE_PASSWORD_ELEMENT__URI_ELEMENT = eINSTANCE.getChangePasswordElement_UriElement();
 
 		/**
 		 * The meta object literal for the '{@link work.andycarpenter.metamodel.security.impl.CasAuthenticationImpl <em>Cas Authentication</em>}' class.

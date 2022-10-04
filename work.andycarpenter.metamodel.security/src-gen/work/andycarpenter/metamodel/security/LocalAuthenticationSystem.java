@@ -24,7 +24,7 @@ import work.andycarpenter.metamodel.orm.Entity;
  *   <li>{@link work.andycarpenter.metamodel.security.LocalAuthenticationSystem#getLoginElement <em>Login Element</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.security.LocalAuthenticationSystem#getLogoutElement <em>Logout Element</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.security.LocalAuthenticationSystem#getForgottenPasswordElement <em>Forgotten Password Element</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.security.LocalAuthenticationSystem#getResetPasswordElement <em>Reset Password Element</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.security.LocalAuthenticationSystem#getChangePasswordElement <em>Change Password Element</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.security.LocalAuthenticationSystem#isCaptcha <em>Captcha</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.security.LocalAuthenticationSystem#isAllowRememberMe <em>Allow Remember Me</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.security.LocalAuthenticationSystem#isAllowSelfRegistration <em>Allow Self Registration</em>}</li>
@@ -262,37 +262,38 @@ public interface LocalAuthenticationSystem extends Authentication {
 	void setForgottenPasswordElement(ForgottenPasswordElement value);
 
 	/**
-	 * Returns the value of the '<em><b>Reset Password Element</b></em>' containment reference.
-	 * It is bidirectional and its opposite is '{@link work.andycarpenter.metamodel.security.ResetPasswordElement#getAuthentication <em>Authentication</em>}'.
+	 * Returns the value of the '<em><b>Change Password Element</b></em>' containment reference.
+	 * It is bidirectional and its opposite is '{@link work.andycarpenter.metamodel.security.ChangePasswordElement#getAuthentication <em>Authentication</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Reset Password Element</em>' containment reference.
-	 * @see #setResetPasswordElement(ResetPasswordElement)
-	 * @see work.andycarpenter.metamodel.security.SecurityPackage#getLocalAuthenticationSystem_ResetPasswordElement()
-	 * @see work.andycarpenter.metamodel.security.ResetPasswordElement#getAuthentication
+	 * @return the value of the '<em>Change Password Element</em>' containment reference.
+	 * @see #setChangePasswordElement(ChangePasswordElement)
+	 * @see work.andycarpenter.metamodel.security.SecurityPackage#getLocalAuthenticationSystem_ChangePasswordElement()
+	 * @see work.andycarpenter.metamodel.security.ChangePasswordElement#getAuthentication
 	 * @model opposite="authentication" containment="true" required="true"
 	 * @generated
 	 */
-	ResetPasswordElement getResetPasswordElement();
+	ChangePasswordElement getChangePasswordElement();
 
 	/**
-	 * Sets the value of the '{@link work.andycarpenter.metamodel.security.LocalAuthenticationSystem#getResetPasswordElement <em>Reset Password Element</em>}' containment reference.
+	 * Sets the value of the '{@link work.andycarpenter.metamodel.security.LocalAuthenticationSystem#getChangePasswordElement <em>Change Password Element</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Reset Password Element</em>' containment reference.
-	 * @see #getResetPasswordElement()
+	 * @param value the new value of the '<em>Change Password Element</em>' containment reference.
+	 * @see #getChangePasswordElement()
 	 * @generated
 	 */
-	void setResetPasswordElement(ResetPasswordElement value);
+	void setChangePasswordElement(ChangePasswordElement value);
 
 	/**
 	 * Returns the value of the '<em><b>Captcha</b></em>' attribute.
+	 * The default value is <code>"true"</code>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Captcha</em>' attribute.
 	 * @see #setCaptcha(boolean)
 	 * @see work.andycarpenter.metamodel.security.SecurityPackage#getLocalAuthenticationSystem_Captcha()
-	 * @model unique="false"
+	 * @model default="true" unique="false"
 	 * @generated
 	 */
 	boolean isCaptcha();

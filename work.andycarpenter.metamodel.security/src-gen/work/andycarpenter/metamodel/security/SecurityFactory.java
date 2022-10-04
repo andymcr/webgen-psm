@@ -76,13 +76,13 @@ public interface SecurityFactory extends EFactory {
 	ForgottenPasswordElement createForgottenPasswordElement();
 
 	/**
-	 * Returns a new object of class '<em>Reset Password Element</em>'.
+	 * Returns a new object of class '<em>Change Password Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Reset Password Element</em>'.
+	 * @return a new object of class '<em>Change Password Element</em>'.
 	 * @generated
 	 */
-	ResetPasswordElement createResetPasswordElement();
+	ChangePasswordElement createChangePasswordElement();
 
 	/**
 	 * Returns a new object of class '<em>Cas Authentication</em>'.

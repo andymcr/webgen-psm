@@ -13,8 +13,6 @@ import work.andycarpenter.metamodel.base.NamedDisplayElement;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link work.andycarpenter.metamodel.security.AuthenticationElement#getConfirmLabel <em>Confirm Label</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.security.AuthenticationElement#getUriElement <em>Uri Element</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.security.AuthenticationElement#getSectionClassOverride <em>Section Class Override</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.security.AuthenticationElement#getSectionClass <em>Section Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.security.AuthenticationElement#isHasSectionClass <em>Has Section Class</em>}</li>
@@ -31,52 +29,6 @@ import work.andycarpenter.metamodel.base.NamedDisplayElement;
  * @generated
  */
 public interface AuthenticationElement extends NamedDisplayElement {
-	/**
-	 * Returns the value of the '<em><b>Confirm Label</b></em>' attribute.
-	 * The default value is <code>""</code>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Confirm Label</em>' attribute.
-	 * @see #setConfirmLabel(String)
-	 * @see work.andycarpenter.metamodel.security.SecurityPackage#getAuthenticationElement_ConfirmLabel()
-	 * @model default="" unique="false" required="true"
-	 * @generated
-	 */
-	String getConfirmLabel();
-
-	/**
-	 * Sets the value of the '{@link work.andycarpenter.metamodel.security.AuthenticationElement#getConfirmLabel <em>Confirm Label</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Confirm Label</em>' attribute.
-	 * @see #getConfirmLabel()
-	 * @generated
-	 */
-	void setConfirmLabel(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Uri Element</b></em>' attribute.
-	 * The default value is <code>""</code>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Uri Element</em>' attribute.
-	 * @see #setUriElement(String)
-	 * @see work.andycarpenter.metamodel.security.SecurityPackage#getAuthenticationElement_UriElement()
-	 * @model default="" unique="false"
-	 * @generated
-	 */
-	String getUriElement();
-
-	/**
-	 * Sets the value of the '{@link work.andycarpenter.metamodel.security.AuthenticationElement#getUriElement <em>Uri Element</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Uri Element</em>' attribute.
-	 * @see #getUriElement()
-	 * @generated
-	 */
-	void setUriElement(String value);
-
 	/**
 	 * Returns the value of the '<em><b>Section Class Override</b></em>' attribute.
 	 * The default value is <code>""</code>.
@@ -107,7 +59,7 @@ public interface AuthenticationElement extends NamedDisplayElement {
 	 * @return the value of the '<em>Section Class</em>' attribute.
 	 * @see work.andycarpenter.metamodel.security.SecurityPackage#getAuthenticationElement_SectionClass()
 	 * @model unique="false" transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if sectionClassOverride.trim() &lt;&gt; \'\' then\n\t\t\tsectionClassOverride.trim()\n\t\telse if self.oclAsType(ecore::EObject).eContainer().sectionClass.trim() &lt;&gt; \'\' then\n\t\t\tself.eContainer().sectionClass.trim()\n\t\telse\n\t\t\t\'\'\n\t\tendif endif'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if sectionClassOverride.trim() &lt;&gt; \'\' then\n\t\t\tsectionClassOverride.trim()\n\t\telse if self.oclAsType(ecore::EObject).eContainer().oclAsType(LocalAuthenticationSystem).sectionClass.trim() &lt;&gt; \'\' then\n\t\t\tself.oclAsType(ecore::EObject).eContainer().oclAsType(LocalAuthenticationSystem).sectionClass.trim()\n\t\telse\n\t\t\t\'\'\n\t\tendif endif'"
 	 * @generated
 	 */
 	String getSectionClass();
@@ -154,7 +106,7 @@ public interface AuthenticationElement extends NamedDisplayElement {
 	 * @return the value of the '<em>Caption Class</em>' attribute.
 	 * @see work.andycarpenter.metamodel.security.SecurityPackage#getAuthenticationElement_CaptionClass()
 	 * @model unique="false" transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if captionClassOverride.trim() &lt;&gt; \'\' then\n\t\t\tcaptionClassOverride.trim()\n\t\telse if self.oclAsType(ecore::EObject).eContainer().captionClass.trim() &lt;&gt; \'\' then\n\t\t\tself.eContainer().captionClass.trim()\n\t\telse\n\t\t\t\'\'\n\t\tendif endif'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if captionClassOverride.trim() &lt;&gt; \'\' then\n\t\t\tcaptionClassOverride.trim()\n\t\telse if self.oclAsType(ecore::EObject).eContainer().oclAsType(LocalAuthenticationSystem).captionClass.trim() &lt;&gt; \'\' then\n\t\t\tself.oclAsType(ecore::EObject).eContainer().oclAsType(LocalAuthenticationSystem).captionClass.trim()\n\t\telse\n\t\t\t\'\'\n\t\tendif endif'"
 	 * @generated
 	 */
 	String getCaptionClass();
@@ -201,7 +153,7 @@ public interface AuthenticationElement extends NamedDisplayElement {
 	 * @return the value of the '<em>Content Class</em>' attribute.
 	 * @see work.andycarpenter.metamodel.security.SecurityPackage#getAuthenticationElement_ContentClass()
 	 * @model unique="false" transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if contentClassOverride.trim() &lt;&gt; \'\' then\n\t\t\tcontentClassOverride.trim()\n\t\telse if self.oclAsType(ecore::EObject).eContainer().contentClass.trim() &lt;&gt; \'\' then\n\t\t\tself.eContainer().contentClass.trim()\n\t\telse\n\t\t\t\'\'\n\t\tendif endif'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if contentClassOverride.trim() &lt;&gt; \'\' then\n\t\t\tcontentClassOverride.trim()\n\t\telse if self.oclAsType(ecore::EObject).eContainer().oclAsType(LocalAuthenticationSystem).contentClass.trim() &lt;&gt; \'\' then\n\t\t\tself.oclAsType(ecore::EObject).eContainer().oclAsType(LocalAuthenticationSystem).contentClass.trim()\n\t\telse\n\t\t\t\'\'\n\t\tendif endif'"
 	 * @generated
 	 */
 	String getContentClass();

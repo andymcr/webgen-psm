@@ -12,6 +12,8 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ViewerNotification;
 import work.andycarpenter.metamodel.security.LoginElement;
 import work.andycarpenter.metamodel.security.SecurityPackage;
 
@@ -44,6 +46,9 @@ public class LoginElementItemProvider extends AuthenticationElementItemProvider 
 			super.getPropertyDescriptors(object);
 
 			addAuthenticationPropertyDescriptor(object);
+			addInvokeLabelPropertyDescriptor(object);
+			addConfirmLabelPropertyDescriptor(object);
+			addUriElementPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -66,6 +71,72 @@ public class LoginElementItemProvider extends AuthenticationElementItemProvider 
 				 false,
 				 true,
 				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Invoke Label feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addInvokeLabelPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_LoginElement_invokeLabel_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_LoginElement_invokeLabel_feature", "_UI_LoginElement_type"),
+				 SecurityPackage.Literals.LOGIN_ELEMENT__INVOKE_LABEL,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Confirm Label feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addConfirmLabelPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_LoginElement_confirmLabel_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_LoginElement_confirmLabel_feature", "_UI_LoginElement_type"),
+				 SecurityPackage.Literals.LOGIN_ELEMENT__CONFIRM_LABEL,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Uri Element feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addUriElementPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_LoginElement_uriElement_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_LoginElement_uriElement_feature", "_UI_LoginElement_type"),
+				 SecurityPackage.Literals.LOGIN_ELEMENT__URI_ELEMENT,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -106,6 +177,14 @@ public class LoginElementItemProvider extends AuthenticationElementItemProvider 
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(LoginElement.class)) {
+			case SecurityPackage.LOGIN_ELEMENT__INVOKE_LABEL:
+			case SecurityPackage.LOGIN_ELEMENT__CONFIRM_LABEL:
+			case SecurityPackage.LOGIN_ELEMENT__URI_ELEMENT:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 

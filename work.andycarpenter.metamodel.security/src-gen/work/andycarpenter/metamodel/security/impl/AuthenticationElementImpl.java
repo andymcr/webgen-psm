@@ -22,8 +22,6 @@ import work.andycarpenter.metamodel.security.SecurityPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link work.andycarpenter.metamodel.security.impl.AuthenticationElementImpl#getConfirmLabel <em>Confirm Label</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.security.impl.AuthenticationElementImpl#getUriElement <em>Uri Element</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.security.impl.AuthenticationElementImpl#getSectionClassOverride <em>Section Class Override</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.security.impl.AuthenticationElementImpl#getSectionClass <em>Section Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.security.impl.AuthenticationElementImpl#isHasSectionClass <em>Has Section Class</em>}</li>
@@ -38,46 +36,6 @@ import work.andycarpenter.metamodel.security.SecurityPackage;
  * @generated
  */
 public abstract class AuthenticationElementImpl extends NamedDisplayElementImpl implements AuthenticationElement {
-	/**
-	 * The default value of the '{@link #getConfirmLabel() <em>Confirm Label</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getConfirmLabel()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CONFIRM_LABEL_EDEFAULT = "";
-
-	/**
-	 * The cached value of the '{@link #getConfirmLabel() <em>Confirm Label</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getConfirmLabel()
-	 * @generated
-	 * @ordered
-	 */
-	protected String confirmLabel = CONFIRM_LABEL_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getUriElement() <em>Uri Element</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getUriElement()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String URI_ELEMENT_EDEFAULT = "";
-
-	/**
-	 * The cached value of the '{@link #getUriElement() <em>Uri Element</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getUriElement()
-	 * @generated
-	 * @ordered
-	 */
-	protected String uriElement = URI_ELEMENT_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getSectionClassOverride() <em>Section Class Override</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -222,48 +180,6 @@ public abstract class AuthenticationElementImpl extends NamedDisplayElementImpl 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getConfirmLabel() {
-		return confirmLabel;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setConfirmLabel(String newConfirmLabel) {
-		String oldConfirmLabel = confirmLabel;
-		confirmLabel = newConfirmLabel;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SecurityPackage.AUTHENTICATION_ELEMENT__CONFIRM_LABEL, oldConfirmLabel, confirmLabel));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getUriElement() {
-		return uriElement;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setUriElement(String newUriElement) {
-		String oldUriElement = uriElement;
-		uriElement = newUriElement;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SecurityPackage.AUTHENTICATION_ELEMENT__URI_ELEMENT, oldUriElement, uriElement));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public String getSectionClassOverride() {
 		return sectionClassOverride;
 	}
@@ -384,10 +300,6 @@ public abstract class AuthenticationElementImpl extends NamedDisplayElementImpl 
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case SecurityPackage.AUTHENTICATION_ELEMENT__CONFIRM_LABEL:
-				return getConfirmLabel();
-			case SecurityPackage.AUTHENTICATION_ELEMENT__URI_ELEMENT:
-				return getUriElement();
 			case SecurityPackage.AUTHENTICATION_ELEMENT__SECTION_CLASS_OVERRIDE:
 				return getSectionClassOverride();
 			case SecurityPackage.AUTHENTICATION_ELEMENT__SECTION_CLASS:
@@ -418,12 +330,6 @@ public abstract class AuthenticationElementImpl extends NamedDisplayElementImpl 
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case SecurityPackage.AUTHENTICATION_ELEMENT__CONFIRM_LABEL:
-				setConfirmLabel((String)newValue);
-				return;
-			case SecurityPackage.AUTHENTICATION_ELEMENT__URI_ELEMENT:
-				setUriElement((String)newValue);
-				return;
 			case SecurityPackage.AUTHENTICATION_ELEMENT__SECTION_CLASS_OVERRIDE:
 				setSectionClassOverride((String)newValue);
 				return;
@@ -445,12 +351,6 @@ public abstract class AuthenticationElementImpl extends NamedDisplayElementImpl 
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case SecurityPackage.AUTHENTICATION_ELEMENT__CONFIRM_LABEL:
-				setConfirmLabel(CONFIRM_LABEL_EDEFAULT);
-				return;
-			case SecurityPackage.AUTHENTICATION_ELEMENT__URI_ELEMENT:
-				setUriElement(URI_ELEMENT_EDEFAULT);
-				return;
 			case SecurityPackage.AUTHENTICATION_ELEMENT__SECTION_CLASS_OVERRIDE:
 				setSectionClassOverride(SECTION_CLASS_OVERRIDE_EDEFAULT);
 				return;
@@ -472,10 +372,6 @@ public abstract class AuthenticationElementImpl extends NamedDisplayElementImpl 
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case SecurityPackage.AUTHENTICATION_ELEMENT__CONFIRM_LABEL:
-				return CONFIRM_LABEL_EDEFAULT == null ? confirmLabel != null : !CONFIRM_LABEL_EDEFAULT.equals(confirmLabel);
-			case SecurityPackage.AUTHENTICATION_ELEMENT__URI_ELEMENT:
-				return URI_ELEMENT_EDEFAULT == null ? uriElement != null : !URI_ELEMENT_EDEFAULT.equals(uriElement);
 			case SecurityPackage.AUTHENTICATION_ELEMENT__SECTION_CLASS_OVERRIDE:
 				return SECTION_CLASS_OVERRIDE_EDEFAULT == null ? sectionClassOverride != null : !SECTION_CLASS_OVERRIDE_EDEFAULT.equals(sectionClassOverride);
 			case SecurityPackage.AUTHENTICATION_ELEMENT__SECTION_CLASS:
@@ -508,11 +404,7 @@ public abstract class AuthenticationElementImpl extends NamedDisplayElementImpl 
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (confirmLabel: ");
-		result.append(confirmLabel);
-		result.append(", uriElement: ");
-		result.append(uriElement);
-		result.append(", sectionClassOverride: ");
+		result.append(" (sectionClassOverride: ");
 		result.append(sectionClassOverride);
 		result.append(", captionClassOverride: ");
 		result.append(captionClassOverride);

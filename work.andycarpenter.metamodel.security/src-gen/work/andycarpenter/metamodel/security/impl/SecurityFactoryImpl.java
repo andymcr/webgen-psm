@@ -63,7 +63,7 @@ public class SecurityFactoryImpl extends EFactoryImpl implements SecurityFactory
 			case SecurityPackage.LOGIN_ELEMENT: return createLoginElement();
 			case SecurityPackage.LOGOUT_ELEMENT: return createLogoutElement();
 			case SecurityPackage.FORGOTTEN_PASSWORD_ELEMENT: return createForgottenPasswordElement();
-			case SecurityPackage.RESET_PASSWORD_ELEMENT: return createResetPasswordElement();
+			case SecurityPackage.CHANGE_PASSWORD_ELEMENT: return createChangePasswordElement();
 			case SecurityPackage.CAS_AUTHENTICATION: return createCasAuthentication();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -165,9 +165,9 @@ public class SecurityFactoryImpl extends EFactoryImpl implements SecurityFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ResetPasswordElement createResetPasswordElement() {
-		ResetPasswordElementImpl resetPasswordElement = new ResetPasswordElementImpl();
-		return resetPasswordElement;
+	public ChangePasswordElement createChangePasswordElement() {
+		ChangePasswordElementImpl changePasswordElement = new ChangePasswordElementImpl();
+		return changePasswordElement;
 	}
 
 	/**

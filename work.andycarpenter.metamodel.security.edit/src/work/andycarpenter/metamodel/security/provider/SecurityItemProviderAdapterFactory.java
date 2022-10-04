@@ -210,26 +210,26 @@ public class SecurityItemProviderAdapterFactory extends SecurityAdapterFactory i
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.security.ResetPasswordElement} instances.
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.security.ChangePasswordElement} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ResetPasswordElementItemProvider resetPasswordElementItemProvider;
+	protected ChangePasswordElementItemProvider changePasswordElementItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link work.andycarpenter.metamodel.security.ResetPasswordElement}.
+	 * This creates an adapter for a {@link work.andycarpenter.metamodel.security.ChangePasswordElement}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createResetPasswordElementAdapter() {
-		if (resetPasswordElementItemProvider == null) {
-			resetPasswordElementItemProvider = new ResetPasswordElementItemProvider(this);
+	public Adapter createChangePasswordElementAdapter() {
+		if (changePasswordElementItemProvider == null) {
+			changePasswordElementItemProvider = new ChangePasswordElementItemProvider(this);
 		}
 
-		return resetPasswordElementItemProvider;
+		return changePasswordElementItemProvider;
 	}
 
 	/**
@@ -360,7 +360,7 @@ public class SecurityItemProviderAdapterFactory extends SecurityAdapterFactory i
 		if (loginElementItemProvider != null) loginElementItemProvider.dispose();
 		if (logoutElementItemProvider != null) logoutElementItemProvider.dispose();
 		if (forgottenPasswordElementItemProvider != null) forgottenPasswordElementItemProvider.dispose();
-		if (resetPasswordElementItemProvider != null) resetPasswordElementItemProvider.dispose();
+		if (changePasswordElementItemProvider != null) changePasswordElementItemProvider.dispose();
 		if (casAuthenticationItemProvider != null) casAuthenticationItemProvider.dispose();
 	}
 
