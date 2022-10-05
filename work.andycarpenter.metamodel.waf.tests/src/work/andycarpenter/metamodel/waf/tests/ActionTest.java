@@ -18,6 +18,7 @@ import work.andycarpenter.metamodel.waf.Action;
  *   <li>{@link work.andycarpenter.metamodel.waf.Action#isIsAuthorised() <em>Is Authorised</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.Action#isHasCustomisedAuthorisation() <em>Has Customised Authorisation</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.Action#isIsContainerAction() <em>Is Container Action</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.Action#isIsGeneralAction() <em>Is General Action</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.Action#isIsInstanceAction() <em>Is Instance Action</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.Action#isHasConfirmMessage() <em>Has Confirm Message</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.Action#isHasSuccessMessage() <em>Has Success Message</em>}</li>
@@ -181,6 +182,32 @@ public abstract class ActionTest extends TestCase {
 	 * @generated
 	 */
 	public void testIsSetIsContainerAction() {
+		// TODO: implement this test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.Action#isIsGeneralAction() <em>Is General Action</em>}' feature getter.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.Action#isIsGeneralAction()
+	 * @generated
+	 */
+	public void testIsIsGeneralAction() {
+		// TODO: implement this feature getter test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.Action#isSetIsGeneralAction() <em>isSetIsGeneralAction()</em>}' method.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.Action#isSetIsGeneralAction()
+	 * @generated
+	 */
+	public void testIsSetIsGeneralAction() {
 		// TODO: implement this test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

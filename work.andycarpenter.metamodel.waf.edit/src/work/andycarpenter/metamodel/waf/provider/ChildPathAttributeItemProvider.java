@@ -94,7 +94,7 @@ public class ChildPathAttributeItemProvider extends FeatureChildPathItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -116,7 +116,7 @@ public class ChildPathAttributeItemProvider extends FeatureChildPathItemProvider
 				 false,
 				 false,
 				 null,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 

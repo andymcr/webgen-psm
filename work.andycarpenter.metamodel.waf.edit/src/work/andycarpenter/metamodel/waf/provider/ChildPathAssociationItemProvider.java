@@ -142,7 +142,7 @@ public class ChildPathAssociationItemProvider extends FeatureChildPathItemProvid
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -164,7 +164,7 @@ public class ChildPathAssociationItemProvider extends FeatureChildPathItemProvid
 				 false,
 				 false,
 				 null,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
