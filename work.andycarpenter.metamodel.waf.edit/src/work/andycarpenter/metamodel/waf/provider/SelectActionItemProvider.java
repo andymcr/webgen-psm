@@ -72,7 +72,7 @@ public class SelectActionItemProvider extends ActionItemProvider {
 				 false,
 				 true,
 				 null,
-				 null,
+				 getString("_UI_NavigationPropertyCategory"),
 				 null));
 	}
 
@@ -94,7 +94,7 @@ public class SelectActionItemProvider extends ActionItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 

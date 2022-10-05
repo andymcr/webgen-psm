@@ -91,7 +91,7 @@ public class FeaturePathLabelItemProvider extends FeaturePathItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 

@@ -1125,10 +1125,12 @@ interface UnitField extends DisplayElement {
 		else
 			''
 		endif endif endif endif")
+    @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile String fieldName
 
 	String authorisationRoles = ''
 	@OCL(derivation="authorisationRoles.trim() <> ''")
+    @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean isAuthorised
 
 	@OCL(derivation="if self.oclIsKindOf(UnitFeature) then
@@ -1139,6 +1141,7 @@ interface UnitField extends DisplayElement {
 		else
 			false
 		endif endif")
+    @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean hasCustomisedDisplayLabel
 
 	@OCL(derivation="if self.oclIsKindOf(InterfaceField) then
@@ -1146,6 +1149,7 @@ interface UnitField extends DisplayElement {
 		else
 			false
 		endif")
+    @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean isRepeated
 
 	@OCL(derivation="if self.oclIsKindOf(UnitFeature) then
@@ -1171,8 +1175,10 @@ interface UnitField extends DisplayElement {
 		else
 			''
 		endif endif")
+    @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile String title
 	@OCL(derivation="title <> ''")
+    @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean hasTitle
 
 	@OCL(derivation="if self.oclIsKindOf(UnitFeature) then
@@ -1180,6 +1186,7 @@ interface UnitField extends DisplayElement {
 		else
 			title <> ''
 		endif")
+    @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean hasCustomisedTitle
 
 	@OCL(derivation="if self.oclIsKindOf(InterfaceField) and self.isRepeated then
@@ -1187,6 +1194,7 @@ interface UnitField extends DisplayElement {
 		else
 			false
 		endif")
+    @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean hasSecondTitle
 
 	@OCL(derivation="if self.oclIsKindOf(UnitFeature) then
@@ -1212,8 +1220,10 @@ interface UnitField extends DisplayElement {
 		else
 			''
 		endif endif")
+    @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile String placeholder
 	@OCL(derivation="placeholder <> ''")
+    @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean hasPlaceholder
 
 	@OCL(derivation="if self.oclIsKindOf(UnitFeature) then
@@ -1221,6 +1231,7 @@ interface UnitField extends DisplayElement {
 		else
 			placeholder <> ''
 		endif")
+    @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean hasCustomisedPlaceholder
 
 	@OCL(derivation="if self.oclIsKindOf(InterfaceField) and self.isRepeated then
@@ -1228,6 +1239,7 @@ interface UnitField extends DisplayElement {
 		else
 			false
 		endif")
+    @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean hasSecondPlaceholder
 
 	String localHelp = ''
@@ -1240,8 +1252,10 @@ interface UnitField extends DisplayElement {
 				''
 			endif
 		endif")
+    @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile String help
 	@OCL(derivation="help <> ''")
+    @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean hasHelp
 
 	@OCL(derivation="if self.oclIsKindOf(InterfaceField) and self.isRepeated then
@@ -1249,6 +1263,7 @@ interface UnitField extends DisplayElement {
 		else
 			false
 		endif")
+    @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean hasSecondHelp
 
 	contains Predicate hideWhen
@@ -1270,6 +1285,7 @@ interface UnitField extends DisplayElement {
 		else
 			null
 		endif endif")
+    @GenModel(propertyCategory="Debug")
 	refers derived readonly transient volatile Feature persistentFeature
 
 	@OCL(derivation="if self.oclIsKindOf(UnitAssociation) then
@@ -1277,9 +1293,11 @@ interface UnitField extends DisplayElement {
 		else
 			false
 		endif")
+    @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean isContains
 
 	@OCL(derivation="disabledInput")
+    @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean isDisabled
 
 	@OCL(derivation="if self.oclIsKindOf(UnitFeature) then
@@ -1289,6 +1307,7 @@ interface UnitField extends DisplayElement {
 		else
 			false
 		endif endif")
+    @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean isRequired
 
 	@OCL(derivation="if self.oclIsKindOf(UnitFeature) then
@@ -1298,12 +1317,15 @@ interface UnitField extends DisplayElement {
 		else
 			false
 		endif endif")
+    @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean isSingleton
 
 	@OCL(derivation="self.oclIsKindOf(UnitAssociation)")
+    @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean isAssociationField
 
 	@OCL(derivation="self.oclIsKindOf(UnitAttribute)")
+    @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean isAttributeField
 
 	@OCL(derivation="if self.oclIsKindOf(UnitFeature) then
@@ -1313,6 +1335,7 @@ interface UnitField extends DisplayElement {
 		else
 			false
 		endif endif")
+    @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean isBooleanField
 
 	@OCL(derivation="if self.oclIsKindOf(UnitFeature) then
@@ -1320,6 +1343,7 @@ interface UnitField extends DisplayElement {
 		else
 			self.oclIsKindOf(DataTypeField)
 		endif")
+    @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean isDataTypeField
 
 	@OCL(derivation="if self.oclIsKindOf(UnitFeature) then
@@ -1329,6 +1353,7 @@ interface UnitField extends DisplayElement {
 		else
 			null
 		endif endif")
+    @GenModel(propertyCategory="Debug")
 	refers derived readonly transient volatile Classifier dataType
 
 	@OCL(derivation="if self.oclIsKindOf(UnitFeature) then
@@ -1336,6 +1361,7 @@ interface UnitField extends DisplayElement {
 		else
 			false
 		endif")
+    @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean isDateField
 
 	@OCL(derivation="if self.oclIsKindOf(UnitFeature) then
@@ -1343,6 +1369,7 @@ interface UnitField extends DisplayElement {
 		else
 			null
 		endif")
+    @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile DateDetails dateDetails
 
 	@OCL(derivation="if self.oclIsKindOf(UnitFeature) then
@@ -1352,6 +1379,7 @@ interface UnitField extends DisplayElement {
 		else
 			false
 		endif endif")
+    @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean isEmailField
 
 	@OCL(derivation="if self.oclIsKindOf(UnitFeature) then
@@ -1359,6 +1387,7 @@ interface UnitField extends DisplayElement {
 		else
 			false
 		endif")
+    @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean isEncryptedField
 
 	@OCL(derivation="if self.oclIsKindOf(UnitFeature) then
@@ -1366,6 +1395,7 @@ interface UnitField extends DisplayElement {
 		else
 			false
 		endif")
+    @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean isEnumerationField
 
 	@OCL(derivation="if self.oclIsKindOf(UnitFeature) then
@@ -1373,12 +1403,15 @@ interface UnitField extends DisplayElement {
 		else
 			null
 		endif")
+    @GenModel(propertyCategory="Debug")
 	refers derived readonly transient volatile EnumerationType enumerationType
 
 	@OCL(derivation="self.oclIsKindOf(UnitFeature)")
+    @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean isFeatureField
 
 	@OCL(derivation="self.oclIsKindOf(InterfaceField)")
+    @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean isInterfaceField
 
 	@OCL(derivation="if self.oclIsKindOf(UnitFeature) then
@@ -1388,6 +1421,7 @@ interface UnitField extends DisplayElement {
 		else
 			false
 		endif endif")
+    @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean isIntegerField
 
 	@OCL(derivation="if self.oclIsKindOf(UnitFeature) then
@@ -1395,6 +1429,7 @@ interface UnitField extends DisplayElement {
 		else
 			false
 		endif")
+    @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean isLocationField
 
 	@OCL(derivation="if self.oclIsKindOf(UnitFeature) then
@@ -1402,6 +1437,7 @@ interface UnitField extends DisplayElement {
 		else
 			false
 		endif")
+    @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean isObfuscatedFeature
 
 	@OCL(derivation="if self.oclIsKindOf(UnitAttribute) then
@@ -1411,6 +1447,7 @@ interface UnitField extends DisplayElement {
 		else
 			isObfuscatedFeature
 		endif endif")
+    @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean isObfuscatedField
 
 	@OCL(derivation="if self.oclIsKindOf(UnitFeature) then
@@ -1418,6 +1455,7 @@ interface UnitField extends DisplayElement {
 		else
 			false
 		endif")
+    @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean isResourceField
 
 	@OCL(derivation="if self.oclIsKindOf(UnitFeature) then
@@ -1427,6 +1465,7 @@ interface UnitField extends DisplayElement {
 		else
 			false
 		endif endif")
+    @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean isStringField
 
 	@OCL(derivation="if self.oclIsKindOf(UnitFeature) then
@@ -1436,6 +1475,7 @@ interface UnitField extends DisplayElement {
 		else
 			false
 		endif endif")
+    @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean isTextareaField
 
 	@OCL(derivation="if self.oclIsKindOf(UnitFeature) then
@@ -1443,6 +1483,7 @@ interface UnitField extends DisplayElement {
 		else
 			false
 		endif")
+    @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean isUrlField
 
 	@OCL(derivation="if self.oclIsKindOf(UnitAttribute) then
@@ -1452,9 +1493,11 @@ interface UnitField extends DisplayElement {
 		else
 			null
 		endif endif")
+    @GenModel(propertyCategory="Debug")
 	refers readonly transient volatile derived Expression defaultValue
 
 	@OCL(derivation="not defaultValue.oclIsUndefined()")
+    @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean hasDefaultValue
 
 	@OCL(derivation="if self.oclIsKindOf(UnitFeature) then
@@ -1462,6 +1505,7 @@ interface UnitField extends DisplayElement {
 		else
 			false
 		endif")
+    @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean hasForcedValue
 
 	boolean escapeHTML = "true"
@@ -1483,8 +1527,10 @@ interface UnitField extends DisplayElement {
 		else
 			''
 		endif endif")
+    @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile String inputGroupClass
 	@OCL(derivation="inputGroupClass <> ''")
+    @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean hasInputGroupClass
 
 	String fieldLabelClassOverride = ''
@@ -1495,8 +1541,10 @@ interface UnitField extends DisplayElement {
 		else
 			''
 		endif endif")
+    @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile String fieldLabelClass
 	@OCL(derivation="fieldLabelClass <> ''")
+    @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean hasFieldLabelClass
 
 	String fieldValueClassOverride = ''
@@ -1507,16 +1555,20 @@ interface UnitField extends DisplayElement {
 		else
 			''
 		endif endif")
+    @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile String fieldValueClass
 	@OCL(derivation="fieldValueClass <> ''")
+    @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean hasFieldValueClass
 
 	String footerClass
 
 	@OCL(derivation="displayedOn.genModel")
+    @GenModel(propertyCategory="Debug")
 	refers readonly transient volatile unsettable derived WafModel genModel
 
 	@OCL(derivation="displayedOn.uiModel")
+    @GenModel(propertyCategory="Debug")
 	refers readonly transient volatile unsettable derived WafModel uiModel
 }
 
@@ -1541,6 +1593,7 @@ class UnitAttribute extends UnitFeature {
 		else
 			''
 		endif")
+    @GenModel(propertyCategory="Debug")
 	derived String[1] name
 
 	contains Expression attributeDefaultValue
@@ -1561,6 +1614,7 @@ abstract class FeaturePath extends Variable {
 		else
 			false
 		endif")
+    @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean hasChild
 
 	@OCL(derivation="if self.oclIsKindOf(FeaturePathAttribute) then
@@ -1570,6 +1624,7 @@ abstract class FeaturePath extends Variable {
 		else
 			false
 		endif endif")
+    @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean isRequired
 
 	@OCL(derivation="if self.oclIsKindOf(FeaturePathAttribute) then
@@ -1579,6 +1634,7 @@ abstract class FeaturePath extends Variable {
 		else
 			false
 		endif endif")
+    @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean isSingleton
 }
 
@@ -1590,6 +1646,7 @@ class FeaturePathAttribute extends FeaturePath {
 		else
 			''
 		endif")
+    @GenModel(propertyCategory="Debug")
 	derived String name
 }
 
@@ -1604,6 +1661,7 @@ class FeaturePathLabel extends FeaturePath {
 		else
 			''
 		endif")
+    @GenModel(propertyCategory="Debug")
 	derived String name
 }
 
@@ -1615,14 +1673,17 @@ class ChildPathAttribute extends FeatureChildPath {
 		else
 			''
 		endif")
+    @GenModel(propertyCategory="Debug")
 	derived String name
 
 	@OCL(derivation="attribute")
+    @GenModel(propertyCategory="Debug")
 	refers derived readonly transient volatile Feature persistentFeature
 }
 
 class ChildPathAssociation extends FeatureChildPath, AssociationReference {
 	@OCL(derivation="not childFeature.oclIsUndefined()")
+    @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean hasChild
 
 	@OCL(derivation="if hasChild = false then
@@ -1634,6 +1695,7 @@ class ChildPathAssociation extends FeatureChildPath, AssociationReference {
 		else
 			null
 		endif endif endif")
+    @GenModel(propertyCategory="Debug")
 	refers derived readonly transient volatile Feature persistentFeature
 }
 
@@ -1645,6 +1707,7 @@ class UnitLabel extends UnitField {
 		else
 			''
 		endif")
+    @GenModel(propertyCategory="Debug")
 	derived String[1] name
 }
 
@@ -1700,6 +1763,7 @@ class CollectionUnit extends DynamicUnit, SelectableUnit {
 	refers Filter filter
 	refers Filter[] supportedFilters
 	@OCL(derivation="supportedFilters->notEmpty()")
+    @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean hasFilters
 
 	@OCL(derivation="if not selection.oclIsUndefined() then
@@ -1707,13 +1771,16 @@ class CollectionUnit extends DynamicUnit, SelectableUnit {
 		else
 			false
 		endif")
+    @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean hasGroupedResults
 
-	@OCL(derivation="if selection.oclIsUndefined() then
-			false
-		else
-			defaultPaginationSize > 0 and selection.hasPaginationSupport = true
-		endif")
+	@OCL(derivation="defaultPaginationSize > 0
+		and if selection.oclIsUndefined() then
+				true
+			else
+				selection.hasPaginationSupport = true
+			endif")
+    @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean hasPagination
 
 	String emptyMessage
@@ -1767,8 +1834,10 @@ class CollectionUnit extends DynamicUnit, SelectableUnit {
 				else
 					''
 				endif endif endif endif")
+    @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile String commonInstanceControlClass
 	@OCL(derivation="commonInstanceControlClass <> ''")
+    @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean hasCommonInstanceControlClass
 
 	@OCL(derivation="if self.oclIsKindOf(TabularUnit) then
@@ -1798,8 +1867,10 @@ class CollectionUnit extends DynamicUnit, SelectableUnit {
 				else
 					''
 				endif endif endif endif")
+    @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile String commonInstanceAnchorClass
 	@OCL(derivation="commonInstanceAnchorClass <> ''")
+    @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean hasCommonInstanceAnchorClass
 }
 
@@ -1813,10 +1884,12 @@ abstract class EditUnit extends SingletonUnit {
 
 	contains Message confirmMessage
 	@OCL(derivation="not confirmMessage.oclIsUndefined()")
+    @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean hasConfirmMessage
 
 	contains Message successMessage
 	@OCL(derivation="not successMessage.oclIsUndefined()")
+    @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean hasSuccessMessage
 
 	refers Page cancelDestination
@@ -1834,8 +1907,10 @@ abstract class EditUnit extends SingletonUnit {
 		else
 			''
 		endif endif endif")
+    @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile String sectionClass
 	@OCL(derivation="sectionClass <> ''")
+    @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean hasSectionClass
 
 	@OCL(derivation="if captionClassOverride.trim() <> '' then
@@ -1847,8 +1922,10 @@ abstract class EditUnit extends SingletonUnit {
 		else
 			''
 		endif endif endif")
+    @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile String captionClass
 	@OCL(derivation="captionClass <> ''")
+    @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean hasCaptionClass
 
 	@OCL(derivation="if contentClassOverride.trim() <> '' then
@@ -1860,8 +1937,10 @@ abstract class EditUnit extends SingletonUnit {
 		else
 			''
 		endif endif endif")
+    @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile String contentClass
 	@OCL(derivation="contentClass <> ''")
+    @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean hasContentClass
 
 	@OCL(derivation="if localFieldListClass.trim() <> '' then
@@ -1873,8 +1952,10 @@ abstract class EditUnit extends SingletonUnit {
 		else
 			''
 		endif endif endif")
+    @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile String fieldListClass
 	@OCL(derivation="fieldListClass <> ''")
+    @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean hasFieldListClass
 
 	@OCL(derivation="if localDefinitionFieldListClass.trim() <> '' then
@@ -1886,8 +1967,10 @@ abstract class EditUnit extends SingletonUnit {
 		else
 			''
 		endif endif endif")
+    @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile String definitionFieldListClass
 	@OCL(derivation="definitionFieldListClass <> ''")
+    @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean hasDefinitionFieldListClass
 
 	@OCL(derivation="if localFieldLabelClass.trim() <> '' then
@@ -1899,8 +1982,10 @@ abstract class EditUnit extends SingletonUnit {
 		else
 			''
 		endif endif endif")
+    @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile String fieldLabelClass
 	@OCL(derivation="fieldLabelClass <> ''")
+    @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean hasFieldLabelClass
 
 	@OCL(derivation="if localFieldValueClass.trim() <> '' then
@@ -1912,8 +1997,10 @@ abstract class EditUnit extends SingletonUnit {
 		else
 			''
 		endif endif endif")
+    @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile String fieldValueClass
 	@OCL(derivation="fieldValueClass <> ''")
+    @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean hasFieldValueClass
 
 	@OCL(derivation="if localControlClass.trim() <> '' then
@@ -1925,8 +2012,10 @@ abstract class EditUnit extends SingletonUnit {
 		else
 			''
 		endif endif endif")
+    @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile String controlClass
 	@OCL(derivation="controlClass <> ''")
+    @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean hasControlClass
 
 	@OCL(derivation="if localAnchorClass.trim() <> '' then
@@ -1938,8 +2027,10 @@ abstract class EditUnit extends SingletonUnit {
 		else
 			''
 		endif endif endif")
+    @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile String anchorClass
 	@OCL(derivation="anchorClass <> ''")
+    @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean hasAnchorClass
 
 	@OCL(derivation="if localInputGroupClass.trim() <> '' then
@@ -1949,8 +2040,10 @@ abstract class EditUnit extends SingletonUnit {
 		else
 			''
 		endif endif")
+    @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile String inputGroupClass
 	@OCL(derivation="inputGroupClass <> ''")
+    @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean hasInputGroupClass
 }
 
@@ -1986,8 +2079,10 @@ class DetailsUnit extends SingletonUnit, SelectableUnit {
 		else
 			''
 		endif endif endif")
+    @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile String sectionClass
 	@OCL(derivation="sectionClass <> ''")
+    @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean hasSectionClass
 
 	@OCL(derivation="if captionClassOverride.trim() <> '' then
@@ -1999,8 +2094,10 @@ class DetailsUnit extends SingletonUnit, SelectableUnit {
 		else
 			''
 		endif endif endif")
+    @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile String captionClass
 	@OCL(derivation="captionClass <> ''")
+    @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean hasCaptionClass
 
 	@OCL(derivation="if contentClassOverride.trim() <> '' then
@@ -2012,8 +2109,10 @@ class DetailsUnit extends SingletonUnit, SelectableUnit {
 		else
 			''
 		endif endif endif")
+    @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile String contentClass
 	@OCL(derivation="contentClass <> ''")
+    @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean hasContentClass
 
 	@OCL(derivation="if localFieldListClass.trim() <> '' then
@@ -2025,8 +2124,10 @@ class DetailsUnit extends SingletonUnit, SelectableUnit {
 		else
 			''
 		endif endif endif")
+    @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile String fieldListClass
 	@OCL(derivation="fieldListClass <> ''")
+    @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean hasFieldListClass
 
 	@OCL(derivation="if localDefinitionFieldListClass.trim() <> '' then
@@ -2038,8 +2139,10 @@ class DetailsUnit extends SingletonUnit, SelectableUnit {
 		else
 			''
 		endif endif endif")
+    @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile String definitionFieldListClass
 	@OCL(derivation="definitionFieldListClass <> ''")
+    @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean hasDefinitionFieldListClass
 
 	@OCL(derivation="if localFieldLabelClass.trim() <> '' then
@@ -2051,8 +2154,10 @@ class DetailsUnit extends SingletonUnit, SelectableUnit {
 		else
 			''
 		endif endif endif")
+    @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile String fieldLabelClass
 	@OCL(derivation="fieldLabelClass <> ''")
+    @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean hasFieldLabelClass
 
 	@OCL(derivation="if localFieldValueClass.trim() <> '' then
@@ -2064,8 +2169,10 @@ class DetailsUnit extends SingletonUnit, SelectableUnit {
 		else
 			''
 		endif endif endif")
+    @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile String fieldValueClass
 	@OCL(derivation="fieldValueClass <> ''")
+    @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean hasFieldValueClass
 
 	@OCL(derivation="if localControlClass.trim() <> '' then
@@ -2077,8 +2184,10 @@ class DetailsUnit extends SingletonUnit, SelectableUnit {
 		else
 			''
 		endif endif endif")
+    @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile String controlClass
 	@OCL(derivation="controlClass <> ''")
+    @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean hasControlClass
 
 	@OCL(derivation="if localAnchorClass.trim() <> '' then
@@ -2090,8 +2199,10 @@ class DetailsUnit extends SingletonUnit, SelectableUnit {
 		else
 			''
 		endif endif endif")
+    @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile String anchorClass
 	@OCL(derivation="anchorClass <> ''")
+    @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean hasAnchorClass
 }
 
@@ -2979,48 +3090,69 @@ enum InstanceActionsPlacement {
 }
 
 interface ActionContainer {
+    @GenModel(propertyCategory="Interface")
 	ContainerActionsPlacement containerActionsPlacement
 
+    @GenModel(propertyCategory="Interface")
 	InstanceActionsPlacement instanceActionsPlacement
 
 	contains Action[] allActions opposite usedBy
 
 	@OCL(derivation="allActions->select(a | not a.disable)->asOrderedSet()")
+    @GenModel(propertyCategory="Debug")
 	refers derived readonly unsettable transient volatile Action[] actions
 
 	@OCL(derivation="actions->notEmpty()")
+    @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean hasActions
 
 	@OCL(derivation="actions->select(a | a.hasMessages)->asOrderedSet()")
 	refers derived readonly unsettable transient volatile Action[] actionsWithMessages
 
 	@OCL(derivation="actionsWithMessages->notEmpty()")
+    @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean hasActionsMessages
 
 	@OCL(derivation="actions->select(a | a.oclIsKindOf(DeleteAction) or a.oclIsKindOf(OperationAction))->asOrderedSet()")
+    @GenModel(propertyCategory="Debug")
 	refers derived readonly unsettable transient volatile Action[] actionsWithoutTarget
 
 	@OCL(derivation="actions->select(a | a.isContainerAction = true)->asOrderedSet()")
+    @GenModel(propertyCategory="Debug")
 	refers derived readonly unsettable transient volatile Action[] containerActions
 	@OCL(derivation="containerActions->notEmpty()")
+    @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean hasContainerActions
 
 // TODO	@OCL(derivation="operationActions->select(a | a.operation.resultType = service::OperationResultTypes::File)->asOrderedSet()")
 // TODO	refers derived readonly unsettable transient volatile OperationAction[] fileActions
+    @GenModel(propertyCategory="Debug")
 	refers derived readonly unsettable transient volatile OperationAction[] fileActions get {
 		operationActions.filter[it.operation.resultType.literal == 'File'].toEList()
 	}
 	@OCL(derivation="fileActions->notEmpty()")
+    @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean hasFileActions
 
+	@OCL(derivation="actions->select(a | a.isGeneralAction = true)->asOrderedSet()")
+    @GenModel(propertyCategory="Debug")
+	refers derived readonly unsettable transient volatile Action[] generalActions
+	@OCL(derivation="generalActions->notEmpty()")
+    @GenModel(propertyCategory="Debug")
+	derived readonly unsettable transient volatile boolean hasGeneralActions
+
 	@OCL(derivation="actions->select(a | a.isInstanceAction = true)->asOrderedSet()")
+    @GenModel(propertyCategory="Debug")
 	refers derived readonly unsettable transient volatile Action[] instanceActions
 	@OCL(derivation="instanceActions->notEmpty()")
+    @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean hasInstanceActions
 
 	@OCL(derivation="actions->select(a | a.oclIsKindOf(OperationAction)).oclAsType(OperationAction)->asOrderedSet()")
+    @GenModel(propertyCategory="Debug")
 	refers derived readonly unsettable transient volatile OperationAction[] operationActions
 	@OCL(derivation="operationActions->notEmpty()")
+    @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean hasOperationActions
 
 	@OCL(derivation="if self.oclIsKindOf(DynamicUnit) then
@@ -3030,6 +3162,7 @@ interface ActionContainer {
 		else
 			null
 		endif endif")
+    @GenModel(propertyCategory="Debug")
 	refers readonly unsettable transient volatile derived WafModel genModelRef
 
 	@OCL(derivation="if self.oclIsKindOf(DynamicUnit) then
@@ -3039,6 +3172,7 @@ interface ActionContainer {
 		else
 			null
 		endif endif")
+    @GenModel(propertyCategory="Debug")
 	refers readonly unsettable transient volatile derived WafModel uiModelRef
 }
 
@@ -3052,6 +3186,7 @@ abstract class Action extends NamedDisplayElement {
 		else
 			null
 		endif endif")
+    @GenModel(propertyCategory="Debug")
 	refers readonly transient volatile unsettable derived DynamicUnit parentUnit
 
 	@OCL(derivation="if self.oclIsKindOf(SelectAction) then
@@ -3063,43 +3198,62 @@ abstract class Action extends NamedDisplayElement {
 		else
 			''
 		endif endif endif")
+    @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile String authorisationRoles
 
 	@OCL(derivation="authorisationRoles <> ''")
+    @GenModel(propertyCategory="Debug")
 	derived readonly transient unsettable volatile boolean isAuthorised
 
 	@OCL(derivation="authorisationRoles <> parentUnit.authorisationRoles.trim()")
+    @GenModel(propertyCategory="Debug")
 	derived readonly transient unsettable volatile boolean hasCustomisedAuthorisation
 
-	@OCL(derivation="self.oclIsKindOf(ContainerOperationAction)
-		or self.oclIsKindOf(ContainerSelectAction)")
+	@OCL(derivation="self.oclIsTypeOf(ContainerOperationAction)
+		or self.oclIsTypeOf(ContainerSelectAction)")
+    @GenModel(propertyCategory="Debug")
 	derived readonly transient unsettable volatile boolean isContainerAction
 
-	@OCL(derivation="self.oclIsKindOf(DeleteAction)
-		or self.oclIsKindOf(InstanceOperationAction)
-		or self.oclIsKindOf(InstanceSelectAction)")
+	@OCL(derivation="self.oclIsTypeOf(GeneralOperationAction)")
+    @GenModel(propertyCategory="Debug")
+	derived readonly transient unsettable volatile boolean isGeneralAction
+
+	@OCL(derivation="self.oclIsTypeOf(DeleteAction)
+		or self.oclIsTypeOf(InstanceOperationAction)
+		or self.oclIsTypeOf(InstanceSelectAction)")
+    @GenModel(propertyCategory="Debug")
 	derived readonly transient unsettable volatile boolean isInstanceAction
 
+    @GenModel(propertyCategory="Interface")
 	String iconName = ''
+    @GenModel(propertyCategory="Business")
 	boolean disable
 	contains Predicate displayWhen
 	contains Predicate enableWhen
 
+    @GenModel(propertyCategory="Interface")
 	String confirmMessage = ''
 	@OCL(derivation="confirmMessage.trim() <> ''")
+    @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean hasConfirmMessage
 
+    @GenModel(propertyCategory="Interface")
 	String successMessage = ''
 	@OCL(derivation="successMessage.trim() <> ''")
+    @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean hasSuccessMessage
 
+    @GenModel(propertyCategory="Interface")
 	String failureMessage = ''
 	@OCL(derivation="failureMessage.trim() <> ''")
+    @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean hasFailureMessage
 
 	@OCL(derivation="hasConfirmMessage = true or hasSuccessMessage = true or hasFailureMessage = true")
+    @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean hasMessages
 
+    @GenModel(propertyCategory="Style")
 	String localAnchorClass = ''
 	@OCL(derivation="if localAnchorClass.trim() <> '' then
 			localAnchorClass.trim()
@@ -3124,17 +3278,23 @@ abstract class Action extends NamedDisplayElement {
 		else
 			''
 		endif endif")
+    @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile String anchorClass
 	@OCL(derivation="anchorClass.trim() <> ''")
+    @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean hasAnchorClass
 
+    @GenModel(propertyCategory="Style")
 	String headerClass
+    @GenModel(propertyCategory="Style")
 	String footerClass
 }
 
 class DeleteAction extends Action {
+    @GenModel(propertyCategory="Navigation")
 	String[1] uriElement
 
+    @GenModel(propertyCategory="Security")
 	String localAuthorisationRoles = ''
 	@OCL(derivation="if localAuthorisationRoles.trim() <> '' then
 			localAuthorisationRoles
@@ -3147,10 +3307,12 @@ class DeleteAction extends Action {
 				''
 			endif endif
 		endif")
+    @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile String deleteAuthorisationRoles
 }
 
 abstract class SelectAction extends Action {
+    @GenModel(propertyCategory="Navigation")
 	refers SelectableUnit[1] target opposite selectors
 	contains FeaturePath valuePath
 
@@ -3159,6 +3321,7 @@ abstract class SelectAction extends Action {
 		else
 			''
 		endif")
+    @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile String selectAuthorisationRoles
 }
 
@@ -3169,10 +3332,14 @@ class InstanceSelectAction extends SelectAction {
 }
 
 abstract class OperationAction extends Action {
+    @GenModel(propertyCategory="Business")
 	refers BusinessOperation[1] operation
+    @GenModel(propertyCategory="Business")
 	String fileExtension
+    @GenModel(propertyCategory="Navigation")
 	String[1] uriElement
 
+    @GenModel(propertyCategory="Security")
 	String localAuthorisationRoles = ''
 	@OCL(derivation="if localAuthorisationRoles.trim() <> '' then
 			localAuthorisationRoles
@@ -3185,6 +3352,7 @@ abstract class OperationAction extends Action {
 				''
 			endif endif
 		endif")
+    @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile String operationAuthorisationRoles
 }
 

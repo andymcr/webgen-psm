@@ -72,7 +72,7 @@ public class OperationActionItemProvider extends ActionItemProvider {
 				 false,
 				 true,
 				 null,
-				 null,
+				 getString("_UI_BusinessPropertyCategory"),
 				 null));
 	}
 
@@ -94,7 +94,7 @@ public class OperationActionItemProvider extends ActionItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_BusinessPropertyCategory"),
 				 null));
 	}
 
@@ -116,7 +116,7 @@ public class OperationActionItemProvider extends ActionItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_NavigationPropertyCategory"),
 				 null));
 	}
 
@@ -138,7 +138,7 @@ public class OperationActionItemProvider extends ActionItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_SecurityPropertyCategory"),
 				 null));
 	}
 
@@ -160,7 +160,7 @@ public class OperationActionItemProvider extends ActionItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
