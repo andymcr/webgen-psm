@@ -47,7 +47,6 @@ public class WafTests extends TestSuite {
 		suite.addTestSuite(DataTypeFieldTest.class);
 		suite.addTestSuite(DateFieldTest.class);
 		suite.addTestSuite(SingletonUnitTest.class);
-		suite.addTestSuite(CollectionUnitTest.class);
 		suite.addTestSuite(CreateUnitTest.class);
 		suite.addTestSuite(UpdateUnitTest.class);
 		suite.addTestSuite(CreateUpdateUnitTest.class);

@@ -2,10 +2,7 @@
  */
 package work.andycarpenter.metamodel.waf.tests;
 
-import junit.textui.TestRunner;
-
 import work.andycarpenter.metamodel.waf.CollectionUnit;
-import work.andycarpenter.metamodel.waf.WafFactory;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,16 +22,7 @@ import work.andycarpenter.metamodel.waf.WafFactory;
  * </p>
  * @generated
  */
-public class CollectionUnitTest extends DynamicUnitTest {
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static void main(String[] args) {
-		TestRunner.run(CollectionUnitTest.class);
-	}
+public abstract class CollectionUnitTest extends DynamicUnitTest {
 
 	/**
 	 * Constructs a new Collection Unit test case with the given name.
@@ -55,28 +43,6 @@ public class CollectionUnitTest extends DynamicUnitTest {
 	@Override
 	protected CollectionUnit getFixture() {
 		return (CollectionUnit)fixture;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see junit.framework.TestCase#setUp()
-	 * @generated
-	 */
-	@Override
-	protected void setUp() throws Exception {
-		setFixture(WafFactory.eINSTANCE.createCollectionUnit());
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see junit.framework.TestCase#tearDown()
-	 * @generated
-	 */
-	@Override
-	protected void tearDown() throws Exception {
-		setFixture(null);
 	}
 
 	/**

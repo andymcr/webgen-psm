@@ -17,12 +17,9 @@ import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
 import work.andycarpenter.metamodel.base.BaseFactory;
 import work.andycarpenter.metamodel.base.BasePackage;
-
 import work.andycarpenter.metamodel.base.provider.NamedElementItemProvider;
-
 import work.andycarpenter.metamodel.service.Service;
 import work.andycarpenter.metamodel.service.ServiceFactory;
 import work.andycarpenter.metamodel.service.ServicePackage;

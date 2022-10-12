@@ -1751,7 +1751,7 @@ enum PaginationControlPlacements {
 	AboveAndBelow = 2
 }
 
-class CollectionUnit extends DynamicUnit, SelectableUnit {
+abstract class CollectionUnit extends DynamicUnit, SelectableUnit {
 	refers Label unitTitle
 	contains FeaturePath elementTitle
 	boolean truncateElementTitle = "false"

@@ -5,9 +5,7 @@ package work.andycarpenter.metamodel.service.provider;
 import org.eclipse.emf.common.EMFPlugin;
 
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import work.andycarpenter.metamodel.base.provider.BaseEditPlugin;
-
 import work.andycarpenter.metamodel.expression.provider.ExpressionEditPlugin;
 import work.andycarpenter.metamodel.orm.provider.OrmEditPlugin;
 

@@ -876,29 +876,6 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.waf.CollectionUnit} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected CollectionUnitItemProvider collectionUnitItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link work.andycarpenter.metamodel.waf.CollectionUnit}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createCollectionUnitAdapter() {
-		if (collectionUnitItemProvider == null) {
-			collectionUnitItemProvider = new CollectionUnitItemProvider(this);
-		}
-
-		return collectionUnitItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.waf.CreateUnit} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1491,7 +1468,6 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 		if (dataTypeFieldItemProvider != null) dataTypeFieldItemProvider.dispose();
 		if (dateFieldItemProvider != null) dateFieldItemProvider.dispose();
 		if (singletonUnitItemProvider != null) singletonUnitItemProvider.dispose();
-		if (collectionUnitItemProvider != null) collectionUnitItemProvider.dispose();
 		if (createUnitItemProvider != null) createUnitItemProvider.dispose();
 		if (updateUnitItemProvider != null) updateUnitItemProvider.dispose();
 		if (createUpdateUnitItemProvider != null) createUpdateUnitItemProvider.dispose();
@@ -1578,7 +1554,6 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 
 				return null;
 			}
- 
 			/**
 			 * <!-- begin-user-doc -->
 			 * <!-- end-user-doc -->
@@ -1623,7 +1598,6 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 
 				return null;
 			}
- 
 			/**
 			 * <!-- begin-user-doc -->
 			 * <!-- end-user-doc -->
