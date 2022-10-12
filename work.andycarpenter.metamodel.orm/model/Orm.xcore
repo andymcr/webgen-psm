@@ -294,6 +294,9 @@ abstract class Feature extends NamedDisplayElement {
 		if (isEnumerationFeature)
 			(this as DataTypeAttribute).attributeDataType as EnumerationType
 	}
+	@OCL(derivation="if self.oclIsTypeOf(DataTypeAttribute) then self.oclAsType(DataTypeAttribute).attributeDataType.isFloatDataType else false endif")
+    @GenModel(propertyCategory="Debug")
+	derived readonly unsettable transient volatile boolean isFloatFeature
 	@OCL(derivation="if self.oclIsTypeOf(DataTypeAttribute) then self.oclAsType(DataTypeAttribute).attributeDataType.isIntegerDataType else false endif")
     @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean isIntegerFeature

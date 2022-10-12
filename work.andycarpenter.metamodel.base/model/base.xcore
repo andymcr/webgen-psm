@@ -105,6 +105,8 @@ class DataType extends Classifier {
 	derived readonly unsettable transient volatile boolean isEmailDataType
 	@OCL(derivation="self.oclIsTypeOf(EnumerationType)")
 	derived readonly unsettable transient volatile boolean isEnumerationType
+	@OCL(derivation="name = 'Float'")
+	derived readonly unsettable transient volatile boolean isFloatDataType
 	@OCL(derivation="name = 'Integer'")
 	derived readonly unsettable transient volatile boolean isIntegerDataType
 	@OCL(derivation="name = 'String'")

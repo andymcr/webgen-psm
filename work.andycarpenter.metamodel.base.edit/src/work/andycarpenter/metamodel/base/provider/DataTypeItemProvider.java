@@ -53,6 +53,7 @@ public class DataTypeItemProvider extends ClassifierItemProvider {
 			addIsBooleanDataTypePropertyDescriptor(object);
 			addIsEmailDataTypePropertyDescriptor(object);
 			addIsEnumerationTypePropertyDescriptor(object);
+			addIsFloatDataTypePropertyDescriptor(object);
 			addIsIntegerDataTypePropertyDescriptor(object);
 			addIsStringDataTypePropertyDescriptor(object);
 			addIsTextareaDataTypePropertyDescriptor(object);
@@ -238,6 +239,28 @@ public class DataTypeItemProvider extends ClassifierItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Is Float Data Type feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIsFloatDataTypePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DataType_isFloatDataType_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DataType_isFloatDataType_feature", "_UI_DataType_type"),
+				 BasePackage.Literals.DATA_TYPE__IS_FLOAT_DATA_TYPE,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Is Integer Data Type feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -371,6 +394,7 @@ public class DataTypeItemProvider extends ClassifierItemProvider {
 			case BasePackage.DATA_TYPE__IS_BOOLEAN_DATA_TYPE:
 			case BasePackage.DATA_TYPE__IS_EMAIL_DATA_TYPE:
 			case BasePackage.DATA_TYPE__IS_ENUMERATION_TYPE:
+			case BasePackage.DATA_TYPE__IS_FLOAT_DATA_TYPE:
 			case BasePackage.DATA_TYPE__IS_INTEGER_DATA_TYPE:
 			case BasePackage.DATA_TYPE__IS_STRING_DATA_TYPE:
 			case BasePackage.DATA_TYPE__IS_TEXTAREA_DATA_TYPE:

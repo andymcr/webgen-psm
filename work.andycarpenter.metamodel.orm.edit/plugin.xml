@@ -27,4 +27,5 @@
             uri="http://andycarpenter.work/metamodel/expression"
             class="work.andycarpenter.metamodel.orm.provider.OrmItemProviderAdapterFactory$ExpressionChildCreationExtender"/>
    </extension>
+
 </plugin>
