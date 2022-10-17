@@ -8,9 +8,7 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-
 import work.andycarpenter.metamodel.orm.LocationFeature;
 
 /**
@@ -19,7 +17,7 @@ import work.andycarpenter.metamodel.orm.LocationFeature;
  * <!-- end-user-doc -->
  * @generated
  */
-public class LocationFeatureItemProvider extends FeatureItemProvider {
+public class LocationFeatureItemProvider extends AttributeItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

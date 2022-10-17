@@ -434,7 +434,7 @@ class FileResource extends ResourceFeature {
 class ImageResource extends ResourceFeature {
 }
 
-class LocationFeature extends Feature {
+class LocationFeature extends Attribute {
 }
 
 enum AssociationRelationships {
