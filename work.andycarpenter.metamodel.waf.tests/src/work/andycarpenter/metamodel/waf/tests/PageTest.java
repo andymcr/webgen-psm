@@ -60,6 +60,7 @@ import work.andycarpenter.metamodel.waf.WafFactory;
  *   <li>{@link work.andycarpenter.metamodel.waf.Page#getActionsWithoutTarget() <em>Actions Without Target</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.Page#getFileActions() <em>File Actions</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.Page#isHasFileActions() <em>Has File Actions</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.Page#isHasMessages() <em>Has Messages</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.Page#getPageClass() <em>Page Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.Page#isHasPageClass() <em>Has Page Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.Page#getGenModel() <em>Gen Model</em>}</li>
@@ -1032,6 +1033,32 @@ public class PageTest extends TestCase {
 	 * @generated
 	 */
 	public void testIsSetHasFileActions() {
+		// TODO: implement this test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.Page#isHasMessages() <em>Has Messages</em>}' feature getter.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.Page#isHasMessages()
+	 * @generated
+	 */
+	public void testIsHasMessages() {
+		// TODO: implement this feature getter test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.Page#isSetHasMessages() <em>isSetHasMessages()</em>}' method.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.Page#isSetHasMessages()
+	 * @generated
+	 */
+	public void testIsSetHasMessages() {
 		// TODO: implement this test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

@@ -510,6 +510,11 @@ class Page extends NamedDisplayElement {
     @GenModel(propertyCategory="Debug")
 	derived readonly transient unsettable volatile boolean hasFileActions
 
+	@OCL(derivation="editUnits->select(u | u.hasMessages)->notEmpty()
+		or dynamicUnits.oclAsType(ActionContainer)->select(c | c.hasActionsWithMessages)->notEmpty()")
+    @GenModel(propertyCategory="Debug")
+	derived readonly unsettable transient volatile boolean hasMessages
+
     @GenModel(propertyCategory="Navigation")
 	String uriElement = ''
 
@@ -1892,6 +1897,10 @@ abstract class EditUnit extends SingletonUnit {
     @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean hasSuccessMessage
 
+	@OCL(derivation="hasConfirmMessage or hasSuccessMessage")
+    @GenModel(propertyCategory="Debug")
+	derived readonly transient volatile boolean hasMessages
+
 	refers Page cancelDestination
 	String cancelLabel
 	boolean hasCustomCancelLabel
@@ -3111,7 +3120,7 @@ interface ActionContainer {
 
 	@OCL(derivation="actionsWithMessages->notEmpty()")
     @GenModel(propertyCategory="Debug")
-	derived readonly unsettable transient volatile boolean hasActionsMessages
+	derived readonly unsettable transient volatile boolean hasActionsWithMessages
 
 	@OCL(derivation="actions->select(a | a.oclIsKindOf(DeleteAction) or a.oclIsKindOf(OperationAction))->asOrderedSet()")
     @GenModel(propertyCategory="Debug")

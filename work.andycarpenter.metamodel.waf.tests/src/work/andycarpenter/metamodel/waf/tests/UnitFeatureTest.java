@@ -66,7 +66,7 @@ import work.andycarpenter.metamodel.waf.UnitFeature;
  *   <li>{@link work.andycarpenter.metamodel.waf.ActionContainer#getActions() <em>Actions</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.ActionContainer#isHasActions() <em>Has Actions</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.ActionContainer#getActionsWithMessages() <em>Actions With Messages</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.ActionContainer#isHasActionsMessages() <em>Has Actions Messages</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.ActionContainer#isHasActionsWithMessages() <em>Has Actions With Messages</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.ActionContainer#getActionsWithoutTarget() <em>Actions Without Target</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.ActionContainer#getContainerActions() <em>Container Actions</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.ActionContainer#isHasContainerActions() <em>Has Container Actions</em>}</li>
@@ -1057,26 +1057,26 @@ public abstract class UnitFeatureTest extends DisplayElementTest {
 	}
 
 	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.ActionContainer#isHasActionsMessages() <em>Has Actions Messages</em>}' feature getter.
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.ActionContainer#isHasActionsWithMessages() <em>Has Actions With Messages</em>}' feature getter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.ActionContainer#isHasActionsMessages()
+	 * @see work.andycarpenter.metamodel.waf.ActionContainer#isHasActionsWithMessages()
 	 * @generated
 	 */
-	public void testIsHasActionsMessages() {
+	public void testIsHasActionsWithMessages() {
 		// TODO: implement this feature getter test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}
 
 	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.ActionContainer#isSetHasActionsMessages() <em>isSetHasActionsMessages()</em>}' method.
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.ActionContainer#isSetHasActionsWithMessages() <em>isSetHasActionsWithMessages()</em>}' method.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.ActionContainer#isSetHasActionsMessages()
+	 * @see work.andycarpenter.metamodel.waf.ActionContainer#isSetHasActionsWithMessages()
 	 * @generated
 	 */
-	public void testIsSetHasActionsMessages() {
+	public void testIsSetHasActionsWithMessages() {
 		// TODO: implement this test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

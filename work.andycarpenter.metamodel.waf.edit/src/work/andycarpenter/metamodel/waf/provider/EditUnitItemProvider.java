@@ -55,6 +55,7 @@ public class EditUnitItemProvider extends SingletonUnitItemProvider {
 			addHasCustomConfirmLabelPropertyDescriptor(object);
 			addHasConfirmMessagePropertyDescriptor(object);
 			addHasSuccessMessagePropertyDescriptor(object);
+			addHasMessagesPropertyDescriptor(object);
 			addCancelDestinationPropertyDescriptor(object);
 			addCancelLabelPropertyDescriptor(object);
 			addHasCustomCancelLabelPropertyDescriptor(object);
@@ -229,6 +230,28 @@ public class EditUnitItemProvider extends SingletonUnitItemProvider {
 				 getString("_UI_EditUnit_hasSuccessMessage_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_EditUnit_hasSuccessMessage_feature", "_UI_EditUnit_type"),
 				 WafPackage.eINSTANCE.getEditUnit_HasSuccessMessage(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 getString("_UI_DebugPropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Has Messages feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasMessagesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EditUnit_hasMessages_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EditUnit_hasMessages_feature", "_UI_EditUnit_type"),
+				 WafPackage.eINSTANCE.getEditUnit_HasMessages(),
 				 false,
 				 false,
 				 false,
@@ -830,6 +853,7 @@ public class EditUnitItemProvider extends SingletonUnitItemProvider {
 			case WafPackage.EDIT_UNIT__HAS_CUSTOM_CONFIRM_LABEL:
 			case WafPackage.EDIT_UNIT__HAS_CONFIRM_MESSAGE:
 			case WafPackage.EDIT_UNIT__HAS_SUCCESS_MESSAGE:
+			case WafPackage.EDIT_UNIT__HAS_MESSAGES:
 			case WafPackage.EDIT_UNIT__CANCEL_LABEL:
 			case WafPackage.EDIT_UNIT__HAS_CUSTOM_CANCEL_LABEL:
 			case WafPackage.EDIT_UNIT__LOCAL_INPUT_GROUP_CLASS:

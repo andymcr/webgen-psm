@@ -97,6 +97,7 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 			addActionsWithoutTargetPropertyDescriptor(object);
 			addFileActionsPropertyDescriptor(object);
 			addHasFileActionsPropertyDescriptor(object);
+			addHasMessagesPropertyDescriptor(object);
 			addUriElementPropertyDescriptor(object);
 			addPageClassOverridePropertyDescriptor(object);
 			addPageClassPropertyDescriptor(object);
@@ -1143,6 +1144,28 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Has Messages feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasMessagesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Page_hasMessages_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Page_hasMessages_feature", "_UI_Page_type"),
+				 WafPackage.eINSTANCE.getPage_HasMessages(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 getString("_UI_DebugPropertyCategory"),
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Uri Element feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1390,6 +1413,7 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 			case WafPackage.PAGE__HAS_REQUIRED_INTERFACE_FIELDS:
 			case WafPackage.PAGE__HAS_RESOURCE_FIELDS:
 			case WafPackage.PAGE__HAS_FILE_ACTIONS:
+			case WafPackage.PAGE__HAS_MESSAGES:
 			case WafPackage.PAGE__URI_ELEMENT:
 			case WafPackage.PAGE__PAGE_CLASS_OVERRIDE:
 			case WafPackage.PAGE__PAGE_CLASS:

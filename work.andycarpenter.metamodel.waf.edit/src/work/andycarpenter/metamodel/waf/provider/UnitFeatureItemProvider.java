@@ -120,7 +120,7 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 			addActionsPropertyDescriptor(object);
 			addHasActionsPropertyDescriptor(object);
 			addActionsWithMessagesPropertyDescriptor(object);
-			addHasActionsMessagesPropertyDescriptor(object);
+			addHasActionsWithMessagesPropertyDescriptor(object);
 			addActionsWithoutTargetPropertyDescriptor(object);
 			addContainerActionsPropertyDescriptor(object);
 			addHasContainerActionsPropertyDescriptor(object);
@@ -1731,19 +1731,19 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Has Actions Messages feature.
+	 * This adds a property descriptor for the Has Actions With Messages feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addHasActionsMessagesPropertyDescriptor(Object object) {
+	protected void addHasActionsWithMessagesPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ActionContainer_hasActionsMessages_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ActionContainer_hasActionsMessages_feature", "_UI_ActionContainer_type"),
-				 WafPackage.eINSTANCE.getActionContainer_HasActionsMessages(),
+				 getString("_UI_ActionContainer_hasActionsWithMessages_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ActionContainer_hasActionsWithMessages_feature", "_UI_ActionContainer_type"),
+				 WafPackage.eINSTANCE.getActionContainer_HasActionsWithMessages(),
 				 false,
 				 false,
 				 false,
@@ -2291,7 +2291,7 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 			case WafPackage.UNIT_FEATURE__CONTAINER_ACTIONS_PLACEMENT:
 			case WafPackage.UNIT_FEATURE__INSTANCE_ACTIONS_PLACEMENT:
 			case WafPackage.UNIT_FEATURE__HAS_ACTIONS:
-			case WafPackage.UNIT_FEATURE__HAS_ACTIONS_MESSAGES:
+			case WafPackage.UNIT_FEATURE__HAS_ACTIONS_WITH_MESSAGES:
 			case WafPackage.UNIT_FEATURE__HAS_CONTAINER_ACTIONS:
 			case WafPackage.UNIT_FEATURE__HAS_FILE_ACTIONS:
 			case WafPackage.UNIT_FEATURE__HAS_GENERAL_ACTIONS:

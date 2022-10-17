@@ -13,6 +13,7 @@ import work.andycarpenter.metamodel.waf.EditUnit;
  * <ul>
  *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#isHasConfirmMessage() <em>Has Confirm Message</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#isHasSuccessMessage() <em>Has Success Message</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#isHasMessages() <em>Has Messages</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#getSectionClass() <em>Section Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#isHasSectionClass() <em>Has Section Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#getCaptionClass() <em>Caption Class</em>}</li>
@@ -81,6 +82,19 @@ public abstract class EditUnitTest extends SingletonUnitTest {
 	 * @generated
 	 */
 	public void testIsHasSuccessMessage() {
+		// TODO: implement this feature getter test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.EditUnit#isHasMessages() <em>Has Messages</em>}' feature getter.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.EditUnit#isHasMessages()
+	 * @generated
+	 */
+	public void testIsHasMessages() {
 		// TODO: implement this feature getter test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
