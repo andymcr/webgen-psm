@@ -1244,6 +1244,29 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.waf.TargetAction} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected TargetActionItemProvider targetActionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link work.andycarpenter.metamodel.waf.TargetAction}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createTargetActionAdapter() {
+		if (targetActionItemProvider == null) {
+			targetActionItemProvider = new TargetActionItemProvider(this);
+		}
+
+		return targetActionItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.waf.InstanceOperationAction} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1484,6 +1507,7 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 		if (deleteActionItemProvider != null) deleteActionItemProvider.dispose();
 		if (containerSelectActionItemProvider != null) containerSelectActionItemProvider.dispose();
 		if (instanceSelectActionItemProvider != null) instanceSelectActionItemProvider.dispose();
+		if (targetActionItemProvider != null) targetActionItemProvider.dispose();
 		if (instanceOperationActionItemProvider != null) instanceOperationActionItemProvider.dispose();
 		if (containerOperationActionItemProvider != null) containerOperationActionItemProvider.dispose();
 		if (generalOperationActionItemProvider != null) generalOperationActionItemProvider.dispose();

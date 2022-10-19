@@ -3143,12 +3143,19 @@ interface ActionContainer {
     @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean hasFileActions
 
-	@OCL(derivation="actions->select(a | a.isGeneralAction = true)->asOrderedSet()")
+	@OCL(derivation="actions->select(a | a.isGeneralAction)->asOrderedSet()")
     @GenModel(propertyCategory="Debug")
 	refers derived readonly unsettable transient volatile Action[] generalActions
 	@OCL(derivation="generalActions->notEmpty()")
     @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean hasGeneralActions
+
+	@OCL(derivation="actions->select(a | a.isTargetAction)->asOrderedSet()")
+    @GenModel(propertyCategory="Debug")
+	refers derived readonly unsettable transient volatile Action[] targetActions
+	@OCL(derivation="targetActions->notEmpty()")
+    @GenModel(propertyCategory="Debug")
+	derived readonly unsettable transient volatile boolean hasTargetActions
 
 	@OCL(derivation="actions->select(a | a.isInstanceAction = true)->asOrderedSet()")
     @GenModel(propertyCategory="Debug")
@@ -3227,11 +3234,15 @@ abstract class Action extends NamedDisplayElement {
     @GenModel(propertyCategory="Debug")
 	derived readonly transient unsettable volatile boolean isGeneralAction
 
-	@OCL(derivation="self.oclIsTypeOf(DeleteAction)
+ 	@OCL(derivation="self.oclIsTypeOf(DeleteAction)
 		or self.oclIsTypeOf(InstanceOperationAction)
 		or self.oclIsTypeOf(InstanceSelectAction)")
     @GenModel(propertyCategory="Debug")
 	derived readonly transient unsettable volatile boolean isInstanceAction
+
+	@OCL(derivation="self.oclIsTypeOf(TargetAction)")
+    @GenModel(propertyCategory="Debug")
+	derived readonly transient unsettable volatile boolean isTargetAction
 
     @GenModel(propertyCategory="Interface")
 	String iconName = ''
@@ -3338,6 +3349,9 @@ class ContainerSelectAction extends SelectAction {
 }
 
 class InstanceSelectAction extends SelectAction {
+}
+
+class TargetAction extends SelectAction {
 }
 
 abstract class OperationAction extends Action {

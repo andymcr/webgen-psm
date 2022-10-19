@@ -58,6 +58,7 @@ public class ActionItemProvider extends NamedDisplayElementItemProvider {
 			addIsContainerActionPropertyDescriptor(object);
 			addIsGeneralActionPropertyDescriptor(object);
 			addIsInstanceActionPropertyDescriptor(object);
+			addIsTargetActionPropertyDescriptor(object);
 			addIconNamePropertyDescriptor(object);
 			addDisablePropertyDescriptor(object);
 			addConfirmMessagePropertyDescriptor(object);
@@ -244,6 +245,28 @@ public class ActionItemProvider extends NamedDisplayElementItemProvider {
 				 getString("_UI_Action_isInstanceAction_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Action_isInstanceAction_feature", "_UI_Action_type"),
 				 WafPackage.eINSTANCE.getAction_IsInstanceAction(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 getString("_UI_DebugPropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Is Target Action feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIsTargetActionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Action_isTargetAction_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Action_isTargetAction_feature", "_UI_Action_type"),
+				 WafPackage.eINSTANCE.getAction_IsTargetAction(),
 				 false,
 				 false,
 				 false,
@@ -624,6 +647,7 @@ public class ActionItemProvider extends NamedDisplayElementItemProvider {
 			case WafPackage.ACTION__IS_CONTAINER_ACTION:
 			case WafPackage.ACTION__IS_GENERAL_ACTION:
 			case WafPackage.ACTION__IS_INSTANCE_ACTION:
+			case WafPackage.ACTION__IS_TARGET_ACTION:
 			case WafPackage.ACTION__ICON_NAME:
 			case WafPackage.ACTION__DISABLE:
 			case WafPackage.ACTION__CONFIRM_MESSAGE:

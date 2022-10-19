@@ -128,6 +128,8 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 			addHasFileActionsPropertyDescriptor(object);
 			addGeneralActionsPropertyDescriptor(object);
 			addHasGeneralActionsPropertyDescriptor(object);
+			addTargetActionsPropertyDescriptor(object);
+			addHasTargetActionsPropertyDescriptor(object);
 			addInstanceActionsPropertyDescriptor(object);
 			addHasInstanceActionsPropertyDescriptor(object);
 			addOperationActionsPropertyDescriptor(object);
@@ -1907,6 +1909,50 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Target Actions feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTargetActionsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ActionContainer_targetActions_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ActionContainer_targetActions_feature", "_UI_ActionContainer_type"),
+				 WafPackage.eINSTANCE.getActionContainer_TargetActions(),
+				 false,
+				 false,
+				 false,
+				 null,
+				 getString("_UI_DebugPropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Has Target Actions feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasTargetActionsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ActionContainer_hasTargetActions_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ActionContainer_hasTargetActions_feature", "_UI_ActionContainer_type"),
+				 WafPackage.eINSTANCE.getActionContainer_HasTargetActions(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 getString("_UI_DebugPropertyCategory"),
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Instance Actions feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2295,6 +2341,7 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 			case WafPackage.UNIT_FEATURE__HAS_CONTAINER_ACTIONS:
 			case WafPackage.UNIT_FEATURE__HAS_FILE_ACTIONS:
 			case WafPackage.UNIT_FEATURE__HAS_GENERAL_ACTIONS:
+			case WafPackage.UNIT_FEATURE__HAS_TARGET_ACTIONS:
 			case WafPackage.UNIT_FEATURE__HAS_INSTANCE_ACTIONS:
 			case WafPackage.UNIT_FEATURE__HAS_OPERATION_ACTIONS:
 			case WafPackage.UNIT_FEATURE__TITLE_OVERRIDE:
@@ -2382,6 +2429,11 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 			(createChildParameter
 				(WafPackage.eINSTANCE.getActionContainer_AllActions(),
 				 WafFactory.eINSTANCE.createInstanceSelectAction()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.eINSTANCE.getActionContainer_AllActions(),
+				 WafFactory.eINSTANCE.createTargetAction()));
 
 		newChildDescriptors.add
 			(createChildParameter
