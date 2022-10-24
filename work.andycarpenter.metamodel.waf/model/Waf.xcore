@@ -63,7 +63,7 @@ class WafModel {
 	refers API api
 	contains ImageManipulation[] imageManipulations
 	contains Navigation navigation opposite partOf
-	contains Page[] pages opposite partOf
+	contains Controller[] controllers opposite partOf
 	String defaultSaveLabel
 	String defaultCancelLabel
 
@@ -71,7 +71,7 @@ class WafModel {
     @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean hasAPI
 
-	@OCL(derivation="pages->collect(p | p.editUnits)->asOrderedSet()")
+	@OCL(derivation="controllers->collect(c | c.editUnits)->asOrderedSet()")
     @GenModel(propertyCategory="Debug")
 	refers derived readonly unsettable transient volatile EditUnit[] editUnits
 
@@ -79,7 +79,7 @@ class WafModel {
     @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean hasEditUnits
 
-	@OCL(derivation="pages->collect(p | p.formUnits)->asOrderedSet()")
+	@OCL(derivation="controllers->collect(c | c.formUnits)->asOrderedSet()")
     @GenModel(propertyCategory="Debug")
 	refers derived readonly unsettable transient volatile SingletonUnit[] formUnits
 
@@ -87,7 +87,7 @@ class WafModel {
     @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean hasFormUnits
 
-	@OCL(derivation="pages->collect(p | p.imageUnits)->asOrderedSet()")
+	@OCL(derivation="controllers->collect(c | c.imageUnits)->asOrderedSet()")
     @GenModel(propertyCategory="Debug")
 	refers derived readonly unsettable transient volatile ImageUnit[] imageUnits
 
@@ -95,7 +95,7 @@ class WafModel {
     @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean hasImageUnits
 
-	@OCL(derivation="pages->collect(p | p.imageCardsUnits)->asOrderedSet()")
+	@OCL(derivation="controllers->collect(c | c.imageCardsUnits)->asOrderedSet()")
     @GenModel(propertyCategory="Debug")
 	refers derived readonly unsettable transient volatile ImageCardsUnit[] imageCardsUnits
 
@@ -103,14 +103,14 @@ class WafModel {
     @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean hasImageCardsUnits
 
-	@OCL(derivation="pages->collect(p | p.autocompleteFields)->asOrderedSet()")
+	@OCL(derivation="controllers->collect(c | c.autocompleteFields)->asOrderedSet()")
     @GenModel(propertyCategory="Debug")
 	refers derived readonly unsettable transient volatile UnitAssociation[] autocompleteFields
 	@OCL(derivation="autocompleteFields->notEmpty()")
     @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean hasAutocompleteFields
 
-	@OCL(derivation="pages->collect(p | p.formFields)->asOrderedSet()")
+	@OCL(derivation="controllers->collect(c | c.formFields)->asOrderedSet()")
     @GenModel(propertyCategory="Debug")
 	refers derived readonly unsettable transient volatile UnitField[] formFields
 
@@ -122,7 +122,7 @@ class WafModel {
     @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean hasFormAssociations
 
-	@OCL(derivation="pages->select(p | p.hasResourceFields)->notEmpty()")
+	@OCL(derivation="controllers->select(c | c.hasResourceFields)->notEmpty()")
     @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean hasResourceFields
 
@@ -331,11 +331,22 @@ class ThumbnailFilter extends ImageFilter {
 }
 
 
-class Page extends NamedDisplayElement {
-	container WafModel partOf opposite pages
-	refers Page parentPage opposite childPages
-	refers Page[] childPages opposite parentPage
+abstract class Controller extends NamedDisplayElement {
+	container WafModel partOf opposite controllers
 
+	refers Controller parentController opposite childControllers
+
+	refers Controller[] childControllers opposite parentController
+
+	@OCL(derivation="self.oclIsTypeOf(SinglePageController)")
+    @GenModel(propertyCategory="Debug")
+	derived readonly transient volatile boolean isSinglePage
+	
+
+	@OCL(derivation="self.oclIsTypeOf(MultiPageController)")
+    @GenModel(propertyCategory="Debug")
+	derived readonly transient volatile boolean isMultiPage
+	
 	@OCL(derivation="if units->isEmpty() then
 			''
 		else if self.hasCommonUnitAuthentication = true then
@@ -358,7 +369,8 @@ class Page extends NamedDisplayElement {
     @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean hasCommonUnitAuthentication
 
-	contains ContentUnit[] units opposite displayedOn
+	contains ContentUnit[] units opposite controller
+
 	@OCL(derivation="units->notEmpty()")
     @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean hasUnits
@@ -391,15 +403,6 @@ class Page extends NamedDisplayElement {
 	@OCL(derivation="editUnits->notEmpty()")
     @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean hasEditUnits
-
-// TODO	@OCL(derivation="editUnits->union(childPages->collect(c | c.editUnits))->asOrderedSet()")
-// TODO	refers readonly transient volatile unsettable derived EditUnit[] anyEditUnits
-	refers readonly transient volatile unsettable derived EditUnit[] anyEditUnits get {
-		(editUnits + childPages.flatMap[editUnits]).toEList()
-	}
-	@OCL(derivation="anyEditUnits->notEmpty()")
-    @GenModel(propertyCategory="Debug")
-	derived readonly transient volatile boolean hasAnyEditUnits
 
 	@OCL(derivation="units->select(u | u.isFormUnit).oclAsType(SingletonUnit)->asOrderedSet()")
     @GenModel(propertyCategory="Debug")
@@ -541,17 +544,23 @@ class Page extends NamedDisplayElement {
     @GenModel(propertyCategory="Debug")
 	refers readonly transient volatile unsettable derived WafModel uiModel
 
-	@OCL(derivation="if parentPage = null then
+	@OCL(derivation="if parentController = null then
 			self
 		else
-			parentPage.rootPage
+			parentController.rootController
 		endif")
     @GenModel(propertyCategory="Debug")
-	refers readonly transient volatile unsettable derived Page rootPage
+	refers readonly transient volatile unsettable derived Controller rootController
+}
+
+class SinglePageController extends Controller {
+}
+
+class MultiPageController extends Controller {
 }
 
 abstract class ContentUnit extends NamedDisplayElement {
-	container Page[1] displayedOn opposite units
+	container Controller[1] controller opposite units
 	String uriElement = ''
 
 	String authorisationRoles = ''
@@ -570,10 +579,10 @@ abstract class ContentUnit extends NamedDisplayElement {
 	String captionClassOverride = ''
 	String contentClassOverride = ''
 
-	@OCL(derivation="displayedOn.genModel")
+	@OCL(derivation="controller.genModel")
     @GenModel(propertyCategory="Debug")
 	refers readonly transient volatile unsettable derived WafModel genModel
-	@OCL(derivation="displayedOn.uiModel")
+	@OCL(derivation="controller.uiModel")
     @GenModel(propertyCategory="Debug")
 	refers readonly transient volatile unsettable derived WafModel uiModel
 }
@@ -1883,7 +1892,7 @@ abstract class EditUnit extends SingletonUnit {
 	boolean useCaptcha = 'false'
 	boolean onSaveContinueEditing = 'false'
 	contains Predicate disableWhen
-	refers Page confirmDestination
+	refers ContentUnit confirmDestination
 	String[1] confirmLabel
 	boolean hasCustomConfirmLabel
 
@@ -1901,7 +1910,7 @@ abstract class EditUnit extends SingletonUnit {
     @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean hasMessages
 
-	refers Page cancelDestination
+	refers ContentUnit cancelDestination
 	String cancelLabel
 	boolean hasCustomCancelLabel
 
@@ -2961,7 +2970,7 @@ class GalleryUnit extends ImageUnit {
 
 abstract class ControlUnit extends DynamicUnit {
 	String[1] submitLabel
-	refers Page cancelDestination
+	refers ContentUnit cancelDestination
 	String cancelLabel
 
 	@OCL(derivation="if sectionClassOverride.trim() <> '' then

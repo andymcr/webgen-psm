@@ -554,26 +554,49 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.waf.Page} instances.
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.waf.SinglePageController} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected PageItemProvider pageItemProvider;
+	protected SinglePageControllerItemProvider singlePageControllerItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link work.andycarpenter.metamodel.waf.Page}.
+	 * This creates an adapter for a {@link work.andycarpenter.metamodel.waf.SinglePageController}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createPageAdapter() {
-		if (pageItemProvider == null) {
-			pageItemProvider = new PageItemProvider(this);
+	public Adapter createSinglePageControllerAdapter() {
+		if (singlePageControllerItemProvider == null) {
+			singlePageControllerItemProvider = new SinglePageControllerItemProvider(this);
 		}
 
-		return pageItemProvider;
+		return singlePageControllerItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.waf.MultiPageController} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected MultiPageControllerItemProvider multiPageControllerItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link work.andycarpenter.metamodel.waf.MultiPageController}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createMultiPageControllerAdapter() {
+		if (multiPageControllerItemProvider == null) {
+			multiPageControllerItemProvider = new MultiPageControllerItemProvider(this);
+		}
+
+		return multiPageControllerItemProvider;
 	}
 
 	/**
@@ -1477,7 +1500,8 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 		if (imageManipulationItemProvider != null) imageManipulationItemProvider.dispose();
 		if (backgroundFilterItemProvider != null) backgroundFilterItemProvider.dispose();
 		if (thumbnailFilterItemProvider != null) thumbnailFilterItemProvider.dispose();
-		if (pageItemProvider != null) pageItemProvider.dispose();
+		if (singlePageControllerItemProvider != null) singlePageControllerItemProvider.dispose();
+		if (multiPageControllerItemProvider != null) multiPageControllerItemProvider.dispose();
 		if (staticUnitItemProvider != null) staticUnitItemProvider.dispose();
 		if (routeActualItemProvider != null) routeActualItemProvider.dispose();
 		if (unitAttributeItemProvider != null) unitAttributeItemProvider.dispose();

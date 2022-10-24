@@ -97,57 +97,75 @@ class Entity extends Classifier {
 	refers Repository repository opposite serves
 	contains unique Feature[] allFeatures opposite partOf
 	refers unique Feature[] ^keys
+
 	@OCL(derivation="allFeatures->select(f | f.isVisible)->asOrderedSet()")
     @GenModel(propertyCategory="Debug")
 	refers derived readonly unsettable transient volatile unique Feature[] features
+
 	@OCL(derivation="features->select(f | f.isPrimaryKey)->asOrderedSet()")
     @GenModel(propertyCategory="Debug")
 	refers derived readonly unsettable transient volatile unique Feature[] primaryKeys
+
 	@OCL(derivation="primaryKeys->notEmpty()")
     @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean hasPrimaryKeys
+
 	@OCL(derivation="features->select(f | f.hasDefaultValue)->asOrderedSet()")
     @GenModel(propertyCategory="Debug")
 	refers derived readonly unsettable transient volatile unique Feature[] featuresWithDefaultValue
+
 	@OCL(derivation="featuresWithDefaultValue->notEmpty()")
     @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean hasFeaturesWithDefaultValue
+
 	@OCL(derivation="features->select(f | f.isAttributeFeature).oclAsType(Attribute)->asOrderedSet()")
     @GenModel(propertyCategory="Debug")
 	refers derived readonly unsettable transient volatile unique Attribute[] attributes
+
 	@OCL(derivation="attributes->notEmpty()")
     @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean hasAttributes
+
 	@OCL(derivation="keys->select(k | k.isAttributeFeature).oclAsType(Attribute)->asOrderedSet()")
     @GenModel(propertyCategory="Debug")
 	refers derived readonly unsettable transient volatile unique Attribute[] attributeKeys
+
 	@OCL(derivation="attributeKeys->notEmpty()")
     @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean hasAttributeKeys
+
 	@OCL(derivation="features->select(f | f.isResourceFeature).oclAsType(ResourceFeature)->asOrderedSet()")
     @GenModel(propertyCategory="Debug")
 	refers derived readonly unsettable transient volatile unique ResourceFeature[] resourceFeatures
+
 	@OCL(derivation="resourceFeatures->notEmpty()")
     @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean hasResourceAttributes
+
 	@OCL(derivation="attributes->select(a | a.isUnique)->asOrderedSet()")
     @GenModel(propertyCategory="Debug")
 	refers derived readonly unsettable transient volatile unique Attribute[] uniqueAttributes
+
 	@OCL(derivation="uniqueAttributes->notEmpty()")
     @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean hasUniqueAttributes
+
 	@OCL(derivation="attributes->select(a | a.isContainerUnique)->asOrderedSet()")
     @GenModel(propertyCategory="Debug")
 	refers derived readonly unsettable transient volatile unique Attribute[] containerUniqueAttributes
+
 	@OCL(derivation="features->select(f | f.isAssociationFeature).oclAsType(Association)->asOrderedSet()")
     @GenModel(propertyCategory="Debug")
 	refers derived readonly unsettable transient volatile unique Association[] associations
+
 	@OCL(derivation="associations->notEmpty()")
     @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean hasAssociations
+
 	@OCL(derivation="keys->select(k | k.isAssociationFeature).oclAsType(Association)->asOrderedSet()")
     @GenModel(propertyCategory="Debug")
 	refers derived readonly unsettable transient volatile unique Association[] associationKeys
+
 	@OCL(derivation="associationKeys->notEmpty()")
     @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean hasAssociationKeys
@@ -163,33 +181,43 @@ class Entity extends Classifier {
 	@OCL(derivation="not containingType.oclIsUndefined()")
     @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean isContained
+
 	@OCL(derivation="associations->select(a | not a.isSingleton)->asOrderedSet()")
     @GenModel(propertyCategory="Debug")
 	refers derived readonly unsettable transient volatile unique Association[] collectionAssociations
+
 	@OCL(derivation="collectionAssociations->notEmpty()")
     @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean hasCollectionAssociations
+
 	@OCL(derivation="attributes->select(a | a.isDateFeature)->asOrderedSet()")
     @GenModel(propertyCategory="Debug")
 	refers derived readonly unsettable transient volatile unique Attribute[] dateAttributes
+
 	@OCL(derivation="dateAttributes->notEmpty()")
     @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean hasDateAttributes
+
 	@OCL(derivation="attributes->select(a | a.hasSlugFields)->asOrderedSet()")
     @GenModel(propertyCategory="Debug")
 	refers derived readonly unsettable transient volatile unique Attribute[] slugAttributes
+
 	@OCL(derivation="slugAttributes->notEmpty()")
     @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean hasSlugAttributes
+
 	@OCL(derivation="features->select(f | f.isValidated)->asOrderedSet()")
     @GenModel(propertyCategory="Debug")
 	refers derived readonly unsettable  transient volatile unique Feature[] validatedFeatures
+
 	@OCL(derivation="validatedFeatures->notEmpty()")
     @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean hasValidatedFeatures
+
 	@OCL(derivation="features->select(f | f.hasColumn)->asOrderedSet()")
     @GenModel(propertyCategory="Debug")
 	refers derived readonly unsettable transient volatile unique Feature[] tableColumns
+
 	String tableName
 	String autoKeyName
 	String autoKeyPersistentType
@@ -256,25 +284,33 @@ abstract class Feature extends NamedDisplayElement {
 	@OCL(derivation="self.oclIsTypeOf(Association)")
     @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean isAssociationFeature
+
 	@OCL(derivation="self.oclIsKindOf(Attribute)")
     @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean isAttributeFeature
+
 	refers SerializationGroup[] serializationGroups
+
 	@OCL(derivation="if self.oclIsTypeOf(DataTypeAttribute) then self.oclAsType(DataTypeAttribute).attributeDataType.isBooleanDataType else false endif")
     @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean isBooleanFeature
+
 	@OCL(derivation="self.oclIsTypeOf(DataTypeAttribute)")
     @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean isDataTypeFeature
+
 	@OCL(derivation="if self.oclIsTypeOf(DataTypeAttribute) then self.oclAsType(DataTypeAttribute).attributeDataType else null endif")
     @GenModel(propertyCategory="Debug")
 	refers derived readonly unsettable transient volatile Classifier dataType
+
 	@OCL(derivation="self.oclIsTypeOf(DateAttribute)")
     @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean isDateFeature
+
 	@OCL(derivation="if self.oclIsTypeOf(DateAttribute) then self.oclAsType(DateAttribute).details else null endif")
     @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile DateDetails dateDetails
+
 	@OCL(derivation="if self.oclIsTypeOf(DataTypeAttribute) then self.oclAsType(DataTypeAttribute).attributeDataType.isEmailDataType else false endif")
     @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean isEmailFeature
@@ -294,81 +330,107 @@ abstract class Feature extends NamedDisplayElement {
 		if (isEnumerationFeature)
 			(this as DataTypeAttribute).attributeDataType as EnumerationType
 	}
+
 	@OCL(derivation="if self.oclIsTypeOf(DataTypeAttribute) then self.oclAsType(DataTypeAttribute).attributeDataType.isFloatDataType else false endif")
     @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean isFloatFeature
+
 	@OCL(derivation="if self.oclIsTypeOf(DataTypeAttribute) then self.oclAsType(DataTypeAttribute).attributeDataType.isIntegerDataType else false endif")
     @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean isIntegerFeature
+
 	@OCL(derivation="self.oclIsTypeOf(LocationFeature)")
     @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean isLocationFeature
+
 	@OCL(derivation="if self.oclIsTypeOf(DataTypeAttribute) then self.oclAsType(DataTypeAttribute).obfuscateFormFields else false endif")
     @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean isObfuscatedFeature
+
 	@OCL(derivation="self.oclIsKindOf(ResourceFeature)")
     @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean isResourceFeature
+
 	@OCL(derivation="if self.oclIsTypeOf(DataTypeAttribute) then self.oclAsType(DataTypeAttribute).attributeDataType.isStringDataType else false endif")
     @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean isStringFeature
+
 	@OCL(derivation="if self.oclIsTypeOf(DataTypeAttribute) then self.oclAsType(DataTypeAttribute).attributeDataType.isTextareaDataType else false endif")
     @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean isTextareaFeature
+
 	@OCL(derivation="if self.oclIsTypeOf(DataTypeAttribute) then self.oclAsType(DataTypeAttribute).attributeDataType.isUrlDataType else false endif")
     @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean isUrlFeature
+
 	@OCL(derivation="if self.oclIsKindOf(Attribute) then self.oclAsType(Attribute).attributeDefaultValue else null endif")
     @GenModel(propertyCategory="Debug")
 	refers derived readonly unsettable transient volatile Expression defaultValue
+
 	@OCL(derivation="not self.defaultValue.oclIsUndefined()")
     @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean hasDefaultValue
+
 	@OCL(derivation="hasValidationPattern -- || hasPlaceholder")
     @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean hasHtml5Attributes
+
 	@OCL(derivation="self.oclIsKindOf(Attribute) or self.isOwningEnd")
     @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean hasColumn
+
 	@OCL(derivation="if self.oclIsTypeOf(Association) then self.oclAsType(Association).associationOwningEnd else false endif")
     @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean isOwningEnd
+
 	@OCL(derivation="if self.oclIsKindOf(Attribute) then self.oclAsType(Attribute).slugFields->notEmpty() else false endif")
     @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean hasSlugFields
+
 	@OCL(derivation="if self.oclIsTypeOf(DataTypeAttribute) then not self.oclAsType(DataTypeAttribute).validationPattern.oclIsUndefined() else false endif")
     @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean hasValidationPattern
+
 	@OCL(derivation="if self.oclIsTypeOf(DataTypeAttribute) then not self.oclAsType(DataTypeAttribute).caseInsensitive else false endif")
     @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean isCaseInsensitive
+
 	@OCL(derivation="if self.oclIsTypeOf(Association) then self.oclAsType(Association).associationContainer else false endif")
     @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean isContainer
+
 	@OCL(derivation="if self.oclIsTypeOf(DataTypeAttribute) then self.oclAsType(DataTypeAttribute).containerUnique else false endif")
     @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean isContainerUnique
+
 	@OCL(derivation="if self.oclIsTypeOf(Association) then self.oclAsType(Association).associationContains else false endif")
     @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean isContains
+
 	@OCL(derivation="if self.oclIsTypeOf(DataTypeAttribute) then self.oclAsType(DataTypeAttribute).encrypt else false endif")
     @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean isEncrypted
+
 	@OCL(derivation="cardinality = Cardinality::Required")
     @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean isRequired
+
 	@OCL(derivation="cardinality <> Cardinality::Many")
     @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean isSingleton
+
 	@OCL(derivation="if self.oclIsTypeOf(DataTypeAttribute) then self.oclAsType(DataTypeAttribute).unique else false endif")
     @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean isUnique
+
 	@OCL(derivation="self.isRequired or self.isContains")
     @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean isValidated
+
 	@OCL(derivation="if self.oclIsKindOf(Attribute) then true else if self.oclIsKindOf(Association) then self.oclAsType(Association).visible else true endif endif")
     @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean isVisible
+
 //	derived readonly unsettable transient volatile boolean hasSerializationControl get {
 //		if (this instanceof Attribute)
 //			(this as Attribute).hasSerializationControlAttribute
@@ -384,6 +446,7 @@ abstract class Attribute extends Feature, Label {
 	boolean hidden
 	IsHasChoices booleanIsHasChoice
 	refers Attribute[] slugFields
+	
 	@OCL(derivation="self.serializationGroups->size() > 0")
     @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean hasSerializationControlAttribute
@@ -448,26 +511,39 @@ enum AssociationRelationships {
 @OCL(onlyOneOwningEnd="associationOwningEnd xor opposite.associationOwningEnd")
 class Association extends Feature {
 	refers Association[1] ^opposite
+
 	contains AssociationKey[] ^keys opposite keyFor
+
 	boolean[1] associationContainer
+
 	boolean[1] associationContains
+
 	boolean[1] associationOwningEnd
+
 	boolean[1] visible = "true"
+
 	AssociationRelationships associationRelationship
+
 	int[1] serializationMaxDepth = "1"
+
 	String pivotTableName
+
 	@OCL(derivation="if not opposite.oclIsUndefined() then opposite.isSingleton else false endif")
     @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean isOppositeSingleton
+
 	@OCL(derivation="if not opposite.oclIsUndefined() then opposite.columnName else null endif")
     @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile String oppositeColumnName
+
 	@OCL(derivation="self.partOf")
     @GenModel(propertyCategory="Debug")
 	refers derived readonly unsettable transient volatile Entity sourceType
+
 	@OCL(derivation="if not opposite.oclIsUndefined() then opposite.sourceType else null endif")
     @GenModel(propertyCategory="Debug")
 	refers derived readonly unsettable transient volatile Entity targetType
+
 	@OCL(derivation="self.serializationGroups->size() > 0 or self.serializationMaxDepth > 0")
     @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean hasSerializationControlAssociation

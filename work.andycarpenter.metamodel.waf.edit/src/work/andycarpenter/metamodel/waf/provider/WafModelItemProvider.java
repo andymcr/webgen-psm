@@ -679,7 +679,7 @@ public class WafModelItemProvider
 			childrenFeatures.add(WafPackage.eINSTANCE.getWafModel_SiteProperties());
 			childrenFeatures.add(WafPackage.eINSTANCE.getWafModel_ImageManipulations());
 			childrenFeatures.add(WafPackage.eINSTANCE.getWafModel_Navigation());
-			childrenFeatures.add(WafPackage.eINSTANCE.getWafModel_Pages());
+			childrenFeatures.add(WafPackage.eINSTANCE.getWafModel_Controllers());
 			childrenFeatures.add(WafPackage.eINSTANCE.getWafModel_DefaultUnitStyles());
 			childrenFeatures.add(WafPackage.eINSTANCE.getWafModel_DefaultCardsStyles());
 			childrenFeatures.add(WafPackage.eINSTANCE.getWafModel_DefaultControlStyles());
@@ -763,7 +763,7 @@ public class WafModelItemProvider
 			case WafPackage.WAF_MODEL__SITE_PROPERTIES:
 			case WafPackage.WAF_MODEL__IMAGE_MANIPULATIONS:
 			case WafPackage.WAF_MODEL__NAVIGATION:
-			case WafPackage.WAF_MODEL__PAGES:
+			case WafPackage.WAF_MODEL__CONTROLLERS:
 			case WafPackage.WAF_MODEL__DEFAULT_UNIT_STYLES:
 			case WafPackage.WAF_MODEL__DEFAULT_CARDS_STYLES:
 			case WafPackage.WAF_MODEL__DEFAULT_CONTROL_STYLES:
@@ -807,8 +807,13 @@ public class WafModelItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.eINSTANCE.getWafModel_Pages(),
-				 WafFactory.eINSTANCE.createPage()));
+				(WafPackage.eINSTANCE.getWafModel_Controllers(),
+				 WafFactory.eINSTANCE.createSinglePageController()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.eINSTANCE.getWafModel_Controllers(),
+				 WafFactory.eINSTANCE.createMultiPageController()));
 
 		newChildDescriptors.add
 			(createChildParameter

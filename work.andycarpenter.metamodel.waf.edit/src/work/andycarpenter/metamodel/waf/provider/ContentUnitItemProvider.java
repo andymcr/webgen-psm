@@ -47,7 +47,7 @@ public class ContentUnitItemProvider extends NamedDisplayElementItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addDisplayedOnPropertyDescriptor(object);
+			addControllerPropertyDescriptor(object);
 			addUriElementPropertyDescriptor(object);
 			addAuthorisationRolesPropertyDescriptor(object);
 			addIsAuthorisedPropertyDescriptor(object);
@@ -65,19 +65,19 @@ public class ContentUnitItemProvider extends NamedDisplayElementItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Displayed On feature.
+	 * This adds a property descriptor for the Controller feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addDisplayedOnPropertyDescriptor(Object object) {
+	protected void addControllerPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ContentUnit_displayedOn_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ContentUnit_displayedOn_feature", "_UI_ContentUnit_type"),
-				 WafPackage.eINSTANCE.getContentUnit_DisplayedOn(),
+				 getString("_UI_ContentUnit_controller_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ContentUnit_controller_feature", "_UI_ContentUnit_type"),
+				 WafPackage.eINSTANCE.getContentUnit_Controller(),
 				 true,
 				 false,
 				 true,

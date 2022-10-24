@@ -17,25 +17,27 @@ import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+
 import work.andycarpenter.metamodel.base.provider.NamedDisplayElementItemProvider;
-import work.andycarpenter.metamodel.waf.Page;
+
+import work.andycarpenter.metamodel.waf.Controller;
 import work.andycarpenter.metamodel.waf.WafFactory;
 import work.andycarpenter.metamodel.waf.WafPackage;
 
 /**
- * This is the item provider adapter for a {@link work.andycarpenter.metamodel.waf.Page} object.
+ * This is the item provider adapter for a {@link work.andycarpenter.metamodel.waf.Controller} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class PageItemProvider extends NamedDisplayElementItemProvider {
+public class ControllerItemProvider extends NamedDisplayElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PageItemProvider(AdapterFactory adapterFactory) {
+	public ControllerItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -51,8 +53,10 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addPartOfPropertyDescriptor(object);
-			addParentPagePropertyDescriptor(object);
-			addChildPagesPropertyDescriptor(object);
+			addParentControllerPropertyDescriptor(object);
+			addChildControllersPropertyDescriptor(object);
+			addIsSinglePagePropertyDescriptor(object);
+			addIsMultiPagePropertyDescriptor(object);
 			addCommonRolePropertyDescriptor(object);
 			addIsAuthorisedPropertyDescriptor(object);
 			addHasCommonUnitAuthenticationPropertyDescriptor(object);
@@ -65,8 +69,6 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 			addHasDynamicUnitsPropertyDescriptor(object);
 			addEditUnitsPropertyDescriptor(object);
 			addHasEditUnitsPropertyDescriptor(object);
-			addAnyEditUnitsPropertyDescriptor(object);
-			addHasAnyEditUnitsPropertyDescriptor(object);
 			addFormUnitsPropertyDescriptor(object);
 			addHasFormUnitsPropertyDescriptor(object);
 			addHasFiltersPropertyDescriptor(object);
@@ -104,7 +106,7 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 			addHasPageClassPropertyDescriptor(object);
 			addGenModelPropertyDescriptor(object);
 			addUiModelPropertyDescriptor(object);
-			addRootPagePropertyDescriptor(object);
+			addRootControllerPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -120,9 +122,9 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Page_partOf_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Page_partOf_feature", "_UI_Page_type"),
-				 WafPackage.eINSTANCE.getPage_PartOf(),
+				 getString("_UI_Controller_partOf_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Controller_partOf_feature", "_UI_Controller_type"),
+				 WafPackage.eINSTANCE.getController_PartOf(),
 				 true,
 				 false,
 				 true,
@@ -132,19 +134,19 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Parent Page feature.
+	 * This adds a property descriptor for the Parent Controller feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addParentPagePropertyDescriptor(Object object) {
+	protected void addParentControllerPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Page_parentPage_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Page_parentPage_feature", "_UI_Page_type"),
-				 WafPackage.eINSTANCE.getPage_ParentPage(),
+				 getString("_UI_Controller_parentController_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Controller_parentController_feature", "_UI_Controller_type"),
+				 WafPackage.eINSTANCE.getController_ParentController(),
 				 true,
 				 false,
 				 true,
@@ -154,24 +156,68 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Child Pages feature.
+	 * This adds a property descriptor for the Child Controllers feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addChildPagesPropertyDescriptor(Object object) {
+	protected void addChildControllersPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Page_childPages_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Page_childPages_feature", "_UI_Page_type"),
-				 WafPackage.eINSTANCE.getPage_ChildPages(),
+				 getString("_UI_Controller_childControllers_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Controller_childControllers_feature", "_UI_Controller_type"),
+				 WafPackage.eINSTANCE.getController_ChildControllers(),
 				 true,
 				 false,
 				 true,
 				 null,
 				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Is Single Page feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIsSinglePagePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Controller_isSinglePage_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Controller_isSinglePage_feature", "_UI_Controller_type"),
+				 WafPackage.eINSTANCE.getController_IsSinglePage(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 getString("_UI_DebugPropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Is Multi Page feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIsMultiPagePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Controller_isMultiPage_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Controller_isMultiPage_feature", "_UI_Controller_type"),
+				 WafPackage.eINSTANCE.getController_IsMultiPage(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -186,9 +232,9 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Page_commonRole_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Page_commonRole_feature", "_UI_Page_type"),
-				 WafPackage.eINSTANCE.getPage_CommonRole(),
+				 getString("_UI_Controller_commonRole_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Controller_commonRole_feature", "_UI_Controller_type"),
+				 WafPackage.eINSTANCE.getController_CommonRole(),
 				 false,
 				 false,
 				 false,
@@ -208,9 +254,9 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Page_isAuthorised_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Page_isAuthorised_feature", "_UI_Page_type"),
-				 WafPackage.eINSTANCE.getPage_IsAuthorised(),
+				 getString("_UI_Controller_isAuthorised_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Controller_isAuthorised_feature", "_UI_Controller_type"),
+				 WafPackage.eINSTANCE.getController_IsAuthorised(),
 				 false,
 				 false,
 				 false,
@@ -230,9 +276,9 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Page_hasCommonUnitAuthentication_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Page_hasCommonUnitAuthentication_feature", "_UI_Page_type"),
-				 WafPackage.eINSTANCE.getPage_HasCommonUnitAuthentication(),
+				 getString("_UI_Controller_hasCommonUnitAuthentication_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Controller_hasCommonUnitAuthentication_feature", "_UI_Controller_type"),
+				 WafPackage.eINSTANCE.getController_HasCommonUnitAuthentication(),
 				 false,
 				 false,
 				 false,
@@ -252,9 +298,9 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Page_hasUnits_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Page_hasUnits_feature", "_UI_Page_type"),
-				 WafPackage.eINSTANCE.getPage_HasUnits(),
+				 getString("_UI_Controller_hasUnits_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Controller_hasUnits_feature", "_UI_Controller_type"),
+				 WafPackage.eINSTANCE.getController_HasUnits(),
 				 false,
 				 false,
 				 false,
@@ -274,9 +320,9 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Page_hasChangableCollections_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Page_hasChangableCollections_feature", "_UI_Page_type"),
-				 WafPackage.eINSTANCE.getPage_HasChangableCollections(),
+				 getString("_UI_Controller_hasChangableCollections_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Controller_hasChangableCollections_feature", "_UI_Controller_type"),
+				 WafPackage.eINSTANCE.getController_HasChangableCollections(),
 				 false,
 				 false,
 				 false,
@@ -296,9 +342,9 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Page_hasCaptchaUnits_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Page_hasCaptchaUnits_feature", "_UI_Page_type"),
-				 WafPackage.eINSTANCE.getPage_HasCaptchaUnits(),
+				 getString("_UI_Controller_hasCaptchaUnits_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Controller_hasCaptchaUnits_feature", "_UI_Controller_type"),
+				 WafPackage.eINSTANCE.getController_HasCaptchaUnits(),
 				 false,
 				 false,
 				 false,
@@ -318,9 +364,9 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Page_collectionUnits_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Page_collectionUnits_feature", "_UI_Page_type"),
-				 WafPackage.eINSTANCE.getPage_CollectionUnits(),
+				 getString("_UI_Controller_collectionUnits_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Controller_collectionUnits_feature", "_UI_Controller_type"),
+				 WafPackage.eINSTANCE.getController_CollectionUnits(),
 				 false,
 				 false,
 				 false,
@@ -340,9 +386,9 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Page_hasCollectionUnits_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Page_hasCollectionUnits_feature", "_UI_Page_type"),
-				 WafPackage.eINSTANCE.getPage_HasCollectionUnits(),
+				 getString("_UI_Controller_hasCollectionUnits_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Controller_hasCollectionUnits_feature", "_UI_Controller_type"),
+				 WafPackage.eINSTANCE.getController_HasCollectionUnits(),
 				 false,
 				 false,
 				 false,
@@ -362,9 +408,9 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Page_dynamicUnits_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Page_dynamicUnits_feature", "_UI_Page_type"),
-				 WafPackage.eINSTANCE.getPage_DynamicUnits(),
+				 getString("_UI_Controller_dynamicUnits_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Controller_dynamicUnits_feature", "_UI_Controller_type"),
+				 WafPackage.eINSTANCE.getController_DynamicUnits(),
 				 false,
 				 false,
 				 false,
@@ -384,9 +430,9 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Page_hasDynamicUnits_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Page_hasDynamicUnits_feature", "_UI_Page_type"),
-				 WafPackage.eINSTANCE.getPage_HasDynamicUnits(),
+				 getString("_UI_Controller_hasDynamicUnits_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Controller_hasDynamicUnits_feature", "_UI_Controller_type"),
+				 WafPackage.eINSTANCE.getController_HasDynamicUnits(),
 				 false,
 				 false,
 				 false,
@@ -406,9 +452,9 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Page_editUnits_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Page_editUnits_feature", "_UI_Page_type"),
-				 WafPackage.eINSTANCE.getPage_EditUnits(),
+				 getString("_UI_Controller_editUnits_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Controller_editUnits_feature", "_UI_Controller_type"),
+				 WafPackage.eINSTANCE.getController_EditUnits(),
 				 false,
 				 false,
 				 false,
@@ -428,53 +474,9 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Page_hasEditUnits_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Page_hasEditUnits_feature", "_UI_Page_type"),
-				 WafPackage.eINSTANCE.getPage_HasEditUnits(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_DebugPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Any Edit Units feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addAnyEditUnitsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Page_anyEditUnits_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Page_anyEditUnits_feature", "_UI_Page_type"),
-				 WafPackage.eINSTANCE.getPage_AnyEditUnits(),
-				 false,
-				 false,
-				 false,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Has Any Edit Units feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addHasAnyEditUnitsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Page_hasAnyEditUnits_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Page_hasAnyEditUnits_feature", "_UI_Page_type"),
-				 WafPackage.eINSTANCE.getPage_HasAnyEditUnits(),
+				 getString("_UI_Controller_hasEditUnits_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Controller_hasEditUnits_feature", "_UI_Controller_type"),
+				 WafPackage.eINSTANCE.getController_HasEditUnits(),
 				 false,
 				 false,
 				 false,
@@ -494,9 +496,9 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Page_formUnits_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Page_formUnits_feature", "_UI_Page_type"),
-				 WafPackage.eINSTANCE.getPage_FormUnits(),
+				 getString("_UI_Controller_formUnits_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Controller_formUnits_feature", "_UI_Controller_type"),
+				 WafPackage.eINSTANCE.getController_FormUnits(),
 				 false,
 				 false,
 				 false,
@@ -516,9 +518,9 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Page_hasFormUnits_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Page_hasFormUnits_feature", "_UI_Page_type"),
-				 WafPackage.eINSTANCE.getPage_HasFormUnits(),
+				 getString("_UI_Controller_hasFormUnits_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Controller_hasFormUnits_feature", "_UI_Controller_type"),
+				 WafPackage.eINSTANCE.getController_HasFormUnits(),
 				 false,
 				 false,
 				 false,
@@ -538,9 +540,9 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Page_hasFilters_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Page_hasFilters_feature", "_UI_Page_type"),
-				 WafPackage.eINSTANCE.getPage_HasFilters(),
+				 getString("_UI_Controller_hasFilters_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Controller_hasFilters_feature", "_UI_Controller_type"),
+				 WafPackage.eINSTANCE.getController_HasFilters(),
 				 false,
 				 false,
 				 false,
@@ -560,9 +562,9 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Page_galleryUnits_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Page_galleryUnits_feature", "_UI_Page_type"),
-				 WafPackage.eINSTANCE.getPage_GalleryUnits(),
+				 getString("_UI_Controller_galleryUnits_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Controller_galleryUnits_feature", "_UI_Controller_type"),
+				 WafPackage.eINSTANCE.getController_GalleryUnits(),
 				 false,
 				 false,
 				 false,
@@ -582,9 +584,9 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Page_hasGalleryUnits_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Page_hasGalleryUnits_feature", "_UI_Page_type"),
-				 WafPackage.eINSTANCE.getPage_HasGalleryUnits(),
+				 getString("_UI_Controller_hasGalleryUnits_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Controller_hasGalleryUnits_feature", "_UI_Controller_type"),
+				 WafPackage.eINSTANCE.getController_HasGalleryUnits(),
 				 false,
 				 false,
 				 false,
@@ -604,9 +606,9 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Page_tabularUnits_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Page_tabularUnits_feature", "_UI_Page_type"),
-				 WafPackage.eINSTANCE.getPage_TabularUnits(),
+				 getString("_UI_Controller_tabularUnits_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Controller_tabularUnits_feature", "_UI_Controller_type"),
+				 WafPackage.eINSTANCE.getController_TabularUnits(),
 				 false,
 				 false,
 				 false,
@@ -626,9 +628,9 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Page_hasTabularUnits_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Page_hasTabularUnits_feature", "_UI_Page_type"),
-				 WafPackage.eINSTANCE.getPage_HasTabularUnits(),
+				 getString("_UI_Controller_hasTabularUnits_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Controller_hasTabularUnits_feature", "_UI_Controller_type"),
+				 WafPackage.eINSTANCE.getController_HasTabularUnits(),
 				 false,
 				 false,
 				 false,
@@ -648,9 +650,9 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Page_imageUnits_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Page_imageUnits_feature", "_UI_Page_type"),
-				 WafPackage.eINSTANCE.getPage_ImageUnits(),
+				 getString("_UI_Controller_imageUnits_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Controller_imageUnits_feature", "_UI_Controller_type"),
+				 WafPackage.eINSTANCE.getController_ImageUnits(),
 				 false,
 				 false,
 				 false,
@@ -670,9 +672,9 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Page_hasImageUnits_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Page_hasImageUnits_feature", "_UI_Page_type"),
-				 WafPackage.eINSTANCE.getPage_HasImageUnits(),
+				 getString("_UI_Controller_hasImageUnits_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Controller_hasImageUnits_feature", "_UI_Controller_type"),
+				 WafPackage.eINSTANCE.getController_HasImageUnits(),
 				 false,
 				 false,
 				 false,
@@ -692,9 +694,9 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Page_imageCardsUnits_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Page_imageCardsUnits_feature", "_UI_Page_type"),
-				 WafPackage.eINSTANCE.getPage_ImageCardsUnits(),
+				 getString("_UI_Controller_imageCardsUnits_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Controller_imageCardsUnits_feature", "_UI_Controller_type"),
+				 WafPackage.eINSTANCE.getController_ImageCardsUnits(),
 				 false,
 				 false,
 				 false,
@@ -714,9 +716,9 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Page_hasImageCardsUnits_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Page_hasImageCardsUnits_feature", "_UI_Page_type"),
-				 WafPackage.eINSTANCE.getPage_HasImageCardsUnits(),
+				 getString("_UI_Controller_hasImageCardsUnits_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Controller_hasImageCardsUnits_feature", "_UI_Controller_type"),
+				 WafPackage.eINSTANCE.getController_HasImageCardsUnits(),
 				 false,
 				 false,
 				 false,
@@ -736,9 +738,9 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Page_mapUnits_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Page_mapUnits_feature", "_UI_Page_type"),
-				 WafPackage.eINSTANCE.getPage_MapUnits(),
+				 getString("_UI_Controller_mapUnits_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Controller_mapUnits_feature", "_UI_Controller_type"),
+				 WafPackage.eINSTANCE.getController_MapUnits(),
 				 false,
 				 false,
 				 false,
@@ -758,9 +760,9 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Page_hasMapUnits_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Page_hasMapUnits_feature", "_UI_Page_type"),
-				 WafPackage.eINSTANCE.getPage_HasMapUnits(),
+				 getString("_UI_Controller_hasMapUnits_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Controller_hasMapUnits_feature", "_UI_Controller_type"),
+				 WafPackage.eINSTANCE.getController_HasMapUnits(),
 				 false,
 				 false,
 				 false,
@@ -780,9 +782,9 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Page_sliderUnits_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Page_sliderUnits_feature", "_UI_Page_type"),
-				 WafPackage.eINSTANCE.getPage_SliderUnits(),
+				 getString("_UI_Controller_sliderUnits_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Controller_sliderUnits_feature", "_UI_Controller_type"),
+				 WafPackage.eINSTANCE.getController_SliderUnits(),
 				 false,
 				 false,
 				 false,
@@ -802,9 +804,9 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Page_hasSliderUnits_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Page_hasSliderUnits_feature", "_UI_Page_type"),
-				 WafPackage.eINSTANCE.getPage_HasSliderUnits(),
+				 getString("_UI_Controller_hasSliderUnits_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Controller_hasSliderUnits_feature", "_UI_Controller_type"),
+				 WafPackage.eINSTANCE.getController_HasSliderUnits(),
 				 false,
 				 false,
 				 false,
@@ -824,9 +826,9 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Page_repositoriesUsed_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Page_repositoriesUsed_feature", "_UI_Page_type"),
-				 WafPackage.eINSTANCE.getPage_RepositoriesUsed(),
+				 getString("_UI_Controller_repositoriesUsed_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Controller_repositoriesUsed_feature", "_UI_Controller_type"),
+				 WafPackage.eINSTANCE.getController_RepositoriesUsed(),
 				 false,
 				 false,
 				 false,
@@ -846,9 +848,9 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Page_hasRepositoriesUsed_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Page_hasRepositoriesUsed_feature", "_UI_Page_type"),
-				 WafPackage.eINSTANCE.getPage_HasRepositoriesUsed(),
+				 getString("_UI_Controller_hasRepositoriesUsed_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Controller_hasRepositoriesUsed_feature", "_UI_Controller_type"),
+				 WafPackage.eINSTANCE.getController_HasRepositoriesUsed(),
 				 false,
 				 false,
 				 false,
@@ -868,9 +870,9 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Page_servicesUsed_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Page_servicesUsed_feature", "_UI_Page_type"),
-				 WafPackage.eINSTANCE.getPage_ServicesUsed(),
+				 getString("_UI_Controller_servicesUsed_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Controller_servicesUsed_feature", "_UI_Controller_type"),
+				 WafPackage.eINSTANCE.getController_ServicesUsed(),
 				 false,
 				 false,
 				 false,
@@ -890,9 +892,9 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Page_hasServicesUsed_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Page_hasServicesUsed_feature", "_UI_Page_type"),
-				 WafPackage.eINSTANCE.getPage_HasServicesUsed(),
+				 getString("_UI_Controller_hasServicesUsed_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Controller_hasServicesUsed_feature", "_UI_Controller_type"),
+				 WafPackage.eINSTANCE.getController_HasServicesUsed(),
 				 false,
 				 false,
 				 false,
@@ -912,9 +914,9 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Page_hasPagination_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Page_hasPagination_feature", "_UI_Page_type"),
-				 WafPackage.eINSTANCE.getPage_HasPagination(),
+				 getString("_UI_Controller_hasPagination_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Controller_hasPagination_feature", "_UI_Controller_type"),
+				 WafPackage.eINSTANCE.getController_HasPagination(),
 				 false,
 				 false,
 				 false,
@@ -934,9 +936,9 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Page_associationFields_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Page_associationFields_feature", "_UI_Page_type"),
-				 WafPackage.eINSTANCE.getPage_AssociationFields(),
+				 getString("_UI_Controller_associationFields_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Controller_associationFields_feature", "_UI_Controller_type"),
+				 WafPackage.eINSTANCE.getController_AssociationFields(),
 				 false,
 				 false,
 				 false,
@@ -956,9 +958,9 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Page_autocompleteFields_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Page_autocompleteFields_feature", "_UI_Page_type"),
-				 WafPackage.eINSTANCE.getPage_AutocompleteFields(),
+				 getString("_UI_Controller_autocompleteFields_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Controller_autocompleteFields_feature", "_UI_Controller_type"),
+				 WafPackage.eINSTANCE.getController_AutocompleteFields(),
 				 false,
 				 false,
 				 false,
@@ -978,9 +980,9 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Page_hasAutocompleteFields_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Page_hasAutocompleteFields_feature", "_UI_Page_type"),
-				 WafPackage.eINSTANCE.getPage_HasAutocompleteFields(),
+				 getString("_UI_Controller_hasAutocompleteFields_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Controller_hasAutocompleteFields_feature", "_UI_Controller_type"),
+				 WafPackage.eINSTANCE.getController_HasAutocompleteFields(),
 				 false,
 				 false,
 				 false,
@@ -1000,9 +1002,9 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Page_formFields_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Page_formFields_feature", "_UI_Page_type"),
-				 WafPackage.eINSTANCE.getPage_FormFields(),
+				 getString("_UI_Controller_formFields_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Controller_formFields_feature", "_UI_Controller_type"),
+				 WafPackage.eINSTANCE.getController_FormFields(),
 				 false,
 				 false,
 				 false,
@@ -1022,9 +1024,9 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Page_hasInterfaceFields_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Page_hasInterfaceFields_feature", "_UI_Page_type"),
-				 WafPackage.eINSTANCE.getPage_HasInterfaceFields(),
+				 getString("_UI_Controller_hasInterfaceFields_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Controller_hasInterfaceFields_feature", "_UI_Controller_type"),
+				 WafPackage.eINSTANCE.getController_HasInterfaceFields(),
 				 false,
 				 false,
 				 false,
@@ -1044,9 +1046,9 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Page_hasRequiredInterfaceFields_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Page_hasRequiredInterfaceFields_feature", "_UI_Page_type"),
-				 WafPackage.eINSTANCE.getPage_HasRequiredInterfaceFields(),
+				 getString("_UI_Controller_hasRequiredInterfaceFields_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Controller_hasRequiredInterfaceFields_feature", "_UI_Controller_type"),
+				 WafPackage.eINSTANCE.getController_HasRequiredInterfaceFields(),
 				 false,
 				 false,
 				 false,
@@ -1066,9 +1068,9 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Page_hasResourceFields_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Page_hasResourceFields_feature", "_UI_Page_type"),
-				 WafPackage.eINSTANCE.getPage_HasResourceFields(),
+				 getString("_UI_Controller_hasResourceFields_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Controller_hasResourceFields_feature", "_UI_Controller_type"),
+				 WafPackage.eINSTANCE.getController_HasResourceFields(),
 				 false,
 				 false,
 				 false,
@@ -1088,9 +1090,9 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Page_actionsWithoutTarget_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Page_actionsWithoutTarget_feature", "_UI_Page_type"),
-				 WafPackage.eINSTANCE.getPage_ActionsWithoutTarget(),
+				 getString("_UI_Controller_actionsWithoutTarget_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Controller_actionsWithoutTarget_feature", "_UI_Controller_type"),
+				 WafPackage.eINSTANCE.getController_ActionsWithoutTarget(),
 				 false,
 				 false,
 				 false,
@@ -1110,9 +1112,9 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Page_fileActions_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Page_fileActions_feature", "_UI_Page_type"),
-				 WafPackage.eINSTANCE.getPage_FileActions(),
+				 getString("_UI_Controller_fileActions_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Controller_fileActions_feature", "_UI_Controller_type"),
+				 WafPackage.eINSTANCE.getController_FileActions(),
 				 false,
 				 false,
 				 false,
@@ -1132,9 +1134,9 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Page_hasFileActions_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Page_hasFileActions_feature", "_UI_Page_type"),
-				 WafPackage.eINSTANCE.getPage_HasFileActions(),
+				 getString("_UI_Controller_hasFileActions_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Controller_hasFileActions_feature", "_UI_Controller_type"),
+				 WafPackage.eINSTANCE.getController_HasFileActions(),
 				 false,
 				 false,
 				 false,
@@ -1154,9 +1156,9 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Page_hasMessages_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Page_hasMessages_feature", "_UI_Page_type"),
-				 WafPackage.eINSTANCE.getPage_HasMessages(),
+				 getString("_UI_Controller_hasMessages_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Controller_hasMessages_feature", "_UI_Controller_type"),
+				 WafPackage.eINSTANCE.getController_HasMessages(),
 				 false,
 				 false,
 				 false,
@@ -1176,9 +1178,9 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Page_uriElement_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Page_uriElement_feature", "_UI_Page_type"),
-				 WafPackage.eINSTANCE.getPage_UriElement(),
+				 getString("_UI_Controller_uriElement_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Controller_uriElement_feature", "_UI_Controller_type"),
+				 WafPackage.eINSTANCE.getController_UriElement(),
 				 true,
 				 false,
 				 false,
@@ -1198,9 +1200,9 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Page_pageClassOverride_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Page_pageClassOverride_feature", "_UI_Page_type"),
-				 WafPackage.eINSTANCE.getPage_PageClassOverride(),
+				 getString("_UI_Controller_pageClassOverride_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Controller_pageClassOverride_feature", "_UI_Controller_type"),
+				 WafPackage.eINSTANCE.getController_PageClassOverride(),
 				 true,
 				 false,
 				 false,
@@ -1220,9 +1222,9 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Page_pageClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Page_pageClass_feature", "_UI_Page_type"),
-				 WafPackage.eINSTANCE.getPage_PageClass(),
+				 getString("_UI_Controller_pageClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Controller_pageClass_feature", "_UI_Controller_type"),
+				 WafPackage.eINSTANCE.getController_PageClass(),
 				 false,
 				 false,
 				 false,
@@ -1242,9 +1244,9 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Page_hasPageClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Page_hasPageClass_feature", "_UI_Page_type"),
-				 WafPackage.eINSTANCE.getPage_HasPageClass(),
+				 getString("_UI_Controller_hasPageClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Controller_hasPageClass_feature", "_UI_Controller_type"),
+				 WafPackage.eINSTANCE.getController_HasPageClass(),
 				 false,
 				 false,
 				 false,
@@ -1264,9 +1266,9 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Page_genModel_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Page_genModel_feature", "_UI_Page_type"),
-				 WafPackage.eINSTANCE.getPage_GenModel(),
+				 getString("_UI_Controller_genModel_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Controller_genModel_feature", "_UI_Controller_type"),
+				 WafPackage.eINSTANCE.getController_GenModel(),
 				 false,
 				 false,
 				 false,
@@ -1286,9 +1288,9 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Page_uiModel_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Page_uiModel_feature", "_UI_Page_type"),
-				 WafPackage.eINSTANCE.getPage_UiModel(),
+				 getString("_UI_Controller_uiModel_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Controller_uiModel_feature", "_UI_Controller_type"),
+				 WafPackage.eINSTANCE.getController_UiModel(),
 				 false,
 				 false,
 				 false,
@@ -1298,19 +1300,19 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Root Page feature.
+	 * This adds a property descriptor for the Root Controller feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addRootPagePropertyDescriptor(Object object) {
+	protected void addRootControllerPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Page_rootPage_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Page_rootPage_feature", "_UI_Page_type"),
-				 WafPackage.eINSTANCE.getPage_RootPage(),
+				 getString("_UI_Controller_rootController_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Controller_rootController_feature", "_UI_Controller_type"),
+				 WafPackage.eINSTANCE.getController_RootController(),
 				 false,
 				 false,
 				 false,
@@ -1331,7 +1333,7 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(WafPackage.eINSTANCE.getPage_Units());
+			childrenFeatures.add(WafPackage.eINSTANCE.getController_Units());
 		}
 		return childrenFeatures;
 	}
@@ -1350,17 +1352,6 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 	}
 
 	/**
-	 * This returns Page.gif.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Page"));
-	}
-
-	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1368,10 +1359,10 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Page)object).getName();
+		String label = ((Controller)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_Page_type") :
-			getString("_UI_Page_type") + " " + label;
+			getString("_UI_Controller_type") :
+			getString("_UI_Controller_type") + " " + label;
 	}
 
 
@@ -1386,41 +1377,42 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Page.class)) {
-			case WafPackage.PAGE__COMMON_ROLE:
-			case WafPackage.PAGE__IS_AUTHORISED:
-			case WafPackage.PAGE__HAS_COMMON_UNIT_AUTHENTICATION:
-			case WafPackage.PAGE__HAS_UNITS:
-			case WafPackage.PAGE__HAS_CHANGABLE_COLLECTIONS:
-			case WafPackage.PAGE__HAS_CAPTCHA_UNITS:
-			case WafPackage.PAGE__HAS_COLLECTION_UNITS:
-			case WafPackage.PAGE__HAS_DYNAMIC_UNITS:
-			case WafPackage.PAGE__HAS_EDIT_UNITS:
-			case WafPackage.PAGE__HAS_ANY_EDIT_UNITS:
-			case WafPackage.PAGE__HAS_FORM_UNITS:
-			case WafPackage.PAGE__HAS_FILTERS:
-			case WafPackage.PAGE__HAS_GALLERY_UNITS:
-			case WafPackage.PAGE__HAS_TABULAR_UNITS:
-			case WafPackage.PAGE__HAS_IMAGE_UNITS:
-			case WafPackage.PAGE__HAS_IMAGE_CARDS_UNITS:
-			case WafPackage.PAGE__HAS_MAP_UNITS:
-			case WafPackage.PAGE__HAS_SLIDER_UNITS:
-			case WafPackage.PAGE__HAS_REPOSITORIES_USED:
-			case WafPackage.PAGE__HAS_SERVICES_USED:
-			case WafPackage.PAGE__HAS_PAGINATION:
-			case WafPackage.PAGE__HAS_AUTOCOMPLETE_FIELDS:
-			case WafPackage.PAGE__HAS_INTERFACE_FIELDS:
-			case WafPackage.PAGE__HAS_REQUIRED_INTERFACE_FIELDS:
-			case WafPackage.PAGE__HAS_RESOURCE_FIELDS:
-			case WafPackage.PAGE__HAS_FILE_ACTIONS:
-			case WafPackage.PAGE__HAS_MESSAGES:
-			case WafPackage.PAGE__URI_ELEMENT:
-			case WafPackage.PAGE__PAGE_CLASS_OVERRIDE:
-			case WafPackage.PAGE__PAGE_CLASS:
-			case WafPackage.PAGE__HAS_PAGE_CLASS:
+		switch (notification.getFeatureID(Controller.class)) {
+			case WafPackage.CONTROLLER__IS_SINGLE_PAGE:
+			case WafPackage.CONTROLLER__IS_MULTI_PAGE:
+			case WafPackage.CONTROLLER__COMMON_ROLE:
+			case WafPackage.CONTROLLER__IS_AUTHORISED:
+			case WafPackage.CONTROLLER__HAS_COMMON_UNIT_AUTHENTICATION:
+			case WafPackage.CONTROLLER__HAS_UNITS:
+			case WafPackage.CONTROLLER__HAS_CHANGABLE_COLLECTIONS:
+			case WafPackage.CONTROLLER__HAS_CAPTCHA_UNITS:
+			case WafPackage.CONTROLLER__HAS_COLLECTION_UNITS:
+			case WafPackage.CONTROLLER__HAS_DYNAMIC_UNITS:
+			case WafPackage.CONTROLLER__HAS_EDIT_UNITS:
+			case WafPackage.CONTROLLER__HAS_FORM_UNITS:
+			case WafPackage.CONTROLLER__HAS_FILTERS:
+			case WafPackage.CONTROLLER__HAS_GALLERY_UNITS:
+			case WafPackage.CONTROLLER__HAS_TABULAR_UNITS:
+			case WafPackage.CONTROLLER__HAS_IMAGE_UNITS:
+			case WafPackage.CONTROLLER__HAS_IMAGE_CARDS_UNITS:
+			case WafPackage.CONTROLLER__HAS_MAP_UNITS:
+			case WafPackage.CONTROLLER__HAS_SLIDER_UNITS:
+			case WafPackage.CONTROLLER__HAS_REPOSITORIES_USED:
+			case WafPackage.CONTROLLER__HAS_SERVICES_USED:
+			case WafPackage.CONTROLLER__HAS_PAGINATION:
+			case WafPackage.CONTROLLER__HAS_AUTOCOMPLETE_FIELDS:
+			case WafPackage.CONTROLLER__HAS_INTERFACE_FIELDS:
+			case WafPackage.CONTROLLER__HAS_REQUIRED_INTERFACE_FIELDS:
+			case WafPackage.CONTROLLER__HAS_RESOURCE_FIELDS:
+			case WafPackage.CONTROLLER__HAS_FILE_ACTIONS:
+			case WafPackage.CONTROLLER__HAS_MESSAGES:
+			case WafPackage.CONTROLLER__URI_ELEMENT:
+			case WafPackage.CONTROLLER__PAGE_CLASS_OVERRIDE:
+			case WafPackage.CONTROLLER__PAGE_CLASS:
+			case WafPackage.CONTROLLER__HAS_PAGE_CLASS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case WafPackage.PAGE__UNITS:
+			case WafPackage.CONTROLLER__UNITS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -1440,72 +1432,72 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.eINSTANCE.getPage_Units(),
+				(WafPackage.eINSTANCE.getController_Units(),
 				 WafFactory.eINSTANCE.createStaticUnit()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.eINSTANCE.getPage_Units(),
+				(WafPackage.eINSTANCE.getController_Units(),
 				 WafFactory.eINSTANCE.createSingletonUnit()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.eINSTANCE.getPage_Units(),
+				(WafPackage.eINSTANCE.getController_Units(),
 				 WafFactory.eINSTANCE.createCreateUnit()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.eINSTANCE.getPage_Units(),
+				(WafPackage.eINSTANCE.getController_Units(),
 				 WafFactory.eINSTANCE.createUpdateUnit()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.eINSTANCE.getPage_Units(),
+				(WafPackage.eINSTANCE.getController_Units(),
 				 WafFactory.eINSTANCE.createCreateUpdateUnit()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.eINSTANCE.getPage_Units(),
+				(WafPackage.eINSTANCE.getController_Units(),
 				 WafFactory.eINSTANCE.createMapUnit()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.eINSTANCE.getPage_Units(),
+				(WafPackage.eINSTANCE.getController_Units(),
 				 WafFactory.eINSTANCE.createDetailsUnit()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.eINSTANCE.getPage_Units(),
+				(WafPackage.eINSTANCE.getController_Units(),
 				 WafFactory.eINSTANCE.createTabularUnit()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.eINSTANCE.getPage_Units(),
+				(WafPackage.eINSTANCE.getController_Units(),
 				 WafFactory.eINSTANCE.createTextCardsUnit()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.eINSTANCE.getPage_Units(),
+				(WafPackage.eINSTANCE.getController_Units(),
 				 WafFactory.eINSTANCE.createDateCardsUnit()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.eINSTANCE.getPage_Units(),
+				(WafPackage.eINSTANCE.getController_Units(),
 				 WafFactory.eINSTANCE.createImageCardsUnit()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.eINSTANCE.getPage_Units(),
+				(WafPackage.eINSTANCE.getController_Units(),
 				 WafFactory.eINSTANCE.createSliderUnit()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.eINSTANCE.getPage_Units(),
+				(WafPackage.eINSTANCE.getController_Units(),
 				 WafFactory.eINSTANCE.createGalleryUnit()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.eINSTANCE.getPage_Units(),
+				(WafPackage.eINSTANCE.getController_Units(),
 				 WafFactory.eINSTANCE.createSearchUnit()));
 	}
 
