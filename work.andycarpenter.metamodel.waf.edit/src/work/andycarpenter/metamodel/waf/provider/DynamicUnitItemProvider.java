@@ -76,7 +76,7 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 			addHasExplicitlyEditedContainerPropertyDescriptor(object);
 			addRepositoriesUsedPropertyDescriptor(object);
 			addServicesUsedPropertyDescriptor(object);
-			addHasWhenFieldsEmptyAddImplicitFieldsPropertyDescriptor(object);
+			addHasServicesUsedPropertyDescriptor(object);
 			addIsConditionallyDisplayedPropertyDescriptor(object);
 			addMessageWhenHiddenPropertyDescriptor(object);
 			addHasHiddenMessagePropertyDescriptor(object);
@@ -789,33 +789,33 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 				 getString("_UI_DynamicUnit_servicesUsed_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_DynamicUnit_servicesUsed_feature", "_UI_DynamicUnit_type"),
 				 WafPackage.eINSTANCE.getDynamicUnit_ServicesUsed(),
-				 true,
 				 false,
-				 true,
+				 false,
+				 false,
 				 null,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
 	/**
-	 * This adds a property descriptor for the Has When Fields Empty Add Implicit Fields feature.
+	 * This adds a property descriptor for the Has Services Used feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addHasWhenFieldsEmptyAddImplicitFieldsPropertyDescriptor(Object object) {
+	protected void addHasServicesUsedPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_DynamicUnit_hasWhenFieldsEmptyAddImplicitFields_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DynamicUnit_hasWhenFieldsEmptyAddImplicitFields_feature", "_UI_DynamicUnit_type"),
-				 WafPackage.eINSTANCE.getDynamicUnit_HasWhenFieldsEmptyAddImplicitFields(),
-				 true,
+				 getString("_UI_DynamicUnit_hasServicesUsed_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DynamicUnit_hasServicesUsed_feature", "_UI_DynamicUnit_type"),
+				 WafPackage.eINSTANCE.getDynamicUnit_HasServicesUsed(),
+				 false,
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -859,7 +859,7 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_InterfacePropertyCategory"),
 				 null));
 	}
 
@@ -2123,7 +2123,7 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 			case WafPackage.DYNAMIC_UNIT__HAS_OPERATION_ACTIONS:
 			case WafPackage.DYNAMIC_UNIT__IS_CONTAINED:
 			case WafPackage.DYNAMIC_UNIT__HAS_EXPLICITLY_EDITED_CONTAINER:
-			case WafPackage.DYNAMIC_UNIT__HAS_WHEN_FIELDS_EMPTY_ADD_IMPLICIT_FIELDS:
+			case WafPackage.DYNAMIC_UNIT__HAS_SERVICES_USED:
 			case WafPackage.DYNAMIC_UNIT__IS_CONDITIONALLY_DISPLAYED:
 			case WafPackage.DYNAMIC_UNIT__MESSAGE_WHEN_HIDDEN:
 			case WafPackage.DYNAMIC_UNIT__HAS_HIDDEN_MESSAGE:

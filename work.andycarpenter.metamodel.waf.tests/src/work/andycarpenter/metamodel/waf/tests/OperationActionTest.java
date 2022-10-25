@@ -11,6 +11,8 @@ import work.andycarpenter.metamodel.waf.OperationAction;
  * <p>
  * The following features are tested:
  * <ul>
+ *   <li>{@link work.andycarpenter.metamodel.waf.OperationAction#getServicesUsed() <em>Services Used</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.OperationAction#isHasServicesUsed() <em>Has Services Used</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.OperationAction#getOperationAuthorisationRoles() <em>Operation Authorisation Roles</em>}</li>
  * </ul>
  * </p>
@@ -37,6 +39,45 @@ public abstract class OperationActionTest extends ActionTest {
 	@Override
 	protected OperationAction getFixture() {
 		return (OperationAction)fixture;
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.OperationAction#getServicesUsed() <em>Services Used</em>}' feature getter.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.OperationAction#getServicesUsed()
+	 * @generated
+	 */
+	public void testGetServicesUsed() {
+		// TODO: implement this feature getter test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.OperationAction#isHasServicesUsed() <em>Has Services Used</em>}' feature getter.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.OperationAction#isHasServicesUsed()
+	 * @generated
+	 */
+	public void testIsHasServicesUsed() {
+		// TODO: implement this feature getter test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.OperationAction#isSetHasServicesUsed() <em>isSetHasServicesUsed()</em>}' method.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.OperationAction#isSetHasServicesUsed()
+	 * @generated
+	 */
+	public void testIsSetHasServicesUsed() {
+		// TODO: implement this test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
 	}
 
 	/**

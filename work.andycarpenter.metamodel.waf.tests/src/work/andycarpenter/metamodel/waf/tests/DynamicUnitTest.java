@@ -37,6 +37,8 @@ import work.andycarpenter.metamodel.waf.DynamicUnit;
  *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#getContainerRepository() <em>Container Repository</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#isHasExplicitlyEditedContainer() <em>Has Explicitly Edited Container</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#getRepositoriesUsed() <em>Repositories Used</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#getServicesUsed() <em>Services Used</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#isHasServicesUsed() <em>Has Services Used</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#getIsConditionallyDisplayed() <em>Is Conditionally Displayed</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#getHasHiddenMessage() <em>Has Hidden Message</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#getAssociationFields() <em>Association Fields</em>}</li>
@@ -781,6 +783,58 @@ public abstract class DynamicUnitTest extends ContentUnitTest {
 	 * @generated
 	 */
 	public void testIsSetRepositoriesUsed() {
+		// TODO: implement this test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#getServicesUsed() <em>Services Used</em>}' feature getter.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#getServicesUsed()
+	 * @generated
+	 */
+	public void testGetServicesUsed() {
+		// TODO: implement this feature getter test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#isSetServicesUsed() <em>isSetServicesUsed()</em>}' method.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#isSetServicesUsed()
+	 * @generated
+	 */
+	public void testIsSetServicesUsed() {
+		// TODO: implement this test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#isHasServicesUsed() <em>Has Services Used</em>}' feature getter.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#isHasServicesUsed()
+	 * @generated
+	 */
+	public void testIsHasServicesUsed() {
+		// TODO: implement this feature getter test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#isSetHasServicesUsed() <em>isSetHasServicesUsed()</em>}' method.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#isSetHasServicesUsed()
+	 * @generated
+	 */
+	public void testIsSetHasServicesUsed() {
 		// TODO: implement this test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

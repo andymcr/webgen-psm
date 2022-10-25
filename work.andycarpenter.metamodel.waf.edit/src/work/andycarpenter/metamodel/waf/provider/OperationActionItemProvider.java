@@ -45,6 +45,8 @@ public class OperationActionItemProvider extends ActionItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addServicesUsedPropertyDescriptor(object);
+			addHasServicesUsedPropertyDescriptor(object);
 			addOperationPropertyDescriptor(object);
 			addFileExtensionPropertyDescriptor(object);
 			addUriElementPropertyDescriptor(object);
@@ -52,6 +54,50 @@ public class OperationActionItemProvider extends ActionItemProvider {
 			addOperationAuthorisationRolesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Services Used feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addServicesUsedPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_OperationAction_servicesUsed_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_OperationAction_servicesUsed_feature", "_UI_OperationAction_type"),
+				 WafPackage.eINSTANCE.getOperationAction_ServicesUsed(),
+				 false,
+				 false,
+				 false,
+				 null,
+				 getString("_UI_DebugPropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Has Services Used feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasServicesUsedPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_OperationAction_hasServicesUsed_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_OperationAction_hasServicesUsed_feature", "_UI_OperationAction_type"),
+				 WafPackage.eINSTANCE.getOperationAction_HasServicesUsed(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 getString("_UI_DebugPropertyCategory"),
+				 null));
 	}
 
 	/**
@@ -191,6 +237,7 @@ public class OperationActionItemProvider extends ActionItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(OperationAction.class)) {
+			case WafPackage.OPERATION_ACTION__HAS_SERVICES_USED:
 			case WafPackage.OPERATION_ACTION__FILE_EXTENSION:
 			case WafPackage.OPERATION_ACTION__URI_ELEMENT:
 			case WafPackage.OPERATION_ACTION__LOCAL_AUTHORISATION_ROLES:

@@ -714,16 +714,27 @@ abstract class DynamicUnit extends ContentUnit, ActionContainer {
     @GenModel(propertyCategory="Debug")
 	refers derived readonly unsettable transient volatile Repository[] repositoriesUsed
 
-	refers Service[] servicesUsed
-	contains RouteActual[] routeActuals
-	contains UnitField[] displayFields opposite displayedOn
-	boolean hasWhenFieldsEmptyAddImplicitFields = "true"
+	@OCL(derivation="operationActions->collect(u | u.servicesUsed)->asOrderedSet()")
+    @GenModel(propertyCategory="Debug")
+	refers readonly transient volatile unsettable derived Service[] servicesUsed
+	@OCL(derivation="servicesUsed->notEmpty()")
+    @GenModel(propertyCategory="Debug")
+	derived readonly unsettable transient volatile boolean hasServicesUsed
 
+    @GenModel(propertyCategory="Business")
+	contains RouteActual[] routeActuals
+
+    @GenModel(propertyCategory="Model")
+	contains UnitField[] displayFields opposite displayedOn
+
+    @GenModel(propertyCategory="Business")
 	contains Predicate hideWhen
+
 	@OCL(derivation="not hideWhen.oclIsUndefined()")
     @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile Boolean isConditionallyDisplayed
 
+    @GenModel(propertyCategory="Interface")
 	String messageWhenHidden = ''
 	@OCL(derivation="self.isConditionallyDisplayed = true and messageWhenHidden.trim() <> ''")
     @GenModel(propertyCategory="Debug")
@@ -3364,15 +3375,29 @@ class TargetAction extends SelectAction {
 }
 
 abstract class OperationAction extends Action {
+	@OCL(derivation="if operation.oclIsUndefined() then
+			OrderedSet(service::Service){}
+		else
+			OrderedSet(service::Service){ operation.partOf }
+		endif")
+    @GenModel(propertyCategory="Debug")
+	refers derived readonly transient volatile Service[] servicesUsed
+	@OCL(derivation="servicesUsed->notEmpty()")
+    @GenModel(propertyCategory="Debug")
+	derived readonly unsettable transient volatile boolean hasServicesUsed
+
     @GenModel(propertyCategory="Business")
 	refers BusinessOperation[1] operation
+
     @GenModel(propertyCategory="Business")
 	String fileExtension
+
     @GenModel(propertyCategory="Navigation")
 	String[1] uriElement
 
     @GenModel(propertyCategory="Security")
 	String localAuthorisationRoles = ''
+
 	@OCL(derivation="if localAuthorisationRoles.trim() <> '' then
 			localAuthorisationRoles
 		else
