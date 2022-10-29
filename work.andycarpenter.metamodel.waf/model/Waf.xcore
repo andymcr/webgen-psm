@@ -513,6 +513,11 @@ abstract class Controller extends NamedDisplayElement {
     @GenModel(propertyCategory="Debug")
 	derived readonly transient unsettable volatile boolean hasFileActions
 
+	@OCL(derivation="editUnits->select(u | u.hasSuccessMessage)->notEmpty()
+		or dynamicUnits.oclAsType(ActionContainer)->select(c | c.hasActionsWithSuccessMessages)->notEmpty()")
+    @GenModel(propertyCategory="Debug")
+	derived readonly unsettable transient volatile boolean hasSuccessMessages
+
 	@OCL(derivation="editUnits->select(u | u.hasMessages)->notEmpty()
 		or dynamicUnits.oclAsType(ActionContainer)->select(c | c.hasActionsWithMessages)->notEmpty()")
     @GenModel(propertyCategory="Debug")
@@ -3135,10 +3140,11 @@ interface ActionContainer {
     @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean hasActions
 
-	@OCL(derivation="actions->select(a | a.hasMessages)->asOrderedSet()")
-	refers derived readonly unsettable transient volatile Action[] actionsWithMessages
+	@OCL(derivation="actions->select(a | a.hasSuccessMessage)->notEmpty()")
+    @GenModel(propertyCategory="Debug")
+	derived readonly unsettable transient volatile boolean hasActionsWithSuccessMessages
 
-	@OCL(derivation="actionsWithMessages->notEmpty()")
+	@OCL(derivation="actions->select(a | a.hasMessages)->notEmpty()")
     @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean hasActionsWithMessages
 

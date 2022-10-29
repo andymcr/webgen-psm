@@ -13,7 +13,7 @@ import work.andycarpenter.metamodel.waf.DynamicUnit;
  * <ul>
  *   <li>{@link work.andycarpenter.metamodel.waf.ActionContainer#getActions() <em>Actions</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.ActionContainer#isHasActions() <em>Has Actions</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.ActionContainer#getActionsWithMessages() <em>Actions With Messages</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.ActionContainer#isHasActionsWithSuccessMessages() <em>Has Actions With Success Messages</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.ActionContainer#isHasActionsWithMessages() <em>Has Actions With Messages</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.ActionContainer#getActionsWithoutTarget() <em>Actions Without Target</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.ActionContainer#getContainerActions() <em>Container Actions</em>}</li>
@@ -165,26 +165,26 @@ public abstract class DynamicUnitTest extends ContentUnitTest {
 	}
 
 	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.ActionContainer#getActionsWithMessages() <em>Actions With Messages</em>}' feature getter.
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.ActionContainer#isHasActionsWithSuccessMessages() <em>Has Actions With Success Messages</em>}' feature getter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.ActionContainer#getActionsWithMessages()
+	 * @see work.andycarpenter.metamodel.waf.ActionContainer#isHasActionsWithSuccessMessages()
 	 * @generated
 	 */
-	public void testGetActionsWithMessages() {
+	public void testIsHasActionsWithSuccessMessages() {
 		// TODO: implement this feature getter test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}
 
 	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.ActionContainer#isSetActionsWithMessages() <em>isSetActionsWithMessages()</em>}' method.
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.ActionContainer#isSetHasActionsWithSuccessMessages() <em>isSetHasActionsWithSuccessMessages()</em>}' method.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.ActionContainer#isSetActionsWithMessages()
+	 * @see work.andycarpenter.metamodel.waf.ActionContainer#isSetHasActionsWithSuccessMessages()
 	 * @generated
 	 */
-	public void testIsSetActionsWithMessages() {
+	public void testIsSetHasActionsWithSuccessMessages() {
 		// TODO: implement this test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

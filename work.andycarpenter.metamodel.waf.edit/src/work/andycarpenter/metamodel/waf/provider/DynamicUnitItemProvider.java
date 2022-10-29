@@ -50,7 +50,7 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 			addInstanceActionsPlacementPropertyDescriptor(object);
 			addActionsPropertyDescriptor(object);
 			addHasActionsPropertyDescriptor(object);
-			addActionsWithMessagesPropertyDescriptor(object);
+			addHasActionsWithSuccessMessagesPropertyDescriptor(object);
 			addHasActionsWithMessagesPropertyDescriptor(object);
 			addActionsWithoutTargetPropertyDescriptor(object);
 			addContainerActionsPropertyDescriptor(object);
@@ -226,24 +226,24 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Actions With Messages feature.
+	 * This adds a property descriptor for the Has Actions With Success Messages feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addActionsWithMessagesPropertyDescriptor(Object object) {
+	protected void addHasActionsWithSuccessMessagesPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ActionContainer_actionsWithMessages_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ActionContainer_actionsWithMessages_feature", "_UI_ActionContainer_type"),
-				 WafPackage.eINSTANCE.getActionContainer_ActionsWithMessages(),
+				 getString("_UI_ActionContainer_hasActionsWithSuccessMessages_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ActionContainer_hasActionsWithSuccessMessages_feature", "_UI_ActionContainer_type"),
+				 WafPackage.eINSTANCE.getActionContainer_HasActionsWithSuccessMessages(),
 				 false,
 				 false,
 				 false,
-				 null,
-				 null,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -2114,6 +2114,7 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 			case WafPackage.DYNAMIC_UNIT__CONTAINER_ACTIONS_PLACEMENT:
 			case WafPackage.DYNAMIC_UNIT__INSTANCE_ACTIONS_PLACEMENT:
 			case WafPackage.DYNAMIC_UNIT__HAS_ACTIONS:
+			case WafPackage.DYNAMIC_UNIT__HAS_ACTIONS_WITH_SUCCESS_MESSAGES:
 			case WafPackage.DYNAMIC_UNIT__HAS_ACTIONS_WITH_MESSAGES:
 			case WafPackage.DYNAMIC_UNIT__HAS_CONTAINER_ACTIONS:
 			case WafPackage.DYNAMIC_UNIT__HAS_FILE_ACTIONS:
