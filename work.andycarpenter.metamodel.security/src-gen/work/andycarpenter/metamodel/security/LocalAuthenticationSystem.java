@@ -15,9 +15,10 @@ import work.andycarpenter.metamodel.orm.Entity;
  * </p>
  * <ul>
  *   <li>{@link work.andycarpenter.metamodel.security.LocalAuthenticationSystem#getAuthenticationModel <em>Authentication Model</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.security.LocalAuthenticationSystem#getIdentifierFeture <em>Identifier Feture</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.security.LocalAuthenticationSystem#getPasswordFeature <em>Password Feature</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.security.LocalAuthenticationSystem#getUserKey <em>User Key</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.security.LocalAuthenticationSystem#getAuthenticationKey <em>Authentication Key</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.security.LocalAuthenticationSystem#getIdentifierFeature <em>Identifier Feature</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.security.LocalAuthenticationSystem#getPasswordFeature <em>Password Feature</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.security.LocalAuthenticationSystem#getResetPasswordRequestModel <em>Reset Password Request Model</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.security.LocalAuthenticationSystem#getRegistrationElement <em>Registration Element</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.security.LocalAuthenticationSystem#isHasRegistrationElement <em>Has Registration Element</em>}</li>
@@ -63,26 +64,70 @@ public interface LocalAuthenticationSystem extends Authentication {
 	void setAuthenticationModel(Entity value);
 
 	/**
-	 * Returns the value of the '<em><b>Identifier Feture</b></em>' reference.
+	 * Returns the value of the '<em><b>User Key</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Identifier Feture</em>' reference.
-	 * @see #setIdentifierFeture(Attribute)
-	 * @see work.andycarpenter.metamodel.security.SecurityPackage#getLocalAuthenticationSystem_IdentifierFeture()
+	 * @return the value of the '<em>User Key</em>' reference.
+	 * @see #setUserKey(Attribute)
+	 * @see work.andycarpenter.metamodel.security.SecurityPackage#getLocalAuthenticationSystem_UserKey()
 	 * @model required="true"
 	 * @generated
 	 */
-	Attribute getIdentifierFeture();
+	Attribute getUserKey();
 
 	/**
-	 * Sets the value of the '{@link work.andycarpenter.metamodel.security.LocalAuthenticationSystem#getIdentifierFeture <em>Identifier Feture</em>}' reference.
+	 * Sets the value of the '{@link work.andycarpenter.metamodel.security.LocalAuthenticationSystem#getUserKey <em>User Key</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Identifier Feture</em>' reference.
-	 * @see #getIdentifierFeture()
+	 * @param value the new value of the '<em>User Key</em>' reference.
+	 * @see #getUserKey()
 	 * @generated
 	 */
-	void setIdentifierFeture(Attribute value);
+	void setUserKey(Attribute value);
+
+	/**
+	 * Returns the value of the '<em><b>Authentication Key</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Authentication Key</em>' reference.
+	 * @see #setAuthenticationKey(Attribute)
+	 * @see work.andycarpenter.metamodel.security.SecurityPackage#getLocalAuthenticationSystem_AuthenticationKey()
+	 * @model required="true"
+	 * @generated
+	 */
+	Attribute getAuthenticationKey();
+
+	/**
+	 * Sets the value of the '{@link work.andycarpenter.metamodel.security.LocalAuthenticationSystem#getAuthenticationKey <em>Authentication Key</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Authentication Key</em>' reference.
+	 * @see #getAuthenticationKey()
+	 * @generated
+	 */
+	void setAuthenticationKey(Attribute value);
+
+	/**
+	 * Returns the value of the '<em><b>Identifier Feature</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Identifier Feature</em>' reference.
+	 * @see #setIdentifierFeature(Attribute)
+	 * @see work.andycarpenter.metamodel.security.SecurityPackage#getLocalAuthenticationSystem_IdentifierFeature()
+	 * @model required="true"
+	 * @generated
+	 */
+	Attribute getIdentifierFeature();
+
+	/**
+	 * Sets the value of the '{@link work.andycarpenter.metamodel.security.LocalAuthenticationSystem#getIdentifierFeature <em>Identifier Feature</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Identifier Feature</em>' reference.
+	 * @see #getIdentifierFeature()
+	 * @generated
+	 */
+	void setIdentifierFeature(Attribute value);
 
 	/**
 	 * Returns the value of the '<em><b>Password Feature</b></em>' reference.
@@ -105,31 +150,6 @@ public interface LocalAuthenticationSystem extends Authentication {
 	 * @generated
 	 */
 	void setPasswordFeature(Attribute value);
-
-	/**
-	 * Returns the value of the '<em><b>Authentication Key</b></em>' attribute.
-	 * The literals are from the enumeration {@link work.andycarpenter.metamodel.security.AuthenticationKeyTypes}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Authentication Key</em>' attribute.
-	 * @see work.andycarpenter.metamodel.security.AuthenticationKeyTypes
-	 * @see #setAuthenticationKey(AuthenticationKeyTypes)
-	 * @see work.andycarpenter.metamodel.security.SecurityPackage#getLocalAuthenticationSystem_AuthenticationKey()
-	 * @model unique="false" required="true"
-	 * @generated
-	 */
-	AuthenticationKeyTypes getAuthenticationKey();
-
-	/**
-	 * Sets the value of the '{@link work.andycarpenter.metamodel.security.LocalAuthenticationSystem#getAuthenticationKey <em>Authentication Key</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Authentication Key</em>' attribute.
-	 * @see work.andycarpenter.metamodel.security.AuthenticationKeyTypes
-	 * @see #getAuthenticationKey()
-	 * @generated
-	 */
-	void setAuthenticationKey(AuthenticationKeyTypes value);
 
 	/**
 	 * Returns the value of the '<em><b>Reset Password Request Model</b></em>' reference.

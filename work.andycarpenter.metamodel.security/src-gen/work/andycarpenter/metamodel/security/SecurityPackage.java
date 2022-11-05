@@ -4,7 +4,6 @@ package work.andycarpenter.metamodel.security;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -127,22 +126,13 @@ public interface SecurityPackage extends EPackage {
 	int AUTHENTICATION__USER_MODEL = 0;
 
 	/**
-	 * The feature id for the '<em><b>User Key</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AUTHENTICATION__USER_KEY = 1;
-
-	/**
 	 * The number of structural features of the '<em>Authentication</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHENTICATION_FEATURE_COUNT = 2;
+	int AUTHENTICATION_FEATURE_COUNT = 1;
 
 	/**
 	 * The number of operations of the '<em>Authentication</em>' class.
@@ -173,15 +163,6 @@ public interface SecurityPackage extends EPackage {
 	int LOCAL_AUTHENTICATION_SYSTEM__USER_MODEL = AUTHENTICATION__USER_MODEL;
 
 	/**
-	 * The feature id for the '<em><b>User Key</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LOCAL_AUTHENTICATION_SYSTEM__USER_KEY = AUTHENTICATION__USER_KEY;
-
-	/**
 	 * The feature id for the '<em><b>Authentication Model</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -191,13 +172,31 @@ public interface SecurityPackage extends EPackage {
 	int LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION_MODEL = AUTHENTICATION_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Identifier Feture</b></em>' reference.
+	 * The feature id for the '<em><b>User Key</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LOCAL_AUTHENTICATION_SYSTEM__IDENTIFIER_FETURE = AUTHENTICATION_FEATURE_COUNT + 1;
+	int LOCAL_AUTHENTICATION_SYSTEM__USER_KEY = AUTHENTICATION_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Authentication Key</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION_KEY = AUTHENTICATION_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Identifier Feature</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOCAL_AUTHENTICATION_SYSTEM__IDENTIFIER_FEATURE = AUTHENTICATION_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Password Feature</b></em>' reference.
@@ -206,16 +205,7 @@ public interface SecurityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOCAL_AUTHENTICATION_SYSTEM__PASSWORD_FEATURE = AUTHENTICATION_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Authentication Key</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION_KEY = AUTHENTICATION_FEATURE_COUNT + 3;
+	int LOCAL_AUTHENTICATION_SYSTEM__PASSWORD_FEATURE = AUTHENTICATION_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Reset Password Request Model</b></em>' reference.
@@ -224,7 +214,7 @@ public interface SecurityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOCAL_AUTHENTICATION_SYSTEM__RESET_PASSWORD_REQUEST_MODEL = AUTHENTICATION_FEATURE_COUNT + 4;
+	int LOCAL_AUTHENTICATION_SYSTEM__RESET_PASSWORD_REQUEST_MODEL = AUTHENTICATION_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Registration Element</b></em>' containment reference.
@@ -233,7 +223,7 @@ public interface SecurityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOCAL_AUTHENTICATION_SYSTEM__REGISTRATION_ELEMENT = AUTHENTICATION_FEATURE_COUNT + 5;
+	int LOCAL_AUTHENTICATION_SYSTEM__REGISTRATION_ELEMENT = AUTHENTICATION_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Has Registration Element</b></em>' attribute.
@@ -242,7 +232,7 @@ public interface SecurityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOCAL_AUTHENTICATION_SYSTEM__HAS_REGISTRATION_ELEMENT = AUTHENTICATION_FEATURE_COUNT + 6;
+	int LOCAL_AUTHENTICATION_SYSTEM__HAS_REGISTRATION_ELEMENT = AUTHENTICATION_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Login Element</b></em>' containment reference.
@@ -251,7 +241,7 @@ public interface SecurityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOCAL_AUTHENTICATION_SYSTEM__LOGIN_ELEMENT = AUTHENTICATION_FEATURE_COUNT + 7;
+	int LOCAL_AUTHENTICATION_SYSTEM__LOGIN_ELEMENT = AUTHENTICATION_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Logout Element</b></em>' containment reference.
@@ -260,7 +250,7 @@ public interface SecurityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOCAL_AUTHENTICATION_SYSTEM__LOGOUT_ELEMENT = AUTHENTICATION_FEATURE_COUNT + 8;
+	int LOCAL_AUTHENTICATION_SYSTEM__LOGOUT_ELEMENT = AUTHENTICATION_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Forgotten Password Element</b></em>' containment reference.
@@ -269,7 +259,7 @@ public interface SecurityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOCAL_AUTHENTICATION_SYSTEM__FORGOTTEN_PASSWORD_ELEMENT = AUTHENTICATION_FEATURE_COUNT + 9;
+	int LOCAL_AUTHENTICATION_SYSTEM__FORGOTTEN_PASSWORD_ELEMENT = AUTHENTICATION_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Change Password Element</b></em>' containment reference.
@@ -278,7 +268,7 @@ public interface SecurityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOCAL_AUTHENTICATION_SYSTEM__CHANGE_PASSWORD_ELEMENT = AUTHENTICATION_FEATURE_COUNT + 10;
+	int LOCAL_AUTHENTICATION_SYSTEM__CHANGE_PASSWORD_ELEMENT = AUTHENTICATION_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Captcha</b></em>' attribute.
@@ -287,7 +277,7 @@ public interface SecurityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOCAL_AUTHENTICATION_SYSTEM__CAPTCHA = AUTHENTICATION_FEATURE_COUNT + 11;
+	int LOCAL_AUTHENTICATION_SYSTEM__CAPTCHA = AUTHENTICATION_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Allow Remember Me</b></em>' attribute.
@@ -296,7 +286,7 @@ public interface SecurityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOCAL_AUTHENTICATION_SYSTEM__ALLOW_REMEMBER_ME = AUTHENTICATION_FEATURE_COUNT + 12;
+	int LOCAL_AUTHENTICATION_SYSTEM__ALLOW_REMEMBER_ME = AUTHENTICATION_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Allow Self Registration</b></em>' attribute.
@@ -305,7 +295,7 @@ public interface SecurityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOCAL_AUTHENTICATION_SYSTEM__ALLOW_SELF_REGISTRATION = AUTHENTICATION_FEATURE_COUNT + 13;
+	int LOCAL_AUTHENTICATION_SYSTEM__ALLOW_SELF_REGISTRATION = AUTHENTICATION_FEATURE_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>Use Email Activation</b></em>' attribute.
@@ -314,7 +304,7 @@ public interface SecurityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOCAL_AUTHENTICATION_SYSTEM__USE_EMAIL_ACTIVATION = AUTHENTICATION_FEATURE_COUNT + 14;
+	int LOCAL_AUTHENTICATION_SYSTEM__USE_EMAIL_ACTIVATION = AUTHENTICATION_FEATURE_COUNT + 15;
 
 	/**
 	 * The feature id for the '<em><b>Send Welcome Email</b></em>' attribute.
@@ -323,7 +313,7 @@ public interface SecurityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOCAL_AUTHENTICATION_SYSTEM__SEND_WELCOME_EMAIL = AUTHENTICATION_FEATURE_COUNT + 15;
+	int LOCAL_AUTHENTICATION_SYSTEM__SEND_WELCOME_EMAIL = AUTHENTICATION_FEATURE_COUNT + 16;
 
 	/**
 	 * The feature id for the '<em><b>Section Class</b></em>' attribute.
@@ -332,7 +322,7 @@ public interface SecurityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOCAL_AUTHENTICATION_SYSTEM__SECTION_CLASS = AUTHENTICATION_FEATURE_COUNT + 16;
+	int LOCAL_AUTHENTICATION_SYSTEM__SECTION_CLASS = AUTHENTICATION_FEATURE_COUNT + 17;
 
 	/**
 	 * The feature id for the '<em><b>Caption Class</b></em>' attribute.
@@ -341,7 +331,7 @@ public interface SecurityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOCAL_AUTHENTICATION_SYSTEM__CAPTION_CLASS = AUTHENTICATION_FEATURE_COUNT + 17;
+	int LOCAL_AUTHENTICATION_SYSTEM__CAPTION_CLASS = AUTHENTICATION_FEATURE_COUNT + 18;
 
 	/**
 	 * The feature id for the '<em><b>Content Class</b></em>' attribute.
@@ -350,7 +340,7 @@ public interface SecurityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOCAL_AUTHENTICATION_SYSTEM__CONTENT_CLASS = AUTHENTICATION_FEATURE_COUNT + 18;
+	int LOCAL_AUTHENTICATION_SYSTEM__CONTENT_CLASS = AUTHENTICATION_FEATURE_COUNT + 19;
 
 	/**
 	 * The number of structural features of the '<em>Local Authentication System</em>' class.
@@ -359,7 +349,7 @@ public interface SecurityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOCAL_AUTHENTICATION_SYSTEM_FEATURE_COUNT = AUTHENTICATION_FEATURE_COUNT + 19;
+	int LOCAL_AUTHENTICATION_SYSTEM_FEATURE_COUNT = AUTHENTICATION_FEATURE_COUNT + 20;
 
 	/**
 	 * The number of operations of the '<em>Local Authentication System</em>' class.
@@ -1485,15 +1475,6 @@ public interface SecurityPackage extends EPackage {
 	int CAS_AUTHENTICATION__USER_MODEL = AUTHENTICATION__USER_MODEL;
 
 	/**
-	 * The feature id for the '<em><b>User Key</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CAS_AUTHENTICATION__USER_KEY = AUTHENTICATION__USER_KEY;
-
-	/**
 	 * The feature id for the '<em><b>Login Label</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1528,16 +1509,6 @@ public interface SecurityPackage extends EPackage {
 	 * @ordered
 	 */
 	int CAS_AUTHENTICATION_OPERATION_COUNT = AUTHENTICATION_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link work.andycarpenter.metamodel.security.AuthenticationKeyTypes <em>Authentication Key Types</em>}' enum.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.security.AuthenticationKeyTypes
-	 * @see work.andycarpenter.metamodel.security.impl.SecurityPackageImpl#getAuthenticationKeyTypes()
-	 * @generated
-	 */
-	int AUTHENTICATION_KEY_TYPES = 10;
 
 
 	/**
@@ -1594,17 +1565,6 @@ public interface SecurityPackage extends EPackage {
 	EReference getAuthentication_UserModel();
 
 	/**
-	 * Returns the meta object for the reference '{@link work.andycarpenter.metamodel.security.Authentication#getUserKey <em>User Key</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>User Key</em>'.
-	 * @see work.andycarpenter.metamodel.security.Authentication#getUserKey()
-	 * @see #getAuthentication()
-	 * @generated
-	 */
-	EReference getAuthentication_UserKey();
-
-	/**
 	 * Returns the meta object for class '{@link work.andycarpenter.metamodel.security.LocalAuthenticationSystem <em>Local Authentication System</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1626,15 +1586,37 @@ public interface SecurityPackage extends EPackage {
 	EReference getLocalAuthenticationSystem_AuthenticationModel();
 
 	/**
-	 * Returns the meta object for the reference '{@link work.andycarpenter.metamodel.security.LocalAuthenticationSystem#getIdentifierFeture <em>Identifier Feture</em>}'.
+	 * Returns the meta object for the reference '{@link work.andycarpenter.metamodel.security.LocalAuthenticationSystem#getUserKey <em>User Key</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Identifier Feture</em>'.
-	 * @see work.andycarpenter.metamodel.security.LocalAuthenticationSystem#getIdentifierFeture()
+	 * @return the meta object for the reference '<em>User Key</em>'.
+	 * @see work.andycarpenter.metamodel.security.LocalAuthenticationSystem#getUserKey()
 	 * @see #getLocalAuthenticationSystem()
 	 * @generated
 	 */
-	EReference getLocalAuthenticationSystem_IdentifierFeture();
+	EReference getLocalAuthenticationSystem_UserKey();
+
+	/**
+	 * Returns the meta object for the reference '{@link work.andycarpenter.metamodel.security.LocalAuthenticationSystem#getAuthenticationKey <em>Authentication Key</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Authentication Key</em>'.
+	 * @see work.andycarpenter.metamodel.security.LocalAuthenticationSystem#getAuthenticationKey()
+	 * @see #getLocalAuthenticationSystem()
+	 * @generated
+	 */
+	EReference getLocalAuthenticationSystem_AuthenticationKey();
+
+	/**
+	 * Returns the meta object for the reference '{@link work.andycarpenter.metamodel.security.LocalAuthenticationSystem#getIdentifierFeature <em>Identifier Feature</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Identifier Feature</em>'.
+	 * @see work.andycarpenter.metamodel.security.LocalAuthenticationSystem#getIdentifierFeature()
+	 * @see #getLocalAuthenticationSystem()
+	 * @generated
+	 */
+	EReference getLocalAuthenticationSystem_IdentifierFeature();
 
 	/**
 	 * Returns the meta object for the reference '{@link work.andycarpenter.metamodel.security.LocalAuthenticationSystem#getPasswordFeature <em>Password Feature</em>}'.
@@ -1646,17 +1628,6 @@ public interface SecurityPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getLocalAuthenticationSystem_PasswordFeature();
-
-	/**
-	 * Returns the meta object for the attribute '{@link work.andycarpenter.metamodel.security.LocalAuthenticationSystem#getAuthenticationKey <em>Authentication Key</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Authentication Key</em>'.
-	 * @see work.andycarpenter.metamodel.security.LocalAuthenticationSystem#getAuthenticationKey()
-	 * @see #getLocalAuthenticationSystem()
-	 * @generated
-	 */
-	EAttribute getLocalAuthenticationSystem_AuthenticationKey();
 
 	/**
 	 * Returns the meta object for the reference '{@link work.andycarpenter.metamodel.security.LocalAuthenticationSystem#getResetPasswordRequestModel <em>Reset Password Request Model</em>}'.
@@ -2422,16 +2393,6 @@ public interface SecurityPackage extends EPackage {
 	EAttribute getCasAuthentication_LogoutLabel();
 
 	/**
-	 * Returns the meta object for enum '{@link work.andycarpenter.metamodel.security.AuthenticationKeyTypes <em>Authentication Key Types</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Authentication Key Types</em>'.
-	 * @see work.andycarpenter.metamodel.security.AuthenticationKeyTypes
-	 * @generated
-	 */
-	EEnum getAuthenticationKeyTypes();
-
-	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2499,14 +2460,6 @@ public interface SecurityPackage extends EPackage {
 		EReference AUTHENTICATION__USER_MODEL = eINSTANCE.getAuthentication_UserModel();
 
 		/**
-		 * The meta object literal for the '<em><b>User Key</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference AUTHENTICATION__USER_KEY = eINSTANCE.getAuthentication_UserKey();
-
-		/**
 		 * The meta object literal for the '{@link work.andycarpenter.metamodel.security.impl.LocalAuthenticationSystemImpl <em>Local Authentication System</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2525,12 +2478,28 @@ public interface SecurityPackage extends EPackage {
 		EReference LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION_MODEL = eINSTANCE.getLocalAuthenticationSystem_AuthenticationModel();
 
 		/**
-		 * The meta object literal for the '<em><b>Identifier Feture</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>User Key</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference LOCAL_AUTHENTICATION_SYSTEM__IDENTIFIER_FETURE = eINSTANCE.getLocalAuthenticationSystem_IdentifierFeture();
+		EReference LOCAL_AUTHENTICATION_SYSTEM__USER_KEY = eINSTANCE.getLocalAuthenticationSystem_UserKey();
+
+		/**
+		 * The meta object literal for the '<em><b>Authentication Key</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION_KEY = eINSTANCE.getLocalAuthenticationSystem_AuthenticationKey();
+
+		/**
+		 * The meta object literal for the '<em><b>Identifier Feature</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference LOCAL_AUTHENTICATION_SYSTEM__IDENTIFIER_FEATURE = eINSTANCE.getLocalAuthenticationSystem_IdentifierFeature();
 
 		/**
 		 * The meta object literal for the '<em><b>Password Feature</b></em>' reference feature.
@@ -2539,14 +2508,6 @@ public interface SecurityPackage extends EPackage {
 		 * @generated
 		 */
 		EReference LOCAL_AUTHENTICATION_SYSTEM__PASSWORD_FEATURE = eINSTANCE.getLocalAuthenticationSystem_PasswordFeature();
-
-		/**
-		 * The meta object literal for the '<em><b>Authentication Key</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION_KEY = eINSTANCE.getLocalAuthenticationSystem_AuthenticationKey();
 
 		/**
 		 * The meta object literal for the '<em><b>Reset Password Request Model</b></em>' reference feature.
@@ -3121,16 +3082,6 @@ public interface SecurityPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute CAS_AUTHENTICATION__LOGOUT_LABEL = eINSTANCE.getCasAuthentication_LogoutLabel();
-
-		/**
-		 * The meta object literal for the '{@link work.andycarpenter.metamodel.security.AuthenticationKeyTypes <em>Authentication Key Types</em>}' enum.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see work.andycarpenter.metamodel.security.AuthenticationKeyTypes
-		 * @see work.andycarpenter.metamodel.security.impl.SecurityPackageImpl#getAuthenticationKeyTypes()
-		 * @generated
-		 */
-		EEnum AUTHENTICATION_KEY_TYPES = eINSTANCE.getAuthenticationKeyTypes();
 
 	}
 

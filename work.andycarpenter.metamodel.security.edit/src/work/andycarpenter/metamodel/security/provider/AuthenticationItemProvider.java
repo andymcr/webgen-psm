@@ -58,7 +58,6 @@ public class AuthenticationItemProvider
 			super.getPropertyDescriptors(object);
 
 			addUserModelPropertyDescriptor(object);
-			addUserKeyPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -77,28 +76,6 @@ public class AuthenticationItemProvider
 				 getString("_UI_Authentication_userModel_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Authentication_userModel_feature", "_UI_Authentication_type"),
 				 SecurityPackage.Literals.AUTHENTICATION__USER_MODEL,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the User Key feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addUserKeyPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Authentication_userKey_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Authentication_userKey_feature", "_UI_Authentication_type"),
-				 SecurityPackage.Literals.AUTHENTICATION__USER_KEY,
 				 true,
 				 false,
 				 true,

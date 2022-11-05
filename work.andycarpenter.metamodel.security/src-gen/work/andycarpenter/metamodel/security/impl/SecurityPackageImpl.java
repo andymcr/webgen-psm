@@ -4,7 +4,6 @@ package work.andycarpenter.metamodel.security.impl;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EcorePackage;
@@ -19,7 +18,6 @@ import work.andycarpenter.metamodel.orm.OrmPackage;
 
 import work.andycarpenter.metamodel.security.Authentication;
 import work.andycarpenter.metamodel.security.AuthenticationElement;
-import work.andycarpenter.metamodel.security.AuthenticationKeyTypes;
 import work.andycarpenter.metamodel.security.CasAuthentication;
 import work.andycarpenter.metamodel.security.ChangePasswordElement;
 import work.andycarpenter.metamodel.security.ForgottenPasswordElement;
@@ -107,13 +105,6 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * @generated
 	 */
 	private EClass casAuthenticationEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EEnum authenticationKeyTypesEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -232,15 +223,6 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getAuthentication_UserKey() {
-		return (EReference)authenticationEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getLocalAuthenticationSystem() {
 		return localAuthenticationSystemEClass;
 	}
@@ -259,7 +241,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getLocalAuthenticationSystem_IdentifierFeture() {
+	public EReference getLocalAuthenticationSystem_UserKey() {
 		return (EReference)localAuthenticationSystemEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -268,7 +250,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getLocalAuthenticationSystem_PasswordFeature() {
+	public EReference getLocalAuthenticationSystem_AuthenticationKey() {
 		return (EReference)localAuthenticationSystemEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -277,8 +259,8 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getLocalAuthenticationSystem_AuthenticationKey() {
-		return (EAttribute)localAuthenticationSystemEClass.getEStructuralFeatures().get(3);
+	public EReference getLocalAuthenticationSystem_IdentifierFeature() {
+		return (EReference)localAuthenticationSystemEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -286,7 +268,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getLocalAuthenticationSystem_ResetPasswordRequestModel() {
+	public EReference getLocalAuthenticationSystem_PasswordFeature() {
 		return (EReference)localAuthenticationSystemEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -295,7 +277,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getLocalAuthenticationSystem_RegistrationElement() {
+	public EReference getLocalAuthenticationSystem_ResetPasswordRequestModel() {
 		return (EReference)localAuthenticationSystemEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -304,8 +286,17 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getLocalAuthenticationSystem_RegistrationElement() {
+		return (EReference)localAuthenticationSystemEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EAttribute getLocalAuthenticationSystem_HasRegistrationElement() {
-		return (EAttribute)localAuthenticationSystemEClass.getEStructuralFeatures().get(6);
+		return (EAttribute)localAuthenticationSystemEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -314,15 +305,6 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * @generated
 	 */
 	public EReference getLocalAuthenticationSystem_LoginElement() {
-		return (EReference)localAuthenticationSystemEClass.getEStructuralFeatures().get(7);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getLocalAuthenticationSystem_LogoutElement() {
 		return (EReference)localAuthenticationSystemEClass.getEStructuralFeatures().get(8);
 	}
 
@@ -331,7 +313,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getLocalAuthenticationSystem_ForgottenPasswordElement() {
+	public EReference getLocalAuthenticationSystem_LogoutElement() {
 		return (EReference)localAuthenticationSystemEClass.getEStructuralFeatures().get(9);
 	}
 
@@ -340,7 +322,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getLocalAuthenticationSystem_ChangePasswordElement() {
+	public EReference getLocalAuthenticationSystem_ForgottenPasswordElement() {
 		return (EReference)localAuthenticationSystemEClass.getEStructuralFeatures().get(10);
 	}
 
@@ -349,8 +331,8 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getLocalAuthenticationSystem_Captcha() {
-		return (EAttribute)localAuthenticationSystemEClass.getEStructuralFeatures().get(11);
+	public EReference getLocalAuthenticationSystem_ChangePasswordElement() {
+		return (EReference)localAuthenticationSystemEClass.getEStructuralFeatures().get(11);
 	}
 
 	/**
@@ -358,7 +340,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getLocalAuthenticationSystem_AllowRememberMe() {
+	public EAttribute getLocalAuthenticationSystem_Captcha() {
 		return (EAttribute)localAuthenticationSystemEClass.getEStructuralFeatures().get(12);
 	}
 
@@ -367,7 +349,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getLocalAuthenticationSystem_AllowSelfRegistration() {
+	public EAttribute getLocalAuthenticationSystem_AllowRememberMe() {
 		return (EAttribute)localAuthenticationSystemEClass.getEStructuralFeatures().get(13);
 	}
 
@@ -376,7 +358,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getLocalAuthenticationSystem_UseEmailActivation() {
+	public EAttribute getLocalAuthenticationSystem_AllowSelfRegistration() {
 		return (EAttribute)localAuthenticationSystemEClass.getEStructuralFeatures().get(14);
 	}
 
@@ -385,7 +367,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getLocalAuthenticationSystem_SendWelcomeEmail() {
+	public EAttribute getLocalAuthenticationSystem_UseEmailActivation() {
 		return (EAttribute)localAuthenticationSystemEClass.getEStructuralFeatures().get(15);
 	}
 
@@ -394,7 +376,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getLocalAuthenticationSystem_SectionClass() {
+	public EAttribute getLocalAuthenticationSystem_SendWelcomeEmail() {
 		return (EAttribute)localAuthenticationSystemEClass.getEStructuralFeatures().get(16);
 	}
 
@@ -403,7 +385,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getLocalAuthenticationSystem_CaptionClass() {
+	public EAttribute getLocalAuthenticationSystem_SectionClass() {
 		return (EAttribute)localAuthenticationSystemEClass.getEStructuralFeatures().get(17);
 	}
 
@@ -412,8 +394,17 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getLocalAuthenticationSystem_ContentClass() {
+	public EAttribute getLocalAuthenticationSystem_CaptionClass() {
 		return (EAttribute)localAuthenticationSystemEClass.getEStructuralFeatures().get(18);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getLocalAuthenticationSystem_ContentClass() {
+		return (EAttribute)localAuthenticationSystemEClass.getEStructuralFeatures().get(19);
 	}
 
 	/**
@@ -916,15 +907,6 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EEnum getAuthenticationKeyTypes() {
-		return authenticationKeyTypesEEnum;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public SecurityFactory getSecurityFactory() {
 		return (SecurityFactory)getEFactoryInstance();
 	}
@@ -954,13 +936,13 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 
 		authenticationEClass = createEClass(AUTHENTICATION);
 		createEReference(authenticationEClass, AUTHENTICATION__USER_MODEL);
-		createEReference(authenticationEClass, AUTHENTICATION__USER_KEY);
 
 		localAuthenticationSystemEClass = createEClass(LOCAL_AUTHENTICATION_SYSTEM);
 		createEReference(localAuthenticationSystemEClass, LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION_MODEL);
-		createEReference(localAuthenticationSystemEClass, LOCAL_AUTHENTICATION_SYSTEM__IDENTIFIER_FETURE);
+		createEReference(localAuthenticationSystemEClass, LOCAL_AUTHENTICATION_SYSTEM__USER_KEY);
+		createEReference(localAuthenticationSystemEClass, LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION_KEY);
+		createEReference(localAuthenticationSystemEClass, LOCAL_AUTHENTICATION_SYSTEM__IDENTIFIER_FEATURE);
 		createEReference(localAuthenticationSystemEClass, LOCAL_AUTHENTICATION_SYSTEM__PASSWORD_FEATURE);
-		createEAttribute(localAuthenticationSystemEClass, LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION_KEY);
 		createEReference(localAuthenticationSystemEClass, LOCAL_AUTHENTICATION_SYSTEM__RESET_PASSWORD_REQUEST_MODEL);
 		createEReference(localAuthenticationSystemEClass, LOCAL_AUTHENTICATION_SYSTEM__REGISTRATION_ELEMENT);
 		createEAttribute(localAuthenticationSystemEClass, LOCAL_AUTHENTICATION_SYSTEM__HAS_REGISTRATION_ELEMENT);
@@ -1038,9 +1020,6 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 		casAuthenticationEClass = createEClass(CAS_AUTHENTICATION);
 		createEAttribute(casAuthenticationEClass, CAS_AUTHENTICATION__LOGIN_LABEL);
 		createEAttribute(casAuthenticationEClass, CAS_AUTHENTICATION__LOGOUT_LABEL);
-
-		// Create enums
-		authenticationKeyTypesEEnum = createEEnum(AUTHENTICATION_KEY_TYPES);
 	}
 
 	/**
@@ -1092,13 +1071,13 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 
 		initEClass(authenticationEClass, Authentication.class, "Authentication", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getAuthentication_UserModel(), theOrmPackage.getEntity(), null, "userModel", null, 1, 1, Authentication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAuthentication_UserKey(), theOrmPackage.getAttribute(), null, "userKey", null, 1, 1, Authentication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(localAuthenticationSystemEClass, LocalAuthenticationSystem.class, "LocalAuthenticationSystem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getLocalAuthenticationSystem_AuthenticationModel(), theOrmPackage.getEntity(), null, "authenticationModel", null, 1, 1, LocalAuthenticationSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getLocalAuthenticationSystem_IdentifierFeture(), theOrmPackage.getAttribute(), null, "identifierFeture", null, 1, 1, LocalAuthenticationSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getLocalAuthenticationSystem_UserKey(), theOrmPackage.getAttribute(), null, "userKey", null, 1, 1, LocalAuthenticationSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getLocalAuthenticationSystem_AuthenticationKey(), theOrmPackage.getAttribute(), null, "authenticationKey", null, 1, 1, LocalAuthenticationSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getLocalAuthenticationSystem_IdentifierFeature(), theOrmPackage.getAttribute(), null, "identifierFeature", null, 1, 1, LocalAuthenticationSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getLocalAuthenticationSystem_PasswordFeature(), theOrmPackage.getAttribute(), null, "passwordFeature", null, 1, 1, LocalAuthenticationSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getLocalAuthenticationSystem_AuthenticationKey(), this.getAuthenticationKeyTypes(), "authenticationKey", null, 1, 1, LocalAuthenticationSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getLocalAuthenticationSystem_ResetPasswordRequestModel(), theOrmPackage.getEntity(), null, "resetPasswordRequestModel", null, 1, 1, LocalAuthenticationSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getLocalAuthenticationSystem_RegistrationElement(), this.getRegistrationElement(), this.getRegistrationElement_Authentication(), "registrationElement", null, 0, 1, LocalAuthenticationSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getLocalAuthenticationSystem_HasRegistrationElement(), theEcorePackage.getEBoolean(), "hasRegistrationElement", null, 0, 1, LocalAuthenticationSystem.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, IS_DERIVED, IS_ORDERED);
@@ -1176,12 +1155,6 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 		initEClass(casAuthenticationEClass, CasAuthentication.class, "CasAuthentication", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCasAuthentication_LoginLabel(), theEcorePackage.getEString(), "loginLabel", null, 1, 1, CasAuthentication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCasAuthentication_LogoutLabel(), theEcorePackage.getEString(), "logoutLabel", null, 0, 1, CasAuthentication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		// Initialize enums and add enum literals
-		initEEnum(authenticationKeyTypesEEnum, AuthenticationKeyTypes.class, "AuthenticationKeyTypes");
-		addEEnumLiteral(authenticationKeyTypesEEnum, AuthenticationKeyTypes.ANY);
-		addEEnumLiteral(authenticationKeyTypesEEnum, AuthenticationKeyTypes.EMAIL);
-		addEEnumLiteral(authenticationKeyTypesEEnum, AuthenticationKeyTypes.USERNAME);
 
 		// Create resource
 		createResource(eNS_URI);

@@ -14,7 +14,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import work.andycarpenter.metamodel.orm.Attribute;
 import work.andycarpenter.metamodel.orm.Entity;
 
-import work.andycarpenter.metamodel.security.AuthenticationKeyTypes;
 import work.andycarpenter.metamodel.security.ChangePasswordElement;
 import work.andycarpenter.metamodel.security.ForgottenPasswordElement;
 import work.andycarpenter.metamodel.security.LocalAuthenticationSystem;
@@ -32,9 +31,10 @@ import work.andycarpenter.metamodel.security.SecurityPackage;
  * </p>
  * <ul>
  *   <li>{@link work.andycarpenter.metamodel.security.impl.LocalAuthenticationSystemImpl#getAuthenticationModel <em>Authentication Model</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.security.impl.LocalAuthenticationSystemImpl#getIdentifierFeture <em>Identifier Feture</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.security.impl.LocalAuthenticationSystemImpl#getPasswordFeature <em>Password Feature</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.security.impl.LocalAuthenticationSystemImpl#getUserKey <em>User Key</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.security.impl.LocalAuthenticationSystemImpl#getAuthenticationKey <em>Authentication Key</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.security.impl.LocalAuthenticationSystemImpl#getIdentifierFeature <em>Identifier Feature</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.security.impl.LocalAuthenticationSystemImpl#getPasswordFeature <em>Password Feature</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.security.impl.LocalAuthenticationSystemImpl#getResetPasswordRequestModel <em>Reset Password Request Model</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.security.impl.LocalAuthenticationSystemImpl#getRegistrationElement <em>Registration Element</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.security.impl.LocalAuthenticationSystemImpl#isHasRegistrationElement <em>Has Registration Element</em>}</li>
@@ -66,14 +66,34 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	protected Entity authenticationModel;
 
 	/**
-	 * The cached value of the '{@link #getIdentifierFeture() <em>Identifier Feture</em>}' reference.
+	 * The cached value of the '{@link #getUserKey() <em>User Key</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getIdentifierFeture()
+	 * @see #getUserKey()
 	 * @generated
 	 * @ordered
 	 */
-	protected Attribute identifierFeture;
+	protected Attribute userKey;
+
+	/**
+	 * The cached value of the '{@link #getAuthenticationKey() <em>Authentication Key</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAuthenticationKey()
+	 * @generated
+	 * @ordered
+	 */
+	protected Attribute authenticationKey;
+
+	/**
+	 * The cached value of the '{@link #getIdentifierFeature() <em>Identifier Feature</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getIdentifierFeature()
+	 * @generated
+	 * @ordered
+	 */
+	protected Attribute identifierFeature;
 
 	/**
 	 * The cached value of the '{@link #getPasswordFeature() <em>Password Feature</em>}' reference.
@@ -84,26 +104,6 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * @ordered
 	 */
 	protected Attribute passwordFeature;
-
-	/**
-	 * The default value of the '{@link #getAuthenticationKey() <em>Authentication Key</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAuthenticationKey()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final AuthenticationKeyTypes AUTHENTICATION_KEY_EDEFAULT = AuthenticationKeyTypes.ANY;
-
-	/**
-	 * The cached value of the '{@link #getAuthenticationKey() <em>Authentication Key</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAuthenticationKey()
-	 * @generated
-	 * @ordered
-	 */
-	protected AuthenticationKeyTypes authenticationKey = AUTHENTICATION_KEY_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getResetPasswordRequestModel() <em>Reset Password Request Model</em>}' reference.
@@ -397,16 +397,16 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Attribute getIdentifierFeture() {
-		if (identifierFeture != null && identifierFeture.eIsProxy()) {
-			InternalEObject oldIdentifierFeture = (InternalEObject)identifierFeture;
-			identifierFeture = (Attribute)eResolveProxy(oldIdentifierFeture);
-			if (identifierFeture != oldIdentifierFeture) {
+	public Attribute getUserKey() {
+		if (userKey != null && userKey.eIsProxy()) {
+			InternalEObject oldUserKey = (InternalEObject)userKey;
+			userKey = (Attribute)eResolveProxy(oldUserKey);
+			if (userKey != oldUserKey) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__IDENTIFIER_FETURE, oldIdentifierFeture, identifierFeture));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__USER_KEY, oldUserKey, userKey));
 			}
 		}
-		return identifierFeture;
+		return userKey;
 	}
 
 	/**
@@ -414,8 +414,8 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Attribute basicGetIdentifierFeture() {
-		return identifierFeture;
+	public Attribute basicGetUserKey() {
+		return userKey;
 	}
 
 	/**
@@ -423,11 +423,87 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setIdentifierFeture(Attribute newIdentifierFeture) {
-		Attribute oldIdentifierFeture = identifierFeture;
-		identifierFeture = newIdentifierFeture;
+	public void setUserKey(Attribute newUserKey) {
+		Attribute oldUserKey = userKey;
+		userKey = newUserKey;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__IDENTIFIER_FETURE, oldIdentifierFeture, identifierFeture));
+			eNotify(new ENotificationImpl(this, Notification.SET, SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__USER_KEY, oldUserKey, userKey));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Attribute getAuthenticationKey() {
+		if (authenticationKey != null && authenticationKey.eIsProxy()) {
+			InternalEObject oldAuthenticationKey = (InternalEObject)authenticationKey;
+			authenticationKey = (Attribute)eResolveProxy(oldAuthenticationKey);
+			if (authenticationKey != oldAuthenticationKey) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION_KEY, oldAuthenticationKey, authenticationKey));
+			}
+		}
+		return authenticationKey;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Attribute basicGetAuthenticationKey() {
+		return authenticationKey;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setAuthenticationKey(Attribute newAuthenticationKey) {
+		Attribute oldAuthenticationKey = authenticationKey;
+		authenticationKey = newAuthenticationKey;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION_KEY, oldAuthenticationKey, authenticationKey));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Attribute getIdentifierFeature() {
+		if (identifierFeature != null && identifierFeature.eIsProxy()) {
+			InternalEObject oldIdentifierFeature = (InternalEObject)identifierFeature;
+			identifierFeature = (Attribute)eResolveProxy(oldIdentifierFeature);
+			if (identifierFeature != oldIdentifierFeature) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__IDENTIFIER_FEATURE, oldIdentifierFeature, identifierFeature));
+			}
+		}
+		return identifierFeature;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Attribute basicGetIdentifierFeature() {
+		return identifierFeature;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setIdentifierFeature(Attribute newIdentifierFeature) {
+		Attribute oldIdentifierFeature = identifierFeature;
+		identifierFeature = newIdentifierFeature;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__IDENTIFIER_FEATURE, oldIdentifierFeature, identifierFeature));
 	}
 
 	/**
@@ -466,27 +542,6 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 		passwordFeature = newPasswordFeature;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__PASSWORD_FEATURE, oldPasswordFeature, passwordFeature));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public AuthenticationKeyTypes getAuthenticationKey() {
-		return authenticationKey;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setAuthenticationKey(AuthenticationKeyTypes newAuthenticationKey) {
-		AuthenticationKeyTypes oldAuthenticationKey = authenticationKey;
-		authenticationKey = newAuthenticationKey == null ? AUTHENTICATION_KEY_EDEFAULT : newAuthenticationKey;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION_KEY, oldAuthenticationKey, authenticationKey));
 	}
 
 	/**
@@ -984,14 +1039,18 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION_MODEL:
 				if (resolve) return getAuthenticationModel();
 				return basicGetAuthenticationModel();
-			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__IDENTIFIER_FETURE:
-				if (resolve) return getIdentifierFeture();
-				return basicGetIdentifierFeture();
+			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__USER_KEY:
+				if (resolve) return getUserKey();
+				return basicGetUserKey();
+			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION_KEY:
+				if (resolve) return getAuthenticationKey();
+				return basicGetAuthenticationKey();
+			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__IDENTIFIER_FEATURE:
+				if (resolve) return getIdentifierFeature();
+				return basicGetIdentifierFeature();
 			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__PASSWORD_FEATURE:
 				if (resolve) return getPasswordFeature();
 				return basicGetPasswordFeature();
-			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION_KEY:
-				return getAuthenticationKey();
 			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__RESET_PASSWORD_REQUEST_MODEL:
 				if (resolve) return getResetPasswordRequestModel();
 				return basicGetResetPasswordRequestModel();
@@ -1038,14 +1097,17 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION_MODEL:
 				setAuthenticationModel((Entity)newValue);
 				return;
-			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__IDENTIFIER_FETURE:
-				setIdentifierFeture((Attribute)newValue);
+			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__USER_KEY:
+				setUserKey((Attribute)newValue);
+				return;
+			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION_KEY:
+				setAuthenticationKey((Attribute)newValue);
+				return;
+			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__IDENTIFIER_FEATURE:
+				setIdentifierFeature((Attribute)newValue);
 				return;
 			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__PASSWORD_FEATURE:
 				setPasswordFeature((Attribute)newValue);
-				return;
-			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION_KEY:
-				setAuthenticationKey((AuthenticationKeyTypes)newValue);
 				return;
 			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__RESET_PASSWORD_REQUEST_MODEL:
 				setResetPasswordRequestModel((Entity)newValue);
@@ -1104,14 +1166,17 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION_MODEL:
 				setAuthenticationModel((Entity)null);
 				return;
-			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__IDENTIFIER_FETURE:
-				setIdentifierFeture((Attribute)null);
+			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__USER_KEY:
+				setUserKey((Attribute)null);
+				return;
+			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION_KEY:
+				setAuthenticationKey((Attribute)null);
+				return;
+			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__IDENTIFIER_FEATURE:
+				setIdentifierFeature((Attribute)null);
 				return;
 			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__PASSWORD_FEATURE:
 				setPasswordFeature((Attribute)null);
-				return;
-			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION_KEY:
-				setAuthenticationKey(AUTHENTICATION_KEY_EDEFAULT);
 				return;
 			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__RESET_PASSWORD_REQUEST_MODEL:
 				setResetPasswordRequestModel((Entity)null);
@@ -1169,12 +1234,14 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 		switch (featureID) {
 			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION_MODEL:
 				return authenticationModel != null;
-			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__IDENTIFIER_FETURE:
-				return identifierFeture != null;
+			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__USER_KEY:
+				return userKey != null;
+			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION_KEY:
+				return authenticationKey != null;
+			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__IDENTIFIER_FEATURE:
+				return identifierFeature != null;
 			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__PASSWORD_FEATURE:
 				return passwordFeature != null;
-			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION_KEY:
-				return authenticationKey != AUTHENTICATION_KEY_EDEFAULT;
 			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__RESET_PASSWORD_REQUEST_MODEL:
 				return resetPasswordRequestModel != null;
 			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM__REGISTRATION_ELEMENT:
@@ -1219,9 +1286,7 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (authenticationKey: ");
-		result.append(authenticationKey);
-		result.append(", captcha: ");
+		result.append(" (captcha: ");
 		result.append(captcha);
 		result.append(", allowRememberMe: ");
 		result.append(allowRememberMe);

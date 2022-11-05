@@ -10,7 +10,6 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import work.andycarpenter.metamodel.orm.Attribute;
 import work.andycarpenter.metamodel.orm.Entity;
 
 import work.andycarpenter.metamodel.security.Authentication;
@@ -25,7 +24,6 @@ import work.andycarpenter.metamodel.security.SecurityPackage;
  * </p>
  * <ul>
  *   <li>{@link work.andycarpenter.metamodel.security.impl.AuthenticationImpl#getUserModel <em>User Model</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.security.impl.AuthenticationImpl#getUserKey <em>User Key</em>}</li>
  * </ul>
  *
  * @generated
@@ -40,16 +38,6 @@ public abstract class AuthenticationImpl extends MinimalEObjectImpl.Container im
 	 * @ordered
 	 */
 	protected Entity userModel;
-
-	/**
-	 * The cached value of the '{@link #getUserKey() <em>User Key</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getUserKey()
-	 * @generated
-	 * @ordered
-	 */
-	protected Attribute userKey;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -113,53 +101,12 @@ public abstract class AuthenticationImpl extends MinimalEObjectImpl.Container im
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Attribute getUserKey() {
-		if (userKey != null && userKey.eIsProxy()) {
-			InternalEObject oldUserKey = (InternalEObject)userKey;
-			userKey = (Attribute)eResolveProxy(oldUserKey);
-			if (userKey != oldUserKey) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SecurityPackage.AUTHENTICATION__USER_KEY, oldUserKey, userKey));
-			}
-		}
-		return userKey;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Attribute basicGetUserKey() {
-		return userKey;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setUserKey(Attribute newUserKey) {
-		Attribute oldUserKey = userKey;
-		userKey = newUserKey;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SecurityPackage.AUTHENTICATION__USER_KEY, oldUserKey, userKey));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case SecurityPackage.AUTHENTICATION__USER_MODEL:
 				if (resolve) return getUserModel();
 				return basicGetUserModel();
-			case SecurityPackage.AUTHENTICATION__USER_KEY:
-				if (resolve) return getUserKey();
-				return basicGetUserKey();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -174,9 +121,6 @@ public abstract class AuthenticationImpl extends MinimalEObjectImpl.Container im
 		switch (featureID) {
 			case SecurityPackage.AUTHENTICATION__USER_MODEL:
 				setUserModel((Entity)newValue);
-				return;
-			case SecurityPackage.AUTHENTICATION__USER_KEY:
-				setUserKey((Attribute)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -193,9 +137,6 @@ public abstract class AuthenticationImpl extends MinimalEObjectImpl.Container im
 			case SecurityPackage.AUTHENTICATION__USER_MODEL:
 				setUserModel((Entity)null);
 				return;
-			case SecurityPackage.AUTHENTICATION__USER_KEY:
-				setUserKey((Attribute)null);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -210,8 +151,6 @@ public abstract class AuthenticationImpl extends MinimalEObjectImpl.Container im
 		switch (featureID) {
 			case SecurityPackage.AUTHENTICATION__USER_MODEL:
 				return userModel != null;
-			case SecurityPackage.AUTHENTICATION__USER_KEY:
-				return userKey != null;
 		}
 		return super.eIsSet(featureID);
 	}

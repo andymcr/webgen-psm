@@ -29,21 +29,15 @@ class SecurityModel {
 
 abstract class Authentication {
 	refers Entity[1] userModel
-	refers Attribute[1] userKey
-}
-
-enum AuthenticationKeyTypes {
-	Any = 0
-	Email = 1
-	Username = 2
 }
 
 class LocalAuthenticationSystem extends Authentication {
 	refers Entity[1] authenticationModel
-	refers Attribute[1] identifierFeture
+	//  userKey in authentication model matches authenticationKey in user model
+	refers Attribute[1] userKey
+	refers Attribute[1] authenticationKey
+	refers Attribute[1] identifierFeature
 	refers Attribute[1] passwordFeature
-
-	AuthenticationKeyTypes[1] authenticationKey
 
 	refers Entity[1] resetPasswordRequestModel
 

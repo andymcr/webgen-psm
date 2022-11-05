@@ -4,7 +4,6 @@ package work.andycarpenter.metamodel.security;
 
 import org.eclipse.emf.ecore.EObject;
 
-import work.andycarpenter.metamodel.orm.Attribute;
 import work.andycarpenter.metamodel.orm.Entity;
 
 /**
@@ -17,7 +16,6 @@ import work.andycarpenter.metamodel.orm.Entity;
  * </p>
  * <ul>
  *   <li>{@link work.andycarpenter.metamodel.security.Authentication#getUserModel <em>User Model</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.security.Authentication#getUserKey <em>User Key</em>}</li>
  * </ul>
  *
  * @see work.andycarpenter.metamodel.security.SecurityPackage#getAuthentication()
@@ -46,27 +44,5 @@ public interface Authentication extends EObject {
 	 * @generated
 	 */
 	void setUserModel(Entity value);
-
-	/**
-	 * Returns the value of the '<em><b>User Key</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>User Key</em>' reference.
-	 * @see #setUserKey(Attribute)
-	 * @see work.andycarpenter.metamodel.security.SecurityPackage#getAuthentication_UserKey()
-	 * @model required="true"
-	 * @generated
-	 */
-	Attribute getUserKey();
-
-	/**
-	 * Sets the value of the '{@link work.andycarpenter.metamodel.security.Authentication#getUserKey <em>User Key</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>User Key</em>' reference.
-	 * @see #getUserKey()
-	 * @generated
-	 */
-	void setUserKey(Attribute value);
 
 } // Authentication
