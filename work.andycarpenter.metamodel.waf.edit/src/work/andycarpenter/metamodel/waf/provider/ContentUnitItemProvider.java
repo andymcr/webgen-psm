@@ -49,6 +49,7 @@ public class ContentUnitItemProvider extends NamedDisplayElementItemProvider {
 
 			addControllerPropertyDescriptor(object);
 			addUriElementPropertyDescriptor(object);
+			addUriParentPropertyDescriptor(object);
 			addAuthorisationRolesPropertyDescriptor(object);
 			addIsAuthorisedPropertyDescriptor(object);
 			addPurposeSummaryPropertyDescriptor(object);
@@ -104,7 +105,29 @@ public class ContentUnitItemProvider extends NamedDisplayElementItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_NavigationPropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Uri Parent feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addUriParentPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ContentUnit_uriParent_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ContentUnit_uriParent_feature", "_UI_ContentUnit_type"),
+				 WafPackage.eINSTANCE.getContentUnit_UriParent(),
+				 true,
+				 false,
+				 true,
 				 null,
+				 getString("_UI_NavigationPropertyCategory"),
 				 null));
 	}
 
@@ -126,7 +149,7 @@ public class ContentUnitItemProvider extends NamedDisplayElementItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_SecurityPropertyCategory"),
 				 null));
 	}
 
@@ -148,7 +171,7 @@ public class ContentUnitItemProvider extends NamedDisplayElementItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
+				 getString("_UI_SecurityPropertyCategory"),
 				 null));
 	}
 

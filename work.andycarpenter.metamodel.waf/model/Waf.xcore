@@ -566,10 +566,17 @@ class MultiPageController extends Controller {
 
 abstract class ContentUnit extends NamedDisplayElement {
 	container Controller[1] controller opposite units
+
+    @GenModel(propertyCategory="Navigation")
 	String uriElement = ''
 
+    @GenModel(propertyCategory="Navigation")
+    refers ContentUnit uriParent
+
+    @GenModel(propertyCategory="Security")
 	String authorisationRoles = ''
 	@OCL(derivation="authorisationRoles.trim() <> ''")
+    @GenModel(propertyCategory="Security")
 	derived readonly transient volatile boolean isAuthorised
 
 	String purposeSummary
