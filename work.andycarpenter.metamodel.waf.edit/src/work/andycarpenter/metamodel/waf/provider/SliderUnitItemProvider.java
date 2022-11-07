@@ -8,13 +8,15 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import work.andycarpenter.metamodel.expression.ExpressionFactory;
 import work.andycarpenter.metamodel.waf.SliderUnit;
+import work.andycarpenter.metamodel.waf.WafFactory;
 import work.andycarpenter.metamodel.waf.WafPackage;
 
 /**
@@ -23,7 +25,7 @@ import work.andycarpenter.metamodel.waf.WafPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class SliderUnitItemProvider extends ImageUnitItemProvider {
+public class SliderUnitItemProvider extends CollectionUnitItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -45,6 +47,9 @@ public class SliderUnitItemProvider extends ImageUnitItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addMissingImagePathPropertyDescriptor(object);
+			addImageFilterPropertyDescriptor(object);
+			addMissingImageFilterPropertyDescriptor(object);
 			addShowTimePropertyDescriptor(object);
 			addTransitionTimePropertyDescriptor(object);
 			addSectionClassPropertyDescriptor(object);
@@ -71,6 +76,72 @@ public class SliderUnitItemProvider extends ImageUnitItemProvider {
 			addHasInstanceAnchorClassPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Missing Image Path feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addMissingImagePathPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ImageUnit_missingImagePath_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ImageUnit_missingImagePath_feature", "_UI_ImageUnit_type"),
+				 WafPackage.eINSTANCE.getImageUnit_MissingImagePath(),
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Image Filter feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addImageFilterPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ImageUnit_imageFilter_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ImageUnit_imageFilter_feature", "_UI_ImageUnit_type"),
+				 WafPackage.eINSTANCE.getImageUnit_ImageFilter(),
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Missing Image Filter feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addMissingImageFilterPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ImageUnit_missingImageFilter_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ImageUnit_missingImageFilter_feature", "_UI_ImageUnit_type"),
+				 WafPackage.eINSTANCE.getImageUnit_MissingImageFilter(),
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
@@ -602,6 +673,37 @@ public class SliderUnitItemProvider extends ImageUnitItemProvider {
 	}
 
 	/**
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
+	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		if (childrenFeatures == null) {
+			super.getChildrenFeatures(object);
+			childrenFeatures.add(WafPackage.eINSTANCE.getImageUnit_ImagePathFeature());
+			childrenFeatures.add(WafPackage.eINSTANCE.getImageUnit_ShowMissingImageWhen());
+		}
+		return childrenFeatures;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EStructuralFeature getChildFeature(Object object, Object child) {
+		// Check the type of the specified child object and return the proper feature to use for
+		// adding (see {@link AddCommand}) it as a child.
+
+		return super.getChildFeature(object, child);
+	}
+
+	/**
 	 * This returns SliderUnit.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -639,6 +741,7 @@ public class SliderUnitItemProvider extends ImageUnitItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(SliderUnit.class)) {
+			case WafPackage.SLIDER_UNIT__MISSING_IMAGE_PATH:
 			case WafPackage.SLIDER_UNIT__SHOW_TIME:
 			case WafPackage.SLIDER_UNIT__TRANSITION_TIME:
 			case WafPackage.SLIDER_UNIT__SECTION_CLASS:
@@ -665,6 +768,10 @@ public class SliderUnitItemProvider extends ImageUnitItemProvider {
 			case WafPackage.SLIDER_UNIT__HAS_INSTANCE_ANCHOR_CLASS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
+			case WafPackage.SLIDER_UNIT__IMAGE_PATH_FEATURE:
+			case WafPackage.SLIDER_UNIT__SHOW_MISSING_IMAGE_WHEN:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+				return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -679,6 +786,61 @@ public class SliderUnitItemProvider extends ImageUnitItemProvider {
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.eINSTANCE.getImageUnit_ImagePathFeature(),
+				 WafFactory.eINSTANCE.createFeaturePathAttribute()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.eINSTANCE.getImageUnit_ImagePathFeature(),
+				 WafFactory.eINSTANCE.createFeaturePathAssociation()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.eINSTANCE.getImageUnit_ImagePathFeature(),
+				 WafFactory.eINSTANCE.createFeaturePathLabel()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.eINSTANCE.getImageUnit_ShowMissingImageWhen(),
+				 ExpressionFactory.eINSTANCE.createPredicateBooleanVariable()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.eINSTANCE.getImageUnit_ShowMissingImageWhen(),
+				 ExpressionFactory.eINSTANCE.createPredicateBooleanOperator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.eINSTANCE.getImageUnit_ShowMissingImageWhen(),
+				 ExpressionFactory.eINSTANCE.createPredicateEqualityOperator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.eINSTANCE.getImageUnit_ShowMissingImageWhen(),
+				 ExpressionFactory.eINSTANCE.createPredicateComparisonOperator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.eINSTANCE.getImageUnit_ShowMissingImageWhen(),
+				 ExpressionFactory.eINSTANCE.createPredicateInOperator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.eINSTANCE.getImageUnit_ShowMissingImageWhen(),
+				 ExpressionFactory.eINSTANCE.createPredicateLikeOperator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.eINSTANCE.getImageUnit_ShowMissingImageWhen(),
+				 ExpressionFactory.eINSTANCE.createPredicateIsEmpty()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.eINSTANCE.getImageUnit_ShowMissingImageWhen(),
+				 ExpressionFactory.eINSTANCE.createPredicateIsNull()));
 	}
 
 	/**
@@ -693,6 +855,8 @@ public class SliderUnitItemProvider extends ImageUnitItemProvider {
 		Object childObject = child;
 
 		boolean qualify =
+			childFeature == WafPackage.eINSTANCE.getDynamicUnit_HideWhen() ||
+			childFeature == WafPackage.eINSTANCE.getImageUnit_ShowMissingImageWhen() ||
 			childFeature == WafPackage.eINSTANCE.getCollectionUnit_ElementTitle() ||
 			childFeature == WafPackage.eINSTANCE.getImageUnit_ImagePathFeature();
 

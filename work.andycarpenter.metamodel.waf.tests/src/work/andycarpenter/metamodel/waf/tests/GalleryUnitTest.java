@@ -40,7 +40,7 @@ import work.andycarpenter.metamodel.waf.WafFactory;
  * </p>
  * @generated
  */
-public class GalleryUnitTest extends ImageUnitTest {
+public class GalleryUnitTest extends CollectionUnitTest {
 
 	/**
 	 * <!-- begin-user-doc -->

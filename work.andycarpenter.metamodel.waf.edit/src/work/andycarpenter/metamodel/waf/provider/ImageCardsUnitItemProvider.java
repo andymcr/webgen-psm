@@ -16,6 +16,7 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import work.andycarpenter.metamodel.expression.ExpressionFactory;
 import work.andycarpenter.metamodel.waf.ImageCardsUnit;
 import work.andycarpenter.metamodel.waf.WafFactory;
 import work.andycarpenter.metamodel.waf.WafPackage;
@@ -48,9 +49,9 @@ public class ImageCardsUnitItemProvider extends CardsUnitItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addMissingImagePathPropertyDescriptor(object);
 			addImageFilterPropertyDescriptor(object);
 			addMissingImageFilterPropertyDescriptor(object);
-			addMissingImagePathPropertyDescriptor(object);
 			addEnableImageEnlargementPropertyDescriptor(object);
 			addOverlayTitlePropertyDescriptor(object);
 			addRevealUntruncatedContentPropertyDescriptor(object);
@@ -203,6 +204,7 @@ public class ImageCardsUnitItemProvider extends CardsUnitItemProvider {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(WafPackage.eINSTANCE.getImageUnit_ImagePathFeature());
+			childrenFeatures.add(WafPackage.eINSTANCE.getImageUnit_ShowMissingImageWhen());
 		}
 		return childrenFeatures;
 	}
@@ -265,6 +267,7 @@ public class ImageCardsUnitItemProvider extends CardsUnitItemProvider {
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case WafPackage.IMAGE_CARDS_UNIT__IMAGE_PATH_FEATURE:
+			case WafPackage.IMAGE_CARDS_UNIT__SHOW_MISSING_IMAGE_WHEN:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -296,6 +299,46 @@ public class ImageCardsUnitItemProvider extends CardsUnitItemProvider {
 			(createChildParameter
 				(WafPackage.eINSTANCE.getImageUnit_ImagePathFeature(),
 				 WafFactory.eINSTANCE.createFeaturePathLabel()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.eINSTANCE.getImageUnit_ShowMissingImageWhen(),
+				 ExpressionFactory.eINSTANCE.createPredicateBooleanVariable()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.eINSTANCE.getImageUnit_ShowMissingImageWhen(),
+				 ExpressionFactory.eINSTANCE.createPredicateBooleanOperator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.eINSTANCE.getImageUnit_ShowMissingImageWhen(),
+				 ExpressionFactory.eINSTANCE.createPredicateEqualityOperator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.eINSTANCE.getImageUnit_ShowMissingImageWhen(),
+				 ExpressionFactory.eINSTANCE.createPredicateComparisonOperator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.eINSTANCE.getImageUnit_ShowMissingImageWhen(),
+				 ExpressionFactory.eINSTANCE.createPredicateInOperator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.eINSTANCE.getImageUnit_ShowMissingImageWhen(),
+				 ExpressionFactory.eINSTANCE.createPredicateLikeOperator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.eINSTANCE.getImageUnit_ShowMissingImageWhen(),
+				 ExpressionFactory.eINSTANCE.createPredicateIsEmpty()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.eINSTANCE.getImageUnit_ShowMissingImageWhen(),
+				 ExpressionFactory.eINSTANCE.createPredicateIsNull()));
 	}
 
 	/**
@@ -310,6 +353,8 @@ public class ImageCardsUnitItemProvider extends CardsUnitItemProvider {
 		Object childObject = child;
 
 		boolean qualify =
+			childFeature == WafPackage.eINSTANCE.getDynamicUnit_HideWhen() ||
+			childFeature == WafPackage.eINSTANCE.getImageUnit_ShowMissingImageWhen() ||
 			childFeature == WafPackage.eINSTANCE.getCollectionUnit_ElementTitle() ||
 			childFeature == WafPackage.eINSTANCE.getImageUnit_ImagePathFeature();
 

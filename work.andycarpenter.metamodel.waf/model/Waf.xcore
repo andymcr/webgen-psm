@@ -2680,11 +2680,12 @@ class DateCardsUnit extends CardsUnit {
 	contains FeaturePath[1] elementDate
 }
 
-abstract class ImageUnit extends CollectionUnit {
+interface ImageUnit {
 	contains FeaturePath[1] imagePathFeature
+	String missingImagePath
+	contains Predicate showMissingImageWhen
 	refers ImageManipulation imageFilter
 	refers ImageManipulation missingImageFilter
-	String missingImagePath
 }
 
 
@@ -2694,7 +2695,7 @@ class ImageCardsUnit extends CardsUnit, ImageUnit {
 	boolean revealUntruncatedContent
 }
 
-class SliderUnit extends ImageUnit {
+class SliderUnit extends CollectionUnit, ImageUnit {
 	int showTime
 	int transitionTime
 
@@ -2842,7 +2843,7 @@ class SliderUnit extends ImageUnit {
 	derived readonly transient volatile boolean hasInstanceAnchorClass
 }
 
-class GalleryUnit extends ImageUnit {
+class GalleryUnit extends CollectionUnit, ImageUnit {
 	refers ImageManipulation fullSizeFilter
 	int showTime
 	int transitionTime

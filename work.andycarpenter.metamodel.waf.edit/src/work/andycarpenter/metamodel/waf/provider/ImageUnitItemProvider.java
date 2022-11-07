@@ -9,13 +9,21 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EStructuralFeature;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
+import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
+import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.IItemPropertySource;
+import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
+import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import work.andycarpenter.metamodel.expression.ExpressionFactory;
 import work.andycarpenter.metamodel.waf.ImageUnit;
 import work.andycarpenter.metamodel.waf.WafFactory;
 import work.andycarpenter.metamodel.waf.WafPackage;
@@ -26,7 +34,7 @@ import work.andycarpenter.metamodel.waf.WafPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ImageUnitItemProvider extends CollectionUnitItemProvider {
+public class ImageUnitItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -48,9 +56,9 @@ public class ImageUnitItemProvider extends CollectionUnitItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addMissingImagePathPropertyDescriptor(object);
 			addImageFilterPropertyDescriptor(object);
 			addMissingImageFilterPropertyDescriptor(object);
-			addMissingImagePathPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -134,6 +142,7 @@ public class ImageUnitItemProvider extends CollectionUnitItemProvider {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(WafPackage.eINSTANCE.getImageUnit_ImagePathFeature());
+			childrenFeatures.add(WafPackage.eINSTANCE.getImageUnit_ShowMissingImageWhen());
 		}
 		return childrenFeatures;
 	}
@@ -159,7 +168,7 @@ public class ImageUnitItemProvider extends CollectionUnitItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ImageUnit)object).getName();
+		String label = ((ImageUnit)object).getMissingImagePath();
 		return label == null || label.length() == 0 ?
 			getString("_UI_ImageUnit_type") :
 			getString("_UI_ImageUnit_type") + " " + label;
@@ -182,6 +191,7 @@ public class ImageUnitItemProvider extends CollectionUnitItemProvider {
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case WafPackage.IMAGE_UNIT__IMAGE_PATH_FEATURE:
+			case WafPackage.IMAGE_UNIT__SHOW_MISSING_IMAGE_WHEN:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -213,29 +223,57 @@ public class ImageUnitItemProvider extends CollectionUnitItemProvider {
 			(createChildParameter
 				(WafPackage.eINSTANCE.getImageUnit_ImagePathFeature(),
 				 WafFactory.eINSTANCE.createFeaturePathLabel()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.eINSTANCE.getImageUnit_ShowMissingImageWhen(),
+				 ExpressionFactory.eINSTANCE.createPredicateBooleanVariable()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.eINSTANCE.getImageUnit_ShowMissingImageWhen(),
+				 ExpressionFactory.eINSTANCE.createPredicateBooleanOperator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.eINSTANCE.getImageUnit_ShowMissingImageWhen(),
+				 ExpressionFactory.eINSTANCE.createPredicateEqualityOperator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.eINSTANCE.getImageUnit_ShowMissingImageWhen(),
+				 ExpressionFactory.eINSTANCE.createPredicateComparisonOperator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.eINSTANCE.getImageUnit_ShowMissingImageWhen(),
+				 ExpressionFactory.eINSTANCE.createPredicateInOperator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.eINSTANCE.getImageUnit_ShowMissingImageWhen(),
+				 ExpressionFactory.eINSTANCE.createPredicateLikeOperator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.eINSTANCE.getImageUnit_ShowMissingImageWhen(),
+				 ExpressionFactory.eINSTANCE.createPredicateIsEmpty()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.eINSTANCE.getImageUnit_ShowMissingImageWhen(),
+				 ExpressionFactory.eINSTANCE.createPredicateIsNull()));
 	}
 
 	/**
-	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
+	 * Return the resource locator for this item provider's resources.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
-		Object childFeature = feature;
-		Object childObject = child;
-
-		boolean qualify =
-			childFeature == WafPackage.eINSTANCE.getCollectionUnit_ElementTitle() ||
-			childFeature == WafPackage.eINSTANCE.getImageUnit_ImagePathFeature();
-
-		if (qualify) {
-			return getString
-				("_UI_CreateChild_text2",
-				 new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
-		}
-		return super.getCreateChildText(owner, feature, child, selection);
+	public ResourceLocator getResourceLocator() {
+		return WafEditPlugin.INSTANCE;
 	}
 
 }
