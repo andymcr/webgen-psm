@@ -53,6 +53,7 @@ public class BusinessOperationItemProvider extends NamedElementItemProvider {
 			addUsesPropertyDescriptor(object);
 			addResultTypePropertyDescriptor(object);
 			addResultMimeTypePropertyDescriptor(object);
+			addFileExtensionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -146,6 +147,28 @@ public class BusinessOperationItemProvider extends NamedElementItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the File Extension feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addFileExtensionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_BusinessOperation_fileExtension_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_BusinessOperation_fileExtension_feature", "_UI_BusinessOperation_type"),
+				 ServicePackage.Literals.BUSINESS_OPERATION__FILE_EXTENSION,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -215,6 +238,7 @@ public class BusinessOperationItemProvider extends NamedElementItemProvider {
 		switch (notification.getFeatureID(BusinessOperation.class)) {
 			case ServicePackage.BUSINESS_OPERATION__RESULT_TYPE:
 			case ServicePackage.BUSINESS_OPERATION__RESULT_MIME_TYPE:
+			case ServicePackage.BUSINESS_OPERATION__FILE_EXTENSION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case ServicePackage.BUSINESS_OPERATION__PARAMETERS:

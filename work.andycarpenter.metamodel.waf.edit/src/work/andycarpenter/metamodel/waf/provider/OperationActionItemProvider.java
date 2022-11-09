@@ -48,7 +48,6 @@ public class OperationActionItemProvider extends ActionItemProvider {
 			addServicesUsedPropertyDescriptor(object);
 			addHasServicesUsedPropertyDescriptor(object);
 			addOperationPropertyDescriptor(object);
-			addFileExtensionPropertyDescriptor(object);
 			addUriElementPropertyDescriptor(object);
 			addLocalAuthorisationRolesPropertyDescriptor(object);
 			addOperationAuthorisationRolesPropertyDescriptor(object);
@@ -118,28 +117,6 @@ public class OperationActionItemProvider extends ActionItemProvider {
 				 false,
 				 true,
 				 null,
-				 getString("_UI_BusinessPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the File Extension feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addFileExtensionPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_OperationAction_fileExtension_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_OperationAction_fileExtension_feature", "_UI_OperationAction_type"),
-				 WafPackage.eINSTANCE.getOperationAction_FileExtension(),
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 getString("_UI_BusinessPropertyCategory"),
 				 null));
 	}
@@ -238,7 +215,6 @@ public class OperationActionItemProvider extends ActionItemProvider {
 
 		switch (notification.getFeatureID(OperationAction.class)) {
 			case WafPackage.OPERATION_ACTION__HAS_SERVICES_USED:
-			case WafPackage.OPERATION_ACTION__FILE_EXTENSION:
 			case WafPackage.OPERATION_ACTION__URI_ELEMENT:
 			case WafPackage.OPERATION_ACTION__LOCAL_AUTHORISATION_ROLES:
 			case WafPackage.OPERATION_ACTION__OPERATION_AUTHORISATION_ROLES:

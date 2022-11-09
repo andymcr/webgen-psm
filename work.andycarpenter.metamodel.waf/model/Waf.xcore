@@ -3403,9 +3403,6 @@ abstract class OperationAction extends Action {
     @GenModel(propertyCategory="Business")
 	refers BusinessOperation[1] operation
 
-    @GenModel(propertyCategory="Business")
-	String fileExtension
-
     @GenModel(propertyCategory="Navigation")
 	String[1] uriElement
 

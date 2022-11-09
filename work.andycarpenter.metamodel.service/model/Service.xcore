@@ -42,7 +42,8 @@ class BusinessOperation extends NamedElement, FormalParameterList {
 	container Service[1] partOf opposite operations
 	refers Service[] uses
 	OperationResultTypes[1] resultType
-	String resultMimeType
+	String resultMimeType = ''
+	String fileExtension  = ''
 }
 
 enum OperationResultTypes {
