@@ -457,13 +457,6 @@ abstract class Controller extends NamedDisplayElement {
     @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean hasSliderUnits
 
-	@OCL(derivation="dynamicUnits->collect(u | u.repositoriesUsed)->asOrderedSet()")
-    @GenModel(propertyCategory="Debug")
-	refers readonly derived unsettable transient volatile Repository[] repositoriesUsed
-	@OCL(derivation="repositoriesUsed->notEmpty()")
-    @GenModel(propertyCategory="Debug")
-	derived readonly transient volatile boolean hasRepositoriesUsed
-
 	@OCL(derivation="dynamicUnits->collect(u | u.servicesUsed)->asOrderedSet()")
     @GenModel(propertyCategory="Debug")
 	refers readonly transient volatile unsettable derived Service[] servicesUsed
@@ -653,14 +646,6 @@ abstract class DynamicUnit extends ContentUnit, ActionContainer {
 	refers Entity[1] contentType
 
 	@OCL(derivation="if not contentType.oclIsUndefined() then
-			contentType.repository
-		else
-			null
-		endif")
-    @GenModel(propertyCategory="Debug")
-	refers derived readonly unsettable transient volatile Repository contentRepository
-
-	@OCL(derivation="if not contentType.oclIsUndefined() then
 			contentType.containingAssociation
 		else
 			null
@@ -675,10 +660,10 @@ abstract class DynamicUnit extends ContentUnit, ActionContainer {
 				if self.oclAsType(CollectionUnit).selection.selectPath->notEmpty() then
 					self.oclAsType(CollectionUnit).selection.selectPath->last().targetType
 				else
-					null
+					contentType.containingType
 				endif
 			else
-				null
+				contentType.containingType
 			endif endif
 		else if self.oclIsKindOf(DetailsUnit) then
 			if not self.oclAsType(DetailsUnit).selection.oclIsUndefined() then
@@ -700,14 +685,6 @@ abstract class DynamicUnit extends ContentUnit, ActionContainer {
     @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean isContained
 
-	@OCL(derivation="if not containingType.oclIsUndefined() then
-			containingType.repository
-		else
-			null
-		endif")
-    @GenModel(propertyCategory="Debug")
-	refers derived readonly unsettable transient volatile Repository containerRepository
-
 	@OCL(derivation="if self.oclIsKindOf(EditUnit) and not containingAssociation.oclIsUndefined() then
 			featureFields->exists(f | f.persistentFeature = containingAssociation)
 		else
@@ -715,16 +692,6 @@ abstract class DynamicUnit extends ContentUnit, ActionContainer {
 		endif")
     @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean hasExplicitlyEditedContainer
-
-	@OCL(derivation="OrderedSet{contentRepository}->union(
-			if self.oclIsKindOf(CollectionUnit) and isContained = true then
-				OrderedSet{containerRepository}
-			else
-				OrderedSet{}
-			endif)
-			->asOrderedSet()")
-    @GenModel(propertyCategory="Debug")
-	refers derived readonly unsettable transient volatile Repository[] repositoriesUsed
 
 	@OCL(derivation="operationActions->collect(u | u.servicesUsed)->asOrderedSet()")
     @GenModel(propertyCategory="Debug")

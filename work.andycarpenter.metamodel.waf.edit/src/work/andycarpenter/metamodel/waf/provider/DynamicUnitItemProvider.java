@@ -68,13 +68,10 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 			addGenModelRefPropertyDescriptor(object);
 			addUiModelRefPropertyDescriptor(object);
 			addContentTypePropertyDescriptor(object);
-			addContentRepositoryPropertyDescriptor(object);
 			addContainingAssociationPropertyDescriptor(object);
 			addContainingTypePropertyDescriptor(object);
 			addIsContainedPropertyDescriptor(object);
-			addContainerRepositoryPropertyDescriptor(object);
 			addHasExplicitlyEditedContainerPropertyDescriptor(object);
-			addRepositoriesUsedPropertyDescriptor(object);
 			addServicesUsedPropertyDescriptor(object);
 			addHasServicesUsedPropertyDescriptor(object);
 			addIsConditionallyDisplayedPropertyDescriptor(object);
@@ -622,28 +619,6 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Content Repository feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addContentRepositoryPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_DynamicUnit_contentRepository_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DynamicUnit_contentRepository_feature", "_UI_DynamicUnit_type"),
-				 WafPackage.eINSTANCE.getDynamicUnit_ContentRepository(),
-				 false,
-				 false,
-				 false,
-				 null,
-				 getString("_UI_DebugPropertyCategory"),
-				 null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Containing Association feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -710,28 +685,6 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Container Repository feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addContainerRepositoryPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_DynamicUnit_containerRepository_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DynamicUnit_containerRepository_feature", "_UI_DynamicUnit_type"),
-				 WafPackage.eINSTANCE.getDynamicUnit_ContainerRepository(),
-				 false,
-				 false,
-				 false,
-				 null,
-				 getString("_UI_DebugPropertyCategory"),
-				 null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Has Explicitly Edited Container feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -749,28 +702,6 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_DebugPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Repositories Used feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addRepositoriesUsedPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_DynamicUnit_repositoriesUsed_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DynamicUnit_repositoriesUsed_feature", "_UI_DynamicUnit_type"),
-				 WafPackage.eINSTANCE.getDynamicUnit_RepositoriesUsed(),
-				 false,
-				 false,
-				 false,
-				 null,
 				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}

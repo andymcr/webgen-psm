@@ -84,8 +84,6 @@ public class ControllerItemProvider extends NamedDisplayElementItemProvider {
 			addHasMapUnitsPropertyDescriptor(object);
 			addSliderUnitsPropertyDescriptor(object);
 			addHasSliderUnitsPropertyDescriptor(object);
-			addRepositoriesUsedPropertyDescriptor(object);
-			addHasRepositoriesUsedPropertyDescriptor(object);
 			addServicesUsedPropertyDescriptor(object);
 			addHasServicesUsedPropertyDescriptor(object);
 			addHasPaginationPropertyDescriptor(object);
@@ -817,50 +815,6 @@ public class ControllerItemProvider extends NamedDisplayElementItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Repositories Used feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addRepositoriesUsedPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Controller_repositoriesUsed_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Controller_repositoriesUsed_feature", "_UI_Controller_type"),
-				 WafPackage.eINSTANCE.getController_RepositoriesUsed(),
-				 false,
-				 false,
-				 false,
-				 null,
-				 getString("_UI_DebugPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Has Repositories Used feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addHasRepositoriesUsedPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Controller_hasRepositoriesUsed_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Controller_hasRepositoriesUsed_feature", "_UI_Controller_type"),
-				 WafPackage.eINSTANCE.getController_HasRepositoriesUsed(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_DebugPropertyCategory"),
-				 null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Services Used feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1420,7 +1374,6 @@ public class ControllerItemProvider extends NamedDisplayElementItemProvider {
 			case WafPackage.CONTROLLER__HAS_IMAGE_CARDS_UNITS:
 			case WafPackage.CONTROLLER__HAS_MAP_UNITS:
 			case WafPackage.CONTROLLER__HAS_SLIDER_UNITS:
-			case WafPackage.CONTROLLER__HAS_REPOSITORIES_USED:
 			case WafPackage.CONTROLLER__HAS_SERVICES_USED:
 			case WafPackage.CONTROLLER__HAS_PAGINATION:
 			case WafPackage.CONTROLLER__HAS_AUTOCOMPLETE_FIELDS:

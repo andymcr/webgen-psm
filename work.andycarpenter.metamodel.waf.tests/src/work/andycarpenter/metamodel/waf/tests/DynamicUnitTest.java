@@ -30,13 +30,10 @@ import work.andycarpenter.metamodel.waf.DynamicUnit;
  *   <li>{@link work.andycarpenter.metamodel.waf.ActionContainer#isHasOperationActions() <em>Has Operation Actions</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.ActionContainer#getGenModelRef() <em>Gen Model Ref</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.ActionContainer#getUiModelRef() <em>Ui Model Ref</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#getContentRepository() <em>Content Repository</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#getContainingAssociation() <em>Containing Association</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#getContainingType() <em>Containing Type</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#isIsContained() <em>Is Contained</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#getContainerRepository() <em>Container Repository</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#isHasExplicitlyEditedContainer() <em>Has Explicitly Edited Container</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#getRepositoriesUsed() <em>Repositories Used</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#getServicesUsed() <em>Services Used</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#isHasServicesUsed() <em>Has Services Used</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#getIsConditionallyDisplayed() <em>Is Conditionally Displayed</em>}</li>
@@ -607,32 +604,6 @@ public abstract class DynamicUnitTest extends ContentUnitTest {
 	}
 
 	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#getContentRepository() <em>Content Repository</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#getContentRepository()
-	 * @generated
-	 */
-	public void testGetContentRepository() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#isSetContentRepository() <em>isSetContentRepository()</em>}' method.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#isSetContentRepository()
-	 * @generated
-	 */
-	public void testIsSetContentRepository() {
-		// TODO: implement this test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
 	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#getContainingAssociation() <em>Containing Association</em>}' feature getter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -711,32 +682,6 @@ public abstract class DynamicUnitTest extends ContentUnitTest {
 	}
 
 	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#getContainerRepository() <em>Container Repository</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#getContainerRepository()
-	 * @generated
-	 */
-	public void testGetContainerRepository() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#isSetContainerRepository() <em>isSetContainerRepository()</em>}' method.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#isSetContainerRepository()
-	 * @generated
-	 */
-	public void testIsSetContainerRepository() {
-		// TODO: implement this test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
 	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#isHasExplicitlyEditedContainer() <em>Has Explicitly Edited Container</em>}' feature getter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -757,32 +702,6 @@ public abstract class DynamicUnitTest extends ContentUnitTest {
 	 * @generated
 	 */
 	public void testIsSetHasExplicitlyEditedContainer() {
-		// TODO: implement this test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#getRepositoriesUsed() <em>Repositories Used</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#getRepositoriesUsed()
-	 * @generated
-	 */
-	public void testGetRepositoriesUsed() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#isSetRepositoriesUsed() <em>isSetRepositoriesUsed()</em>}' method.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#isSetRepositoriesUsed()
-	 * @generated
-	 */
-	public void testIsSetRepositoriesUsed() {
 		// TODO: implement this test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

@@ -42,8 +42,6 @@ import work.andycarpenter.metamodel.waf.Controller;
  *   <li>{@link work.andycarpenter.metamodel.waf.Controller#isHasMapUnits() <em>Has Map Units</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.Controller#getSliderUnits() <em>Slider Units</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.Controller#isHasSliderUnits() <em>Has Slider Units</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.Controller#getRepositoriesUsed() <em>Repositories Used</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.Controller#isHasRepositoriesUsed() <em>Has Repositories Used</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.Controller#getServicesUsed() <em>Services Used</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.Controller#isHasServicesUsed() <em>Has Services Used</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.Controller#isHasPagination() <em>Has Pagination</em>}</li>
@@ -610,45 +608,6 @@ public abstract class ControllerTest extends TestCase {
 	 * @generated
 	 */
 	public void testIsHasSliderUnits() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.Controller#getRepositoriesUsed() <em>Repositories Used</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.Controller#getRepositoriesUsed()
-	 * @generated
-	 */
-	public void testGetRepositoriesUsed() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.Controller#isSetRepositoriesUsed() <em>isSetRepositoriesUsed()</em>}' method.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.Controller#isSetRepositoriesUsed()
-	 * @generated
-	 */
-	public void testIsSetRepositoriesUsed() {
-		// TODO: implement this test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.Controller#isHasRepositoriesUsed() <em>Has Repositories Used</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.Controller#isHasRepositoriesUsed()
-	 * @generated
-	 */
-	public void testIsHasRepositoriesUsed() {
 		// TODO: implement this feature getter test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
