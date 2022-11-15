@@ -223,7 +223,6 @@ class Entity extends Classifier {
 	String autoKeyPersistentType
 	String autoKeyGenerationStrategy
 	refers unique Feature[] ^unique
-	refers unique Feature[] containerUnique
 	contains ModelLabel[] labels opposite labelFor
 
 	@OCL(derivation="labels->select(l | l.name = 'default')->notEmpty()")
