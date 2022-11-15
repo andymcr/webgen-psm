@@ -423,7 +423,11 @@ abstract class Feature extends NamedDisplayElement {
     @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean isUnique
 
-	@OCL(derivation="self.isRequired or self.isContains")
+	@OCL(derivation="if self.oclIsKindOf(Association) then
+			self.isRequired or self.isContains and self.oclAsType(Association).targetType.containerUniqueAttributes->notEmpty()
+		else
+			self.isRequired
+		endif")
     @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean isValidated
 
