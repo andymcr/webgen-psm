@@ -72,7 +72,6 @@ public class InterfaceFieldItemProvider extends NamedElementItemProvider {
 			addHelpPropertyDescriptor(object);
 			addHasHelpPropertyDescriptor(object);
 			addHasSecondHelpPropertyDescriptor(object);
-			addPersistentFeaturePropertyDescriptor(object);
 			addIsContainsPropertyDescriptor(object);
 			addIsDisabledPropertyDescriptor(object);
 			addIsRequiredPropertyDescriptor(object);
@@ -547,28 +546,6 @@ public class InterfaceFieldItemProvider extends NamedElementItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_DebugPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Persistent Feature feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addPersistentFeaturePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_UnitField_persistentFeature_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_persistentFeature_feature", "_UI_UnitField_type"),
-				 WafPackage.eINSTANCE.getUnitField_PersistentFeature(),
-				 false,
-				 false,
-				 false,
-				 null,
 				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
@@ -1996,17 +1973,12 @@ public class InterfaceFieldItemProvider extends NamedElementItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.eINSTANCE.getInterfaceField_FieldDefaultValue(),
-				 WafFactory.eINSTANCE.createFeaturePathAttribute()));
+				 WafFactory.eINSTANCE.createPathVariableAssociation()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.eINSTANCE.getInterfaceField_FieldDefaultValue(),
-				 WafFactory.eINSTANCE.createFeaturePathAssociation()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.eINSTANCE.getInterfaceField_FieldDefaultValue(),
-				 WafFactory.eINSTANCE.createFeaturePathLabel()));
+				 WafFactory.eINSTANCE.createPathVariableAttribute()));
 
 		newChildDescriptors.add
 			(createChildParameter

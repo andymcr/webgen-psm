@@ -179,12 +179,12 @@ public class SelectActionItemProvider extends ActionItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.eINSTANCE.getSelectAction_ValuePath(),
-				 WafFactory.eINSTANCE.createFeaturePathAttribute()));
+				 WafFactory.eINSTANCE.createFeaturePathAssociation()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.eINSTANCE.getSelectAction_ValuePath(),
-				 WafFactory.eINSTANCE.createFeaturePathAssociation()));
+				 WafFactory.eINSTANCE.createFeaturePathAttribute()));
 
 		newChildDescriptors.add
 			(createChildParameter

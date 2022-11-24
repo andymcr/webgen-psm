@@ -139,12 +139,12 @@ public class DateCardsUnitItemProvider extends CardsUnitItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.eINSTANCE.getDateCardsUnit_ElementDate(),
-				 WafFactory.eINSTANCE.createFeaturePathAttribute()));
+				 WafFactory.eINSTANCE.createFeaturePathAssociation()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.eINSTANCE.getDateCardsUnit_ElementDate(),
-				 WafFactory.eINSTANCE.createFeaturePathAssociation()));
+				 WafFactory.eINSTANCE.createFeaturePathAttribute()));
 
 		newChildDescriptors.add
 			(createChildParameter

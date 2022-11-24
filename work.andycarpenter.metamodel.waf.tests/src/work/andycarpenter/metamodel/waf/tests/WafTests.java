@@ -39,11 +39,6 @@ public class WafTests extends TestSuite {
 		suite.addTestSuite(StaticUnitTest.class);
 		suite.addTestSuite(UnitAttributeTest.class);
 		suite.addTestSuite(UnitAssociationTest.class);
-		suite.addTestSuite(FeaturePathAttributeTest.class);
-		suite.addTestSuite(FeaturePathAssociationTest.class);
-		suite.addTestSuite(FeaturePathLabelTest.class);
-		suite.addTestSuite(ChildPathAttributeTest.class);
-		suite.addTestSuite(ChildPathAssociationTest.class);
 		suite.addTestSuite(UnitLabelTest.class);
 		suite.addTestSuite(DataTypeFieldTest.class);
 		suite.addTestSuite(DateFieldTest.class);
@@ -61,6 +56,13 @@ public class WafTests extends TestSuite {
 		suite.addTestSuite(SliderUnitTest.class);
 		suite.addTestSuite(GalleryUnitTest.class);
 		suite.addTestSuite(SearchUnitTest.class);
+		suite.addTestSuite(ChildPathAssociationTest.class);
+		suite.addTestSuite(ChildPathAttributeTest.class);
+		suite.addTestSuite(FeaturePathAssociationTest.class);
+		suite.addTestSuite(FeaturePathAttributeTest.class);
+		suite.addTestSuite(FeaturePathLabelTest.class);
+		suite.addTestSuite(PathVariableAssociationTest.class);
+		suite.addTestSuite(PathVariableAttributeTest.class);
 		suite.addTestSuite(DeleteActionTest.class);
 		suite.addTestSuite(ContainerSelectActionTest.class);
 		suite.addTestSuite(InstanceSelectActionTest.class);

@@ -14,12 +14,13 @@ import work.andycarpenter.metamodel.waf.WafFactory;
  * <p>
  * The following features are tested:
  * <ul>
- *   <li>{@link work.andycarpenter.metamodel.orm.AssociationReference#getName() <em>Name</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.FeaturePath#isIsRequired() <em>Is Required</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.FeaturePath#isIsSingleton() <em>Is Singleton</em>}</li>
  * </ul>
  * </p>
  * @generated
  */
-public class FeaturePathAssociationTest extends FeaturePathTest {
+public class FeaturePathAssociationTest extends PathAssociationTest {
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -74,27 +75,27 @@ public class FeaturePathAssociationTest extends FeaturePathTest {
 	}
 
 	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.orm.AssociationReference#getName() <em>Name</em>}' feature getter.
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.FeaturePath#isIsRequired() <em>Is Required</em>}' feature getter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.orm.AssociationReference#getName()
+	 * @see work.andycarpenter.metamodel.waf.FeaturePath#isIsRequired()
 	 * @generated
 	 */
-	public void testGetName() {
+	public void testIsIsRequired() {
 		// TODO: implement this feature getter test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}
 
 	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.orm.AssociationReference#setName(java.lang.String) <em>Name</em>}' feature setter.
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.FeaturePath#isIsSingleton() <em>Is Singleton</em>}' feature getter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.orm.AssociationReference#setName(java.lang.String)
+	 * @see work.andycarpenter.metamodel.waf.FeaturePath#isIsSingleton()
 	 * @generated
 	 */
-	public void testSetName() {
-		// TODO: implement this feature setter test method
+	public void testIsIsSingleton() {
+		// TODO: implement this feature getter test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}

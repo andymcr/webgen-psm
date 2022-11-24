@@ -288,12 +288,12 @@ public class ImageCardsUnitItemProvider extends CardsUnitItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.eINSTANCE.getImageUnit_ImagePathFeature(),
-				 WafFactory.eINSTANCE.createFeaturePathAttribute()));
+				 WafFactory.eINSTANCE.createFeaturePathAssociation()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.eINSTANCE.getImageUnit_ImagePathFeature(),
-				 WafFactory.eINSTANCE.createFeaturePathAssociation()));
+				 WafFactory.eINSTANCE.createFeaturePathAttribute()));
 
 		newChildDescriptors.add
 			(createChildParameter

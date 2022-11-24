@@ -37,7 +37,6 @@ import work.andycarpenter.metamodel.expression.PredicateIsEmpty;
 import work.andycarpenter.metamodel.expression.PredicateIsNull;
 import work.andycarpenter.metamodel.expression.PredicateLikeOperator;
 import work.andycarpenter.metamodel.expression.util.ExpressionSwitch;
-import work.andycarpenter.metamodel.orm.AssociationReference;
 import work.andycarpenter.metamodel.orm.Attribute;
 import work.andycarpenter.metamodel.orm.Order;
 import work.andycarpenter.metamodel.orm.OrmPackage;
@@ -692,121 +691,6 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.waf.FeaturePathAttribute} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected FeaturePathAttributeItemProvider featurePathAttributeItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link work.andycarpenter.metamodel.waf.FeaturePathAttribute}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createFeaturePathAttributeAdapter() {
-		if (featurePathAttributeItemProvider == null) {
-			featurePathAttributeItemProvider = new FeaturePathAttributeItemProvider(this);
-		}
-
-		return featurePathAttributeItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.waf.FeaturePathAssociation} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected FeaturePathAssociationItemProvider featurePathAssociationItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link work.andycarpenter.metamodel.waf.FeaturePathAssociation}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createFeaturePathAssociationAdapter() {
-		if (featurePathAssociationItemProvider == null) {
-			featurePathAssociationItemProvider = new FeaturePathAssociationItemProvider(this);
-		}
-
-		return featurePathAssociationItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.waf.FeaturePathLabel} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected FeaturePathLabelItemProvider featurePathLabelItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link work.andycarpenter.metamodel.waf.FeaturePathLabel}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createFeaturePathLabelAdapter() {
-		if (featurePathLabelItemProvider == null) {
-			featurePathLabelItemProvider = new FeaturePathLabelItemProvider(this);
-		}
-
-		return featurePathLabelItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.waf.ChildPathAttribute} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ChildPathAttributeItemProvider childPathAttributeItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link work.andycarpenter.metamodel.waf.ChildPathAttribute}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createChildPathAttributeAdapter() {
-		if (childPathAttributeItemProvider == null) {
-			childPathAttributeItemProvider = new ChildPathAttributeItemProvider(this);
-		}
-
-		return childPathAttributeItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.waf.ChildPathAssociation} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ChildPathAssociationItemProvider childPathAssociationItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link work.andycarpenter.metamodel.waf.ChildPathAssociation}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createChildPathAssociationAdapter() {
-		if (childPathAssociationItemProvider == null) {
-			childPathAssociationItemProvider = new ChildPathAssociationItemProvider(this);
-		}
-
-		return childPathAssociationItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.waf.UnitLabel} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1198,6 +1082,167 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.waf.ChildPathAssociation} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ChildPathAssociationItemProvider childPathAssociationItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link work.andycarpenter.metamodel.waf.ChildPathAssociation}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createChildPathAssociationAdapter() {
+		if (childPathAssociationItemProvider == null) {
+			childPathAssociationItemProvider = new ChildPathAssociationItemProvider(this);
+		}
+
+		return childPathAssociationItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.waf.ChildPathAttribute} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ChildPathAttributeItemProvider childPathAttributeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link work.andycarpenter.metamodel.waf.ChildPathAttribute}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createChildPathAttributeAdapter() {
+		if (childPathAttributeItemProvider == null) {
+			childPathAttributeItemProvider = new ChildPathAttributeItemProvider(this);
+		}
+
+		return childPathAttributeItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.waf.FeaturePathAssociation} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected FeaturePathAssociationItemProvider featurePathAssociationItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link work.andycarpenter.metamodel.waf.FeaturePathAssociation}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createFeaturePathAssociationAdapter() {
+		if (featurePathAssociationItemProvider == null) {
+			featurePathAssociationItemProvider = new FeaturePathAssociationItemProvider(this);
+		}
+
+		return featurePathAssociationItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.waf.FeaturePathAttribute} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected FeaturePathAttributeItemProvider featurePathAttributeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link work.andycarpenter.metamodel.waf.FeaturePathAttribute}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createFeaturePathAttributeAdapter() {
+		if (featurePathAttributeItemProvider == null) {
+			featurePathAttributeItemProvider = new FeaturePathAttributeItemProvider(this);
+		}
+
+		return featurePathAttributeItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.waf.FeaturePathLabel} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected FeaturePathLabelItemProvider featurePathLabelItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link work.andycarpenter.metamodel.waf.FeaturePathLabel}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createFeaturePathLabelAdapter() {
+		if (featurePathLabelItemProvider == null) {
+			featurePathLabelItemProvider = new FeaturePathLabelItemProvider(this);
+		}
+
+		return featurePathLabelItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.waf.PathVariableAssociation} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected PathVariableAssociationItemProvider pathVariableAssociationItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link work.andycarpenter.metamodel.waf.PathVariableAssociation}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createPathVariableAssociationAdapter() {
+		if (pathVariableAssociationItemProvider == null) {
+			pathVariableAssociationItemProvider = new PathVariableAssociationItemProvider(this);
+		}
+
+		return pathVariableAssociationItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.waf.PathVariableAttribute} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected PathVariableAttributeItemProvider pathVariableAttributeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link work.andycarpenter.metamodel.waf.PathVariableAttribute}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createPathVariableAttributeAdapter() {
+		if (pathVariableAttributeItemProvider == null) {
+			pathVariableAttributeItemProvider = new PathVariableAttributeItemProvider(this);
+		}
+
+		return pathVariableAttributeItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.waf.DeleteAction} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1506,11 +1551,6 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 		if (routeActualItemProvider != null) routeActualItemProvider.dispose();
 		if (unitAttributeItemProvider != null) unitAttributeItemProvider.dispose();
 		if (unitAssociationItemProvider != null) unitAssociationItemProvider.dispose();
-		if (featurePathAttributeItemProvider != null) featurePathAttributeItemProvider.dispose();
-		if (featurePathAssociationItemProvider != null) featurePathAssociationItemProvider.dispose();
-		if (featurePathLabelItemProvider != null) featurePathLabelItemProvider.dispose();
-		if (childPathAttributeItemProvider != null) childPathAttributeItemProvider.dispose();
-		if (childPathAssociationItemProvider != null) childPathAssociationItemProvider.dispose();
 		if (unitLabelItemProvider != null) unitLabelItemProvider.dispose();
 		if (dataTypeFieldItemProvider != null) dataTypeFieldItemProvider.dispose();
 		if (dateFieldItemProvider != null) dateFieldItemProvider.dispose();
@@ -1528,6 +1568,13 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 		if (sliderUnitItemProvider != null) sliderUnitItemProvider.dispose();
 		if (galleryUnitItemProvider != null) galleryUnitItemProvider.dispose();
 		if (searchUnitItemProvider != null) searchUnitItemProvider.dispose();
+		if (childPathAssociationItemProvider != null) childPathAssociationItemProvider.dispose();
+		if (childPathAttributeItemProvider != null) childPathAttributeItemProvider.dispose();
+		if (featurePathAssociationItemProvider != null) featurePathAssociationItemProvider.dispose();
+		if (featurePathAttributeItemProvider != null) featurePathAttributeItemProvider.dispose();
+		if (featurePathLabelItemProvider != null) featurePathLabelItemProvider.dispose();
+		if (pathVariableAssociationItemProvider != null) pathVariableAssociationItemProvider.dispose();
+		if (pathVariableAttributeItemProvider != null) pathVariableAttributeItemProvider.dispose();
 		if (deleteActionItemProvider != null) deleteActionItemProvider.dispose();
 		if (containerSelectActionItemProvider != null) containerSelectActionItemProvider.dispose();
 		if (instanceSelectActionItemProvider != null) instanceSelectActionItemProvider.dispose();
@@ -1588,36 +1635,12 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 				newChildDescriptors.add
 					(createChildParameter
 						(OrmPackage.Literals.ATTRIBUTE__ATTRIBUTE_DEFAULT_VALUE,
-						 WafFactory.eINSTANCE.createFeaturePathAttribute()));
+						 WafFactory.eINSTANCE.createPathVariableAssociation()));
 
 				newChildDescriptors.add
 					(createChildParameter
 						(OrmPackage.Literals.ATTRIBUTE__ATTRIBUTE_DEFAULT_VALUE,
-						 WafFactory.eINSTANCE.createFeaturePathAssociation()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(OrmPackage.Literals.ATTRIBUTE__ATTRIBUTE_DEFAULT_VALUE,
-						 WafFactory.eINSTANCE.createFeaturePathLabel()));
-
-				return null;
-			}
-			/**
-			 * <!-- begin-user-doc -->
-			 * <!-- end-user-doc -->
-			 * @generated
-			 */
-			@Override
-			public Object caseAssociationReference(AssociationReference object) {
-				newChildDescriptors.add
-					(createChildParameter
-						(OrmPackage.Literals.ASSOCIATION_REFERENCE__CHILD_FEATURE,
-						 WafFactory.eINSTANCE.createChildPathAttribute()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(OrmPackage.Literals.ASSOCIATION_REFERENCE__CHILD_FEATURE,
-						 WafFactory.eINSTANCE.createChildPathAssociation()));
+						 WafFactory.eINSTANCE.createPathVariableAttribute()));
 
 				return null;
 			}
@@ -1632,20 +1655,16 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 				newChildDescriptors.add
 					(createChildParameter
 						(OrmPackage.Literals.ORDER__PATH,
-						 WafFactory.eINSTANCE.createFeaturePathAttribute()));
+						 WafFactory.eINSTANCE.createPathVariableAssociation()));
 
 				newChildDescriptors.add
 					(createChildParameter
 						(OrmPackage.Literals.ORDER__PATH,
-						 WafFactory.eINSTANCE.createFeaturePathAssociation()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(OrmPackage.Literals.ORDER__PATH,
-						 WafFactory.eINSTANCE.createFeaturePathLabel()));
+						 WafFactory.eINSTANCE.createPathVariableAttribute()));
 
 				return null;
 			}
+ 
 			/**
 			 * <!-- begin-user-doc -->
 			 * <!-- end-user-doc -->
@@ -1728,17 +1747,12 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 				newChildDescriptors.add
 					(createChildParameter
 						(BasePackage.Literals.CONSTANT__VALUE,
-						 WafFactory.eINSTANCE.createFeaturePathAttribute()));
+						 WafFactory.eINSTANCE.createPathVariableAssociation()));
 
 				newChildDescriptors.add
 					(createChildParameter
 						(BasePackage.Literals.CONSTANT__VALUE,
-						 WafFactory.eINSTANCE.createFeaturePathAssociation()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(BasePackage.Literals.CONSTANT__VALUE,
-						 WafFactory.eINSTANCE.createFeaturePathLabel()));
+						 WafFactory.eINSTANCE.createPathVariableAttribute()));
 
 				return null;
 			}
@@ -1825,17 +1839,12 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 				newChildDescriptors.add
 					(createChildParameter
 						(ExpressionPackage.Literals.FUNCTION_CALL__ACTUALS,
-						 WafFactory.eINSTANCE.createFeaturePathAttribute()));
+						 WafFactory.eINSTANCE.createPathVariableAssociation()));
 
 				newChildDescriptors.add
 					(createChildParameter
 						(ExpressionPackage.Literals.FUNCTION_CALL__ACTUALS,
-						 WafFactory.eINSTANCE.createFeaturePathAssociation()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.FUNCTION_CALL__ACTUALS,
-						 WafFactory.eINSTANCE.createFeaturePathLabel()));
+						 WafFactory.eINSTANCE.createPathVariableAttribute()));
 
 				return null;
 			}
@@ -1850,17 +1859,12 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 				newChildDescriptors.add
 					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_BOOLEAN_VARIABLE__FEATURE,
-						 WafFactory.eINSTANCE.createFeaturePathAttribute()));
+						 WafFactory.eINSTANCE.createPathVariableAssociation()));
 
 				newChildDescriptors.add
 					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_BOOLEAN_VARIABLE__FEATURE,
-						 WafFactory.eINSTANCE.createFeaturePathAssociation()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.PREDICATE_BOOLEAN_VARIABLE__FEATURE,
-						 WafFactory.eINSTANCE.createFeaturePathLabel()));
+						 WafFactory.eINSTANCE.createPathVariableAttribute()));
 
 				return null;
 			}
@@ -1875,32 +1879,22 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 				newChildDescriptors.add
 					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_EQUALITY_OPERATOR__LEFT,
-						 WafFactory.eINSTANCE.createFeaturePathAttribute()));
+						 WafFactory.eINSTANCE.createPathVariableAssociation()));
 
 				newChildDescriptors.add
 					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_EQUALITY_OPERATOR__LEFT,
-						 WafFactory.eINSTANCE.createFeaturePathAssociation()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.PREDICATE_EQUALITY_OPERATOR__LEFT,
-						 WafFactory.eINSTANCE.createFeaturePathLabel()));
+						 WafFactory.eINSTANCE.createPathVariableAttribute()));
 
 				newChildDescriptors.add
 					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_EQUALITY_OPERATOR__RIGHT,
-						 WafFactory.eINSTANCE.createFeaturePathAttribute()));
+						 WafFactory.eINSTANCE.createPathVariableAssociation()));
 
 				newChildDescriptors.add
 					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_EQUALITY_OPERATOR__RIGHT,
-						 WafFactory.eINSTANCE.createFeaturePathAssociation()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.PREDICATE_EQUALITY_OPERATOR__RIGHT,
-						 WafFactory.eINSTANCE.createFeaturePathLabel()));
+						 WafFactory.eINSTANCE.createPathVariableAttribute()));
 
 				return null;
 			}
@@ -1915,32 +1909,22 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 				newChildDescriptors.add
 					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_COMPARISON_OPERATOR__LEFT,
-						 WafFactory.eINSTANCE.createFeaturePathAttribute()));
+						 WafFactory.eINSTANCE.createPathVariableAssociation()));
 
 				newChildDescriptors.add
 					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_COMPARISON_OPERATOR__LEFT,
-						 WafFactory.eINSTANCE.createFeaturePathAssociation()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.PREDICATE_COMPARISON_OPERATOR__LEFT,
-						 WafFactory.eINSTANCE.createFeaturePathLabel()));
+						 WafFactory.eINSTANCE.createPathVariableAttribute()));
 
 				newChildDescriptors.add
 					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_COMPARISON_OPERATOR__RIGHT,
-						 WafFactory.eINSTANCE.createFeaturePathAttribute()));
+						 WafFactory.eINSTANCE.createPathVariableAssociation()));
 
 				newChildDescriptors.add
 					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_COMPARISON_OPERATOR__RIGHT,
-						 WafFactory.eINSTANCE.createFeaturePathAssociation()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.PREDICATE_COMPARISON_OPERATOR__RIGHT,
-						 WafFactory.eINSTANCE.createFeaturePathLabel()));
+						 WafFactory.eINSTANCE.createPathVariableAttribute()));
 
 				return null;
 			}
@@ -1955,32 +1939,22 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 				newChildDescriptors.add
 					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_IN_OPERATOR__LEFT,
-						 WafFactory.eINSTANCE.createFeaturePathAttribute()));
+						 WafFactory.eINSTANCE.createPathVariableAssociation()));
 
 				newChildDescriptors.add
 					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_IN_OPERATOR__LEFT,
-						 WafFactory.eINSTANCE.createFeaturePathAssociation()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.PREDICATE_IN_OPERATOR__LEFT,
-						 WafFactory.eINSTANCE.createFeaturePathLabel()));
+						 WafFactory.eINSTANCE.createPathVariableAttribute()));
 
 				newChildDescriptors.add
 					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_IN_OPERATOR__RIGHT,
-						 WafFactory.eINSTANCE.createFeaturePathAttribute()));
+						 WafFactory.eINSTANCE.createPathVariableAssociation()));
 
 				newChildDescriptors.add
 					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_IN_OPERATOR__RIGHT,
-						 WafFactory.eINSTANCE.createFeaturePathAssociation()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.PREDICATE_IN_OPERATOR__RIGHT,
-						 WafFactory.eINSTANCE.createFeaturePathLabel()));
+						 WafFactory.eINSTANCE.createPathVariableAttribute()));
 
 				return null;
 			}
@@ -1995,32 +1969,22 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 				newChildDescriptors.add
 					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_LIKE_OPERATOR__LEFT,
-						 WafFactory.eINSTANCE.createFeaturePathAttribute()));
+						 WafFactory.eINSTANCE.createPathVariableAssociation()));
 
 				newChildDescriptors.add
 					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_LIKE_OPERATOR__LEFT,
-						 WafFactory.eINSTANCE.createFeaturePathAssociation()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.PREDICATE_LIKE_OPERATOR__LEFT,
-						 WafFactory.eINSTANCE.createFeaturePathLabel()));
+						 WafFactory.eINSTANCE.createPathVariableAttribute()));
 
 				newChildDescriptors.add
 					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_LIKE_OPERATOR__RIGHT,
-						 WafFactory.eINSTANCE.createFeaturePathAttribute()));
+						 WafFactory.eINSTANCE.createPathVariableAssociation()));
 
 				newChildDescriptors.add
 					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_LIKE_OPERATOR__RIGHT,
-						 WafFactory.eINSTANCE.createFeaturePathAssociation()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.PREDICATE_LIKE_OPERATOR__RIGHT,
-						 WafFactory.eINSTANCE.createFeaturePathLabel()));
+						 WafFactory.eINSTANCE.createPathVariableAttribute()));
 
 				return null;
 			}
@@ -2035,17 +1999,12 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 				newChildDescriptors.add
 					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_IS_EMPTY__FEATURE,
-						 WafFactory.eINSTANCE.createFeaturePathAttribute()));
+						 WafFactory.eINSTANCE.createPathVariableAssociation()));
 
 				newChildDescriptors.add
 					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_IS_EMPTY__FEATURE,
-						 WafFactory.eINSTANCE.createFeaturePathAssociation()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.PREDICATE_IS_EMPTY__FEATURE,
-						 WafFactory.eINSTANCE.createFeaturePathLabel()));
+						 WafFactory.eINSTANCE.createPathVariableAttribute()));
 
 				return null;
 			}
@@ -2060,17 +2019,12 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 				newChildDescriptors.add
 					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_IS_NULL__FEATURE,
-						 WafFactory.eINSTANCE.createFeaturePathAttribute()));
+						 WafFactory.eINSTANCE.createPathVariableAssociation()));
 
 				newChildDescriptors.add
 					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_IS_NULL__FEATURE,
-						 WafFactory.eINSTANCE.createFeaturePathAssociation()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.PREDICATE_IS_NULL__FEATURE,
-						 WafFactory.eINSTANCE.createFeaturePathLabel()));
+						 WafFactory.eINSTANCE.createPathVariableAttribute()));
 
 				return null;
 			}

@@ -68,7 +68,6 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 			addHelpPropertyDescriptor(object);
 			addHasHelpPropertyDescriptor(object);
 			addHasSecondHelpPropertyDescriptor(object);
-			addPersistentFeaturePropertyDescriptor(object);
 			addIsContainsPropertyDescriptor(object);
 			addIsDisabledPropertyDescriptor(object);
 			addIsRequiredPropertyDescriptor(object);
@@ -144,6 +143,7 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 			addEmptyDisplayValuePropertyDescriptor(object);
 			addAutofocusPropertyDescriptor(object);
 			addFooterPropertyDescriptor(object);
+			addPersistentFeaturePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -599,9 +599,9 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_UnitField_persistentFeature_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_persistentFeature_feature", "_UI_UnitField_type"),
-				 WafPackage.eINSTANCE.getUnitField_PersistentFeature(),
+				 getString("_UI_UnitFeature_persistentFeature_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UnitFeature_persistentFeature_feature", "_UI_UnitFeature_type"),
+				 WafPackage.eINSTANCE.getUnitFeature_PersistentFeature(),
 				 false,
 				 false,
 				 false,
@@ -2454,17 +2454,12 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.eINSTANCE.getUnitFeature_ForcedValue(),
-				 WafFactory.eINSTANCE.createFeaturePathAttribute()));
+				 WafFactory.eINSTANCE.createPathVariableAssociation()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.eINSTANCE.getUnitFeature_ForcedValue(),
-				 WafFactory.eINSTANCE.createFeaturePathAssociation()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.eINSTANCE.getUnitFeature_ForcedValue(),
-				 WafFactory.eINSTANCE.createFeaturePathLabel()));
+				 WafFactory.eINSTANCE.createPathVariableAttribute()));
 
 		newChildDescriptors.add
 			(createChildParameter

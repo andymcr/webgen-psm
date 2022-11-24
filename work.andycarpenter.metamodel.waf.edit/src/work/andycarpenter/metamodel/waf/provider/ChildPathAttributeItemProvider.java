@@ -9,13 +9,8 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
-import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ViewerNotification;
-import work.andycarpenter.metamodel.orm.provider.FeatureChildPathItemProvider;
 import work.andycarpenter.metamodel.waf.ChildPathAttribute;
 import work.andycarpenter.metamodel.waf.WafPackage;
 
@@ -25,7 +20,7 @@ import work.andycarpenter.metamodel.waf.WafPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ChildPathAttributeItemProvider extends FeatureChildPathItemProvider {
+public class ChildPathAttributeItemProvider extends PathAttributeItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -47,76 +42,30 @@ public class ChildPathAttributeItemProvider extends FeatureChildPathItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addAttributePropertyDescriptor(object);
-			addNamePropertyDescriptor(object);
-			addPersistentFeaturePropertyDescriptor(object);
+			addParentPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Attribute feature.
+	 * This adds a property descriptor for the Parent feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addAttributePropertyDescriptor(Object object) {
+	protected void addParentPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ChildPathAttribute_attribute_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ChildPathAttribute_attribute_feature", "_UI_ChildPathAttribute_type"),
-				 WafPackage.eINSTANCE.getChildPathAttribute_Attribute(),
+				 getString("_UI_ChildPath_parent_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ChildPath_parent_feature", "_UI_ChildPath_type"),
+				 WafPackage.eINSTANCE.getChildPath_Parent(),
 				 true,
 				 false,
 				 true,
 				 null,
 				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Name feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ChildPathAttribute_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ChildPathAttribute_name_feature", "_UI_ChildPathAttribute_type"),
-				 WafPackage.eINSTANCE.getChildPathAttribute_Name(),
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 getString("_UI_DebugPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Persistent Feature feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addPersistentFeaturePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ChildPathAttribute_persistentFeature_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ChildPathAttribute_persistentFeature_feature", "_UI_ChildPathAttribute_type"),
-				 WafPackage.eINSTANCE.getChildPathAttribute_PersistentFeature(),
-				 false,
-				 false,
-				 false,
-				 null,
-				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -156,12 +105,6 @@ public class ChildPathAttributeItemProvider extends FeatureChildPathItemProvider
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-
-		switch (notification.getFeatureID(ChildPathAttribute.class)) {
-			case WafPackage.CHILD_PATH_ATTRIBUTE__NAME:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-		}
 		super.notifyChanged(notification);
 	}
 
@@ -175,17 +118,6 @@ public class ChildPathAttributeItemProvider extends FeatureChildPathItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-	}
-
-	/**
-	 * Return the resource locator for this item provider's resources.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ResourceLocator getResourceLocator() {
-		return WafEditPlugin.INSTANCE;
 	}
 
 }

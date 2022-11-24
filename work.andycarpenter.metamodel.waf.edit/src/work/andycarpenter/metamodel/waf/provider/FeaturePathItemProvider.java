@@ -8,14 +8,10 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import work.andycarpenter.metamodel.expression.provider.VariableItemProvider;
 import work.andycarpenter.metamodel.waf.FeaturePath;
 import work.andycarpenter.metamodel.waf.WafPackage;
 
@@ -26,7 +22,7 @@ import work.andycarpenter.metamodel.waf.WafPackage;
  * @generated
  */
 public class FeaturePathItemProvider 
-	extends VariableItemProvider {
+	extends PathItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -48,56 +44,10 @@ public class FeaturePathItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addUseContainerAsContextPropertyDescriptor(object);
-			addHasChildPropertyDescriptor(object);
 			addIsRequiredPropertyDescriptor(object);
 			addIsSingletonPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Use Container As Context feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addUseContainerAsContextPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_FeaturePath_useContainerAsContext_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_FeaturePath_useContainerAsContext_feature", "_UI_FeaturePath_type"),
-				 WafPackage.eINSTANCE.getFeaturePath_UseContainerAsContext(),
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Has Child feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addHasChildPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_FeaturePath_hasChild_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_FeaturePath_hasChild_feature", "_UI_FeaturePath_type"),
-				 WafPackage.eINSTANCE.getFeaturePath_HasChild(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_DebugPropertyCategory"),
-				 null));
 	}
 
 	/**
@@ -153,7 +103,7 @@ public class FeaturePathItemProvider
 	@Override
 	public String getText(Object object) {
 		FeaturePath featurePath = (FeaturePath)object;
-		return getString("_UI_FeaturePath_type") + " " + featurePath.isUseContainerAsContext();
+		return getString("_UI_FeaturePath_type") + " " + featurePath.isHasChild();
 	}
 
 
@@ -169,8 +119,6 @@ public class FeaturePathItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(FeaturePath.class)) {
-			case WafPackage.FEATURE_PATH__USE_CONTAINER_AS_CONTEXT:
-			case WafPackage.FEATURE_PATH__HAS_CHILD:
 			case WafPackage.FEATURE_PATH__IS_REQUIRED:
 			case WafPackage.FEATURE_PATH__IS_SINGLETON:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
@@ -189,17 +137,6 @@ public class FeaturePathItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-	}
-
-	/**
-	 * Return the resource locator for this item provider's resources.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ResourceLocator getResourceLocator() {
-		return WafEditPlugin.INSTANCE;
 	}
 
 }

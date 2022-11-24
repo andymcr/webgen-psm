@@ -240,17 +240,12 @@ public class UnitAttributeItemProvider extends UnitFeatureItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.eINSTANCE.getUnitAttribute_AttributeDefaultValue(),
-				 WafFactory.eINSTANCE.createFeaturePathAttribute()));
+				 WafFactory.eINSTANCE.createPathVariableAssociation()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.eINSTANCE.getUnitAttribute_AttributeDefaultValue(),
-				 WafFactory.eINSTANCE.createFeaturePathAssociation()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.eINSTANCE.getUnitAttribute_AttributeDefaultValue(),
-				 WafFactory.eINSTANCE.createFeaturePathLabel()));
+				 WafFactory.eINSTANCE.createPathVariableAttribute()));
 
 		newChildDescriptors.add
 			(createChildParameter

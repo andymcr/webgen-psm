@@ -24,12 +24,10 @@ import work.andycarpenter.metamodel.expression.Expression
 import work.andycarpenter.metamodel.expression.Predicate
 import work.andycarpenter.metamodel.expression.Variable
 import work.andycarpenter.metamodel.orm.Association
-import work.andycarpenter.metamodel.orm.AssociationReference
 import work.andycarpenter.metamodel.orm.Attribute
 import work.andycarpenter.metamodel.orm.DateDetails
 import work.andycarpenter.metamodel.orm.Entity
 import work.andycarpenter.metamodel.orm.Feature
-import work.andycarpenter.metamodel.orm.FeatureChildPath
 import work.andycarpenter.metamodel.orm.Filter
 import work.andycarpenter.metamodel.orm.Label
 import work.andycarpenter.metamodel.orm.LocationFeature
@@ -1272,26 +1270,6 @@ interface UnitField extends DisplayElement {
 
 	contains Predicate hideWhen
 
-	@OCL(derivation="if self.oclIsKindOf(UnitAttribute) then
-			self.oclAsType(UnitAttribute).attribute
-		else if self.oclIsKindOf(UnitAssociation) then
-			if self.oclAsType(UnitAssociation).childFeature.oclIsUndefined() then
-				self.oclAsType(UnitAssociation).association
-			else
-				if self.oclAsType(UnitAssociation).childFeature.oclIsKindOf(ChildPathAttribute) then
-					self.oclAsType(UnitAssociation).childFeature.oclAsType(ChildPathAttribute).persistentFeature
-				else if self.oclAsType(UnitAssociation).childFeature.oclIsKindOf(ChildPathAssociation) then
-					self.oclAsType(UnitAssociation).childFeature.oclAsType(ChildPathAssociation).persistentFeature
-				else
-					self.oclAsType(UnitAssociation).association
-				endif endif
-			endif
-		else
-			null
-		endif endif")
-    @GenModel(propertyCategory="Debug")
-	refers derived readonly transient volatile Feature persistentFeature
-
 	@OCL(derivation="if self.oclIsKindOf(UnitAssociation) then
 			self.oclAsType(UnitAssociation).association.isContains
 		else
@@ -1305,7 +1283,7 @@ interface UnitField extends DisplayElement {
 	derived readonly transient volatile boolean isDisabled
 
 	@OCL(derivation="if self.oclIsKindOf(UnitFeature) then
-			persistentFeature.isRequired
+			self.oclAsType(UnitFeature).persistentFeature.isRequired
 		else if self.oclIsKindOf(InterfaceField) then
 			self.oclAsType(InterfaceField).fieldRequired
 		else
@@ -1315,7 +1293,7 @@ interface UnitField extends DisplayElement {
 	derived readonly transient volatile boolean isRequired
 
 	@OCL(derivation="if self.oclIsKindOf(UnitFeature) then
-			persistentFeature.isSingleton = true
+			self.oclAsType(UnitFeature).persistentFeature.isSingleton
 		else if self.oclIsKindOf(InterfaceField) then
 			true
 		else
@@ -1333,7 +1311,7 @@ interface UnitField extends DisplayElement {
 	derived readonly transient volatile boolean isAttributeField
 
 	@OCL(derivation="if self.oclIsKindOf(UnitFeature) then
-			persistentFeature.isBooleanFeature
+			self.oclAsType(UnitFeature).persistentFeature.isBooleanFeature
 		else if self.oclIsKindOf(DataTypeField) then
 			self.oclAsType(DataTypeField).dataType.isBooleanClassifier
 		else
@@ -1343,7 +1321,7 @@ interface UnitField extends DisplayElement {
 	derived readonly transient volatile boolean isBooleanField
 
 	@OCL(derivation="if self.oclIsKindOf(UnitFeature) then
-			persistentFeature.isDataTypeFeature
+			self.oclAsType(UnitFeature).persistentFeature.isDataTypeFeature
 		else
 			self.oclIsKindOf(DataTypeField)
 		endif")
@@ -1351,7 +1329,7 @@ interface UnitField extends DisplayElement {
 	derived readonly transient volatile boolean isDataTypeField
 
 	@OCL(derivation="if self.oclIsKindOf(UnitFeature) then
-			persistentFeature.dataType
+			self.oclAsType(UnitFeature).persistentFeature.dataType
 		else if self.oclIsKindOf(DataTypeField) then
 			self.oclAsType(DataTypeField).fieldDataType
 		else
@@ -1361,7 +1339,7 @@ interface UnitField extends DisplayElement {
 	refers derived readonly transient volatile Classifier dataType
 
 	@OCL(derivation="if self.oclIsKindOf(UnitFeature) then
-			persistentFeature.isDateFeature
+			self.oclAsType(UnitFeature).persistentFeature.isDateFeature
 		else
 			false
 		endif")
@@ -1369,7 +1347,7 @@ interface UnitField extends DisplayElement {
 	derived readonly transient volatile boolean isDateField
 
 	@OCL(derivation="if self.oclIsKindOf(UnitFeature) then
-			persistentFeature.dateDetails
+			self.oclAsType(UnitFeature).persistentFeature.dateDetails
 		else
 			null
 		endif")
@@ -1377,7 +1355,7 @@ interface UnitField extends DisplayElement {
 	derived readonly transient volatile DateDetails dateDetails
 
 	@OCL(derivation="if self.oclIsKindOf(UnitFeature) then
-			persistentFeature.isEmailFeature
+			self.oclAsType(UnitFeature).persistentFeature.isEmailFeature
 		else if self.oclIsKindOf(DataTypeField) then
 			self.oclAsType(DataTypeField).dataType.isEmailClassifier
 		else
@@ -1387,7 +1365,7 @@ interface UnitField extends DisplayElement {
 	derived readonly transient volatile boolean isEmailField
 
 	@OCL(derivation="if self.oclIsKindOf(UnitFeature) then
-			persistentFeature.isEncrypted
+			self.oclAsType(UnitFeature).persistentFeature.isEncrypted
 		else
 			false
 		endif")
@@ -1395,7 +1373,7 @@ interface UnitField extends DisplayElement {
 	derived readonly transient volatile boolean isEncryptedField
 
 	@OCL(derivation="if self.oclIsKindOf(UnitFeature) then
-			persistentFeature.isEnumerationFeature
+			self.oclAsType(UnitFeature).persistentFeature.isEnumerationFeature
 		else
 			false
 		endif")
@@ -1403,7 +1381,7 @@ interface UnitField extends DisplayElement {
 	derived readonly transient volatile boolean isEnumerationField
 
 	@OCL(derivation="if self.oclIsKindOf(UnitFeature) then
-			persistentFeature.enumerationType
+			self.oclAsType(UnitFeature).persistentFeature.enumerationType
 		else
 			null
 		endif")
@@ -1419,7 +1397,7 @@ interface UnitField extends DisplayElement {
 	derived readonly transient volatile boolean isInterfaceField
 
 	@OCL(derivation="if self.oclIsKindOf(UnitFeature) then
-			persistentFeature.isIntegerFeature
+			self.oclAsType(UnitFeature).persistentFeature.isIntegerFeature
 		else if self.oclIsKindOf(DataTypeField) then
 			self.oclAsType(DataTypeField).dataType.isIntegerClassifier
 		else
@@ -1429,7 +1407,7 @@ interface UnitField extends DisplayElement {
 	derived readonly transient volatile boolean isIntegerField
 
 	@OCL(derivation="if self.oclIsKindOf(UnitFeature) then
-			persistentFeature.isLocationFeature
+			self.oclAsType(UnitFeature).persistentFeature.isLocationFeature
 		else
 			false
 		endif")
@@ -1437,7 +1415,7 @@ interface UnitField extends DisplayElement {
 	derived readonly transient volatile boolean isLocationField
 
 	@OCL(derivation="if self.oclIsKindOf(UnitFeature) then
-			persistentFeature.isObfuscatedFeature
+			self.oclAsType(UnitFeature).persistentFeature.isObfuscatedFeature
 		else
 			false
 		endif")
@@ -1455,7 +1433,7 @@ interface UnitField extends DisplayElement {
 	derived readonly transient volatile boolean isObfuscatedField
 
 	@OCL(derivation="if self.oclIsKindOf(UnitFeature) then
-			persistentFeature.isResourceFeature
+			self.oclAsType(UnitFeature).persistentFeature.isResourceFeature
 		else
 			false
 		endif")
@@ -1463,7 +1441,7 @@ interface UnitField extends DisplayElement {
 	derived readonly transient volatile boolean isResourceField
 
 	@OCL(derivation="if self.oclIsKindOf(UnitFeature) then
-			persistentFeature.isStringFeature
+			self.oclAsType(UnitFeature).persistentFeature.isStringFeature
 		else if self.oclIsKindOf(DataTypeField) then
 			self.oclAsType(DataTypeField).dataType.isStringClassifier
 		else
@@ -1473,7 +1451,7 @@ interface UnitField extends DisplayElement {
 	derived readonly transient volatile boolean isStringField
 
 	@OCL(derivation="if self.oclIsKindOf(UnitFeature) then
-			persistentFeature.isTextareaFeature
+			self.oclAsType(UnitFeature).persistentFeature.isTextareaFeature
 		else if self.oclIsKindOf(DataTypeField) then
 			self.oclAsType(DataTypeField).dataType.isTextareaClassifier
 		else
@@ -1483,7 +1461,7 @@ interface UnitField extends DisplayElement {
 	derived readonly transient volatile boolean isTextareaField
 
 	@OCL(derivation="if self.oclIsKindOf(UnitFeature) then
-			persistentFeature.isUrlFeature
+			self.oclAsType(UnitFeature).persistentFeature.isUrlFeature
 		else
 			false
 		endif")
@@ -1587,6 +1565,16 @@ abstract class UnitFeature extends UnitField, ActionContainer {
 	String emptyDisplayValue
 	boolean autofocus
 	String footer
+
+	@OCL(derivation="if self.oclIsKindOf(UnitAttribute) then
+			self.oclAsType(UnitAttribute).attribute
+		else if self.oclIsKindOf(UnitAssociation) then
+			self.oclAsType(UnitAssociation).leafFeature
+		else
+			null
+		endif endif")
+    @GenModel(propertyCategory="Debug")
+	refers derived readonly transient volatile Feature persistentFeature
 }
 
 class UnitAttribute extends UnitFeature {
@@ -1605,102 +1593,9 @@ class UnitAttribute extends UnitFeature {
 	String validationPattern = ''
 }
 
-class UnitAssociation extends UnitFeature, AssociationReference {
+class UnitAssociation extends UnitFeature, PathAssociation {
 	refers Selection options
 	boolean useAutocomplete = "false"
-}
-
-abstract class FeaturePath extends Variable {
-	boolean useContainerAsContext
-
-	@OCL(derivation="if self.oclIsKindOf(FeaturePathAssociation) then
-			not self.oclAsType(FeaturePathAssociation).childFeature.oclIsUndefined()
-		else
-			false
-		endif")
-    @GenModel(propertyCategory="Debug")
-	derived readonly transient volatile boolean hasChild
-
-	@OCL(derivation="if self.oclIsKindOf(FeaturePathAttribute) then
-			self.oclAsType(FeaturePathAttribute).attribute.isRequired
-		else if self.oclIsKindOf(FeaturePathAssociation) then
-			self.oclAsType(FeaturePathAssociation).association.isRequired
-		else
-			false
-		endif endif")
-    @GenModel(propertyCategory="Debug")
-	derived readonly transient volatile boolean isRequired
-
-	@OCL(derivation="if self.oclIsKindOf(FeaturePathAttribute) then
-			self.oclAsType(FeaturePathAttribute).attribute.isSingleton
-		else if self.oclIsKindOf(FeaturePathAssociation) then
-			self.oclAsType(FeaturePathAssociation).association.isSingleton
-		else
-			false
-		endif endif")
-    @GenModel(propertyCategory="Debug")
-	derived readonly transient volatile boolean isSingleton
-}
-
-class FeaturePathAttribute extends FeaturePath {
-	refers Attribute[1] attribute
-
-	@OCL(derivation="if not attribute.oclIsUndefined() then
-			attribute.name
-		else
-			''
-		endif")
-    @GenModel(propertyCategory="Debug")
-	derived String name
-}
-
-class FeaturePathAssociation extends FeaturePath, AssociationReference {
-}
-
-class FeaturePathLabel extends FeaturePath {
-	refers ModelLabel[1] label
-
-	@OCL(derivation="if not label.oclIsUndefined() then
-			label.name
-		else
-			''
-		endif")
-    @GenModel(propertyCategory="Debug")
-	derived String name
-}
-
-class ChildPathAttribute extends FeatureChildPath {
-	refers Attribute[1] attribute
-
-	@OCL(derivation="if not attribute.oclIsUndefined() then
-			attribute.name
-		else
-			''
-		endif")
-    @GenModel(propertyCategory="Debug")
-	derived String name
-
-	@OCL(derivation="attribute")
-    @GenModel(propertyCategory="Debug")
-	refers derived readonly transient volatile Feature persistentFeature
-}
-
-class ChildPathAssociation extends FeatureChildPath, AssociationReference {
-	@OCL(derivation="not childFeature.oclIsUndefined()")
-    @GenModel(propertyCategory="Debug")
-	derived readonly transient volatile boolean hasChild
-
-	@OCL(derivation="if hasChild = false then
-			association
-		else if childFeature.oclIsKindOf(ChildPathAttribute) then
-			childFeature.oclAsType(ChildPathAttribute).persistentFeature
-		else if childFeature.oclIsKindOf(ChildPathAssociation) then
-			childFeature.oclAsType(ChildPathAssociation).persistentFeature
-		else
-			null
-		endif endif endif")
-    @GenModel(propertyCategory="Debug")
-	refers derived readonly transient volatile Feature persistentFeature
 }
 
 class UnitLabel extends UnitField {
@@ -3084,6 +2979,165 @@ abstract class ControlUnit extends DynamicUnit {
 
 class SearchUnit extends ControlUnit {
 	refers TabularUnit[1] resultsDestination opposite targettingSearches
+}
+
+
+abstract class Path {
+	@OCL(derivation="if self.oclIsKindOf(PathAssociation) then
+			not self.oclAsType(PathAssociation).childFeature.oclIsUndefined()
+		else
+			false
+		endif")
+    @GenModel(propertyCategory="Debug")
+	derived readonly transient volatile boolean hasChild
+
+	@OCL(derivation="if self.oclIsKindOf(PathAttribute) then
+			self.oclAsType(PathAttribute).attribute
+		else if self.oclIsKindOf(PathAssociation) then
+			let association : PathAssociation = self.oclAsType(PathAssociation)
+				in if not association.hasChild then
+						association.association
+					else
+						association.childFeature.leafFeature
+					endif
+		else
+			null
+		endif endif")
+    @GenModel(propertyCategory="Debug")
+	refers derived readonly transient volatile Feature leafFeature
+
+	@OCL(derivation="if self.oclIsKindOf(ChildPath) then
+			self.oclAsType(ChildPath).parent.targetEntity
+		else if self.oclIsTypeOf(UnitAssociation) then
+			self.oclAsType(UnitAssociation).displayedOn.contentType
+		else if self.oclIsKindOf(PathVariable) then
+			self.oclAsType(PathVariable).context
+		else if self.oclAsType(ecore::EObject).eContainer().oclIsKindOf(DynamicUnit) then
+			self.oclAsType(ecore::EObject).eContainer().oclAsType(DynamicUnit).contentType
+		else if self.oclAsType(ecore::EObject).eContainer().oclIsKindOf(SelectAction) then
+			let action : SelectAction = self.oclAsType(ecore::EObject).eContainer().oclAsType(SelectAction)
+				in if action.usedBy.oclIsKindOf(DynamicUnit) then
+						action.usedBy.oclAsType(DynamicUnit).contentType
+					else
+						action.usedBy.oclAsType(UnitFeature).displayedOn.contentType
+					endif
+		else if self.oclAsType(ecore::EObject).eContainer().oclIsKindOf(Badge) then
+			self.oclAsType(ecore::EObject).eContainer().oclAsType(Badge).displayedOn.contentType
+		else if self.oclAsType(ecore::EObject).eContainer().oclIsKindOf(Message) then
+			null -- self.oclAsType(ecore::EObject).eContainer().oclAsType(Message).contentType
+		else
+			null
+		endif endif endif endif endif endif endif")
+    @GenModel(propertyCategory="Debug")
+	refers derived readonly transient volatile Entity containingType
+}
+
+abstract class PathAssociation extends Path {
+	refers Association[1] association
+
+	@OCL(derivation="if not association.oclIsUndefined() then
+			association.name
+		else
+			''
+		endif")
+    @GenModel(propertyCategory="Debug")
+	derived String name
+
+    @GenModel(propertyCategory="Interface")
+	refers ModelLabel valueDisplay
+
+	contains ChildPath childFeature opposite parent
+
+	@OCL(derivation="if association.oclIsUndefined() then null else association.targetType endif")
+    @GenModel(propertyCategory="Debug")
+	refers derived readonly transient volatile Entity targetEntity
+}
+
+abstract class PathAttribute extends Path {
+	refers Attribute[1] attribute
+
+	@OCL(derivation="if not attribute.oclIsUndefined() then
+			attribute.name
+		else
+			''
+		endif")
+    @GenModel(propertyCategory="Debug")
+	derived String name
+}
+
+abstract class ChildPath extends Path {
+	refers PathAssociation[1] parent opposite childFeature
+}
+
+class ChildPathAssociation extends PathAssociation, ChildPath {
+}
+
+class ChildPathAttribute extends PathAttribute, ChildPath {
+}
+
+abstract class FeaturePath extends Path {
+	@OCL(derivation="if leafFeature.oclIsUndefined() then
+			false
+		else
+			leafFeature.isRequired
+		endif")
+    @GenModel(propertyCategory="Debug")
+	derived readonly transient volatile boolean isRequired
+
+	@OCL(derivation="if leafFeature.oclIsUndefined() then
+			false
+		else
+			leafFeature.isSingleton
+		endif")
+    @GenModel(propertyCategory="Debug")
+	derived readonly transient volatile boolean isSingleton
+}
+
+class FeaturePathAssociation extends PathAssociation, FeaturePath {
+}
+
+class FeaturePathAttribute extends PathAttribute, FeaturePath {
+}
+
+class FeaturePathLabel extends FeaturePath {
+	refers ModelLabel[1] label
+
+	@OCL(derivation="if not label.oclIsUndefined() then
+			label.name
+		else
+			''
+		endif")
+    @GenModel(propertyCategory="Debug")
+	derived String name
+}
+
+abstract class PathVariable extends Path, Variable {
+	boolean useContainerAsContext
+	@OCL(derivation="let contentType : orm::Entity
+		= if self.rootContainer.oclIsKindOf(DynamicUnit) then
+				self.rootContainer.oclAsType(DynamicUnit).contentType
+			else if self.rootContainer.oclIsKindOf(UnitField) then
+				self.rootContainer.oclAsType(UnitField).displayedOn.contentType
+			else if self.rootContainer.oclIsKindOf(Badge) then
+				self.rootContainer.oclAsType(Badge).displayedOn.contentType
+			else if self.rootContainer.oclIsKindOf(Action) then
+				self.rootContainer.oclAsType(Action).parentUnit.contentType
+			else
+				null
+			endif endif endif endif
+		in if useContainerAsContext = true then
+				contentType.containingType
+			else
+				contentType
+			endif")
+    @GenModel(propertyCategory="Debug")
+	refers derived readonly transient volatile Entity context
+}
+
+class PathVariableAssociation extends PathAssociation, PathVariable {
+}
+
+class PathVariableAttribute extends PathAttribute, PathVariable {
 }
 
 

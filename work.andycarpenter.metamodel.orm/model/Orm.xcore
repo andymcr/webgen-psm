@@ -552,24 +552,6 @@ class Association extends Feature {
 	derived readonly unsettable transient volatile boolean hasSerializationControlAssociation
 }
 
-abstract class AssociationReference {
-	refers Association[1] association
-
-	@OCL(derivation="if not association.oclIsUndefined() then
-			association.name
-		else
-			''
-		endif")
-    @GenModel(propertyCategory="Debug")
-	derived String name
-
-	refers ModelLabel valueDisplay
-	contains FeatureChildPath childFeature
-}
-
-abstract class FeatureChildPath {
-}
-
 class SingletonAssociation extends Association {
 }
 

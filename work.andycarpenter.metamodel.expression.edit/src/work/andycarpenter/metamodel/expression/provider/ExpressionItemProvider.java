@@ -62,6 +62,7 @@ public class ExpressionItemProvider
 			super.getPropertyDescriptors(object);
 
 			addSuffixesPropertyDescriptor(object);
+			addRootContainerPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -85,6 +86,28 @@ public class ExpressionItemProvider
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Root Container feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRootContainerPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Expression_rootContainer_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Expression_rootContainer_feature", "_UI_Expression_type"),
+				 ExpressionPackage.Literals.EXPRESSION__ROOT_CONTAINER,
+				 false,
+				 false,
+				 false,
+				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 

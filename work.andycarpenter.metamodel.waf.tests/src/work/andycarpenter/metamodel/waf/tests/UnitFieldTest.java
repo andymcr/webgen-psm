@@ -26,7 +26,6 @@ import work.andycarpenter.metamodel.waf.UnitField;
  *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#getHelp() <em>Help</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#isHasHelp() <em>Has Help</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#isHasSecondHelp() <em>Has Second Help</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#getPersistentFeature() <em>Persistent Feature</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#isIsContains() <em>Is Contains</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#isIsDisabled() <em>Is Disabled</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#isIsRequired() <em>Is Required</em>}</li>
@@ -450,19 +449,6 @@ public abstract class UnitFieldTest extends DisplayElementTest {
 	 */
 	public void testIsSetHasSecondHelp() {
 		// TODO: implement this test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.UnitField#getPersistentFeature() <em>Persistent Feature</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.UnitField#getPersistentFeature()
-	 * @generated
-	 */
-	public void testGetPersistentFeature() {
-		// TODO: implement this feature getter test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}

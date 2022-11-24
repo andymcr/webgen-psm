@@ -15,7 +15,11 @@ import work.andycarpenter.metamodel.waf.WafFactory;
  * <p>
  * The following features are tested:
  * <ul>
- *   <li>{@link work.andycarpenter.metamodel.orm.AssociationReference#getName() <em>Name</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.Path#isHasChild() <em>Has Child</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.Path#getLeafFeature() <em>Leaf Feature</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.Path#getContainingType() <em>Containing Type</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.PathAssociation#getName() <em>Name</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.PathAssociation#getTargetEntity() <em>Target Entity</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -75,6 +79,45 @@ public class UnitAssociationTest extends UnitFeatureTest {
 	}
 
 	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.Path#getLeafFeature() <em>Leaf Feature</em>}' feature getter.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.Path#getLeafFeature()
+	 * @generated
+	 */
+	public void testGetLeafFeature() {
+		// TODO: implement this feature getter test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.Path#getContainingType() <em>Containing Type</em>}' feature getter.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.Path#getContainingType()
+	 * @generated
+	 */
+	public void testGetContainingType() {
+		// TODO: implement this feature getter test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.Path#isHasChild() <em>Has Child</em>}' feature getter.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.Path#isHasChild()
+	 * @generated
+	 */
+	public void testIsHasChild() {
+		// TODO: implement this feature getter test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
 	 * Tests the '{@link work.andycarpenter.metamodel.orm.AssociationReference#getName() <em>Name</em>}' feature getter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -93,14 +136,27 @@ public class UnitAssociationTest extends UnitFeatureTest {
 	}
 
 	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.orm.AssociationReference#setName(java.lang.String) <em>Name</em>}' feature setter.
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.PathAssociation#setName(java.lang.String) <em>Name</em>}' feature setter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.orm.AssociationReference#setName(java.lang.String)
+	 * @see work.andycarpenter.metamodel.waf.PathAssociation#setName(java.lang.String)
 	 * @generated
 	 */
 	public void testSetName() {
 		// TODO: implement this feature setter test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.PathAssociation#getTargetEntity() <em>Target Entity</em>}' feature getter.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.PathAssociation#getTargetEntity()
+	 * @generated
+	 */
+	public void testGetTargetEntity() {
+		// TODO: implement this feature getter test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}

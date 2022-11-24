@@ -26,7 +26,6 @@ import work.andycarpenter.metamodel.waf.UnitFeature;
  *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#getHelp() <em>Help</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#isHasHelp() <em>Has Help</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#isHasSecondHelp() <em>Has Second Help</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#getPersistentFeature() <em>Persistent Feature</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#isIsContains() <em>Is Contains</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#isIsDisabled() <em>Is Disabled</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#isIsRequired() <em>Is Required</em>}</li>
@@ -82,6 +81,7 @@ import work.andycarpenter.metamodel.waf.UnitFeature;
  *   <li>{@link work.andycarpenter.metamodel.waf.ActionContainer#isHasOperationActions() <em>Has Operation Actions</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.ActionContainer#getGenModelRef() <em>Gen Model Ref</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.ActionContainer#getUiModelRef() <em>Ui Model Ref</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.UnitFeature#getPersistentFeature() <em>Persistent Feature</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -474,10 +474,10 @@ public abstract class UnitFeatureTest extends DisplayElementTest {
 	}
 
 	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.UnitField#getPersistentFeature() <em>Persistent Feature</em>}' feature getter.
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.UnitFeature#getPersistentFeature() <em>Persistent Feature</em>}' feature getter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.UnitField#getPersistentFeature()
+	 * @see work.andycarpenter.metamodel.waf.UnitFeature#getPersistentFeature()
 	 * @generated
 	 */
 	public void testGetPersistentFeature() {

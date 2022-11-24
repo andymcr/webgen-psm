@@ -8,14 +8,11 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import work.andycarpenter.metamodel.orm.OrmPackage;
 import work.andycarpenter.metamodel.waf.FeaturePathAssociation;
-import work.andycarpenter.metamodel.waf.WafFactory;
 import work.andycarpenter.metamodel.waf.WafPackage;
 
 /**
@@ -24,7 +21,7 @@ import work.andycarpenter.metamodel.waf.WafPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class FeaturePathAssociationItemProvider extends FeaturePathItemProvider {
+public class FeaturePathAssociationItemProvider extends PathAssociationItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -46,107 +43,54 @@ public class FeaturePathAssociationItemProvider extends FeaturePathItemProvider 
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addAssociationPropertyDescriptor(object);
-			addNamePropertyDescriptor(object);
-			addValueDisplayPropertyDescriptor(object);
+			addIsRequiredPropertyDescriptor(object);
+			addIsSingletonPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Association feature.
+	 * This adds a property descriptor for the Is Required feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addAssociationPropertyDescriptor(Object object) {
+	protected void addIsRequiredPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_AssociationReference_association_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_AssociationReference_association_feature", "_UI_AssociationReference_type"),
-				 OrmPackage.Literals.ASSOCIATION_REFERENCE__ASSOCIATION,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Name feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_AssociationReference_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_AssociationReference_name_feature", "_UI_AssociationReference_type"),
-				 OrmPackage.Literals.ASSOCIATION_REFERENCE__NAME,
-				 true,
+				 getString("_UI_FeaturePath_isRequired_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_FeaturePath_isRequired_feature", "_UI_FeaturePath_type"),
+				 WafPackage.eINSTANCE.getFeaturePath_IsRequired(),
 				 false,
 				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
 	/**
-	 * This adds a property descriptor for the Value Display feature.
+	 * This adds a property descriptor for the Is Singleton feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addValueDisplayPropertyDescriptor(Object object) {
+	protected void addIsSingletonPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_AssociationReference_valueDisplay_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_AssociationReference_valueDisplay_feature", "_UI_AssociationReference_type"),
-				 OrmPackage.Literals.ASSOCIATION_REFERENCE__VALUE_DISPLAY,
-				 true,
+				 getString("_UI_FeaturePath_isSingleton_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_FeaturePath_isSingleton_feature", "_UI_FeaturePath_type"),
+				 WafPackage.eINSTANCE.getFeaturePath_IsSingleton(),
 				 false,
-				 true,
-				 null,
-				 null,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
-	}
-
-	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
-	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null) {
-			super.getChildrenFeatures(object);
-			childrenFeatures.add(OrmPackage.Literals.ASSOCIATION_REFERENCE__CHILD_FEATURE);
-		}
-		return childrenFeatures;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected EStructuralFeature getChildFeature(Object object, Object child) {
-		// Check the type of the specified child object and return the proper feature to use for
-		// adding (see {@link AddCommand}) it as a child.
-
-		return super.getChildFeature(object, child);
 	}
 
 	/**
@@ -187,11 +131,9 @@ public class FeaturePathAssociationItemProvider extends FeaturePathItemProvider 
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(FeaturePathAssociation.class)) {
-			case WafPackage.FEATURE_PATH_ASSOCIATION__NAME:
+			case WafPackage.FEATURE_PATH_ASSOCIATION__IS_REQUIRED:
+			case WafPackage.FEATURE_PATH_ASSOCIATION__IS_SINGLETON:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-			case WafPackage.FEATURE_PATH_ASSOCIATION__CHILD_FEATURE:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
 		super.notifyChanged(notification);
@@ -207,16 +149,6 @@ public class FeaturePathAssociationItemProvider extends FeaturePathItemProvider 
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OrmPackage.Literals.ASSOCIATION_REFERENCE__CHILD_FEATURE,
-				 WafFactory.eINSTANCE.createChildPathAttribute()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OrmPackage.Literals.ASSOCIATION_REFERENCE__CHILD_FEATURE,
-				 WafFactory.eINSTANCE.createChildPathAssociation()));
 	}
 
 }

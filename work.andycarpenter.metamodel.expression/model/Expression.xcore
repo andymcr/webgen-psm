@@ -14,6 +14,12 @@
 )
 package work.andycarpenter.metamodel.expression
 
+import org.eclipse.emf.ecore.EObject
+
+
+annotation "http://www.eclipse.org/emf/2002/Ecore/OCL" as OCL
+
+
 enum BooleanOperator {
 	And
 	Or = 1
@@ -26,6 +32,14 @@ enum ComparisionOperator {
 
 abstract class Expression {
 	String[] suffixes
+
+	@OCL(derivation="if self.oclAsType(ecore::EObject).eContainer().oclIsKindOf(Expression) then
+			self.oclAsType(ecore::EObject).eContainer().oclAsType(Expression).rootContainer
+		else
+			self.oclAsType(ecore::EObject).eContainer()
+		endif")
+    @GenModel(propertyCategory="Debug")
+	refers derived readonly unsettable transient volatile EObject rootContainer
 }
 
 abstract class Literal extends Expression {
