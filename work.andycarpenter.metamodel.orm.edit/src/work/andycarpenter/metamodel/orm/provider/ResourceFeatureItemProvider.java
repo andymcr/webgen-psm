@@ -50,7 +50,8 @@ public class ResourceFeatureItemProvider extends FeatureItemProvider {
 			addMaximumUploadSizePropertyDescriptor(object);
 			addValidUploadMimeTypesPropertyDescriptor(object);
 			addValidUploadExtensionsPropertyDescriptor(object);
-			addUploadsWithinWebsitePropertyDescriptor(object);
+			addUriPrefixPropertyDescriptor(object);
+			addBaseUploadDirectoryPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -72,8 +73,8 @@ public class ResourceFeatureItemProvider extends FeatureItemProvider {
 				 true,
 				 false,
 				 false,
-				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
-				 null,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_ResourcePropertyCategory"),
 				 null));
 	}
 
@@ -95,7 +96,7 @@ public class ResourceFeatureItemProvider extends FeatureItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_ResourcePropertyCategory"),
 				 null));
 	}
 
@@ -117,29 +118,51 @@ public class ResourceFeatureItemProvider extends FeatureItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_ResourcePropertyCategory"),
 				 null));
 	}
 
 	/**
-	 * This adds a property descriptor for the Uploads Within Website feature.
+	 * This adds a property descriptor for the Uri Prefix feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addUploadsWithinWebsitePropertyDescriptor(Object object) {
+	protected void addUriPrefixPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ResourceFeature_uploadsWithinWebsite_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ResourceFeature_uploadsWithinWebsite_feature", "_UI_ResourceFeature_type"),
-				 OrmPackage.Literals.RESOURCE_FEATURE__UPLOADS_WITHIN_WEBSITE,
+				 getString("_UI_ResourceFeature_uriPrefix_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ResourceFeature_uriPrefix_feature", "_UI_ResourceFeature_type"),
+				 OrmPackage.Literals.RESOURCE_FEATURE__URI_PREFIX,
 				 true,
 				 false,
 				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_ResourcePropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Base Upload Directory feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addBaseUploadDirectoryPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ResourceFeature_baseUploadDirectory_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ResourceFeature_baseUploadDirectory_feature", "_UI_ResourceFeature_type"),
+				 OrmPackage.Literals.RESOURCE_FEATURE__BASE_UPLOAD_DIRECTORY,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_ResourcePropertyCategory"),
 				 null));
 	}
 
@@ -155,7 +178,8 @@ public class ResourceFeatureItemProvider extends FeatureItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(OrmPackage.Literals.RESOURCE_FEATURE__UPLOAD_PATH);
+			childrenFeatures.add(OrmPackage.Literals.RESOURCE_FEATURE__DIRECTORY_NAMER);
+			childrenFeatures.add(OrmPackage.Literals.RESOURCE_FEATURE__FILE_NAMER);
 		}
 		return childrenFeatures;
 	}
@@ -203,10 +227,12 @@ public class ResourceFeatureItemProvider extends FeatureItemProvider {
 			case OrmPackage.RESOURCE_FEATURE__MAXIMUM_UPLOAD_SIZE:
 			case OrmPackage.RESOURCE_FEATURE__VALID_UPLOAD_MIME_TYPES:
 			case OrmPackage.RESOURCE_FEATURE__VALID_UPLOAD_EXTENSIONS:
-			case OrmPackage.RESOURCE_FEATURE__UPLOADS_WITHIN_WEBSITE:
+			case OrmPackage.RESOURCE_FEATURE__URI_PREFIX:
+			case OrmPackage.RESOURCE_FEATURE__BASE_UPLOAD_DIRECTORY:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case OrmPackage.RESOURCE_FEATURE__UPLOAD_PATH:
+			case OrmPackage.RESOURCE_FEATURE__DIRECTORY_NAMER:
+			case OrmPackage.RESOURCE_FEATURE__FILE_NAMER:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -226,13 +252,53 @@ public class ResourceFeatureItemProvider extends FeatureItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OrmPackage.Literals.RESOURCE_FEATURE__UPLOAD_PATH,
-				 OrmFactory.eINSTANCE.createStaticPathElement()));
+				(OrmPackage.Literals.RESOURCE_FEATURE__DIRECTORY_NAMER,
+				 OrmFactory.eINSTANCE.createSubDirectory()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OrmPackage.Literals.RESOURCE_FEATURE__UPLOAD_PATH,
-				 OrmFactory.eINSTANCE.createDatePathElement()));
+				(OrmPackage.Literals.RESOURCE_FEATURE__DIRECTORY_NAMER,
+				 OrmFactory.eINSTANCE.createPropertyDirectory()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OrmPackage.Literals.RESOURCE_FEATURE__DIRECTORY_NAMER,
+				 OrmFactory.eINSTANCE.createDateTimeDirectory()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OrmPackage.Literals.RESOURCE_FEATURE__FILE_NAMER,
+				 OrmFactory.eINSTANCE.createUniqueIdNamer()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OrmPackage.Literals.RESOURCE_FEATURE__FILE_NAMER,
+				 OrmFactory.eINSTANCE.createOriginalNamer()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OrmPackage.Literals.RESOURCE_FEATURE__FILE_NAMER,
+				 OrmFactory.eINSTANCE.createPropertyNamer()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OrmPackage.Literals.RESOURCE_FEATURE__FILE_NAMER,
+				 OrmFactory.eINSTANCE.createHashNamer()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OrmPackage.Literals.RESOURCE_FEATURE__FILE_NAMER,
+				 OrmFactory.eINSTANCE.createBase64Namer()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OrmPackage.Literals.RESOURCE_FEATURE__FILE_NAMER,
+				 OrmFactory.eINSTANCE.createSmartUniqueNamer()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OrmPackage.Literals.RESOURCE_FEATURE__FILE_NAMER,
+				 OrmFactory.eINSTANCE.createSlugNamer()));
 	}
 
 }

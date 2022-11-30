@@ -8,28 +8,26 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import work.andycarpenter.metamodel.orm.OrmPackage;
-import work.andycarpenter.metamodel.orm.StaticPathElement;
 
 /**
- * This is the item provider adapter for a {@link work.andycarpenter.metamodel.orm.StaticPathElement} object.
+ * This is the item provider adapter for a {@link work.andycarpenter.metamodel.orm.PropertyDirectory} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class StaticPathElementItemProvider extends PathElementItemProvider {
+public class PropertyDirectoryItemProvider extends DirectoryNamerItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public StaticPathElementItemProvider(AdapterFactory adapterFactory) {
+	public PropertyDirectoryItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -44,42 +42,42 @@ public class StaticPathElementItemProvider extends PathElementItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addElementPropertyDescriptor(object);
+			addAttributePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Element feature.
+	 * This adds a property descriptor for the Attribute feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addElementPropertyDescriptor(Object object) {
+	protected void addAttributePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_StaticPathElement_element_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_StaticPathElement_element_feature", "_UI_StaticPathElement_type"),
-				 OrmPackage.Literals.STATIC_PATH_ELEMENT__ELEMENT,
+				 getString("_UI_PropertyDirectory_attribute_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_PropertyDirectory_attribute_feature", "_UI_PropertyDirectory_type"),
+				 OrmPackage.Literals.PROPERTY_DIRECTORY__ATTRIBUTE,
 				 true,
 				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 true,
 				 null,
+				 getString("_UI_ResourcePropertyCategory"),
 				 null));
 	}
 
 	/**
-	 * This returns StaticPathElement.gif.
+	 * This returns PropertyDirectory.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/StaticPathElement"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/PropertyDirectory"));
 	}
 
 	/**
@@ -90,10 +88,7 @@ public class StaticPathElementItemProvider extends PathElementItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((StaticPathElement)object).getElement();
-		return label == null || label.length() == 0 ?
-			getString("_UI_StaticPathElement_type") :
-			getString("_UI_StaticPathElement_type") + " " + label;
+		return getString("_UI_PropertyDirectory_type");
 	}
 
 
@@ -107,12 +102,6 @@ public class StaticPathElementItemProvider extends PathElementItemProvider {
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-
-		switch (notification.getFeatureID(StaticPathElement.class)) {
-			case OrmPackage.STATIC_PATH_ELEMENT__ELEMENT:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-		}
 		super.notifyChanged(notification);
 	}
 

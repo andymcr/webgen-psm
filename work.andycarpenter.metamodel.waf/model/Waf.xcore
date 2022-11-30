@@ -34,6 +34,7 @@ import work.andycarpenter.metamodel.orm.LocationFeature
 import work.andycarpenter.metamodel.orm.ModelLabel
 import work.andycarpenter.metamodel.orm.OrmModel
 import work.andycarpenter.metamodel.orm.Repository
+import work.andycarpenter.metamodel.orm.ResourceFeature
 import work.andycarpenter.metamodel.orm.Selection
 import work.andycarpenter.metamodel.api.API
 import work.andycarpenter.metamodel.security.SecurityModel
@@ -116,7 +117,7 @@ class WafModel {
     @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean hasFormFields
 
-	@OCL(derivation="formFields->select(f | f.oclIsKindOf(UnitAssociation))->notEmpty()")
+	@OCL(derivation="formFields->select(f | f.isAssociationField)->notEmpty()")
     @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean hasFormAssociations
 
@@ -720,7 +721,7 @@ abstract class DynamicUnit extends ContentUnit, ActionContainer {
 	String header
 	String footer
 
-	@OCL(derivation="displayFields->select(f | f.oclIsKindOf(UnitAssociation)).oclAsType(UnitAssociation)->asOrderedSet()")
+	@OCL(derivation="displayFields->select(f | f.isAssociationField).oclAsType(UnitAssociation)->asOrderedSet()")
     @GenModel(propertyCategory="Debug")
 	refers readonly transient volatile unsettable derived UnitAssociation[] associationFields
 	@OCL(derivation="associationFields->notEmpty()")
@@ -739,7 +740,7 @@ abstract class DynamicUnit extends ContentUnit, ActionContainer {
 	derived readonly transient volatile boolean hasAutocompleteFields
 
 	int autocompleteThreshold = "0"
-	@OCL(derivation="displayFields->select(f | f.isBooleanField = true)->notEmpty()")
+	@OCL(derivation="displayFields->exists(f | f.isBooleanField = true)")
     @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean hasBooleanFields
 
@@ -753,7 +754,7 @@ abstract class DynamicUnit extends ContentUnit, ActionContainer {
 
 	@OCL(derivation="if self.oclIsKindOf(EditUnit) then
 				collectionFields
-					->select(f | f.oclIsKindOf(UnitFeature)).oclAsType(UnitFeature)
+					->select(f | f.isFeatureField).oclAsType(UnitFeature)
 					->select(f | f.collectionUiAllowAdd = true or f.collectionUiAllowRemove = true)
 					->notEmpty()
 			else
@@ -766,7 +767,7 @@ abstract class DynamicUnit extends ContentUnit, ActionContainer {
     @GenModel(propertyCategory="Debug")
 	refers readonly transient volatile unsettable derived UnitField[] collectionFields
 
-	@OCL(derivation="collectionFields->select(f | f.oclIsKindOf(UnitFeature)).oclAsType(UnitFeature)->asOrderedSet()")
+	@OCL(derivation="collectionFields->select(f | f.isFeatureField).oclAsType(UnitFeature)->asOrderedSet()")
     @GenModel(propertyCategory="Debug")
 	refers readonly transient volatile unsettable derived UnitFeature[] collectionFeatures
 
@@ -786,11 +787,11 @@ abstract class DynamicUnit extends ContentUnit, ActionContainer {
     @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean hasDefaultValueFields
 
-	@OCL(derivation="displayFields->select(f | f.isDisabled = true)->notEmpty()")
+	@OCL(derivation="displayFields->exists(f | f.isDisabled)")
     @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean hasDisabledFields
 
-	@OCL(derivation="displayFields->select(f | f.isEmailField = true)->notEmpty()")
+	@OCL(derivation="displayFields->exists(f | f.isEmailField = true)")
     @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean hasEmailFields
 
@@ -809,14 +810,18 @@ abstract class DynamicUnit extends ContentUnit, ActionContainer {
     @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean hasEnumerationFields
 
-	@OCL(derivation="displayFields->select(f | f.oclIsKindOf(UnitFeature)).oclAsType(UnitFeature)->asOrderedSet()")
+	@OCL(derivation="displayFields->select(f | f.isFeatureField).oclAsType(UnitFeature)->asOrderedSet()")
     @GenModel(propertyCategory="Debug")
 	refers readonly transient volatile unsettable derived UnitFeature[] featureFields
 	@OCL(derivation="featureFields->notEmpty()")
     @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean hasFeatureFields
 
-	@OCL(derivation="displayFields->select(f | f.hasForcedValue = true)")
+	@OCL(derivation="resourceFields->exists(f | f.resource.oclIsTypeOf(orm::FileResource))")
+    @GenModel(propertyCategory="Debug")
+	derived readonly transient volatile boolean hasFileFields
+
+	@OCL(derivation="displayFields->select(f | f.hasForcedValue)")
     @GenModel(propertyCategory="Debug")
 	refers readonly transient volatile unsettable derived UnitField[] forcedValueFields
 	@OCL(derivation="forcedValueFields->notEmpty()")
@@ -831,7 +836,11 @@ abstract class DynamicUnit extends ContentUnit, ActionContainer {
     @GenModel(propertyCategory="Debug")
 	refers readonly transient volatile unsettable derived UnitField[] formFields
 
-	@OCL(derivation="displayFields->select(f | f.isIntegerField = true)->notEmpty()")
+	@OCL(derivation="resourceFields->exists(f | f.resource.oclIsTypeOf(orm::ImageResource))")
+    @GenModel(propertyCategory="Debug")
+	derived readonly transient volatile boolean hasImageFields
+
+	@OCL(derivation="displayFields->exists(f | f.isIntegerField = true)")
     @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean hasIntegerFields
 
@@ -842,31 +851,34 @@ abstract class DynamicUnit extends ContentUnit, ActionContainer {
     @GenModel(propertyCategory="Debug")
 	derived readonly transient unsettable volatile boolean hasInterfaceFields
 
-	@OCL(derivation="interfaceFields->select(f | f.isRequired = true)->notEmpty()")
+	@OCL(derivation="interfaceFields->exists(f | f.isRequired = true)")
     @GenModel(propertyCategory="Debug")
 	derived readonly transient unsettable volatile boolean hasRequiredInterfaceFields
 
-	@OCL(derivation="displayFields->select(f | f.isObfuscatedField = true)->notEmpty()")
+	@OCL(derivation="displayFields->exists(f | f.isObfuscatedField = true)")
     @GenModel(propertyCategory="Debug")
 	derived readonly transient unsettable volatile boolean hasObfuscatedFields
 
-	@OCL(derivation="displayFields->select(f | f.isRepeated = true)->notEmpty()")
+	@OCL(derivation="displayFields->exists(f | f.isRepeated = true)")
     @GenModel(propertyCategory="Debug")
 	derived readonly transient unsettable volatile boolean hasRepeatedFields
 
-	@OCL(derivation="displayFields->select(f | f.isResourceField = true)->notEmpty()")
+	@OCL(derivation="displayFields->select(f | f.isResourceField = true).oclAsType(UnitResource)->asOrderedSet()")
+    @GenModel(propertyCategory="Debug")
+	refers readonly transient volatile unsettable derived UnitResource[] resourceFields
+	@OCL(derivation="resourceFields->notEmpty()")
     @GenModel(propertyCategory="Debug")
 	readonly transient volatile unsettable derived boolean hasResourceFields
 
-	@OCL(derivation="displayFields->select(f | f.isStringField = true)->notEmpty()")
+	@OCL(derivation="displayFields->exists(f | f.isStringField)")
     @GenModel(propertyCategory="Debug")
 	derived readonly transient unsettable volatile boolean hasStringFields
 
-	@OCL(derivation="displayFields->select(f | f.isTextareaField = true)->notEmpty()")
+	@OCL(derivation="displayFields->exists(f | f.isTextareaField)")
     @GenModel(propertyCategory="Debug")
 	derived readonly transient unsettable volatile boolean hasTextareaFields
 
-	@OCL(derivation="displayFields->select(f | f.isUrlField = true)->notEmpty()")
+	@OCL(derivation="displayFields->exists(f | f.isUrlField)")
     @GenModel(propertyCategory="Debug")
 	derived readonly transient unsettable volatile boolean hasUrlFields
 
@@ -1116,17 +1128,19 @@ enum CollectionDisplayOptions {
 interface UnitField extends DisplayElement {
 	container DynamicUnit[1] displayedOn opposite displayFields
 
-	@OCL(derivation="if self.oclIsKindOf(UnitAttribute) then
+	@OCL(derivation="if self.isAttributeField = true then
 			self.oclAsType(UnitAttribute).name
-		else if self.oclIsKindOf(UnitAssociation) then
+		else if self.isAssociationField = true then
 			self.oclAsType(UnitAssociation).name
-		else if self.oclIsKindOf(InterfaceField) then
+		else if self.isInterfaceField = true then
 			self.oclAsType(InterfaceField).name
-		else if self.oclIsKindOf(UnitLabel) then
+		else if self.isResourceField = true then
+			self.oclAsType(UnitResource).name
+		else if self.oclIsTypeOf(UnitLabel) then
 			self.oclAsType(UnitLabel).name
 		else
 			''
-		endif endif endif endif")
+		endif endif endif endif endif")
     @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile String fieldName
 
@@ -1135,7 +1149,7 @@ interface UnitField extends DisplayElement {
     @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean isAuthorised
 
-	@OCL(derivation="if self.oclIsKindOf(UnitFeature) then
+	@OCL(derivation="if self.isFeatureField = true then
 			(displayLabel.trim() <> '')
 				and (displayLabel.trim() <> self.oclAsType(UnitFeature).persistentFeature.displayLabel.trim())
 		else if self.oclIsKindOf(InterfaceField) then
@@ -1146,7 +1160,7 @@ interface UnitField extends DisplayElement {
     @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean hasCustomisedDisplayLabel
 
-	@OCL(derivation="if self.oclIsKindOf(InterfaceField) then
+	@OCL(derivation="if self.isInterfaceField = true then
 			self.oclAsType(InterfaceField).repeatedField
 		else
 			false
@@ -1154,7 +1168,7 @@ interface UnitField extends DisplayElement {
     @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean isRepeated
 
-	@OCL(derivation="if self.oclIsKindOf(UnitFeature) then
+	@OCL(derivation="if self.isFeatureField = true then
 			let feature : UnitFeature = self.oclAsType(UnitFeature)
 				in if feature.titleOverride.trim() <> '' then
 						feature.titleOverride.trim()
@@ -1165,7 +1179,7 @@ interface UnitField extends DisplayElement {
 					else
 						feature.persistentFeature.name
 					endif endif endif
-		else if self.oclIsKindOf(InterfaceField) then
+		else if self.isInterfaceField = true then
 			let field : InterfaceField = self.oclAsType(InterfaceField)
 				in if field.fieldTitle.trim() <> '' then
 						field.fieldTitle.trim()
@@ -1183,7 +1197,7 @@ interface UnitField extends DisplayElement {
     @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean hasTitle
 
-	@OCL(derivation="if self.oclIsKindOf(UnitFeature) then
+	@OCL(derivation="if self.isFeatureField = true then
 			title <> self.oclAsType(UnitFeature).persistentFeature.displayLabel.trim()
 		else
 			title <> ''
@@ -1191,7 +1205,7 @@ interface UnitField extends DisplayElement {
     @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean hasCustomisedTitle
 
-	@OCL(derivation="if self.oclIsKindOf(InterfaceField) and self.isRepeated then
+	@OCL(derivation="if self.isInterfaceField and self.isRepeated then
 			self.oclAsType(InterfaceField).secondTitle.trim() <> ''
 		else
 			false
@@ -1199,7 +1213,7 @@ interface UnitField extends DisplayElement {
     @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean hasSecondTitle
 
-	@OCL(derivation="if self.oclIsKindOf(UnitFeature) then
+	@OCL(derivation="if self.isFeatureField = true then
 			let feature : UnitFeature = self.oclAsType(UnitFeature)
 				in if feature.placeholderOverride.trim() <> '' then
 						feature.placeholderOverride.trim()
@@ -1210,7 +1224,7 @@ interface UnitField extends DisplayElement {
 					else
 						feature.persistentFeature.name
 					endif endif endif
-		else if self.oclIsKindOf(InterfaceField) then
+		else if self.isInterfaceField = true then
 			let field : InterfaceField = self.oclAsType(InterfaceField)
 				in if field.fieldPlaceholder.trim() <> '' then
 						field.fieldPlaceholder.trim()
@@ -1228,7 +1242,7 @@ interface UnitField extends DisplayElement {
     @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean hasPlaceholder
 
-	@OCL(derivation="if self.oclIsKindOf(UnitFeature) then
+	@OCL(derivation="if self.isFeatureField = true then
 			placeholder <> self.oclAsType(UnitFeature).persistentFeature.displayLabel.trim()
 		else
 			placeholder <> ''
@@ -1236,7 +1250,7 @@ interface UnitField extends DisplayElement {
     @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean hasCustomisedPlaceholder
 
-	@OCL(derivation="if self.oclIsKindOf(InterfaceField) and self.isRepeated then
+	@OCL(derivation="if self.isInterfaceField and self.isRepeated then
 			self.oclAsType(InterfaceField).secondPlaceholder.trim() <> ''
 		else
 			false
@@ -1245,7 +1259,7 @@ interface UnitField extends DisplayElement {
 	derived readonly unsettable transient volatile boolean hasSecondPlaceholder
 
 	String localHelp = ''
-	@OCL(derivation="if self.oclIsKindOf(UnitLabel) then
+	@OCL(derivation="if self.oclIsTypeOf(UnitLabel) then
 			''
 		else
 			if localHelp.trim() <> '' then
@@ -1270,7 +1284,7 @@ interface UnitField extends DisplayElement {
 
 	contains Predicate hideWhen
 
-	@OCL(derivation="if self.oclIsKindOf(UnitAssociation) then
+	@OCL(derivation="if self.isAssociationField = true then
 			self.oclAsType(UnitAssociation).association.isContains
 		else
 			false
@@ -1282,9 +1296,9 @@ interface UnitField extends DisplayElement {
     @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean isDisabled
 
-	@OCL(derivation="if self.oclIsKindOf(UnitFeature) then
+	@OCL(derivation="if self.isFeatureField = true then
 			self.oclAsType(UnitFeature).persistentFeature.isRequired
-		else if self.oclIsKindOf(InterfaceField) then
+		else if self.isInterfaceField = true then
 			self.oclAsType(InterfaceField).fieldRequired
 		else
 			false
@@ -1292,9 +1306,9 @@ interface UnitField extends DisplayElement {
     @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean isRequired
 
-	@OCL(derivation="if self.oclIsKindOf(UnitFeature) then
+	@OCL(derivation="if self.isFeatureField = true then
 			self.oclAsType(UnitFeature).persistentFeature.isSingleton
-		else if self.oclIsKindOf(InterfaceField) then
+		else if self.isInterfaceField = true then
 			true
 		else
 			false
@@ -1302,15 +1316,15 @@ interface UnitField extends DisplayElement {
     @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean isSingleton
 
-	@OCL(derivation="self.oclIsKindOf(UnitAssociation)")
+	@OCL(derivation="self.oclIsTypeOf(UnitAssociation)")
     @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean isAssociationField
 
-	@OCL(derivation="self.oclIsKindOf(UnitAttribute)")
+	@OCL(derivation="self.oclIsTypeOf(UnitAttribute)")
     @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean isAttributeField
 
-	@OCL(derivation="if self.oclIsKindOf(UnitFeature) then
+	@OCL(derivation="if self.isFeatureField = true then
 			self.oclAsType(UnitFeature).persistentFeature.isBooleanFeature
 		else if self.oclIsKindOf(DataTypeField) then
 			self.oclAsType(DataTypeField).dataType.isBooleanClassifier
@@ -1320,7 +1334,7 @@ interface UnitField extends DisplayElement {
     @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean isBooleanField
 
-	@OCL(derivation="if self.oclIsKindOf(UnitFeature) then
+	@OCL(derivation="if self.isFeatureField = true then
 			self.oclAsType(UnitFeature).persistentFeature.isDataTypeFeature
 		else
 			self.oclIsKindOf(DataTypeField)
@@ -1328,7 +1342,7 @@ interface UnitField extends DisplayElement {
     @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean isDataTypeField
 
-	@OCL(derivation="if self.oclIsKindOf(UnitFeature) then
+	@OCL(derivation="if self.isFeatureField = true then
 			self.oclAsType(UnitFeature).persistentFeature.dataType
 		else if self.oclIsKindOf(DataTypeField) then
 			self.oclAsType(DataTypeField).fieldDataType
@@ -1338,7 +1352,7 @@ interface UnitField extends DisplayElement {
     @GenModel(propertyCategory="Debug")
 	refers derived readonly transient volatile Classifier dataType
 
-	@OCL(derivation="if self.oclIsKindOf(UnitFeature) then
+	@OCL(derivation="if self.isFeatureField = true then
 			self.oclAsType(UnitFeature).persistentFeature.isDateFeature
 		else
 			false
@@ -1346,7 +1360,7 @@ interface UnitField extends DisplayElement {
     @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean isDateField
 
-	@OCL(derivation="if self.oclIsKindOf(UnitFeature) then
+	@OCL(derivation="if self.isFeatureField = true then
 			self.oclAsType(UnitFeature).persistentFeature.dateDetails
 		else
 			null
@@ -1354,7 +1368,7 @@ interface UnitField extends DisplayElement {
     @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile DateDetails dateDetails
 
-	@OCL(derivation="if self.oclIsKindOf(UnitFeature) then
+	@OCL(derivation="if self.isFeatureField = true then
 			self.oclAsType(UnitFeature).persistentFeature.isEmailFeature
 		else if self.oclIsKindOf(DataTypeField) then
 			self.oclAsType(DataTypeField).dataType.isEmailClassifier
@@ -1364,7 +1378,7 @@ interface UnitField extends DisplayElement {
     @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean isEmailField
 
-	@OCL(derivation="if self.oclIsKindOf(UnitFeature) then
+	@OCL(derivation="if self.isFeatureField = true then
 			self.oclAsType(UnitFeature).persistentFeature.isEncrypted
 		else
 			false
@@ -1372,7 +1386,7 @@ interface UnitField extends DisplayElement {
     @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean isEncryptedField
 
-	@OCL(derivation="if self.oclIsKindOf(UnitFeature) then
+	@OCL(derivation="if self.isFeatureField = true then
 			self.oclAsType(UnitFeature).persistentFeature.isEnumerationFeature
 		else
 			false
@@ -1380,7 +1394,7 @@ interface UnitField extends DisplayElement {
     @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean isEnumerationField
 
-	@OCL(derivation="if self.oclIsKindOf(UnitFeature) then
+	@OCL(derivation="if self.isFeatureField = true then
 			self.oclAsType(UnitFeature).persistentFeature.enumerationType
 		else
 			null
@@ -1396,7 +1410,7 @@ interface UnitField extends DisplayElement {
     @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean isInterfaceField
 
-	@OCL(derivation="if self.oclIsKindOf(UnitFeature) then
+	@OCL(derivation="if self.isFeatureField = true then
 			self.oclAsType(UnitFeature).persistentFeature.isIntegerFeature
 		else if self.oclIsKindOf(DataTypeField) then
 			self.oclAsType(DataTypeField).dataType.isIntegerClassifier
@@ -1406,7 +1420,7 @@ interface UnitField extends DisplayElement {
     @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean isIntegerField
 
-	@OCL(derivation="if self.oclIsKindOf(UnitFeature) then
+	@OCL(derivation="if self.isFeatureField = true then
 			self.oclAsType(UnitFeature).persistentFeature.isLocationFeature
 		else
 			false
@@ -1414,7 +1428,7 @@ interface UnitField extends DisplayElement {
     @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean isLocationField
 
-	@OCL(derivation="if self.oclIsKindOf(UnitFeature) then
+	@OCL(derivation="if self.isFeatureField = true then
 			self.oclAsType(UnitFeature).persistentFeature.isObfuscatedFeature
 		else
 			false
@@ -1422,7 +1436,7 @@ interface UnitField extends DisplayElement {
     @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean isObfuscatedFeature
 
-	@OCL(derivation="if self.oclIsKindOf(UnitAttribute) then
+	@OCL(derivation="if self.isAttributeField = true then
 			self.oclAsType(UnitAttribute).obfuscateFormFields or isObfuscatedFeature
 		else if self.oclIsKindOf(DataTypeField) then
 			self.oclAsType(DataTypeField).obfuscateFormFields
@@ -1432,15 +1446,11 @@ interface UnitField extends DisplayElement {
     @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean isObfuscatedField
 
-	@OCL(derivation="if self.oclIsKindOf(UnitFeature) then
-			self.oclAsType(UnitFeature).persistentFeature.isResourceFeature
-		else
-			false
-		endif")
+	@OCL(derivation="self.oclIsTypeOf(UnitResource)")
     @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean isResourceField
 
-	@OCL(derivation="if self.oclIsKindOf(UnitFeature) then
+	@OCL(derivation="if self.isFeatureField = true then
 			self.oclAsType(UnitFeature).persistentFeature.isStringFeature
 		else if self.oclIsKindOf(DataTypeField) then
 			self.oclAsType(DataTypeField).dataType.isStringClassifier
@@ -1450,7 +1460,7 @@ interface UnitField extends DisplayElement {
     @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean isStringField
 
-	@OCL(derivation="if self.oclIsKindOf(UnitFeature) then
+	@OCL(derivation="if self.isFeatureField = true then
 			self.oclAsType(UnitFeature).persistentFeature.isTextareaFeature
 		else if self.oclIsKindOf(DataTypeField) then
 			self.oclAsType(DataTypeField).dataType.isTextareaClassifier
@@ -1460,7 +1470,7 @@ interface UnitField extends DisplayElement {
     @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean isTextareaField
 
-	@OCL(derivation="if self.oclIsKindOf(UnitFeature) then
+	@OCL(derivation="if self.isFeatureField = true then
 			self.oclAsType(UnitFeature).persistentFeature.isUrlFeature
 		else
 			false
@@ -1468,9 +1478,9 @@ interface UnitField extends DisplayElement {
     @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean isUrlField
 
-	@OCL(derivation="if self.oclIsKindOf(UnitAttribute) then
+	@OCL(derivation="if self.isAttributeField = true then
 			self.oclAsType(UnitAttribute).attributeDefaultValue
-		else if self.oclIsKindOf(InterfaceField) then
+		else if self.isInterfaceField = true then
 			self.oclAsType(InterfaceField).fieldDefaultValue
 		else
 			null
@@ -1482,7 +1492,7 @@ interface UnitField extends DisplayElement {
     @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean hasDefaultValue
 
-	@OCL(derivation="if self.oclIsKindOf(UnitFeature) then
+	@OCL(derivation="if self.isFeatureField = true then
 			not self.oclAsType(UnitFeature).forcedValue.oclIsUndefined()
 		else
 			false
@@ -1566,13 +1576,15 @@ abstract class UnitFeature extends UnitField, ActionContainer {
 	boolean autofocus
 	String footer
 
-	@OCL(derivation="if self.oclIsKindOf(UnitAttribute) then
+	@OCL(derivation="if self.isAttributeField = true then
 			self.oclAsType(UnitAttribute).attribute
-		else if self.oclIsKindOf(UnitAssociation) then
+		else if self.isResourceField = true then
+			self.oclAsType(UnitResource).resource
+		else if self.isAssociationField = true then
 			self.oclAsType(UnitAssociation).leafFeature
 		else
 			null
-		endif endif")
+		endif endif endif")
     @GenModel(propertyCategory="Debug")
 	refers derived readonly transient volatile Feature persistentFeature
 }
@@ -1591,6 +1603,18 @@ class UnitAttribute extends UnitFeature {
 	contains Expression attributeDefaultValue
 	boolean obfuscateFormFields
 	String validationPattern = ''
+}
+
+class UnitResource extends UnitFeature {
+	refers ResourceFeature[1] resource
+
+	@OCL(derivation="if not resource.oclIsUndefined() then
+			resource.name
+		else
+			''
+		endif")
+    @GenModel(propertyCategory="Debug")
+	derived String[1] name
 }
 
 class UnitAssociation extends UnitFeature, PathAssociation {

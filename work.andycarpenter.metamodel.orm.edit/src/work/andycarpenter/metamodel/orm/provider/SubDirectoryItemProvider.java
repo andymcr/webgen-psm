@@ -8,28 +8,29 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import work.andycarpenter.metamodel.orm.DatePathElement;
 import work.andycarpenter.metamodel.orm.OrmPackage;
+import work.andycarpenter.metamodel.orm.SubDirectory;
 
 /**
- * This is the item provider adapter for a {@link work.andycarpenter.metamodel.orm.DatePathElement} object.
+ * This is the item provider adapter for a {@link work.andycarpenter.metamodel.orm.SubDirectory} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class DatePathElementItemProvider extends PathElementItemProvider {
+public class SubDirectoryItemProvider extends DirectoryNamerItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DatePathElementItemProvider(AdapterFactory adapterFactory) {
+	public SubDirectoryItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -44,42 +45,65 @@ public class DatePathElementItemProvider extends PathElementItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addFormatPropertyDescriptor(object);
+			addCharactersPerDirectoryPropertyDescriptor(object);
+			addDirectoryCountPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Format feature.
+	 * This adds a property descriptor for the Characters Per Directory feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addFormatPropertyDescriptor(Object object) {
+	protected void addCharactersPerDirectoryPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_DatePathElement_format_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DatePathElement_format_feature", "_UI_DatePathElement_type"),
-				 OrmPackage.Literals.DATE_PATH_ELEMENT__FORMAT,
+				 getString("_UI_SubDirectory_charactersPerDirectory_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_SubDirectory_charactersPerDirectory_feature", "_UI_SubDirectory_type"),
+				 OrmPackage.Literals.SUB_DIRECTORY__CHARACTERS_PER_DIRECTORY,
 				 true,
 				 false,
 				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 getString("_UI_ResourcePropertyCategory"),
 				 null));
 	}
 
 	/**
-	 * This returns DatePathElement.gif.
+	 * This adds a property descriptor for the Directory Count feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDirectoryCountPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_SubDirectory_directoryCount_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_SubDirectory_directoryCount_feature", "_UI_SubDirectory_type"),
+				 OrmPackage.Literals.SUB_DIRECTORY__DIRECTORY_COUNT,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 getString("_UI_ResourcePropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This returns SubDirectory.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/DatePathElement"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/SubDirectory"));
 	}
 
 	/**
@@ -90,10 +114,8 @@ public class DatePathElementItemProvider extends PathElementItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((DatePathElement)object).getFormat();
-		return label == null || label.length() == 0 ?
-			getString("_UI_DatePathElement_type") :
-			getString("_UI_DatePathElement_type") + " " + label;
+		SubDirectory subDirectory = (SubDirectory)object;
+		return getString("_UI_SubDirectory_type") + " " + subDirectory.getCharactersPerDirectory();
 	}
 
 
@@ -108,8 +130,9 @@ public class DatePathElementItemProvider extends PathElementItemProvider {
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(DatePathElement.class)) {
-			case OrmPackage.DATE_PATH_ELEMENT__FORMAT:
+		switch (notification.getFeatureID(SubDirectory.class)) {
+			case OrmPackage.SUB_DIRECTORY__CHARACTERS_PER_DIRECTORY:
+			case OrmPackage.SUB_DIRECTORY__DIRECTORY_COUNT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

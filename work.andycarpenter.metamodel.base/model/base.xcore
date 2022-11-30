@@ -30,6 +30,7 @@ class NullLiteral extends Literal {
 }
 
 class BooleanLiteral extends Literal {
+    @GenModel(propertyCategory="Model")
 	Boolean[1] value
 }
 
@@ -54,10 +55,12 @@ class CurrentUser extends Variable {
 
 
 abstract class NamedElement {
+    @GenModel(propertyCategory="Model")
 	String[1] name
 }
 
 abstract class NamedDisplayElement extends NamedElement {
+    @GenModel(propertyCategory="Interface")
 	String displayLabel
 }
 
@@ -72,24 +75,32 @@ class Constant extends NamedElement {
 }
 
 class ConstantReference extends Variable { 
+    @GenModel(propertyCategory="Model")
 	refers Constant[1] value 
 } 
  
 
 abstract class Classifier extends NamedDisplayElement {
 	@OCL(derivation="if self.oclIsKindOf(DataType) then self.oclAsType(DataType).isBooleanDataType else false endif")
+    @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean isBooleanClassifier
 	@OCL(derivation="if self.oclIsKindOf(DataType) then self.oclAsType(DataType).isEmailDataType else false endif")
+    @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean isEmailClassifier
 	@OCL(derivation="self.oclIsTypeOf(EnumerationType)")
+    @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean isEnumerationClassifier
 	@OCL(derivation="if self.oclIsKindOf(DataType) then self.oclAsType(DataType).isIntegerDataType else false endif")
+    @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean isIntegerClassifier
 	@OCL(derivation="if self.oclIsKindOf(DataType) then self.oclAsType(DataType).isStringDataType else false endif")
+    @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean isStringClassifier
 	@OCL(derivation="if self.oclIsKindOf(DataType) then self.oclAsType(DataType).isTextareaDataType else false endif")
+    @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean isTextareaClassifier
 	@OCL(derivation="if self.oclIsKindOf(DataType) then self.oclAsType(DataType).isUrlDataType else false endif")
+    @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean isUrlClassifier
 }
 
@@ -100,20 +111,28 @@ class DataType extends Classifier {
 	String interfaceType
 	String validationPattern = ''
 	@OCL(derivation="name = 'Boolean'")
+    @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean isBooleanDataType
 	@OCL(derivation="name = 'Email'")
+    @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean isEmailDataType
 	@OCL(derivation="self.oclIsTypeOf(EnumerationType)")
+    @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean isEnumerationType
 	@OCL(derivation="name = 'Float'")
+    @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean isFloatDataType
 	@OCL(derivation="name = 'Integer'")
+    @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean isIntegerDataType
 	@OCL(derivation="name = 'String'")
+    @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean isStringDataType
 	@OCL(derivation="name = 'Textarea'")
+    @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean isTextareaDataType
 	@OCL(derivation="name = 'URL'")
+    @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean isUrlDataType
 }
 
@@ -130,6 +149,7 @@ interface FormalParameterList {
 }
 
 class FormalParameter extends NamedElement {
+    @GenModel(propertyCategory="Model")
 	refers Classifier[1] dataType
 	String defaultValue
 	String placeholder = ''
@@ -137,5 +157,6 @@ class FormalParameter extends NamedElement {
 }
 
 class ParameterReference extends Variable { 
+    @GenModel(propertyCategory="Model")
 	refers FormalParameter[1] parameter 
 } 

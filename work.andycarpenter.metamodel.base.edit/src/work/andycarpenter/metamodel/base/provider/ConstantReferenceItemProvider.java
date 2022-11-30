@@ -68,7 +68,7 @@ public class ConstantReferenceItemProvider
 				 false,
 				 true,
 				 null,
-				 null,
+				 getString("_UI_ModelPropertyCategory"),
 				 null));
 	}
 

@@ -59,15 +59,18 @@ import work.andycarpenter.metamodel.waf.DynamicUnit;
  *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#isHasEnumerationFields() <em>Has Enumeration Fields</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#getFeatureFields() <em>Feature Fields</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#isHasFeatureFields() <em>Has Feature Fields</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#isHasFileFields() <em>Has File Fields</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#getForcedValueFields() <em>Forced Value Fields</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#isHasForcedValueFields() <em>Has Forced Value Fields</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#getFormFields() <em>Form Fields</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#isHasImageFields() <em>Has Image Fields</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#isHasIntegerFields() <em>Has Integer Fields</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#getInterfaceFields() <em>Interface Fields</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#isHasInterfaceFields() <em>Has Interface Fields</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#isHasRequiredInterfaceFields() <em>Has Required Interface Fields</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#isHasObfuscatedFields() <em>Has Obfuscated Fields</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#isHasRepeatedFields() <em>Has Repeated Fields</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#getResourceFields() <em>Resource Fields</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#isHasResourceFields() <em>Has Resource Fields</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#isHasStringFields() <em>Has String Fields</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#isHasTextareaFields() <em>Has Textarea Fields</em>}</li>
@@ -1215,6 +1218,19 @@ public abstract class DynamicUnitTest extends ContentUnitTest {
 	}
 
 	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#isHasFileFields() <em>Has File Fields</em>}' feature getter.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#isHasFileFields()
+	 * @generated
+	 */
+	public void testIsHasFileFields() {
+		// TODO: implement this feature getter test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
 	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#getForcedValueFields() <em>Forced Value Fields</em>}' feature getter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1275,6 +1291,19 @@ public abstract class DynamicUnitTest extends ContentUnitTest {
 	 */
 	public void testIsSetFormFields() {
 		// TODO: implement this test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#isHasImageFields() <em>Has Image Fields</em>}' feature getter.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#isHasImageFields()
+	 * @generated
+	 */
+	public void testIsHasImageFields() {
+		// TODO: implement this feature getter test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}
@@ -1417,6 +1446,32 @@ public abstract class DynamicUnitTest extends ContentUnitTest {
 	 * @generated
 	 */
 	public void testIsSetHasRepeatedFields() {
+		// TODO: implement this test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#getResourceFields() <em>Resource Fields</em>}' feature getter.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#getResourceFields()
+	 * @generated
+	 */
+	public void testGetResourceFields() {
+		// TODO: implement this feature getter test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#isSetResourceFields() <em>isSetResourceFields()</em>}' method.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#isSetResourceFields()
+	 * @generated
+	 */
+	public void testIsSetResourceFields() {
 		// TODO: implement this test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

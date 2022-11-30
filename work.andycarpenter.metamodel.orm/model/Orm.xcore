@@ -476,22 +476,74 @@ class DateAttribute extends Attribute {
 }
 
 abstract class ResourceFeature extends Feature {
-	int maximumUploadSize
+    @GenModel(propertyCategory="Resource")
+	String[1] maximumUploadSize = "0"
+    @GenModel(propertyCategory="Resource")
 	unique String[] validUploadMimeTypes
+    @GenModel(propertyCategory="Resource")
 	unique String[] validUploadExtensions
-	boolean uploadsWithinWebsite
-	contains PathElement[] uploadPath
+    @GenModel(propertyCategory="Resource")
+	String[1] uriPrefix = ""
+    @GenModel(propertyCategory="Resource")
+	String[1] baseUploadDirectory
+    @GenModel(propertyCategory="Resource")
+	contains DirectoryNamer directoryNamer
+    @GenModel(propertyCategory="Resource")
+	contains FileNamer[1] fileNamer
 }
 
-abstract class PathElement {
+abstract class DirectoryNamer {
 }
 
-class StaticPathElement extends PathElement {
-	String[1] element
+class SubDirectory extends DirectoryNamer {
+    @GenModel(propertyCategory="Resource")
+	int charactersPerDirectory = "2"
+    @GenModel(propertyCategory="Resource")
+	int directoryCount = "1"
 }
 
-class DatePathElement extends PathElement {
-	String[1] format
+class PropertyDirectory extends DirectoryNamer {
+    @GenModel(propertyCategory="Resource")
+	refers Attribute[1] attribute
+}
+
+class DateTimeDirectory extends DirectoryNamer {
+    @GenModel(propertyCategory="Resource")
+	String[1] format = "Y/m/d"
+    @GenModel(propertyCategory="Resource")
+	refers Attribute[1] attribute
+}
+
+abstract class FileNamer {
+}
+
+class UniqueIdNamer extends FileNamer {
+}
+
+class OriginalNamer extends FileNamer {
+}
+
+class PropertyNamer extends FileNamer {
+    @GenModel(propertyCategory="Resource")
+	refers Attribute[1] attribute
+}
+
+class HashNamer extends FileNamer {
+    @GenModel(propertyCategory="Resource")
+	String algorithm = "sha1"
+    @GenModel(propertyCategory="Resource")
+	int length = "0"
+}
+
+class Base64Namer extends FileNamer {
+    @GenModel(propertyCategory="Resource")
+	int length = "10"
+}
+
+class SmartUniqueNamer extends FileNamer {
+}
+
+class SlugNamer extends FileNamer {
 }
 
 class FileResource extends ResourceFeature {

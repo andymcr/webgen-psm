@@ -668,6 +668,29 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.waf.UnitResource} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected UnitResourceItemProvider unitResourceItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link work.andycarpenter.metamodel.waf.UnitResource}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createUnitResourceAdapter() {
+		if (unitResourceItemProvider == null) {
+			unitResourceItemProvider = new UnitResourceItemProvider(this);
+		}
+
+		return unitResourceItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.waf.UnitAssociation} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1550,6 +1573,7 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 		if (staticUnitItemProvider != null) staticUnitItemProvider.dispose();
 		if (routeActualItemProvider != null) routeActualItemProvider.dispose();
 		if (unitAttributeItemProvider != null) unitAttributeItemProvider.dispose();
+		if (unitResourceItemProvider != null) unitResourceItemProvider.dispose();
 		if (unitAssociationItemProvider != null) unitAssociationItemProvider.dispose();
 		if (unitLabelItemProvider != null) unitLabelItemProvider.dispose();
 		if (dataTypeFieldItemProvider != null) dataTypeFieldItemProvider.dispose();

@@ -101,15 +101,18 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 			addHasEnumerationFieldsPropertyDescriptor(object);
 			addFeatureFieldsPropertyDescriptor(object);
 			addHasFeatureFieldsPropertyDescriptor(object);
+			addHasFileFieldsPropertyDescriptor(object);
 			addForcedValueFieldsPropertyDescriptor(object);
 			addHasForcedValueFieldsPropertyDescriptor(object);
 			addFormFieldsPropertyDescriptor(object);
+			addHasImageFieldsPropertyDescriptor(object);
 			addHasIntegerFieldsPropertyDescriptor(object);
 			addInterfaceFieldsPropertyDescriptor(object);
 			addHasInterfaceFieldsPropertyDescriptor(object);
 			addHasRequiredInterfaceFieldsPropertyDescriptor(object);
 			addHasObfuscatedFieldsPropertyDescriptor(object);
 			addHasRepeatedFieldsPropertyDescriptor(object);
+			addResourceFieldsPropertyDescriptor(object);
 			addHasResourceFieldsPropertyDescriptor(object);
 			addHasStringFieldsPropertyDescriptor(object);
 			addHasTextareaFieldsPropertyDescriptor(object);
@@ -1345,6 +1348,28 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Has File Fields feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasFileFieldsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DynamicUnit_hasFileFields_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DynamicUnit_hasFileFields_feature", "_UI_DynamicUnit_type"),
+				 WafPackage.eINSTANCE.getDynamicUnit_HasFileFields(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 getString("_UI_DebugPropertyCategory"),
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Forced Value Fields feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1406,6 +1431,28 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 				 false,
 				 false,
 				 null,
+				 getString("_UI_DebugPropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Has Image Fields feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasImageFieldsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DynamicUnit_hasImageFields_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DynamicUnit_hasImageFields_feature", "_UI_DynamicUnit_type"),
+				 WafPackage.eINSTANCE.getDynamicUnit_HasImageFields(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
@@ -1538,6 +1585,28 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 getString("_UI_DebugPropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Resource Fields feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addResourceFieldsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DynamicUnit_resourceFields_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DynamicUnit_resourceFields_feature", "_UI_DynamicUnit_type"),
+				 WafPackage.eINSTANCE.getDynamicUnit_ResourceFields(),
+				 false,
+				 false,
+				 false,
+				 null,
 				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
@@ -2073,7 +2142,9 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 			case WafPackage.DYNAMIC_UNIT__HAS_ENCRYPTED_FIELDS:
 			case WafPackage.DYNAMIC_UNIT__HAS_ENUMERATION_FIELDS:
 			case WafPackage.DYNAMIC_UNIT__HAS_FEATURE_FIELDS:
+			case WafPackage.DYNAMIC_UNIT__HAS_FILE_FIELDS:
 			case WafPackage.DYNAMIC_UNIT__HAS_FORCED_VALUE_FIELDS:
+			case WafPackage.DYNAMIC_UNIT__HAS_IMAGE_FIELDS:
 			case WafPackage.DYNAMIC_UNIT__HAS_INTEGER_FIELDS:
 			case WafPackage.DYNAMIC_UNIT__HAS_INTERFACE_FIELDS:
 			case WafPackage.DYNAMIC_UNIT__HAS_REQUIRED_INTERFACE_FIELDS:
@@ -2166,6 +2237,11 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 			(createChildParameter
 				(WafPackage.eINSTANCE.getDynamicUnit_DisplayFields(),
 				 WafFactory.eINSTANCE.createUnitAttribute()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.eINSTANCE.getDynamicUnit_DisplayFields(),
+				 WafFactory.eINSTANCE.createUnitResource()));
 
 		newChildDescriptors.add
 			(createChildParameter

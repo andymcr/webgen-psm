@@ -68,7 +68,7 @@ public class EditStaticTextMenuEntryItemProvider extends MenuEntryItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_ModelPropertyCategory"),
 				 null));
 	}
 
@@ -90,7 +90,7 @@ public class EditStaticTextMenuEntryItemProvider extends MenuEntryItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_InterfacePropertyCategory"),
 				 null));
 	}
 

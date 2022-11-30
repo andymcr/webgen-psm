@@ -68,7 +68,7 @@ public class ParameterReferenceItemProvider
 				 false,
 				 true,
 				 null,
-				 null,
+				 getString("_UI_ModelPropertyCategory"),
 				 null));
 	}
 

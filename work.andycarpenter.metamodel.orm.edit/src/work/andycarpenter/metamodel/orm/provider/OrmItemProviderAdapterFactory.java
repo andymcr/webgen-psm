@@ -296,49 +296,233 @@ public class OrmItemProviderAdapterFactory extends OrmAdapterFactory implements 
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.orm.StaticPathElement} instances.
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.orm.SubDirectory} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected StaticPathElementItemProvider staticPathElementItemProvider;
+	protected SubDirectoryItemProvider subDirectoryItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link work.andycarpenter.metamodel.orm.StaticPathElement}.
+	 * This creates an adapter for a {@link work.andycarpenter.metamodel.orm.SubDirectory}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createStaticPathElementAdapter() {
-		if (staticPathElementItemProvider == null) {
-			staticPathElementItemProvider = new StaticPathElementItemProvider(this);
+	public Adapter createSubDirectoryAdapter() {
+		if (subDirectoryItemProvider == null) {
+			subDirectoryItemProvider = new SubDirectoryItemProvider(this);
 		}
 
-		return staticPathElementItemProvider;
+		return subDirectoryItemProvider;
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.orm.DatePathElement} instances.
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.orm.PropertyDirectory} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected DatePathElementItemProvider datePathElementItemProvider;
+	protected PropertyDirectoryItemProvider propertyDirectoryItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link work.andycarpenter.metamodel.orm.DatePathElement}.
+	 * This creates an adapter for a {@link work.andycarpenter.metamodel.orm.PropertyDirectory}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createDatePathElementAdapter() {
-		if (datePathElementItemProvider == null) {
-			datePathElementItemProvider = new DatePathElementItemProvider(this);
+	public Adapter createPropertyDirectoryAdapter() {
+		if (propertyDirectoryItemProvider == null) {
+			propertyDirectoryItemProvider = new PropertyDirectoryItemProvider(this);
 		}
 
-		return datePathElementItemProvider;
+		return propertyDirectoryItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.orm.DateTimeDirectory} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected DateTimeDirectoryItemProvider dateTimeDirectoryItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link work.andycarpenter.metamodel.orm.DateTimeDirectory}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createDateTimeDirectoryAdapter() {
+		if (dateTimeDirectoryItemProvider == null) {
+			dateTimeDirectoryItemProvider = new DateTimeDirectoryItemProvider(this);
+		}
+
+		return dateTimeDirectoryItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.orm.UniqueIdNamer} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected UniqueIdNamerItemProvider uniqueIdNamerItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link work.andycarpenter.metamodel.orm.UniqueIdNamer}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createUniqueIdNamerAdapter() {
+		if (uniqueIdNamerItemProvider == null) {
+			uniqueIdNamerItemProvider = new UniqueIdNamerItemProvider(this);
+		}
+
+		return uniqueIdNamerItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.orm.OriginalNamer} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected OriginalNamerItemProvider originalNamerItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link work.andycarpenter.metamodel.orm.OriginalNamer}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createOriginalNamerAdapter() {
+		if (originalNamerItemProvider == null) {
+			originalNamerItemProvider = new OriginalNamerItemProvider(this);
+		}
+
+		return originalNamerItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.orm.PropertyNamer} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected PropertyNamerItemProvider propertyNamerItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link work.andycarpenter.metamodel.orm.PropertyNamer}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createPropertyNamerAdapter() {
+		if (propertyNamerItemProvider == null) {
+			propertyNamerItemProvider = new PropertyNamerItemProvider(this);
+		}
+
+		return propertyNamerItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.orm.HashNamer} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected HashNamerItemProvider hashNamerItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link work.andycarpenter.metamodel.orm.HashNamer}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createHashNamerAdapter() {
+		if (hashNamerItemProvider == null) {
+			hashNamerItemProvider = new HashNamerItemProvider(this);
+		}
+
+		return hashNamerItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.orm.Base64Namer} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected Base64NamerItemProvider base64NamerItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link work.andycarpenter.metamodel.orm.Base64Namer}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createBase64NamerAdapter() {
+		if (base64NamerItemProvider == null) {
+			base64NamerItemProvider = new Base64NamerItemProvider(this);
+		}
+
+		return base64NamerItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.orm.SmartUniqueNamer} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected SmartUniqueNamerItemProvider smartUniqueNamerItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link work.andycarpenter.metamodel.orm.SmartUniqueNamer}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createSmartUniqueNamerAdapter() {
+		if (smartUniqueNamerItemProvider == null) {
+			smartUniqueNamerItemProvider = new SmartUniqueNamerItemProvider(this);
+		}
+
+		return smartUniqueNamerItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.orm.SlugNamer} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected SlugNamerItemProvider slugNamerItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link work.andycarpenter.metamodel.orm.SlugNamer}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createSlugNamerAdapter() {
+		if (slugNamerItemProvider == null) {
+			slugNamerItemProvider = new SlugNamerItemProvider(this);
+		}
+
+		return slugNamerItemProvider;
 	}
 
 	/**
@@ -731,8 +915,16 @@ public class OrmItemProviderAdapterFactory extends OrmAdapterFactory implements 
 		if (modelLabelAssociationItemProvider != null) modelLabelAssociationItemProvider.dispose();
 		if (dataTypeAttributeItemProvider != null) dataTypeAttributeItemProvider.dispose();
 		if (dateAttributeItemProvider != null) dateAttributeItemProvider.dispose();
-		if (staticPathElementItemProvider != null) staticPathElementItemProvider.dispose();
-		if (datePathElementItemProvider != null) datePathElementItemProvider.dispose();
+		if (subDirectoryItemProvider != null) subDirectoryItemProvider.dispose();
+		if (propertyDirectoryItemProvider != null) propertyDirectoryItemProvider.dispose();
+		if (dateTimeDirectoryItemProvider != null) dateTimeDirectoryItemProvider.dispose();
+		if (uniqueIdNamerItemProvider != null) uniqueIdNamerItemProvider.dispose();
+		if (originalNamerItemProvider != null) originalNamerItemProvider.dispose();
+		if (propertyNamerItemProvider != null) propertyNamerItemProvider.dispose();
+		if (hashNamerItemProvider != null) hashNamerItemProvider.dispose();
+		if (base64NamerItemProvider != null) base64NamerItemProvider.dispose();
+		if (smartUniqueNamerItemProvider != null) smartUniqueNamerItemProvider.dispose();
+		if (slugNamerItemProvider != null) slugNamerItemProvider.dispose();
 		if (fileResourceItemProvider != null) fileResourceItemProvider.dispose();
 		if (imageResourceItemProvider != null) imageResourceItemProvider.dispose();
 		if (locationFeatureItemProvider != null) locationFeatureItemProvider.dispose();

@@ -38,6 +38,7 @@ public class WafTests extends TestSuite {
 		suite.addTestSuite(MultiPageControllerTest.class);
 		suite.addTestSuite(StaticUnitTest.class);
 		suite.addTestSuite(UnitAttributeTest.class);
+		suite.addTestSuite(UnitResourceTest.class);
 		suite.addTestSuite(UnitAssociationTest.class);
 		suite.addTestSuite(UnitLabelTest.class);
 		suite.addTestSuite(DataTypeFieldTest.class);
