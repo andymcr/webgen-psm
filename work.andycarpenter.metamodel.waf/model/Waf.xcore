@@ -482,6 +482,10 @@ abstract class Controller extends NamedDisplayElement {
     @GenModel(propertyCategory="Debug")
 	refers derived unsettable readonly transient volatile UnitField[] formFields
 
+	@OCL(derivation="dynamicUnits->select(u | u.hasImageFields)->notEmpty()")
+    @GenModel(propertyCategory="Debug")
+	derived readonly unsettable transient volatile boolean hasImageFields
+
 	@OCL(derivation="dynamicUnits->select(u | u.hasInterfaceFields)->notEmpty()")
     @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean hasInterfaceFields
@@ -817,7 +821,10 @@ abstract class DynamicUnit extends ContentUnit, ActionContainer {
     @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean hasFeatureFields
 
-	@OCL(derivation="resourceFields->exists(f | f.resource.oclIsTypeOf(orm::FileResource))")
+	@OCL(derivation="resourceFields->select(f | f.resource.isFileFeature)->asOrderedSet()")
+    @GenModel(propertyCategory="Debug")
+	refers readonly transient volatile unsettable derived UnitResource[] fileFields
+	@OCL(derivation="fileFields->notEmpty()")
     @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean hasFileFields
 
@@ -836,7 +843,10 @@ abstract class DynamicUnit extends ContentUnit, ActionContainer {
     @GenModel(propertyCategory="Debug")
 	refers readonly transient volatile unsettable derived UnitField[] formFields
 
-	@OCL(derivation="resourceFields->exists(f | f.resource.oclIsTypeOf(orm::ImageResource))")
+	@OCL(derivation="resourceFields->select(f | f.resource.isImageFeature)->asOrderedSet()")
+    @GenModel(propertyCategory="Debug")
+	refers readonly transient volatile unsettable derived UnitResource[] imageFields
+	@OCL(derivation="imageFields->notEmpty()")
     @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean hasImageFields
 

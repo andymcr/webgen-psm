@@ -70,7 +70,9 @@ public class FeatureItemProvider extends NamedDisplayElementItemProvider {
 			addIsEmailFeaturePropertyDescriptor(object);
 			addIsEnumerationFeaturePropertyDescriptor(object);
 			addEnumerationTypePropertyDescriptor(object);
+			addIsFileFeaturePropertyDescriptor(object);
 			addIsFloatFeaturePropertyDescriptor(object);
+			addIsImageFeaturePropertyDescriptor(object);
 			addIsIntegerFeaturePropertyDescriptor(object);
 			addIsLocationFeaturePropertyDescriptor(object);
 			addIsObfuscatedFeaturePropertyDescriptor(object);
@@ -606,6 +608,28 @@ public class FeatureItemProvider extends NamedDisplayElementItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Is File Feature feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIsFileFeaturePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Feature_isFileFeature_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Feature_isFileFeature_feature", "_UI_Feature_type"),
+				 OrmPackage.Literals.FEATURE__IS_FILE_FEATURE,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 getString("_UI_DebugPropertyCategory"),
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Is Float Feature feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -619,6 +643,28 @@ public class FeatureItemProvider extends NamedDisplayElementItemProvider {
 				 getString("_UI_Feature_isFloatFeature_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Feature_isFloatFeature_feature", "_UI_Feature_type"),
 				 OrmPackage.Literals.FEATURE__IS_FLOAT_FEATURE,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 getString("_UI_DebugPropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Is Image Feature feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIsImageFeaturePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Feature_isImageFeature_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Feature_isImageFeature_feature", "_UI_Feature_type"),
+				 OrmPackage.Literals.FEATURE__IS_IMAGE_FEATURE,
 				 false,
 				 false,
 				 false,
@@ -1201,7 +1247,9 @@ public class FeatureItemProvider extends NamedDisplayElementItemProvider {
 			case OrmPackage.FEATURE__DATE_DETAILS:
 			case OrmPackage.FEATURE__IS_EMAIL_FEATURE:
 			case OrmPackage.FEATURE__IS_ENUMERATION_FEATURE:
+			case OrmPackage.FEATURE__IS_FILE_FEATURE:
 			case OrmPackage.FEATURE__IS_FLOAT_FEATURE:
+			case OrmPackage.FEATURE__IS_IMAGE_FEATURE:
 			case OrmPackage.FEATURE__IS_INTEGER_FEATURE:
 			case OrmPackage.FEATURE__IS_LOCATION_FEATURE:
 			case OrmPackage.FEATURE__IS_OBFUSCATED_FEATURE:

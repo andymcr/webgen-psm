@@ -91,6 +91,7 @@ public class ControllerItemProvider extends NamedDisplayElementItemProvider {
 			addAutocompleteFieldsPropertyDescriptor(object);
 			addHasAutocompleteFieldsPropertyDescriptor(object);
 			addFormFieldsPropertyDescriptor(object);
+			addHasImageFieldsPropertyDescriptor(object);
 			addHasInterfaceFieldsPropertyDescriptor(object);
 			addHasRequiredInterfaceFieldsPropertyDescriptor(object);
 			addHasResourceFieldsPropertyDescriptor(object);
@@ -969,6 +970,28 @@ public class ControllerItemProvider extends NamedDisplayElementItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Has Image Fields feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasImageFieldsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Controller_hasImageFields_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Controller_hasImageFields_feature", "_UI_Controller_type"),
+				 WafPackage.eINSTANCE.getController_HasImageFields(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 getString("_UI_DebugPropertyCategory"),
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Has Interface Fields feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1377,6 +1400,7 @@ public class ControllerItemProvider extends NamedDisplayElementItemProvider {
 			case WafPackage.CONTROLLER__HAS_SERVICES_USED:
 			case WafPackage.CONTROLLER__HAS_PAGINATION:
 			case WafPackage.CONTROLLER__HAS_AUTOCOMPLETE_FIELDS:
+			case WafPackage.CONTROLLER__HAS_IMAGE_FIELDS:
 			case WafPackage.CONTROLLER__HAS_INTERFACE_FIELDS:
 			case WafPackage.CONTROLLER__HAS_REQUIRED_INTERFACE_FIELDS:
 			case WafPackage.CONTROLLER__HAS_RESOURCE_FIELDS:

@@ -330,9 +330,17 @@ abstract class Feature extends NamedDisplayElement {
 			(this as DataTypeAttribute).attributeDataType as EnumerationType
 	}
 
+	@OCL(derivation="self.oclIsTypeOf(FileResource)")
+    @GenModel(propertyCategory="Debug")
+	derived readonly unsettable transient volatile boolean isFileFeature
+
 	@OCL(derivation="if self.oclIsTypeOf(DataTypeAttribute) then self.oclAsType(DataTypeAttribute).attributeDataType.isFloatDataType else false endif")
     @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean isFloatFeature
+
+	@OCL(derivation="self.oclIsTypeOf(ImageResource)")
+    @GenModel(propertyCategory="Debug")
+	derived readonly unsettable transient volatile boolean isImageFeature
 
 	@OCL(derivation="if self.oclIsTypeOf(DataTypeAttribute) then self.oclAsType(DataTypeAttribute).attributeDataType.isIntegerDataType else false endif")
     @GenModel(propertyCategory="Debug")
@@ -422,11 +430,7 @@ abstract class Feature extends NamedDisplayElement {
     @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean isUnique
 
-	@OCL(derivation="if self.oclIsKindOf(Association) then
-			self.isRequired or self.isContains and self.oclAsType(Association).targetType.containerUniqueAttributes->notEmpty()
-		else
-			self.isRequired
-		endif")
+	@OCL(derivation="self.isRequired")
     @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean isValidated
 

@@ -101,10 +101,12 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 			addHasEnumerationFieldsPropertyDescriptor(object);
 			addFeatureFieldsPropertyDescriptor(object);
 			addHasFeatureFieldsPropertyDescriptor(object);
+			addFileFieldsPropertyDescriptor(object);
 			addHasFileFieldsPropertyDescriptor(object);
 			addForcedValueFieldsPropertyDescriptor(object);
 			addHasForcedValueFieldsPropertyDescriptor(object);
 			addFormFieldsPropertyDescriptor(object);
+			addImageFieldsPropertyDescriptor(object);
 			addHasImageFieldsPropertyDescriptor(object);
 			addHasIntegerFieldsPropertyDescriptor(object);
 			addInterfaceFieldsPropertyDescriptor(object);
@@ -1348,6 +1350,28 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the File Fields feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addFileFieldsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DynamicUnit_fileFields_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DynamicUnit_fileFields_feature", "_UI_DynamicUnit_type"),
+				 WafPackage.eINSTANCE.getDynamicUnit_FileFields(),
+				 false,
+				 false,
+				 false,
+				 null,
+				 getString("_UI_DebugPropertyCategory"),
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Has File Fields feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1427,6 +1451,28 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 				 getString("_UI_DynamicUnit_formFields_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_DynamicUnit_formFields_feature", "_UI_DynamicUnit_type"),
 				 WafPackage.eINSTANCE.getDynamicUnit_FormFields(),
+				 false,
+				 false,
+				 false,
+				 null,
+				 getString("_UI_DebugPropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Image Fields feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addImageFieldsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DynamicUnit_imageFields_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DynamicUnit_imageFields_feature", "_UI_DynamicUnit_type"),
+				 WafPackage.eINSTANCE.getDynamicUnit_ImageFields(),
 				 false,
 				 false,
 				 false,

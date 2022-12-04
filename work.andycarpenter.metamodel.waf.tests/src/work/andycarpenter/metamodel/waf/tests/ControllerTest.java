@@ -49,6 +49,7 @@ import work.andycarpenter.metamodel.waf.Controller;
  *   <li>{@link work.andycarpenter.metamodel.waf.Controller#getAutocompleteFields() <em>Autocomplete Fields</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.Controller#isHasAutocompleteFields() <em>Has Autocomplete Fields</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.Controller#getFormFields() <em>Form Fields</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.Controller#isHasImageFields() <em>Has Image Fields</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.Controller#isHasInterfaceFields() <em>Has Interface Fields</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.Controller#isHasRequiredInterfaceFields() <em>Has Required Interface Fields</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.Controller#isHasResourceFields() <em>Has Resource Fields</em>}</li>
@@ -790,6 +791,32 @@ public abstract class ControllerTest extends TestCase {
 	 * @generated
 	 */
 	public void testIsSetFormFields() {
+		// TODO: implement this test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.Controller#isHasImageFields() <em>Has Image Fields</em>}' feature getter.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.Controller#isHasImageFields()
+	 * @generated
+	 */
+	public void testIsHasImageFields() {
+		// TODO: implement this feature getter test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.Controller#isSetHasImageFields() <em>isSetHasImageFields()</em>}' method.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.Controller#isSetHasImageFields()
+	 * @generated
+	 */
+	public void testIsSetHasImageFields() {
 		// TODO: implement this test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

@@ -59,10 +59,12 @@ import work.andycarpenter.metamodel.waf.DynamicUnit;
  *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#isHasEnumerationFields() <em>Has Enumeration Fields</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#getFeatureFields() <em>Feature Fields</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#isHasFeatureFields() <em>Has Feature Fields</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#getFileFields() <em>File Fields</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#isHasFileFields() <em>Has File Fields</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#getForcedValueFields() <em>Forced Value Fields</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#isHasForcedValueFields() <em>Has Forced Value Fields</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#getFormFields() <em>Form Fields</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#getImageFields() <em>Image Fields</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#isHasImageFields() <em>Has Image Fields</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#isHasIntegerFields() <em>Has Integer Fields</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#getInterfaceFields() <em>Interface Fields</em>}</li>
@@ -1218,6 +1220,32 @@ public abstract class DynamicUnitTest extends ContentUnitTest {
 	}
 
 	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#getFileFields() <em>File Fields</em>}' feature getter.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#getFileFields()
+	 * @generated
+	 */
+	public void testGetFileFields() {
+		// TODO: implement this feature getter test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#isSetFileFields() <em>isSetFileFields()</em>}' method.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#isSetFileFields()
+	 * @generated
+	 */
+	public void testIsSetFileFields() {
+		// TODO: implement this test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
 	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#isHasFileFields() <em>Has File Fields</em>}' feature getter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1290,6 +1318,32 @@ public abstract class DynamicUnitTest extends ContentUnitTest {
 	 * @generated
 	 */
 	public void testIsSetFormFields() {
+		// TODO: implement this test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#getImageFields() <em>Image Fields</em>}' feature getter.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#getImageFields()
+	 * @generated
+	 */
+	public void testGetImageFields() {
+		// TODO: implement this feature getter test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#isSetImageFields() <em>isSetImageFields()</em>}' method.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#isSetImageFields()
+	 * @generated
+	 */
+	public void testIsSetImageFields() {
 		// TODO: implement this test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
