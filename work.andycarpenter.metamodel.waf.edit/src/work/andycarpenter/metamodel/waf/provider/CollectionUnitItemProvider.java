@@ -1046,6 +1046,11 @@ public class CollectionUnitItemProvider extends DynamicUnitItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.eINSTANCE.getCollectionUnit_ElementTitle(),
+				 WafFactory.eINSTANCE.createFeaturePathResource()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.eINSTANCE.getCollectionUnit_ElementTitle(),
 				 WafFactory.eINSTANCE.createFeaturePathLabel()));
 	}
 

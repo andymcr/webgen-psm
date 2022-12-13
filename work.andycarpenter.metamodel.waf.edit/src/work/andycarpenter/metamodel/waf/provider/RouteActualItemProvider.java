@@ -187,6 +187,11 @@ public class RouteActualItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.eINSTANCE.getRouteActual_Value(),
+				 WafFactory.eINSTANCE.createPathVariableResource()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.eINSTANCE.getRouteActual_Value(),
 				 OrmFactory.eINSTANCE.createFeatureReference()));
 
 		newChildDescriptors.add

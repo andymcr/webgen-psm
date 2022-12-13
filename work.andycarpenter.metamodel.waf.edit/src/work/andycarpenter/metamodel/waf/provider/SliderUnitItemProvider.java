@@ -13,7 +13,6 @@ import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
 import work.andycarpenter.metamodel.expression.ExpressionFactory;
 import work.andycarpenter.metamodel.waf.SliderUnit;
 import work.andycarpenter.metamodel.waf.WafFactory;
@@ -49,7 +48,6 @@ public class SliderUnitItemProvider extends CollectionUnitItemProvider {
 
 			addMissingImagePathPropertyDescriptor(object);
 			addImageFilterPropertyDescriptor(object);
-			addMissingImageFilterPropertyDescriptor(object);
 			addShowTimePropertyDescriptor(object);
 			addTransitionTimePropertyDescriptor(object);
 			addSectionClassPropertyDescriptor(object);
@@ -114,28 +112,6 @@ public class SliderUnitItemProvider extends CollectionUnitItemProvider {
 				 getString("_UI_ImageUnit_imageFilter_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ImageUnit_imageFilter_feature", "_UI_ImageUnit_type"),
 				 WafPackage.eINSTANCE.getImageUnit_ImageFilter(),
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Missing Image Filter feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addMissingImageFilterPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ImageUnit_missingImageFilter_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ImageUnit_missingImageFilter_feature", "_UI_ImageUnit_type"),
-				 WafPackage.eINSTANCE.getImageUnit_MissingImageFilter(),
 				 true,
 				 false,
 				 true,
@@ -684,7 +660,7 @@ public class SliderUnitItemProvider extends CollectionUnitItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(WafPackage.eINSTANCE.getImageUnit_ImagePathFeature());
+			childrenFeatures.add(WafPackage.eINSTANCE.getImageUnit_ImageFeaturePath());
 			childrenFeatures.add(WafPackage.eINSTANCE.getImageUnit_ShowMissingImageWhen());
 		}
 		return childrenFeatures;
@@ -768,7 +744,7 @@ public class SliderUnitItemProvider extends CollectionUnitItemProvider {
 			case WafPackage.SLIDER_UNIT__HAS_INSTANCE_ANCHOR_CLASS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case WafPackage.SLIDER_UNIT__IMAGE_PATH_FEATURE:
+			case WafPackage.SLIDER_UNIT__IMAGE_FEATURE_PATH:
 			case WafPackage.SLIDER_UNIT__SHOW_MISSING_IMAGE_WHEN:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
@@ -789,17 +765,22 @@ public class SliderUnitItemProvider extends CollectionUnitItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.eINSTANCE.getImageUnit_ImagePathFeature(),
+				(WafPackage.eINSTANCE.getImageUnit_ImageFeaturePath(),
 				 WafFactory.eINSTANCE.createFeaturePathAssociation()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.eINSTANCE.getImageUnit_ImagePathFeature(),
+				(WafPackage.eINSTANCE.getImageUnit_ImageFeaturePath(),
 				 WafFactory.eINSTANCE.createFeaturePathAttribute()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.eINSTANCE.getImageUnit_ImagePathFeature(),
+				(WafPackage.eINSTANCE.getImageUnit_ImageFeaturePath(),
+				 WafFactory.eINSTANCE.createFeaturePathResource()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.eINSTANCE.getImageUnit_ImageFeaturePath(),
 				 WafFactory.eINSTANCE.createFeaturePathLabel()));
 
 		newChildDescriptors.add
@@ -858,7 +839,7 @@ public class SliderUnitItemProvider extends CollectionUnitItemProvider {
 			childFeature == WafPackage.eINSTANCE.getDynamicUnit_HideWhen() ||
 			childFeature == WafPackage.eINSTANCE.getImageUnit_ShowMissingImageWhen() ||
 			childFeature == WafPackage.eINSTANCE.getCollectionUnit_ElementTitle() ||
-			childFeature == WafPackage.eINSTANCE.getImageUnit_ImagePathFeature();
+			childFeature == WafPackage.eINSTANCE.getImageUnit_ImageFeaturePath();
 
 		if (qualify) {
 			return getString

@@ -58,7 +58,6 @@ public class ImageUnitItemProvider extends ItemProviderAdapter implements IEditi
 
 			addMissingImagePathPropertyDescriptor(object);
 			addImageFilterPropertyDescriptor(object);
-			addMissingImageFilterPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -77,28 +76,6 @@ public class ImageUnitItemProvider extends ItemProviderAdapter implements IEditi
 				 getString("_UI_ImageUnit_imageFilter_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ImageUnit_imageFilter_feature", "_UI_ImageUnit_type"),
 				 WafPackage.eINSTANCE.getImageUnit_ImageFilter(),
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Missing Image Filter feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addMissingImageFilterPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ImageUnit_missingImageFilter_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ImageUnit_missingImageFilter_feature", "_UI_ImageUnit_type"),
-				 WafPackage.eINSTANCE.getImageUnit_MissingImageFilter(),
 				 true,
 				 false,
 				 true,
@@ -141,7 +118,7 @@ public class ImageUnitItemProvider extends ItemProviderAdapter implements IEditi
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(WafPackage.eINSTANCE.getImageUnit_ImagePathFeature());
+			childrenFeatures.add(WafPackage.eINSTANCE.getImageUnit_ImageFeaturePath());
 			childrenFeatures.add(WafPackage.eINSTANCE.getImageUnit_ShowMissingImageWhen());
 		}
 		return childrenFeatures;
@@ -190,7 +167,7 @@ public class ImageUnitItemProvider extends ItemProviderAdapter implements IEditi
 			case WafPackage.IMAGE_UNIT__MISSING_IMAGE_PATH:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case WafPackage.IMAGE_UNIT__IMAGE_PATH_FEATURE:
+			case WafPackage.IMAGE_UNIT__IMAGE_FEATURE_PATH:
 			case WafPackage.IMAGE_UNIT__SHOW_MISSING_IMAGE_WHEN:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
@@ -211,12 +188,12 @@ public class ImageUnitItemProvider extends ItemProviderAdapter implements IEditi
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.eINSTANCE.getImageUnit_ImagePathFeature(),
+				(WafPackage.eINSTANCE.getImageUnit_ImageFeaturePath(),
 				 WafFactory.eINSTANCE.createFeaturePathAttribute()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.eINSTANCE.getImageUnit_ImagePathFeature(),
+				(WafPackage.eINSTANCE.getImageUnit_ImageFeaturePath(),
 				 WafFactory.eINSTANCE.createFeaturePathAssociation()));
 
 		newChildDescriptors.add

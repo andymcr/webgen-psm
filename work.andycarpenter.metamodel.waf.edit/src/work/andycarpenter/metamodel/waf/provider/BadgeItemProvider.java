@@ -312,6 +312,11 @@ public class BadgeItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.eINSTANCE.getBadge_Value(),
+				 WafFactory.eINSTANCE.createFeaturePathResource()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.eINSTANCE.getBadge_Value(),
 				 WafFactory.eINSTANCE.createFeaturePathLabel()));
 
 		newChildDescriptors.add

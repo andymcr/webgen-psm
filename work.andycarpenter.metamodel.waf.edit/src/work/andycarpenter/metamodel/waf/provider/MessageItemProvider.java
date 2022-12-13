@@ -192,6 +192,11 @@ public class MessageItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.eINSTANCE.getMessage_Features(),
+				 WafFactory.eINSTANCE.createFeaturePathResource()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.eINSTANCE.getMessage_Features(),
 				 WafFactory.eINSTANCE.createFeaturePathLabel()));
 	}
 

@@ -2577,11 +2577,10 @@ class DateCardsUnit extends CardsUnit {
 }
 
 interface ImageUnit {
-	contains FeaturePath[1] imagePathFeature
+	contains FeaturePath[1] imageFeaturePath
 	String missingImagePath
 	contains Predicate showMissingImageWhen
 	refers ImageManipulation imageFilter
-	refers ImageManipulation missingImageFilter
 }
 
 
@@ -3034,9 +3033,11 @@ abstract class Path {
 					else
 						association.childFeature.leafFeature
 					endif
+		else if self.oclIsKindOf(PathResource) then
+			self.oclAsType(PathResource).resource
 		else
 			null
-		endif endif")
+		endif endif endif")
     @GenModel(propertyCategory="Debug")
 	refers derived readonly transient volatile Feature leafFeature
 
@@ -3099,6 +3100,18 @@ abstract class PathAttribute extends Path {
 	derived String name
 }
 
+abstract class PathResource extends Path {
+	refers ResourceFeature[1] resource
+
+	@OCL(derivation="if not resource.oclIsUndefined() then
+			resource.name
+		else
+			''
+		endif")
+    @GenModel(propertyCategory="Debug")
+	derived String name
+}
+
 abstract class ChildPath extends Path {
 	refers PathAssociation[1] parent opposite childFeature
 }
@@ -3107,6 +3120,9 @@ class ChildPathAssociation extends PathAssociation, ChildPath {
 }
 
 class ChildPathAttribute extends PathAttribute, ChildPath {
+}
+
+class ChildPathResource extends PathResource, ChildPath {
 }
 
 abstract class FeaturePath extends Path {
@@ -3131,6 +3147,9 @@ class FeaturePathAssociation extends PathAssociation, FeaturePath {
 }
 
 class FeaturePathAttribute extends PathAttribute, FeaturePath {
+}
+
+class FeaturePathResource extends PathResource, FeaturePath {
 }
 
 class FeaturePathLabel extends FeaturePath {
@@ -3172,6 +3191,9 @@ class PathVariableAssociation extends PathAssociation, PathVariable {
 }
 
 class PathVariableAttribute extends PathAttribute, PathVariable {
+}
+
+class PathVariableResource extends PathResource, PathVariable {
 }
 
 

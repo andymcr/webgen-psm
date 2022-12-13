@@ -252,6 +252,11 @@ public class PathAssociationItemProvider extends PathItemProvider {
 			(createChildParameter
 				(WafPackage.eINSTANCE.getPathAssociation_ChildFeature(),
 				 WafFactory.eINSTANCE.createChildPathAttribute()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.eINSTANCE.getPathAssociation_ChildFeature(),
+				 WafFactory.eINSTANCE.createChildPathResource()));
 	}
 
 }

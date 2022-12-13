@@ -1983,6 +1983,11 @@ public class InterfaceFieldItemProvider extends NamedElementItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.eINSTANCE.getInterfaceField_FieldDefaultValue(),
+				 WafFactory.eINSTANCE.createPathVariableResource()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.eINSTANCE.getInterfaceField_FieldDefaultValue(),
 				 OrmFactory.eINSTANCE.createFeatureReference()));
 
 		newChildDescriptors.add

@@ -1151,6 +1151,29 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.waf.ChildPathResource} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ChildPathResourceItemProvider childPathResourceItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link work.andycarpenter.metamodel.waf.ChildPathResource}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createChildPathResourceAdapter() {
+		if (childPathResourceItemProvider == null) {
+			childPathResourceItemProvider = new ChildPathResourceItemProvider(this);
+		}
+
+		return childPathResourceItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.waf.FeaturePathAssociation} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1194,6 +1217,29 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 		}
 
 		return featurePathAttributeItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.waf.FeaturePathResource} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected FeaturePathResourceItemProvider featurePathResourceItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link work.andycarpenter.metamodel.waf.FeaturePathResource}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createFeaturePathResourceAdapter() {
+		if (featurePathResourceItemProvider == null) {
+			featurePathResourceItemProvider = new FeaturePathResourceItemProvider(this);
+		}
+
+		return featurePathResourceItemProvider;
 	}
 
 	/**
@@ -1263,6 +1309,29 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 		}
 
 		return pathVariableAttributeItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.waf.PathVariableResource} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected PathVariableResourceItemProvider pathVariableResourceItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link work.andycarpenter.metamodel.waf.PathVariableResource}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createPathVariableResourceAdapter() {
+		if (pathVariableResourceItemProvider == null) {
+			pathVariableResourceItemProvider = new PathVariableResourceItemProvider(this);
+		}
+
+		return pathVariableResourceItemProvider;
 	}
 
 	/**
@@ -1594,11 +1663,14 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 		if (searchUnitItemProvider != null) searchUnitItemProvider.dispose();
 		if (childPathAssociationItemProvider != null) childPathAssociationItemProvider.dispose();
 		if (childPathAttributeItemProvider != null) childPathAttributeItemProvider.dispose();
+		if (childPathResourceItemProvider != null) childPathResourceItemProvider.dispose();
 		if (featurePathAssociationItemProvider != null) featurePathAssociationItemProvider.dispose();
 		if (featurePathAttributeItemProvider != null) featurePathAttributeItemProvider.dispose();
+		if (featurePathResourceItemProvider != null) featurePathResourceItemProvider.dispose();
 		if (featurePathLabelItemProvider != null) featurePathLabelItemProvider.dispose();
 		if (pathVariableAssociationItemProvider != null) pathVariableAssociationItemProvider.dispose();
 		if (pathVariableAttributeItemProvider != null) pathVariableAttributeItemProvider.dispose();
+		if (pathVariableResourceItemProvider != null) pathVariableResourceItemProvider.dispose();
 		if (deleteActionItemProvider != null) deleteActionItemProvider.dispose();
 		if (containerSelectActionItemProvider != null) containerSelectActionItemProvider.dispose();
 		if (instanceSelectActionItemProvider != null) instanceSelectActionItemProvider.dispose();
@@ -1666,6 +1738,11 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 						(OrmPackage.Literals.ATTRIBUTE__ATTRIBUTE_DEFAULT_VALUE,
 						 WafFactory.eINSTANCE.createPathVariableAttribute()));
 
+				newChildDescriptors.add
+					(createChildParameter
+						(OrmPackage.Literals.ATTRIBUTE__ATTRIBUTE_DEFAULT_VALUE,
+						 WafFactory.eINSTANCE.createPathVariableResource()));
+
 				return null;
 			}
  
@@ -1685,6 +1762,11 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 					(createChildParameter
 						(OrmPackage.Literals.ORDER__PATH,
 						 WafFactory.eINSTANCE.createPathVariableAttribute()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(OrmPackage.Literals.ORDER__PATH,
+						 WafFactory.eINSTANCE.createPathVariableResource()));
 
 				return null;
 			}
@@ -1778,6 +1860,11 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 						(BasePackage.Literals.CONSTANT__VALUE,
 						 WafFactory.eINSTANCE.createPathVariableAttribute()));
 
+				newChildDescriptors.add
+					(createChildParameter
+						(BasePackage.Literals.CONSTANT__VALUE,
+						 WafFactory.eINSTANCE.createPathVariableResource()));
+
 				return null;
 			}
  
@@ -1870,6 +1957,11 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 						(ExpressionPackage.Literals.FUNCTION_CALL__ACTUALS,
 						 WafFactory.eINSTANCE.createPathVariableAttribute()));
 
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.FUNCTION_CALL__ACTUALS,
+						 WafFactory.eINSTANCE.createPathVariableResource()));
+
 				return null;
 			}
  
@@ -1889,6 +1981,11 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_BOOLEAN_VARIABLE__FEATURE,
 						 WafFactory.eINSTANCE.createPathVariableAttribute()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_BOOLEAN_VARIABLE__FEATURE,
+						 WafFactory.eINSTANCE.createPathVariableResource()));
 
 				return null;
 			}
@@ -1912,6 +2009,11 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 
 				newChildDescriptors.add
 					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_EQUALITY_OPERATOR__LEFT,
+						 WafFactory.eINSTANCE.createPathVariableResource()));
+
+				newChildDescriptors.add
+					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_EQUALITY_OPERATOR__RIGHT,
 						 WafFactory.eINSTANCE.createPathVariableAssociation()));
 
@@ -1919,6 +2021,11 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_EQUALITY_OPERATOR__RIGHT,
 						 WafFactory.eINSTANCE.createPathVariableAttribute()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_EQUALITY_OPERATOR__RIGHT,
+						 WafFactory.eINSTANCE.createPathVariableResource()));
 
 				return null;
 			}
@@ -1942,6 +2049,11 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 
 				newChildDescriptors.add
 					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_COMPARISON_OPERATOR__LEFT,
+						 WafFactory.eINSTANCE.createPathVariableResource()));
+
+				newChildDescriptors.add
+					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_COMPARISON_OPERATOR__RIGHT,
 						 WafFactory.eINSTANCE.createPathVariableAssociation()));
 
@@ -1949,6 +2061,11 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_COMPARISON_OPERATOR__RIGHT,
 						 WafFactory.eINSTANCE.createPathVariableAttribute()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_COMPARISON_OPERATOR__RIGHT,
+						 WafFactory.eINSTANCE.createPathVariableResource()));
 
 				return null;
 			}
@@ -1972,6 +2089,11 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 
 				newChildDescriptors.add
 					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_IN_OPERATOR__LEFT,
+						 WafFactory.eINSTANCE.createPathVariableResource()));
+
+				newChildDescriptors.add
+					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_IN_OPERATOR__RIGHT,
 						 WafFactory.eINSTANCE.createPathVariableAssociation()));
 
@@ -1979,6 +2101,11 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_IN_OPERATOR__RIGHT,
 						 WafFactory.eINSTANCE.createPathVariableAttribute()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_IN_OPERATOR__RIGHT,
+						 WafFactory.eINSTANCE.createPathVariableResource()));
 
 				return null;
 			}
@@ -2002,6 +2129,11 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 
 				newChildDescriptors.add
 					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_LIKE_OPERATOR__LEFT,
+						 WafFactory.eINSTANCE.createPathVariableResource()));
+
+				newChildDescriptors.add
+					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_LIKE_OPERATOR__RIGHT,
 						 WafFactory.eINSTANCE.createPathVariableAssociation()));
 
@@ -2009,6 +2141,11 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_LIKE_OPERATOR__RIGHT,
 						 WafFactory.eINSTANCE.createPathVariableAttribute()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_LIKE_OPERATOR__RIGHT,
+						 WafFactory.eINSTANCE.createPathVariableResource()));
 
 				return null;
 			}
@@ -2030,6 +2167,11 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 						(ExpressionPackage.Literals.PREDICATE_IS_EMPTY__FEATURE,
 						 WafFactory.eINSTANCE.createPathVariableAttribute()));
 
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_IS_EMPTY__FEATURE,
+						 WafFactory.eINSTANCE.createPathVariableResource()));
+
 				return null;
 			}
  
@@ -2049,6 +2191,11 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_IS_NULL__FEATURE,
 						 WafFactory.eINSTANCE.createPathVariableAttribute()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_IS_NULL__FEATURE,
+						 WafFactory.eINSTANCE.createPathVariableResource()));
 
 				return null;
 			}

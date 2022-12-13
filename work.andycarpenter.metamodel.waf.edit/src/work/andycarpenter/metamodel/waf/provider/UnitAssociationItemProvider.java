@@ -379,6 +379,11 @@ public class UnitAssociationItemProvider extends UnitFeatureItemProvider {
 			(createChildParameter
 				(WafPackage.eINSTANCE.getPathAssociation_ChildFeature(),
 				 WafFactory.eINSTANCE.createChildPathAttribute()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.eINSTANCE.getPathAssociation_ChildFeature(),
+				 WafFactory.eINSTANCE.createChildPathResource()));
 	}
 
 	/**
