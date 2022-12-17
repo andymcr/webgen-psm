@@ -32,6 +32,7 @@ class Service extends NamedElement, ConstantContainer {
 	contains BusinessOperation[] operations opposite partOf
 	refers Repository[] requires
 	refers Service[] uses
+	boolean usesVichUploaderService = "false"
 	@OCL(derivation="operations->select(o | o.resultType = OperationResultTypes::File)")
 	refers derived readonly unsettable transient volatile BusinessOperation[] fileOperations
 	@OCL(derivation="fileOperations->notEmpty()")

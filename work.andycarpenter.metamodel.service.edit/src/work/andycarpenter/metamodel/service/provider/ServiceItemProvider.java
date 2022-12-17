@@ -55,6 +55,7 @@ public class ServiceItemProvider extends NamedElementItemProvider {
 			addPartOfPropertyDescriptor(object);
 			addRequiresPropertyDescriptor(object);
 			addUsesPropertyDescriptor(object);
+			addUsesVichUploaderServicePropertyDescriptor(object);
 			addFileOperationsPropertyDescriptor(object);
 			addHasFileOperationsPropertyDescriptor(object);
 		}
@@ -123,6 +124,28 @@ public class ServiceItemProvider extends NamedElementItemProvider {
 				 false,
 				 true,
 				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Uses Vich Uploader Service feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addUsesVichUploaderServicePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Service_usesVichUploaderService_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Service_usesVichUploaderService_feature", "_UI_Service_type"),
+				 ServicePackage.Literals.SERVICE__USES_VICH_UPLOADER_SERVICE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -240,6 +263,7 @@ public class ServiceItemProvider extends NamedElementItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Service.class)) {
+			case ServicePackage.SERVICE__USES_VICH_UPLOADER_SERVICE:
 			case ServicePackage.SERVICE__HAS_FILE_OPERATIONS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
