@@ -1636,7 +1636,6 @@ class UnitAssociation extends UnitFeature, PathAssociation {
 	refers Selection options
 	refers Attribute collectionSortBy
 	boolean useAutocomplete = "false"
-	refers ModelLabel autocompleteLabel
 }
 
 class UnitLabel extends UnitField {

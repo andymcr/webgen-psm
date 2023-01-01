@@ -61,7 +61,6 @@ public class UnitAssociationItemProvider extends UnitFeatureItemProvider {
 			addOptionsPropertyDescriptor(object);
 			addCollectionSortByPropertyDescriptor(object);
 			addUseAutocompletePropertyDescriptor(object);
-			addAutocompleteLabelPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -305,28 +304,6 @@ public class UnitAssociationItemProvider extends UnitFeatureItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Autocomplete Label feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addAutocompleteLabelPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_UnitAssociation_autocompleteLabel_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UnitAssociation_autocompleteLabel_feature", "_UI_UnitAssociation_type"),
-				 WafPackage.eINSTANCE.getUnitAssociation_AutocompleteLabel(),
-				 true,
-				 false,
-				 true,
-				 null,
 				 null,
 				 null));
 	}
