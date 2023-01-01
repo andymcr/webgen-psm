@@ -1580,6 +1580,7 @@ abstract class UnitFeature extends UnitField, ActionContainer {
 	contains Expression forcedValue
 	boolean collectionUiAllowAdd = "true"
 	boolean collectionUiAllowRemove = "true"
+	int collectionMaximumValues = "0"
 	String defaultDisplayValue
 	contains Predicate displayDefaultWhen
 	String emptyDisplayValue
@@ -1625,11 +1626,17 @@ class UnitResource extends UnitFeature {
 		endif")
     @GenModel(propertyCategory="Debug")
 	derived String[1] name
+	boolean isDeletable = "true"
+	boolean isDownloadable = "true"
+	boolean showImageWhenEditing = "true"
+	refers ImageManipulation imageFilter
 }
 
 class UnitAssociation extends UnitFeature, PathAssociation {
 	refers Selection options
+	refers Attribute collectionSortBy
 	boolean useAutocomplete = "false"
+	refers ModelLabel autocompleteLabel
 }
 
 class UnitLabel extends UnitField {

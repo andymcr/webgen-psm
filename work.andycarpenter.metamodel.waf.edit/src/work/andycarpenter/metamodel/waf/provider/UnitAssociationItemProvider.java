@@ -59,7 +59,9 @@ public class UnitAssociationItemProvider extends UnitFeatureItemProvider {
 			addValueDisplayPropertyDescriptor(object);
 			addTargetEntityPropertyDescriptor(object);
 			addOptionsPropertyDescriptor(object);
+			addCollectionSortByPropertyDescriptor(object);
 			addUseAutocompletePropertyDescriptor(object);
+			addAutocompleteLabelPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -258,6 +260,34 @@ public class UnitAssociationItemProvider extends UnitFeatureItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Collection Sort By feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	protected void addCollectionSortByPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
+			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+			getResourceLocator(),
+			getString("_UI_UnitAssociation_collectionSortBy_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_UnitAssociation_collectionSortBy_feature", "_UI_UnitAssociation_type"),
+			WafPackage.eINSTANCE.getUnitAssociation_CollectionSortBy(),
+			true, false, true, null,
+			getString("_UI_ModelPropertyCategory"),
+			null) {
+				@Override
+				public Collection<?> getChoiceOfValues(Object object) {
+					if (object instanceof UnitAssociation) {
+						final UnitAssociation association = (UnitAssociation) object;
+						return association.getTargetEntity().getAttributes();
+					}
+
+					return Collections.emptySet();
+				}
+			});
+	}
+
+	/**
 	 * This adds a property descriptor for the Use Autocomplete feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -275,6 +305,28 @@ public class UnitAssociationItemProvider extends UnitFeatureItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Autocomplete Label feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAutocompleteLabelPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_UnitAssociation_autocompleteLabel_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UnitAssociation_autocompleteLabel_feature", "_UI_UnitAssociation_type"),
+				 WafPackage.eINSTANCE.getUnitAssociation_AutocompleteLabel(),
+				 true,
+				 false,
+				 true,
+				 null,
 				 null,
 				 null));
 	}

@@ -139,6 +139,7 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 			addPlaceholderOverridePropertyDescriptor(object);
 			addCollectionUiAllowAddPropertyDescriptor(object);
 			addCollectionUiAllowRemovePropertyDescriptor(object);
+			addCollectionMaximumValuesPropertyDescriptor(object);
 			addDefaultDisplayValuePropertyDescriptor(object);
 			addEmptyDisplayValuePropertyDescriptor(object);
 			addAutofocusPropertyDescriptor(object);
@@ -2129,6 +2130,28 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Collection Maximum Values feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCollectionMaximumValuesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_UnitFeature_collectionMaximumValues_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UnitFeature_collectionMaximumValues_feature", "_UI_UnitFeature_type"),
+				 WafPackage.eINSTANCE.getUnitFeature_CollectionMaximumValues(),
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Default Display Value feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2349,6 +2372,7 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 			case WafPackage.UNIT_FEATURE__PLACEHOLDER_OVERRIDE:
 			case WafPackage.UNIT_FEATURE__COLLECTION_UI_ALLOW_ADD:
 			case WafPackage.UNIT_FEATURE__COLLECTION_UI_ALLOW_REMOVE:
+			case WafPackage.UNIT_FEATURE__COLLECTION_MAXIMUM_VALUES:
 			case WafPackage.UNIT_FEATURE__DEFAULT_DISPLAY_VALUE:
 			case WafPackage.UNIT_FEATURE__EMPTY_DISPLAY_VALUE:
 			case WafPackage.UNIT_FEATURE__AUTOFOCUS:
