@@ -31,8 +31,6 @@ enum ComparisionOperator {
 }
 
 abstract class Expression {
-	String[] suffixes
-
 	@OCL(derivation="if self.oclAsType(ecore::EObject).eContainer().oclIsKindOf(Expression) then
 			self.oclAsType(ecore::EObject).eContainer().oclAsType(Expression).rootContainer
 		else
@@ -47,6 +45,11 @@ abstract class Literal extends Expression {
 
 abstract class Variable extends Expression {
 }
+
+class SizeFunction extends Expression {
+	contains Variable[1] feature
+}
+
 
 class FunctionCall extends Expression {
 	String[1] name

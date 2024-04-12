@@ -45,34 +45,11 @@ public class PathVariableAttributeItemProvider extends PathAttributeItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addSuffixesPropertyDescriptor(object);
 			addRootContainerPropertyDescriptor(object);
 			addUseContainerAsContextPropertyDescriptor(object);
 			addContextPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Suffixes feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addSuffixesPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Expression_suffixes_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Expression_suffixes_feature", "_UI_Expression_type"),
-				 ExpressionPackage.Literals.EXPRESSION__SUFFIXES,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
 	}
 
 	/**
@@ -179,7 +156,6 @@ public class PathVariableAttributeItemProvider extends PathAttributeItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(PathVariableAttribute.class)) {
-			case WafPackage.PATH_VARIABLE_ATTRIBUTE__SUFFIXES:
 			case WafPackage.PATH_VARIABLE_ATTRIBUTE__USE_CONTAINER_AS_CONTEXT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;

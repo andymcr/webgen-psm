@@ -36,6 +36,7 @@ import work.andycarpenter.metamodel.expression.PredicateInOperator;
 import work.andycarpenter.metamodel.expression.PredicateIsEmpty;
 import work.andycarpenter.metamodel.expression.PredicateIsNull;
 import work.andycarpenter.metamodel.expression.PredicateLikeOperator;
+import work.andycarpenter.metamodel.expression.SizeFunction;
 import work.andycarpenter.metamodel.expression.util.ExpressionSwitch;
 import work.andycarpenter.metamodel.orm.OrmFactory;
 import work.andycarpenter.metamodel.orm.util.OrmAdapterFactory;
@@ -1065,6 +1066,20 @@ public class OrmItemProviderAdapterFactory extends OrmAdapterFactory implements 
 			CreationSwitch(List<Object> newChildDescriptors, EditingDomain editingDomain) {
 				this.newChildDescriptors = newChildDescriptors;
 				this.editingDomain = editingDomain;
+			}
+			/**
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			@Override
+			public Object caseSizeFunction(SizeFunction object) {
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.SIZE_FUNCTION__FEATURE,
+						 OrmFactory.eINSTANCE.createFeatureReference()));
+
+				return null;
 			}
 			/**
 			 * <!-- begin-user-doc -->

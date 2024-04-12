@@ -167,6 +167,11 @@ public class FunctionCallItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(ExpressionPackage.Literals.FUNCTION_CALL__ACTUALS,
+				 ExpressionFactory.eINSTANCE.createSizeFunction()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ExpressionPackage.Literals.FUNCTION_CALL__ACTUALS,
 				 ExpressionFactory.eINSTANCE.createFunctionCall()));
 
 		newChildDescriptors.add

@@ -167,6 +167,11 @@ public class PredicateComparisonOperatorItemProvider extends PredicateItemProvid
 		newChildDescriptors.add
 			(createChildParameter
 				(ExpressionPackage.Literals.PREDICATE_COMPARISON_OPERATOR__LEFT,
+				 ExpressionFactory.eINSTANCE.createSizeFunction()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ExpressionPackage.Literals.PREDICATE_COMPARISON_OPERATOR__LEFT,
 				 ExpressionFactory.eINSTANCE.createFunctionCall()));
 
 		newChildDescriptors.add
@@ -208,6 +213,11 @@ public class PredicateComparisonOperatorItemProvider extends PredicateItemProvid
 			(createChildParameter
 				(ExpressionPackage.Literals.PREDICATE_COMPARISON_OPERATOR__LEFT,
 				 ExpressionFactory.eINSTANCE.createPredicateIsNull()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ExpressionPackage.Literals.PREDICATE_COMPARISON_OPERATOR__RIGHT,
+				 ExpressionFactory.eINSTANCE.createSizeFunction()));
 
 		newChildDescriptors.add
 			(createChildParameter
