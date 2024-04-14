@@ -45,6 +45,7 @@ import work.andycarpenter.metamodel.expression.PredicateIsEmpty;
 import work.andycarpenter.metamodel.expression.PredicateIsNull;
 import work.andycarpenter.metamodel.expression.PredicateLikeOperator;
 
+import work.andycarpenter.metamodel.expression.SizeFunction;
 import work.andycarpenter.metamodel.expression.util.ExpressionSwitch;
 
 /**
@@ -446,6 +447,7 @@ public class BaseItemProviderAdapterFactory extends BaseAdapterFactory implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ComposeableAdapterFactory getRootAdapterFactory() {
 		return parentAdapterFactory == null ? this : parentAdapterFactory.getRootAdapterFactory();
 	}
@@ -456,6 +458,7 @@ public class BaseItemProviderAdapterFactory extends BaseAdapterFactory implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setParentAdapterFactory(ComposedAdapterFactory parentAdapterFactory) {
 		this.parentAdapterFactory = parentAdapterFactory;
 	}
@@ -504,6 +507,7 @@ public class BaseItemProviderAdapterFactory extends BaseAdapterFactory implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void addListener(INotifyChangedListener notifyChangedListener) {
 		changeNotifier.addListener(notifyChangedListener);
 	}
@@ -514,6 +518,7 @@ public class BaseItemProviderAdapterFactory extends BaseAdapterFactory implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void removeListener(INotifyChangedListener notifyChangedListener) {
 		changeNotifier.removeListener(notifyChangedListener);
 	}
@@ -524,6 +529,7 @@ public class BaseItemProviderAdapterFactory extends BaseAdapterFactory implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void fireNotifyChanged(Notification notification) {
 		changeNotifier.fireNotifyChanged(notification);
 
@@ -538,6 +544,7 @@ public class BaseItemProviderAdapterFactory extends BaseAdapterFactory implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void dispose() {
 		if (baseModelItemProvider != null) baseModelItemProvider.dispose();
 		if (nullLiteralItemProvider != null) nullLiteralItemProvider.dispose();
@@ -595,6 +602,35 @@ public class BaseItemProviderAdapterFactory extends BaseAdapterFactory implement
 			CreationSwitch(List<Object> newChildDescriptors, EditingDomain editingDomain) {
 				this.newChildDescriptors = newChildDescriptors;
 				this.editingDomain = editingDomain;
+			}
+			/**
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			@Override
+			public Object caseSizeFunction(SizeFunction object) {
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.SIZE_FUNCTION__FEATURE,
+						 BaseFactory.eINSTANCE.createCurrentTime()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.SIZE_FUNCTION__FEATURE,
+						 BaseFactory.eINSTANCE.createCurrentUser()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.SIZE_FUNCTION__FEATURE,
+						 BaseFactory.eINSTANCE.createConstantReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.SIZE_FUNCTION__FEATURE,
+						 BaseFactory.eINSTANCE.createParameterReference()));
+
+				return null;
 			}
 			/**
 			 * <!-- begin-user-doc -->

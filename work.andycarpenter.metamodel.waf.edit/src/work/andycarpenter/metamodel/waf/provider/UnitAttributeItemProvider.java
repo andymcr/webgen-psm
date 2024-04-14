@@ -305,6 +305,11 @@ public class UnitAttributeItemProvider extends UnitFeatureItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.eINSTANCE.getUnitAttribute_AttributeDefaultValue(),
+				 ExpressionFactory.eINSTANCE.createSizeFunction()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.eINSTANCE.getUnitAttribute_AttributeDefaultValue(),
 				 ExpressionFactory.eINSTANCE.createFunctionCall()));
 
 		newChildDescriptors.add

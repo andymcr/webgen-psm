@@ -2038,6 +2038,11 @@ public class InterfaceFieldItemProvider extends NamedElementItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.eINSTANCE.getInterfaceField_FieldDefaultValue(),
+				 ExpressionFactory.eINSTANCE.createSizeFunction()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.eINSTANCE.getInterfaceField_FieldDefaultValue(),
 				 ExpressionFactory.eINSTANCE.createFunctionCall()));
 
 		newChildDescriptors.add
