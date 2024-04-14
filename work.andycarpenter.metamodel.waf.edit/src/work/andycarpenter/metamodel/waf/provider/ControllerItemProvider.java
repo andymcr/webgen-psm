@@ -96,6 +96,7 @@ public class ControllerItemProvider extends NamedDisplayElementItemProvider {
 			addActionsWithoutTargetPropertyDescriptor(object);
 			addFileActionsPropertyDescriptor(object);
 			addHasFileActionsPropertyDescriptor(object);
+			addHasActionsWithDisabledMessagePropertyDescriptor(object);
 			addHasSuccessMessagesPropertyDescriptor(object);
 			addHasMessagesPropertyDescriptor(object);
 			addUriElementPropertyDescriptor(object);
@@ -1122,6 +1123,28 @@ public class ControllerItemProvider extends NamedDisplayElementItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Has Actions With Disabled Message feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasActionsWithDisabledMessagePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Controller_hasActionsWithDisabledMessage_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Controller_hasActionsWithDisabledMessage_feature", "_UI_Controller_type"),
+				 WafPackage.eINSTANCE.getController_HasActionsWithDisabledMessage(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 getString("_UI_DebugPropertyCategory"),
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Has Success Messages feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1403,6 +1426,7 @@ public class ControllerItemProvider extends NamedDisplayElementItemProvider {
 			case WafPackage.CONTROLLER__HAS_REQUIRED_INTERFACE_FIELDS:
 			case WafPackage.CONTROLLER__HAS_RESOURCE_FIELDS:
 			case WafPackage.CONTROLLER__HAS_FILE_ACTIONS:
+			case WafPackage.CONTROLLER__HAS_ACTIONS_WITH_DISABLED_MESSAGE:
 			case WafPackage.CONTROLLER__HAS_SUCCESS_MESSAGES:
 			case WafPackage.CONTROLLER__HAS_MESSAGES:
 			case WafPackage.CONTROLLER__URI_ELEMENT:

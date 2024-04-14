@@ -118,7 +118,8 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 			addInstanceActionsPlacementPropertyDescriptor(object);
 			addActionsPropertyDescriptor(object);
 			addHasActionsPropertyDescriptor(object);
-			addHasActionsWithSuccessMessagesPropertyDescriptor(object);
+			addHasActionsWithDisabledMessagePropertyDescriptor(object);
+			addHasActionsWithSuccessMessagePropertyDescriptor(object);
 			addHasActionsWithMessagesPropertyDescriptor(object);
 			addActionsWithoutTargetPropertyDescriptor(object);
 			addContainerActionsPropertyDescriptor(object);
@@ -1712,19 +1713,41 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Has Actions With Success Messages feature.
+	 * This adds a property descriptor for the Has Actions With Disabled Message feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addHasActionsWithSuccessMessagesPropertyDescriptor(Object object) {
+	protected void addHasActionsWithDisabledMessagePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ActionContainer_hasActionsWithSuccessMessages_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ActionContainer_hasActionsWithSuccessMessages_feature", "_UI_ActionContainer_type"),
-				 WafPackage.eINSTANCE.getActionContainer_HasActionsWithSuccessMessages(),
+				 getString("_UI_ActionContainer_hasActionsWithDisabledMessage_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ActionContainer_hasActionsWithDisabledMessage_feature", "_UI_ActionContainer_type"),
+				 WafPackage.eINSTANCE.getActionContainer_HasActionsWithDisabledMessage(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 getString("_UI_DebugPropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Has Actions With Success Message feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasActionsWithSuccessMessagePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ActionContainer_hasActionsWithSuccessMessage_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ActionContainer_hasActionsWithSuccessMessage_feature", "_UI_ActionContainer_type"),
+				 WafPackage.eINSTANCE.getActionContainer_HasActionsWithSuccessMessage(),
 				 false,
 				 false,
 				 false,
@@ -2360,7 +2383,8 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 			case WafPackage.UNIT_FEATURE__CONTAINER_ACTIONS_PLACEMENT:
 			case WafPackage.UNIT_FEATURE__INSTANCE_ACTIONS_PLACEMENT:
 			case WafPackage.UNIT_FEATURE__HAS_ACTIONS:
-			case WafPackage.UNIT_FEATURE__HAS_ACTIONS_WITH_SUCCESS_MESSAGES:
+			case WafPackage.UNIT_FEATURE__HAS_ACTIONS_WITH_DISABLED_MESSAGE:
+			case WafPackage.UNIT_FEATURE__HAS_ACTIONS_WITH_SUCCESS_MESSAGE:
 			case WafPackage.UNIT_FEATURE__HAS_ACTIONS_WITH_MESSAGES:
 			case WafPackage.UNIT_FEATURE__HAS_CONTAINER_ACTIONS:
 			case WafPackage.UNIT_FEATURE__HAS_FILE_ACTIONS:
@@ -2539,6 +2563,11 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 			(createChildParameter
 				(WafPackage.eINSTANCE.getUnitFeature_ForcedValue(),
 				 BaseFactory.eINSTANCE.createParameterReference()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.eINSTANCE.getUnitFeature_ForcedValue(),
+				 ExpressionFactory.eINSTANCE.createSizeFunction()));
 
 		newChildDescriptors.add
 			(createChildParameter

@@ -13,7 +13,8 @@ import work.andycarpenter.metamodel.waf.DynamicUnit;
  * <ul>
  *   <li>{@link work.andycarpenter.metamodel.waf.ActionContainer#getActions() <em>Actions</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.ActionContainer#isHasActions() <em>Has Actions</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.ActionContainer#isHasActionsWithSuccessMessages() <em>Has Actions With Success Messages</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.ActionContainer#isHasActionsWithDisabledMessage() <em>Has Actions With Disabled Message</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.ActionContainer#isHasActionsWithSuccessMessage() <em>Has Actions With Success Message</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.ActionContainer#isHasActionsWithMessages() <em>Has Actions With Messages</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.ActionContainer#getActionsWithoutTarget() <em>Actions Without Target</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.ActionContainer#getContainerActions() <em>Container Actions</em>}</li>
@@ -167,26 +168,52 @@ public abstract class DynamicUnitTest extends ContentUnitTest {
 	}
 
 	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.ActionContainer#isHasActionsWithSuccessMessages() <em>Has Actions With Success Messages</em>}' feature getter.
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.ActionContainer#isHasActionsWithDisabledMessage() <em>Has Actions With Disabled Message</em>}' feature getter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.ActionContainer#isHasActionsWithSuccessMessages()
+	 * @see work.andycarpenter.metamodel.waf.ActionContainer#isHasActionsWithDisabledMessage()
 	 * @generated
 	 */
-	public void testIsHasActionsWithSuccessMessages() {
+	public void testIsHasActionsWithDisabledMessage() {
 		// TODO: implement this feature getter test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}
 
 	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.ActionContainer#isSetHasActionsWithSuccessMessages() <em>isSetHasActionsWithSuccessMessages()</em>}' method.
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.ActionContainer#isSetHasActionsWithDisabledMessage() <em>isSetHasActionsWithDisabledMessage()</em>}' method.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.ActionContainer#isSetHasActionsWithSuccessMessages()
+	 * @see work.andycarpenter.metamodel.waf.ActionContainer#isSetHasActionsWithDisabledMessage()
 	 * @generated
 	 */
-	public void testIsSetHasActionsWithSuccessMessages() {
+	public void testIsSetHasActionsWithDisabledMessage() {
+		// TODO: implement this test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.ActionContainer#isHasActionsWithSuccessMessage() <em>Has Actions With Success Message</em>}' feature getter.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.ActionContainer#isHasActionsWithSuccessMessage()
+	 * @generated
+	 */
+	public void testIsHasActionsWithSuccessMessage() {
+		// TODO: implement this feature getter test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.ActionContainer#isSetHasActionsWithSuccessMessage() <em>isSetHasActionsWithSuccessMessage()</em>}' method.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.ActionContainer#isSetHasActionsWithSuccessMessage()
+	 * @generated
+	 */
+	public void testIsSetHasActionsWithSuccessMessage() {
 		// TODO: implement this test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

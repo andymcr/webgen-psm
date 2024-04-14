@@ -56,6 +56,7 @@ import work.andycarpenter.metamodel.waf.Controller;
  *   <li>{@link work.andycarpenter.metamodel.waf.Controller#getActionsWithoutTarget() <em>Actions Without Target</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.Controller#getFileActions() <em>File Actions</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.Controller#isHasFileActions() <em>Has File Actions</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.Controller#isHasActionsWithDisabledMessage() <em>Has Actions With Disabled Message</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.Controller#isHasSuccessMessages() <em>Has Success Messages</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.Controller#isHasMessages() <em>Has Messages</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.Controller#getPageClass() <em>Page Class</em>}</li>
@@ -973,6 +974,32 @@ public abstract class ControllerTest extends TestCase {
 	 * @generated
 	 */
 	public void testIsSetHasFileActions() {
+		// TODO: implement this test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.Controller#isHasActionsWithDisabledMessage() <em>Has Actions With Disabled Message</em>}' feature getter.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.Controller#isHasActionsWithDisabledMessage()
+	 * @generated
+	 */
+	public void testIsHasActionsWithDisabledMessage() {
+		// TODO: implement this feature getter test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.Controller#isSetHasActionsWithDisabledMessage() <em>isSetHasActionsWithDisabledMessage()</em>}' method.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.Controller#isSetHasActionsWithDisabledMessage()
+	 * @generated
+	 */
+	public void testIsSetHasActionsWithDisabledMessage() {
 		// TODO: implement this test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

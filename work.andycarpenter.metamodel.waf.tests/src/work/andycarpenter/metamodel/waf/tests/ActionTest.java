@@ -24,6 +24,7 @@ import work.andycarpenter.metamodel.waf.Action;
  *   <li>{@link work.andycarpenter.metamodel.waf.Action#isHasConfirmMessage() <em>Has Confirm Message</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.Action#isHasSuccessMessage() <em>Has Success Message</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.Action#isHasFailureMessage() <em>Has Failure Message</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.Action#isHasDisabledMessage() <em>Has Disabled Message</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.Action#isHasMessages() <em>Has Messages</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.Action#getAnchorClass() <em>Anchor Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.Action#isHasAnchorClass() <em>Has Anchor Class</em>}</li>
@@ -300,6 +301,19 @@ public abstract class ActionTest extends TestCase {
 	 * @generated
 	 */
 	public void testIsHasFailureMessage() {
+		// TODO: implement this feature getter test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.Action#isHasDisabledMessage() <em>Has Disabled Message</em>}' feature getter.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.Action#isHasDisabledMessage()
+	 * @generated
+	 */
+	public void testIsHasDisabledMessage() {
 		// TODO: implement this feature getter test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

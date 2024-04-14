@@ -67,6 +67,8 @@ public class ActionItemProvider extends NamedDisplayElementItemProvider {
 			addHasSuccessMessagePropertyDescriptor(object);
 			addFailureMessagePropertyDescriptor(object);
 			addHasFailureMessagePropertyDescriptor(object);
+			addDisabledMessagePropertyDescriptor(object);
+			addHasDisabledMessagePropertyDescriptor(object);
 			addHasMessagesPropertyDescriptor(object);
 			addLocalAnchorClassPropertyDescriptor(object);
 			addAnchorClassPropertyDescriptor(object);
@@ -452,6 +454,50 @@ public class ActionItemProvider extends NamedDisplayElementItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Disabled Message feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDisabledMessagePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Action_disabledMessage_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Action_disabledMessage_feature", "_UI_Action_type"),
+				 WafPackage.eINSTANCE.getAction_DisabledMessage(),
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_InterfacePropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Has Disabled Message feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasDisabledMessagePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Action_hasDisabledMessage_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Action_hasDisabledMessage_feature", "_UI_Action_type"),
+				 WafPackage.eINSTANCE.getAction_HasDisabledMessage(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 getString("_UI_DebugPropertyCategory"),
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Has Messages feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -656,6 +702,8 @@ public class ActionItemProvider extends NamedDisplayElementItemProvider {
 			case WafPackage.ACTION__HAS_SUCCESS_MESSAGE:
 			case WafPackage.ACTION__FAILURE_MESSAGE:
 			case WafPackage.ACTION__HAS_FAILURE_MESSAGE:
+			case WafPackage.ACTION__DISABLED_MESSAGE:
+			case WafPackage.ACTION__HAS_DISABLED_MESSAGE:
 			case WafPackage.ACTION__HAS_MESSAGES:
 			case WafPackage.ACTION__LOCAL_ANCHOR_CLASS:
 			case WafPackage.ACTION__ANCHOR_CLASS:
