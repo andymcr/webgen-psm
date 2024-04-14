@@ -90,6 +90,7 @@ public class CasAuthenticationImpl extends AuthenticationImpl implements CasAuth
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getLoginLabel() {
 		return loginLabel;
 	}
@@ -99,6 +100,7 @@ public class CasAuthenticationImpl extends AuthenticationImpl implements CasAuth
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setLoginLabel(String newLoginLabel) {
 		String oldLoginLabel = loginLabel;
 		loginLabel = newLoginLabel;
@@ -111,6 +113,7 @@ public class CasAuthenticationImpl extends AuthenticationImpl implements CasAuth
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getLogoutLabel() {
 		return logoutLabel;
 	}
@@ -120,6 +123,7 @@ public class CasAuthenticationImpl extends AuthenticationImpl implements CasAuth
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setLogoutLabel(String newLogoutLabel) {
 		String oldLogoutLabel = logoutLabel;
 		logoutLabel = newLogoutLabel;

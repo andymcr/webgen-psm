@@ -180,6 +180,7 @@ public abstract class AuthenticationElementImpl extends NamedDisplayElementImpl 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getSectionClassOverride() {
 		return sectionClassOverride;
 	}
@@ -189,6 +190,7 @@ public abstract class AuthenticationElementImpl extends NamedDisplayElementImpl 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setSectionClassOverride(String newSectionClassOverride) {
 		String oldSectionClassOverride = sectionClassOverride;
 		sectionClassOverride = newSectionClassOverride;
@@ -201,6 +203,7 @@ public abstract class AuthenticationElementImpl extends NamedDisplayElementImpl 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getSectionClass() {
 		return (String)SECTION_CLASS__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
@@ -210,6 +213,7 @@ public abstract class AuthenticationElementImpl extends NamedDisplayElementImpl 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isHasSectionClass() {
 		return (Boolean)HAS_SECTION_CLASS__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
@@ -219,6 +223,7 @@ public abstract class AuthenticationElementImpl extends NamedDisplayElementImpl 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getCaptionClassOverride() {
 		return captionClassOverride;
 	}
@@ -228,6 +233,7 @@ public abstract class AuthenticationElementImpl extends NamedDisplayElementImpl 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setCaptionClassOverride(String newCaptionClassOverride) {
 		String oldCaptionClassOverride = captionClassOverride;
 		captionClassOverride = newCaptionClassOverride;
@@ -240,6 +246,7 @@ public abstract class AuthenticationElementImpl extends NamedDisplayElementImpl 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getCaptionClass() {
 		return (String)CAPTION_CLASS__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
@@ -249,6 +256,7 @@ public abstract class AuthenticationElementImpl extends NamedDisplayElementImpl 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isHasCaptionClass() {
 		return (Boolean)HAS_CAPTION_CLASS__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
@@ -258,6 +266,7 @@ public abstract class AuthenticationElementImpl extends NamedDisplayElementImpl 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getContentClassOverride() {
 		return contentClassOverride;
 	}
@@ -267,6 +276,7 @@ public abstract class AuthenticationElementImpl extends NamedDisplayElementImpl 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setContentClassOverride(String newContentClassOverride) {
 		String oldContentClassOverride = contentClassOverride;
 		contentClassOverride = newContentClassOverride;
@@ -279,6 +289,7 @@ public abstract class AuthenticationElementImpl extends NamedDisplayElementImpl 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getContentClass() {
 		return (String)CONTENT_CLASS__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
@@ -288,6 +299,7 @@ public abstract class AuthenticationElementImpl extends NamedDisplayElementImpl 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isHasContentClass() {
 		return (Boolean)HAS_CONTENT_CLASS__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}

@@ -359,6 +359,7 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Entity getAuthenticationModel() {
 		if (authenticationModel != null && authenticationModel.eIsProxy()) {
 			InternalEObject oldAuthenticationModel = (InternalEObject)authenticationModel;
@@ -385,6 +386,7 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setAuthenticationModel(Entity newAuthenticationModel) {
 		Entity oldAuthenticationModel = authenticationModel;
 		authenticationModel = newAuthenticationModel;
@@ -397,6 +399,7 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Attribute getUserKey() {
 		if (userKey != null && userKey.eIsProxy()) {
 			InternalEObject oldUserKey = (InternalEObject)userKey;
@@ -423,6 +426,7 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setUserKey(Attribute newUserKey) {
 		Attribute oldUserKey = userKey;
 		userKey = newUserKey;
@@ -435,6 +439,7 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Attribute getAuthenticationKey() {
 		if (authenticationKey != null && authenticationKey.eIsProxy()) {
 			InternalEObject oldAuthenticationKey = (InternalEObject)authenticationKey;
@@ -461,6 +466,7 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setAuthenticationKey(Attribute newAuthenticationKey) {
 		Attribute oldAuthenticationKey = authenticationKey;
 		authenticationKey = newAuthenticationKey;
@@ -473,6 +479,7 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Attribute getIdentifierFeature() {
 		if (identifierFeature != null && identifierFeature.eIsProxy()) {
 			InternalEObject oldIdentifierFeature = (InternalEObject)identifierFeature;
@@ -499,6 +506,7 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setIdentifierFeature(Attribute newIdentifierFeature) {
 		Attribute oldIdentifierFeature = identifierFeature;
 		identifierFeature = newIdentifierFeature;
@@ -511,6 +519,7 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Attribute getPasswordFeature() {
 		if (passwordFeature != null && passwordFeature.eIsProxy()) {
 			InternalEObject oldPasswordFeature = (InternalEObject)passwordFeature;
@@ -537,6 +546,7 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setPasswordFeature(Attribute newPasswordFeature) {
 		Attribute oldPasswordFeature = passwordFeature;
 		passwordFeature = newPasswordFeature;
@@ -549,6 +559,7 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Entity getResetPasswordRequestModel() {
 		if (resetPasswordRequestModel != null && resetPasswordRequestModel.eIsProxy()) {
 			InternalEObject oldResetPasswordRequestModel = (InternalEObject)resetPasswordRequestModel;
@@ -575,6 +586,7 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setResetPasswordRequestModel(Entity newResetPasswordRequestModel) {
 		Entity oldResetPasswordRequestModel = resetPasswordRequestModel;
 		resetPasswordRequestModel = newResetPasswordRequestModel;
@@ -587,6 +599,7 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public RegistrationElement getRegistrationElement() {
 		return registrationElement;
 	}
@@ -611,6 +624,7 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setRegistrationElement(RegistrationElement newRegistrationElement) {
 		if (newRegistrationElement != registrationElement) {
 			NotificationChain msgs = null;
@@ -630,6 +644,7 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isHasRegistrationElement() {
 		return (Boolean)HAS_REGISTRATION_ELEMENT__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
@@ -639,6 +654,7 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public LoginElement getLoginElement() {
 		return loginElement;
 	}
@@ -663,6 +679,7 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setLoginElement(LoginElement newLoginElement) {
 		if (newLoginElement != loginElement) {
 			NotificationChain msgs = null;
@@ -682,6 +699,7 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public LogoutElement getLogoutElement() {
 		return logoutElement;
 	}
@@ -706,6 +724,7 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setLogoutElement(LogoutElement newLogoutElement) {
 		if (newLogoutElement != logoutElement) {
 			NotificationChain msgs = null;
@@ -725,6 +744,7 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ForgottenPasswordElement getForgottenPasswordElement() {
 		return forgottenPasswordElement;
 	}
@@ -749,6 +769,7 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setForgottenPasswordElement(ForgottenPasswordElement newForgottenPasswordElement) {
 		if (newForgottenPasswordElement != forgottenPasswordElement) {
 			NotificationChain msgs = null;
@@ -768,6 +789,7 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ChangePasswordElement getChangePasswordElement() {
 		return changePasswordElement;
 	}
@@ -792,6 +814,7 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setChangePasswordElement(ChangePasswordElement newChangePasswordElement) {
 		if (newChangePasswordElement != changePasswordElement) {
 			NotificationChain msgs = null;
@@ -811,6 +834,7 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isCaptcha() {
 		return captcha;
 	}
@@ -820,6 +844,7 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setCaptcha(boolean newCaptcha) {
 		boolean oldCaptcha = captcha;
 		captcha = newCaptcha;
@@ -832,6 +857,7 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isAllowRememberMe() {
 		return allowRememberMe;
 	}
@@ -841,6 +867,7 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setAllowRememberMe(boolean newAllowRememberMe) {
 		boolean oldAllowRememberMe = allowRememberMe;
 		allowRememberMe = newAllowRememberMe;
@@ -853,6 +880,7 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isAllowSelfRegistration() {
 		return allowSelfRegistration;
 	}
@@ -862,6 +890,7 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setAllowSelfRegistration(boolean newAllowSelfRegistration) {
 		boolean oldAllowSelfRegistration = allowSelfRegistration;
 		allowSelfRegistration = newAllowSelfRegistration;
@@ -874,6 +903,7 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isUseEmailActivation() {
 		return useEmailActivation;
 	}
@@ -883,6 +913,7 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setUseEmailActivation(boolean newUseEmailActivation) {
 		boolean oldUseEmailActivation = useEmailActivation;
 		useEmailActivation = newUseEmailActivation;
@@ -895,6 +926,7 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isSendWelcomeEmail() {
 		return sendWelcomeEmail;
 	}
@@ -904,6 +936,7 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setSendWelcomeEmail(boolean newSendWelcomeEmail) {
 		boolean oldSendWelcomeEmail = sendWelcomeEmail;
 		sendWelcomeEmail = newSendWelcomeEmail;
@@ -916,6 +949,7 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getSectionClass() {
 		return sectionClass;
 	}
@@ -925,6 +959,7 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setSectionClass(String newSectionClass) {
 		String oldSectionClass = sectionClass;
 		sectionClass = newSectionClass;
@@ -937,6 +972,7 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getCaptionClass() {
 		return captionClass;
 	}
@@ -946,6 +982,7 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setCaptionClass(String newCaptionClass) {
 		String oldCaptionClass = captionClass;
 		captionClass = newCaptionClass;
@@ -958,6 +995,7 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getContentClass() {
 		return contentClass;
 	}
@@ -967,6 +1005,7 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setContentClass(String newContentClass) {
 		String oldContentClass = contentClass;
 		contentClass = newContentClass;

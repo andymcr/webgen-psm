@@ -63,6 +63,7 @@ public abstract class AuthenticationImpl extends MinimalEObjectImpl.Container im
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Entity getUserModel() {
 		if (userModel != null && userModel.eIsProxy()) {
 			InternalEObject oldUserModel = (InternalEObject)userModel;
@@ -89,6 +90,7 @@ public abstract class AuthenticationImpl extends MinimalEObjectImpl.Container im
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setUserModel(Entity newUserModel) {
 		Entity oldUserModel = userModel;
 		userModel = newUserModel;

@@ -74,6 +74,7 @@ public class SecurityFactoryImpl extends EFactoryImpl implements SecurityFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SecurityModel createSecurityModel() {
 		SecurityModelImpl securityModel = new SecurityModelImpl();
 		return securityModel;
@@ -84,6 +85,7 @@ public class SecurityFactoryImpl extends EFactoryImpl implements SecurityFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public LocalAuthenticationSystem createLocalAuthenticationSystem() {
 		LocalAuthenticationSystemImpl localAuthenticationSystem = new LocalAuthenticationSystemImpl();
 		return localAuthenticationSystem;
@@ -94,6 +96,7 @@ public class SecurityFactoryImpl extends EFactoryImpl implements SecurityFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public RegistrationElement createRegistrationElement() {
 		RegistrationElementImpl registrationElement = new RegistrationElementImpl();
 		return registrationElement;
@@ -104,6 +107,7 @@ public class SecurityFactoryImpl extends EFactoryImpl implements SecurityFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public LoginElement createLoginElement() {
 		LoginElementImpl loginElement = new LoginElementImpl();
 		return loginElement;
@@ -114,6 +118,7 @@ public class SecurityFactoryImpl extends EFactoryImpl implements SecurityFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public LogoutElement createLogoutElement() {
 		LogoutElementImpl logoutElement = new LogoutElementImpl();
 		return logoutElement;
@@ -124,6 +129,7 @@ public class SecurityFactoryImpl extends EFactoryImpl implements SecurityFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ForgottenPasswordElement createForgottenPasswordElement() {
 		ForgottenPasswordElementImpl forgottenPasswordElement = new ForgottenPasswordElementImpl();
 		return forgottenPasswordElement;
@@ -134,6 +140,7 @@ public class SecurityFactoryImpl extends EFactoryImpl implements SecurityFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ChangePasswordElement createChangePasswordElement() {
 		ChangePasswordElementImpl changePasswordElement = new ChangePasswordElementImpl();
 		return changePasswordElement;
@@ -144,6 +151,7 @@ public class SecurityFactoryImpl extends EFactoryImpl implements SecurityFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public CasAuthentication createCasAuthentication() {
 		CasAuthenticationImpl casAuthentication = new CasAuthenticationImpl();
 		return casAuthentication;
@@ -154,6 +162,7 @@ public class SecurityFactoryImpl extends EFactoryImpl implements SecurityFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SecurityPackage getSecurityPackage() {
 		return (SecurityPackage)getEPackage();
 	}

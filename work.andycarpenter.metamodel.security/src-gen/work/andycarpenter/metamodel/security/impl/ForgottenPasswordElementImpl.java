@@ -453,6 +453,7 @@ public class ForgottenPasswordElementImpl extends AuthenticationElementImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public LocalAuthenticationSystem getAuthentication() {
 		if (eContainerFeatureID() != SecurityPackage.FORGOTTEN_PASSWORD_ELEMENT__AUTHENTICATION) return null;
 		return (LocalAuthenticationSystem)eContainer();
@@ -483,6 +484,7 @@ public class ForgottenPasswordElementImpl extends AuthenticationElementImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setAuthentication(LocalAuthenticationSystem newAuthentication) {
 		if (newAuthentication != eInternalContainer() || (eContainerFeatureID() != SecurityPackage.FORGOTTEN_PASSWORD_ELEMENT__AUTHENTICATION && newAuthentication != null)) {
 			if (EcoreUtil.isAncestor(this, newAuthentication))
@@ -504,6 +506,7 @@ public class ForgottenPasswordElementImpl extends AuthenticationElementImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getInvokeLabel() {
 		return invokeLabel;
 	}
@@ -513,6 +516,7 @@ public class ForgottenPasswordElementImpl extends AuthenticationElementImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setInvokeLabel(String newInvokeLabel) {
 		String oldInvokeLabel = invokeLabel;
 		invokeLabel = newInvokeLabel;
@@ -525,6 +529,7 @@ public class ForgottenPasswordElementImpl extends AuthenticationElementImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getRequestLabel() {
 		return requestLabel;
 	}
@@ -534,6 +539,7 @@ public class ForgottenPasswordElementImpl extends AuthenticationElementImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setRequestLabel(String newRequestLabel) {
 		String oldRequestLabel = requestLabel;
 		requestLabel = newRequestLabel;
@@ -546,6 +552,7 @@ public class ForgottenPasswordElementImpl extends AuthenticationElementImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getResetLabel() {
 		return resetLabel;
 	}
@@ -555,6 +562,7 @@ public class ForgottenPasswordElementImpl extends AuthenticationElementImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setResetLabel(String newResetLabel) {
 		String oldResetLabel = resetLabel;
 		resetLabel = newResetLabel;
@@ -567,6 +575,7 @@ public class ForgottenPasswordElementImpl extends AuthenticationElementImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getUriElement() {
 		return uriElement;
 	}
@@ -576,6 +585,7 @@ public class ForgottenPasswordElementImpl extends AuthenticationElementImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setUriElement(String newUriElement) {
 		String oldUriElement = uriElement;
 		uriElement = newUriElement;
@@ -588,6 +598,7 @@ public class ForgottenPasswordElementImpl extends AuthenticationElementImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getUriEmailSent() {
 		return uriEmailSent;
 	}
@@ -597,6 +608,7 @@ public class ForgottenPasswordElementImpl extends AuthenticationElementImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setUriEmailSent(String newUriEmailSent) {
 		String oldUriEmailSent = uriEmailSent;
 		uriEmailSent = newUriEmailSent;
@@ -609,6 +621,7 @@ public class ForgottenPasswordElementImpl extends AuthenticationElementImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getUriResetPassword() {
 		return uriResetPassword;
 	}
@@ -618,6 +631,7 @@ public class ForgottenPasswordElementImpl extends AuthenticationElementImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setUriResetPassword(String newUriResetPassword) {
 		String oldUriResetPassword = uriResetPassword;
 		uriResetPassword = newUriResetPassword;
@@ -630,6 +644,7 @@ public class ForgottenPasswordElementImpl extends AuthenticationElementImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getEmailHelp() {
 		return emailHelp;
 	}
@@ -639,6 +654,7 @@ public class ForgottenPasswordElementImpl extends AuthenticationElementImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setEmailHelp(String newEmailHelp) {
 		String oldEmailHelp = emailHelp;
 		emailHelp = newEmailHelp;
@@ -651,6 +667,7 @@ public class ForgottenPasswordElementImpl extends AuthenticationElementImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getPasswordLabel() {
 		return passwordLabel;
 	}
@@ -660,6 +677,7 @@ public class ForgottenPasswordElementImpl extends AuthenticationElementImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setPasswordLabel(String newPasswordLabel) {
 		String oldPasswordLabel = passwordLabel;
 		passwordLabel = newPasswordLabel;
@@ -672,6 +690,7 @@ public class ForgottenPasswordElementImpl extends AuthenticationElementImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getPasswordPlaceholder() {
 		return passwordPlaceholder;
 	}
@@ -681,6 +700,7 @@ public class ForgottenPasswordElementImpl extends AuthenticationElementImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setPasswordPlaceholder(String newPasswordPlaceholder) {
 		String oldPasswordPlaceholder = passwordPlaceholder;
 		passwordPlaceholder = newPasswordPlaceholder;
@@ -693,6 +713,7 @@ public class ForgottenPasswordElementImpl extends AuthenticationElementImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getPasswordTitle() {
 		return passwordTitle;
 	}
@@ -702,6 +723,7 @@ public class ForgottenPasswordElementImpl extends AuthenticationElementImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setPasswordTitle(String newPasswordTitle) {
 		String oldPasswordTitle = passwordTitle;
 		passwordTitle = newPasswordTitle;
@@ -714,6 +736,7 @@ public class ForgottenPasswordElementImpl extends AuthenticationElementImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getPasswordConfirmationLabel() {
 		return passwordConfirmationLabel;
 	}
@@ -723,6 +746,7 @@ public class ForgottenPasswordElementImpl extends AuthenticationElementImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setPasswordConfirmationLabel(String newPasswordConfirmationLabel) {
 		String oldPasswordConfirmationLabel = passwordConfirmationLabel;
 		passwordConfirmationLabel = newPasswordConfirmationLabel;
@@ -735,6 +759,7 @@ public class ForgottenPasswordElementImpl extends AuthenticationElementImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getPasswordConfirmationPlaceholder() {
 		return passwordConfirmationPlaceholder;
 	}
@@ -744,6 +769,7 @@ public class ForgottenPasswordElementImpl extends AuthenticationElementImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setPasswordConfirmationPlaceholder(String newPasswordConfirmationPlaceholder) {
 		String oldPasswordConfirmationPlaceholder = passwordConfirmationPlaceholder;
 		passwordConfirmationPlaceholder = newPasswordConfirmationPlaceholder;
@@ -756,6 +782,7 @@ public class ForgottenPasswordElementImpl extends AuthenticationElementImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getPasswordConfirmationTitle() {
 		return passwordConfirmationTitle;
 	}
@@ -765,6 +792,7 @@ public class ForgottenPasswordElementImpl extends AuthenticationElementImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setPasswordConfirmationTitle(String newPasswordConfirmationTitle) {
 		String oldPasswordConfirmationTitle = passwordConfirmationTitle;
 		passwordConfirmationTitle = newPasswordConfirmationTitle;
@@ -777,6 +805,7 @@ public class ForgottenPasswordElementImpl extends AuthenticationElementImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getPasswordMessageRequired() {
 		return passwordMessageRequired;
 	}
@@ -786,6 +815,7 @@ public class ForgottenPasswordElementImpl extends AuthenticationElementImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setPasswordMessageRequired(String newPasswordMessageRequired) {
 		String oldPasswordMessageRequired = passwordMessageRequired;
 		passwordMessageRequired = newPasswordMessageRequired;
@@ -798,6 +828,7 @@ public class ForgottenPasswordElementImpl extends AuthenticationElementImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getPasswordMessageValueMismatch() {
 		return passwordMessageValueMismatch;
 	}
@@ -807,6 +838,7 @@ public class ForgottenPasswordElementImpl extends AuthenticationElementImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setPasswordMessageValueMismatch(String newPasswordMessageValueMismatch) {
 		String oldPasswordMessageValueMismatch = passwordMessageValueMismatch;
 		passwordMessageValueMismatch = newPasswordMessageValueMismatch;
@@ -819,6 +851,7 @@ public class ForgottenPasswordElementImpl extends AuthenticationElementImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getEmailCheckSubject() {
 		return emailCheckSubject;
 	}
@@ -828,6 +861,7 @@ public class ForgottenPasswordElementImpl extends AuthenticationElementImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setEmailCheckSubject(String newEmailCheckSubject) {
 		String oldEmailCheckSubject = emailCheckSubject;
 		emailCheckSubject = newEmailCheckSubject;
@@ -840,6 +874,7 @@ public class ForgottenPasswordElementImpl extends AuthenticationElementImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getEmailCheckMessage() {
 		return emailCheckMessage;
 	}
@@ -849,6 +884,7 @@ public class ForgottenPasswordElementImpl extends AuthenticationElementImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setEmailCheckMessage(String newEmailCheckMessage) {
 		String oldEmailCheckMessage = emailCheckMessage;
 		emailCheckMessage = newEmailCheckMessage;
@@ -861,6 +897,7 @@ public class ForgottenPasswordElementImpl extends AuthenticationElementImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getEmailCheckSentCaption() {
 		return emailCheckSentCaption;
 	}
@@ -870,6 +907,7 @@ public class ForgottenPasswordElementImpl extends AuthenticationElementImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setEmailCheckSentCaption(String newEmailCheckSentCaption) {
 		String oldEmailCheckSentCaption = emailCheckSentCaption;
 		emailCheckSentCaption = newEmailCheckSentCaption;
@@ -882,6 +920,7 @@ public class ForgottenPasswordElementImpl extends AuthenticationElementImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getEmailCheckSentMessage() {
 		return emailCheckSentMessage;
 	}
@@ -891,6 +930,7 @@ public class ForgottenPasswordElementImpl extends AuthenticationElementImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setEmailCheckSentMessage(String newEmailCheckSentMessage) {
 		String oldEmailCheckSentMessage = emailCheckSentMessage;
 		emailCheckSentMessage = newEmailCheckSentMessage;

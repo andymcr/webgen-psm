@@ -75,6 +75,7 @@ public class SecurityModelImpl extends MinimalEObjectImpl.Container implements S
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Authentication getAuthentication() {
 		return authentication;
 	}
@@ -99,6 +100,7 @@ public class SecurityModelImpl extends MinimalEObjectImpl.Container implements S
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setAuthentication(Authentication newAuthentication) {
 		if (newAuthentication != authentication) {
 			NotificationChain msgs = null;
@@ -118,6 +120,7 @@ public class SecurityModelImpl extends MinimalEObjectImpl.Container implements S
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isIsAuthenticated() {
 		return (Boolean)IS_AUTHENTICATED__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
@@ -127,6 +130,7 @@ public class SecurityModelImpl extends MinimalEObjectImpl.Container implements S
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isSetIsAuthenticated() {
 		return IS_AUTHENTICATED__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 	}

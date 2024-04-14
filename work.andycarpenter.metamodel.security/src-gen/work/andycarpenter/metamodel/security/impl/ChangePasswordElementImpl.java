@@ -117,6 +117,7 @@ public class ChangePasswordElementImpl extends AuthenticationElementImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public LocalAuthenticationSystem getAuthentication() {
 		if (eContainerFeatureID() != SecurityPackage.CHANGE_PASSWORD_ELEMENT__AUTHENTICATION) return null;
 		return (LocalAuthenticationSystem)eContainer();
@@ -147,6 +148,7 @@ public class ChangePasswordElementImpl extends AuthenticationElementImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setAuthentication(LocalAuthenticationSystem newAuthentication) {
 		if (newAuthentication != eInternalContainer() || (eContainerFeatureID() != SecurityPackage.CHANGE_PASSWORD_ELEMENT__AUTHENTICATION && newAuthentication != null)) {
 			if (EcoreUtil.isAncestor(this, newAuthentication))
@@ -168,6 +170,7 @@ public class ChangePasswordElementImpl extends AuthenticationElementImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getInvokeLabel() {
 		return invokeLabel;
 	}
@@ -177,6 +180,7 @@ public class ChangePasswordElementImpl extends AuthenticationElementImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setInvokeLabel(String newInvokeLabel) {
 		String oldInvokeLabel = invokeLabel;
 		invokeLabel = newInvokeLabel;
@@ -189,6 +193,7 @@ public class ChangePasswordElementImpl extends AuthenticationElementImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getConfirmLabel() {
 		return confirmLabel;
 	}
@@ -198,6 +203,7 @@ public class ChangePasswordElementImpl extends AuthenticationElementImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setConfirmLabel(String newConfirmLabel) {
 		String oldConfirmLabel = confirmLabel;
 		confirmLabel = newConfirmLabel;
@@ -210,6 +216,7 @@ public class ChangePasswordElementImpl extends AuthenticationElementImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getUriElement() {
 		return uriElement;
 	}
@@ -219,6 +226,7 @@ public class ChangePasswordElementImpl extends AuthenticationElementImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setUriElement(String newUriElement) {
 		String oldUriElement = uriElement;
 		uriElement = newUriElement;

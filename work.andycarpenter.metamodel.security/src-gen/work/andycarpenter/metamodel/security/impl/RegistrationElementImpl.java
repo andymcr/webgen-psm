@@ -138,6 +138,7 @@ public class RegistrationElementImpl extends AuthenticationElementImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public LocalAuthenticationSystem getAuthentication() {
 		if (eContainerFeatureID() != SecurityPackage.REGISTRATION_ELEMENT__AUTHENTICATION) return null;
 		return (LocalAuthenticationSystem)eContainer();
@@ -168,6 +169,7 @@ public class RegistrationElementImpl extends AuthenticationElementImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setAuthentication(LocalAuthenticationSystem newAuthentication) {
 		if (newAuthentication != eInternalContainer() || (eContainerFeatureID() != SecurityPackage.REGISTRATION_ELEMENT__AUTHENTICATION && newAuthentication != null)) {
 			if (EcoreUtil.isAncestor(this, newAuthentication))
@@ -189,6 +191,7 @@ public class RegistrationElementImpl extends AuthenticationElementImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getInvokeLabel() {
 		return invokeLabel;
 	}
@@ -198,6 +201,7 @@ public class RegistrationElementImpl extends AuthenticationElementImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setInvokeLabel(String newInvokeLabel) {
 		String oldInvokeLabel = invokeLabel;
 		invokeLabel = newInvokeLabel;
@@ -210,6 +214,7 @@ public class RegistrationElementImpl extends AuthenticationElementImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getConfirmLabel() {
 		return confirmLabel;
 	}
@@ -219,6 +224,7 @@ public class RegistrationElementImpl extends AuthenticationElementImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setConfirmLabel(String newConfirmLabel) {
 		String oldConfirmLabel = confirmLabel;
 		confirmLabel = newConfirmLabel;
@@ -231,6 +237,7 @@ public class RegistrationElementImpl extends AuthenticationElementImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getUriElement() {
 		return uriElement;
 	}
@@ -240,6 +247,7 @@ public class RegistrationElementImpl extends AuthenticationElementImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setUriElement(String newUriElement) {
 		String oldUriElement = uriElement;
 		uriElement = newUriElement;
@@ -252,6 +260,7 @@ public class RegistrationElementImpl extends AuthenticationElementImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getUriEmailVerification() {
 		return uriEmailVerification;
 	}
@@ -261,6 +270,7 @@ public class RegistrationElementImpl extends AuthenticationElementImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setUriEmailVerification(String newUriEmailVerification) {
 		String oldUriEmailVerification = uriEmailVerification;
 		uriEmailVerification = newUriEmailVerification;
