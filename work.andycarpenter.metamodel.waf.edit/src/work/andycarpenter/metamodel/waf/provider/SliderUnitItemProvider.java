@@ -70,8 +70,8 @@ public class SliderUnitItemProvider extends CollectionUnitItemProvider {
 			addHasAnchorClassPropertyDescriptor(object);
 			addInstanceControlClassPropertyDescriptor(object);
 			addHasInstanceControlClassPropertyDescriptor(object);
-			addInstanceAnchorClassPropertyDescriptor(object);
-			addHasInstanceAnchorClassPropertyDescriptor(object);
+			addInstanceActionClassPropertyDescriptor(object);
+			addHasInstanceActionClassPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -605,19 +605,19 @@ public class SliderUnitItemProvider extends CollectionUnitItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Instance Anchor Class feature.
+	 * This adds a property descriptor for the Instance Action Class feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addInstanceAnchorClassPropertyDescriptor(Object object) {
+	protected void addInstanceActionClassPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_SliderUnit_instanceAnchorClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_SliderUnit_instanceAnchorClass_feature", "_UI_SliderUnit_type"),
-				 WafPackage.eINSTANCE.getSliderUnit_InstanceAnchorClass(),
+				 getString("_UI_SliderUnit_instanceActionClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_SliderUnit_instanceActionClass_feature", "_UI_SliderUnit_type"),
+				 WafPackage.eINSTANCE.getSliderUnit_InstanceActionClass(),
 				 false,
 				 false,
 				 false,
@@ -627,19 +627,19 @@ public class SliderUnitItemProvider extends CollectionUnitItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Has Instance Anchor Class feature.
+	 * This adds a property descriptor for the Has Instance Action Class feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addHasInstanceAnchorClassPropertyDescriptor(Object object) {
+	protected void addHasInstanceActionClassPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_SliderUnit_hasInstanceAnchorClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_SliderUnit_hasInstanceAnchorClass_feature", "_UI_SliderUnit_type"),
-				 WafPackage.eINSTANCE.getSliderUnit_HasInstanceAnchorClass(),
+				 getString("_UI_SliderUnit_hasInstanceActionClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_SliderUnit_hasInstanceActionClass_feature", "_UI_SliderUnit_type"),
+				 WafPackage.eINSTANCE.getSliderUnit_HasInstanceActionClass(),
 				 false,
 				 false,
 				 false,
@@ -740,8 +740,8 @@ public class SliderUnitItemProvider extends CollectionUnitItemProvider {
 			case WafPackage.SLIDER_UNIT__HAS_ANCHOR_CLASS:
 			case WafPackage.SLIDER_UNIT__INSTANCE_CONTROL_CLASS:
 			case WafPackage.SLIDER_UNIT__HAS_INSTANCE_CONTROL_CLASS:
-			case WafPackage.SLIDER_UNIT__INSTANCE_ANCHOR_CLASS:
-			case WafPackage.SLIDER_UNIT__HAS_INSTANCE_ANCHOR_CLASS:
+			case WafPackage.SLIDER_UNIT__INSTANCE_ACTION_CLASS:
+			case WafPackage.SLIDER_UNIT__HAS_INSTANCE_ACTION_CLASS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case WafPackage.SLIDER_UNIT__IMAGE_FEATURE_PATH:

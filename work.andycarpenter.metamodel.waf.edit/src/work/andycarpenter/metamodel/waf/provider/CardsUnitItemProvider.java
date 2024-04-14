@@ -76,8 +76,8 @@ public class CardsUnitItemProvider extends CollectionUnitItemProvider {
 			addHasAnchorClassPropertyDescriptor(object);
 			addInstanceControlClassPropertyDescriptor(object);
 			addHasInstanceControlClassPropertyDescriptor(object);
-			addInstanceAnchorClassPropertyDescriptor(object);
-			addHasInstanceAnchorClassPropertyDescriptor(object);
+			addInstanceActionClassPropertyDescriptor(object);
+			addHasInstanceActionClassPropertyDescriptor(object);
 			addRowClassPropertyDescriptor(object);
 			addHasRowClassPropertyDescriptor(object);
 			addColumnClassPropertyDescriptor(object);
@@ -713,19 +713,19 @@ public class CardsUnitItemProvider extends CollectionUnitItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Instance Anchor Class feature.
+	 * This adds a property descriptor for the Instance Action Class feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addInstanceAnchorClassPropertyDescriptor(Object object) {
+	protected void addInstanceActionClassPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_CardsUnit_instanceAnchorClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_CardsUnit_instanceAnchorClass_feature", "_UI_CardsUnit_type"),
-				 WafPackage.eINSTANCE.getCardsUnit_InstanceAnchorClass(),
+				 getString("_UI_CardsUnit_instanceActionClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CardsUnit_instanceActionClass_feature", "_UI_CardsUnit_type"),
+				 WafPackage.eINSTANCE.getCardsUnit_InstanceActionClass(),
 				 false,
 				 false,
 				 false,
@@ -735,19 +735,19 @@ public class CardsUnitItemProvider extends CollectionUnitItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Has Instance Anchor Class feature.
+	 * This adds a property descriptor for the Has Instance Action Class feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addHasInstanceAnchorClassPropertyDescriptor(Object object) {
+	protected void addHasInstanceActionClassPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_CardsUnit_hasInstanceAnchorClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_CardsUnit_hasInstanceAnchorClass_feature", "_UI_CardsUnit_type"),
-				 WafPackage.eINSTANCE.getCardsUnit_HasInstanceAnchorClass(),
+				 getString("_UI_CardsUnit_hasInstanceActionClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CardsUnit_hasInstanceActionClass_feature", "_UI_CardsUnit_type"),
+				 WafPackage.eINSTANCE.getCardsUnit_HasInstanceActionClass(),
 				 false,
 				 false,
 				 false,
@@ -1149,8 +1149,8 @@ public class CardsUnitItemProvider extends CollectionUnitItemProvider {
 			case WafPackage.CARDS_UNIT__HAS_ANCHOR_CLASS:
 			case WafPackage.CARDS_UNIT__INSTANCE_CONTROL_CLASS:
 			case WafPackage.CARDS_UNIT__HAS_INSTANCE_CONTROL_CLASS:
-			case WafPackage.CARDS_UNIT__INSTANCE_ANCHOR_CLASS:
-			case WafPackage.CARDS_UNIT__HAS_INSTANCE_ANCHOR_CLASS:
+			case WafPackage.CARDS_UNIT__INSTANCE_ACTION_CLASS:
+			case WafPackage.CARDS_UNIT__HAS_INSTANCE_ACTION_CLASS:
 			case WafPackage.CARDS_UNIT__ROW_CLASS:
 			case WafPackage.CARDS_UNIT__HAS_ROW_CLASS:
 			case WafPackage.CARDS_UNIT__COLUMN_CLASS:

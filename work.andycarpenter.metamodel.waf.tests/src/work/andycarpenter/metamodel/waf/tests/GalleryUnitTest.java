@@ -34,8 +34,8 @@ import work.andycarpenter.metamodel.waf.WafFactory;
  *   <li>{@link work.andycarpenter.metamodel.waf.GalleryUnit#isHasAnchorClass() <em>Has Anchor Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.GalleryUnit#getInstanceControlClass() <em>Instance Control Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.GalleryUnit#isHasInstanceControlClass() <em>Has Instance Control Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.GalleryUnit#getInstanceAnchorClass() <em>Instance Anchor Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.GalleryUnit#isHasInstanceAnchorClass() <em>Has Instance Anchor Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.GalleryUnit#getInstanceActionClass() <em>Instance Action Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.GalleryUnit#isHasInstanceActionClass() <em>Has Instance Action Class</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -355,26 +355,26 @@ public class GalleryUnitTest extends CollectionUnitTest {
 	}
 
 	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.GalleryUnit#getInstanceAnchorClass() <em>Instance Anchor Class</em>}' feature getter.
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.GalleryUnit#getInstanceActionClass() <em>Instance Action Class</em>}' feature getter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.GalleryUnit#getInstanceAnchorClass()
+	 * @see work.andycarpenter.metamodel.waf.GalleryUnit#getInstanceActionClass()
 	 * @generated
 	 */
-	public void testGetInstanceAnchorClass() {
+	public void testGetInstanceActionClass() {
 		// TODO: implement this feature getter test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}
 
 	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.GalleryUnit#isHasInstanceAnchorClass() <em>Has Instance Anchor Class</em>}' feature getter.
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.GalleryUnit#isHasInstanceActionClass() <em>Has Instance Action Class</em>}' feature getter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.GalleryUnit#isHasInstanceAnchorClass()
+	 * @see work.andycarpenter.metamodel.waf.GalleryUnit#isHasInstanceActionClass()
 	 * @generated
 	 */
-	public void testIsHasInstanceAnchorClass() {
+	public void testIsHasInstanceActionClass() {
 		// TODO: implement this feature getter test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

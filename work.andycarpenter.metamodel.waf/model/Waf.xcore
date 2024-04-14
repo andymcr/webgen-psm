@@ -244,7 +244,7 @@ abstract class DynamicUnitStyles extends ContentUnitStyles {
 
 class CollectionUnitStyles extends DynamicUnitStyles {
 	String instanceControlClass = ''
-	String instanceAnchorClass = ''
+	String instanceActionClass = ''
 }
 
 class DefaultUnitStyles extends CollectionUnitStyles {
@@ -509,8 +509,12 @@ abstract class Controller extends NamedDisplayElement {
     @GenModel(propertyCategory="Debug")
 	derived readonly transient unsettable volatile boolean hasFileActions
 
+	@OCL(derivation="dynamicUnits->select(u | u.hasActionsWithDisabledMessage)->notEmpty()")
+    @GenModel(propertyCategory="Debug")
+	derived readonly unsettable transient volatile boolean hasActionsWithDisabledMessage
+
 	@OCL(derivation="editUnits->select(u | u.hasSuccessMessage)->notEmpty()
-		or dynamicUnits.oclAsType(ActionContainer)->select(c | c.hasActionsWithSuccessMessages)->notEmpty()")
+		or dynamicUnits.oclAsType(ActionContainer)->select(c | c.hasActionsWithSuccessMessage)->notEmpty()")
     @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean hasSuccessMessages
 
@@ -1744,7 +1748,7 @@ abstract class CollectionUnit extends DynamicUnit, SelectableUnit {
 	String paginationAnchorClass
 
 	String localInstanceControlClass = ''
-	String localInstanceAnchorClass = ''
+	String localInstanceActionClass = ''
 
 	@OCL(derivation="if self.oclIsKindOf(TabularUnit) then
 					if self.oclAsType(TabularUnit).hasInstanceControlClass = true then
@@ -1780,26 +1784,26 @@ abstract class CollectionUnit extends DynamicUnit, SelectableUnit {
 	derived readonly transient volatile boolean hasCommonInstanceControlClass
 
 	@OCL(derivation="if self.oclIsKindOf(TabularUnit) then
-					if self.oclAsType(TabularUnit).hasInstanceAnchorClass = true then
-						self.oclAsType(TabularUnit).instanceAnchorClass
+					if self.oclAsType(TabularUnit).hasInstanceActionClass = true then
+						self.oclAsType(TabularUnit).instanceActionClass
 					else
 						''
 					endif
 				else if self.oclIsKindOf(CardsUnit) then
-					if self.oclAsType(CardsUnit).hasInstanceAnchorClass = true then
-						self.oclAsType(CardsUnit).instanceAnchorClass
+					if self.oclAsType(CardsUnit).hasInstanceActionClass = true then
+						self.oclAsType(CardsUnit).instanceActionClass
 					else
 						''
 					endif
 				else if self.oclIsKindOf(SliderUnit) then
-					if self.oclAsType(SliderUnit).hasInstanceAnchorClass = true then
-						self.oclAsType(SliderUnit).instanceAnchorClass
+					if self.oclAsType(SliderUnit).hasInstanceActionClass = true then
+						self.oclAsType(SliderUnit).instanceActionClass
 					else
 						''
 					endif
 				else if self.oclIsKindOf(GalleryUnit) then
-					if self.oclAsType(GalleryUnit).hasInstanceAnchorClass = true then
-						self.oclAsType(GalleryUnit).instanceAnchorClass
+					if self.oclAsType(GalleryUnit).hasInstanceActionClass = true then
+						self.oclAsType(GalleryUnit).instanceActionClass
 					else
 						''
 					endif
@@ -1807,10 +1811,10 @@ abstract class CollectionUnit extends DynamicUnit, SelectableUnit {
 					''
 				endif endif endif endif")
     @GenModel(propertyCategory="Debug")
-	derived readonly unsettable transient volatile String commonInstanceAnchorClass
-	@OCL(derivation="commonInstanceAnchorClass <> ''")
+	derived readonly unsettable transient volatile String commonInstanceActionClass
+	@OCL(derivation="commonInstanceActionClass <> ''")
     @GenModel(propertyCategory="Debug")
-	derived readonly transient volatile boolean hasCommonInstanceAnchorClass
+	derived readonly transient volatile boolean hasCommonInstanceActionClass
 }
 
 abstract class EditUnit extends SingletonUnit {
@@ -2307,18 +2311,18 @@ class TabularUnit extends CollectionUnit {
 	@OCL(derivation="instanceControlClass <> ''")
 	derived readonly transient volatile boolean hasInstanceControlClass
 
-	@OCL(derivation="if localInstanceAnchorClass.trim() <> '' then
-			localInstanceAnchorClass.trim()
-		else if uiModel.defaultTabularStyles.instanceAnchorClass.trim() <> '' then
-			uiModel.defaultTabularStyles.instanceAnchorClass.trim()
-		else if uiModel.defaultUnitStyles.instanceAnchorClass.trim() <> '' then
-			uiModel.defaultUnitStyles.instanceAnchorClass.trim()
+	@OCL(derivation="if localInstanceActionClass.trim() <> '' then
+			localInstanceActionClass.trim()
+		else if uiModel.defaultTabularStyles.instanceActionClass.trim() <> '' then
+			uiModel.defaultTabularStyles.instanceActionClass.trim()
+		else if uiModel.defaultUnitStyles.instanceActionClass.trim() <> '' then
+			uiModel.defaultUnitStyles.instanceActionClass.trim()
 		else
 			''
 		endif endif endif")
-	derived readonly transient volatile String instanceAnchorClass
-	@OCL(derivation="instanceAnchorClass <> ''")
-	derived readonly transient volatile boolean hasInstanceAnchorClass
+	derived readonly transient volatile String instanceActionClass
+	@OCL(derivation="instanceActionClass <> ''")
+	derived readonly transient volatile boolean hasInstanceActionClass
 }
 
 abstract class CardsUnit extends CollectionUnit {
@@ -2464,18 +2468,18 @@ abstract class CardsUnit extends CollectionUnit {
 	@OCL(derivation="instanceControlClass <> ''")
 	derived readonly transient volatile boolean hasInstanceControlClass
 
-	@OCL(derivation="if localInstanceAnchorClass.trim() <> '' then
-			localInstanceAnchorClass.trim()
-		else if uiModel.defaultCardsStyles.instanceAnchorClass.trim() <> '' then
-			uiModel.defaultCardsStyles.instanceAnchorClass.trim()
-		else if uiModel.defaultUnitStyles.instanceAnchorClass.trim() <> '' then
-			uiModel.defaultUnitStyles.instanceAnchorClass.trim()
+	@OCL(derivation="if localInstanceActionClass.trim() <> '' then
+			localInstanceActionClass.trim()
+		else if uiModel.defaultCardsStyles.instanceActionClass.trim() <> '' then
+			uiModel.defaultCardsStyles.instanceActionClass.trim()
+		else if uiModel.defaultUnitStyles.instanceActionClass.trim() <> '' then
+			uiModel.defaultUnitStyles.instanceActionClass.trim()
 		else
 			''
 		endif endif endif")
-	derived readonly transient volatile String instanceAnchorClass
-	@OCL(derivation="instanceAnchorClass <> ''")
-	derived readonly transient volatile boolean hasInstanceAnchorClass
+	derived readonly transient volatile String instanceActionClass
+	@OCL(derivation="instanceActionClass <> ''")
+	derived readonly transient volatile boolean hasInstanceActionClass
 
 	@OCL(derivation="if localRowClass.trim() <> '' then
 			localRowClass.trim()
@@ -2730,18 +2734,18 @@ class SliderUnit extends CollectionUnit, ImageUnit {
 	@OCL(derivation="instanceControlClass <> ''")
 	derived readonly transient volatile boolean hasInstanceControlClass
 
-	@OCL(derivation="if localInstanceAnchorClass.trim() <> '' then
-			localInstanceAnchorClass.trim()
-		else if uiModel.defaultSliderStyles.instanceAnchorClass.trim() <> '' then
-			uiModel.defaultSliderStyles.instanceAnchorClass.trim()
-		else if uiModel.defaultUnitStyles.instanceAnchorClass.trim() <> '' then
-			uiModel.defaultUnitStyles.instanceAnchorClass.trim()
+	@OCL(derivation="if localInstanceActionClass.trim() <> '' then
+			localInstanceActionClass.trim()
+		else if uiModel.defaultSliderStyles.instanceActionClass.trim() <> '' then
+			uiModel.defaultSliderStyles.instanceActionClass.trim()
+		else if uiModel.defaultUnitStyles.instanceActionClass.trim() <> '' then
+			uiModel.defaultUnitStyles.instanceActionClass.trim()
 		else
 			''
 		endif endif endif")
-	derived readonly transient volatile String instanceAnchorClass
-	@OCL(derivation="instanceAnchorClass <> ''")
-	derived readonly transient volatile boolean hasInstanceAnchorClass
+	derived readonly transient volatile String instanceActionClass
+	@OCL(derivation="instanceActionClass <> ''")
+	derived readonly transient volatile boolean hasInstanceActionClass
 }
 
 class GalleryUnit extends CollectionUnit, ImageUnit {
@@ -2879,18 +2883,18 @@ class GalleryUnit extends CollectionUnit, ImageUnit {
 	@OCL(derivation="instanceControlClass <> ''")
 	derived readonly transient volatile boolean hasInstanceControlClass
 
-	@OCL(derivation="if localInstanceAnchorClass.trim() <> '' then
-			localInstanceAnchorClass.trim()
-		else if uiModel.defaultGalleryStyles.instanceAnchorClass.trim() <> '' then
-			uiModel.defaultGalleryStyles.instanceAnchorClass.trim()
-		else if uiModel.defaultUnitStyles.instanceAnchorClass.trim() <> '' then
-			uiModel.defaultUnitStyles.instanceAnchorClass.trim()
+	@OCL(derivation="if localInstanceActionClass.trim() <> '' then
+			localInstanceActionClass.trim()
+		else if uiModel.defaultGalleryStyles.instanceActionClass.trim() <> '' then
+			uiModel.defaultGalleryStyles.instanceActionClass.trim()
+		else if uiModel.defaultUnitStyles.instanceActionClass.trim() <> '' then
+			uiModel.defaultUnitStyles.instanceActionClass.trim()
 		else
 			''
 		endif endif endif")
-	derived readonly transient volatile String instanceAnchorClass
-	@OCL(derivation="instanceAnchorClass <> ''")
-	derived readonly transient volatile boolean hasInstanceAnchorClass
+	derived readonly transient volatile String instanceActionClass
+	@OCL(derivation="instanceActionClass <> ''")
+	derived readonly transient volatile boolean hasInstanceActionClass
 }
 
 abstract class ControlUnit extends DynamicUnit {
@@ -3231,9 +3235,13 @@ interface ActionContainer {
     @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean hasActions
 
+	@OCL(derivation="actions->select(a | a.hasDisabledMessage)->notEmpty()")
+    @GenModel(propertyCategory="Debug")
+	derived readonly unsettable transient volatile boolean hasActionsWithDisabledMessage
+
 	@OCL(derivation="actions->select(a | a.hasSuccessMessage)->notEmpty()")
     @GenModel(propertyCategory="Debug")
-	derived readonly unsettable transient volatile boolean hasActionsWithSuccessMessages
+	derived readonly unsettable transient volatile boolean hasActionsWithSuccessMessage
 
 	@OCL(derivation="actions->select(a | a.hasMessages)->notEmpty()")
     @GenModel(propertyCategory="Debug")
@@ -3386,7 +3394,13 @@ abstract class Action extends NamedDisplayElement {
     @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean hasFailureMessage
 
-	@OCL(derivation="hasConfirmMessage = true or hasSuccessMessage = true or hasFailureMessage = true")
+    @GenModel(propertyCategory="Interface")
+	String disabledMessage = ''
+	@OCL(derivation="disabledMessage.trim() <> ''")
+    @GenModel(propertyCategory="Debug")
+	derived readonly transient volatile boolean hasDisabledMessage
+
+	@OCL(derivation="hasConfirmMessage = true or hasSuccessMessage = true or hasFailureMessage = true or hasDisabledMessage = true")
     @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean hasMessages
 
@@ -3397,8 +3411,8 @@ abstract class Action extends NamedDisplayElement {
 		else if usedBy.oclIsKindOf(DynamicUnit) then
 			if self.isInstanceAction = true then
 				if parentUnit.oclIsKindOf(CollectionUnit) then
-					if parentUnit.oclAsType(CollectionUnit).hasCommonInstanceAnchorClass = true then
-						parentUnit.oclAsType(CollectionUnit).commonInstanceAnchorClass
+					if parentUnit.oclAsType(CollectionUnit).hasCommonInstanceActionClass = true then
+						parentUnit.oclAsType(CollectionUnit).commonInstanceActionClass
 					else
 						''
 					endif

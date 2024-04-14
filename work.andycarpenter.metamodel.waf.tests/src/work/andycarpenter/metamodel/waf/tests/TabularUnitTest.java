@@ -38,8 +38,8 @@ import work.andycarpenter.metamodel.waf.WafFactory;
  *   <li>{@link work.andycarpenter.metamodel.waf.TabularUnit#isHasAnchorClass() <em>Has Anchor Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.TabularUnit#getInstanceControlClass() <em>Instance Control Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.TabularUnit#isHasInstanceControlClass() <em>Has Instance Control Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.TabularUnit#getInstanceAnchorClass() <em>Instance Anchor Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.TabularUnit#isHasInstanceAnchorClass() <em>Has Instance Anchor Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.TabularUnit#getInstanceActionClass() <em>Instance Action Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.TabularUnit#isHasInstanceActionClass() <em>Has Instance Action Class</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -411,26 +411,26 @@ public class TabularUnitTest extends CollectionUnitTest {
 	}
 
 	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.TabularUnit#getInstanceAnchorClass() <em>Instance Anchor Class</em>}' feature getter.
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.TabularUnit#getInstanceActionClass() <em>Instance Action Class</em>}' feature getter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.TabularUnit#getInstanceAnchorClass()
+	 * @see work.andycarpenter.metamodel.waf.TabularUnit#getInstanceActionClass()
 	 * @generated
 	 */
-	public void testGetInstanceAnchorClass() {
+	public void testGetInstanceActionClass() {
 		// TODO: implement this feature getter test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}
 
 	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.TabularUnit#isHasInstanceAnchorClass() <em>Has Instance Anchor Class</em>}' feature getter.
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.TabularUnit#isHasInstanceActionClass() <em>Has Instance Action Class</em>}' feature getter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.TabularUnit#isHasInstanceAnchorClass()
+	 * @see work.andycarpenter.metamodel.waf.TabularUnit#isHasInstanceActionClass()
 	 * @generated
 	 */
-	public void testIsHasInstanceAnchorClass() {
+	public void testIsHasInstanceActionClass() {
 		// TODO: implement this feature getter test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

@@ -124,7 +124,6 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	private SecurityPackageImpl() {
 		super(eNS_URI, SecurityFactory.eINSTANCE);
 	}
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -178,6 +177,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSecurityModel() {
 		return securityModelEClass;
 	}
@@ -187,6 +187,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSecurityModel_Authentication() {
 		return (EReference)securityModelEClass.getEStructuralFeatures().get(0);
 	}
@@ -196,6 +197,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSecurityModel_IsAuthenticated() {
 		return (EAttribute)securityModelEClass.getEStructuralFeatures().get(1);
 	}
@@ -205,6 +207,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getAuthentication() {
 		return authenticationEClass;
 	}
@@ -214,6 +217,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getAuthentication_UserModel() {
 		return (EReference)authenticationEClass.getEStructuralFeatures().get(0);
 	}
@@ -223,6 +227,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getLocalAuthenticationSystem() {
 		return localAuthenticationSystemEClass;
 	}
@@ -232,6 +237,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getLocalAuthenticationSystem_AuthenticationModel() {
 		return (EReference)localAuthenticationSystemEClass.getEStructuralFeatures().get(0);
 	}
@@ -241,6 +247,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getLocalAuthenticationSystem_UserKey() {
 		return (EReference)localAuthenticationSystemEClass.getEStructuralFeatures().get(1);
 	}
@@ -250,6 +257,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getLocalAuthenticationSystem_AuthenticationKey() {
 		return (EReference)localAuthenticationSystemEClass.getEStructuralFeatures().get(2);
 	}
@@ -259,6 +267,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getLocalAuthenticationSystem_IdentifierFeature() {
 		return (EReference)localAuthenticationSystemEClass.getEStructuralFeatures().get(3);
 	}
@@ -268,6 +277,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getLocalAuthenticationSystem_PasswordFeature() {
 		return (EReference)localAuthenticationSystemEClass.getEStructuralFeatures().get(4);
 	}
@@ -277,6 +287,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getLocalAuthenticationSystem_ResetPasswordRequestModel() {
 		return (EReference)localAuthenticationSystemEClass.getEStructuralFeatures().get(5);
 	}
@@ -286,6 +297,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getLocalAuthenticationSystem_RegistrationElement() {
 		return (EReference)localAuthenticationSystemEClass.getEStructuralFeatures().get(6);
 	}
@@ -295,6 +307,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getLocalAuthenticationSystem_HasRegistrationElement() {
 		return (EAttribute)localAuthenticationSystemEClass.getEStructuralFeatures().get(7);
 	}
@@ -304,6 +317,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getLocalAuthenticationSystem_LoginElement() {
 		return (EReference)localAuthenticationSystemEClass.getEStructuralFeatures().get(8);
 	}
@@ -313,6 +327,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getLocalAuthenticationSystem_LogoutElement() {
 		return (EReference)localAuthenticationSystemEClass.getEStructuralFeatures().get(9);
 	}
@@ -322,6 +337,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getLocalAuthenticationSystem_ForgottenPasswordElement() {
 		return (EReference)localAuthenticationSystemEClass.getEStructuralFeatures().get(10);
 	}
@@ -331,6 +347,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getLocalAuthenticationSystem_ChangePasswordElement() {
 		return (EReference)localAuthenticationSystemEClass.getEStructuralFeatures().get(11);
 	}
@@ -340,6 +357,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getLocalAuthenticationSystem_Captcha() {
 		return (EAttribute)localAuthenticationSystemEClass.getEStructuralFeatures().get(12);
 	}
@@ -349,6 +367,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getLocalAuthenticationSystem_AllowRememberMe() {
 		return (EAttribute)localAuthenticationSystemEClass.getEStructuralFeatures().get(13);
 	}
@@ -358,6 +377,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getLocalAuthenticationSystem_AllowSelfRegistration() {
 		return (EAttribute)localAuthenticationSystemEClass.getEStructuralFeatures().get(14);
 	}
@@ -367,6 +387,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getLocalAuthenticationSystem_UseEmailActivation() {
 		return (EAttribute)localAuthenticationSystemEClass.getEStructuralFeatures().get(15);
 	}
@@ -376,6 +397,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getLocalAuthenticationSystem_SendWelcomeEmail() {
 		return (EAttribute)localAuthenticationSystemEClass.getEStructuralFeatures().get(16);
 	}
@@ -385,6 +407,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getLocalAuthenticationSystem_SectionClass() {
 		return (EAttribute)localAuthenticationSystemEClass.getEStructuralFeatures().get(17);
 	}
@@ -394,6 +417,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getLocalAuthenticationSystem_CaptionClass() {
 		return (EAttribute)localAuthenticationSystemEClass.getEStructuralFeatures().get(18);
 	}
@@ -403,6 +427,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getLocalAuthenticationSystem_ContentClass() {
 		return (EAttribute)localAuthenticationSystemEClass.getEStructuralFeatures().get(19);
 	}
@@ -412,6 +437,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getAuthenticationElement() {
 		return authenticationElementEClass;
 	}
@@ -421,6 +447,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getAuthenticationElement_SectionClassOverride() {
 		return (EAttribute)authenticationElementEClass.getEStructuralFeatures().get(0);
 	}
@@ -430,6 +457,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getAuthenticationElement_SectionClass() {
 		return (EAttribute)authenticationElementEClass.getEStructuralFeatures().get(1);
 	}
@@ -439,6 +467,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getAuthenticationElement_HasSectionClass() {
 		return (EAttribute)authenticationElementEClass.getEStructuralFeatures().get(2);
 	}
@@ -448,6 +477,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getAuthenticationElement_CaptionClassOverride() {
 		return (EAttribute)authenticationElementEClass.getEStructuralFeatures().get(3);
 	}
@@ -457,6 +487,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getAuthenticationElement_CaptionClass() {
 		return (EAttribute)authenticationElementEClass.getEStructuralFeatures().get(4);
 	}
@@ -466,6 +497,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getAuthenticationElement_HasCaptionClass() {
 		return (EAttribute)authenticationElementEClass.getEStructuralFeatures().get(5);
 	}
@@ -475,6 +507,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getAuthenticationElement_ContentClassOverride() {
 		return (EAttribute)authenticationElementEClass.getEStructuralFeatures().get(6);
 	}
@@ -484,6 +517,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getAuthenticationElement_ContentClass() {
 		return (EAttribute)authenticationElementEClass.getEStructuralFeatures().get(7);
 	}
@@ -493,6 +527,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getAuthenticationElement_HasContentClass() {
 		return (EAttribute)authenticationElementEClass.getEStructuralFeatures().get(8);
 	}
@@ -502,6 +537,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getRegistrationElement() {
 		return registrationElementEClass;
 	}
@@ -511,6 +547,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getRegistrationElement_Authentication() {
 		return (EReference)registrationElementEClass.getEStructuralFeatures().get(0);
 	}
@@ -520,6 +557,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getRegistrationElement_InvokeLabel() {
 		return (EAttribute)registrationElementEClass.getEStructuralFeatures().get(1);
 	}
@@ -529,6 +567,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getRegistrationElement_ConfirmLabel() {
 		return (EAttribute)registrationElementEClass.getEStructuralFeatures().get(2);
 	}
@@ -538,6 +577,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getRegistrationElement_UriElement() {
 		return (EAttribute)registrationElementEClass.getEStructuralFeatures().get(3);
 	}
@@ -547,6 +587,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getRegistrationElement_UriEmailVerification() {
 		return (EAttribute)registrationElementEClass.getEStructuralFeatures().get(4);
 	}
@@ -556,6 +597,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getLoginElement() {
 		return loginElementEClass;
 	}
@@ -565,6 +607,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getLoginElement_Authentication() {
 		return (EReference)loginElementEClass.getEStructuralFeatures().get(0);
 	}
@@ -574,6 +617,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getLoginElement_InvokeLabel() {
 		return (EAttribute)loginElementEClass.getEStructuralFeatures().get(1);
 	}
@@ -583,6 +627,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getLoginElement_ConfirmLabel() {
 		return (EAttribute)loginElementEClass.getEStructuralFeatures().get(2);
 	}
@@ -592,6 +637,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getLoginElement_UriElement() {
 		return (EAttribute)loginElementEClass.getEStructuralFeatures().get(3);
 	}
@@ -601,6 +647,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getLogoutElement() {
 		return logoutElementEClass;
 	}
@@ -610,6 +657,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getLogoutElement_Authentication() {
 		return (EReference)logoutElementEClass.getEStructuralFeatures().get(0);
 	}
@@ -619,6 +667,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getLogoutElement_InvokeLabel() {
 		return (EAttribute)logoutElementEClass.getEStructuralFeatures().get(1);
 	}
@@ -628,6 +677,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getLogoutElement_ConfirmLabel() {
 		return (EAttribute)logoutElementEClass.getEStructuralFeatures().get(2);
 	}
@@ -637,6 +687,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getLogoutElement_UriElement() {
 		return (EAttribute)logoutElementEClass.getEStructuralFeatures().get(3);
 	}
@@ -646,6 +697,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getForgottenPasswordElement() {
 		return forgottenPasswordElementEClass;
 	}
@@ -655,6 +707,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getForgottenPasswordElement_Authentication() {
 		return (EReference)forgottenPasswordElementEClass.getEStructuralFeatures().get(0);
 	}
@@ -664,6 +717,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getForgottenPasswordElement_InvokeLabel() {
 		return (EAttribute)forgottenPasswordElementEClass.getEStructuralFeatures().get(1);
 	}
@@ -673,6 +727,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getForgottenPasswordElement_RequestLabel() {
 		return (EAttribute)forgottenPasswordElementEClass.getEStructuralFeatures().get(2);
 	}
@@ -682,6 +737,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getForgottenPasswordElement_ResetLabel() {
 		return (EAttribute)forgottenPasswordElementEClass.getEStructuralFeatures().get(3);
 	}
@@ -691,6 +747,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getForgottenPasswordElement_UriElement() {
 		return (EAttribute)forgottenPasswordElementEClass.getEStructuralFeatures().get(4);
 	}
@@ -700,6 +757,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getForgottenPasswordElement_UriEmailSent() {
 		return (EAttribute)forgottenPasswordElementEClass.getEStructuralFeatures().get(5);
 	}
@@ -709,6 +767,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getForgottenPasswordElement_UriResetPassword() {
 		return (EAttribute)forgottenPasswordElementEClass.getEStructuralFeatures().get(6);
 	}
@@ -718,6 +777,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getForgottenPasswordElement_EmailHelp() {
 		return (EAttribute)forgottenPasswordElementEClass.getEStructuralFeatures().get(7);
 	}
@@ -727,6 +787,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getForgottenPasswordElement_PasswordLabel() {
 		return (EAttribute)forgottenPasswordElementEClass.getEStructuralFeatures().get(8);
 	}
@@ -736,6 +797,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getForgottenPasswordElement_PasswordPlaceholder() {
 		return (EAttribute)forgottenPasswordElementEClass.getEStructuralFeatures().get(9);
 	}
@@ -745,6 +807,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getForgottenPasswordElement_PasswordTitle() {
 		return (EAttribute)forgottenPasswordElementEClass.getEStructuralFeatures().get(10);
 	}
@@ -754,6 +817,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getForgottenPasswordElement_PasswordConfirmationLabel() {
 		return (EAttribute)forgottenPasswordElementEClass.getEStructuralFeatures().get(11);
 	}
@@ -763,6 +827,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getForgottenPasswordElement_PasswordConfirmationPlaceholder() {
 		return (EAttribute)forgottenPasswordElementEClass.getEStructuralFeatures().get(12);
 	}
@@ -772,6 +837,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getForgottenPasswordElement_PasswordConfirmationTitle() {
 		return (EAttribute)forgottenPasswordElementEClass.getEStructuralFeatures().get(13);
 	}
@@ -781,6 +847,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getForgottenPasswordElement_PasswordMessageRequired() {
 		return (EAttribute)forgottenPasswordElementEClass.getEStructuralFeatures().get(14);
 	}
@@ -790,6 +857,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getForgottenPasswordElement_PasswordMessageValueMismatch() {
 		return (EAttribute)forgottenPasswordElementEClass.getEStructuralFeatures().get(15);
 	}
@@ -799,6 +867,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getForgottenPasswordElement_EmailCheckSubject() {
 		return (EAttribute)forgottenPasswordElementEClass.getEStructuralFeatures().get(16);
 	}
@@ -808,6 +877,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getForgottenPasswordElement_EmailCheckMessage() {
 		return (EAttribute)forgottenPasswordElementEClass.getEStructuralFeatures().get(17);
 	}
@@ -817,6 +887,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getForgottenPasswordElement_EmailCheckSentCaption() {
 		return (EAttribute)forgottenPasswordElementEClass.getEStructuralFeatures().get(18);
 	}
@@ -826,6 +897,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getForgottenPasswordElement_EmailCheckSentMessage() {
 		return (EAttribute)forgottenPasswordElementEClass.getEStructuralFeatures().get(19);
 	}
@@ -835,6 +907,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getChangePasswordElement() {
 		return changePasswordElementEClass;
 	}
@@ -844,6 +917,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getChangePasswordElement_Authentication() {
 		return (EReference)changePasswordElementEClass.getEStructuralFeatures().get(0);
 	}
@@ -853,6 +927,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getChangePasswordElement_InvokeLabel() {
 		return (EAttribute)changePasswordElementEClass.getEStructuralFeatures().get(1);
 	}
@@ -862,6 +937,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getChangePasswordElement_ConfirmLabel() {
 		return (EAttribute)changePasswordElementEClass.getEStructuralFeatures().get(2);
 	}
@@ -871,6 +947,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getChangePasswordElement_UriElement() {
 		return (EAttribute)changePasswordElementEClass.getEStructuralFeatures().get(3);
 	}
@@ -880,6 +957,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getCasAuthentication() {
 		return casAuthenticationEClass;
 	}
@@ -889,6 +967,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getCasAuthentication_LoginLabel() {
 		return (EAttribute)casAuthenticationEClass.getEStructuralFeatures().get(0);
 	}
@@ -898,6 +977,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getCasAuthentication_LogoutLabel() {
 		return (EAttribute)casAuthenticationEClass.getEStructuralFeatures().get(1);
 	}
@@ -907,6 +987,7 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SecurityFactory getSecurityFactory() {
 		return (SecurityFactory)getEFactoryInstance();
 	}

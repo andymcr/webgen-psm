@@ -16,8 +16,8 @@ import work.andycarpenter.metamodel.waf.CollectionUnit;
  *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#isHasPagination() <em>Has Pagination</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#getCommonInstanceControlClass() <em>Common Instance Control Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#isHasCommonInstanceControlClass() <em>Has Common Instance Control Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#getCommonInstanceAnchorClass() <em>Common Instance Anchor Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#isHasCommonInstanceAnchorClass() <em>Has Common Instance Anchor Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#getCommonInstanceActionClass() <em>Common Instance Action Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#isHasCommonInstanceActionClass() <em>Has Common Instance Action Class</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -124,39 +124,39 @@ public abstract class CollectionUnitTest extends DynamicUnitTest {
 	}
 
 	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.CollectionUnit#getCommonInstanceAnchorClass() <em>Common Instance Anchor Class</em>}' feature getter.
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.CollectionUnit#getCommonInstanceActionClass() <em>Common Instance Action Class</em>}' feature getter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.CollectionUnit#getCommonInstanceAnchorClass()
+	 * @see work.andycarpenter.metamodel.waf.CollectionUnit#getCommonInstanceActionClass()
 	 * @generated
 	 */
-	public void testGetCommonInstanceAnchorClass() {
+	public void testGetCommonInstanceActionClass() {
 		// TODO: implement this feature getter test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}
 
 	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.CollectionUnit#isSetCommonInstanceAnchorClass() <em>isSetCommonInstanceAnchorClass()</em>}' method.
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.CollectionUnit#isSetCommonInstanceActionClass() <em>isSetCommonInstanceActionClass()</em>}' method.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.CollectionUnit#isSetCommonInstanceAnchorClass()
+	 * @see work.andycarpenter.metamodel.waf.CollectionUnit#isSetCommonInstanceActionClass()
 	 * @generated
 	 */
-	public void testIsSetCommonInstanceAnchorClass() {
+	public void testIsSetCommonInstanceActionClass() {
 		// TODO: implement this test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}
 
 	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.CollectionUnit#isHasCommonInstanceAnchorClass() <em>Has Common Instance Anchor Class</em>}' feature getter.
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.CollectionUnit#isHasCommonInstanceActionClass() <em>Has Common Instance Action Class</em>}' feature getter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.CollectionUnit#isHasCommonInstanceAnchorClass()
+	 * @see work.andycarpenter.metamodel.waf.CollectionUnit#isHasCommonInstanceActionClass()
 	 * @generated
 	 */
-	public void testIsHasCommonInstanceAnchorClass() {
+	public void testIsHasCommonInstanceActionClass() {
 		// TODO: implement this feature getter test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

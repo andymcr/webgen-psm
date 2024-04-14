@@ -34,8 +34,8 @@ import work.andycarpenter.metamodel.waf.WafFactory;
  *   <li>{@link work.andycarpenter.metamodel.waf.SliderUnit#isHasAnchorClass() <em>Has Anchor Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.SliderUnit#getInstanceControlClass() <em>Instance Control Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.SliderUnit#isHasInstanceControlClass() <em>Has Instance Control Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.SliderUnit#getInstanceAnchorClass() <em>Instance Anchor Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.SliderUnit#isHasInstanceAnchorClass() <em>Has Instance Anchor Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.SliderUnit#getInstanceActionClass() <em>Instance Action Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.SliderUnit#isHasInstanceActionClass() <em>Has Instance Action Class</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -355,26 +355,26 @@ public class SliderUnitTest extends CollectionUnitTest {
 	}
 
 	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.SliderUnit#getInstanceAnchorClass() <em>Instance Anchor Class</em>}' feature getter.
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.SliderUnit#getInstanceActionClass() <em>Instance Action Class</em>}' feature getter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.SliderUnit#getInstanceAnchorClass()
+	 * @see work.andycarpenter.metamodel.waf.SliderUnit#getInstanceActionClass()
 	 * @generated
 	 */
-	public void testGetInstanceAnchorClass() {
+	public void testGetInstanceActionClass() {
 		// TODO: implement this feature getter test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}
 
 	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.SliderUnit#isHasInstanceAnchorClass() <em>Has Instance Anchor Class</em>}' feature getter.
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.SliderUnit#isHasInstanceActionClass() <em>Has Instance Action Class</em>}' feature getter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.SliderUnit#isHasInstanceAnchorClass()
+	 * @see work.andycarpenter.metamodel.waf.SliderUnit#isHasInstanceActionClass()
 	 * @generated
 	 */
-	public void testIsHasInstanceAnchorClass() {
+	public void testIsHasInstanceActionClass() {
 		// TODO: implement this feature getter test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

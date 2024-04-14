@@ -31,8 +31,8 @@ import work.andycarpenter.metamodel.waf.CardsUnit;
  *   <li>{@link work.andycarpenter.metamodel.waf.CardsUnit#isHasAnchorClass() <em>Has Anchor Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.CardsUnit#getInstanceControlClass() <em>Instance Control Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.CardsUnit#isHasInstanceControlClass() <em>Has Instance Control Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.CardsUnit#getInstanceAnchorClass() <em>Instance Anchor Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.CardsUnit#isHasInstanceAnchorClass() <em>Has Instance Anchor Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.CardsUnit#getInstanceActionClass() <em>Instance Action Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.CardsUnit#isHasInstanceActionClass() <em>Has Instance Action Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.CardsUnit#getRowClass() <em>Row Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.CardsUnit#isHasRowClass() <em>Has Row Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.CardsUnit#getColumnClass() <em>Column Class</em>}</li>
@@ -335,26 +335,26 @@ public abstract class CardsUnitTest extends CollectionUnitTest {
 	}
 
 	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.CardsUnit#getInstanceAnchorClass() <em>Instance Anchor Class</em>}' feature getter.
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.CardsUnit#getInstanceActionClass() <em>Instance Action Class</em>}' feature getter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.CardsUnit#getInstanceAnchorClass()
+	 * @see work.andycarpenter.metamodel.waf.CardsUnit#getInstanceActionClass()
 	 * @generated
 	 */
-	public void testGetInstanceAnchorClass() {
+	public void testGetInstanceActionClass() {
 		// TODO: implement this feature getter test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}
 
 	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.CardsUnit#isHasInstanceAnchorClass() <em>Has Instance Anchor Class</em>}' feature getter.
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.CardsUnit#isHasInstanceActionClass() <em>Has Instance Action Class</em>}' feature getter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.CardsUnit#isHasInstanceAnchorClass()
+	 * @see work.andycarpenter.metamodel.waf.CardsUnit#isHasInstanceActionClass()
 	 * @generated
 	 */
-	public void testIsHasInstanceAnchorClass() {
+	public void testIsHasInstanceActionClass() {
 		// TODO: implement this feature getter test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
