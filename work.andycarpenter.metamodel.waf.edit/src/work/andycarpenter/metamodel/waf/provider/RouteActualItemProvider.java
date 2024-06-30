@@ -242,12 +242,17 @@ public class RouteActualItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.eINSTANCE.getRouteActual_Value(),
-				 ExpressionFactory.eINSTANCE.createSizeFunction()));
+				 BaseFactory.eINSTANCE.createCallable()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.eINSTANCE.getRouteActual_Value(),
-				 ExpressionFactory.eINSTANCE.createFunctionCall()));
+				 BaseFactory.eINSTANCE.createReduceFunction()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.eINSTANCE.getRouteActual_Value(),
+				 BaseFactory.eINSTANCE.createSizeFunction()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -288,6 +293,11 @@ public class RouteActualItemProvider
 			(createChildParameter
 				(WafPackage.eINSTANCE.getRouteActual_Value(),
 				 ExpressionFactory.eINSTANCE.createPredicateIsNull()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.eINSTANCE.getRouteActual_Value(),
+				 ExpressionFactory.eINSTANCE.createArithmeticOperation()));
 	}
 
 	/**

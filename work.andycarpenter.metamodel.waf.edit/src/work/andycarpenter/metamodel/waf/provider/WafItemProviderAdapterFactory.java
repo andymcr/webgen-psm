@@ -26,9 +26,11 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import work.andycarpenter.metamodel.base.BasePackage;
 import work.andycarpenter.metamodel.base.Constant;
+import work.andycarpenter.metamodel.base.ReduceFunction;
+import work.andycarpenter.metamodel.base.SizeFunction;
 import work.andycarpenter.metamodel.base.util.BaseSwitch;
+import work.andycarpenter.metamodel.expression.ArithmeticOperation;
 import work.andycarpenter.metamodel.expression.ExpressionPackage;
-import work.andycarpenter.metamodel.expression.FunctionCall;
 import work.andycarpenter.metamodel.expression.PredicateBooleanVariable;
 import work.andycarpenter.metamodel.expression.PredicateComparisonOperator;
 import work.andycarpenter.metamodel.expression.PredicateEqualityOperator;
@@ -36,7 +38,6 @@ import work.andycarpenter.metamodel.expression.PredicateInOperator;
 import work.andycarpenter.metamodel.expression.PredicateIsEmpty;
 import work.andycarpenter.metamodel.expression.PredicateIsNull;
 import work.andycarpenter.metamodel.expression.PredicateLikeOperator;
-import work.andycarpenter.metamodel.expression.SizeFunction;
 import work.andycarpenter.metamodel.expression.util.ExpressionSwitch;
 import work.andycarpenter.metamodel.orm.Attribute;
 import work.andycarpenter.metamodel.orm.Order;
@@ -1880,6 +1881,84 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 			 * <!-- end-user-doc -->
 			 * @generated
 			 */
+			@Override
+			public Object caseReduceFunction(ReduceFunction object) {
+				newChildDescriptors.add
+					(createChildParameter
+						(BasePackage.Literals.REDUCE_FUNCTION__VALUE,
+						 WafFactory.eINSTANCE.createPathVariableAssociation()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(BasePackage.Literals.REDUCE_FUNCTION__VALUE,
+						 WafFactory.eINSTANCE.createPathVariableAttribute()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(BasePackage.Literals.REDUCE_FUNCTION__VALUE,
+						 WafFactory.eINSTANCE.createPathVariableResource()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(BasePackage.Literals.REDUCE_FUNCTION__RETURN_VALUE,
+						 WafFactory.eINSTANCE.createPathVariableAssociation()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(BasePackage.Literals.REDUCE_FUNCTION__RETURN_VALUE,
+						 WafFactory.eINSTANCE.createPathVariableAttribute()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(BasePackage.Literals.REDUCE_FUNCTION__RETURN_VALUE,
+						 WafFactory.eINSTANCE.createPathVariableResource()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(BasePackage.Literals.REDUCE_FUNCTION__INITIAL,
+						 WafFactory.eINSTANCE.createPathVariableAssociation()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(BasePackage.Literals.REDUCE_FUNCTION__INITIAL,
+						 WafFactory.eINSTANCE.createPathVariableAttribute()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(BasePackage.Literals.REDUCE_FUNCTION__INITIAL,
+						 WafFactory.eINSTANCE.createPathVariableResource()));
+
+				return null;
+			}
+			/**
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			@Override
+			public Object caseSizeFunction(SizeFunction object) {
+				newChildDescriptors.add
+					(createChildParameter
+						(BasePackage.Literals.SIZE_FUNCTION__VALUE,
+						 WafFactory.eINSTANCE.createPathVariableAssociation()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(BasePackage.Literals.SIZE_FUNCTION__VALUE,
+						 WafFactory.eINSTANCE.createPathVariableAttribute()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(BasePackage.Literals.SIZE_FUNCTION__VALUE,
+						 WafFactory.eINSTANCE.createPathVariableResource()));
+
+				return null;
+			}
+			/**
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
 			protected CommandParameter createChildParameter(Object feature, Object child) {
 				return new CommandParameter(null, feature, child);
 			}
@@ -1947,55 +2026,6 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 				this.newChildDescriptors = newChildDescriptors;
 				this.editingDomain = editingDomain;
 			}
-			/**
-			 * <!-- begin-user-doc -->
-			 * <!-- end-user-doc -->
-			 * @generated
-			 */
-			@Override
-			public Object caseSizeFunction(SizeFunction object) {
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.SIZE_FUNCTION__FEATURE,
-						 WafFactory.eINSTANCE.createPathVariableAssociation()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.SIZE_FUNCTION__FEATURE,
-						 WafFactory.eINSTANCE.createPathVariableAttribute()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.SIZE_FUNCTION__FEATURE,
-						 WafFactory.eINSTANCE.createPathVariableResource()));
-
-				return null;
-			}
-			/**
-			 * <!-- begin-user-doc -->
-			 * <!-- end-user-doc -->
-			 * @generated
-			 */
-			@Override
-			public Object caseFunctionCall(FunctionCall object) {
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.FUNCTION_CALL__ACTUALS,
-						 WafFactory.eINSTANCE.createPathVariableAssociation()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.FUNCTION_CALL__ACTUALS,
-						 WafFactory.eINSTANCE.createPathVariableAttribute()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.FUNCTION_CALL__ACTUALS,
-						 WafFactory.eINSTANCE.createPathVariableResource()));
-
-				return null;
-			}
- 
 			/**
 			 * <!-- begin-user-doc -->
 			 * <!-- end-user-doc -->
@@ -2190,17 +2220,17 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 			public Object casePredicateIsEmpty(PredicateIsEmpty object) {
 				newChildDescriptors.add
 					(createChildParameter
-						(ExpressionPackage.Literals.PREDICATE_IS_EMPTY__FEATURE,
+						(ExpressionPackage.Literals.PREDICATE_IS_EMPTY__VALUE,
 						 WafFactory.eINSTANCE.createPathVariableAssociation()));
 
 				newChildDescriptors.add
 					(createChildParameter
-						(ExpressionPackage.Literals.PREDICATE_IS_EMPTY__FEATURE,
+						(ExpressionPackage.Literals.PREDICATE_IS_EMPTY__VALUE,
 						 WafFactory.eINSTANCE.createPathVariableAttribute()));
 
 				newChildDescriptors.add
 					(createChildParameter
-						(ExpressionPackage.Literals.PREDICATE_IS_EMPTY__FEATURE,
+						(ExpressionPackage.Literals.PREDICATE_IS_EMPTY__VALUE,
 						 WafFactory.eINSTANCE.createPathVariableResource()));
 
 				return null;
@@ -2215,22 +2245,46 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 			public Object casePredicateIsNull(PredicateIsNull object) {
 				newChildDescriptors.add
 					(createChildParameter
-						(ExpressionPackage.Literals.PREDICATE_IS_NULL__FEATURE,
+						(ExpressionPackage.Literals.PREDICATE_IS_NULL__VALUE,
 						 WafFactory.eINSTANCE.createPathVariableAssociation()));
 
 				newChildDescriptors.add
 					(createChildParameter
-						(ExpressionPackage.Literals.PREDICATE_IS_NULL__FEATURE,
+						(ExpressionPackage.Literals.PREDICATE_IS_NULL__VALUE,
 						 WafFactory.eINSTANCE.createPathVariableAttribute()));
 
 				newChildDescriptors.add
 					(createChildParameter
-						(ExpressionPackage.Literals.PREDICATE_IS_NULL__FEATURE,
+						(ExpressionPackage.Literals.PREDICATE_IS_NULL__VALUE,
 						 WafFactory.eINSTANCE.createPathVariableResource()));
 
 				return null;
 			}
  
+			/**
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			@Override
+			public Object caseArithmeticOperation(ArithmeticOperation object) {
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.ARITHMETIC_OPERATION__OPERANDS,
+						 WafFactory.eINSTANCE.createPathVariableAssociation()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.ARITHMETIC_OPERATION__OPERANDS,
+						 WafFactory.eINSTANCE.createPathVariableAttribute()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.ARITHMETIC_OPERATION__OPERANDS,
+						 WafFactory.eINSTANCE.createPathVariableResource()));
+
+				return null;
+			}
 			/**
 			 * <!-- begin-user-doc -->
 			 * <!-- end-user-doc -->

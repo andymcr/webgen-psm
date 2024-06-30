@@ -139,16 +139,6 @@ public class PredicateInOperatorItemProvider extends PredicateItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(ExpressionPackage.Literals.PREDICATE_IN_OPERATOR__LEFT,
-				 ExpressionFactory.eINSTANCE.createSizeFunction()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ExpressionPackage.Literals.PREDICATE_IN_OPERATOR__LEFT,
-				 ExpressionFactory.eINSTANCE.createFunctionCall()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ExpressionPackage.Literals.PREDICATE_IN_OPERATOR__LEFT,
 				 ExpressionFactory.eINSTANCE.createPredicateBooleanVariable()));
 
 		newChildDescriptors.add
@@ -188,13 +178,8 @@ public class PredicateInOperatorItemProvider extends PredicateItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ExpressionPackage.Literals.PREDICATE_IN_OPERATOR__RIGHT,
-				 ExpressionFactory.eINSTANCE.createSizeFunction()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ExpressionPackage.Literals.PREDICATE_IN_OPERATOR__RIGHT,
-				 ExpressionFactory.eINSTANCE.createFunctionCall()));
+				(ExpressionPackage.Literals.PREDICATE_IN_OPERATOR__LEFT,
+				 ExpressionFactory.eINSTANCE.createArithmeticOperation()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -235,6 +220,11 @@ public class PredicateInOperatorItemProvider extends PredicateItemProvider {
 			(createChildParameter
 				(ExpressionPackage.Literals.PREDICATE_IN_OPERATOR__RIGHT,
 				 ExpressionFactory.eINSTANCE.createPredicateIsNull()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ExpressionPackage.Literals.PREDICATE_IN_OPERATOR__RIGHT,
+				 ExpressionFactory.eINSTANCE.createArithmeticOperation()));
 	}
 
 	/**

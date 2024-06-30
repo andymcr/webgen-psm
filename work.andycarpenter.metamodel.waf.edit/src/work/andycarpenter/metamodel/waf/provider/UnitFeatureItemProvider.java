@@ -2567,12 +2567,17 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.eINSTANCE.getUnitFeature_ForcedValue(),
-				 ExpressionFactory.eINSTANCE.createSizeFunction()));
+				 BaseFactory.eINSTANCE.createCallable()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.eINSTANCE.getUnitFeature_ForcedValue(),
-				 ExpressionFactory.eINSTANCE.createFunctionCall()));
+				 BaseFactory.eINSTANCE.createReduceFunction()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.eINSTANCE.getUnitFeature_ForcedValue(),
+				 BaseFactory.eINSTANCE.createSizeFunction()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -2613,6 +2618,11 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 			(createChildParameter
 				(WafPackage.eINSTANCE.getUnitFeature_ForcedValue(),
 				 ExpressionFactory.eINSTANCE.createPredicateIsNull()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.eINSTANCE.getUnitFeature_ForcedValue(),
+				 ExpressionFactory.eINSTANCE.createArithmeticOperation()));
 
 		newChildDescriptors.add
 			(createChildParameter

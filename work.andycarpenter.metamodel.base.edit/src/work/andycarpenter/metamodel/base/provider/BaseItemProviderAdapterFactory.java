@@ -35,8 +35,8 @@ import work.andycarpenter.metamodel.base.BaseFactory;
 
 import work.andycarpenter.metamodel.base.util.BaseAdapterFactory;
 
+import work.andycarpenter.metamodel.expression.ArithmeticOperation;
 import work.andycarpenter.metamodel.expression.ExpressionPackage;
-import work.andycarpenter.metamodel.expression.FunctionCall;
 import work.andycarpenter.metamodel.expression.PredicateBooleanVariable;
 import work.andycarpenter.metamodel.expression.PredicateComparisonOperator;
 import work.andycarpenter.metamodel.expression.PredicateEqualityOperator;
@@ -44,8 +44,6 @@ import work.andycarpenter.metamodel.expression.PredicateInOperator;
 import work.andycarpenter.metamodel.expression.PredicateIsEmpty;
 import work.andycarpenter.metamodel.expression.PredicateIsNull;
 import work.andycarpenter.metamodel.expression.PredicateLikeOperator;
-
-import work.andycarpenter.metamodel.expression.SizeFunction;
 import work.andycarpenter.metamodel.expression.util.ExpressionSwitch;
 
 /**
@@ -442,6 +440,75 @@ public class BaseItemProviderAdapterFactory extends BaseAdapterFactory implement
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.base.ReduceFunction} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ReduceFunctionItemProvider reduceFunctionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link work.andycarpenter.metamodel.base.ReduceFunction}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createReduceFunctionAdapter() {
+		if (reduceFunctionItemProvider == null) {
+			reduceFunctionItemProvider = new ReduceFunctionItemProvider(this);
+		}
+
+		return reduceFunctionItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.base.SizeFunction} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected SizeFunctionItemProvider sizeFunctionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link work.andycarpenter.metamodel.base.SizeFunction}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createSizeFunctionAdapter() {
+		if (sizeFunctionItemProvider == null) {
+			sizeFunctionItemProvider = new SizeFunctionItemProvider(this);
+		}
+
+		return sizeFunctionItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.base.Callable} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected CallableItemProvider callableItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link work.andycarpenter.metamodel.base.Callable}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createCallableAdapter() {
+		if (callableItemProvider == null) {
+			callableItemProvider = new CallableItemProvider(this);
+		}
+
+		return callableItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -561,6 +628,9 @@ public class BaseItemProviderAdapterFactory extends BaseAdapterFactory implement
 		if (enumerationLiteralItemProvider != null) enumerationLiteralItemProvider.dispose();
 		if (formalParameterItemProvider != null) formalParameterItemProvider.dispose();
 		if (parameterReferenceItemProvider != null) parameterReferenceItemProvider.dispose();
+		if (callableItemProvider != null) callableItemProvider.dispose();
+		if (reduceFunctionItemProvider != null) reduceFunctionItemProvider.dispose();
+		if (sizeFunctionItemProvider != null) sizeFunctionItemProvider.dispose();
 	}
 
 	/**
@@ -603,90 +673,6 @@ public class BaseItemProviderAdapterFactory extends BaseAdapterFactory implement
 				this.newChildDescriptors = newChildDescriptors;
 				this.editingDomain = editingDomain;
 			}
-			/**
-			 * <!-- begin-user-doc -->
-			 * <!-- end-user-doc -->
-			 * @generated
-			 */
-			@Override
-			public Object caseSizeFunction(SizeFunction object) {
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.SIZE_FUNCTION__FEATURE,
-						 BaseFactory.eINSTANCE.createCurrentTime()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.SIZE_FUNCTION__FEATURE,
-						 BaseFactory.eINSTANCE.createCurrentUser()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.SIZE_FUNCTION__FEATURE,
-						 BaseFactory.eINSTANCE.createConstantReference()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.SIZE_FUNCTION__FEATURE,
-						 BaseFactory.eINSTANCE.createParameterReference()));
-
-				return null;
-			}
-			/**
-			 * <!-- begin-user-doc -->
-			 * <!-- end-user-doc -->
-			 * @generated
-			 */
-			@Override
-			public Object caseFunctionCall(FunctionCall object) {
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.FUNCTION_CALL__ACTUALS,
-						 BaseFactory.eINSTANCE.createNullLiteral()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.FUNCTION_CALL__ACTUALS,
-						 BaseFactory.eINSTANCE.createBooleanLiteral()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.FUNCTION_CALL__ACTUALS,
-						 BaseFactory.eINSTANCE.createIntegerLiteral()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.FUNCTION_CALL__ACTUALS,
-						 BaseFactory.eINSTANCE.createStringLiteral()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.FUNCTION_CALL__ACTUALS,
-						 BaseFactory.eINSTANCE.createTimeLiteral()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.FUNCTION_CALL__ACTUALS,
-						 BaseFactory.eINSTANCE.createCurrentTime()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.FUNCTION_CALL__ACTUALS,
-						 BaseFactory.eINSTANCE.createCurrentUser()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.FUNCTION_CALL__ACTUALS,
-						 BaseFactory.eINSTANCE.createConstantReference()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.FUNCTION_CALL__ACTUALS,
-						 BaseFactory.eINSTANCE.createParameterReference()));
-
-				return null;
-			}
- 
 			/**
 			 * <!-- begin-user-doc -->
 			 * <!-- end-user-doc -->
@@ -771,6 +757,21 @@ public class BaseItemProviderAdapterFactory extends BaseAdapterFactory implement
 
 				newChildDescriptors.add
 					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_EQUALITY_OPERATOR__LEFT,
+						 BaseFactory.eINSTANCE.createCallable()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_EQUALITY_OPERATOR__LEFT,
+						 BaseFactory.eINSTANCE.createReduceFunction()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_EQUALITY_OPERATOR__LEFT,
+						 BaseFactory.eINSTANCE.createSizeFunction()));
+
+				newChildDescriptors.add
+					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_EQUALITY_OPERATOR__RIGHT,
 						 BaseFactory.eINSTANCE.createNullLiteral()));
 
@@ -813,6 +814,21 @@ public class BaseItemProviderAdapterFactory extends BaseAdapterFactory implement
 					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_EQUALITY_OPERATOR__RIGHT,
 						 BaseFactory.eINSTANCE.createParameterReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_EQUALITY_OPERATOR__RIGHT,
+						 BaseFactory.eINSTANCE.createCallable()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_EQUALITY_OPERATOR__RIGHT,
+						 BaseFactory.eINSTANCE.createReduceFunction()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_EQUALITY_OPERATOR__RIGHT,
+						 BaseFactory.eINSTANCE.createSizeFunction()));
 
 				return null;
 			}
@@ -871,6 +887,21 @@ public class BaseItemProviderAdapterFactory extends BaseAdapterFactory implement
 
 				newChildDescriptors.add
 					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_COMPARISON_OPERATOR__LEFT,
+						 BaseFactory.eINSTANCE.createCallable()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_COMPARISON_OPERATOR__LEFT,
+						 BaseFactory.eINSTANCE.createReduceFunction()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_COMPARISON_OPERATOR__LEFT,
+						 BaseFactory.eINSTANCE.createSizeFunction()));
+
+				newChildDescriptors.add
+					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_COMPARISON_OPERATOR__RIGHT,
 						 BaseFactory.eINSTANCE.createNullLiteral()));
 
@@ -913,6 +944,21 @@ public class BaseItemProviderAdapterFactory extends BaseAdapterFactory implement
 					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_COMPARISON_OPERATOR__RIGHT,
 						 BaseFactory.eINSTANCE.createParameterReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_COMPARISON_OPERATOR__RIGHT,
+						 BaseFactory.eINSTANCE.createCallable()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_COMPARISON_OPERATOR__RIGHT,
+						 BaseFactory.eINSTANCE.createReduceFunction()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_COMPARISON_OPERATOR__RIGHT,
+						 BaseFactory.eINSTANCE.createSizeFunction()));
 
 				return null;
 			}
@@ -971,6 +1017,21 @@ public class BaseItemProviderAdapterFactory extends BaseAdapterFactory implement
 
 				newChildDescriptors.add
 					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_IN_OPERATOR__LEFT,
+						 BaseFactory.eINSTANCE.createCallable()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_IN_OPERATOR__LEFT,
+						 BaseFactory.eINSTANCE.createReduceFunction()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_IN_OPERATOR__LEFT,
+						 BaseFactory.eINSTANCE.createSizeFunction()));
+
+				newChildDescriptors.add
+					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_IN_OPERATOR__RIGHT,
 						 BaseFactory.eINSTANCE.createNullLiteral()));
 
@@ -1013,6 +1074,21 @@ public class BaseItemProviderAdapterFactory extends BaseAdapterFactory implement
 					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_IN_OPERATOR__RIGHT,
 						 BaseFactory.eINSTANCE.createParameterReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_IN_OPERATOR__RIGHT,
+						 BaseFactory.eINSTANCE.createCallable()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_IN_OPERATOR__RIGHT,
+						 BaseFactory.eINSTANCE.createReduceFunction()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_IN_OPERATOR__RIGHT,
+						 BaseFactory.eINSTANCE.createSizeFunction()));
 
 				return null;
 			}
@@ -1089,6 +1165,21 @@ public class BaseItemProviderAdapterFactory extends BaseAdapterFactory implement
 						(ExpressionPackage.Literals.PREDICATE_LIKE_OPERATOR__RIGHT,
 						 BaseFactory.eINSTANCE.createParameterReference()));
 
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_LIKE_OPERATOR__RIGHT,
+						 BaseFactory.eINSTANCE.createCallable()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_LIKE_OPERATOR__RIGHT,
+						 BaseFactory.eINSTANCE.createReduceFunction()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_LIKE_OPERATOR__RIGHT,
+						 BaseFactory.eINSTANCE.createSizeFunction()));
+
 				return null;
 			}
  
@@ -1101,22 +1192,22 @@ public class BaseItemProviderAdapterFactory extends BaseAdapterFactory implement
 			public Object casePredicateIsEmpty(PredicateIsEmpty object) {
 				newChildDescriptors.add
 					(createChildParameter
-						(ExpressionPackage.Literals.PREDICATE_IS_EMPTY__FEATURE,
+						(ExpressionPackage.Literals.PREDICATE_IS_EMPTY__VALUE,
 						 BaseFactory.eINSTANCE.createCurrentTime()));
 
 				newChildDescriptors.add
 					(createChildParameter
-						(ExpressionPackage.Literals.PREDICATE_IS_EMPTY__FEATURE,
+						(ExpressionPackage.Literals.PREDICATE_IS_EMPTY__VALUE,
 						 BaseFactory.eINSTANCE.createCurrentUser()));
 
 				newChildDescriptors.add
 					(createChildParameter
-						(ExpressionPackage.Literals.PREDICATE_IS_EMPTY__FEATURE,
+						(ExpressionPackage.Literals.PREDICATE_IS_EMPTY__VALUE,
 						 BaseFactory.eINSTANCE.createConstantReference()));
 
 				newChildDescriptors.add
 					(createChildParameter
-						(ExpressionPackage.Literals.PREDICATE_IS_EMPTY__FEATURE,
+						(ExpressionPackage.Literals.PREDICATE_IS_EMPTY__VALUE,
 						 BaseFactory.eINSTANCE.createParameterReference()));
 
 				return null;
@@ -1131,27 +1222,96 @@ public class BaseItemProviderAdapterFactory extends BaseAdapterFactory implement
 			public Object casePredicateIsNull(PredicateIsNull object) {
 				newChildDescriptors.add
 					(createChildParameter
-						(ExpressionPackage.Literals.PREDICATE_IS_NULL__FEATURE,
+						(ExpressionPackage.Literals.PREDICATE_IS_NULL__VALUE,
 						 BaseFactory.eINSTANCE.createCurrentTime()));
 
 				newChildDescriptors.add
 					(createChildParameter
-						(ExpressionPackage.Literals.PREDICATE_IS_NULL__FEATURE,
+						(ExpressionPackage.Literals.PREDICATE_IS_NULL__VALUE,
 						 BaseFactory.eINSTANCE.createCurrentUser()));
 
 				newChildDescriptors.add
 					(createChildParameter
-						(ExpressionPackage.Literals.PREDICATE_IS_NULL__FEATURE,
+						(ExpressionPackage.Literals.PREDICATE_IS_NULL__VALUE,
 						 BaseFactory.eINSTANCE.createConstantReference()));
 
 				newChildDescriptors.add
 					(createChildParameter
-						(ExpressionPackage.Literals.PREDICATE_IS_NULL__FEATURE,
+						(ExpressionPackage.Literals.PREDICATE_IS_NULL__VALUE,
 						 BaseFactory.eINSTANCE.createParameterReference()));
 
 				return null;
 			}
  
+			/**
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			@Override
+			public Object caseArithmeticOperation(ArithmeticOperation object) {
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.ARITHMETIC_OPERATION__OPERANDS,
+						 BaseFactory.eINSTANCE.createNullLiteral()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.ARITHMETIC_OPERATION__OPERANDS,
+						 BaseFactory.eINSTANCE.createBooleanLiteral()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.ARITHMETIC_OPERATION__OPERANDS,
+						 BaseFactory.eINSTANCE.createIntegerLiteral()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.ARITHMETIC_OPERATION__OPERANDS,
+						 BaseFactory.eINSTANCE.createStringLiteral()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.ARITHMETIC_OPERATION__OPERANDS,
+						 BaseFactory.eINSTANCE.createTimeLiteral()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.ARITHMETIC_OPERATION__OPERANDS,
+						 BaseFactory.eINSTANCE.createCurrentTime()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.ARITHMETIC_OPERATION__OPERANDS,
+						 BaseFactory.eINSTANCE.createCurrentUser()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.ARITHMETIC_OPERATION__OPERANDS,
+						 BaseFactory.eINSTANCE.createConstantReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.ARITHMETIC_OPERATION__OPERANDS,
+						 BaseFactory.eINSTANCE.createParameterReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.ARITHMETIC_OPERATION__OPERANDS,
+						 BaseFactory.eINSTANCE.createCallable()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.ARITHMETIC_OPERATION__OPERANDS,
+						 BaseFactory.eINSTANCE.createReduceFunction()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.ARITHMETIC_OPERATION__OPERANDS,
+						 BaseFactory.eINSTANCE.createSizeFunction()));
+
+				return null;
+			}
 			/**
 			 * <!-- begin-user-doc -->
 			 * <!-- end-user-doc -->

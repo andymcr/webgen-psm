@@ -26,9 +26,11 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import work.andycarpenter.metamodel.base.BasePackage;
 import work.andycarpenter.metamodel.base.Constant;
+import work.andycarpenter.metamodel.base.ReduceFunction;
+import work.andycarpenter.metamodel.base.SizeFunction;
 import work.andycarpenter.metamodel.base.util.BaseSwitch;
+import work.andycarpenter.metamodel.expression.ArithmeticOperation;
 import work.andycarpenter.metamodel.expression.ExpressionPackage;
-import work.andycarpenter.metamodel.expression.FunctionCall;
 import work.andycarpenter.metamodel.expression.PredicateBooleanVariable;
 import work.andycarpenter.metamodel.expression.PredicateComparisonOperator;
 import work.andycarpenter.metamodel.expression.PredicateEqualityOperator;
@@ -36,7 +38,6 @@ import work.andycarpenter.metamodel.expression.PredicateInOperator;
 import work.andycarpenter.metamodel.expression.PredicateIsEmpty;
 import work.andycarpenter.metamodel.expression.PredicateIsNull;
 import work.andycarpenter.metamodel.expression.PredicateLikeOperator;
-import work.andycarpenter.metamodel.expression.SizeFunction;
 import work.andycarpenter.metamodel.expression.util.ExpressionSwitch;
 import work.andycarpenter.metamodel.orm.OrmFactory;
 import work.andycarpenter.metamodel.orm.util.OrmAdapterFactory;
@@ -1000,6 +1001,44 @@ public class OrmItemProviderAdapterFactory extends OrmAdapterFactory implements 
 			 * <!-- end-user-doc -->
 			 * @generated
 			 */
+			@Override
+			public Object caseReduceFunction(ReduceFunction object) {
+				newChildDescriptors.add
+					(createChildParameter
+						(BasePackage.Literals.REDUCE_FUNCTION__VALUE,
+						 OrmFactory.eINSTANCE.createFeatureReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(BasePackage.Literals.REDUCE_FUNCTION__RETURN_VALUE,
+						 OrmFactory.eINSTANCE.createFeatureReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(BasePackage.Literals.REDUCE_FUNCTION__INITIAL,
+						 OrmFactory.eINSTANCE.createFeatureReference()));
+
+				return null;
+			}
+			/**
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			@Override
+			public Object caseSizeFunction(SizeFunction object) {
+				newChildDescriptors.add
+					(createChildParameter
+						(BasePackage.Literals.SIZE_FUNCTION__VALUE,
+						 OrmFactory.eINSTANCE.createFeatureReference()));
+
+				return null;
+			}
+			/**
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
 			protected CommandParameter createChildParameter(Object feature, Object child) {
 				return new CommandParameter(null, feature, child);
 			}
@@ -1067,35 +1106,6 @@ public class OrmItemProviderAdapterFactory extends OrmAdapterFactory implements 
 				this.newChildDescriptors = newChildDescriptors;
 				this.editingDomain = editingDomain;
 			}
-			/**
-			 * <!-- begin-user-doc -->
-			 * <!-- end-user-doc -->
-			 * @generated
-			 */
-			@Override
-			public Object caseSizeFunction(SizeFunction object) {
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.SIZE_FUNCTION__FEATURE,
-						 OrmFactory.eINSTANCE.createFeatureReference()));
-
-				return null;
-			}
-			/**
-			 * <!-- begin-user-doc -->
-			 * <!-- end-user-doc -->
-			 * @generated
-			 */
-			@Override
-			public Object caseFunctionCall(FunctionCall object) {
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.FUNCTION_CALL__ACTUALS,
-						 OrmFactory.eINSTANCE.createFeatureReference()));
-
-				return null;
-			}
- 
 			/**
 			 * <!-- begin-user-doc -->
 			 * <!-- end-user-doc -->
@@ -1200,7 +1210,7 @@ public class OrmItemProviderAdapterFactory extends OrmAdapterFactory implements 
 			public Object casePredicateIsEmpty(PredicateIsEmpty object) {
 				newChildDescriptors.add
 					(createChildParameter
-						(ExpressionPackage.Literals.PREDICATE_IS_EMPTY__FEATURE,
+						(ExpressionPackage.Literals.PREDICATE_IS_EMPTY__VALUE,
 						 OrmFactory.eINSTANCE.createFeatureReference()));
 
 				return null;
@@ -1215,12 +1225,26 @@ public class OrmItemProviderAdapterFactory extends OrmAdapterFactory implements 
 			public Object casePredicateIsNull(PredicateIsNull object) {
 				newChildDescriptors.add
 					(createChildParameter
-						(ExpressionPackage.Literals.PREDICATE_IS_NULL__FEATURE,
+						(ExpressionPackage.Literals.PREDICATE_IS_NULL__VALUE,
 						 OrmFactory.eINSTANCE.createFeatureReference()));
 
 				return null;
 			}
  
+			/**
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			@Override
+			public Object caseArithmeticOperation(ArithmeticOperation object) {
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.ARITHMETIC_OPERATION__OPERANDS,
+						 OrmFactory.eINSTANCE.createFeatureReference()));
+
+				return null;
+			}
 			/**
 			 * <!-- begin-user-doc -->
 			 * <!-- end-user-doc -->

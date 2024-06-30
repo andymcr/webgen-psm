@@ -305,12 +305,17 @@ public class UnitAttributeItemProvider extends UnitFeatureItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.eINSTANCE.getUnitAttribute_AttributeDefaultValue(),
-				 ExpressionFactory.eINSTANCE.createSizeFunction()));
+				 BaseFactory.eINSTANCE.createCallable()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.eINSTANCE.getUnitAttribute_AttributeDefaultValue(),
-				 ExpressionFactory.eINSTANCE.createFunctionCall()));
+				 BaseFactory.eINSTANCE.createReduceFunction()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.eINSTANCE.getUnitAttribute_AttributeDefaultValue(),
+				 BaseFactory.eINSTANCE.createSizeFunction()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -351,6 +356,11 @@ public class UnitAttributeItemProvider extends UnitFeatureItemProvider {
 			(createChildParameter
 				(WafPackage.eINSTANCE.getUnitAttribute_AttributeDefaultValue(),
 				 ExpressionFactory.eINSTANCE.createPredicateIsNull()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.eINSTANCE.getUnitAttribute_AttributeDefaultValue(),
+				 ExpressionFactory.eINSTANCE.createArithmeticOperation()));
 	}
 
 	/**

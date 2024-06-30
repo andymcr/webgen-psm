@@ -210,12 +210,17 @@ public class ConstantItemProvider extends NamedElementItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(BasePackage.Literals.CONSTANT__VALUE,
-				 ExpressionFactory.eINSTANCE.createSizeFunction()));
+				 BaseFactory.eINSTANCE.createCallable()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(BasePackage.Literals.CONSTANT__VALUE,
-				 ExpressionFactory.eINSTANCE.createFunctionCall()));
+				 BaseFactory.eINSTANCE.createReduceFunction()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(BasePackage.Literals.CONSTANT__VALUE,
+				 BaseFactory.eINSTANCE.createSizeFunction()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -256,6 +261,11 @@ public class ConstantItemProvider extends NamedElementItemProvider {
 			(createChildParameter
 				(BasePackage.Literals.CONSTANT__VALUE,
 				 ExpressionFactory.eINSTANCE.createPredicateIsNull()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(BasePackage.Literals.CONSTANT__VALUE,
+				 ExpressionFactory.eINSTANCE.createArithmeticOperation()));
 	}
 
 }

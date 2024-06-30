@@ -61,7 +61,7 @@ public class PredicateIsEmptyItemProvider extends PredicateItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ExpressionPackage.Literals.PREDICATE_IS_EMPTY__FEATURE);
+			childrenFeatures.add(ExpressionPackage.Literals.PREDICATE_IS_EMPTY__VALUE);
 		}
 		return childrenFeatures;
 	}
@@ -115,7 +115,7 @@ public class PredicateIsEmptyItemProvider extends PredicateItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(PredicateIsEmpty.class)) {
-			case ExpressionPackage.PREDICATE_IS_EMPTY__FEATURE:
+			case ExpressionPackage.PREDICATE_IS_EMPTY__VALUE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}

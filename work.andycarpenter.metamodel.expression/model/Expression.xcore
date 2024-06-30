@@ -20,6 +20,13 @@ import org.eclipse.emf.ecore.EObject
 annotation "http://www.eclipse.org/emf/2002/Ecore/OCL" as OCL
 
 
+enum ArithmeticOperator {
+	Add
+	Subtract = 1
+	Multiply = 2
+	Divide = 3
+}
+
 enum BooleanOperator {
 	And
 	Or = 1
@@ -40,20 +47,13 @@ abstract class Expression {
 	refers derived readonly unsettable transient volatile EObject rootContainer
 }
 
-abstract class Literal extends Expression {
+abstract class Operand extends Expression {
 }
 
-abstract class Variable extends Expression {
+abstract class Literal extends Operand {
 }
 
-class SizeFunction extends Expression {
-	contains Variable[1] feature
-}
-
-
-class FunctionCall extends Expression {
-	String[1] name
-	contains Expression[*] actuals
+abstract class Variable extends Operand {
 }
 
 
@@ -92,9 +92,15 @@ class PredicateLikeOperator extends Predicate {
 }
 
 class PredicateIsEmpty extends Predicate {
-	contains Variable feature
+	contains Variable value
 }
 
 class PredicateIsNull extends Predicate {
-	contains Variable feature
+	contains Variable value
 }
+
+class ArithmeticOperation extends Expression {
+	contains Expression[+] operands
+	ArithmeticOperator[1] operator = "Add"
+}
+

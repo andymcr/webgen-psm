@@ -89,52 +89,6 @@ public class ExpressionItemProviderAdapterFactory extends ExpressionAdapterFacto
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.expression.SizeFunction} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected SizeFunctionItemProvider sizeFunctionItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link work.andycarpenter.metamodel.expression.SizeFunction}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createSizeFunctionAdapter() {
-		if (sizeFunctionItemProvider == null) {
-			sizeFunctionItemProvider = new SizeFunctionItemProvider(this);
-		}
-
-		return sizeFunctionItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.expression.FunctionCall} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected FunctionCallItemProvider functionCallItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link work.andycarpenter.metamodel.expression.FunctionCall}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createFunctionCallAdapter() {
-		if (functionCallItemProvider == null) {
-			functionCallItemProvider = new FunctionCallItemProvider(this);
-		}
-
-		return functionCallItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.expression.PredicateBooleanVariable} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -319,6 +273,29 @@ public class ExpressionItemProviderAdapterFactory extends ExpressionAdapterFacto
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.expression.ArithmeticOperation} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ArithmeticOperationItemProvider arithmeticOperationItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link work.andycarpenter.metamodel.expression.ArithmeticOperation}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createArithmeticOperationAdapter() {
+		if (arithmeticOperationItemProvider == null) {
+			arithmeticOperationItemProvider = new ArithmeticOperationItemProvider(this);
+		}
+
+		return arithmeticOperationItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -450,8 +427,6 @@ public class ExpressionItemProviderAdapterFactory extends ExpressionAdapterFacto
 	 */
 	@Override
 	public void dispose() {
-		if (sizeFunctionItemProvider != null) sizeFunctionItemProvider.dispose();
-		if (functionCallItemProvider != null) functionCallItemProvider.dispose();
 		if (predicateBooleanVariableItemProvider != null) predicateBooleanVariableItemProvider.dispose();
 		if (predicateBooleanOperatorItemProvider != null) predicateBooleanOperatorItemProvider.dispose();
 		if (predicateEqualityOperatorItemProvider != null) predicateEqualityOperatorItemProvider.dispose();
@@ -460,6 +435,7 @@ public class ExpressionItemProviderAdapterFactory extends ExpressionAdapterFacto
 		if (predicateLikeOperatorItemProvider != null) predicateLikeOperatorItemProvider.dispose();
 		if (predicateIsEmptyItemProvider != null) predicateIsEmptyItemProvider.dispose();
 		if (predicateIsNullItemProvider != null) predicateIsNullItemProvider.dispose();
+		if (arithmeticOperationItemProvider != null) arithmeticOperationItemProvider.dispose();
 	}
 
 }

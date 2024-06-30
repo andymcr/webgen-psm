@@ -61,7 +61,7 @@ public class PredicateIsNullItemProvider extends PredicateItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ExpressionPackage.Literals.PREDICATE_IS_NULL__FEATURE);
+			childrenFeatures.add(ExpressionPackage.Literals.PREDICATE_IS_NULL__VALUE);
 		}
 		return childrenFeatures;
 	}
@@ -115,7 +115,7 @@ public class PredicateIsNullItemProvider extends PredicateItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(PredicateIsNull.class)) {
-			case ExpressionPackage.PREDICATE_IS_NULL__FEATURE:
+			case ExpressionPackage.PREDICATE_IS_NULL__VALUE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}

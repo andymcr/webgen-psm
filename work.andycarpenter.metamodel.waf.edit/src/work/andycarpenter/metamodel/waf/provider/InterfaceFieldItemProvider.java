@@ -2038,12 +2038,17 @@ public class InterfaceFieldItemProvider extends NamedElementItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.eINSTANCE.getInterfaceField_FieldDefaultValue(),
-				 ExpressionFactory.eINSTANCE.createSizeFunction()));
+				 BaseFactory.eINSTANCE.createCallable()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.eINSTANCE.getInterfaceField_FieldDefaultValue(),
-				 ExpressionFactory.eINSTANCE.createFunctionCall()));
+				 BaseFactory.eINSTANCE.createReduceFunction()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.eINSTANCE.getInterfaceField_FieldDefaultValue(),
+				 BaseFactory.eINSTANCE.createSizeFunction()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -2084,6 +2089,11 @@ public class InterfaceFieldItemProvider extends NamedElementItemProvider {
 			(createChildParameter
 				(WafPackage.eINSTANCE.getInterfaceField_FieldDefaultValue(),
 				 ExpressionFactory.eINSTANCE.createPredicateIsNull()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.eINSTANCE.getInterfaceField_FieldDefaultValue(),
+				 ExpressionFactory.eINSTANCE.createArithmeticOperation()));
 	}
 
 	/**

@@ -15,6 +15,7 @@ package work.andycarpenter.metamodel.base
 
 import work.andycarpenter.metamodel.expression.Expression
 import work.andycarpenter.metamodel.expression.Literal
+import work.andycarpenter.metamodel.expression.Operand
 import work.andycarpenter.metamodel.expression.Variable
 
 annotation "http://www.eclipse.org/emf/2002/Ecore/OCL" as OCL
@@ -35,14 +36,17 @@ class BooleanLiteral extends Literal {
 }
 
 class IntegerLiteral extends Literal {
+    @GenModel(propertyCategory="Model")
 	int[1] value
 }
 
 class StringLiteral extends Literal {
+    @GenModel(propertyCategory="Model")
 	String[1] value
 }
 
 class TimeLiteral extends Literal {
+    @GenModel(propertyCategory="Model")
 	String[1] value
 }
 
@@ -160,3 +164,18 @@ class ParameterReference extends Variable {
     @GenModel(propertyCategory="Model")
 	refers FormalParameter[1] parameter 
 } 
+
+
+class Callable extends FormalParameterList, Operand {
+	
+}
+
+class ReduceFunction extends Operand {
+	contains Variable[1] value
+	contains Expression[1] returnValue
+	contains Expression initial
+}
+
+class SizeFunction extends Operand {
+	contains Variable[1] value
+}

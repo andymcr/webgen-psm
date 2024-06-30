@@ -278,12 +278,17 @@ public class AttributeItemProvider extends FeatureItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(OrmPackage.Literals.ATTRIBUTE__ATTRIBUTE_DEFAULT_VALUE,
-				 ExpressionFactory.eINSTANCE.createSizeFunction()));
+				 BaseFactory.eINSTANCE.createCallable()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(OrmPackage.Literals.ATTRIBUTE__ATTRIBUTE_DEFAULT_VALUE,
-				 ExpressionFactory.eINSTANCE.createFunctionCall()));
+				 BaseFactory.eINSTANCE.createReduceFunction()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OrmPackage.Literals.ATTRIBUTE__ATTRIBUTE_DEFAULT_VALUE,
+				 BaseFactory.eINSTANCE.createSizeFunction()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -324,6 +329,11 @@ public class AttributeItemProvider extends FeatureItemProvider {
 			(createChildParameter
 				(OrmPackage.Literals.ATTRIBUTE__ATTRIBUTE_DEFAULT_VALUE,
 				 ExpressionFactory.eINSTANCE.createPredicateIsNull()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OrmPackage.Literals.ATTRIBUTE__ATTRIBUTE_DEFAULT_VALUE,
+				 ExpressionFactory.eINSTANCE.createArithmeticOperation()));
 	}
 
 }
