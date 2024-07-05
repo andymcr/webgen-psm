@@ -51,6 +51,7 @@ public class BusinessOperationItemProvider extends NamedElementItemProvider {
 
 			addPartOfPropertyDescriptor(object);
 			addUsesPropertyDescriptor(object);
+			addOperationClassPropertyDescriptor(object);
 			addResultTypePropertyDescriptor(object);
 			addResultMimeTypePropertyDescriptor(object);
 			addFileExtensionPropertyDescriptor(object);
@@ -98,6 +99,28 @@ public class BusinessOperationItemProvider extends NamedElementItemProvider {
 				 false,
 				 true,
 				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Operation Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addOperationClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_BusinessOperation_operationClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_BusinessOperation_operationClass_feature", "_UI_BusinessOperation_type"),
+				 ServicePackage.Literals.BUSINESS_OPERATION__OPERATION_CLASS,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -236,6 +259,7 @@ public class BusinessOperationItemProvider extends NamedElementItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(BusinessOperation.class)) {
+			case ServicePackage.BUSINESS_OPERATION__OPERATION_CLASS:
 			case ServicePackage.BUSINESS_OPERATION__RESULT_TYPE:
 			case ServicePackage.BUSINESS_OPERATION__RESULT_MIME_TYPE:
 			case ServicePackage.BUSINESS_OPERATION__FILE_EXTENSION:

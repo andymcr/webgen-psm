@@ -3199,7 +3199,6 @@ abstract class PathVariable extends Path, Variable {
 
 class PathVariableAssociation extends PathAssociation, PathVariable {
 }
-
 class PathVariableAttribute extends PathAttribute, PathVariable {
 }
 

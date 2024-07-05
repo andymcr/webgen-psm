@@ -39,9 +39,16 @@ class Service extends NamedElement, ConstantContainer {
 	derived readonly transient unsettable volatile boolean hasFileOperations
 }
 
+enum OperationClass {
+	ReadOnly= 0
+	Costly = 1
+	Modifying = 2
+}
+
 class BusinessOperation extends NamedElement, FormalParameterList {
 	container Service[1] partOf opposite operations
 	refers Service[] uses
+	OperationClass operationClass = 'ReadOnly'
 	OperationResultTypes[1] resultType
 	String resultMimeType = ''
 	String fileExtension  = ''
