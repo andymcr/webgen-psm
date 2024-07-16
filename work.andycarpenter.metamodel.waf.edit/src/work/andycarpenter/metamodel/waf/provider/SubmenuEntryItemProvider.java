@@ -47,7 +47,6 @@ public class SubmenuEntryItemProvider extends MenuItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addPartOfPropertyDescriptor(object);
-			addAuthorisationRolesPropertyDescriptor(object);
 			addIsAuthorisedPropertyDescriptor(object);
 			addAlwaysVisiblePropertyDescriptor(object);
 		}
@@ -73,28 +72,6 @@ public class SubmenuEntryItemProvider extends MenuItemProvider {
 				 true,
 				 null,
 				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Authorisation Roles feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addAuthorisationRolesPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_SubmenuEntry_authorisationRoles_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_SubmenuEntry_authorisationRoles_feature", "_UI_SubmenuEntry_type"),
-				 WafPackage.eINSTANCE.getSubmenuEntry_AuthorisationRoles(),
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 getString("_UI_SecurityPropertyCategory"),
 				 null));
 	}
 
@@ -210,7 +187,6 @@ public class SubmenuEntryItemProvider extends MenuItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(SubmenuEntry.class)) {
-			case WafPackage.SUBMENU_ENTRY__AUTHORISATION_ROLES:
 			case WafPackage.SUBMENU_ENTRY__IS_AUTHORISED:
 			case WafPackage.SUBMENU_ENTRY__ALWAYS_VISIBLE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));

@@ -48,7 +48,6 @@ public class UnitLabelItemProvider extends DisplayElementItemProvider {
 
 			addDisplayedOnPropertyDescriptor(object);
 			addFieldNamePropertyDescriptor(object);
-			addAuthorisationRolesPropertyDescriptor(object);
 			addIsAuthorisedPropertyDescriptor(object);
 			addHasCustomisedDisplayLabelPropertyDescriptor(object);
 			addIsRepeatedPropertyDescriptor(object);
@@ -157,28 +156,6 @@ public class UnitLabelItemProvider extends DisplayElementItemProvider {
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 getString("_UI_DebugPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Authorisation Roles feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addAuthorisationRolesPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_UnitField_authorisationRoles_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_authorisationRoles_feature", "_UI_UnitField_type"),
-				 WafPackage.eINSTANCE.getUnitField_AuthorisationRoles(),
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
 				 null));
 	}
 
@@ -1638,7 +1615,6 @@ public class UnitLabelItemProvider extends DisplayElementItemProvider {
 
 		switch (notification.getFeatureID(UnitLabel.class)) {
 			case WafPackage.UNIT_LABEL__FIELD_NAME:
-			case WafPackage.UNIT_LABEL__AUTHORISATION_ROLES:
 			case WafPackage.UNIT_LABEL__IS_AUTHORISED:
 			case WafPackage.UNIT_LABEL__HAS_CUSTOMISED_DISPLAY_LABEL:
 			case WafPackage.UNIT_LABEL__IS_REPEATED:

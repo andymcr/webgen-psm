@@ -207,8 +207,6 @@ abstract class MenuEntry {
 }
 
 class SubmenuEntry extends Menu, MenuEntry {
-    @GenModel(propertyCategory="Security")
-	String authorisationRoles = ''
 	contains AuthorisationExpression authorisation
 	@OCL(derivation="not authorisation.oclIsUndefined()")
     @GenModel(propertyCategory="Debug")
@@ -584,8 +582,6 @@ abstract class ContentUnit extends NamedDisplayElement {
     @GenModel(propertyCategory="Navigation")
     refers ContentUnit uriParent
 
-    @GenModel(propertyCategory="Security")
-	String authorisationRoles = ''
 	contains AuthorisationExpression authorisation
 	@OCL(derivation="not authorisation.oclIsUndefined()")
     @GenModel(propertyCategory="Debug")
@@ -1181,7 +1177,6 @@ interface UnitField extends DisplayElement {
     @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile String fieldName
 
-	String authorisationRoles = ''
 	contains AuthorisationExpression authorisation
 	@OCL(derivation="not authorisation.oclIsUndefined()")
     @GenModel(propertyCategory="Debug")
@@ -3474,8 +3469,6 @@ class DeleteAction extends Action {
     @GenModel(propertyCategory="Navigation")
 	String[1] uriElement
 
-    @GenModel(propertyCategory="Security")
-	String localAuthorisationRoles = ''
 	contains AuthorisationExpression localAuthorisation
 	@OCL(derivation="if not localAuthorisation.oclIsUndefined() then
 			localAuthorisation
@@ -3533,8 +3526,6 @@ abstract class OperationAction extends Action {
     @GenModel(propertyCategory="Navigation")
 	String[1] uriElement
 
-    @GenModel(propertyCategory="Security")
-	String localAuthorisationRoles = ''
 	contains AuthorisationExpression localAuthorisation
 
 	@OCL(derivation="if not localAuthorisation.oclIsUndefined() then

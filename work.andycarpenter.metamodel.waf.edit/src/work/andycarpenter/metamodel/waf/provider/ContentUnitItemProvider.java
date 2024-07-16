@@ -52,7 +52,6 @@ public class ContentUnitItemProvider extends NamedDisplayElementItemProvider {
 			addControllerPropertyDescriptor(object);
 			addUriElementPropertyDescriptor(object);
 			addUriParentPropertyDescriptor(object);
-			addAuthorisationRolesPropertyDescriptor(object);
 			addIsAuthorisedPropertyDescriptor(object);
 			addHasAuthorisationPropertyDescriptor(object);
 			addPurposeSummaryPropertyDescriptor(object);
@@ -131,28 +130,6 @@ public class ContentUnitItemProvider extends NamedDisplayElementItemProvider {
 				 true,
 				 null,
 				 getString("_UI_NavigationPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Authorisation Roles feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addAuthorisationRolesPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ContentUnit_authorisationRoles_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ContentUnit_authorisationRoles_feature", "_UI_ContentUnit_type"),
-				 WafPackage.eINSTANCE.getContentUnit_AuthorisationRoles(),
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 getString("_UI_SecurityPropertyCategory"),
 				 null));
 	}
 
@@ -456,7 +433,6 @@ public class ContentUnitItemProvider extends NamedDisplayElementItemProvider {
 
 		switch (notification.getFeatureID(ContentUnit.class)) {
 			case WafPackage.CONTENT_UNIT__URI_ELEMENT:
-			case WafPackage.CONTENT_UNIT__AUTHORISATION_ROLES:
 			case WafPackage.CONTENT_UNIT__IS_AUTHORISED:
 			case WafPackage.CONTENT_UNIT__HAS_AUTHORISATION:
 			case WafPackage.CONTENT_UNIT__PURPOSE_SUMMARY:

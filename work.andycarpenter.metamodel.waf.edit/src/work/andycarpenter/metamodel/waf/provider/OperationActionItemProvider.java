@@ -50,7 +50,6 @@ public class OperationActionItemProvider extends ActionItemProvider {
 			addHasServicesUsedPropertyDescriptor(object);
 			addOperationPropertyDescriptor(object);
 			addUriElementPropertyDescriptor(object);
-			addLocalAuthorisationRolesPropertyDescriptor(object);
 			addOperationAuthorisationPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -145,28 +144,6 @@ public class OperationActionItemProvider extends ActionItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Local Authorisation Roles feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addLocalAuthorisationRolesPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_OperationAction_localAuthorisationRoles_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_OperationAction_localAuthorisationRoles_feature", "_UI_OperationAction_type"),
-				 WafPackage.eINSTANCE.getOperationAction_LocalAuthorisationRoles(),
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 getString("_UI_SecurityPropertyCategory"),
-				 null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Operation Authorisation feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -247,7 +224,6 @@ public class OperationActionItemProvider extends ActionItemProvider {
 		switch (notification.getFeatureID(OperationAction.class)) {
 			case WafPackage.OPERATION_ACTION__HAS_SERVICES_USED:
 			case WafPackage.OPERATION_ACTION__URI_ELEMENT:
-			case WafPackage.OPERATION_ACTION__LOCAL_AUTHORISATION_ROLES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case WafPackage.OPERATION_ACTION__LOCAL_AUTHORISATION:

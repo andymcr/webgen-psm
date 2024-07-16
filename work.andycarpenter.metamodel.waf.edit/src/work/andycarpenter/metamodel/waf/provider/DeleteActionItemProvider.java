@@ -47,7 +47,6 @@ public class DeleteActionItemProvider extends ActionItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addUriElementPropertyDescriptor(object);
-			addLocalAuthorisationRolesPropertyDescriptor(object);
 			addDeleteAuthorisationPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -72,28 +71,6 @@ public class DeleteActionItemProvider extends ActionItemProvider {
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 getString("_UI_NavigationPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Local Authorisation Roles feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addLocalAuthorisationRolesPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_DeleteAction_localAuthorisationRoles_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DeleteAction_localAuthorisationRoles_feature", "_UI_DeleteAction_type"),
-				 WafPackage.eINSTANCE.getDeleteAction_LocalAuthorisationRoles(),
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 getString("_UI_SecurityPropertyCategory"),
 				 null));
 	}
 
@@ -188,7 +165,6 @@ public class DeleteActionItemProvider extends ActionItemProvider {
 
 		switch (notification.getFeatureID(DeleteAction.class)) {
 			case WafPackage.DELETE_ACTION__URI_ELEMENT:
-			case WafPackage.DELETE_ACTION__LOCAL_AUTHORISATION_ROLES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case WafPackage.DELETE_ACTION__LOCAL_AUTHORISATION:
