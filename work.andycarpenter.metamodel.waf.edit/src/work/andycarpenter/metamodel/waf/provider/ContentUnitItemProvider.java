@@ -11,11 +11,13 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import work.andycarpenter.metamodel.base.provider.NamedDisplayElementItemProvider;
+import work.andycarpenter.metamodel.security.SecurityFactory;
 import work.andycarpenter.metamodel.waf.ContentUnit;
 import work.andycarpenter.metamodel.waf.WafPackage;
 
@@ -52,6 +54,7 @@ public class ContentUnitItemProvider extends NamedDisplayElementItemProvider {
 			addUriParentPropertyDescriptor(object);
 			addAuthorisationRolesPropertyDescriptor(object);
 			addIsAuthorisedPropertyDescriptor(object);
+			addHasAuthorisationPropertyDescriptor(object);
 			addPurposeSummaryPropertyDescriptor(object);
 			addAlternativePropertyDescriptor(object);
 			addOmitCaptionPropertyDescriptor(object);
@@ -171,7 +174,29 @@ public class ContentUnitItemProvider extends NamedDisplayElementItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_SecurityPropertyCategory"),
+				 getString("_UI_DebugPropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Has Authorisation feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasAuthorisationPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ContentUnit_hasAuthorisation_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ContentUnit_hasAuthorisation_feature", "_UI_ContentUnit_type"),
+				 WafPackage.eINSTANCE.getContentUnit_HasAuthorisation(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -374,6 +399,36 @@ public class ContentUnitItemProvider extends NamedDisplayElementItemProvider {
 	}
 
 	/**
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
+	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		if (childrenFeatures == null) {
+			super.getChildrenFeatures(object);
+			childrenFeatures.add(WafPackage.eINSTANCE.getContentUnit_Authorisation());
+		}
+		return childrenFeatures;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EStructuralFeature getChildFeature(Object object, Object child) {
+		// Check the type of the specified child object and return the proper feature to use for
+		// adding (see {@link AddCommand}) it as a child.
+
+		return super.getChildFeature(object, child);
+	}
+
+	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -403,6 +458,7 @@ public class ContentUnitItemProvider extends NamedDisplayElementItemProvider {
 			case WafPackage.CONTENT_UNIT__URI_ELEMENT:
 			case WafPackage.CONTENT_UNIT__AUTHORISATION_ROLES:
 			case WafPackage.CONTENT_UNIT__IS_AUTHORISED:
+			case WafPackage.CONTENT_UNIT__HAS_AUTHORISATION:
 			case WafPackage.CONTENT_UNIT__PURPOSE_SUMMARY:
 			case WafPackage.CONTENT_UNIT__ALTERNATIVE:
 			case WafPackage.CONTENT_UNIT__OMIT_CAPTION:
@@ -411,6 +467,9 @@ public class ContentUnitItemProvider extends NamedDisplayElementItemProvider {
 			case WafPackage.CONTENT_UNIT__CAPTION_CLASS_OVERRIDE:
 			case WafPackage.CONTENT_UNIT__CONTENT_CLASS_OVERRIDE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+			case WafPackage.CONTENT_UNIT__AUTHORISATION:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
 		super.notifyChanged(notification);
@@ -426,6 +485,11 @@ public class ContentUnitItemProvider extends NamedDisplayElementItemProvider {
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.eINSTANCE.getContentUnit_Authorisation(),
+				 SecurityFactory.eINSTANCE.createIsGrantedRole()));
 	}
 
 	/**

@@ -61,7 +61,7 @@ public class ChangePasswordElementImpl extends AuthenticationElementImpl impleme
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String CONFIRM_LABEL_EDEFAULT = "Set Pasword";
+	protected static final String CONFIRM_LABEL_EDEFAULT = "Set Password";
 
 	/**
 	 * The cached value of the '{@link #getConfirmLabel() <em>Confirm Label</em>}' attribute.

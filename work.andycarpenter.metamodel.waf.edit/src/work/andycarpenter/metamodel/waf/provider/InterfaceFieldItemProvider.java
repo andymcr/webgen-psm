@@ -21,6 +21,7 @@ import work.andycarpenter.metamodel.base.BaseFactory;
 import work.andycarpenter.metamodel.base.provider.NamedElementItemProvider;
 import work.andycarpenter.metamodel.expression.ExpressionFactory;
 import work.andycarpenter.metamodel.orm.OrmFactory;
+import work.andycarpenter.metamodel.security.SecurityFactory;
 import work.andycarpenter.metamodel.waf.InterfaceField;
 import work.andycarpenter.metamodel.waf.WafFactory;
 import work.andycarpenter.metamodel.waf.WafPackage;
@@ -1794,6 +1795,7 @@ public class InterfaceFieldItemProvider extends NamedElementItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
+			childrenFeatures.add(WafPackage.eINSTANCE.getUnitField_Authorisation());
 			childrenFeatures.add(WafPackage.eINSTANCE.getUnitField_HideWhen());
 			childrenFeatures.add(WafPackage.eINSTANCE.getInterfaceField_FieldDefaultValue());
 		}
@@ -1911,6 +1913,7 @@ public class InterfaceFieldItemProvider extends NamedElementItemProvider {
 			case WafPackage.INTERFACE_FIELD__SECOND_HELP:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
+			case WafPackage.INTERFACE_FIELD__AUTHORISATION:
 			case WafPackage.INTERFACE_FIELD__HIDE_WHEN:
 			case WafPackage.INTERFACE_FIELD__FIELD_DEFAULT_VALUE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
@@ -1929,6 +1932,11 @@ public class InterfaceFieldItemProvider extends NamedElementItemProvider {
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.eINSTANCE.getUnitField_Authorisation(),
+				 SecurityFactory.eINSTANCE.createIsGrantedRole()));
 
 		newChildDescriptors.add
 			(createChildParameter

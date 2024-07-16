@@ -111,6 +111,18 @@ public class SecurityAdapterFactory extends AdapterFactoryImpl {
 				return createCasAuthenticationAdapter();
 			}
 			@Override
+			public Adapter caseRole(Role object) {
+				return createRoleAdapter();
+			}
+			@Override
+			public Adapter caseAuthorisationExpression(AuthorisationExpression object) {
+				return createAuthorisationExpressionAdapter();
+			}
+			@Override
+			public Adapter caseIsGrantedRole(IsGrantedRole object) {
+				return createIsGrantedRoleAdapter();
+			}
+			@Override
 			public Adapter caseNamedElement(NamedElement object) {
 				return createNamedElementAdapter();
 			}
@@ -275,6 +287,48 @@ public class SecurityAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createCasAuthenticationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link work.andycarpenter.metamodel.security.Role <em>Role</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see work.andycarpenter.metamodel.security.Role
+	 * @generated
+	 */
+	public Adapter createRoleAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link work.andycarpenter.metamodel.security.AuthorisationExpression <em>Authorisation Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see work.andycarpenter.metamodel.security.AuthorisationExpression
+	 * @generated
+	 */
+	public Adapter createAuthorisationExpressionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link work.andycarpenter.metamodel.security.IsGrantedRole <em>Is Granted Role</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see work.andycarpenter.metamodel.security.IsGrantedRole
+	 * @generated
+	 */
+	public Adapter createIsGrantedRoleAdapter() {
 		return null;
 	}
 

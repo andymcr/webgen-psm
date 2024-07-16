@@ -14,6 +14,7 @@ import work.andycarpenter.metamodel.waf.ContentUnit;
  * The following features are tested:
  * <ul>
  *   <li>{@link work.andycarpenter.metamodel.waf.ContentUnit#isIsAuthorised() <em>Is Authorised</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.ContentUnit#isHasAuthorisation() <em>Has Authorisation</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.ContentUnit#isIsFormUnit() <em>Is Form Unit</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.ContentUnit#getGenModel() <em>Gen Model</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.ContentUnit#getUiModel() <em>Ui Model</em>}</li>
@@ -70,6 +71,32 @@ public abstract class ContentUnitTest extends TestCase {
 	 */
 	public void testIsIsAuthorised() {
 		// TODO: implement this feature getter test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.ContentUnit#isHasAuthorisation() <em>Has Authorisation</em>}' feature getter.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.ContentUnit#isHasAuthorisation()
+	 * @generated
+	 */
+	public void testIsHasAuthorisation() {
+		// TODO: implement this feature getter test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.ContentUnit#isSetHasAuthorisation() <em>isSetHasAuthorisation()</em>}' method.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.ContentUnit#isSetHasAuthorisation()
+	 * @generated
+	 */
+	public void testIsSetHasAuthorisation() {
+		// TODO: implement this test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}

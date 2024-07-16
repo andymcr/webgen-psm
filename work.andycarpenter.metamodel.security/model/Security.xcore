@@ -13,6 +13,7 @@
 	childCreationExtenders="true")
 package work.andycarpenter.metamodel.security
 
+import work.andycarpenter.metamodel.base.NamedElement
 import work.andycarpenter.metamodel.base.NamedDisplayElement
 import work.andycarpenter.metamodel.orm.Attribute
 import work.andycarpenter.metamodel.orm.Entity
@@ -25,6 +26,8 @@ class SecurityModel {
 
 	@OCL(derivation="not authentication.oclIsUndefined()")
 	derived readonly unsettable transient volatile boolean isAuthenticated
+	
+	contains Role[] roles
 }
 
 abstract class Authentication {
@@ -167,7 +170,7 @@ class ChangePasswordElement extends AuthenticationElement {
 	refers LocalAuthenticationSystem[1] authentication opposite changePasswordElement
 
 	String[1] invokeLabel = 'Change Password'
-	String[1] confirmLabel = 'Set Pasword'
+	String[1] confirmLabel = 'Set Password'
 
 	String[1] uriElement = 'change-password'
 }
@@ -176,4 +179,37 @@ class ChangePasswordElement extends AuthenticationElement {
 class CasAuthentication extends Authentication {
 	String[1] loginLabel
 	String logoutLabel
+}
+
+
+class Role extends NamedElement {
+}
+
+
+abstract class AuthorisationExpression {
+	@OCL(derivation="if units->size() < 2 then
+			true
+		else
+			units->subOrderedSet(2, units->size())->forAll(u | u.authorisationRoles.trim() = units->first().authorisationRoles.trim())
+		endif")
+	op boolean areSame(AuthorisationExpression authorisation)
+}
+
+class IsGrantedRole extends AuthorisationExpression {
+	Boolean negated
+	refers Role role
+
+	@OCL(body="if not op2.oclIsTypeOf(IsGrantedRole) then
+				false
+			else
+				let grant2 : IsGrantedRole = op2.oclAsType(IsGrantedRole)
+					in if self.negated <> grant2.negated 
+								or self.role.oclIsUndefined()
+								or grant2.role.oclIsUndefined() then
+							false
+						else
+							self.role.name = grant2.role.name
+						endif
+			endif")
+	op boolean areSame(AuthorisationExpression op2)
 }

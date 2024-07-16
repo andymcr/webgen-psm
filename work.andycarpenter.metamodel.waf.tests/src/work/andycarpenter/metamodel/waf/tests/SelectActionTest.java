@@ -11,7 +11,7 @@ import work.andycarpenter.metamodel.waf.SelectAction;
  * <p>
  * The following features are tested:
  * <ul>
- *   <li>{@link work.andycarpenter.metamodel.waf.SelectAction#getSelectAuthorisationRoles() <em>Select Authorisation Roles</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.SelectAction#getSelectAuthorisation() <em>Select Authorisation</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -40,13 +40,13 @@ public abstract class SelectActionTest extends ActionTest {
 	}
 
 	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.SelectAction#getSelectAuthorisationRoles() <em>Select Authorisation Roles</em>}' feature getter.
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.SelectAction#getSelectAuthorisation() <em>Select Authorisation</em>}' feature getter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.SelectAction#getSelectAuthorisationRoles()
+	 * @see work.andycarpenter.metamodel.waf.SelectAction#getSelectAuthorisation()
 	 * @generated
 	 */
-	public void testGetSelectAuthorisationRoles() {
+	public void testGetSelectAuthorisation() {
 		// TODO: implement this feature getter test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

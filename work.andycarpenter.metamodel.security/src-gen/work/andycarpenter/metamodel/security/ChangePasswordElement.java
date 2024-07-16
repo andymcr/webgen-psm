@@ -72,13 +72,13 @@ public interface ChangePasswordElement extends AuthenticationElement {
 
 	/**
 	 * Returns the value of the '<em><b>Confirm Label</b></em>' attribute.
-	 * The default value is <code>"Set Pasword"</code>.
+	 * The default value is <code>"Set Password"</code>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Confirm Label</em>' attribute.
 	 * @see #setConfirmLabel(String)
 	 * @see work.andycarpenter.metamodel.security.SecurityPackage#getChangePasswordElement_ConfirmLabel()
-	 * @model default="Set Pasword" unique="false" required="true"
+	 * @model default="Set Password" unique="false" required="true"
 	 * @generated
 	 */
 	String getConfirmLabel();

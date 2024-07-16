@@ -14,7 +14,7 @@ import work.andycarpenter.metamodel.waf.WafFactory;
  * <p>
  * The following features are tested:
  * <ul>
- *   <li>{@link work.andycarpenter.metamodel.waf.DeleteAction#getDeleteAuthorisationRoles() <em>Delete Authorisation Roles</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.DeleteAction#getDeleteAuthorisation() <em>Delete Authorisation</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -74,13 +74,13 @@ public class DeleteActionTest extends ActionTest {
 	}
 
 	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DeleteAction#getDeleteAuthorisationRoles() <em>Delete Authorisation Roles</em>}' feature getter.
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.DeleteAction#getDeleteAuthorisation() <em>Delete Authorisation</em>}' feature getter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DeleteAction#getDeleteAuthorisationRoles()
+	 * @see work.andycarpenter.metamodel.waf.DeleteAction#getDeleteAuthorisation()
 	 * @generated
 	 */
-	public void testGetDeleteAuthorisationRoles() {
+	public void testGetDeleteAuthorisation() {
 		// TODO: implement this feature getter test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

@@ -13,7 +13,6 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import work.andycarpenter.metamodel.waf.SelectAction;
@@ -49,7 +48,7 @@ public class SelectActionItemProvider extends ActionItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addTargetPropertyDescriptor(object);
-			addSelectAuthorisationRolesPropertyDescriptor(object);
+			addSelectAuthorisationPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -77,23 +76,23 @@ public class SelectActionItemProvider extends ActionItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Select Authorisation Roles feature.
+	 * This adds a property descriptor for the Select Authorisation feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addSelectAuthorisationRolesPropertyDescriptor(Object object) {
+	protected void addSelectAuthorisationPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_SelectAction_selectAuthorisationRoles_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_SelectAction_selectAuthorisationRoles_feature", "_UI_SelectAction_type"),
-				 WafPackage.eINSTANCE.getSelectAction_SelectAuthorisationRoles(),
+				 getString("_UI_SelectAction_selectAuthorisation_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_SelectAction_selectAuthorisation_feature", "_UI_SelectAction_type"),
+				 WafPackage.eINSTANCE.getSelectAction_SelectAuthorisation(),
 				 false,
 				 false,
 				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
 				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
@@ -155,9 +154,6 @@ public class SelectActionItemProvider extends ActionItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(SelectAction.class)) {
-			case WafPackage.SELECT_ACTION__SELECT_AUTHORISATION_ROLES:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
 			case WafPackage.SELECT_ACTION__VALUE_PATH:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;

@@ -148,6 +148,26 @@ public class SecuritySwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case SecurityPackage.ROLE: {
+				Role role = (Role)theEObject;
+				T result = caseRole(role);
+				if (result == null) result = caseNamedElement(role);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case SecurityPackage.AUTHORISATION_EXPRESSION: {
+				AuthorisationExpression authorisationExpression = (AuthorisationExpression)theEObject;
+				T result = caseAuthorisationExpression(authorisationExpression);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case SecurityPackage.IS_GRANTED_ROLE: {
+				IsGrantedRole isGrantedRole = (IsGrantedRole)theEObject;
+				T result = caseIsGrantedRole(isGrantedRole);
+				if (result == null) result = caseAuthorisationExpression(isGrantedRole);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -299,6 +319,51 @@ public class SecuritySwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseCasAuthentication(CasAuthentication object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Role</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Role</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRole(Role object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Authorisation Expression</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Authorisation Expression</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAuthorisationExpression(AuthorisationExpression object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Is Granted Role</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Is Granted Role</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseIsGrantedRole(IsGrantedRole object) {
 		return null;
 	}
 

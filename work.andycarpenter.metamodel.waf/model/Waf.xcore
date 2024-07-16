@@ -37,6 +37,7 @@ import work.andycarpenter.metamodel.orm.Repository
 import work.andycarpenter.metamodel.orm.ResourceFeature
 import work.andycarpenter.metamodel.orm.Selection
 import work.andycarpenter.metamodel.api.API
+import work.andycarpenter.metamodel.security.AuthorisationExpression
 import work.andycarpenter.metamodel.security.SecurityModel
 import work.andycarpenter.metamodel.service.BusinessOperation
 import work.andycarpenter.metamodel.service.Service
@@ -208,7 +209,8 @@ abstract class MenuEntry {
 class SubmenuEntry extends Menu, MenuEntry {
     @GenModel(propertyCategory="Security")
 	String authorisationRoles = ''
-	@OCL(derivation="authorisationRoles.trim() <> ''")
+	contains AuthorisationExpression authorisation
+	@OCL(derivation="not authorisation.oclIsUndefined()")
     @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean isAuthorised
 	@OCL(derivation="entries
@@ -347,26 +349,35 @@ abstract class Controller extends NamedDisplayElement {
 	derived readonly transient volatile boolean isMultiPage
 	
 	@OCL(derivation="if units->isEmpty() then
-			''
-		else if self.hasCommonUnitAuthentication = true then
-			units->first().authorisationRoles
+			null
+		else if self.hasCommonUnitAuthorisation = true then
+			units->first().authorisation
 		else
-			''
+			null
 		endif endif")
     @GenModel(propertyCategory="Debug")
-	derived readonly transient volatile String commonRole
+	refers derived readonly transient volatile AuthorisationExpression commonAuthorisation
 
-	@OCL(derivation="commonRole.trim() <> ''")
+	@OCL(derivation="not commonAuthorisation.oclIsUndefined()")
     @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean isAuthorised
 
-	@OCL(derivation="if units->size() < 2 then
+	@OCL(derivation="isAuthorised = true
+		or units->select(u | u.hasAuthorisation = true)->notEmpty()")
+    @GenModel(propertyCategory="Debug")
+	derived readonly transient unsettable volatile boolean hasAuthorisation
+
+	@OCL(derivation="if units->forAll(u | u.authorisation.oclIsUndefined()) then
+			true
+		else if not units->forAll(u | not u.authorisation.oclIsUndefined()) then
+			false
+		else if units->size() < 2 then
 			true
 		else
-			units->subOrderedSet(2, units->size())->forAll(u | u.authorisationRoles.trim() = units->first().authorisationRoles.trim())
-		endif")
+			units->subOrderedSet(2, units->size())->forAll(u | u.authorisation.areSame(units->first().authorisation))
+		endif endif endif")
     @GenModel(propertyCategory="Debug")
-	derived readonly transient volatile boolean hasCommonUnitAuthentication
+	derived readonly transient volatile boolean hasCommonUnitAuthorisation
 
 	contains ContentUnit[] units opposite controller
 
@@ -575,9 +586,21 @@ abstract class ContentUnit extends NamedDisplayElement {
 
     @GenModel(propertyCategory="Security")
 	String authorisationRoles = ''
-	@OCL(derivation="authorisationRoles.trim() <> ''")
-    @GenModel(propertyCategory="Security")
+	contains AuthorisationExpression authorisation
+	@OCL(derivation="not authorisation.oclIsUndefined()")
+    @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean isAuthorised
+	
+	@OCL(derivation="isAuthorised = true
+		or if self.oclIsKindOf(ActionContainer) then
+				self.oclAsType(ActionContainer).actions
+					->select(a | a.isAuthorised = true)
+					->notEmpty()
+			else
+				false
+			endif")
+    @GenModel(propertyCategory="Debug")
+	derived readonly transient unsettable volatile boolean hasAuthorisation
 
 	String purposeSummary
 	String alternative
@@ -1159,7 +1182,8 @@ interface UnitField extends DisplayElement {
 	derived readonly transient volatile String fieldName
 
 	String authorisationRoles = ''
-	@OCL(derivation="authorisationRoles.trim() <> ''")
+	contains AuthorisationExpression authorisation
+	@OCL(derivation="not authorisation.oclIsUndefined()")
     @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean isAuthorised
 
@@ -3330,22 +3354,28 @@ abstract class Action extends NamedDisplayElement {
 	refers readonly transient volatile unsettable derived DynamicUnit parentUnit
 
 	@OCL(derivation="if self.oclIsKindOf(SelectAction) then
-			self.oclAsType(SelectAction).selectAuthorisationRoles
+			self.oclAsType(SelectAction).selectAuthorisation
 		else if self.oclIsKindOf(DeleteAction) then
-			self.oclAsType(DeleteAction).deleteAuthorisationRoles
+			self.oclAsType(DeleteAction).deleteAuthorisation
 		else if self.oclIsKindOf(OperationAction) then
-			self.oclAsType(OperationAction).operationAuthorisationRoles
+			self.oclAsType(OperationAction).operationAuthorisation
 		else
-			''
+			null
 		endif endif endif")
     @GenModel(propertyCategory="Debug")
-	derived readonly transient volatile String authorisationRoles
+	refers derived readonly transient unsettable volatile AuthorisationExpression authorisation
 
-	@OCL(derivation="authorisationRoles <> ''")
+	@OCL(derivation="not authorisation.oclIsUndefined()")
     @GenModel(propertyCategory="Debug")
 	derived readonly transient unsettable volatile boolean isAuthorised
 
-	@OCL(derivation="authorisationRoles <> parentUnit.authorisationRoles.trim()")
+	@OCL(derivation="if authorisation.oclIsUndefined() then
+			false
+		else if parentUnit.authorisation.oclIsUndefined() then
+			true
+		else
+			not authorisation.areSame(parentUnit.authorisation)
+		endif endif")
     @GenModel(propertyCategory="Debug")
 	derived readonly transient unsettable volatile boolean hasCustomisedAuthorisation
 
@@ -3446,19 +3476,20 @@ class DeleteAction extends Action {
 
     @GenModel(propertyCategory="Security")
 	String localAuthorisationRoles = ''
-	@OCL(derivation="if localAuthorisationRoles.trim() <> '' then
-			localAuthorisationRoles
+	contains AuthorisationExpression localAuthorisation
+	@OCL(derivation="if not localAuthorisation.oclIsUndefined() then
+			localAuthorisation
 		else
 			if usedBy.oclIsKindOf(DynamicUnit) then
-				usedBy.oclAsType(DynamicUnit).authorisationRoles
+				usedBy.oclAsType(DynamicUnit).authorisation
 			else if usedBy.oclIsKindOf(UnitFeature) then
-				usedBy.oclAsType(UnitFeature).displayedOn.authorisationRoles
+				usedBy.oclAsType(UnitFeature).displayedOn.authorisation
 			else
-				''
+				null
 			endif endif
 		endif")
     @GenModel(propertyCategory="Debug")
-	derived readonly transient volatile String deleteAuthorisationRoles
+	refers derived readonly transient volatile AuthorisationExpression deleteAuthorisation
 }
 
 abstract class SelectAction extends Action {
@@ -3467,12 +3498,12 @@ abstract class SelectAction extends Action {
 	contains FeaturePath valuePath
 
 	@OCL(derivation="if not target.oclIsUndefined() then
-			target.oclAsType(DynamicUnit).authorisationRoles
+			target.oclAsType(DynamicUnit).authorisation
 		else
-			''
+			null
 		endif")
     @GenModel(propertyCategory="Debug")
-	derived readonly transient volatile String selectAuthorisationRoles
+	refers derived readonly transient volatile AuthorisationExpression selectAuthorisation
 }
 
 class ContainerSelectAction extends SelectAction {
@@ -3504,20 +3535,21 @@ abstract class OperationAction extends Action {
 
     @GenModel(propertyCategory="Security")
 	String localAuthorisationRoles = ''
+	contains AuthorisationExpression localAuthorisation
 
-	@OCL(derivation="if localAuthorisationRoles.trim() <> '' then
-			localAuthorisationRoles
+	@OCL(derivation="if not localAuthorisation.oclIsUndefined() then
+			localAuthorisation
 		else
 			if usedBy.oclIsKindOf(DynamicUnit) then
-				usedBy.oclAsType(DynamicUnit).authorisationRoles
+				usedBy.oclAsType(DynamicUnit).authorisation
 			else if usedBy.oclIsKindOf(UnitFeature) then
-				usedBy.oclAsType(UnitFeature).displayedOn.authorisationRoles
+				usedBy.oclAsType(UnitFeature).displayedOn.authorisation
 			else
-				''
+				null
 			endif endif
 		endif")
     @GenModel(propertyCategory="Debug")
-	derived readonly transient volatile String operationAuthorisationRoles
+	refers derived readonly transient volatile AuthorisationExpression operationAuthorisation
 }
 
 class InstanceOperationAction extends OperationAction {

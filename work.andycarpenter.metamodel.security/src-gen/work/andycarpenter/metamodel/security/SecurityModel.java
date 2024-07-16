@@ -2,6 +2,8 @@
  */
 package work.andycarpenter.metamodel.security;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -15,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link work.andycarpenter.metamodel.security.SecurityModel#getAuthentication <em>Authentication</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.security.SecurityModel#isIsAuthenticated <em>Is Authenticated</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.security.SecurityModel#getRoles <em>Roles</em>}</li>
  * </ul>
  *
  * @see work.andycarpenter.metamodel.security.SecurityPackage#getSecurityModel()
@@ -66,5 +69,17 @@ public interface SecurityModel extends EObject {
 	 * @generated
 	 */
 	boolean isSetIsAuthenticated();
+
+	/**
+	 * Returns the value of the '<em><b>Roles</b></em>' containment reference list.
+	 * The list contents are of type {@link work.andycarpenter.metamodel.security.Role}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Roles</em>' containment reference list.
+	 * @see work.andycarpenter.metamodel.security.SecurityPackage#getSecurityModel_Roles()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Role> getRoles();
 
 } // SecurityModel

@@ -18,6 +18,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 import work.andycarpenter.metamodel.base.BaseFactory;
 import work.andycarpenter.metamodel.expression.ExpressionFactory;
 import work.andycarpenter.metamodel.orm.OrmFactory;
+import work.andycarpenter.metamodel.security.SecurityFactory;
 import work.andycarpenter.metamodel.waf.UnitFeature;
 import work.andycarpenter.metamodel.waf.WafFactory;
 import work.andycarpenter.metamodel.waf.WafPackage;
@@ -2274,6 +2275,7 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
+			childrenFeatures.add(WafPackage.eINSTANCE.getUnitField_Authorisation());
 			childrenFeatures.add(WafPackage.eINSTANCE.getUnitField_HideWhen());
 			childrenFeatures.add(WafPackage.eINSTANCE.getActionContainer_AllActions());
 			childrenFeatures.add(WafPackage.eINSTANCE.getUnitFeature_ForcedValue());
@@ -2403,6 +2405,7 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 			case WafPackage.UNIT_FEATURE__FOOTER:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
+			case WafPackage.UNIT_FEATURE__AUTHORISATION:
 			case WafPackage.UNIT_FEATURE__HIDE_WHEN:
 			case WafPackage.UNIT_FEATURE__ALL_ACTIONS:
 			case WafPackage.UNIT_FEATURE__FORCED_VALUE:
@@ -2423,6 +2426,11 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.eINSTANCE.getUnitField_Authorisation(),
+				 SecurityFactory.eINSTANCE.createIsGrantedRole()));
 
 		newChildDescriptors.add
 			(createChildParameter

@@ -55,9 +55,10 @@ public class ControllerItemProvider extends NamedDisplayElementItemProvider {
 			addChildControllersPropertyDescriptor(object);
 			addIsSinglePagePropertyDescriptor(object);
 			addIsMultiPagePropertyDescriptor(object);
-			addCommonRolePropertyDescriptor(object);
+			addCommonAuthorisationPropertyDescriptor(object);
 			addIsAuthorisedPropertyDescriptor(object);
-			addHasCommonUnitAuthenticationPropertyDescriptor(object);
+			addHasAuthorisationPropertyDescriptor(object);
+			addHasCommonUnitAuthorisationPropertyDescriptor(object);
 			addHasUnitsPropertyDescriptor(object);
 			addHasChangableCollectionsPropertyDescriptor(object);
 			addHasCaptchaUnitsPropertyDescriptor(object);
@@ -221,23 +222,23 @@ public class ControllerItemProvider extends NamedDisplayElementItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Common Role feature.
+	 * This adds a property descriptor for the Common Authorisation feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addCommonRolePropertyDescriptor(Object object) {
+	protected void addCommonAuthorisationPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Controller_commonRole_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Controller_commonRole_feature", "_UI_Controller_type"),
-				 WafPackage.eINSTANCE.getController_CommonRole(),
+				 getString("_UI_Controller_commonAuthorisation_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Controller_commonAuthorisation_feature", "_UI_Controller_type"),
+				 WafPackage.eINSTANCE.getController_CommonAuthorisation(),
 				 false,
 				 false,
 				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
 				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
@@ -265,19 +266,41 @@ public class ControllerItemProvider extends NamedDisplayElementItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Has Common Unit Authentication feature.
+	 * This adds a property descriptor for the Has Authorisation feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addHasCommonUnitAuthenticationPropertyDescriptor(Object object) {
+	protected void addHasAuthorisationPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Controller_hasCommonUnitAuthentication_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Controller_hasCommonUnitAuthentication_feature", "_UI_Controller_type"),
-				 WafPackage.eINSTANCE.getController_HasCommonUnitAuthentication(),
+				 getString("_UI_Controller_hasAuthorisation_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Controller_hasAuthorisation_feature", "_UI_Controller_type"),
+				 WafPackage.eINSTANCE.getController_HasAuthorisation(),
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 getString("_UI_DebugPropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Has Common Unit Authorisation feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasCommonUnitAuthorisationPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Controller_hasCommonUnitAuthorisation_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Controller_hasCommonUnitAuthorisation_feature", "_UI_Controller_type"),
+				 WafPackage.eINSTANCE.getController_HasCommonUnitAuthorisation(),
 				 false,
 				 false,
 				 false,
@@ -1401,9 +1424,9 @@ public class ControllerItemProvider extends NamedDisplayElementItemProvider {
 		switch (notification.getFeatureID(Controller.class)) {
 			case WafPackage.CONTROLLER__IS_SINGLE_PAGE:
 			case WafPackage.CONTROLLER__IS_MULTI_PAGE:
-			case WafPackage.CONTROLLER__COMMON_ROLE:
 			case WafPackage.CONTROLLER__IS_AUTHORISED:
-			case WafPackage.CONTROLLER__HAS_COMMON_UNIT_AUTHENTICATION:
+			case WafPackage.CONTROLLER__HAS_AUTHORISATION:
+			case WafPackage.CONTROLLER__HAS_COMMON_UNIT_AUTHORISATION:
 			case WafPackage.CONTROLLER__HAS_UNITS:
 			case WafPackage.CONTROLLER__HAS_CHANGABLE_COLLECTIONS:
 			case WafPackage.CONTROLLER__HAS_CAPTCHA_UNITS:

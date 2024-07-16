@@ -14,6 +14,7 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import work.andycarpenter.metamodel.expression.ExpressionFactory;
+import work.andycarpenter.metamodel.security.SecurityFactory;
 import work.andycarpenter.metamodel.waf.UnitLabel;
 import work.andycarpenter.metamodel.waf.WafPackage;
 
@@ -1579,6 +1580,7 @@ public class UnitLabelItemProvider extends DisplayElementItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
+			childrenFeatures.add(WafPackage.eINSTANCE.getUnitField_Authorisation());
 			childrenFeatures.add(WafPackage.eINSTANCE.getUnitField_HideWhen());
 		}
 		return childrenFeatures;
@@ -1696,6 +1698,7 @@ public class UnitLabelItemProvider extends DisplayElementItemProvider {
 			case WafPackage.UNIT_LABEL__NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
+			case WafPackage.UNIT_LABEL__AUTHORISATION:
 			case WafPackage.UNIT_LABEL__HIDE_WHEN:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
@@ -1713,6 +1716,11 @@ public class UnitLabelItemProvider extends DisplayElementItemProvider {
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.eINSTANCE.getUnitField_Authorisation(),
+				 SecurityFactory.eINSTANCE.createIsGrantedRole()));
 
 		newChildDescriptors.add
 			(createChildParameter

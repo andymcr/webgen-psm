@@ -4,6 +4,7 @@ package work.andycarpenter.metamodel.security;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -89,13 +90,22 @@ public interface SecurityPackage extends EPackage {
 	int SECURITY_MODEL__IS_AUTHENTICATED = 1;
 
 	/**
+	 * The feature id for the '<em><b>Roles</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECURITY_MODEL__ROLES = 2;
+
+	/**
 	 * The number of structural features of the '<em>Model</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SECURITY_MODEL_FEATURE_COUNT = 2;
+	int SECURITY_MODEL_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Model</em>' class.
@@ -1510,6 +1520,135 @@ public interface SecurityPackage extends EPackage {
 	 */
 	int CAS_AUTHENTICATION_OPERATION_COUNT = AUTHENTICATION_OPERATION_COUNT + 0;
 
+	/**
+	 * The meta object id for the '{@link work.andycarpenter.metamodel.security.impl.RoleImpl <em>Role</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.security.impl.RoleImpl
+	 * @see work.andycarpenter.metamodel.security.impl.SecurityPackageImpl#getRole()
+	 * @generated
+	 */
+	int ROLE = 10;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROLE__NAME = BasePackage.NAMED_ELEMENT__NAME;
+
+	/**
+	 * The number of structural features of the '<em>Role</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROLE_FEATURE_COUNT = BasePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Role</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROLE_OPERATION_COUNT = BasePackage.NAMED_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link work.andycarpenter.metamodel.security.impl.AuthorisationExpressionImpl <em>Authorisation Expression</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.security.impl.AuthorisationExpressionImpl
+	 * @see work.andycarpenter.metamodel.security.impl.SecurityPackageImpl#getAuthorisationExpression()
+	 * @generated
+	 */
+	int AUTHORISATION_EXPRESSION = 11;
+
+	/**
+	 * The number of structural features of the '<em>Authorisation Expression</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AUTHORISATION_EXPRESSION_FEATURE_COUNT = 0;
+
+	/**
+	 * The operation id for the '<em>Are Same</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AUTHORISATION_EXPRESSION___ARE_SAME__AUTHORISATIONEXPRESSION = 0;
+
+	/**
+	 * The number of operations of the '<em>Authorisation Expression</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AUTHORISATION_EXPRESSION_OPERATION_COUNT = 1;
+
+	/**
+	 * The meta object id for the '{@link work.andycarpenter.metamodel.security.impl.IsGrantedRoleImpl <em>Is Granted Role</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.security.impl.IsGrantedRoleImpl
+	 * @see work.andycarpenter.metamodel.security.impl.SecurityPackageImpl#getIsGrantedRole()
+	 * @generated
+	 */
+	int IS_GRANTED_ROLE = 12;
+
+	/**
+	 * The feature id for the '<em><b>Negated</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IS_GRANTED_ROLE__NEGATED = AUTHORISATION_EXPRESSION_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Role</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IS_GRANTED_ROLE__ROLE = AUTHORISATION_EXPRESSION_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Is Granted Role</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IS_GRANTED_ROLE_FEATURE_COUNT = AUTHORISATION_EXPRESSION_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Are Same</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IS_GRANTED_ROLE___ARE_SAME__AUTHORISATIONEXPRESSION = AUTHORISATION_EXPRESSION_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Is Granted Role</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IS_GRANTED_ROLE_OPERATION_COUNT = AUTHORISATION_EXPRESSION_OPERATION_COUNT + 1;
+
 
 	/**
 	 * Returns the meta object for class '{@link work.andycarpenter.metamodel.security.SecurityModel <em>Model</em>}'.
@@ -1542,6 +1681,17 @@ public interface SecurityPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getSecurityModel_IsAuthenticated();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link work.andycarpenter.metamodel.security.SecurityModel#getRoles <em>Roles</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Roles</em>'.
+	 * @see work.andycarpenter.metamodel.security.SecurityModel#getRoles()
+	 * @see #getSecurityModel()
+	 * @generated
+	 */
+	EReference getSecurityModel_Roles();
 
 	/**
 	 * Returns the meta object for class '{@link work.andycarpenter.metamodel.security.Authentication <em>Authentication</em>}'.
@@ -2393,6 +2543,78 @@ public interface SecurityPackage extends EPackage {
 	EAttribute getCasAuthentication_LogoutLabel();
 
 	/**
+	 * Returns the meta object for class '{@link work.andycarpenter.metamodel.security.Role <em>Role</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Role</em>'.
+	 * @see work.andycarpenter.metamodel.security.Role
+	 * @generated
+	 */
+	EClass getRole();
+
+	/**
+	 * Returns the meta object for class '{@link work.andycarpenter.metamodel.security.AuthorisationExpression <em>Authorisation Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Authorisation Expression</em>'.
+	 * @see work.andycarpenter.metamodel.security.AuthorisationExpression
+	 * @generated
+	 */
+	EClass getAuthorisationExpression();
+
+	/**
+	 * Returns the meta object for the '{@link work.andycarpenter.metamodel.security.AuthorisationExpression#areSame(work.andycarpenter.metamodel.security.AuthorisationExpression) <em>Are Same</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Are Same</em>' operation.
+	 * @see work.andycarpenter.metamodel.security.AuthorisationExpression#areSame(work.andycarpenter.metamodel.security.AuthorisationExpression)
+	 * @generated
+	 */
+	EOperation getAuthorisationExpression__AreSame__AuthorisationExpression();
+
+	/**
+	 * Returns the meta object for class '{@link work.andycarpenter.metamodel.security.IsGrantedRole <em>Is Granted Role</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Is Granted Role</em>'.
+	 * @see work.andycarpenter.metamodel.security.IsGrantedRole
+	 * @generated
+	 */
+	EClass getIsGrantedRole();
+
+	/**
+	 * Returns the meta object for the attribute '{@link work.andycarpenter.metamodel.security.IsGrantedRole#getNegated <em>Negated</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Negated</em>'.
+	 * @see work.andycarpenter.metamodel.security.IsGrantedRole#getNegated()
+	 * @see #getIsGrantedRole()
+	 * @generated
+	 */
+	EAttribute getIsGrantedRole_Negated();
+
+	/**
+	 * Returns the meta object for the reference '{@link work.andycarpenter.metamodel.security.IsGrantedRole#getRole <em>Role</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Role</em>'.
+	 * @see work.andycarpenter.metamodel.security.IsGrantedRole#getRole()
+	 * @see #getIsGrantedRole()
+	 * @generated
+	 */
+	EReference getIsGrantedRole_Role();
+
+	/**
+	 * Returns the meta object for the '{@link work.andycarpenter.metamodel.security.IsGrantedRole#areSame(work.andycarpenter.metamodel.security.AuthorisationExpression) <em>Are Same</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Are Same</em>' operation.
+	 * @see work.andycarpenter.metamodel.security.IsGrantedRole#areSame(work.andycarpenter.metamodel.security.AuthorisationExpression)
+	 * @generated
+	 */
+	EOperation getIsGrantedRole__AreSame__AuthorisationExpression();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2440,6 +2662,14 @@ public interface SecurityPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute SECURITY_MODEL__IS_AUTHENTICATED = eINSTANCE.getSecurityModel_IsAuthenticated();
+
+		/**
+		 * The meta object literal for the '<em><b>Roles</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SECURITY_MODEL__ROLES = eINSTANCE.getSecurityModel_Roles();
 
 		/**
 		 * The meta object literal for the '{@link work.andycarpenter.metamodel.security.impl.AuthenticationImpl <em>Authentication</em>}' class.
@@ -3082,6 +3312,68 @@ public interface SecurityPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute CAS_AUTHENTICATION__LOGOUT_LABEL = eINSTANCE.getCasAuthentication_LogoutLabel();
+
+		/**
+		 * The meta object literal for the '{@link work.andycarpenter.metamodel.security.impl.RoleImpl <em>Role</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see work.andycarpenter.metamodel.security.impl.RoleImpl
+		 * @see work.andycarpenter.metamodel.security.impl.SecurityPackageImpl#getRole()
+		 * @generated
+		 */
+		EClass ROLE = eINSTANCE.getRole();
+
+		/**
+		 * The meta object literal for the '{@link work.andycarpenter.metamodel.security.impl.AuthorisationExpressionImpl <em>Authorisation Expression</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see work.andycarpenter.metamodel.security.impl.AuthorisationExpressionImpl
+		 * @see work.andycarpenter.metamodel.security.impl.SecurityPackageImpl#getAuthorisationExpression()
+		 * @generated
+		 */
+		EClass AUTHORISATION_EXPRESSION = eINSTANCE.getAuthorisationExpression();
+
+		/**
+		 * The meta object literal for the '<em><b>Are Same</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation AUTHORISATION_EXPRESSION___ARE_SAME__AUTHORISATIONEXPRESSION = eINSTANCE.getAuthorisationExpression__AreSame__AuthorisationExpression();
+
+		/**
+		 * The meta object literal for the '{@link work.andycarpenter.metamodel.security.impl.IsGrantedRoleImpl <em>Is Granted Role</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see work.andycarpenter.metamodel.security.impl.IsGrantedRoleImpl
+		 * @see work.andycarpenter.metamodel.security.impl.SecurityPackageImpl#getIsGrantedRole()
+		 * @generated
+		 */
+		EClass IS_GRANTED_ROLE = eINSTANCE.getIsGrantedRole();
+
+		/**
+		 * The meta object literal for the '<em><b>Negated</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute IS_GRANTED_ROLE__NEGATED = eINSTANCE.getIsGrantedRole_Negated();
+
+		/**
+		 * The meta object literal for the '<em><b>Role</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference IS_GRANTED_ROLE__ROLE = eINSTANCE.getIsGrantedRole_Role();
+
+		/**
+		 * The meta object literal for the '<em><b>Are Same</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation IS_GRANTED_ROLE___ARE_SAME__AUTHORISATIONEXPRESSION = eINSTANCE.getIsGrantedRole__AreSame__AuthorisationExpression();
 
 	}
 

@@ -13,7 +13,7 @@ import work.andycarpenter.metamodel.waf.OperationAction;
  * <ul>
  *   <li>{@link work.andycarpenter.metamodel.waf.OperationAction#getServicesUsed() <em>Services Used</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.OperationAction#isHasServicesUsed() <em>Has Services Used</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.OperationAction#getOperationAuthorisationRoles() <em>Operation Authorisation Roles</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.OperationAction#getOperationAuthorisation() <em>Operation Authorisation</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -81,13 +81,13 @@ public abstract class OperationActionTest extends ActionTest {
 	}
 
 	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.OperationAction#getOperationAuthorisationRoles() <em>Operation Authorisation Roles</em>}' feature getter.
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.OperationAction#getOperationAuthorisation() <em>Operation Authorisation</em>}' feature getter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.OperationAction#getOperationAuthorisationRoles()
+	 * @see work.andycarpenter.metamodel.waf.OperationAction#getOperationAuthorisation()
 	 * @generated
 	 */
-	public void testGetOperationAuthorisationRoles() {
+	public void testGetOperationAuthorisation() {
 		// TODO: implement this feature getter test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

@@ -9,11 +9,12 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
+import work.andycarpenter.metamodel.security.SecurityFactory;
 import work.andycarpenter.metamodel.waf.DeleteAction;
 import work.andycarpenter.metamodel.waf.WafPackage;
 
@@ -47,7 +48,7 @@ public class DeleteActionItemProvider extends ActionItemProvider {
 
 			addUriElementPropertyDescriptor(object);
 			addLocalAuthorisationRolesPropertyDescriptor(object);
-			addDeleteAuthorisationRolesPropertyDescriptor(object);
+			addDeleteAuthorisationPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -97,25 +98,55 @@ public class DeleteActionItemProvider extends ActionItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Delete Authorisation Roles feature.
+	 * This adds a property descriptor for the Delete Authorisation feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addDeleteAuthorisationRolesPropertyDescriptor(Object object) {
+	protected void addDeleteAuthorisationPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_DeleteAction_deleteAuthorisationRoles_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DeleteAction_deleteAuthorisationRoles_feature", "_UI_DeleteAction_type"),
-				 WafPackage.eINSTANCE.getDeleteAction_DeleteAuthorisationRoles(),
+				 getString("_UI_DeleteAction_deleteAuthorisation_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DeleteAction_deleteAuthorisation_feature", "_UI_DeleteAction_type"),
+				 WafPackage.eINSTANCE.getDeleteAction_DeleteAuthorisation(),
 				 false,
 				 false,
 				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
 				 getString("_UI_DebugPropertyCategory"),
 				 null));
+	}
+
+	/**
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
+	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		if (childrenFeatures == null) {
+			super.getChildrenFeatures(object);
+			childrenFeatures.add(WafPackage.eINSTANCE.getDeleteAction_LocalAuthorisation());
+		}
+		return childrenFeatures;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EStructuralFeature getChildFeature(Object object, Object child) {
+		// Check the type of the specified child object and return the proper feature to use for
+		// adding (see {@link AddCommand}) it as a child.
+
+		return super.getChildFeature(object, child);
 	}
 
 	/**
@@ -158,8 +189,10 @@ public class DeleteActionItemProvider extends ActionItemProvider {
 		switch (notification.getFeatureID(DeleteAction.class)) {
 			case WafPackage.DELETE_ACTION__URI_ELEMENT:
 			case WafPackage.DELETE_ACTION__LOCAL_AUTHORISATION_ROLES:
-			case WafPackage.DELETE_ACTION__DELETE_AUTHORISATION_ROLES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+			case WafPackage.DELETE_ACTION__LOCAL_AUTHORISATION:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
 		super.notifyChanged(notification);
@@ -175,6 +208,11 @@ public class DeleteActionItemProvider extends ActionItemProvider {
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.eINSTANCE.getDeleteAction_LocalAuthorisation(),
+				 SecurityFactory.eINSTANCE.createIsGrantedRole()));
 	}
 
 	/**

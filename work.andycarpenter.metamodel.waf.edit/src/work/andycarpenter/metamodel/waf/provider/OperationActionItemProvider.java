@@ -9,11 +9,12 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
+import work.andycarpenter.metamodel.security.SecurityFactory;
 import work.andycarpenter.metamodel.waf.OperationAction;
 import work.andycarpenter.metamodel.waf.WafPackage;
 
@@ -50,7 +51,7 @@ public class OperationActionItemProvider extends ActionItemProvider {
 			addOperationPropertyDescriptor(object);
 			addUriElementPropertyDescriptor(object);
 			addLocalAuthorisationRolesPropertyDescriptor(object);
-			addOperationAuthorisationRolesPropertyDescriptor(object);
+			addOperationAuthorisationPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -166,25 +167,55 @@ public class OperationActionItemProvider extends ActionItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Operation Authorisation Roles feature.
+	 * This adds a property descriptor for the Operation Authorisation feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addOperationAuthorisationRolesPropertyDescriptor(Object object) {
+	protected void addOperationAuthorisationPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_OperationAction_operationAuthorisationRoles_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_OperationAction_operationAuthorisationRoles_feature", "_UI_OperationAction_type"),
-				 WafPackage.eINSTANCE.getOperationAction_OperationAuthorisationRoles(),
+				 getString("_UI_OperationAction_operationAuthorisation_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_OperationAction_operationAuthorisation_feature", "_UI_OperationAction_type"),
+				 WafPackage.eINSTANCE.getOperationAction_OperationAuthorisation(),
 				 false,
 				 false,
 				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
 				 getString("_UI_DebugPropertyCategory"),
 				 null));
+	}
+
+	/**
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
+	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		if (childrenFeatures == null) {
+			super.getChildrenFeatures(object);
+			childrenFeatures.add(WafPackage.eINSTANCE.getOperationAction_LocalAuthorisation());
+		}
+		return childrenFeatures;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EStructuralFeature getChildFeature(Object object, Object child) {
+		// Check the type of the specified child object and return the proper feature to use for
+		// adding (see {@link AddCommand}) it as a child.
+
+		return super.getChildFeature(object, child);
 	}
 
 	/**
@@ -217,8 +248,10 @@ public class OperationActionItemProvider extends ActionItemProvider {
 			case WafPackage.OPERATION_ACTION__HAS_SERVICES_USED:
 			case WafPackage.OPERATION_ACTION__URI_ELEMENT:
 			case WafPackage.OPERATION_ACTION__LOCAL_AUTHORISATION_ROLES:
-			case WafPackage.OPERATION_ACTION__OPERATION_AUTHORISATION_ROLES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+			case WafPackage.OPERATION_ACTION__LOCAL_AUTHORISATION:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
 		super.notifyChanged(notification);
@@ -234,6 +267,11 @@ public class OperationActionItemProvider extends ActionItemProvider {
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.eINSTANCE.getOperationAction_LocalAuthorisation(),
+				 SecurityFactory.eINSTANCE.createIsGrantedRole()));
 	}
 
 	/**

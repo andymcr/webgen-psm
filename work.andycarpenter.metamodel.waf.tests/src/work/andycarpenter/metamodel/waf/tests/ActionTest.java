@@ -14,7 +14,7 @@ import work.andycarpenter.metamodel.waf.Action;
  * The following features are tested:
  * <ul>
  *   <li>{@link work.andycarpenter.metamodel.waf.Action#getParentUnit() <em>Parent Unit</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.Action#getAuthorisationRoles() <em>Authorisation Roles</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.Action#getAuthorisation() <em>Authorisation</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.Action#isIsAuthorised() <em>Is Authorised</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.Action#isHasCustomisedAuthorisation() <em>Has Customised Authorisation</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.Action#isIsContainerAction() <em>Is Container Action</em>}</li>
@@ -99,14 +99,27 @@ public abstract class ActionTest extends TestCase {
 	}
 
 	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.Action#getAuthorisationRoles() <em>Authorisation Roles</em>}' feature getter.
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.Action#getAuthorisation() <em>Authorisation</em>}' feature getter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.Action#getAuthorisationRoles()
+	 * @see work.andycarpenter.metamodel.waf.Action#getAuthorisation()
 	 * @generated
 	 */
-	public void testGetAuthorisationRoles() {
+	public void testGetAuthorisation() {
 		// TODO: implement this feature getter test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.Action#isSetAuthorisation() <em>isSetAuthorisation()</em>}' method.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.Action#isSetAuthorisation()
+	 * @generated
+	 */
+	public void testIsSetAuthorisation() {
+		// TODO: implement this test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}

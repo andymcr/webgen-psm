@@ -52,7 +52,7 @@ public class ActionItemProvider extends NamedDisplayElementItemProvider {
 
 			addUsedByPropertyDescriptor(object);
 			addParentUnitPropertyDescriptor(object);
-			addAuthorisationRolesPropertyDescriptor(object);
+			addAuthorisationPropertyDescriptor(object);
 			addIsAuthorisedPropertyDescriptor(object);
 			addHasCustomisedAuthorisationPropertyDescriptor(object);
 			addIsContainerActionPropertyDescriptor(object);
@@ -124,23 +124,23 @@ public class ActionItemProvider extends NamedDisplayElementItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Authorisation Roles feature.
+	 * This adds a property descriptor for the Authorisation feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addAuthorisationRolesPropertyDescriptor(Object object) {
+	protected void addAuthorisationPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Action_authorisationRoles_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Action_authorisationRoles_feature", "_UI_Action_type"),
-				 WafPackage.eINSTANCE.getAction_AuthorisationRoles(),
+				 getString("_UI_Action_authorisation_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Action_authorisation_feature", "_UI_Action_type"),
+				 WafPackage.eINSTANCE.getAction_Authorisation(),
 				 false,
 				 false,
 				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
 				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
@@ -687,7 +687,6 @@ public class ActionItemProvider extends NamedDisplayElementItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Action.class)) {
-			case WafPackage.ACTION__AUTHORISATION_ROLES:
 			case WafPackage.ACTION__IS_AUTHORISED:
 			case WafPackage.ACTION__HAS_CUSTOMISED_AUTHORISATION:
 			case WafPackage.ACTION__IS_CONTAINER_ACTION:

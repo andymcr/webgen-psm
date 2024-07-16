@@ -103,6 +103,7 @@ public class SecurityModelItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(SecurityPackage.Literals.SECURITY_MODEL__AUTHENTICATION);
+			childrenFeatures.add(SecurityPackage.Literals.SECURITY_MODEL__ROLES);
 		}
 		return childrenFeatures;
 	}
@@ -160,6 +161,7 @@ public class SecurityModelItemProvider
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case SecurityPackage.SECURITY_MODEL__AUTHENTICATION:
+			case SecurityPackage.SECURITY_MODEL__ROLES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -186,6 +188,11 @@ public class SecurityModelItemProvider
 			(createChildParameter
 				(SecurityPackage.Literals.SECURITY_MODEL__AUTHENTICATION,
 				 SecurityFactory.eINSTANCE.createCasAuthentication()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SecurityPackage.Literals.SECURITY_MODEL__ROLES,
+				 SecurityFactory.eINSTANCE.createRole()));
 	}
 
 	/**

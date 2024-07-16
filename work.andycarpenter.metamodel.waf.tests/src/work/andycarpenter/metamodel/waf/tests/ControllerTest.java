@@ -15,9 +15,10 @@ import work.andycarpenter.metamodel.waf.Controller;
  * <ul>
  *   <li>{@link work.andycarpenter.metamodel.waf.Controller#isIsSinglePage() <em>Is Single Page</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.Controller#isIsMultiPage() <em>Is Multi Page</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.Controller#getCommonRole() <em>Common Role</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.Controller#getCommonAuthorisation() <em>Common Authorisation</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.Controller#isIsAuthorised() <em>Is Authorised</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.Controller#isHasCommonUnitAuthentication() <em>Has Common Unit Authentication</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.Controller#isHasAuthorisation() <em>Has Authorisation</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.Controller#isHasCommonUnitAuthorisation() <em>Has Common Unit Authorisation</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.Controller#isHasUnits() <em>Has Units</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.Controller#isHasChangableCollections() <em>Has Changable Collections</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.Controller#isHasCaptchaUnits() <em>Has Captcha Units</em>}</li>
@@ -135,13 +136,13 @@ public abstract class ControllerTest extends TestCase {
 	}
 
 	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.Controller#getCommonRole() <em>Common Role</em>}' feature getter.
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.Controller#getCommonAuthorisation() <em>Common Authorisation</em>}' feature getter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.Controller#getCommonRole()
+	 * @see work.andycarpenter.metamodel.waf.Controller#getCommonAuthorisation()
 	 * @generated
 	 */
-	public void testGetCommonRole() {
+	public void testGetCommonAuthorisation() {
 		// TODO: implement this feature getter test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
@@ -161,13 +162,39 @@ public abstract class ControllerTest extends TestCase {
 	}
 
 	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.Controller#isHasCommonUnitAuthentication() <em>Has Common Unit Authentication</em>}' feature getter.
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.Controller#isHasAuthorisation() <em>Has Authorisation</em>}' feature getter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.Controller#isHasCommonUnitAuthentication()
+	 * @see work.andycarpenter.metamodel.waf.Controller#isHasAuthorisation()
 	 * @generated
 	 */
-	public void testIsHasCommonUnitAuthentication() {
+	public void testIsHasAuthorisation() {
+		// TODO: implement this feature getter test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.Controller#isSetHasAuthorisation() <em>isSetHasAuthorisation()</em>}' method.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.Controller#isSetHasAuthorisation()
+	 * @generated
+	 */
+	public void testIsSetHasAuthorisation() {
+		// TODO: implement this test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.Controller#isHasCommonUnitAuthorisation() <em>Has Common Unit Authorisation</em>}' feature getter.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.Controller#isHasCommonUnitAuthorisation()
+	 * @generated
+	 */
+	public void testIsHasCommonUnitAuthorisation() {
 		// TODO: implement this feature getter test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
