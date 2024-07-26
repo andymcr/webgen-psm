@@ -25,6 +25,7 @@ import org.eclipse.emf.edit.provider.INotifyChangedListener;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import work.andycarpenter.metamodel.base.BasePackage;
+import work.andycarpenter.metamodel.base.Callable;
 import work.andycarpenter.metamodel.base.Constant;
 import work.andycarpenter.metamodel.base.ReduceFunction;
 import work.andycarpenter.metamodel.base.SizeFunction;
@@ -1337,6 +1338,52 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.waf.ParameterPathAssociation} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ParameterPathAssociationItemProvider parameterPathAssociationItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link work.andycarpenter.metamodel.waf.ParameterPathAssociation}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createParameterPathAssociationAdapter() {
+		if (parameterPathAssociationItemProvider == null) {
+			parameterPathAssociationItemProvider = new ParameterPathAssociationItemProvider(this);
+		}
+
+		return parameterPathAssociationItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.waf.ParameterPathAttribute} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ParameterPathAttributeItemProvider parameterPathAttributeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link work.andycarpenter.metamodel.waf.ParameterPathAttribute}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createParameterPathAttributeAdapter() {
+		if (parameterPathAttributeItemProvider == null) {
+			parameterPathAttributeItemProvider = new ParameterPathAttributeItemProvider(this);
+		}
+
+		return parameterPathAttributeItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.waf.DeleteAction} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1679,6 +1726,8 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 		if (pathVariableAssociationItemProvider != null) pathVariableAssociationItemProvider.dispose();
 		if (pathVariableAttributeItemProvider != null) pathVariableAttributeItemProvider.dispose();
 		if (pathVariableResourceItemProvider != null) pathVariableResourceItemProvider.dispose();
+		if (parameterPathAssociationItemProvider != null) parameterPathAssociationItemProvider.dispose();
+		if (parameterPathAttributeItemProvider != null) parameterPathAttributeItemProvider.dispose();
 		if (deleteActionItemProvider != null) deleteActionItemProvider.dispose();
 		if (containerSelectActionItemProvider != null) containerSelectActionItemProvider.dispose();
 		if (instanceSelectActionItemProvider != null) instanceSelectActionItemProvider.dispose();
@@ -1882,6 +1931,30 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 			 * @generated
 			 */
 			@Override
+			public Object caseCallable(Callable object) {
+				newChildDescriptors.add
+					(createChildParameter
+						(BasePackage.Literals.CALLABLE__EXPRESSION,
+						 WafFactory.eINSTANCE.createPathVariableAssociation()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(BasePackage.Literals.CALLABLE__EXPRESSION,
+						 WafFactory.eINSTANCE.createPathVariableAttribute()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(BasePackage.Literals.CALLABLE__EXPRESSION,
+						 WafFactory.eINSTANCE.createPathVariableResource()));
+
+				return null;
+			}
+			/**
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			@Override
 			public Object caseReduceFunction(ReduceFunction object) {
 				newChildDescriptors.add
 					(createChildParameter
@@ -1896,21 +1969,6 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 				newChildDescriptors.add
 					(createChildParameter
 						(BasePackage.Literals.REDUCE_FUNCTION__VALUE,
-						 WafFactory.eINSTANCE.createPathVariableResource()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(BasePackage.Literals.REDUCE_FUNCTION__RETURN_VALUE,
-						 WafFactory.eINSTANCE.createPathVariableAssociation()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(BasePackage.Literals.REDUCE_FUNCTION__RETURN_VALUE,
-						 WafFactory.eINSTANCE.createPathVariableAttribute()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(BasePackage.Literals.REDUCE_FUNCTION__RETURN_VALUE,
 						 WafFactory.eINSTANCE.createPathVariableResource()));
 
 				newChildDescriptors.add

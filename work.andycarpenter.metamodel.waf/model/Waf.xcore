@@ -12,12 +12,15 @@
 	editPluginID="work.andycarpenter.metamodel.waf.edit",
 	childCreationExtenders="true",
 	editorDirectory="/work.andycarpenter.metamodel.waf.editor/src",
-	testsDirectory="/work.andycarpenter.metamodel.waf.tests/src")
+	testsDirectory="/work.andycarpenter.metamodel.waf.tests/src",
+	complianceLevel="17.0"
+)
 package work.andycarpenter.metamodel.waf
 
 import work.andycarpenter.metamodel.base.Classifier
 import work.andycarpenter.metamodel.base.DataType
 import work.andycarpenter.metamodel.base.EnumerationType
+import work.andycarpenter.metamodel.base.FormalParameter
 import work.andycarpenter.metamodel.base.NamedDisplayElement
 import work.andycarpenter.metamodel.base.NamedElement
 import work.andycarpenter.metamodel.expression.Expression
@@ -3222,6 +3225,17 @@ class PathVariableAttribute extends PathAttribute, PathVariable {
 }
 
 class PathVariableResource extends PathResource, PathVariable {
+}
+
+abstract class ParameterPath extends Path {
+    @GenModel(propertyCategory="Model")
+	refers FormalParameter[1] parameter 
+}
+
+class ParameterPathAssociation extends PathAssociation, ParameterPath {
+}
+
+class ParameterPathAttribute extends PathAttribute, ParameterPath {
 }
 
 

@@ -440,6 +440,29 @@ public class BaseItemProviderAdapterFactory extends BaseAdapterFactory implement
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.base.Callable} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected CallableItemProvider callableItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link work.andycarpenter.metamodel.base.Callable}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createCallableAdapter() {
+		if (callableItemProvider == null) {
+			callableItemProvider = new CallableItemProvider(this);
+		}
+
+		return callableItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.base.ReduceFunction} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -483,29 +506,6 @@ public class BaseItemProviderAdapterFactory extends BaseAdapterFactory implement
 		}
 
 		return sizeFunctionItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.base.Callable} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected CallableItemProvider callableItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link work.andycarpenter.metamodel.base.Callable}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createCallableAdapter() {
-		if (callableItemProvider == null) {
-			callableItemProvider = new CallableItemProvider(this);
-		}
-
-		return callableItemProvider;
 	}
 
 	/**

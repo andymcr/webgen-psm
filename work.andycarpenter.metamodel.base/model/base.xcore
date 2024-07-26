@@ -10,7 +10,9 @@
 @GenModel(
 	editDirectory="/work.andycarpenter.metamodel.base.edit/src",
 	editPluginID="work.andycarpenter.metamodel.base.edit",
-	childCreationExtenders="true")
+	childCreationExtenders="true",
+	complianceLevel="17.0"
+)
 package work.andycarpenter.metamodel.base
 
 import work.andycarpenter.metamodel.expression.Expression
@@ -163,16 +165,15 @@ class FormalParameter extends NamedElement {
 class ParameterReference extends Variable { 
     @GenModel(propertyCategory="Model")
 	refers FormalParameter[1] parameter 
-} 
-
+}
 
 class Callable extends FormalParameterList, Operand {
-	
+	contains Expression[1] expression
 }
 
 class ReduceFunction extends Operand {
 	contains Variable[1] value
-	contains Expression[1] returnValue
+	contains Callable[1] callback
 	contains Expression initial
 }
 

@@ -22,6 +22,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 import work.andycarpenter.metamodel.base.BaseFactory;
 import work.andycarpenter.metamodel.base.BasePackage;
 import work.andycarpenter.metamodel.base.Callable;
+import work.andycarpenter.metamodel.expression.ExpressionFactory;
 import work.andycarpenter.metamodel.expression.ExpressionPackage;
 
 /**
@@ -92,6 +93,7 @@ public class CallableItemProvider extends ItemProviderAdapter implements IEditin
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(BasePackage.Literals.FORMAL_PARAMETER_LIST__PARAMETERS);
+			childrenFeatures.add(BasePackage.Literals.CALLABLE__EXPRESSION);
 		}
 		return childrenFeatures;
 	}
@@ -145,6 +147,7 @@ public class CallableItemProvider extends ItemProviderAdapter implements IEditin
 
 		switch (notification.getFeatureID(Callable.class)) {
 			case BasePackage.CALLABLE__PARAMETERS:
+			case BasePackage.CALLABLE__EXPRESSION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -166,6 +169,111 @@ public class CallableItemProvider extends ItemProviderAdapter implements IEditin
 			(createChildParameter
 				(BasePackage.Literals.FORMAL_PARAMETER_LIST__PARAMETERS,
 				 BaseFactory.eINSTANCE.createFormalParameter()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(BasePackage.Literals.CALLABLE__EXPRESSION,
+				 BaseFactory.eINSTANCE.createNullLiteral()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(BasePackage.Literals.CALLABLE__EXPRESSION,
+				 BaseFactory.eINSTANCE.createBooleanLiteral()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(BasePackage.Literals.CALLABLE__EXPRESSION,
+				 BaseFactory.eINSTANCE.createIntegerLiteral()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(BasePackage.Literals.CALLABLE__EXPRESSION,
+				 BaseFactory.eINSTANCE.createStringLiteral()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(BasePackage.Literals.CALLABLE__EXPRESSION,
+				 BaseFactory.eINSTANCE.createTimeLiteral()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(BasePackage.Literals.CALLABLE__EXPRESSION,
+				 BaseFactory.eINSTANCE.createCurrentTime()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(BasePackage.Literals.CALLABLE__EXPRESSION,
+				 BaseFactory.eINSTANCE.createCurrentUser()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(BasePackage.Literals.CALLABLE__EXPRESSION,
+				 BaseFactory.eINSTANCE.createConstantReference()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(BasePackage.Literals.CALLABLE__EXPRESSION,
+				 BaseFactory.eINSTANCE.createParameterReference()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(BasePackage.Literals.CALLABLE__EXPRESSION,
+				 BaseFactory.eINSTANCE.createCallable()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(BasePackage.Literals.CALLABLE__EXPRESSION,
+				 BaseFactory.eINSTANCE.createReduceFunction()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(BasePackage.Literals.CALLABLE__EXPRESSION,
+				 BaseFactory.eINSTANCE.createSizeFunction()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(BasePackage.Literals.CALLABLE__EXPRESSION,
+				 ExpressionFactory.eINSTANCE.createPredicateBooleanVariable()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(BasePackage.Literals.CALLABLE__EXPRESSION,
+				 ExpressionFactory.eINSTANCE.createPredicateBooleanOperator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(BasePackage.Literals.CALLABLE__EXPRESSION,
+				 ExpressionFactory.eINSTANCE.createPredicateEqualityOperator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(BasePackage.Literals.CALLABLE__EXPRESSION,
+				 ExpressionFactory.eINSTANCE.createPredicateComparisonOperator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(BasePackage.Literals.CALLABLE__EXPRESSION,
+				 ExpressionFactory.eINSTANCE.createPredicateInOperator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(BasePackage.Literals.CALLABLE__EXPRESSION,
+				 ExpressionFactory.eINSTANCE.createPredicateLikeOperator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(BasePackage.Literals.CALLABLE__EXPRESSION,
+				 ExpressionFactory.eINSTANCE.createPredicateIsEmpty()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(BasePackage.Literals.CALLABLE__EXPRESSION,
+				 ExpressionFactory.eINSTANCE.createPredicateIsNull()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(BasePackage.Literals.CALLABLE__EXPRESSION,
+				 ExpressionFactory.eINSTANCE.createArithmeticOperation()));
 	}
 
 	/**

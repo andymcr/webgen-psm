@@ -67,7 +67,7 @@ public class ReduceFunctionItemProvider extends OperandItemProvider {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(BasePackage.Literals.REDUCE_FUNCTION__VALUE);
-			childrenFeatures.add(BasePackage.Literals.REDUCE_FUNCTION__RETURN_VALUE);
+			childrenFeatures.add(BasePackage.Literals.REDUCE_FUNCTION__CALLBACK);
 			childrenFeatures.add(BasePackage.Literals.REDUCE_FUNCTION__INITIAL);
 		}
 		return childrenFeatures;
@@ -122,7 +122,7 @@ public class ReduceFunctionItemProvider extends OperandItemProvider {
 
 		switch (notification.getFeatureID(ReduceFunction.class)) {
 			case BasePackage.REDUCE_FUNCTION__VALUE:
-			case BasePackage.REDUCE_FUNCTION__RETURN_VALUE:
+			case BasePackage.REDUCE_FUNCTION__CALLBACK:
 			case BasePackage.REDUCE_FUNCTION__INITIAL:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
@@ -163,108 +163,8 @@ public class ReduceFunctionItemProvider extends OperandItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(BasePackage.Literals.REDUCE_FUNCTION__RETURN_VALUE,
-				 BaseFactory.eINSTANCE.createNullLiteral()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(BasePackage.Literals.REDUCE_FUNCTION__RETURN_VALUE,
-				 BaseFactory.eINSTANCE.createBooleanLiteral()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(BasePackage.Literals.REDUCE_FUNCTION__RETURN_VALUE,
-				 BaseFactory.eINSTANCE.createIntegerLiteral()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(BasePackage.Literals.REDUCE_FUNCTION__RETURN_VALUE,
-				 BaseFactory.eINSTANCE.createStringLiteral()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(BasePackage.Literals.REDUCE_FUNCTION__RETURN_VALUE,
-				 BaseFactory.eINSTANCE.createTimeLiteral()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(BasePackage.Literals.REDUCE_FUNCTION__RETURN_VALUE,
-				 BaseFactory.eINSTANCE.createCurrentTime()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(BasePackage.Literals.REDUCE_FUNCTION__RETURN_VALUE,
-				 BaseFactory.eINSTANCE.createCurrentUser()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(BasePackage.Literals.REDUCE_FUNCTION__RETURN_VALUE,
-				 BaseFactory.eINSTANCE.createConstantReference()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(BasePackage.Literals.REDUCE_FUNCTION__RETURN_VALUE,
-				 BaseFactory.eINSTANCE.createParameterReference()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(BasePackage.Literals.REDUCE_FUNCTION__RETURN_VALUE,
+				(BasePackage.Literals.REDUCE_FUNCTION__CALLBACK,
 				 BaseFactory.eINSTANCE.createCallable()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(BasePackage.Literals.REDUCE_FUNCTION__RETURN_VALUE,
-				 BaseFactory.eINSTANCE.createReduceFunction()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(BasePackage.Literals.REDUCE_FUNCTION__RETURN_VALUE,
-				 BaseFactory.eINSTANCE.createSizeFunction()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(BasePackage.Literals.REDUCE_FUNCTION__RETURN_VALUE,
-				 ExpressionFactory.eINSTANCE.createPredicateBooleanVariable()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(BasePackage.Literals.REDUCE_FUNCTION__RETURN_VALUE,
-				 ExpressionFactory.eINSTANCE.createPredicateBooleanOperator()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(BasePackage.Literals.REDUCE_FUNCTION__RETURN_VALUE,
-				 ExpressionFactory.eINSTANCE.createPredicateEqualityOperator()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(BasePackage.Literals.REDUCE_FUNCTION__RETURN_VALUE,
-				 ExpressionFactory.eINSTANCE.createPredicateComparisonOperator()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(BasePackage.Literals.REDUCE_FUNCTION__RETURN_VALUE,
-				 ExpressionFactory.eINSTANCE.createPredicateInOperator()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(BasePackage.Literals.REDUCE_FUNCTION__RETURN_VALUE,
-				 ExpressionFactory.eINSTANCE.createPredicateLikeOperator()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(BasePackage.Literals.REDUCE_FUNCTION__RETURN_VALUE,
-				 ExpressionFactory.eINSTANCE.createPredicateIsEmpty()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(BasePackage.Literals.REDUCE_FUNCTION__RETURN_VALUE,
-				 ExpressionFactory.eINSTANCE.createPredicateIsNull()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(BasePackage.Literals.REDUCE_FUNCTION__RETURN_VALUE,
-				 ExpressionFactory.eINSTANCE.createArithmeticOperation()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -385,8 +285,8 @@ public class ReduceFunctionItemProvider extends OperandItemProvider {
 
 		boolean qualify =
 			childFeature == BasePackage.Literals.REDUCE_FUNCTION__VALUE ||
-			childFeature == BasePackage.Literals.REDUCE_FUNCTION__RETURN_VALUE ||
-			childFeature == BasePackage.Literals.REDUCE_FUNCTION__INITIAL;
+			childFeature == BasePackage.Literals.REDUCE_FUNCTION__INITIAL ||
+			childFeature == BasePackage.Literals.REDUCE_FUNCTION__CALLBACK;
 
 		if (qualify) {
 			return getString

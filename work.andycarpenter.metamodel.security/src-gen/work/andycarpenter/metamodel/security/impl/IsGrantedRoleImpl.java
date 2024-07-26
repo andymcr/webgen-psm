@@ -282,11 +282,9 @@ public class IsGrantedRoleImpl extends AuthorisationExpressionImpl implements Is
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		if (role != null) {
-			result.append(" (");
-			result.append(role.getName());
-			result.append(')');
-		}
+		result.append(" (negated: ");
+		result.append(negated);
+		result.append(')');
 		return result.toString();
 	}
 

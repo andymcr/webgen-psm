@@ -10,7 +10,9 @@
 @GenModel(
 	editDirectory="/work.andycarpenter.metamodel.service.edit/src",
 	editPluginID="work.andycarpenter.metamodel.service.edit",
-	childCreationExtenders="true")
+	childCreationExtenders="true",
+	complianceLevel="17.0"
+)
 package work.andycarpenter.metamodel.service
 
 import work.andycarpenter.metamodel.base.ConstantContainer

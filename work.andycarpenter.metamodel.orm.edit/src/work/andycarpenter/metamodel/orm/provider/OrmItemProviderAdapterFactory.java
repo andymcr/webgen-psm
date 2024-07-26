@@ -25,6 +25,7 @@ import org.eclipse.emf.edit.provider.INotifyChangedListener;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import work.andycarpenter.metamodel.base.BasePackage;
+import work.andycarpenter.metamodel.base.Callable;
 import work.andycarpenter.metamodel.base.Constant;
 import work.andycarpenter.metamodel.base.ReduceFunction;
 import work.andycarpenter.metamodel.base.SizeFunction;
@@ -1002,15 +1003,24 @@ public class OrmItemProviderAdapterFactory extends OrmAdapterFactory implements 
 			 * @generated
 			 */
 			@Override
+			public Object caseCallable(Callable object) {
+				newChildDescriptors.add
+					(createChildParameter
+						(BasePackage.Literals.CALLABLE__EXPRESSION,
+						 OrmFactory.eINSTANCE.createFeatureReference()));
+
+				return null;
+			}
+			/**
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			@Override
 			public Object caseReduceFunction(ReduceFunction object) {
 				newChildDescriptors.add
 					(createChildParameter
 						(BasePackage.Literals.REDUCE_FUNCTION__VALUE,
-						 OrmFactory.eINSTANCE.createFeatureReference()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(BasePackage.Literals.REDUCE_FUNCTION__RETURN_VALUE,
 						 OrmFactory.eINSTANCE.createFeatureReference()));
 
 				newChildDescriptors.add

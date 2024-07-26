@@ -67,6 +67,8 @@ public class WafTests extends TestSuite {
 		suite.addTestSuite(PathVariableAssociationTest.class);
 		suite.addTestSuite(PathVariableAttributeTest.class);
 		suite.addTestSuite(PathVariableResourceTest.class);
+		suite.addTestSuite(ParameterPathAssociationTest.class);
+		suite.addTestSuite(ParameterPathAttributeTest.class);
 		suite.addTestSuite(DeleteActionTest.class);
 		suite.addTestSuite(ContainerSelectActionTest.class);
 		suite.addTestSuite(InstanceSelectActionTest.class);

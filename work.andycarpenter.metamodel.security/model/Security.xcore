@@ -10,7 +10,9 @@
 @GenModel(
 	editDirectory="/work.andycarpenter.metamodel.security.edit/src",
 	editPluginID="work.andycarpenter.metamodel.security.edit",
-	childCreationExtenders="true")
+	childCreationExtenders="true",
+	complianceLevel="17.0"
+)
 package work.andycarpenter.metamodel.security
 
 import work.andycarpenter.metamodel.base.NamedElement

@@ -10,7 +10,8 @@
 @GenModel(
 	editDirectory="/work.andycarpenter.metamodel.expression.edit/src",
 	editPluginID="work.andycarpenter.metamodel.expression.edit",
-	extensibleProviderFactory="true"
+	extensibleProviderFactory="true",
+	complianceLevel="17.0"
 )
 package work.andycarpenter.metamodel.expression
 

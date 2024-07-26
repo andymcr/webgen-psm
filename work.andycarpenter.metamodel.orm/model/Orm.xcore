@@ -11,7 +11,9 @@
 	editDirectory="/work.andycarpenter.metamodel.orm.edit/src",
 	editPluginID="work.andycarpenter.metamodel.orm.edit",
 	childCreationExtenders="true",
-	editorDirectory="/work.andycarpenter.metamodel.orm.editor/src")
+	editorDirectory="/work.andycarpenter.metamodel.orm.editor/src",
+	complianceLevel="17.0"
+)
 package work.andycarpenter.metamodel.orm
 
 import work.andycarpenter.metamodel.base.Classifier
@@ -31,11 +33,11 @@ annotation "http://www.eclipse.org/emf/2002/Ecore/OCL" as OCL
 class OrmModel {
 	contains SerializationGroup[] serializationGroups
 	contains unique DataType[] dataTypes
-// TODO	@OCL(derivation="dataTypes->select(t | t.oclIsKindOf(base::EnumerationType)).oclAsType(base::EnumerationType)->asOrderedSet()")
-// TODO	refers derived readonly unsettable transient volatile unique EnumerationType[] enumerationTypes
-	refers derived readonly unsettable transient volatile unique EnumerationType[] enumerationTypes get {
-		dataTypes.filter[it instanceof EnumerationType].map[it as EnumerationType].toEList()
-	}
+	@OCL(derivation="dataTypes->select(t | t.oclIsKindOf(base::EnumerationType)).oclAsType(base::EnumerationType)->asOrderedSet()")
+	refers derived readonly unsettable transient volatile unique EnumerationType[] enumerationTypes
+//	refers derived readonly unsettable transient volatile unique EnumerationType[] enumerationTypes get {
+//		dataTypes.filter[it instanceof EnumerationType].map[it as EnumerationType].toEList()
+//	}
 	contains Entity[] entities opposite partOf
 	contains Repository[] repositories opposite partOf
 	contains CollectionType[] collectionTypes
