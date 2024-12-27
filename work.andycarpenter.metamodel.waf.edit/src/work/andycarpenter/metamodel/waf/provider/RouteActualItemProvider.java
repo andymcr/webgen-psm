@@ -26,7 +26,6 @@ import work.andycarpenter.metamodel.base.BaseFactory;
 import work.andycarpenter.metamodel.expression.ExpressionFactory;
 import work.andycarpenter.metamodel.orm.OrmFactory;
 import work.andycarpenter.metamodel.waf.RouteActual;
-import work.andycarpenter.metamodel.waf.WafFactory;
 import work.andycarpenter.metamodel.waf.WafPackage;
 
 /**
@@ -177,22 +176,22 @@ public class RouteActualItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.eINSTANCE.getRouteActual_Value(),
-				 WafFactory.eINSTANCE.createPathVariableAssociation()));
+				 OrmFactory.eINSTANCE.createAssociationVariable()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.eINSTANCE.getRouteActual_Value(),
-				 WafFactory.eINSTANCE.createPathVariableAttribute()));
+				 OrmFactory.eINSTANCE.createAttributeVariable()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.eINSTANCE.getRouteActual_Value(),
-				 WafFactory.eINSTANCE.createPathVariableResource()));
+				 OrmFactory.eINSTANCE.createResourceVariable()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.eINSTANCE.getRouteActual_Value(),
-				 OrmFactory.eINSTANCE.createFeatureReference()));
+				 OrmFactory.eINSTANCE.createParameterVariable()));
 
 		newChildDescriptors.add
 			(createChildParameter

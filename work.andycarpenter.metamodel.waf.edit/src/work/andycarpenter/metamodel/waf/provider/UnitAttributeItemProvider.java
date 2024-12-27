@@ -19,7 +19,6 @@ import work.andycarpenter.metamodel.base.BaseFactory;
 import work.andycarpenter.metamodel.expression.ExpressionFactory;
 import work.andycarpenter.metamodel.orm.OrmFactory;
 import work.andycarpenter.metamodel.waf.UnitAttribute;
-import work.andycarpenter.metamodel.waf.WafFactory;
 import work.andycarpenter.metamodel.waf.WafPackage;
 
 /**
@@ -240,22 +239,22 @@ public class UnitAttributeItemProvider extends UnitFeatureItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.eINSTANCE.getUnitAttribute_AttributeDefaultValue(),
-				 WafFactory.eINSTANCE.createPathVariableAssociation()));
+				 OrmFactory.eINSTANCE.createAssociationVariable()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.eINSTANCE.getUnitAttribute_AttributeDefaultValue(),
-				 WafFactory.eINSTANCE.createPathVariableAttribute()));
+				 OrmFactory.eINSTANCE.createAttributeVariable()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.eINSTANCE.getUnitAttribute_AttributeDefaultValue(),
-				 WafFactory.eINSTANCE.createPathVariableResource()));
+				 OrmFactory.eINSTANCE.createResourceVariable()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.eINSTANCE.getUnitAttribute_AttributeDefaultValue(),
-				 OrmFactory.eINSTANCE.createFeatureReference()));
+				 OrmFactory.eINSTANCE.createParameterVariable()));
 
 		newChildDescriptors.add
 			(createChildParameter

@@ -2486,22 +2486,22 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.eINSTANCE.getUnitFeature_ForcedValue(),
-				 WafFactory.eINSTANCE.createPathVariableAssociation()));
+				 OrmFactory.eINSTANCE.createAssociationVariable()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.eINSTANCE.getUnitFeature_ForcedValue(),
-				 WafFactory.eINSTANCE.createPathVariableAttribute()));
+				 OrmFactory.eINSTANCE.createAttributeVariable()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.eINSTANCE.getUnitFeature_ForcedValue(),
-				 WafFactory.eINSTANCE.createPathVariableResource()));
+				 OrmFactory.eINSTANCE.createResourceVariable()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.eINSTANCE.getUnitFeature_ForcedValue(),
-				 OrmFactory.eINSTANCE.createFeatureReference()));
+				 OrmFactory.eINSTANCE.createParameterVariable()));
 
 		newChildDescriptors.add
 			(createChildParameter

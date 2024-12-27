@@ -21,7 +21,6 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import work.andycarpenter.metamodel.base.BaseFactory;
 import work.andycarpenter.metamodel.orm.Order;
 import work.andycarpenter.metamodel.orm.OrmFactory;
 import work.andycarpenter.metamodel.orm.OrmPackage;
@@ -77,7 +76,7 @@ public class OrderItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(OrmPackage.Literals.ORDER__PATH);
+			childrenFeatures.add(OrmPackage.Literals.ORDER__ATTRIBUTE);
 		}
 		return childrenFeatures;
 	}
@@ -119,7 +118,7 @@ public class OrderItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Order.class)) {
-			case OrmPackage.ORDER__PATH:
+			case OrmPackage.ORDER__ATTRIBUTE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -139,28 +138,8 @@ public class OrderItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OrmPackage.Literals.ORDER__PATH,
-				 OrmFactory.eINSTANCE.createFeatureReference()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OrmPackage.Literals.ORDER__PATH,
-				 BaseFactory.eINSTANCE.createCurrentTime()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OrmPackage.Literals.ORDER__PATH,
-				 BaseFactory.eINSTANCE.createCurrentUser()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OrmPackage.Literals.ORDER__PATH,
-				 BaseFactory.eINSTANCE.createConstantReference()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OrmPackage.Literals.ORDER__PATH,
-				 BaseFactory.eINSTANCE.createParameterReference()));
+				(OrmPackage.Literals.ORDER__ATTRIBUTE,
+				 OrmFactory.eINSTANCE.createAttributeVariable()));
 	}
 
 	/**

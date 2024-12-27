@@ -12,6 +12,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
+import work.andycarpenter.metamodel.orm.ModelLabelAssociation;
 import work.andycarpenter.metamodel.orm.OrmPackage;
 
 /**
@@ -20,7 +21,7 @@ import work.andycarpenter.metamodel.orm.OrmPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ModelLabelAssociationItemProvider extends ModelLabelFeatureItemProvider {
+public class ModelLabelAssociationItemProvider extends AssociationPathElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -42,48 +43,25 @@ public class ModelLabelAssociationItemProvider extends ModelLabelFeatureItemProv
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addAssociationPropertyDescriptor(object);
-			addValueDisplayPropertyDescriptor(object);
+			addPartOfPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Association feature.
+	 * This adds a property descriptor for the Part Of feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addAssociationPropertyDescriptor(Object object) {
+	protected void addPartOfPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ModelLabelAssociation_association_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ModelLabelAssociation_association_feature", "_UI_ModelLabelAssociation_type"),
-				 OrmPackage.Literals.MODEL_LABEL_ASSOCIATION__ASSOCIATION,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Value Display feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addValueDisplayPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ModelLabelAssociation_valueDisplay_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ModelLabelAssociation_valueDisplay_feature", "_UI_ModelLabelAssociation_type"),
-				 OrmPackage.Literals.MODEL_LABEL_ASSOCIATION__VALUE_DISPLAY,
+				 getString("_UI_ModelLabelFeature_partOf_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ModelLabelFeature_partOf_feature", "_UI_ModelLabelFeature_type"),
+				 OrmPackage.Literals.MODEL_LABEL_FEATURE__PART_OF,
 				 true,
 				 false,
 				 true,
@@ -107,11 +85,12 @@ public class ModelLabelAssociationItemProvider extends ModelLabelFeatureItemProv
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_ModelLabelAssociation_type");
+		ModelLabelAssociation modelLabelAssociation = (ModelLabelAssociation)object;
+		return getString("_UI_ModelLabelAssociation_type") + " " + modelLabelAssociation.name();
 	}
 
 

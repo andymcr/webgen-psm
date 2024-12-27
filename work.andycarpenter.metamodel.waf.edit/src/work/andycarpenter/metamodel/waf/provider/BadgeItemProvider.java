@@ -302,22 +302,22 @@ public class BadgeItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.eINSTANCE.getBadge_Value(),
-				 WafFactory.eINSTANCE.createFeaturePathAssociation()));
+				 WafFactory.eINSTANCE.createAssociationDisplayValue()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.eINSTANCE.getBadge_Value(),
-				 WafFactory.eINSTANCE.createFeaturePathAttribute()));
+				 WafFactory.eINSTANCE.createAttributeDisplayValue()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.eINSTANCE.getBadge_Value(),
-				 WafFactory.eINSTANCE.createFeaturePathResource()));
+				 WafFactory.eINSTANCE.createResourceDisplayValue()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.eINSTANCE.getBadge_Value(),
-				 WafFactory.eINSTANCE.createFeaturePathLabel()));
+				 WafFactory.eINSTANCE.createLabelDisplayValue()));
 
 		newChildDescriptors.add
 			(createChildParameter

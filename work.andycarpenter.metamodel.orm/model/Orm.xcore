@@ -16,10 +16,13 @@
 )
 package work.andycarpenter.metamodel.orm
 
+import org.eclipse.emf.common.util.BasicEList
+
 import work.andycarpenter.metamodel.base.Classifier
 import work.andycarpenter.metamodel.base.ConstantContainer
 import work.andycarpenter.metamodel.base.DataType
 import work.andycarpenter.metamodel.base.EnumerationType
+import work.andycarpenter.metamodel.base.FormalParameter
 import work.andycarpenter.metamodel.base.FormalParameterList
 import work.andycarpenter.metamodel.base.NamedDisplayElement
 import work.andycarpenter.metamodel.base.NamedElement
@@ -33,11 +36,11 @@ annotation "http://www.eclipse.org/emf/2002/Ecore/OCL" as OCL
 class OrmModel {
 	contains SerializationGroup[] serializationGroups
 	contains unique DataType[] dataTypes
-	@OCL(derivation="dataTypes->select(t | t.oclIsKindOf(base::EnumerationType)).oclAsType(base::EnumerationType)->asOrderedSet()")
-	refers derived readonly unsettable transient volatile unique EnumerationType[] enumerationTypes
-//	refers derived readonly unsettable transient volatile unique EnumerationType[] enumerationTypes get {
-//		dataTypes.filter[it instanceof EnumerationType].map[it as EnumerationType].toEList()
-//	}
+//	@OCL(derivation="dataTypes->select(t | t.oclIsKindOf(base::EnumerationType)).oclAsType(base::EnumerationType)->asOrderedSet()")
+//	refers derived readonly unsettable transient volatile unique EnumerationType[] enumerationTypes
+	refers derived readonly unsettable transient volatile unique EnumerationType[] enumerationTypes get {
+		dataTypes.filter[it instanceof EnumerationType].map[it as EnumerationType].toEList()
+	}
 	contains Entity[] entities opposite partOf
 	contains Repository[] repositories opposite partOf
 	contains CollectionType[] collectionTypes
@@ -242,30 +245,6 @@ class Entity extends Classifier {
 
     @GenModel(propertyCategory="Model")
 	boolean implementsResetPasswordInterface = "false"
-}
-
-
-interface Label {
-}
-
-class ModelLabel extends NamedElement, Label {
-	container Entity[1] labelFor opposite labels
-	String[1] format
-	boolean customise
-	contains ModelLabelFeature[] features
-}
-
-abstract class ModelLabelFeature {
-}
-
-class ModelLabelAttribute extends ModelLabelFeature {
-	refers Attribute[1] attribute
-	String dateFormat
-}
-
-class ModelLabelAssociation extends ModelLabelFeature {
-	refers Association[1] association
-	refers ModelLabel valueDisplay
 }
 
 
@@ -620,29 +599,203 @@ class AssociationKey {
 }
 
 
+abstract class Path {
+	op String name() {
+		''
+	}
+
+	op Entity contextEntity() {
+		null
+	}
+
+ 	op Feature leafFeature()
+}
+
+abstract class AssociationPathElement extends Path {
+    @GenModel(propertyCategory="Model")
+	refers Association[1] association
+
+	op String name() {
+		if (association === null ) {
+			''
+		} else {
+			association.name
+		}
+	}
+
+    @GenModel(propertyCategory="Interface")
+	refers ModelLabel valueDisplay
+
+	contains ChildFeature childFeature opposite parent
+
+	op Entity associationTarget() {
+		association?.targetType
+	} 
+
+	op Feature leafFeature() {
+		if (childFeature === null) {
+			association
+		} else {
+			childFeature.leafFeature();
+		}
+	}
+
+	op Entity leafEntity() {
+		if (association === null) {
+			null
+		} else {
+			if (childFeature === null) {
+				associationTarget
+			} else {
+				if (childFeature instanceof AssociationPathElement) {
+					(childFeature as AssociationPathElement).leafEntity();
+				} else {
+					associationTarget
+				}
+			}
+		}
+	}
+}
+
+abstract class AttributePathElement extends Path {
+    @GenModel(propertyCategory="Model")
+	refers Attribute[1] attribute
+
+	op String name() {
+		if (attribute === null ) {
+			''
+		} else {
+			attribute.name
+		}
+	}
+	
+	op Feature leafFeature() {
+		attribute
+	}
+}
+
+abstract class ResourcePathElement extends Path {
+    @GenModel(propertyCategory="Model")
+	refers ResourceFeature[1] resource
+
+	op String name() {
+		if (resource === null) {
+			''
+		} else {
+			resource.name
+		}
+	}
+	
+	op Feature leafFeature() {
+		resource
+	}
+}
+
+interface ChildFeature extends Path {
+	container AssociationPathElement[1] parent opposite childFeature
+
+	op Entity contextEntity() {
+		parent.associationTarget()
+	}
+}
+
+class ChildAssociation extends AssociationPathElement, ChildFeature {
+}
+
+class ChildAttribute extends AttributePathElement, ChildFeature {
+}
+
+class ChildResource extends ResourcePathElement, ChildFeature {
+}
+
+interface Label {
+}
+
+class ModelLabel extends NamedElement, Label {
+	container Entity[1] labelFor opposite labels
+
+	@GenModel(propertyCategory="Interface")
+	String[1] format
+
+	boolean customise
+
+	contains ModelLabelFeature[] features opposite partOf
+}
+
+interface ModelLabelFeature {
+	container ModelLabel partOf opposite features
+
+	op Entity contextEntity() {
+		partOf.labelFor
+	}
+}
+
+class ModelLabelAssociation extends AssociationPathElement,ModelLabelFeature {
+}
+
+class ModelLabelAttribute extends AttributePathElement, ModelLabelFeature {
+	String dateFormat
+}
+
+
 class Repository extends NamedElement, ConstantContainer {
-	refers OrmModel[1] partOf opposite repositories
+	container OrmModel[1] partOf opposite repositories
+
+	@GenModel(propertyCategory="Model")
 	refers Entity serves opposite repository
+
 	contains Selection[] selections opposite definedBy
+
+	@GenModel(propertyCategory="Business")
 	refers Selection findAll
+
+	@GenModel(propertyCategory="Business")
 	refers Selection findOne
 }
 
 class Selection extends NamedElement, FormalParameterList {
 	container Repository definedBy opposite selections
-	boolean distinct
-	refers Feature[] fields
-	refers Association[] joins
-	contains Predicate condition
-	contains Filter[] filters opposite selection
-	contains Order[] ordering
+
+	@GenModel(propertyCategory="Data Access")
 	int limit = "0"
+
+	@GenModel(propertyCategory="Data Access")
+	boolean distinct
+
+	@GenModel(propertyCategory="Data Access")
+	refers Feature[] fields
+
+	@GenModel(propertyCategory="Data Access")
+	refers Association[] joins
+
+	contains Predicate condition
+
+	contains Order[] ordering
+
+	contains Filter[] filters opposite selection
+
+	@GenModel(propertyCategory="Data Access")
 	refers Feature[] grouping
-	refers Association[] selectPath
+
+	contains SelectionPath selectPath opposite selection
+
+	@GenModel(propertyCategory="Implementation")
 	String methodName
-	@OCL(derivation="if selectPath->isEmpty() then definedBy.serves else selectPath->last().targetType endif")
-    @GenModel(propertyCategory="Debug")
-	refers derived readonly unsettable transient volatile Entity selectionType
+ 
+ 	op Entity selectionType() {
+		if (selectPath === null) { 
+			definedBy.serves 
+		} else {
+			selectPath.leafEntity() 
+		}
+	}
+
+	op Entity[] referencableTypes() {
+		var types = new BasicEList<Entity>() //
+		types.add(definedBy.serves)
+		return types
+	}
+
 	@OCL(derivation="parameters->notEmpty()")
     @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean hasFormals
@@ -651,13 +804,17 @@ class Selection extends NamedElement, FormalParameterList {
 	derived readonly unsettable transient volatile boolean hasPaginationSupport
 }
 
-class FeatureReference extends Variable { 
-	refers Feature[1] feature 
+class SelectionPath extends AssociationPathElement {
+	container Selection selection opposite selectPath
+	
+	op Entity contextEntity() {
+		selection.definedBy.serves
+	}
 }
 
 
 abstract class Order {
-	contains Variable[1] path
+	contains AttributeVariable[1] attribute
 }
 
 class Asc extends Order {
@@ -670,4 +827,33 @@ class Filter extends NamedDisplayElement, FormalParameterList {
 	refers Selection selection opposite filters
 	contains Predicate condition
 	String methodName
+}
+
+
+
+abstract class FeatureVariable extends Path, Variable {
+	op Feature feature()
+}
+
+class AssociationVariable extends AssociationPathElement, FeatureVariable {
+	op Feature feature() {
+		association
+	}
+}
+
+class AttributeVariable extends AttributePathElement, FeatureVariable {
+	op Feature feature() {
+		attribute
+	}
+}
+
+class ResourceVariable extends ResourcePathElement, FeatureVariable {
+	op Feature feature() {
+		resource
+	}
+}
+
+class ParameterVariable extends Path, Variable {
+    @GenModel(propertyCategory="Model")
+	refers FormalParameter[1] formal 
 }

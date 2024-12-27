@@ -175,22 +175,22 @@ public class SelectActionItemProvider extends ActionItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.eINSTANCE.getSelectAction_ValuePath(),
-				 WafFactory.eINSTANCE.createFeaturePathAssociation()));
+				 WafFactory.eINSTANCE.createAssociationDisplayValue()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.eINSTANCE.getSelectAction_ValuePath(),
-				 WafFactory.eINSTANCE.createFeaturePathAttribute()));
+				 WafFactory.eINSTANCE.createAttributeDisplayValue()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.eINSTANCE.getSelectAction_ValuePath(),
-				 WafFactory.eINSTANCE.createFeaturePathResource()));
+				 WafFactory.eINSTANCE.createResourceDisplayValue()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.eINSTANCE.getSelectAction_ValuePath(),
-				 WafFactory.eINSTANCE.createFeaturePathLabel()));
+				 WafFactory.eINSTANCE.createLabelDisplayValue()));
 	}
 
 	/**

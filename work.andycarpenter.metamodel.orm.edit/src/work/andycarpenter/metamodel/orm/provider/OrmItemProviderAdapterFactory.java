@@ -184,75 +184,6 @@ public class OrmItemProviderAdapterFactory extends OrmAdapterFactory implements 
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.orm.ModelLabel} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ModelLabelItemProvider modelLabelItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link work.andycarpenter.metamodel.orm.ModelLabel}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createModelLabelAdapter() {
-		if (modelLabelItemProvider == null) {
-			modelLabelItemProvider = new ModelLabelItemProvider(this);
-		}
-
-		return modelLabelItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.orm.ModelLabelAttribute} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ModelLabelAttributeItemProvider modelLabelAttributeItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link work.andycarpenter.metamodel.orm.ModelLabelAttribute}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createModelLabelAttributeAdapter() {
-		if (modelLabelAttributeItemProvider == null) {
-			modelLabelAttributeItemProvider = new ModelLabelAttributeItemProvider(this);
-		}
-
-		return modelLabelAttributeItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.orm.ModelLabelAssociation} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ModelLabelAssociationItemProvider modelLabelAssociationItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link work.andycarpenter.metamodel.orm.ModelLabelAssociation}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createModelLabelAssociationAdapter() {
-		if (modelLabelAssociationItemProvider == null) {
-			modelLabelAssociationItemProvider = new ModelLabelAssociationItemProvider(this);
-		}
-
-		return modelLabelAssociationItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.orm.DataTypeAttribute} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -667,6 +598,144 @@ public class OrmItemProviderAdapterFactory extends OrmAdapterFactory implements 
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.orm.ChildAssociation} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ChildAssociationItemProvider childAssociationItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link work.andycarpenter.metamodel.orm.ChildAssociation}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createChildAssociationAdapter() {
+		if (childAssociationItemProvider == null) {
+			childAssociationItemProvider = new ChildAssociationItemProvider(this);
+		}
+
+		return childAssociationItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.orm.ChildAttribute} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ChildAttributeItemProvider childAttributeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link work.andycarpenter.metamodel.orm.ChildAttribute}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createChildAttributeAdapter() {
+		if (childAttributeItemProvider == null) {
+			childAttributeItemProvider = new ChildAttributeItemProvider(this);
+		}
+
+		return childAttributeItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.orm.ChildResource} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ChildResourceItemProvider childResourceItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link work.andycarpenter.metamodel.orm.ChildResource}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createChildResourceAdapter() {
+		if (childResourceItemProvider == null) {
+			childResourceItemProvider = new ChildResourceItemProvider(this);
+		}
+
+		return childResourceItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.orm.ModelLabel} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ModelLabelItemProvider modelLabelItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link work.andycarpenter.metamodel.orm.ModelLabel}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createModelLabelAdapter() {
+		if (modelLabelItemProvider == null) {
+			modelLabelItemProvider = new ModelLabelItemProvider(this);
+		}
+
+		return modelLabelItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.orm.ModelLabelAssociation} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ModelLabelAssociationItemProvider modelLabelAssociationItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link work.andycarpenter.metamodel.orm.ModelLabelAssociation}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createModelLabelAssociationAdapter() {
+		if (modelLabelAssociationItemProvider == null) {
+			modelLabelAssociationItemProvider = new ModelLabelAssociationItemProvider(this);
+		}
+
+		return modelLabelAssociationItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.orm.ModelLabelAttribute} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ModelLabelAttributeItemProvider modelLabelAttributeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link work.andycarpenter.metamodel.orm.ModelLabelAttribute}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createModelLabelAttributeAdapter() {
+		if (modelLabelAttributeItemProvider == null) {
+			modelLabelAttributeItemProvider = new ModelLabelAttributeItemProvider(this);
+		}
+
+		return modelLabelAttributeItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.orm.Repository} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -713,26 +782,26 @@ public class OrmItemProviderAdapterFactory extends OrmAdapterFactory implements 
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.orm.FeatureReference} instances.
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.orm.SelectionPath} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected FeatureReferenceItemProvider featureReferenceItemProvider;
+	protected SelectionPathItemProvider selectionPathItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link work.andycarpenter.metamodel.orm.FeatureReference}.
+	 * This creates an adapter for a {@link work.andycarpenter.metamodel.orm.SelectionPath}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createFeatureReferenceAdapter() {
-		if (featureReferenceItemProvider == null) {
-			featureReferenceItemProvider = new FeatureReferenceItemProvider(this);
+	public Adapter createSelectionPathAdapter() {
+		if (selectionPathItemProvider == null) {
+			selectionPathItemProvider = new SelectionPathItemProvider(this);
 		}
 
-		return featureReferenceItemProvider;
+		return selectionPathItemProvider;
 	}
 
 	/**
@@ -802,6 +871,98 @@ public class OrmItemProviderAdapterFactory extends OrmAdapterFactory implements 
 		}
 
 		return filterItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.orm.AssociationVariable} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected AssociationVariableItemProvider associationVariableItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link work.andycarpenter.metamodel.orm.AssociationVariable}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createAssociationVariableAdapter() {
+		if (associationVariableItemProvider == null) {
+			associationVariableItemProvider = new AssociationVariableItemProvider(this);
+		}
+
+		return associationVariableItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.orm.AttributeVariable} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected AttributeVariableItemProvider attributeVariableItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link work.andycarpenter.metamodel.orm.AttributeVariable}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createAttributeVariableAdapter() {
+		if (attributeVariableItemProvider == null) {
+			attributeVariableItemProvider = new AttributeVariableItemProvider(this);
+		}
+
+		return attributeVariableItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.orm.ResourceVariable} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ResourceVariableItemProvider resourceVariableItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link work.andycarpenter.metamodel.orm.ResourceVariable}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createResourceVariableAdapter() {
+		if (resourceVariableItemProvider == null) {
+			resourceVariableItemProvider = new ResourceVariableItemProvider(this);
+		}
+
+		return resourceVariableItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.orm.ParameterVariable} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ParameterVariableItemProvider parameterVariableItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link work.andycarpenter.metamodel.orm.ParameterVariable}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createParameterVariableAdapter() {
+		if (parameterVariableItemProvider == null) {
+			parameterVariableItemProvider = new ParameterVariableItemProvider(this);
+		}
+
+		return parameterVariableItemProvider;
 	}
 
 	/**
@@ -913,9 +1074,6 @@ public class OrmItemProviderAdapterFactory extends OrmAdapterFactory implements 
 		if (collectionTypeItemProvider != null) collectionTypeItemProvider.dispose();
 		if (serializationGroupItemProvider != null) serializationGroupItemProvider.dispose();
 		if (entityItemProvider != null) entityItemProvider.dispose();
-		if (modelLabelItemProvider != null) modelLabelItemProvider.dispose();
-		if (modelLabelAttributeItemProvider != null) modelLabelAttributeItemProvider.dispose();
-		if (modelLabelAssociationItemProvider != null) modelLabelAssociationItemProvider.dispose();
 		if (dataTypeAttributeItemProvider != null) dataTypeAttributeItemProvider.dispose();
 		if (dateAttributeItemProvider != null) dateAttributeItemProvider.dispose();
 		if (subDirectoryItemProvider != null) subDirectoryItemProvider.dispose();
@@ -934,12 +1092,22 @@ public class OrmItemProviderAdapterFactory extends OrmAdapterFactory implements 
 		if (associationItemProvider != null) associationItemProvider.dispose();
 		if (singletonAssociationItemProvider != null) singletonAssociationItemProvider.dispose();
 		if (associationKeyItemProvider != null) associationKeyItemProvider.dispose();
+		if (childAssociationItemProvider != null) childAssociationItemProvider.dispose();
+		if (childAttributeItemProvider != null) childAttributeItemProvider.dispose();
+		if (childResourceItemProvider != null) childResourceItemProvider.dispose();
+		if (modelLabelItemProvider != null) modelLabelItemProvider.dispose();
+		if (modelLabelAssociationItemProvider != null) modelLabelAssociationItemProvider.dispose();
+		if (modelLabelAttributeItemProvider != null) modelLabelAttributeItemProvider.dispose();
 		if (repositoryItemProvider != null) repositoryItemProvider.dispose();
 		if (selectionItemProvider != null) selectionItemProvider.dispose();
-		if (featureReferenceItemProvider != null) featureReferenceItemProvider.dispose();
+		if (selectionPathItemProvider != null) selectionPathItemProvider.dispose();
 		if (ascItemProvider != null) ascItemProvider.dispose();
 		if (descItemProvider != null) descItemProvider.dispose();
 		if (filterItemProvider != null) filterItemProvider.dispose();
+		if (associationVariableItemProvider != null) associationVariableItemProvider.dispose();
+		if (attributeVariableItemProvider != null) attributeVariableItemProvider.dispose();
+		if (resourceVariableItemProvider != null) resourceVariableItemProvider.dispose();
+		if (parameterVariableItemProvider != null) parameterVariableItemProvider.dispose();
 	}
 
 	/**
@@ -992,7 +1160,22 @@ public class OrmItemProviderAdapterFactory extends OrmAdapterFactory implements 
 				newChildDescriptors.add
 					(createChildParameter
 						(BasePackage.Literals.CONSTANT__VALUE,
-						 OrmFactory.eINSTANCE.createFeatureReference()));
+						 OrmFactory.eINSTANCE.createAssociationVariable()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(BasePackage.Literals.CONSTANT__VALUE,
+						 OrmFactory.eINSTANCE.createAttributeVariable()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(BasePackage.Literals.CONSTANT__VALUE,
+						 OrmFactory.eINSTANCE.createResourceVariable()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(BasePackage.Literals.CONSTANT__VALUE,
+						 OrmFactory.eINSTANCE.createParameterVariable()));
 
 				return null;
 			}
@@ -1007,10 +1190,26 @@ public class OrmItemProviderAdapterFactory extends OrmAdapterFactory implements 
 				newChildDescriptors.add
 					(createChildParameter
 						(BasePackage.Literals.CALLABLE__EXPRESSION,
-						 OrmFactory.eINSTANCE.createFeatureReference()));
+						 OrmFactory.eINSTANCE.createAssociationVariable()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(BasePackage.Literals.CALLABLE__EXPRESSION,
+						 OrmFactory.eINSTANCE.createAttributeVariable()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(BasePackage.Literals.CALLABLE__EXPRESSION,
+						 OrmFactory.eINSTANCE.createResourceVariable()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(BasePackage.Literals.CALLABLE__EXPRESSION,
+						 OrmFactory.eINSTANCE.createParameterVariable()));
 
 				return null;
 			}
+ 
 			/**
 			 * <!-- begin-user-doc -->
 			 * <!-- end-user-doc -->
@@ -1021,15 +1220,46 @@ public class OrmItemProviderAdapterFactory extends OrmAdapterFactory implements 
 				newChildDescriptors.add
 					(createChildParameter
 						(BasePackage.Literals.REDUCE_FUNCTION__VALUE,
-						 OrmFactory.eINSTANCE.createFeatureReference()));
+						 OrmFactory.eINSTANCE.createAssociationVariable()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(BasePackage.Literals.REDUCE_FUNCTION__VALUE,
+						 OrmFactory.eINSTANCE.createAttributeVariable()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(BasePackage.Literals.REDUCE_FUNCTION__VALUE,
+						 OrmFactory.eINSTANCE.createResourceVariable()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(BasePackage.Literals.REDUCE_FUNCTION__VALUE,
+						 OrmFactory.eINSTANCE.createParameterVariable()));
 
 				newChildDescriptors.add
 					(createChildParameter
 						(BasePackage.Literals.REDUCE_FUNCTION__INITIAL,
-						 OrmFactory.eINSTANCE.createFeatureReference()));
+						 OrmFactory.eINSTANCE.createAssociationVariable()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(BasePackage.Literals.REDUCE_FUNCTION__INITIAL,
+						 OrmFactory.eINSTANCE.createAttributeVariable()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(BasePackage.Literals.REDUCE_FUNCTION__INITIAL,
+						 OrmFactory.eINSTANCE.createResourceVariable()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(BasePackage.Literals.REDUCE_FUNCTION__INITIAL,
+						 OrmFactory.eINSTANCE.createParameterVariable()));
 
 				return null;
 			}
+ 
 			/**
 			 * <!-- begin-user-doc -->
 			 * <!-- end-user-doc -->
@@ -1040,10 +1270,26 @@ public class OrmItemProviderAdapterFactory extends OrmAdapterFactory implements 
 				newChildDescriptors.add
 					(createChildParameter
 						(BasePackage.Literals.SIZE_FUNCTION__VALUE,
-						 OrmFactory.eINSTANCE.createFeatureReference()));
+						 OrmFactory.eINSTANCE.createAssociationVariable()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(BasePackage.Literals.SIZE_FUNCTION__VALUE,
+						 OrmFactory.eINSTANCE.createAttributeVariable()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(BasePackage.Literals.SIZE_FUNCTION__VALUE,
+						 OrmFactory.eINSTANCE.createResourceVariable()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(BasePackage.Literals.SIZE_FUNCTION__VALUE,
+						 OrmFactory.eINSTANCE.createParameterVariable()));
 
 				return null;
 			}
+ 
 			/**
 			 * <!-- begin-user-doc -->
 			 * <!-- end-user-doc -->
@@ -1126,7 +1372,22 @@ public class OrmItemProviderAdapterFactory extends OrmAdapterFactory implements 
 				newChildDescriptors.add
 					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_BOOLEAN_VARIABLE__FEATURE,
-						 OrmFactory.eINSTANCE.createFeatureReference()));
+						 OrmFactory.eINSTANCE.createAssociationVariable()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_BOOLEAN_VARIABLE__FEATURE,
+						 OrmFactory.eINSTANCE.createAttributeVariable()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_BOOLEAN_VARIABLE__FEATURE,
+						 OrmFactory.eINSTANCE.createResourceVariable()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_BOOLEAN_VARIABLE__FEATURE,
+						 OrmFactory.eINSTANCE.createParameterVariable()));
 
 				return null;
 			}
@@ -1141,12 +1402,42 @@ public class OrmItemProviderAdapterFactory extends OrmAdapterFactory implements 
 				newChildDescriptors.add
 					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_EQUALITY_OPERATOR__LEFT,
-						 OrmFactory.eINSTANCE.createFeatureReference()));
+						 OrmFactory.eINSTANCE.createAssociationVariable()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_EQUALITY_OPERATOR__LEFT,
+						 OrmFactory.eINSTANCE.createAttributeVariable()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_EQUALITY_OPERATOR__LEFT,
+						 OrmFactory.eINSTANCE.createResourceVariable()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_EQUALITY_OPERATOR__LEFT,
+						 OrmFactory.eINSTANCE.createParameterVariable()));
 
 				newChildDescriptors.add
 					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_EQUALITY_OPERATOR__RIGHT,
-						 OrmFactory.eINSTANCE.createFeatureReference()));
+						 OrmFactory.eINSTANCE.createAssociationVariable()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_EQUALITY_OPERATOR__RIGHT,
+						 OrmFactory.eINSTANCE.createAttributeVariable()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_EQUALITY_OPERATOR__RIGHT,
+						 OrmFactory.eINSTANCE.createResourceVariable()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_EQUALITY_OPERATOR__RIGHT,
+						 OrmFactory.eINSTANCE.createParameterVariable()));
 
 				return null;
 			}
@@ -1161,12 +1452,42 @@ public class OrmItemProviderAdapterFactory extends OrmAdapterFactory implements 
 				newChildDescriptors.add
 					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_COMPARISON_OPERATOR__LEFT,
-						 OrmFactory.eINSTANCE.createFeatureReference()));
+						 OrmFactory.eINSTANCE.createAssociationVariable()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_COMPARISON_OPERATOR__LEFT,
+						 OrmFactory.eINSTANCE.createAttributeVariable()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_COMPARISON_OPERATOR__LEFT,
+						 OrmFactory.eINSTANCE.createResourceVariable()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_COMPARISON_OPERATOR__LEFT,
+						 OrmFactory.eINSTANCE.createParameterVariable()));
 
 				newChildDescriptors.add
 					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_COMPARISON_OPERATOR__RIGHT,
-						 OrmFactory.eINSTANCE.createFeatureReference()));
+						 OrmFactory.eINSTANCE.createAssociationVariable()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_COMPARISON_OPERATOR__RIGHT,
+						 OrmFactory.eINSTANCE.createAttributeVariable()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_COMPARISON_OPERATOR__RIGHT,
+						 OrmFactory.eINSTANCE.createResourceVariable()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_COMPARISON_OPERATOR__RIGHT,
+						 OrmFactory.eINSTANCE.createParameterVariable()));
 
 				return null;
 			}
@@ -1181,12 +1502,42 @@ public class OrmItemProviderAdapterFactory extends OrmAdapterFactory implements 
 				newChildDescriptors.add
 					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_IN_OPERATOR__LEFT,
-						 OrmFactory.eINSTANCE.createFeatureReference()));
+						 OrmFactory.eINSTANCE.createAssociationVariable()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_IN_OPERATOR__LEFT,
+						 OrmFactory.eINSTANCE.createAttributeVariable()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_IN_OPERATOR__LEFT,
+						 OrmFactory.eINSTANCE.createResourceVariable()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_IN_OPERATOR__LEFT,
+						 OrmFactory.eINSTANCE.createParameterVariable()));
 
 				newChildDescriptors.add
 					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_IN_OPERATOR__RIGHT,
-						 OrmFactory.eINSTANCE.createFeatureReference()));
+						 OrmFactory.eINSTANCE.createAssociationVariable()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_IN_OPERATOR__RIGHT,
+						 OrmFactory.eINSTANCE.createAttributeVariable()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_IN_OPERATOR__RIGHT,
+						 OrmFactory.eINSTANCE.createResourceVariable()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_IN_OPERATOR__RIGHT,
+						 OrmFactory.eINSTANCE.createParameterVariable()));
 
 				return null;
 			}
@@ -1201,12 +1552,42 @@ public class OrmItemProviderAdapterFactory extends OrmAdapterFactory implements 
 				newChildDescriptors.add
 					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_LIKE_OPERATOR__LEFT,
-						 OrmFactory.eINSTANCE.createFeatureReference()));
+						 OrmFactory.eINSTANCE.createAssociationVariable()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_LIKE_OPERATOR__LEFT,
+						 OrmFactory.eINSTANCE.createAttributeVariable()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_LIKE_OPERATOR__LEFT,
+						 OrmFactory.eINSTANCE.createResourceVariable()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_LIKE_OPERATOR__LEFT,
+						 OrmFactory.eINSTANCE.createParameterVariable()));
 
 				newChildDescriptors.add
 					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_LIKE_OPERATOR__RIGHT,
-						 OrmFactory.eINSTANCE.createFeatureReference()));
+						 OrmFactory.eINSTANCE.createAssociationVariable()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_LIKE_OPERATOR__RIGHT,
+						 OrmFactory.eINSTANCE.createAttributeVariable()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_LIKE_OPERATOR__RIGHT,
+						 OrmFactory.eINSTANCE.createResourceVariable()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_LIKE_OPERATOR__RIGHT,
+						 OrmFactory.eINSTANCE.createParameterVariable()));
 
 				return null;
 			}
@@ -1221,7 +1602,22 @@ public class OrmItemProviderAdapterFactory extends OrmAdapterFactory implements 
 				newChildDescriptors.add
 					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_IS_EMPTY__VALUE,
-						 OrmFactory.eINSTANCE.createFeatureReference()));
+						 OrmFactory.eINSTANCE.createAssociationVariable()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_IS_EMPTY__VALUE,
+						 OrmFactory.eINSTANCE.createAttributeVariable()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_IS_EMPTY__VALUE,
+						 OrmFactory.eINSTANCE.createResourceVariable()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_IS_EMPTY__VALUE,
+						 OrmFactory.eINSTANCE.createParameterVariable()));
 
 				return null;
 			}
@@ -1236,7 +1632,22 @@ public class OrmItemProviderAdapterFactory extends OrmAdapterFactory implements 
 				newChildDescriptors.add
 					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_IS_NULL__VALUE,
-						 OrmFactory.eINSTANCE.createFeatureReference()));
+						 OrmFactory.eINSTANCE.createAssociationVariable()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_IS_NULL__VALUE,
+						 OrmFactory.eINSTANCE.createAttributeVariable()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_IS_NULL__VALUE,
+						 OrmFactory.eINSTANCE.createResourceVariable()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_IS_NULL__VALUE,
+						 OrmFactory.eINSTANCE.createParameterVariable()));
 
 				return null;
 			}
@@ -1251,10 +1662,26 @@ public class OrmItemProviderAdapterFactory extends OrmAdapterFactory implements 
 				newChildDescriptors.add
 					(createChildParameter
 						(ExpressionPackage.Literals.ARITHMETIC_OPERATION__OPERANDS,
-						 OrmFactory.eINSTANCE.createFeatureReference()));
+						 OrmFactory.eINSTANCE.createAssociationVariable()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.ARITHMETIC_OPERATION__OPERANDS,
+						 OrmFactory.eINSTANCE.createAttributeVariable()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.ARITHMETIC_OPERATION__OPERANDS,
+						 OrmFactory.eINSTANCE.createResourceVariable()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.ARITHMETIC_OPERATION__OPERANDS,
+						 OrmFactory.eINSTANCE.createParameterVariable()));
 
 				return null;
 			}
+ 
 			/**
 			 * <!-- begin-user-doc -->
 			 * <!-- end-user-doc -->

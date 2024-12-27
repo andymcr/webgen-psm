@@ -98,7 +98,7 @@ public class ModelLabelItemProvider extends NamedElementItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_InterfacePropertyCategory"),
 				 null));
 	}
 
@@ -227,12 +227,12 @@ public class ModelLabelItemProvider extends NamedElementItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(OrmPackage.Literals.MODEL_LABEL__FEATURES,
-				 OrmFactory.eINSTANCE.createModelLabelAttribute()));
+				 OrmFactory.eINSTANCE.createModelLabelAssociation()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(OrmPackage.Literals.MODEL_LABEL__FEATURES,
-				 OrmFactory.eINSTANCE.createModelLabelAssociation()));
+				 OrmFactory.eINSTANCE.createModelLabelAttribute()));
 	}
 
 	/**

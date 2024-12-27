@@ -57,18 +57,10 @@ public class WafTests extends TestSuite {
 		suite.addTestSuite(SliderUnitTest.class);
 		suite.addTestSuite(GalleryUnitTest.class);
 		suite.addTestSuite(SearchUnitTest.class);
-		suite.addTestSuite(ChildPathAssociationTest.class);
-		suite.addTestSuite(ChildPathAttributeTest.class);
-		suite.addTestSuite(ChildPathResourceTest.class);
-		suite.addTestSuite(FeaturePathAssociationTest.class);
-		suite.addTestSuite(FeaturePathAttributeTest.class);
-		suite.addTestSuite(FeaturePathResourceTest.class);
-		suite.addTestSuite(FeaturePathLabelTest.class);
-		suite.addTestSuite(PathVariableAssociationTest.class);
-		suite.addTestSuite(PathVariableAttributeTest.class);
-		suite.addTestSuite(PathVariableResourceTest.class);
-		suite.addTestSuite(ParameterPathAssociationTest.class);
-		suite.addTestSuite(ParameterPathAttributeTest.class);
+		suite.addTestSuite(AssociationDisplayValueTest.class);
+		suite.addTestSuite(AttributeDisplayValueTest.class);
+		suite.addTestSuite(ResourceDisplayValueTest.class);
+		suite.addTestSuite(LabelDisplayValueTest.class);
 		suite.addTestSuite(DeleteActionTest.class);
 		suite.addTestSuite(ContainerSelectActionTest.class);
 		suite.addTestSuite(InstanceSelectActionTest.class);
@@ -76,6 +68,7 @@ public class WafTests extends TestSuite {
 		suite.addTestSuite(InstanceOperationActionTest.class);
 		suite.addTestSuite(ContainerOperationActionTest.class);
 		suite.addTestSuite(GeneralOperationActionTest.class);
+		suite.addTestSuite(MessageTest.class);
 		return suite;
 	}
 

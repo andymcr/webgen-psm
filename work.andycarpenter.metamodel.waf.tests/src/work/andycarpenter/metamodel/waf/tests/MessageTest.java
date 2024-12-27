@@ -13,6 +13,12 @@ import work.andycarpenter.metamodel.waf.WafFactory;
  * <!-- begin-user-doc -->
  * A test case for the model object '<em><b>Message</b></em>'.
  * <!-- end-user-doc -->
+ * <p>
+ * The following operations are tested:
+ * <ul>
+ *   <li>{@link work.andycarpenter.metamodel.waf.ValueContext#referencableTypes() <em>Referencable Types</em>}</li>
+ * </ul>
+ * </p>
  * @generated
  */
 public class MessageTest extends TestCase {
@@ -84,6 +90,19 @@ public class MessageTest extends TestCase {
 	@Override
 	protected void tearDown() throws Exception {
 		setFixture(null);
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.ValueContext#referencableTypes() <em>Referencable Types</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.ValueContext#referencableTypes()
+	 * @generated
+	 */
+	public void testReferencableTypes() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
 	}
 
 } //MessageTest

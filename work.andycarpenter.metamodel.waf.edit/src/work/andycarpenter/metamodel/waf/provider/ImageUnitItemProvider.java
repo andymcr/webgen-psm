@@ -189,12 +189,12 @@ public class ImageUnitItemProvider extends ItemProviderAdapter implements IEditi
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.eINSTANCE.getImageUnit_ImageFeaturePath(),
-				 WafFactory.eINSTANCE.createFeaturePathAttribute()));
+				 WafFactory.eINSTANCE.createAttributeDisplayValue()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.eINSTANCE.getImageUnit_ImageFeaturePath(),
-				 WafFactory.eINSTANCE.createFeaturePathAssociation()));
+				 WafFactory.eINSTANCE.createAssociationDisplayValue()));
 
 		newChildDescriptors.add
 			(createChildParameter

@@ -20,6 +20,12 @@ import work.andycarpenter.metamodel.waf.WafFactory;
  *   <li>{@link work.andycarpenter.metamodel.waf.Badge#isHasBadgeClass() <em>Has Badge Class</em>}</li>
  * </ul>
  * </p>
+ * <p>
+ * The following operations are tested:
+ * <ul>
+ *   <li>{@link work.andycarpenter.metamodel.waf.ValueContext#referencableTypes() <em>Referencable Types</em>}</li>
+ * </ul>
+ * </p>
  * @generated
  */
 public class BadgeTest extends TestCase {
@@ -141,6 +147,19 @@ public class BadgeTest extends TestCase {
 	 */
 	public void testIsSetHasBadgeClass() {
 		// TODO: implement this test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.ValueContext#referencableTypes() <em>Referencable Types</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.ValueContext#referencableTypes()
+	 * @generated
+	 */
+	public void testReferencableTypes() {
+		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}

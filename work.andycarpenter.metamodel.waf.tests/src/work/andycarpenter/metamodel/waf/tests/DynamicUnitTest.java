@@ -32,7 +32,6 @@ import work.andycarpenter.metamodel.waf.DynamicUnit;
  *   <li>{@link work.andycarpenter.metamodel.waf.ActionContainer#getGenModelRef() <em>Gen Model Ref</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.ActionContainer#getUiModelRef() <em>Ui Model Ref</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#getContainingAssociation() <em>Containing Association</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#getContainingType() <em>Containing Type</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#isIsContained() <em>Is Contained</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#isHasExplicitlyEditedContainer() <em>Has Explicitly Edited Container</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#getServicesUsed() <em>Services Used</em>}</li>
@@ -88,6 +87,13 @@ import work.andycarpenter.metamodel.waf.DynamicUnit;
  *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#isHasCommonFieldValueClass() <em>Has Common Field Value Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#getCommonAnchorClass() <em>Common Anchor Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#isHasCommonAnchorClass() <em>Has Common Anchor Class</em>}</li>
+ * </ul>
+ * </p>
+ * <p>
+ * The following operations are tested:
+ * <ul>
+ *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#containingType() <em>Containing Type</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#referencableTypes() <em>Referencable Types</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -656,32 +662,6 @@ public abstract class DynamicUnitTest extends ContentUnitTest {
 	 * @generated
 	 */
 	public void testIsSetContainingAssociation() {
-		// TODO: implement this test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#getContainingType() <em>Containing Type</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#getContainingType()
-	 * @generated
-	 */
-	public void testGetContainingType() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#isSetContainingType() <em>isSetContainingType()</em>}' method.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#isSetContainingType()
-	 * @generated
-	 */
-	public void testIsSetContainingType() {
 		// TODO: implement this test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
@@ -1853,6 +1833,32 @@ public abstract class DynamicUnitTest extends ContentUnitTest {
 	 */
 	public void testIsHasCommonAnchorClass() {
 		// TODO: implement this feature getter test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#containingType() <em>Containing Type</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#containingType()
+	 * @generated
+	 */
+	public void testContainingType() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#referencableTypes() <em>Referencable Types</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#referencableTypes()
+	 * @generated
+	 */
+	public void testReferencableTypes() {
+		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}

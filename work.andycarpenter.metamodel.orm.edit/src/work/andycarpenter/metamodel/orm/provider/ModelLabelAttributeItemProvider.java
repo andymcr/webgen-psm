@@ -8,7 +8,6 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
@@ -23,7 +22,7 @@ import work.andycarpenter.metamodel.orm.OrmPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ModelLabelAttributeItemProvider extends ModelLabelFeatureItemProvider {
+public class ModelLabelAttributeItemProvider extends AttributePathElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -45,26 +44,26 @@ public class ModelLabelAttributeItemProvider extends ModelLabelFeatureItemProvid
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addAttributePropertyDescriptor(object);
+			addPartOfPropertyDescriptor(object);
 			addDateFormatPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Attribute feature.
+	 * This adds a property descriptor for the Part Of feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addAttributePropertyDescriptor(Object object) {
+	protected void addPartOfPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ModelLabelAttribute_attribute_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ModelLabelAttribute_attribute_feature", "_UI_ModelLabelAttribute_type"),
-				 OrmPackage.Literals.MODEL_LABEL_ATTRIBUTE__ATTRIBUTE,
+				 getString("_UI_ModelLabelFeature_partOf_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ModelLabelFeature_partOf_feature", "_UI_ModelLabelFeature_type"),
+				 OrmPackage.Literals.MODEL_LABEL_FEATURE__PART_OF,
 				 true,
 				 false,
 				 true,
@@ -110,14 +109,12 @@ public class ModelLabelAttributeItemProvider extends ModelLabelFeatureItemProvid
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ModelLabelAttribute)object).getDateFormat();
-		return label == null || label.length() == 0 ?
-			getString("_UI_ModelLabelAttribute_type") :
-			getString("_UI_ModelLabelAttribute_type") + " " + label;
+		ModelLabelAttribute modelLabelAttribute = (ModelLabelAttribute)object;
+		return getString("_UI_ModelLabelAttribute_type") + " " + modelLabelAttribute.name();
 	}
 
 

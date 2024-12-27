@@ -20,6 +20,12 @@ import work.andycarpenter.metamodel.waf.CollectionUnit;
  *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#isHasCommonInstanceActionClass() <em>Has Common Instance Action Class</em>}</li>
  * </ul>
  * </p>
+ * <p>
+ * The following operations are tested:
+ * <ul>
+ *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#containingType() <em>Containing Type</em>}</li>
+ * </ul>
+ * </p>
  * @generated
  */
 public abstract class CollectionUnitTest extends DynamicUnitTest {
@@ -158,6 +164,19 @@ public abstract class CollectionUnitTest extends DynamicUnitTest {
 	 */
 	public void testIsHasCommonInstanceActionClass() {
 		// TODO: implement this feature getter test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.CollectionUnit#containingType() <em>Containing Type</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.CollectionUnit#containingType()
+	 * @generated
+	 */
+	public void testContainingType() {
+		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}

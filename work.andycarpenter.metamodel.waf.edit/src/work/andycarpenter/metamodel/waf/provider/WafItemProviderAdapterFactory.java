@@ -4,19 +4,13 @@ package work.andycarpenter.metamodel.waf.provider;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.List;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.Notifier;
-import org.eclipse.emf.common.util.ResourceLocator;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.edit.command.CommandParameter;
-import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.edit.provider.ChangeNotifier;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
 import org.eclipse.emf.edit.provider.IChangeNotifier;
-import org.eclipse.emf.edit.provider.IChildCreationExtender;
 import org.eclipse.emf.edit.provider.IDisposable;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -24,27 +18,6 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.INotifyChangedListener;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-import work.andycarpenter.metamodel.base.BasePackage;
-import work.andycarpenter.metamodel.base.Callable;
-import work.andycarpenter.metamodel.base.Constant;
-import work.andycarpenter.metamodel.base.ReduceFunction;
-import work.andycarpenter.metamodel.base.SizeFunction;
-import work.andycarpenter.metamodel.base.util.BaseSwitch;
-import work.andycarpenter.metamodel.expression.ArithmeticOperation;
-import work.andycarpenter.metamodel.expression.ExpressionPackage;
-import work.andycarpenter.metamodel.expression.PredicateBooleanVariable;
-import work.andycarpenter.metamodel.expression.PredicateComparisonOperator;
-import work.andycarpenter.metamodel.expression.PredicateEqualityOperator;
-import work.andycarpenter.metamodel.expression.PredicateInOperator;
-import work.andycarpenter.metamodel.expression.PredicateIsEmpty;
-import work.andycarpenter.metamodel.expression.PredicateIsNull;
-import work.andycarpenter.metamodel.expression.PredicateLikeOperator;
-import work.andycarpenter.metamodel.expression.util.ExpressionSwitch;
-import work.andycarpenter.metamodel.orm.Attribute;
-import work.andycarpenter.metamodel.orm.Order;
-import work.andycarpenter.metamodel.orm.OrmPackage;
-import work.andycarpenter.metamodel.orm.util.OrmSwitch;
-import work.andycarpenter.metamodel.waf.WafFactory;
 import work.andycarpenter.metamodel.waf.util.WafAdapterFactory;
 
 /**
@@ -1108,279 +1081,95 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.waf.ChildPathAssociation} instances.
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.waf.AssociationDisplayValue} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ChildPathAssociationItemProvider childPathAssociationItemProvider;
+	protected AssociationDisplayValueItemProvider associationDisplayValueItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link work.andycarpenter.metamodel.waf.ChildPathAssociation}.
+	 * This creates an adapter for a {@link work.andycarpenter.metamodel.waf.AssociationDisplayValue}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createChildPathAssociationAdapter() {
-		if (childPathAssociationItemProvider == null) {
-			childPathAssociationItemProvider = new ChildPathAssociationItemProvider(this);
+	public Adapter createAssociationDisplayValueAdapter() {
+		if (associationDisplayValueItemProvider == null) {
+			associationDisplayValueItemProvider = new AssociationDisplayValueItemProvider(this);
 		}
 
-		return childPathAssociationItemProvider;
+		return associationDisplayValueItemProvider;
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.waf.ChildPathAttribute} instances.
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.waf.AttributeDisplayValue} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ChildPathAttributeItemProvider childPathAttributeItemProvider;
+	protected AttributeDisplayValueItemProvider attributeDisplayValueItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link work.andycarpenter.metamodel.waf.ChildPathAttribute}.
+	 * This creates an adapter for a {@link work.andycarpenter.metamodel.waf.AttributeDisplayValue}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createChildPathAttributeAdapter() {
-		if (childPathAttributeItemProvider == null) {
-			childPathAttributeItemProvider = new ChildPathAttributeItemProvider(this);
+	public Adapter createAttributeDisplayValueAdapter() {
+		if (attributeDisplayValueItemProvider == null) {
+			attributeDisplayValueItemProvider = new AttributeDisplayValueItemProvider(this);
 		}
 
-		return childPathAttributeItemProvider;
+		return attributeDisplayValueItemProvider;
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.waf.ChildPathResource} instances.
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.waf.ResourceDisplayValue} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ChildPathResourceItemProvider childPathResourceItemProvider;
+	protected ResourceDisplayValueItemProvider resourceDisplayValueItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link work.andycarpenter.metamodel.waf.ChildPathResource}.
+	 * This creates an adapter for a {@link work.andycarpenter.metamodel.waf.ResourceDisplayValue}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createChildPathResourceAdapter() {
-		if (childPathResourceItemProvider == null) {
-			childPathResourceItemProvider = new ChildPathResourceItemProvider(this);
+	public Adapter createResourceDisplayValueAdapter() {
+		if (resourceDisplayValueItemProvider == null) {
+			resourceDisplayValueItemProvider = new ResourceDisplayValueItemProvider(this);
 		}
 
-		return childPathResourceItemProvider;
+		return resourceDisplayValueItemProvider;
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.waf.FeaturePathAssociation} instances.
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.waf.LabelDisplayValue} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected FeaturePathAssociationItemProvider featurePathAssociationItemProvider;
+	protected LabelDisplayValueItemProvider labelDisplayValueItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link work.andycarpenter.metamodel.waf.FeaturePathAssociation}.
+	 * This creates an adapter for a {@link work.andycarpenter.metamodel.waf.LabelDisplayValue}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createFeaturePathAssociationAdapter() {
-		if (featurePathAssociationItemProvider == null) {
-			featurePathAssociationItemProvider = new FeaturePathAssociationItemProvider(this);
+	public Adapter createLabelDisplayValueAdapter() {
+		if (labelDisplayValueItemProvider == null) {
+			labelDisplayValueItemProvider = new LabelDisplayValueItemProvider(this);
 		}
 
-		return featurePathAssociationItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.waf.FeaturePathAttribute} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected FeaturePathAttributeItemProvider featurePathAttributeItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link work.andycarpenter.metamodel.waf.FeaturePathAttribute}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createFeaturePathAttributeAdapter() {
-		if (featurePathAttributeItemProvider == null) {
-			featurePathAttributeItemProvider = new FeaturePathAttributeItemProvider(this);
-		}
-
-		return featurePathAttributeItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.waf.FeaturePathResource} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected FeaturePathResourceItemProvider featurePathResourceItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link work.andycarpenter.metamodel.waf.FeaturePathResource}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createFeaturePathResourceAdapter() {
-		if (featurePathResourceItemProvider == null) {
-			featurePathResourceItemProvider = new FeaturePathResourceItemProvider(this);
-		}
-
-		return featurePathResourceItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.waf.FeaturePathLabel} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected FeaturePathLabelItemProvider featurePathLabelItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link work.andycarpenter.metamodel.waf.FeaturePathLabel}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createFeaturePathLabelAdapter() {
-		if (featurePathLabelItemProvider == null) {
-			featurePathLabelItemProvider = new FeaturePathLabelItemProvider(this);
-		}
-
-		return featurePathLabelItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.waf.PathVariableAssociation} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected PathVariableAssociationItemProvider pathVariableAssociationItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link work.andycarpenter.metamodel.waf.PathVariableAssociation}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createPathVariableAssociationAdapter() {
-		if (pathVariableAssociationItemProvider == null) {
-			pathVariableAssociationItemProvider = new PathVariableAssociationItemProvider(this);
-		}
-
-		return pathVariableAssociationItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.waf.PathVariableAttribute} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected PathVariableAttributeItemProvider pathVariableAttributeItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link work.andycarpenter.metamodel.waf.PathVariableAttribute}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createPathVariableAttributeAdapter() {
-		if (pathVariableAttributeItemProvider == null) {
-			pathVariableAttributeItemProvider = new PathVariableAttributeItemProvider(this);
-		}
-
-		return pathVariableAttributeItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.waf.PathVariableResource} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected PathVariableResourceItemProvider pathVariableResourceItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link work.andycarpenter.metamodel.waf.PathVariableResource}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createPathVariableResourceAdapter() {
-		if (pathVariableResourceItemProvider == null) {
-			pathVariableResourceItemProvider = new PathVariableResourceItemProvider(this);
-		}
-
-		return pathVariableResourceItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.waf.ParameterPathAssociation} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ParameterPathAssociationItemProvider parameterPathAssociationItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link work.andycarpenter.metamodel.waf.ParameterPathAssociation}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createParameterPathAssociationAdapter() {
-		if (parameterPathAssociationItemProvider == null) {
-			parameterPathAssociationItemProvider = new ParameterPathAssociationItemProvider(this);
-		}
-
-		return parameterPathAssociationItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.waf.ParameterPathAttribute} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ParameterPathAttributeItemProvider parameterPathAttributeItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link work.andycarpenter.metamodel.waf.ParameterPathAttribute}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createParameterPathAttributeAdapter() {
-		if (parameterPathAttributeItemProvider == null) {
-			parameterPathAttributeItemProvider = new ParameterPathAttributeItemProvider(this);
-		}
-
-		return parameterPathAttributeItemProvider;
+		return labelDisplayValueItemProvider;
 	}
 
 	/**
@@ -1716,18 +1505,10 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 		if (sliderUnitItemProvider != null) sliderUnitItemProvider.dispose();
 		if (galleryUnitItemProvider != null) galleryUnitItemProvider.dispose();
 		if (searchUnitItemProvider != null) searchUnitItemProvider.dispose();
-		if (childPathAssociationItemProvider != null) childPathAssociationItemProvider.dispose();
-		if (childPathAttributeItemProvider != null) childPathAttributeItemProvider.dispose();
-		if (childPathResourceItemProvider != null) childPathResourceItemProvider.dispose();
-		if (featurePathAssociationItemProvider != null) featurePathAssociationItemProvider.dispose();
-		if (featurePathAttributeItemProvider != null) featurePathAttributeItemProvider.dispose();
-		if (featurePathResourceItemProvider != null) featurePathResourceItemProvider.dispose();
-		if (featurePathLabelItemProvider != null) featurePathLabelItemProvider.dispose();
-		if (pathVariableAssociationItemProvider != null) pathVariableAssociationItemProvider.dispose();
-		if (pathVariableAttributeItemProvider != null) pathVariableAttributeItemProvider.dispose();
-		if (pathVariableResourceItemProvider != null) pathVariableResourceItemProvider.dispose();
-		if (parameterPathAssociationItemProvider != null) parameterPathAssociationItemProvider.dispose();
-		if (parameterPathAttributeItemProvider != null) parameterPathAttributeItemProvider.dispose();
+		if (associationDisplayValueItemProvider != null) associationDisplayValueItemProvider.dispose();
+		if (attributeDisplayValueItemProvider != null) attributeDisplayValueItemProvider.dispose();
+		if (resourceDisplayValueItemProvider != null) resourceDisplayValueItemProvider.dispose();
+		if (labelDisplayValueItemProvider != null) labelDisplayValueItemProvider.dispose();
 		if (deleteActionItemProvider != null) deleteActionItemProvider.dispose();
 		if (containerSelectActionItemProvider != null) containerSelectActionItemProvider.dispose();
 		if (instanceSelectActionItemProvider != null) instanceSelectActionItemProvider.dispose();
@@ -1736,643 +1517,6 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 		if (containerOperationActionItemProvider != null) containerOperationActionItemProvider.dispose();
 		if (generalOperationActionItemProvider != null) generalOperationActionItemProvider.dispose();
 		if (messageItemProvider != null) messageItemProvider.dispose();
-	}
-
-	/**
-	 * A child creation extender for the {@link OrmPackage}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static class OrmChildCreationExtender implements IChildCreationExtender {
-		/**
-		 * The switch for creating child descriptors specific to each extended class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		protected static class CreationSwitch extends OrmSwitch<Object> {
-			/**
-			 * The child descriptors being populated.
-			 * <!-- begin-user-doc -->
-			 * <!-- end-user-doc -->
-			 * @generated
-			 */
-			protected List<Object> newChildDescriptors;
-
-			/**
-			 * The domain in which to create the children.
-			 * <!-- begin-user-doc -->
-			 * <!-- end-user-doc -->
-			 * @generated
-			 */
-			protected EditingDomain editingDomain;
-
-			/**
-			 * Creates the a switch for populating child descriptors in the given domain.
-			 * <!-- begin-user-doc -->
-			 * <!-- end-user-doc -->
-			 * @generated
-			 */
-			CreationSwitch(List<Object> newChildDescriptors, EditingDomain editingDomain) {
-				this.newChildDescriptors = newChildDescriptors;
-				this.editingDomain = editingDomain;
-			}
-			/**
-			 * <!-- begin-user-doc -->
-			 * <!-- end-user-doc -->
-			 * @generated
-			 */
-			@Override
-			public Object caseAttribute(Attribute object) {
-				newChildDescriptors.add
-					(createChildParameter
-						(OrmPackage.Literals.ATTRIBUTE__ATTRIBUTE_DEFAULT_VALUE,
-						 WafFactory.eINSTANCE.createPathVariableAssociation()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(OrmPackage.Literals.ATTRIBUTE__ATTRIBUTE_DEFAULT_VALUE,
-						 WafFactory.eINSTANCE.createPathVariableAttribute()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(OrmPackage.Literals.ATTRIBUTE__ATTRIBUTE_DEFAULT_VALUE,
-						 WafFactory.eINSTANCE.createPathVariableResource()));
-
-				return null;
-			}
- 
-			/**
-			 * <!-- begin-user-doc -->
-			 * <!-- end-user-doc -->
-			 * @generated
-			 */
-			@Override
-			public Object caseOrder(Order object) {
-				newChildDescriptors.add
-					(createChildParameter
-						(OrmPackage.Literals.ORDER__PATH,
-						 WafFactory.eINSTANCE.createPathVariableAssociation()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(OrmPackage.Literals.ORDER__PATH,
-						 WafFactory.eINSTANCE.createPathVariableAttribute()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(OrmPackage.Literals.ORDER__PATH,
-						 WafFactory.eINSTANCE.createPathVariableResource()));
-
-				return null;
-			}
- 
-			/**
-			 * <!-- begin-user-doc -->
-			 * <!-- end-user-doc -->
-			 * @generated
-			 */
-			protected CommandParameter createChildParameter(Object feature, Object child) {
-				return new CommandParameter(null, feature, child);
-			}
-
-		}
-
-		/**
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		public Collection<Object> getNewChildDescriptors(Object object, EditingDomain editingDomain) {
-			ArrayList<Object> result = new ArrayList<Object>();
-			new CreationSwitch(result, editingDomain).doSwitch((EObject)object);
-			return result;
-		}
-
-		/**
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		public ResourceLocator getResourceLocator() {
-			return WafEditPlugin.INSTANCE;
-		}
-	}
-
-	/**
-	 * A child creation extender for the {@link BasePackage}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static class BaseChildCreationExtender implements IChildCreationExtender {
-		/**
-		 * The switch for creating child descriptors specific to each extended class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		protected static class CreationSwitch extends BaseSwitch<Object> {
-			/**
-			 * The child descriptors being populated.
-			 * <!-- begin-user-doc -->
-			 * <!-- end-user-doc -->
-			 * @generated
-			 */
-			protected List<Object> newChildDescriptors;
-
-			/**
-			 * The domain in which to create the children.
-			 * <!-- begin-user-doc -->
-			 * <!-- end-user-doc -->
-			 * @generated
-			 */
-			protected EditingDomain editingDomain;
-
-			/**
-			 * Creates the a switch for populating child descriptors in the given domain.
-			 * <!-- begin-user-doc -->
-			 * <!-- end-user-doc -->
-			 * @generated
-			 */
-			CreationSwitch(List<Object> newChildDescriptors, EditingDomain editingDomain) {
-				this.newChildDescriptors = newChildDescriptors;
-				this.editingDomain = editingDomain;
-			}
-			/**
-			 * <!-- begin-user-doc -->
-			 * <!-- end-user-doc -->
-			 * @generated
-			 */
-			@Override
-			public Object caseConstant(Constant object) {
-				newChildDescriptors.add
-					(createChildParameter
-						(BasePackage.Literals.CONSTANT__VALUE,
-						 WafFactory.eINSTANCE.createPathVariableAssociation()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(BasePackage.Literals.CONSTANT__VALUE,
-						 WafFactory.eINSTANCE.createPathVariableAttribute()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(BasePackage.Literals.CONSTANT__VALUE,
-						 WafFactory.eINSTANCE.createPathVariableResource()));
-
-				return null;
-			}
- 
-			/**
-			 * <!-- begin-user-doc -->
-			 * <!-- end-user-doc -->
-			 * @generated
-			 */
-			@Override
-			public Object caseCallable(Callable object) {
-				newChildDescriptors.add
-					(createChildParameter
-						(BasePackage.Literals.CALLABLE__EXPRESSION,
-						 WafFactory.eINSTANCE.createPathVariableAssociation()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(BasePackage.Literals.CALLABLE__EXPRESSION,
-						 WafFactory.eINSTANCE.createPathVariableAttribute()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(BasePackage.Literals.CALLABLE__EXPRESSION,
-						 WafFactory.eINSTANCE.createPathVariableResource()));
-
-				return null;
-			}
-			/**
-			 * <!-- begin-user-doc -->
-			 * <!-- end-user-doc -->
-			 * @generated
-			 */
-			@Override
-			public Object caseReduceFunction(ReduceFunction object) {
-				newChildDescriptors.add
-					(createChildParameter
-						(BasePackage.Literals.REDUCE_FUNCTION__VALUE,
-						 WafFactory.eINSTANCE.createPathVariableAssociation()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(BasePackage.Literals.REDUCE_FUNCTION__VALUE,
-						 WafFactory.eINSTANCE.createPathVariableAttribute()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(BasePackage.Literals.REDUCE_FUNCTION__VALUE,
-						 WafFactory.eINSTANCE.createPathVariableResource()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(BasePackage.Literals.REDUCE_FUNCTION__INITIAL,
-						 WafFactory.eINSTANCE.createPathVariableAssociation()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(BasePackage.Literals.REDUCE_FUNCTION__INITIAL,
-						 WafFactory.eINSTANCE.createPathVariableAttribute()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(BasePackage.Literals.REDUCE_FUNCTION__INITIAL,
-						 WafFactory.eINSTANCE.createPathVariableResource()));
-
-				return null;
-			}
-			/**
-			 * <!-- begin-user-doc -->
-			 * <!-- end-user-doc -->
-			 * @generated
-			 */
-			@Override
-			public Object caseSizeFunction(SizeFunction object) {
-				newChildDescriptors.add
-					(createChildParameter
-						(BasePackage.Literals.SIZE_FUNCTION__VALUE,
-						 WafFactory.eINSTANCE.createPathVariableAssociation()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(BasePackage.Literals.SIZE_FUNCTION__VALUE,
-						 WafFactory.eINSTANCE.createPathVariableAttribute()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(BasePackage.Literals.SIZE_FUNCTION__VALUE,
-						 WafFactory.eINSTANCE.createPathVariableResource()));
-
-				return null;
-			}
-			/**
-			 * <!-- begin-user-doc -->
-			 * <!-- end-user-doc -->
-			 * @generated
-			 */
-			protected CommandParameter createChildParameter(Object feature, Object child) {
-				return new CommandParameter(null, feature, child);
-			}
-
-		}
-
-		/**
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		public Collection<Object> getNewChildDescriptors(Object object, EditingDomain editingDomain) {
-			ArrayList<Object> result = new ArrayList<Object>();
-			new CreationSwitch(result, editingDomain).doSwitch((EObject)object);
-			return result;
-		}
-
-		/**
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		public ResourceLocator getResourceLocator() {
-			return WafEditPlugin.INSTANCE;
-		}
-	}
-
-	/**
-	 * A child creation extender for the {@link ExpressionPackage}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static class ExpressionChildCreationExtender implements IChildCreationExtender {
-		/**
-		 * The switch for creating child descriptors specific to each extended class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		protected static class CreationSwitch extends ExpressionSwitch<Object> {
-			/**
-			 * The child descriptors being populated.
-			 * <!-- begin-user-doc -->
-			 * <!-- end-user-doc -->
-			 * @generated
-			 */
-			protected List<Object> newChildDescriptors;
-
-			/**
-			 * The domain in which to create the children.
-			 * <!-- begin-user-doc -->
-			 * <!-- end-user-doc -->
-			 * @generated
-			 */
-			protected EditingDomain editingDomain;
-
-			/**
-			 * Creates the a switch for populating child descriptors in the given domain.
-			 * <!-- begin-user-doc -->
-			 * <!-- end-user-doc -->
-			 * @generated
-			 */
-			CreationSwitch(List<Object> newChildDescriptors, EditingDomain editingDomain) {
-				this.newChildDescriptors = newChildDescriptors;
-				this.editingDomain = editingDomain;
-			}
-			/**
-			 * <!-- begin-user-doc -->
-			 * <!-- end-user-doc -->
-			 * @generated
-			 */
-			@Override
-			public Object casePredicateBooleanVariable(PredicateBooleanVariable object) {
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.PREDICATE_BOOLEAN_VARIABLE__FEATURE,
-						 WafFactory.eINSTANCE.createPathVariableAssociation()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.PREDICATE_BOOLEAN_VARIABLE__FEATURE,
-						 WafFactory.eINSTANCE.createPathVariableAttribute()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.PREDICATE_BOOLEAN_VARIABLE__FEATURE,
-						 WafFactory.eINSTANCE.createPathVariableResource()));
-
-				return null;
-			}
- 
-			/**
-			 * <!-- begin-user-doc -->
-			 * <!-- end-user-doc -->
-			 * @generated
-			 */
-			@Override
-			public Object casePredicateEqualityOperator(PredicateEqualityOperator object) {
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.PREDICATE_EQUALITY_OPERATOR__LEFT,
-						 WafFactory.eINSTANCE.createPathVariableAssociation()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.PREDICATE_EQUALITY_OPERATOR__LEFT,
-						 WafFactory.eINSTANCE.createPathVariableAttribute()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.PREDICATE_EQUALITY_OPERATOR__LEFT,
-						 WafFactory.eINSTANCE.createPathVariableResource()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.PREDICATE_EQUALITY_OPERATOR__RIGHT,
-						 WafFactory.eINSTANCE.createPathVariableAssociation()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.PREDICATE_EQUALITY_OPERATOR__RIGHT,
-						 WafFactory.eINSTANCE.createPathVariableAttribute()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.PREDICATE_EQUALITY_OPERATOR__RIGHT,
-						 WafFactory.eINSTANCE.createPathVariableResource()));
-
-				return null;
-			}
- 
-			/**
-			 * <!-- begin-user-doc -->
-			 * <!-- end-user-doc -->
-			 * @generated
-			 */
-			@Override
-			public Object casePredicateComparisonOperator(PredicateComparisonOperator object) {
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.PREDICATE_COMPARISON_OPERATOR__LEFT,
-						 WafFactory.eINSTANCE.createPathVariableAssociation()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.PREDICATE_COMPARISON_OPERATOR__LEFT,
-						 WafFactory.eINSTANCE.createPathVariableAttribute()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.PREDICATE_COMPARISON_OPERATOR__LEFT,
-						 WafFactory.eINSTANCE.createPathVariableResource()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.PREDICATE_COMPARISON_OPERATOR__RIGHT,
-						 WafFactory.eINSTANCE.createPathVariableAssociation()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.PREDICATE_COMPARISON_OPERATOR__RIGHT,
-						 WafFactory.eINSTANCE.createPathVariableAttribute()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.PREDICATE_COMPARISON_OPERATOR__RIGHT,
-						 WafFactory.eINSTANCE.createPathVariableResource()));
-
-				return null;
-			}
- 
-			/**
-			 * <!-- begin-user-doc -->
-			 * <!-- end-user-doc -->
-			 * @generated
-			 */
-			@Override
-			public Object casePredicateInOperator(PredicateInOperator object) {
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.PREDICATE_IN_OPERATOR__LEFT,
-						 WafFactory.eINSTANCE.createPathVariableAssociation()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.PREDICATE_IN_OPERATOR__LEFT,
-						 WafFactory.eINSTANCE.createPathVariableAttribute()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.PREDICATE_IN_OPERATOR__LEFT,
-						 WafFactory.eINSTANCE.createPathVariableResource()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.PREDICATE_IN_OPERATOR__RIGHT,
-						 WafFactory.eINSTANCE.createPathVariableAssociation()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.PREDICATE_IN_OPERATOR__RIGHT,
-						 WafFactory.eINSTANCE.createPathVariableAttribute()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.PREDICATE_IN_OPERATOR__RIGHT,
-						 WafFactory.eINSTANCE.createPathVariableResource()));
-
-				return null;
-			}
- 
-			/**
-			 * <!-- begin-user-doc -->
-			 * <!-- end-user-doc -->
-			 * @generated
-			 */
-			@Override
-			public Object casePredicateLikeOperator(PredicateLikeOperator object) {
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.PREDICATE_LIKE_OPERATOR__LEFT,
-						 WafFactory.eINSTANCE.createPathVariableAssociation()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.PREDICATE_LIKE_OPERATOR__LEFT,
-						 WafFactory.eINSTANCE.createPathVariableAttribute()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.PREDICATE_LIKE_OPERATOR__LEFT,
-						 WafFactory.eINSTANCE.createPathVariableResource()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.PREDICATE_LIKE_OPERATOR__RIGHT,
-						 WafFactory.eINSTANCE.createPathVariableAssociation()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.PREDICATE_LIKE_OPERATOR__RIGHT,
-						 WafFactory.eINSTANCE.createPathVariableAttribute()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.PREDICATE_LIKE_OPERATOR__RIGHT,
-						 WafFactory.eINSTANCE.createPathVariableResource()));
-
-				return null;
-			}
- 
-			/**
-			 * <!-- begin-user-doc -->
-			 * <!-- end-user-doc -->
-			 * @generated
-			 */
-			@Override
-			public Object casePredicateIsEmpty(PredicateIsEmpty object) {
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.PREDICATE_IS_EMPTY__VALUE,
-						 WafFactory.eINSTANCE.createPathVariableAssociation()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.PREDICATE_IS_EMPTY__VALUE,
-						 WafFactory.eINSTANCE.createPathVariableAttribute()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.PREDICATE_IS_EMPTY__VALUE,
-						 WafFactory.eINSTANCE.createPathVariableResource()));
-
-				return null;
-			}
- 
-			/**
-			 * <!-- begin-user-doc -->
-			 * <!-- end-user-doc -->
-			 * @generated
-			 */
-			@Override
-			public Object casePredicateIsNull(PredicateIsNull object) {
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.PREDICATE_IS_NULL__VALUE,
-						 WafFactory.eINSTANCE.createPathVariableAssociation()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.PREDICATE_IS_NULL__VALUE,
-						 WafFactory.eINSTANCE.createPathVariableAttribute()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.PREDICATE_IS_NULL__VALUE,
-						 WafFactory.eINSTANCE.createPathVariableResource()));
-
-				return null;
-			}
- 
-			/**
-			 * <!-- begin-user-doc -->
-			 * <!-- end-user-doc -->
-			 * @generated
-			 */
-			@Override
-			public Object caseArithmeticOperation(ArithmeticOperation object) {
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.ARITHMETIC_OPERATION__OPERANDS,
-						 WafFactory.eINSTANCE.createPathVariableAssociation()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.ARITHMETIC_OPERATION__OPERANDS,
-						 WafFactory.eINSTANCE.createPathVariableAttribute()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.ARITHMETIC_OPERATION__OPERANDS,
-						 WafFactory.eINSTANCE.createPathVariableResource()));
-
-				return null;
-			}
-			/**
-			 * <!-- begin-user-doc -->
-			 * <!-- end-user-doc -->
-			 * @generated
-			 */
-			protected CommandParameter createChildParameter(Object feature, Object child) {
-				return new CommandParameter(null, feature, child);
-			}
-
-		}
-
-		/**
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		public Collection<Object> getNewChildDescriptors(Object object, EditingDomain editingDomain) {
-			ArrayList<Object> result = new ArrayList<Object>();
-			new CreationSwitch(result, editingDomain).doSwitch((EObject)object);
-			return result;
-		}
-
-		/**
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		public ResourceLocator getResourceLocator() {
-			return WafEditPlugin.INSTANCE;
-		}
 	}
 
 }

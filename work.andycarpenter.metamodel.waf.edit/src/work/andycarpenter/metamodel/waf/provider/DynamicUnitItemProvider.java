@@ -70,7 +70,6 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 			addUiModelRefPropertyDescriptor(object);
 			addContentTypePropertyDescriptor(object);
 			addContainingAssociationPropertyDescriptor(object);
-			addContainingTypePropertyDescriptor(object);
 			addIsContainedPropertyDescriptor(object);
 			addHasExplicitlyEditedContainerPropertyDescriptor(object);
 			addServicesUsedPropertyDescriptor(object);
@@ -660,28 +659,6 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 				 getString("_UI_DynamicUnit_containingAssociation_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_DynamicUnit_containingAssociation_feature", "_UI_DynamicUnit_type"),
 				 WafPackage.eINSTANCE.getDynamicUnit_ContainingAssociation(),
-				 false,
-				 false,
-				 false,
-				 null,
-				 getString("_UI_DebugPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Containing Type feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addContainingTypePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_DynamicUnit_containingType_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DynamicUnit_containingType_feature", "_UI_DynamicUnit_type"),
-				 WafPackage.eINSTANCE.getDynamicUnit_ContainingType(),
 				 false,
 				 false,
 				 false,

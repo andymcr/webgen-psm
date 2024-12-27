@@ -13,13 +13,13 @@ import work.andycarpenter.metamodel.waf.WafFactory;
  * A test case for the model object '<em><b>Unit Association</b></em>'.
  * <!-- end-user-doc -->
  * <p>
- * The following features are tested:
+ * The following operations are tested:
  * <ul>
- *   <li>{@link work.andycarpenter.metamodel.waf.Path#isHasChild() <em>Has Child</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.Path#getLeafFeature() <em>Leaf Feature</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.Path#getContainingType() <em>Containing Type</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.PathAssociation#getName() <em>Name</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.PathAssociation#getTargetEntity() <em>Target Entity</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.orm.AssociationPathElement#name() <em>Name</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.orm.AssociationPathElement#associationTarget() <em>Association Target</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.orm.AssociationPathElement#leafFeature() <em>Leaf Feature</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.orm.AssociationPathElement#leafEntity() <em>Leaf Entity</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.orm.Path#contextEntity() <em>Context Entity</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -79,45 +79,6 @@ public class UnitAssociationTest extends UnitFeatureTest {
 	}
 
 	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.Path#getLeafFeature() <em>Leaf Feature</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.Path#getLeafFeature()
-	 * @generated
-	 */
-	public void testGetLeafFeature() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.Path#getContainingType() <em>Containing Type</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.Path#getContainingType()
-	 * @generated
-	 */
-	public void testGetContainingType() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.Path#isHasChild() <em>Has Child</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.Path#isHasChild()
-	 * @generated
-	 */
-	public void testIsHasChild() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
 	 * Tests the '{@link work.andycarpenter.metamodel.orm.AssociationReference#getName() <em>Name</em>}' feature getter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -126,37 +87,76 @@ public class UnitAssociationTest extends UnitFeatureTest {
 	 */
 	public void testGetName() {
 		UnitAssociation unitAssociation = getFixture();
-		assertEquals("", unitAssociation.getName());
+		assertEquals("", unitAssociation.name());
 
 		String name = "jhw3lwip5";
 		Association association = OrmFactory.eINSTANCE.createAssociation();
 		unitAssociation.setAssociation(association);
 		association.setName(name);
-		assertEquals(name, unitAssociation.getName());
+		assertEquals(name, unitAssociation.name());
 	}
 
 	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.PathAssociation#setName(java.lang.String) <em>Name</em>}' feature setter.
+	 * Tests the '{@link work.andycarpenter.metamodel.orm.AssociationPathElement#associationTarget() <em>Association Target</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.PathAssociation#setName(java.lang.String)
+	 * @see work.andycarpenter.metamodel.orm.AssociationPathElement#associationTarget()
 	 * @generated
 	 */
-	public void testSetName() {
-		// TODO: implement this feature setter test method
+	public void testAssociationTarget() {
+		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}
 
 	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.PathAssociation#getTargetEntity() <em>Target Entity</em>}' feature getter.
+	 * Tests the '{@link work.andycarpenter.metamodel.orm.AssociationPathElement#leafFeature() <em>Leaf Feature</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.PathAssociation#getTargetEntity()
+	 * @see work.andycarpenter.metamodel.orm.AssociationPathElement#leafFeature()
 	 * @generated
 	 */
-	public void testGetTargetEntity() {
-		// TODO: implement this feature getter test method
+	public void testLeafFeature() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.orm.AssociationPathElement#leafEntity() <em>Leaf Entity</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.orm.AssociationPathElement#leafEntity()
+	 * @generated
+	 */
+	public void testLeafEntity() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.orm.AssociationPathElement#name() <em>Name</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.orm.AssociationPathElement#name()
+	 * @generated
+	 */
+	public void testName() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.orm.Path#contextEntity() <em>Context Entity</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.orm.Path#contextEntity()
+	 * @generated
+	 */
+	public void testContextEntity() {
+		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}

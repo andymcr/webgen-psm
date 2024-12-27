@@ -54,14 +54,12 @@ public class SelectionItemProvider extends NamedElementItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addDefinedByPropertyDescriptor(object);
+			addLimitPropertyDescriptor(object);
 			addDistinctPropertyDescriptor(object);
 			addFieldsPropertyDescriptor(object);
 			addJoinsPropertyDescriptor(object);
-			addLimitPropertyDescriptor(object);
 			addGroupingPropertyDescriptor(object);
-			addSelectPathPropertyDescriptor(object);
 			addMethodNamePropertyDescriptor(object);
-			addSelectionTypePropertyDescriptor(object);
 			addHasFormalsPropertyDescriptor(object);
 			addHasPaginationSupportPropertyDescriptor(object);
 		}
@@ -108,7 +106,7 @@ public class SelectionItemProvider extends NamedElementItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
+				 getString("_UI_DataAccessPropertyCategory"),
 				 null));
 	}
 
@@ -130,7 +128,7 @@ public class SelectionItemProvider extends NamedElementItemProvider {
 				 false,
 				 true,
 				 null,
-				 null,
+				 getString("_UI_DataAccessPropertyCategory"),
 				 null));
 	}
 
@@ -152,7 +150,7 @@ public class SelectionItemProvider extends NamedElementItemProvider {
 				 false,
 				 true,
 				 null,
-				 null,
+				 getString("_UI_DataAccessPropertyCategory"),
 				 null));
 	}
 
@@ -174,7 +172,7 @@ public class SelectionItemProvider extends NamedElementItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
-				 null,
+				 getString("_UI_DataAccessPropertyCategory"),
 				 null));
 	}
 
@@ -196,29 +194,7 @@ public class SelectionItemProvider extends NamedElementItemProvider {
 				 false,
 				 true,
 				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Select Path feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addSelectPathPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Selection_selectPath_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Selection_selectPath_feature", "_UI_Selection_type"),
-				 OrmPackage.Literals.SELECTION__SELECT_PATH,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
+				 getString("_UI_DataAccessPropertyCategory"),
 				 null));
 	}
 
@@ -240,29 +216,7 @@ public class SelectionItemProvider extends NamedElementItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Selection Type feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addSelectionTypePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Selection_selectionType_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Selection_selectionType_feature", "_UI_Selection_type"),
-				 OrmPackage.Literals.SELECTION__SELECTION_TYPE,
-				 false,
-				 false,
-				 false,
-				 null,
-				 getString("_UI_DebugPropertyCategory"),
+				 getString("_UI_ImplementationPropertyCategory"),
 				 null));
 	}
 
@@ -324,8 +278,9 @@ public class SelectionItemProvider extends NamedElementItemProvider {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(BasePackage.Literals.FORMAL_PARAMETER_LIST__PARAMETERS);
 			childrenFeatures.add(OrmPackage.Literals.SELECTION__CONDITION);
-			childrenFeatures.add(OrmPackage.Literals.SELECTION__FILTERS);
 			childrenFeatures.add(OrmPackage.Literals.SELECTION__ORDERING);
+			childrenFeatures.add(OrmPackage.Literals.SELECTION__FILTERS);
+			childrenFeatures.add(OrmPackage.Literals.SELECTION__SELECT_PATH);
 		}
 		return childrenFeatures;
 	}
@@ -381,8 +336,8 @@ public class SelectionItemProvider extends NamedElementItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Selection.class)) {
-			case OrmPackage.SELECTION__DISTINCT:
 			case OrmPackage.SELECTION__LIMIT:
+			case OrmPackage.SELECTION__DISTINCT:
 			case OrmPackage.SELECTION__METHOD_NAME:
 			case OrmPackage.SELECTION__HAS_FORMALS:
 			case OrmPackage.SELECTION__HAS_PAGINATION_SUPPORT:
@@ -390,8 +345,9 @@ public class SelectionItemProvider extends NamedElementItemProvider {
 				return;
 			case OrmPackage.SELECTION__PARAMETERS:
 			case OrmPackage.SELECTION__CONDITION:
-			case OrmPackage.SELECTION__FILTERS:
 			case OrmPackage.SELECTION__ORDERING:
+			case OrmPackage.SELECTION__FILTERS:
+			case OrmPackage.SELECTION__SELECT_PATH:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -456,11 +412,6 @@ public class SelectionItemProvider extends NamedElementItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OrmPackage.Literals.SELECTION__FILTERS,
-				 OrmFactory.eINSTANCE.createFilter()));
-
-		newChildDescriptors.add
-			(createChildParameter
 				(OrmPackage.Literals.SELECTION__ORDERING,
 				 OrmFactory.eINSTANCE.createAsc()));
 
@@ -468,6 +419,16 @@ public class SelectionItemProvider extends NamedElementItemProvider {
 			(createChildParameter
 				(OrmPackage.Literals.SELECTION__ORDERING,
 				 OrmFactory.eINSTANCE.createDesc()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OrmPackage.Literals.SELECTION__FILTERS,
+				 OrmFactory.eINSTANCE.createFilter()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OrmPackage.Literals.SELECTION__SELECT_PATH,
+				 OrmFactory.eINSTANCE.createSelectionPath()));
 	}
 
 	/**
