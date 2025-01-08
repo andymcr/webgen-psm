@@ -213,11 +213,6 @@ public class CallableItemProvider extends ItemProviderAdapter implements IEditin
 		newChildDescriptors.add
 			(createChildParameter
 				(BasePackage.Literals.CALLABLE__EXPRESSION,
-				 BaseFactory.eINSTANCE.createParameterReference()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(BasePackage.Literals.CALLABLE__EXPRESSION,
 				 BaseFactory.eINSTANCE.createCallable()));
 
 		newChildDescriptors.add

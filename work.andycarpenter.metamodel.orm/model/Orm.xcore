@@ -685,7 +685,7 @@ abstract class ResourcePathElement extends Path {
 			resource.name
 		}
 	}
-	
+
 	op Feature leafFeature() {
 		resource
 	}

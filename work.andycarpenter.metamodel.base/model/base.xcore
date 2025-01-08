@@ -162,11 +162,6 @@ class FormalParameter extends NamedElement {
 	String description = ''
 }
 
-class ParameterReference extends Variable { 
-    @GenModel(propertyCategory="Model")
-	refers FormalParameter[1] parameter 
-}
-
 class Callable extends FormalParameterList, Operand {
 	contains Expression[1] expression
 }

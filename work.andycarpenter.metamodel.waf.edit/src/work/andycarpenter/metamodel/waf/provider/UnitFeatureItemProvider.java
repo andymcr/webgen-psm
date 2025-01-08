@@ -2546,11 +2546,6 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.eINSTANCE.getUnitFeature_ForcedValue(),
-				 BaseFactory.eINSTANCE.createParameterReference()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.eINSTANCE.getUnitFeature_ForcedValue(),
 				 BaseFactory.eINSTANCE.createCallable()));
 
 		newChildDescriptors.add

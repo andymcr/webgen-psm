@@ -13,7 +13,6 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
-
 import work.andycarpenter.metamodel.orm.AssociationPathElement;
 import work.andycarpenter.metamodel.orm.OrmPackage;
 import work.andycarpenter.metamodel.orm.ResourcePathElement;

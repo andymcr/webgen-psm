@@ -417,29 +417,6 @@ public class BaseItemProviderAdapterFactory extends BaseAdapterFactory implement
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.base.ParameterReference} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ParameterReferenceItemProvider parameterReferenceItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link work.andycarpenter.metamodel.base.ParameterReference}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createParameterReferenceAdapter() {
-		if (parameterReferenceItemProvider == null) {
-			parameterReferenceItemProvider = new ParameterReferenceItemProvider(this);
-		}
-
-		return parameterReferenceItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.base.Callable} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -627,7 +604,6 @@ public class BaseItemProviderAdapterFactory extends BaseAdapterFactory implement
 		if (enumerationTypeItemProvider != null) enumerationTypeItemProvider.dispose();
 		if (enumerationLiteralItemProvider != null) enumerationLiteralItemProvider.dispose();
 		if (formalParameterItemProvider != null) formalParameterItemProvider.dispose();
-		if (parameterReferenceItemProvider != null) parameterReferenceItemProvider.dispose();
 		if (callableItemProvider != null) callableItemProvider.dispose();
 		if (reduceFunctionItemProvider != null) reduceFunctionItemProvider.dispose();
 		if (sizeFunctionItemProvider != null) sizeFunctionItemProvider.dispose();
@@ -695,11 +671,6 @@ public class BaseItemProviderAdapterFactory extends BaseAdapterFactory implement
 						(ExpressionPackage.Literals.PREDICATE_BOOLEAN_VARIABLE__FEATURE,
 						 BaseFactory.eINSTANCE.createConstantReference()));
 
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.PREDICATE_BOOLEAN_VARIABLE__FEATURE,
-						 BaseFactory.eINSTANCE.createParameterReference()));
-
 				return null;
 			}
  
@@ -749,11 +720,6 @@ public class BaseItemProviderAdapterFactory extends BaseAdapterFactory implement
 					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_EQUALITY_OPERATOR__LEFT,
 						 BaseFactory.eINSTANCE.createConstantReference()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.PREDICATE_EQUALITY_OPERATOR__LEFT,
-						 BaseFactory.eINSTANCE.createParameterReference()));
 
 				newChildDescriptors.add
 					(createChildParameter
@@ -809,11 +775,6 @@ public class BaseItemProviderAdapterFactory extends BaseAdapterFactory implement
 					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_EQUALITY_OPERATOR__RIGHT,
 						 BaseFactory.eINSTANCE.createConstantReference()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.PREDICATE_EQUALITY_OPERATOR__RIGHT,
-						 BaseFactory.eINSTANCE.createParameterReference()));
 
 				newChildDescriptors.add
 					(createChildParameter
@@ -883,11 +844,6 @@ public class BaseItemProviderAdapterFactory extends BaseAdapterFactory implement
 				newChildDescriptors.add
 					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_COMPARISON_OPERATOR__LEFT,
-						 BaseFactory.eINSTANCE.createParameterReference()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.PREDICATE_COMPARISON_OPERATOR__LEFT,
 						 BaseFactory.eINSTANCE.createCallable()));
 
 				newChildDescriptors.add
@@ -939,11 +895,6 @@ public class BaseItemProviderAdapterFactory extends BaseAdapterFactory implement
 					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_COMPARISON_OPERATOR__RIGHT,
 						 BaseFactory.eINSTANCE.createConstantReference()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.PREDICATE_COMPARISON_OPERATOR__RIGHT,
-						 BaseFactory.eINSTANCE.createParameterReference()));
 
 				newChildDescriptors.add
 					(createChildParameter
@@ -1013,11 +964,6 @@ public class BaseItemProviderAdapterFactory extends BaseAdapterFactory implement
 				newChildDescriptors.add
 					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_IN_OPERATOR__LEFT,
-						 BaseFactory.eINSTANCE.createParameterReference()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.PREDICATE_IN_OPERATOR__LEFT,
 						 BaseFactory.eINSTANCE.createCallable()));
 
 				newChildDescriptors.add
@@ -1069,11 +1015,6 @@ public class BaseItemProviderAdapterFactory extends BaseAdapterFactory implement
 					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_IN_OPERATOR__RIGHT,
 						 BaseFactory.eINSTANCE.createConstantReference()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.PREDICATE_IN_OPERATOR__RIGHT,
-						 BaseFactory.eINSTANCE.createParameterReference()));
 
 				newChildDescriptors.add
 					(createChildParameter
@@ -1117,11 +1058,6 @@ public class BaseItemProviderAdapterFactory extends BaseAdapterFactory implement
 
 				newChildDescriptors.add
 					(createChildParameter
-						(ExpressionPackage.Literals.PREDICATE_LIKE_OPERATOR__LEFT,
-						 BaseFactory.eINSTANCE.createParameterReference()));
-
-				newChildDescriptors.add
-					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_LIKE_OPERATOR__RIGHT,
 						 BaseFactory.eINSTANCE.createNullLiteral()));
 
@@ -1163,11 +1099,6 @@ public class BaseItemProviderAdapterFactory extends BaseAdapterFactory implement
 				newChildDescriptors.add
 					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_LIKE_OPERATOR__RIGHT,
-						 BaseFactory.eINSTANCE.createParameterReference()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.PREDICATE_LIKE_OPERATOR__RIGHT,
 						 BaseFactory.eINSTANCE.createCallable()));
 
 				newChildDescriptors.add
@@ -1205,11 +1136,6 @@ public class BaseItemProviderAdapterFactory extends BaseAdapterFactory implement
 						(ExpressionPackage.Literals.PREDICATE_IS_EMPTY__VALUE,
 						 BaseFactory.eINSTANCE.createConstantReference()));
 
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.PREDICATE_IS_EMPTY__VALUE,
-						 BaseFactory.eINSTANCE.createParameterReference()));
-
 				return null;
 			}
  
@@ -1234,11 +1160,6 @@ public class BaseItemProviderAdapterFactory extends BaseAdapterFactory implement
 					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_IS_NULL__VALUE,
 						 BaseFactory.eINSTANCE.createConstantReference()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.PREDICATE_IS_NULL__VALUE,
-						 BaseFactory.eINSTANCE.createParameterReference()));
 
 				return null;
 			}
@@ -1289,11 +1210,6 @@ public class BaseItemProviderAdapterFactory extends BaseAdapterFactory implement
 					(createChildParameter
 						(ExpressionPackage.Literals.ARITHMETIC_OPERATION__OPERANDS,
 						 BaseFactory.eINSTANCE.createConstantReference()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.ARITHMETIC_OPERATION__OPERANDS,
-						 BaseFactory.eINSTANCE.createParameterReference()));
 
 				newChildDescriptors.add
 					(createChildParameter

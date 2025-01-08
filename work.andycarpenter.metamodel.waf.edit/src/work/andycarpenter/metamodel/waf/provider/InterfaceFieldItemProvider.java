@@ -2016,11 +2016,6 @@ public class InterfaceFieldItemProvider extends NamedElementItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.eINSTANCE.getInterfaceField_FieldDefaultValue(),
-				 BaseFactory.eINSTANCE.createParameterReference()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.eINSTANCE.getInterfaceField_FieldDefaultValue(),
 				 BaseFactory.eINSTANCE.createCallable()));
 
 		newChildDescriptors.add

@@ -299,11 +299,6 @@ public class UnitAttributeItemProvider extends UnitFeatureItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.eINSTANCE.getUnitAttribute_AttributeDefaultValue(),
-				 BaseFactory.eINSTANCE.createParameterReference()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.eINSTANCE.getUnitAttribute_AttributeDefaultValue(),
 				 BaseFactory.eINSTANCE.createCallable()));
 
 		newChildDescriptors.add
