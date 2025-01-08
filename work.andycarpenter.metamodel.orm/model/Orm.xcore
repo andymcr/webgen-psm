@@ -611,7 +611,11 @@ abstract class Path {
  	op Feature leafFeature()
 }
 
-abstract class AssociationPathElement extends Path {
+abstract class PathRoot extends Path {
+	contains ChildFeature childFeature opposite parent
+}
+
+abstract class AssociationPathElement extends PathRoot {
     @GenModel(propertyCategory="Model")
 	refers Association[1] association
 
@@ -625,8 +629,6 @@ abstract class AssociationPathElement extends Path {
 
     @GenModel(propertyCategory="Interface")
 	refers ModelLabel valueDisplay
-
-	contains ChildFeature childFeature opposite parent
 
 	op Entity associationTarget() {
 		association?.targetType
@@ -692,10 +694,14 @@ abstract class ResourcePathElement extends Path {
 }
 
 interface ChildFeature extends Path {
-	container AssociationPathElement[1] parent opposite childFeature
+	container PathRoot[1] parent opposite childFeature
 
 	op Entity contextEntity() {
-		parent.associationTarget()
+		if (parent instanceof AssociationPathElement) {
+			(parent as AssociationPathElement).associationTarget()
+		} else {
+			(parent as ParameterVariable).contextEntity()
+		}
 	}
 }
 
@@ -853,7 +859,19 @@ class ResourceVariable extends ResourcePathElement, FeatureVariable {
 	}
 }
 
-class ParameterVariable extends Path, Variable {
+class ParameterVariable extends PathRoot, Variable {
     @GenModel(propertyCategory="Model")
-	refers FormalParameter[1] formal 
+	refers FormalParameter[1] formal
+
+	op Entity contextEntity() {
+		if (formal === null) {
+			null
+		} else {
+			if (formal.dataType === null || !(formal.dataType instanceof Entity)) {
+				null
+			} else {
+				(formal.dataType as Entity)
+			}
+		}
+	}
 }

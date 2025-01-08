@@ -136,19 +136,6 @@ public class UnitAssociationTest extends UnitFeatureTest {
 	}
 
 	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.orm.AssociationPathElement#name() <em>Name</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.orm.AssociationPathElement#name()
-	 * @generated
-	 */
-	public void testName() {
-		// TODO: implement this operation test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
 	 * Tests the '{@link work.andycarpenter.metamodel.orm.Path#contextEntity() <em>Context Entity</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -156,6 +143,19 @@ public class UnitAssociationTest extends UnitFeatureTest {
 	 * @generated
 	 */
 	public void testContextEntity() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.orm.AssociationPathElement#name() <em>Name</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.orm.AssociationPathElement#name()
+	 * @generated
+	 */
+	public void testName() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

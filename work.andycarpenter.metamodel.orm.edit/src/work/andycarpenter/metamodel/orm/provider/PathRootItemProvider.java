@@ -8,26 +8,29 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import work.andycarpenter.metamodel.expression.ExpressionPackage;
+import org.eclipse.emf.edit.provider.ViewerNotification;
+
+import work.andycarpenter.metamodel.orm.OrmFactory;
 import work.andycarpenter.metamodel.orm.OrmPackage;
+import work.andycarpenter.metamodel.orm.PathRoot;
 
 /**
- * This is the item provider adapter for a {@link work.andycarpenter.metamodel.orm.ParameterVariable} object.
+ * This is the item provider adapter for a {@link work.andycarpenter.metamodel.orm.PathRoot} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ParameterVariableItemProvider extends PathRootItemProvider {
+public class PathRootItemProvider 
+	extends PathItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ParameterVariableItemProvider(AdapterFactory adapterFactory) {
+	public PathRootItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -42,65 +45,38 @@ public class ParameterVariableItemProvider extends PathRootItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addRootContainerPropertyDescriptor(object);
-			addFormalPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Root Container feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addRootContainerPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Expression_rootContainer_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Expression_rootContainer_feature", "_UI_Expression_type"),
-				 ExpressionPackage.Literals.EXPRESSION__ROOT_CONTAINER,
-				 false,
-				 false,
-				 false,
-				 null,
-				 getString("_UI_DebugPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Formal feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addFormalPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ParameterVariable_formal_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ParameterVariable_formal_feature", "_UI_ParameterVariable_type"),
-				 OrmPackage.Literals.PARAMETER_VARIABLE__FORMAL,
-				 true,
-				 false,
-				 true,
-				 null,
-				 getString("_UI_ModelPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This returns ParameterVariable.gif.
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
+	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/ParameterVariable"));
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		if (childrenFeatures == null) {
+			super.getChildrenFeatures(object);
+			childrenFeatures.add(OrmPackage.Literals.PATH_ROOT__CHILD_FEATURE);
+		}
+		return childrenFeatures;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EStructuralFeature getChildFeature(Object object, Object child) {
+		// Check the type of the specified child object and return the proper feature to use for
+		// adding (see {@link AddCommand}) it as a child.
+
+		return super.getChildFeature(object, child);
 	}
 
 	/**
@@ -111,7 +87,7 @@ public class ParameterVariableItemProvider extends PathRootItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_ParameterVariable_type");
+		return getString("_UI_PathRoot_type");
 	}
 
 
@@ -125,6 +101,12 @@ public class ParameterVariableItemProvider extends PathRootItemProvider {
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(PathRoot.class)) {
+			case OrmPackage.PATH_ROOT__CHILD_FEATURE:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 
@@ -138,6 +120,21 @@ public class ParameterVariableItemProvider extends PathRootItemProvider {
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OrmPackage.Literals.PATH_ROOT__CHILD_FEATURE,
+				 OrmFactory.eINSTANCE.createChildAssociation()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OrmPackage.Literals.PATH_ROOT__CHILD_FEATURE,
+				 OrmFactory.eINSTANCE.createChildAttribute()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OrmPackage.Literals.PATH_ROOT__CHILD_FEATURE,
+				 OrmFactory.eINSTANCE.createChildResource()));
 	}
 
 }
