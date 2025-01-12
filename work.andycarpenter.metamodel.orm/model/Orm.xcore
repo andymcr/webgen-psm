@@ -604,11 +604,30 @@ abstract class Path {
 		''
 	}
 
+    @GenModel(propertyCategory="Model")
+	derived readonly unsettable transient volatile String name get {
+		name()
+	}
+
 	op Entity contextEntity() {
 		null
 	}
 
- 	op Feature leafFeature()
+ 	op Path leafElement()
+ 
+	op Feature leafFeature() {
+		if (leafElement() === null) {
+			return null
+		} else if (leafElement() instanceof AssociationPathElement) {
+			return (leafElement() as AssociationPathElement).association
+		} else if (leafElement() instanceof AttributePathElement) {
+			return (leafElement() as AttributePathElement).attribute
+		} else if (leafElement() instanceof ResourcePathElement) {
+			return (leafElement() as ResourcePathElement).resource
+		} else {
+			return null
+		}
+	}
 }
 
 abstract class PathRoot extends Path {
@@ -634,11 +653,11 @@ abstract class AssociationPathElement extends PathRoot {
 		association?.targetType
 	} 
 
-	op Feature leafFeature() {
+	op Path leafElement() {
 		if (childFeature === null) {
-			association
+			this
 		} else {
-			childFeature.leafFeature();
+			childFeature.leafElement();
 		}
 	}
 
@@ -671,8 +690,8 @@ abstract class AttributePathElement extends Path {
 		}
 	}
 	
-	op Feature leafFeature() {
-		attribute
+	op Path leafElement() {
+		this
 	}
 }
 
@@ -688,8 +707,8 @@ abstract class ResourcePathElement extends Path {
 		}
 	}
 
-	op Feature leafFeature() {
-		resource
+	op Path leafElement() {
+		this
 	}
 }
 

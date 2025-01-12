@@ -11,6 +11,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import work.andycarpenter.metamodel.expression.ExpressionPackage;
+import work.andycarpenter.metamodel.orm.ResourceVariable;
 
 /**
  * This is the item provider adapter for a {@link work.andycarpenter.metamodel.orm.ResourceVariable} object.
@@ -86,7 +87,10 @@ public class ResourceVariableItemProvider extends ResourcePathElementItemProvide
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_ResourceVariable_type");
+		String label = ((ResourceVariable)object).getName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_ResourceVariable_type") :
+			getString("_UI_ResourceVariable_type") + " " + label;
 	}
 
 

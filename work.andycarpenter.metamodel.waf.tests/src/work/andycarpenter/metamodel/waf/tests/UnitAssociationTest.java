@@ -13,13 +13,20 @@ import work.andycarpenter.metamodel.waf.WafFactory;
  * A test case for the model object '<em><b>Unit Association</b></em>'.
  * <!-- end-user-doc -->
  * <p>
+ * The following features are tested:
+ * <ul>
+ *   <li>{@link work.andycarpenter.metamodel.orm.Path#getName() <em>Name</em>}</li>
+ * </ul>
+ * </p>
+ * <p>
  * The following operations are tested:
  * <ul>
  *   <li>{@link work.andycarpenter.metamodel.orm.AssociationPathElement#name() <em>Name</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.orm.AssociationPathElement#associationTarget() <em>Association Target</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.orm.AssociationPathElement#leafFeature() <em>Leaf Feature</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.orm.AssociationPathElement#leafElement() <em>Leaf Element</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.orm.AssociationPathElement#leafEntity() <em>Leaf Entity</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.orm.Path#contextEntity() <em>Context Entity</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.orm.Path#leafFeature() <em>Leaf Feature</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -97,6 +104,19 @@ public class UnitAssociationTest extends UnitFeatureTest {
 	}
 
 	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.orm.Path#isSetName() <em>isSetName()</em>}' method.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.orm.Path#isSetName()
+	 * @generated
+	 */
+	public void testIsSetName() {
+		// TODO: implement this test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
 	 * Tests the '{@link work.andycarpenter.metamodel.orm.AssociationPathElement#associationTarget() <em>Association Target</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -110,13 +130,13 @@ public class UnitAssociationTest extends UnitFeatureTest {
 	}
 
 	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.orm.AssociationPathElement#leafFeature() <em>Leaf Feature</em>}' operation.
+	 * Tests the '{@link work.andycarpenter.metamodel.orm.AssociationPathElement#leafElement() <em>Leaf Element</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.orm.AssociationPathElement#leafFeature()
+	 * @see work.andycarpenter.metamodel.orm.AssociationPathElement#leafElement()
 	 * @generated
 	 */
-	public void testLeafFeature() {
+	public void testLeafElement() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
@@ -143,6 +163,19 @@ public class UnitAssociationTest extends UnitFeatureTest {
 	 * @generated
 	 */
 	public void testContextEntity() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.orm.Path#leafFeature() <em>Leaf Feature</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.orm.Path#leafFeature()
+	 * @generated
+	 */
+	public void testLeafFeature() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

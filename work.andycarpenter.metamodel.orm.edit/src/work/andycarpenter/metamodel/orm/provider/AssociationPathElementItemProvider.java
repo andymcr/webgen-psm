@@ -116,7 +116,10 @@ public class AssociationPathElementItemProvider extends PathRootItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_AssociationPathElement_type");
+		String label = ((AssociationPathElement)object).getName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_AssociationPathElement_type") :
+			getString("_UI_AssociationPathElement_type") + " " + label;
 	}
 
 

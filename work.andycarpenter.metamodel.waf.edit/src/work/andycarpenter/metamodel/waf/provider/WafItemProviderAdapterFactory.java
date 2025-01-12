@@ -1485,9 +1485,9 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 		if (multiPageControllerItemProvider != null) multiPageControllerItemProvider.dispose();
 		if (staticUnitItemProvider != null) staticUnitItemProvider.dispose();
 		if (routeActualItemProvider != null) routeActualItemProvider.dispose();
+		if (unitAssociationItemProvider != null) unitAssociationItemProvider.dispose();
 		if (unitAttributeItemProvider != null) unitAttributeItemProvider.dispose();
 		if (unitResourceItemProvider != null) unitResourceItemProvider.dispose();
-		if (unitAssociationItemProvider != null) unitAssociationItemProvider.dispose();
 		if (unitLabelItemProvider != null) unitLabelItemProvider.dispose();
 		if (dataTypeFieldItemProvider != null) dataTypeFieldItemProvider.dispose();
 		if (dateFieldItemProvider != null) dateFieldItemProvider.dispose();

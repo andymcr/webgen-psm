@@ -14,7 +14,16 @@ import work.andycarpenter.metamodel.waf.WafFactory;
  * <p>
  * The following features are tested:
  * <ul>
- *   <li>{@link work.andycarpenter.metamodel.waf.UnitAttribute#getName() <em>Name</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.orm.Path#getName() <em>Name</em>}</li>
+ * </ul>
+ * </p>
+ * <p>
+ * The following operations are tested:
+ * <ul>
+ *   <li>{@link work.andycarpenter.metamodel.orm.AttributePathElement#name() <em>Name</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.orm.AttributePathElement#leafElement() <em>Leaf Element</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.orm.Path#contextEntity() <em>Context Entity</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.orm.Path#leafFeature() <em>Leaf Feature</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -74,10 +83,10 @@ public class UnitAttributeTest extends UnitFeatureTest {
 	}
 
 	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.UnitAttribute#getName() <em>Name</em>}' feature getter.
+	 * Tests the '{@link work.andycarpenter.metamodel.orm.Path#getName() <em>Name</em>}' feature getter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.UnitAttribute#getName()
+	 * @see work.andycarpenter.metamodel.orm.Path#getName()
 	 * @generated
 	 */
 	public void testGetName() {
@@ -87,14 +96,66 @@ public class UnitAttributeTest extends UnitFeatureTest {
 	}
 
 	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.UnitAttribute#setName(java.lang.String) <em>Name</em>}' feature setter.
+	 * Tests the '{@link work.andycarpenter.metamodel.orm.Path#isSetName() <em>isSetName()</em>}' method.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.UnitAttribute#setName(java.lang.String)
+	 * @see work.andycarpenter.metamodel.orm.Path#isSetName()
 	 * @generated
 	 */
-	public void testSetName() {
-		// TODO: implement this feature setter test method
+	public void testIsSetName() {
+		// TODO: implement this test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.orm.AttributePathElement#name() <em>Name</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.orm.AttributePathElement#name()
+	 * @generated
+	 */
+	public void testName() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.orm.AttributePathElement#leafElement() <em>Leaf Element</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.orm.AttributePathElement#leafElement()
+	 * @generated
+	 */
+	public void testLeafElement() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.orm.Path#contextEntity() <em>Context Entity</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.orm.Path#contextEntity()
+	 * @generated
+	 */
+	public void testContextEntity() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.orm.Path#leafFeature() <em>Leaf Feature</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.orm.Path#leafFeature()
+	 * @generated
+	 */
+	public void testLeafFeature() {
+		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}

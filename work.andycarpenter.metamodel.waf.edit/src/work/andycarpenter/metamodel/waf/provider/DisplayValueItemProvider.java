@@ -107,8 +107,10 @@ public class DisplayValueItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		DisplayValue displayValue = (DisplayValue)object;
-		return getString("_UI_DisplayValue_type") + " " + displayValue.isIsRequired();
+		String label = ((DisplayValue)object).getName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_DisplayValue_type") :
+			getString("_UI_DisplayValue_type") + " " + label;
 	}
 
 

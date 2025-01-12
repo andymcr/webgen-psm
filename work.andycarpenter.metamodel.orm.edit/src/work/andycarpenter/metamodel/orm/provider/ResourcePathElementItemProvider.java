@@ -88,7 +88,10 @@ public class ResourcePathElementItemProvider extends PathItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_ResourcePathElement_type");
+		String label = ((ResourcePathElement)object).getName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_ResourcePathElement_type") :
+			getString("_UI_ResourcePathElement_type") + " " + label;
 	}
 
 

@@ -12,9 +12,10 @@ import work.andycarpenter.metamodel.waf.WafFactory;
  * A test case for the model object '<em><b>Label Display Value</b></em>'.
  * <!-- end-user-doc -->
  * <p>
- * The following features are tested:
+ * The following operations are tested:
  * <ul>
- *   <li>{@link work.andycarpenter.metamodel.waf.LabelDisplayValue#getName() <em>Name</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.LabelDisplayValue#name() <em>Name</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.LabelDisplayValue#leafElement() <em>Leaf Element</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -74,27 +75,27 @@ public class LabelDisplayValueTest extends DisplayValueTest {
 	}
 
 	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.LabelDisplayValue#getName() <em>Name</em>}' feature getter.
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.LabelDisplayValue#name() <em>Name</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.LabelDisplayValue#getName()
+	 * @see work.andycarpenter.metamodel.waf.LabelDisplayValue#name()
 	 * @generated
 	 */
-	public void testGetName() {
-		// TODO: implement this feature getter test method
+	public void testName() {
+		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}
 
 	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.LabelDisplayValue#setName(java.lang.String) <em>Name</em>}' feature setter.
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.LabelDisplayValue#leafElement() <em>Leaf Element</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.LabelDisplayValue#setName(java.lang.String)
+	 * @see work.andycarpenter.metamodel.waf.LabelDisplayValue#leafElement()
 	 * @generated
 	 */
-	public void testSetName() {
-		// TODO: implement this feature setter test method
+	public void testLeafElement() {
+		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}

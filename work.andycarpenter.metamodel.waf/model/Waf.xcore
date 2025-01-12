@@ -1600,55 +1600,32 @@ abstract class UnitFeature extends UnitField, ActionContainer {
 	boolean autofocus
 	String footer
 
-	@OCL(derivation="if self.isAttributeField = true then
-			self.oclAsType(UnitAttribute).attribute
-		else if self.isResourceField = true then
-			self.oclAsType(UnitResource).resource
-		else if self.isAssociationField = true then
-			self.oclAsType(UnitAssociation).leafFeature()
-		else
-			null
-		endif endif endif")
-    @GenModel(propertyCategory="Debug")
-	refers derived readonly transient volatile Feature persistentFeature
-}
-
-class UnitAttribute extends UnitFeature {
-	refers Attribute[1] attribute
-
-	@OCL(derivation="if not attribute.oclIsUndefined() then
-			attribute.name
-		else
-			''
-		endif")
-    @GenModel(propertyCategory="Debug")
-	derived String[1] name
-
-	contains Expression attributeDefaultValue
-	boolean obfuscateFormFields
-	String validationPattern = ''
-}
-
-class UnitResource extends UnitFeature {
-	refers ResourceFeature[1] resource
-
-	@OCL(derivation="if not resource.oclIsUndefined() then
-			resource.name
-		else
-			''
-		endif")
-    @GenModel(propertyCategory="Debug")
-	derived String[1] name
-	boolean isDeletable = "true"
-	boolean isDownloadable = "true"
-	boolean showImageWhenEditing = "true"
-	refers ImageManipulation imageFilter
+	refers derived readonly transient volatile Feature persistentFeature get {
+		if (this instanceof InterfaceField) {
+			return null
+		} else {
+			return (this as Path).leafFeature()
+		}
+	}
 }
 
 class UnitAssociation extends UnitFeature, AssociationPathElement {
 	refers Selection options
 	refers Attribute collectionSortBy
 	boolean useAutocomplete = "false"
+}
+
+class UnitAttribute extends UnitFeature, AttributePathElement {
+	contains Expression attributeDefaultValue
+	boolean obfuscateFormFields
+	String validationPattern = ''
+}
+
+class UnitResource extends UnitFeature, ResourcePathElement {
+	boolean isDeletable = "true"
+	boolean isDownloadable = "true"
+	boolean showImageWhenEditing = "true"
+	refers ImageManipulation imageFilter
 }
 
 class UnitLabel extends UnitField {
@@ -3090,13 +3067,17 @@ class ResourceDisplayValue extends ResourcePathElement, DisplayValue {
 class LabelDisplayValue extends DisplayValue {
 	refers ModelLabel[1] label
 
-	@OCL(derivation="if not label.oclIsUndefined() then
-			label.name
-		else
+	op String name() {
+		if (label === null ) {
 			''
-		endif")
-    @GenModel(propertyCategory="Debug")
-	derived String name
+		} else {
+			label.name
+		}
+	}
+	
+	op Path leafElement() {
+		this
+	}
 }
 
 

@@ -18,6 +18,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 import work.andycarpenter.metamodel.base.BaseFactory;
 import work.andycarpenter.metamodel.expression.ExpressionFactory;
 import work.andycarpenter.metamodel.orm.OrmFactory;
+import work.andycarpenter.metamodel.orm.OrmPackage;
 import work.andycarpenter.metamodel.waf.UnitAttribute;
 import work.andycarpenter.metamodel.waf.WafPackage;
 
@@ -49,8 +50,8 @@ public class UnitAttributeItemProvider extends UnitFeatureItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addAttributePropertyDescriptor(object);
 			addNamePropertyDescriptor(object);
+			addAttributePropertyDescriptor(object);
 			addObfuscateFormFieldsPropertyDescriptor(object);
 			addValidationPatternPropertyDescriptor(object);
 		}
@@ -68,14 +69,14 @@ public class UnitAttributeItemProvider extends UnitFeatureItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_UnitAttribute_attribute_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UnitAttribute_attribute_feature", "_UI_UnitAttribute_type"),
-				 WafPackage.eINSTANCE.getUnitAttribute_Attribute(),
+				 getString("_UI_AttributePathElement_attribute_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_AttributePathElement_attribute_feature", "_UI_AttributePathElement_type"),
+				 OrmPackage.Literals.ATTRIBUTE_PATH_ELEMENT__ATTRIBUTE,
 				 true,
 				 false,
 				 true,
 				 null,
-				 null,
+				 getString("_UI_ModelPropertyCategory"),
 				 null));
 	}
 
@@ -90,14 +91,14 @@ public class UnitAttributeItemProvider extends UnitFeatureItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_UnitAttribute_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UnitAttribute_name_feature", "_UI_UnitAttribute_type"),
-				 WafPackage.eINSTANCE.getUnitAttribute_Name(),
-				 true,
+				 getString("_UI_Path_name_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Path_name_feature", "_UI_Path_type"),
+				 OrmPackage.Literals.PATH__NAME,
+				 false,
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 getString("_UI_DebugPropertyCategory"),
+				 getString("_UI_ModelPropertyCategory"),
 				 null));
 	}
 

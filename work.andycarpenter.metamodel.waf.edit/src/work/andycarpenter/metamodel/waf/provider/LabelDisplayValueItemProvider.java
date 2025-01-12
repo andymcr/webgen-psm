@@ -11,9 +11,6 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ViewerNotification;
-
 import work.andycarpenter.metamodel.waf.LabelDisplayValue;
 import work.andycarpenter.metamodel.waf.WafPackage;
 
@@ -46,7 +43,6 @@ public class LabelDisplayValueItemProvider extends DisplayValueItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addLabelPropertyDescriptor(object);
-			addNamePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -70,28 +66,6 @@ public class LabelDisplayValueItemProvider extends DisplayValueItemProvider {
 				 true,
 				 null,
 				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Name feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_LabelDisplayValue_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_LabelDisplayValue_name_feature", "_UI_LabelDisplayValue_type"),
-				 WafPackage.eINSTANCE.getLabelDisplayValue_Name(),
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -131,12 +105,6 @@ public class LabelDisplayValueItemProvider extends DisplayValueItemProvider {
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-
-		switch (notification.getFeatureID(LabelDisplayValue.class)) {
-			case WafPackage.LABEL_DISPLAY_VALUE__NAME:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-		}
 		super.notifyChanged(notification);
 	}
 

@@ -13,6 +13,7 @@ import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import work.andycarpenter.metamodel.expression.ExpressionPackage;
 import work.andycarpenter.metamodel.orm.OrmPackage;
+import work.andycarpenter.metamodel.orm.ParameterVariable;
 
 /**
  * This is the item provider adapter for a {@link work.andycarpenter.metamodel.orm.ParameterVariable} object.
@@ -111,7 +112,10 @@ public class ParameterVariableItemProvider extends PathRootItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_ParameterVariable_type");
+		String label = ((ParameterVariable)object).getName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_ParameterVariable_type") :
+			getString("_UI_ParameterVariable_type") + " " + label;
 	}
 
 

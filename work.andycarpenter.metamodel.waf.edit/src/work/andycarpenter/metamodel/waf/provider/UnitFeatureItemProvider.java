@@ -586,7 +586,7 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 				 false,
 				 false,
 				 null,
-				 getString("_UI_DebugPropertyCategory"),
+				 null,
 				 null));
 	}
 

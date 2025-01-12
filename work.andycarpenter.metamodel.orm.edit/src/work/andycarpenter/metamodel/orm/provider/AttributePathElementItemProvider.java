@@ -86,7 +86,10 @@ public class AttributePathElementItemProvider extends PathItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_AttributePathElement_type");
+		String label = ((AttributePathElement)object).getName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_AttributePathElement_type") :
+			getString("_UI_AttributePathElement_type") + " " + label;
 	}
 
 

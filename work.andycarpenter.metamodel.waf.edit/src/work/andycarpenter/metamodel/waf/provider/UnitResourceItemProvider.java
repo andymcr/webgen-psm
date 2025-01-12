@@ -14,6 +14,7 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import work.andycarpenter.metamodel.orm.OrmPackage;
 import work.andycarpenter.metamodel.waf.UnitResource;
 import work.andycarpenter.metamodel.waf.WafPackage;
 
@@ -45,8 +46,8 @@ public class UnitResourceItemProvider extends UnitFeatureItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addResourcePropertyDescriptor(object);
 			addNamePropertyDescriptor(object);
+			addResourcePropertyDescriptor(object);
 			addIsDeletablePropertyDescriptor(object);
 			addIsDownloadablePropertyDescriptor(object);
 			addShowImageWhenEditingPropertyDescriptor(object);
@@ -66,14 +67,14 @@ public class UnitResourceItemProvider extends UnitFeatureItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_UnitResource_resource_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UnitResource_resource_feature", "_UI_UnitResource_type"),
-				 WafPackage.eINSTANCE.getUnitResource_Resource(),
+				 getString("_UI_ResourcePathElement_resource_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ResourcePathElement_resource_feature", "_UI_ResourcePathElement_type"),
+				 OrmPackage.Literals.RESOURCE_PATH_ELEMENT__RESOURCE,
 				 true,
 				 false,
 				 true,
 				 null,
-				 null,
+				 getString("_UI_ModelPropertyCategory"),
 				 null));
 	}
 
@@ -88,14 +89,14 @@ public class UnitResourceItemProvider extends UnitFeatureItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_UnitResource_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UnitResource_name_feature", "_UI_UnitResource_type"),
-				 WafPackage.eINSTANCE.getUnitResource_Name(),
-				 true,
+				 getString("_UI_Path_name_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Path_name_feature", "_UI_Path_type"),
+				 OrmPackage.Literals.PATH__NAME,
+				 false,
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 getString("_UI_DebugPropertyCategory"),
+				 getString("_UI_ModelPropertyCategory"),
 				 null));
 	}
 
