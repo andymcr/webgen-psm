@@ -50,7 +50,6 @@ public class UnitAttributeItemProvider extends UnitFeatureItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addNamePropertyDescriptor(object);
 			addAttributePropertyDescriptor(object);
 			addObfuscateFormFieldsPropertyDescriptor(object);
 			addValidationPatternPropertyDescriptor(object);
@@ -76,28 +75,6 @@ public class UnitAttributeItemProvider extends UnitFeatureItemProvider {
 				 false,
 				 true,
 				 null,
-				 getString("_UI_ModelPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Name feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Path_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Path_name_feature", "_UI_Path_type"),
-				 OrmPackage.Literals.PATH__NAME,
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 getString("_UI_ModelPropertyCategory"),
 				 null));
 	}
@@ -214,7 +191,6 @@ public class UnitAttributeItemProvider extends UnitFeatureItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(UnitAttribute.class)) {
-			case WafPackage.UNIT_ATTRIBUTE__NAME:
 			case WafPackage.UNIT_ATTRIBUTE__OBFUSCATE_FORM_FIELDS:
 			case WafPackage.UNIT_ATTRIBUTE__VALIDATION_PATTERN:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
@@ -371,8 +347,8 @@ public class UnitAttributeItemProvider extends UnitFeatureItemProvider {
 
 		boolean qualify =
 			childFeature == WafPackage.eINSTANCE.getUnitField_HideWhen() ||
+			childFeature == WafPackage.eINSTANCE.getUnitField_DisplayDefaultWhen() ||
 			childFeature == WafPackage.eINSTANCE.getUnitFeature_ForcedValue() ||
-			childFeature == WafPackage.eINSTANCE.getUnitFeature_DisplayDefaultWhen() ||
 			childFeature == WafPackage.eINSTANCE.getUnitAttribute_AttributeDefaultValue();
 
 		if (qualify) {

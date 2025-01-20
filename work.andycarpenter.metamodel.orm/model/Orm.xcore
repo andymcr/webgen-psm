@@ -628,6 +628,7 @@ abstract class Path {
 			return null
 		}
 	}
+
 }
 
 abstract class PathRoot extends Path {

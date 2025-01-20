@@ -13,20 +13,13 @@ import work.andycarpenter.metamodel.waf.WafFactory;
  * A test case for the model object '<em><b>Unit Association</b></em>'.
  * <!-- end-user-doc -->
  * <p>
- * The following features are tested:
- * <ul>
- *   <li>{@link work.andycarpenter.metamodel.orm.Path#getName() <em>Name</em>}</li>
- * </ul>
- * </p>
- * <p>
  * The following operations are tested:
  * <ul>
+ *   <li>{@link work.andycarpenter.metamodel.waf.UnitAssociation#defaultValue() <em>Default Value</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.orm.AssociationPathElement#name() <em>Name</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.orm.AssociationPathElement#associationTarget() <em>Association Target</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.orm.AssociationPathElement#leafElement() <em>Leaf Element</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.orm.AssociationPathElement#leafEntity() <em>Leaf Entity</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.orm.Path#contextEntity() <em>Context Entity</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.orm.Path#leafFeature() <em>Leaf Feature</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -86,32 +79,27 @@ public class UnitAssociationTest extends UnitFeatureTest {
 	}
 
 	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.orm.AssociationReference#getName() <em>Name</em>}' feature getter.
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.UnitAssociation#defaultValue() <em>Default Value</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.orm.AssociationReference#getName()
-	 * @generated NOT
+	 * @see work.andycarpenter.metamodel.waf.UnitAssociation#defaultValue()
+	 * @generated
 	 */
-	public void testGetName() {
-		UnitAssociation unitAssociation = getFixture();
-		assertEquals("", unitAssociation.name());
-
-		String name = "jhw3lwip5";
-		Association association = OrmFactory.eINSTANCE.createAssociation();
-		unitAssociation.setAssociation(association);
-		association.setName(name);
-		assertEquals(name, unitAssociation.name());
+	public void testDefaultValue() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
 	}
 
 	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.orm.Path#isSetName() <em>isSetName()</em>}' method.
+	 * Tests the '{@link work.andycarpenter.metamodel.orm.AssociationPathElement#name() <em>Name</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.orm.Path#isSetName()
+	 * @see work.andycarpenter.metamodel.orm.AssociationPathElement#name()
 	 * @generated
 	 */
-	public void testIsSetName() {
-		// TODO: implement this test method
+	public void testName() {
+		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}
@@ -156,42 +144,21 @@ public class UnitAssociationTest extends UnitFeatureTest {
 	}
 
 	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.orm.Path#contextEntity() <em>Context Entity</em>}' operation.
+	 * Tests the '{@link work.andycarpenter.metamodel.orm.AssociationReference#getName() <em>Name</em>}' feature getter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.orm.Path#contextEntity()
-	 * @generated
+	 * @see work.andycarpenter.metamodel.orm.AssociationReference#getName()
+	 * @generated NOT
 	 */
-	public void testContextEntity() {
-		// TODO: implement this operation test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
+	public void testGetName() {
+		UnitAssociation unitAssociation = getFixture();
+		assertEquals("", unitAssociation.name());
 
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.orm.Path#leafFeature() <em>Leaf Feature</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.orm.Path#leafFeature()
-	 * @generated
-	 */
-	public void testLeafFeature() {
-		// TODO: implement this operation test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.orm.AssociationPathElement#name() <em>Name</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.orm.AssociationPathElement#name()
-	 * @generated
-	 */
-	public void testName() {
-		// TODO: implement this operation test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
+		String name = "jhw3lwip5";
+		Association association = OrmFactory.eINSTANCE.createAssociation();
+		unitAssociation.setAssociation(association);
+		association.setName(name);
+		assertEquals(name, unitAssociation.name());
 	}
 
 } //UnitAssociationTest

@@ -83,7 +83,6 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 			addHasAssociationFieldsPropertyDescriptor(object);
 			addAutocompleteFieldsPropertyDescriptor(object);
 			addHasAutocompleteFieldsPropertyDescriptor(object);
-			addAutocompleteThresholdPropertyDescriptor(object);
 			addHasBooleanFieldsPropertyDescriptor(object);
 			addHasCaptchaPropertyDescriptor(object);
 			addHasChangableCollectionsPropertyDescriptor(object);
@@ -883,7 +882,7 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 				 false,
 				 false,
 				 null,
-				 getString("_UI_DebugPropertyCategory"),
+				 null,
 				 null));
 	}
 
@@ -905,7 +904,7 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_DebugPropertyCategory"),
+				 null,
 				 null));
 	}
 
@@ -949,28 +948,6 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_DebugPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Autocomplete Threshold feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addAutocompleteThresholdPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_DynamicUnit_autocompleteThreshold_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DynamicUnit_autocompleteThreshold_feature", "_UI_DynamicUnit_type"),
-				 WafPackage.eINSTANCE.getDynamicUnit_AutocompleteThreshold(),
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -993,7 +970,7 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_DebugPropertyCategory"),
+				 null,
 				 null));
 	}
 
@@ -1169,7 +1146,7 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_DebugPropertyCategory"),
+				 null,
 				 null));
 	}
 
@@ -2179,7 +2156,6 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 			case WafPackage.DYNAMIC_UNIT__FOOTER:
 			case WafPackage.DYNAMIC_UNIT__HAS_ASSOCIATION_FIELDS:
 			case WafPackage.DYNAMIC_UNIT__HAS_AUTOCOMPLETE_FIELDS:
-			case WafPackage.DYNAMIC_UNIT__AUTOCOMPLETE_THRESHOLD:
 			case WafPackage.DYNAMIC_UNIT__HAS_BOOLEAN_FIELDS:
 			case WafPackage.DYNAMIC_UNIT__HAS_CAPTCHA:
 			case WafPackage.DYNAMIC_UNIT__HAS_CHANGABLE_COLLECTIONS:

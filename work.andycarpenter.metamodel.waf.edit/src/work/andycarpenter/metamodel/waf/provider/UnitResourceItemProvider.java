@@ -13,7 +13,6 @@ import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
 import work.andycarpenter.metamodel.orm.OrmPackage;
 import work.andycarpenter.metamodel.waf.UnitResource;
 import work.andycarpenter.metamodel.waf.WafPackage;
@@ -46,7 +45,6 @@ public class UnitResourceItemProvider extends UnitFeatureItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addNamePropertyDescriptor(object);
 			addResourcePropertyDescriptor(object);
 			addIsDeletablePropertyDescriptor(object);
 			addIsDownloadablePropertyDescriptor(object);
@@ -74,28 +72,6 @@ public class UnitResourceItemProvider extends UnitFeatureItemProvider {
 				 false,
 				 true,
 				 null,
-				 getString("_UI_ModelPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Name feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Path_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Path_name_feature", "_UI_Path_type"),
-				 OrmPackage.Literals.PATH__NAME,
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 getString("_UI_ModelPropertyCategory"),
 				 null));
 	}
@@ -226,7 +202,6 @@ public class UnitResourceItemProvider extends UnitFeatureItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(UnitResource.class)) {
-			case WafPackage.UNIT_RESOURCE__NAME:
 			case WafPackage.UNIT_RESOURCE__IS_DELETABLE:
 			case WafPackage.UNIT_RESOURCE__IS_DOWNLOADABLE:
 			case WafPackage.UNIT_RESOURCE__SHOW_IMAGE_WHEN_EDITING:
@@ -261,8 +236,8 @@ public class UnitResourceItemProvider extends UnitFeatureItemProvider {
 
 		boolean qualify =
 			childFeature == WafPackage.eINSTANCE.getUnitField_HideWhen() ||
-			childFeature == WafPackage.eINSTANCE.getUnitFeature_ForcedValue() ||
-			childFeature == WafPackage.eINSTANCE.getUnitFeature_DisplayDefaultWhen();
+			childFeature == WafPackage.eINSTANCE.getUnitField_DisplayDefaultWhen() ||
+			childFeature == WafPackage.eINSTANCE.getUnitFeature_ForcedValue();
 
 		if (qualify) {
 			return getString

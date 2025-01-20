@@ -15,7 +15,6 @@ import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
 import work.andycarpenter.metamodel.orm.provider.PathItemProvider;
 import work.andycarpenter.metamodel.waf.DisplayValue;
 import work.andycarpenter.metamodel.waf.WafPackage;

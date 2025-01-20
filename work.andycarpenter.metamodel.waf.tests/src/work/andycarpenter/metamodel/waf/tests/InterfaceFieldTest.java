@@ -30,29 +30,6 @@ import work.andycarpenter.metamodel.waf.InterfaceField;
  *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#isHasSecondHelp() <em>Has Second Help</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#isIsContains() <em>Is Contains</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#isIsDisabled() <em>Is Disabled</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#isIsRequired() <em>Is Required</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#isIsSingleton() <em>Is Singleton</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#isIsAssociationField() <em>Is Association Field</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#isIsAttributeField() <em>Is Attribute Field</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#isIsBooleanField() <em>Is Boolean Field</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#isIsDataTypeField() <em>Is Data Type Field</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#getDataType() <em>Data Type</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#isIsDateField() <em>Is Date Field</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#getDateDetails() <em>Date Details</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#isIsEmailField() <em>Is Email Field</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#isIsEncryptedField() <em>Is Encrypted Field</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#isIsEnumerationField() <em>Is Enumeration Field</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#getEnumerationType() <em>Enumeration Type</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#isIsFeatureField() <em>Is Feature Field</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#isIsInterfaceField() <em>Is Interface Field</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#isIsIntegerField() <em>Is Integer Field</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#isIsLocationField() <em>Is Location Field</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#isIsObfuscatedFeature() <em>Is Obfuscated Feature</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#isIsObfuscatedField() <em>Is Obfuscated Field</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#isIsResourceField() <em>Is Resource Field</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#isIsStringField() <em>Is String Field</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#isIsTextareaField() <em>Is Textarea Field</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#isIsUrlField() <em>Is Url Field</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#getDefaultValue() <em>Default Value</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#isHasDefaultValue() <em>Has Default Value</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#isHasForcedValue() <em>Has Forced Value</em>}</li>
@@ -64,6 +41,40 @@ import work.andycarpenter.metamodel.waf.InterfaceField;
  *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#isHasFieldValueClass() <em>Has Field Value Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#getGenModel() <em>Gen Model</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#getUiModel() <em>Ui Model</em>}</li>
+ * </ul>
+ * </p>
+ * <p>
+ * The following operations are tested:
+ * <ul>
+ *   <li>{@link work.andycarpenter.metamodel.waf.InterfaceField#isInterfaceField() <em>Is Interface Field</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.InterfaceField#isRequiredField() <em>Is Required Field</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.InterfaceField#defaultValue() <em>Default Value</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#isAssociationField() <em>Is Association Field</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#isAttributeField() <em>Is Attribute Field</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#isBooleanField() <em>Is Boolean Field</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#isDataTypeField() <em>Is Data Type Field</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#isDateField() <em>Is Date Field</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#isEmailField() <em>Is Email Field</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#isEncryptedField() <em>Is Encrypted Field</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#isEnumerationField() <em>Is Enumeration Field</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#isFeatureField() <em>Is Feature Field</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#isIntegerField() <em>Is Integer Field</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#isLocationField() <em>Is Location Field</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#isObfuscatedField() <em>Is Obfuscated Field</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#isResourceField() <em>Is Resource Field</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#isSingletonField() <em>Is Singleton Field</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#isStringField() <em>Is String Field</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#isTextareaField() <em>Is Textarea Field</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#isUrlField() <em>Is Url Field</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#hasActions() <em>Has Actions</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#hasDefaultDisplay() <em>Has Default Display</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#hasDisplayDefaultWhen() <em>Has Display Default When</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#hasDefaultValue() <em>Has Default Value</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#hasEmptyCollectionDisplay() <em>Has Empty Collection Display</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#actions() <em>Actions</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#dataType() <em>Data Type</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#dateDetails() <em>Date Details</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#enumerationType() <em>Enumeration Type</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -122,6 +133,19 @@ public abstract class InterfaceFieldTest extends TestCase {
 	}
 
 	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.UnitField#isSetFieldName() <em>isSetFieldName()</em>}' method.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.UnitField#isSetFieldName()
+	 * @generated
+	 */
+	public void testIsSetFieldName() {
+		// TODO: implement this test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
 	 * Tests the '{@link work.andycarpenter.metamodel.waf.UnitField#isIsAuthorised() <em>Is Authorised</em>}' feature getter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -130,6 +154,19 @@ public abstract class InterfaceFieldTest extends TestCase {
 	 */
 	public void testIsIsAuthorised() {
 		// TODO: implement this feature getter test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.UnitField#isSetIsAuthorised() <em>isSetIsAuthorised()</em>}' method.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.UnitField#isSetIsAuthorised()
+	 * @generated
+	 */
+	public void testIsSetIsAuthorised() {
+		// TODO: implement this test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}
@@ -486,6 +523,19 @@ public abstract class InterfaceFieldTest extends TestCase {
 	}
 
 	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.UnitField#isSetIsContains() <em>isSetIsContains()</em>}' method.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.UnitField#isSetIsContains()
+	 * @generated
+	 */
+	public void testIsSetIsContains() {
+		// TODO: implement this test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
 	 * Tests the '{@link work.andycarpenter.metamodel.waf.UnitField#isIsDisabled() <em>Is Disabled</em>}' feature getter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -499,300 +549,14 @@ public abstract class InterfaceFieldTest extends TestCase {
 	}
 
 	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.UnitField#isIsRequired() <em>Is Required</em>}' feature getter.
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.UnitField#isSetIsDisabled() <em>isSetIsDisabled()</em>}' method.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.UnitField#isIsRequired()
+	 * @see work.andycarpenter.metamodel.waf.UnitField#isSetIsDisabled()
 	 * @generated
 	 */
-	public void testIsIsRequired() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.UnitField#isIsSingleton() <em>Is Singleton</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.UnitField#isIsSingleton()
-	 * @generated
-	 */
-	public void testIsIsSingleton() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.UnitField#isIsAssociationField() <em>Is Association Field</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.UnitField#isIsAssociationField()
-	 * @generated
-	 */
-	public void testIsIsAssociationField() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.UnitField#isIsAttributeField() <em>Is Attribute Field</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.UnitField#isIsAttributeField()
-	 * @generated
-	 */
-	public void testIsIsAttributeField() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.UnitField#isIsBooleanField() <em>Is Boolean Field</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.UnitField#isIsBooleanField()
-	 * @generated
-	 */
-	public void testIsIsBooleanField() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.UnitField#isIsDataTypeField() <em>Is Data Type Field</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.UnitField#isIsDataTypeField()
-	 * @generated
-	 */
-	public void testIsIsDataTypeField() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.UnitField#getDataType() <em>Data Type</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.UnitField#getDataType()
-	 * @generated
-	 */
-	public void testGetDataType() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.UnitField#isIsDateField() <em>Is Date Field</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.UnitField#isIsDateField()
-	 * @generated
-	 */
-	public void testIsIsDateField() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.UnitField#getDateDetails() <em>Date Details</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.UnitField#getDateDetails()
-	 * @generated
-	 */
-	public void testGetDateDetails() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.UnitField#isIsEmailField() <em>Is Email Field</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.UnitField#isIsEmailField()
-	 * @generated
-	 */
-	public void testIsIsEmailField() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.UnitField#isIsEncryptedField() <em>Is Encrypted Field</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.UnitField#isIsEncryptedField()
-	 * @generated
-	 */
-	public void testIsIsEncryptedField() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.UnitField#isIsEnumerationField() <em>Is Enumeration Field</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.UnitField#isIsEnumerationField()
-	 * @generated
-	 */
-	public void testIsIsEnumerationField() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.UnitField#getEnumerationType() <em>Enumeration Type</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.UnitField#getEnumerationType()
-	 * @generated
-	 */
-	public void testGetEnumerationType() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.UnitField#isIsFeatureField() <em>Is Feature Field</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.UnitField#isIsFeatureField()
-	 * @generated
-	 */
-	public void testIsIsFeatureField() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.UnitField#isIsInterfaceField() <em>Is Interface Field</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.UnitField#isIsInterfaceField()
-	 * @generated
-	 */
-	public void testIsIsInterfaceField() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.UnitField#isIsIntegerField() <em>Is Integer Field</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.UnitField#isIsIntegerField()
-	 * @generated
-	 */
-	public void testIsIsIntegerField() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.UnitField#isIsLocationField() <em>Is Location Field</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.UnitField#isIsLocationField()
-	 * @generated
-	 */
-	public void testIsIsLocationField() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.UnitField#isIsObfuscatedFeature() <em>Is Obfuscated Feature</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.UnitField#isIsObfuscatedFeature()
-	 * @generated
-	 */
-	public void testIsIsObfuscatedFeature() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.UnitField#isIsObfuscatedField() <em>Is Obfuscated Field</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.UnitField#isIsObfuscatedField()
-	 * @generated
-	 */
-	public void testIsIsObfuscatedField() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.UnitField#isIsResourceField() <em>Is Resource Field</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.UnitField#isIsResourceField()
-	 * @generated
-	 */
-	public void testIsIsResourceField() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.UnitField#isIsStringField() <em>Is String Field</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.UnitField#isIsStringField()
-	 * @generated
-	 */
-	public void testIsIsStringField() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.UnitField#isIsTextareaField() <em>Is Textarea Field</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.UnitField#isIsTextareaField()
-	 * @generated
-	 */
-	public void testIsIsTextareaField() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.UnitField#isIsUrlField() <em>Is Url Field</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.UnitField#isIsUrlField()
-	 * @generated
-	 */
-	public void testIsIsUrlField() {
-		// TODO: implement this feature getter test method
+	public void testIsSetIsDisabled() {
+		// TODO: implement this test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}
@@ -962,6 +726,383 @@ public abstract class InterfaceFieldTest extends TestCase {
 	 */
 	public void testIsSetUiModel() {
 		// TODO: implement this test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.UnitField#isAssociationField() <em>Is Association Field</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.UnitField#isAssociationField()
+	 * @generated
+	 */
+	public void testIsAssociationField() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.UnitField#isAttributeField() <em>Is Attribute Field</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.UnitField#isAttributeField()
+	 * @generated
+	 */
+	public void testIsAttributeField() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.UnitField#isBooleanField() <em>Is Boolean Field</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.UnitField#isBooleanField()
+	 * @generated
+	 */
+	public void testIsBooleanField() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.UnitField#isDataTypeField() <em>Is Data Type Field</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.UnitField#isDataTypeField()
+	 * @generated
+	 */
+	public void testIsDataTypeField() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.UnitField#isDateField() <em>Is Date Field</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.UnitField#isDateField()
+	 * @generated
+	 */
+	public void testIsDateField() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.UnitField#isEmailField() <em>Is Email Field</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.UnitField#isEmailField()
+	 * @generated
+	 */
+	public void testIsEmailField() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.UnitField#isEncryptedField() <em>Is Encrypted Field</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.UnitField#isEncryptedField()
+	 * @generated
+	 */
+	public void testIsEncryptedField() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.UnitField#isEnumerationField() <em>Is Enumeration Field</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.UnitField#isEnumerationField()
+	 * @generated
+	 */
+	public void testIsEnumerationField() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.UnitField#isFeatureField() <em>Is Feature Field</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.UnitField#isFeatureField()
+	 * @generated
+	 */
+	public void testIsFeatureField() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.InterfaceField#isInterfaceField() <em>Is Interface Field</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.InterfaceField#isInterfaceField()
+	 * @generated
+	 */
+	public void testIsInterfaceField() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.UnitField#isIntegerField() <em>Is Integer Field</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.UnitField#isIntegerField()
+	 * @generated
+	 */
+	public void testIsIntegerField() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.UnitField#isLocationField() <em>Is Location Field</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.UnitField#isLocationField()
+	 * @generated
+	 */
+	public void testIsLocationField() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.UnitField#isObfuscatedField() <em>Is Obfuscated Field</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.UnitField#isObfuscatedField()
+	 * @generated
+	 */
+	public void testIsObfuscatedField() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.UnitField#isResourceField() <em>Is Resource Field</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.UnitField#isResourceField()
+	 * @generated
+	 */
+	public void testIsResourceField() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.InterfaceField#isRequiredField() <em>Is Required Field</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.InterfaceField#isRequiredField()
+	 * @generated
+	 */
+	public void testIsRequiredField() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.UnitField#isSingletonField() <em>Is Singleton Field</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.UnitField#isSingletonField()
+	 * @generated
+	 */
+	public void testIsSingletonField() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.UnitField#isStringField() <em>Is String Field</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.UnitField#isStringField()
+	 * @generated
+	 */
+	public void testIsStringField() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.UnitField#isTextareaField() <em>Is Textarea Field</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.UnitField#isTextareaField()
+	 * @generated
+	 */
+	public void testIsTextareaField() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.UnitField#isUrlField() <em>Is Url Field</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.UnitField#isUrlField()
+	 * @generated
+	 */
+	public void testIsUrlField() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.UnitField#hasActions() <em>Has Actions</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.UnitField#hasActions()
+	 * @generated
+	 */
+	public void testHasActions() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.UnitField#hasDefaultDisplay() <em>Has Default Display</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.UnitField#hasDefaultDisplay()
+	 * @generated
+	 */
+	public void testHasDefaultDisplay() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.UnitField#hasDisplayDefaultWhen() <em>Has Display Default When</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.UnitField#hasDisplayDefaultWhen()
+	 * @generated
+	 */
+	public void testHasDisplayDefaultWhen() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.UnitField#hasDefaultValue() <em>Has Default Value</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.UnitField#hasDefaultValue()
+	 * @generated
+	 */
+	public void testHasDefaultValue() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.UnitField#hasEmptyCollectionDisplay() <em>Has Empty Collection Display</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.UnitField#hasEmptyCollectionDisplay()
+	 * @generated
+	 */
+	public void testHasEmptyCollectionDisplay() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.UnitField#actions() <em>Actions</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.UnitField#actions()
+	 * @generated
+	 */
+	public void testActions() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.UnitField#dataType() <em>Data Type</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.UnitField#dataType()
+	 * @generated
+	 */
+	public void testDataType() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.UnitField#dateDetails() <em>Date Details</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.UnitField#dateDetails()
+	 * @generated
+	 */
+	public void testDateDetails() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.InterfaceField#defaultValue() <em>Default Value</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.InterfaceField#defaultValue()
+	 * @generated
+	 */
+	public void testDefaultValue() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.UnitField#enumerationType() <em>Enumeration Type</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.UnitField#enumerationType()
+	 * @generated
+	 */
+	public void testEnumerationType() {
+		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}

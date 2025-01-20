@@ -45,7 +45,7 @@ public class DataTypeFieldItemProvider extends InterfaceFieldItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addFieldDataTypePropertyDescriptor(object);
+			addInterfaceDataTypePropertyDescriptor(object);
 			addCaseInsensitivePropertyDescriptor(object);
 			addObfuscateFormFieldsPropertyDescriptor(object);
 			addEncryptPropertyDescriptor(object);
@@ -54,19 +54,19 @@ public class DataTypeFieldItemProvider extends InterfaceFieldItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Field Data Type feature.
+	 * This adds a property descriptor for the Interface Data Type feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addFieldDataTypePropertyDescriptor(Object object) {
+	protected void addInterfaceDataTypePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_DataTypeField_fieldDataType_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DataTypeField_fieldDataType_feature", "_UI_DataTypeField_type"),
-				 WafPackage.eINSTANCE.getDataTypeField_FieldDataType(),
+				 getString("_UI_DataTypeField_interfaceDataType_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DataTypeField_interfaceDataType_feature", "_UI_DataTypeField_type"),
+				 WafPackage.eINSTANCE.getDataTypeField_InterfaceDataType(),
 				 true,
 				 false,
 				 true,
@@ -213,6 +213,7 @@ public class DataTypeFieldItemProvider extends InterfaceFieldItemProvider {
 
 		boolean qualify =
 			childFeature == WafPackage.eINSTANCE.getUnitField_HideWhen() ||
+			childFeature == WafPackage.eINSTANCE.getUnitField_DisplayDefaultWhen() ||
 			childFeature == WafPackage.eINSTANCE.getInterfaceField_FieldDefaultValue();
 
 		if (qualify) {

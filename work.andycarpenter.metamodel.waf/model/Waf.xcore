@@ -18,6 +18,7 @@
 package work.andycarpenter.metamodel.waf
 
 import org.eclipse.emf.common.util.BasicEList
+import org.eclipse.emf.common.util.ECollections
 
 import work.andycarpenter.metamodel.base.Classifier
 import work.andycarpenter.metamodel.base.DataType
@@ -32,7 +33,6 @@ import work.andycarpenter.metamodel.orm.Attribute
 import work.andycarpenter.metamodel.orm.AttributePathElement
 import work.andycarpenter.metamodel.orm.DateDetails
 import work.andycarpenter.metamodel.orm.Entity
-import work.andycarpenter.metamodel.orm.Feature
 import work.andycarpenter.metamodel.orm.Filter
 import work.andycarpenter.metamodel.orm.Label
 import work.andycarpenter.metamodel.orm.LocationFeature
@@ -40,8 +40,8 @@ import work.andycarpenter.metamodel.orm.ModelLabel
 import work.andycarpenter.metamodel.orm.OrmModel
 import work.andycarpenter.metamodel.orm.Path
 import work.andycarpenter.metamodel.orm.Repository
-import work.andycarpenter.metamodel.orm.ResourcePathElement
 import work.andycarpenter.metamodel.orm.ResourceFeature
+import work.andycarpenter.metamodel.orm.ResourcePathElement
 import work.andycarpenter.metamodel.orm.Selection
 import work.andycarpenter.metamodel.api.API
 import work.andycarpenter.metamodel.security.AuthorisationExpression
@@ -125,7 +125,7 @@ class WafModel {
     @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean hasFormFields
 
-	@OCL(derivation="formFields->select(f | f.isAssociationField)->notEmpty()")
+	@OCL(derivation="formFields->select(f | f.isAssociationField())->notEmpty()")
     @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean hasFormAssociations
 
@@ -702,7 +702,7 @@ abstract class DynamicUnit extends ContentUnit, ActionContainer {
 	}
 
 	@OCL(derivation="if self.oclIsKindOf(EditUnit) and not containingAssociation.oclIsUndefined() then
-			featureFields->exists(f | f.persistentFeature = containingAssociation)
+			featureFields->exists(f | f.leafFeature() = containingAssociation)
 		else
 			false
 		endif")
@@ -738,12 +738,12 @@ abstract class DynamicUnit extends ContentUnit, ActionContainer {
 	String header
 	String footer
 
-	@OCL(derivation="displayFields->select(f | f.isAssociationField).oclAsType(UnitAssociation)->asOrderedSet()")
-    @GenModel(propertyCategory="Debug")
-	refers readonly transient volatile unsettable derived UnitAssociation[] associationFields
-	@OCL(derivation="associationFields->notEmpty()")
-    @GenModel(propertyCategory="Debug")
-	derived readonly transient volatile boolean hasAssociationFields
+	refers derived readonly unsettable transient volatile UnitAssociation[] associationFields get {
+		displayFields.filter[it.isAssociationField()].map[it as UnitAssociation].toEList()
+	}
+	derived readonly unsettable transient volatile boolean hasAssociationFields get {
+		associationFields.isEmpty()
+	}
 
 	@OCL(derivation="if self.oclIsKindOf(EditUnit) then
 				associationFields->select(f | f.useAutocomplete)->asOrderedSet()
@@ -752,14 +752,13 @@ abstract class DynamicUnit extends ContentUnit, ActionContainer {
 			endif")
     @GenModel(propertyCategory="Debug")
 	refers derived readonly transient volatile UnitAssociation[] autocompleteFields
-	@OCL(derivation="autocompleteFields->notEmpty()")
-    @GenModel(propertyCategory="Debug")
-	derived readonly transient volatile boolean hasAutocompleteFields
+	derived readonly unsettable transient volatile boolean hasAutocompleteFields get {
+		autocompleteFields.isEmpty()
+	}
 
-	int autocompleteThreshold = "0"
-	@OCL(derivation="displayFields->exists(f | f.isBooleanField = true)")
-    @GenModel(propertyCategory="Debug")
-	derived readonly transient volatile boolean hasBooleanFields
+	derived readonly unsettable transient volatile boolean hasBooleanFields get {
+		displayFields.exists[it.isBooleanField()]
+	}
 
 	@OCL(derivation="if self.oclIsKindOf(EditUnit) then
 				self.oclAsType(EditUnit).useCaptcha
@@ -767,52 +766,56 @@ abstract class DynamicUnit extends ContentUnit, ActionContainer {
 				false
 			endif")
     @GenModel(propertyCategory="Debug")
-	derived readonly transient unsettable volatile boolean hasCaptcha
+	derived readonly unsettable transient volatile boolean hasCaptcha
 
 	@OCL(derivation="if self.oclIsKindOf(EditUnit) then
 				collectionFields
-					->select(f | f.isFeatureField).oclAsType(UnitFeature)
+					->select(f | f.isFeatureField()).oclAsType(UnitFeature)
 					->select(f | f.collectionUiAllowAdd = true or f.collectionUiAllowRemove = true)
 					->notEmpty()
 			else
 				false
 			endif")
     @GenModel(propertyCategory="Debug")
-	derived readonly transient volatile boolean hasChangableCollections
+	derived readonly unsettable transient volatile boolean hasChangableCollections
 
-	@OCL(derivation="displayFields->select(f | f.isSingleton = false)")
     @GenModel(propertyCategory="Debug")
-	refers readonly transient volatile unsettable derived UnitField[] collectionFields
+	refers derived readonly unsettable transient volatile UnitField[] collectionFields get {
+		displayFields.filter[it.isSingletonField()].toEList()
+	}
 
-	@OCL(derivation="collectionFields->select(f | f.isFeatureField).oclAsType(UnitFeature)->asOrderedSet()")
     @GenModel(propertyCategory="Debug")
-	refers readonly transient volatile unsettable derived UnitFeature[] collectionFeatures
+	refers derived readonly unsettable transient volatile UnitFeature[] collectionFeatures get {
+		collectionFields.filter[it.isFeatureField()].map[it as UnitFeature].toEList()
+	}
 
-	@OCL(derivation="displayFields->select(f | f.isDataTypeField = true)")
     @GenModel(propertyCategory="Debug")
-	refers readonly transient volatile unsettable derived UnitField[] dataTypeFields
+	refers derived readonly unsettable transient volatile UnitField[] dataTypeFields get {
+		displayFields.filter[it.isDataTypeField()].toEList()
+	}
 
-	@OCL(derivation="displayFields->select(f | f.isDateField = true)")
     @GenModel(propertyCategory="Debug")
-	refers readonly transient volatile unsettable derived UnitField[] dateFields
+	refers derived readonly unsettable transient volatile UnitField[] dateFields get {
+		displayFields.filter[it.isDateField()].toEList()
+	}
 
 	@OCL(derivation="displayFields->select(f | f.hasDefaultValue = true)")
     @GenModel(propertyCategory="Debug")
 	refers readonly transient volatile unsettable derived UnitField[] defaultValueFields
 
-	@OCL(derivation="defaultValueFields->notEmpty()")
-    @GenModel(propertyCategory="Debug")
-	derived readonly transient volatile boolean hasDefaultValueFields
+	derived readonly unsettable transient volatile boolean hasDefaultValueFields get {
+		defaultValueFields.isEmpty()
+	}
 
 	@OCL(derivation="displayFields->exists(f | f.isDisabled)")
     @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean hasDisabledFields
 
-	@OCL(derivation="displayFields->exists(f | f.isEmailField = true)")
+	@OCL(derivation="displayFields->exists(f | f.isEmailField() = true)")
     @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean hasEmailFields
 
-	@OCL(derivation="displayFields->select(f | f.isEncryptedField = true)")
+	@OCL(derivation="displayFields->select(f | f.isEncryptedField() = true)")
     @GenModel(propertyCategory="Debug")
 	refers readonly transient volatile unsettable derived UnitField[] encryptedFields
 
@@ -820,14 +823,14 @@ abstract class DynamicUnit extends ContentUnit, ActionContainer {
     @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean hasEncryptedFields
 
-	@OCL(derivation="displayFields->select(f | f.isEnumerationField = true)")
+	@OCL(derivation="displayFields->select(f | f.isEnumerationField() = true)")
     @GenModel(propertyCategory="Debug")
 	refers readonly transient volatile unsettable derived UnitField[] enumerationFields
 	@OCL(derivation="enumerationFields->notEmpty()")
     @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean hasEnumerationFields
 
-	@OCL(derivation="displayFields->select(f | f.isFeatureField).oclAsType(UnitFeature)->asOrderedSet()")
+	@OCL(derivation="displayFields->select(f | f.isFeatureField()).oclAsType(UnitFeature)->asOrderedSet()")
     @GenModel(propertyCategory="Debug")
 	refers readonly transient volatile unsettable derived UnitFeature[] featureFields
 	@OCL(derivation="featureFields->notEmpty()")
@@ -863,7 +866,7 @@ abstract class DynamicUnit extends ContentUnit, ActionContainer {
     @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean hasImageFields
 
-	@OCL(derivation="displayFields->exists(f | f.isIntegerField = true)")
+	@OCL(derivation="displayFields->exists(f | f.isIntegerField() = true)")
     @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean hasIntegerFields
 
@@ -874,11 +877,11 @@ abstract class DynamicUnit extends ContentUnit, ActionContainer {
     @GenModel(propertyCategory="Debug")
 	derived readonly transient unsettable volatile boolean hasInterfaceFields
 
-	@OCL(derivation="interfaceFields->exists(f | f.isRequired = true)")
+	@OCL(derivation="interfaceFields->exists(f | f.isRequiredField() = true)")
     @GenModel(propertyCategory="Debug")
 	derived readonly transient unsettable volatile boolean hasRequiredInterfaceFields
 
-	@OCL(derivation="displayFields->exists(f | f.isObfuscatedField = true)")
+	@OCL(derivation="displayFields->exists(f | f.isObfuscatedField() = true)")
     @GenModel(propertyCategory="Debug")
 	derived readonly transient unsettable volatile boolean hasObfuscatedFields
 
@@ -886,22 +889,22 @@ abstract class DynamicUnit extends ContentUnit, ActionContainer {
     @GenModel(propertyCategory="Debug")
 	derived readonly transient unsettable volatile boolean hasRepeatedFields
 
-	@OCL(derivation="displayFields->select(f | f.isResourceField = true).oclAsType(UnitResource)->asOrderedSet()")
+	@OCL(derivation="displayFields->select(f | f.isResourceField() = true).oclAsType(UnitResource)->asOrderedSet()")
     @GenModel(propertyCategory="Debug")
 	refers readonly transient volatile unsettable derived UnitResource[] resourceFields
 	@OCL(derivation="resourceFields->notEmpty()")
     @GenModel(propertyCategory="Debug")
 	readonly transient volatile unsettable derived boolean hasResourceFields
 
-	@OCL(derivation="displayFields->exists(f | f.isStringField)")
+	@OCL(derivation="displayFields->exists(f | f.isStringField())")
     @GenModel(propertyCategory="Debug")
 	derived readonly transient unsettable volatile boolean hasStringFields
 
-	@OCL(derivation="displayFields->exists(f | f.isTextareaField)")
+	@OCL(derivation="displayFields->exists(f | f.isTextareaField())")
     @GenModel(propertyCategory="Debug")
 	derived readonly transient unsettable volatile boolean hasTextareaFields
 
-	@OCL(derivation="displayFields->exists(f | f.isUrlField)")
+	@OCL(derivation="displayFields->exists(f | f.isUrlField())")
     @GenModel(propertyCategory="Debug")
 	derived readonly transient unsettable volatile boolean hasUrlFields
 
@@ -1151,31 +1154,25 @@ enum CollectionDisplayOptions {
 interface UnitField extends DisplayElement {
 	container DynamicUnit[1] displayedOn opposite displayFields
 
-	@OCL(derivation="if self.isAttributeField = true then
-			self.oclAsType(UnitAttribute).name
-		else if self.isAssociationField = true then
-			self.oclAsType(UnitAssociation).name()
-		else if self.isInterfaceField = true then
+	@OCL(derivation="if self.isFeatureField() = true then
+			self.oclAsType(UnitFeature).name
+		else if self.isInterfaceField() = true then
 			self.oclAsType(InterfaceField).name
-		else if self.isResourceField = true then
-			self.oclAsType(UnitResource).name
-		else if self.oclIsTypeOf(UnitLabel) then
-			self.oclAsType(UnitLabel).name
 		else
 			''
-		endif endif endif endif endif")
+		endif endif")
     @GenModel(propertyCategory="Debug")
-	derived readonly transient volatile String fieldName
+	derived readonly unsettable transient volatile String fieldName
 
 	contains AuthorisationExpression authorisation
 	@OCL(derivation="not authorisation.oclIsUndefined()")
     @GenModel(propertyCategory="Debug")
-	derived readonly transient volatile boolean isAuthorised
+	derived readonly unsettable transient volatile boolean isAuthorised
 
-	@OCL(derivation="if self.isFeatureField = true then
+	@OCL(derivation="if self.isFeatureField() = true then
 			(displayLabel.trim() <> '')
-				and (displayLabel.trim() <> self.oclAsType(UnitFeature).persistentFeature.displayLabel.trim())
-		else if self.oclIsKindOf(InterfaceField) then
+				and (displayLabel.trim() <> self.oclAsType(UnitFeature).leafFeature().displayLabel.trim())
+		else if self.isInterfaceField() = true then
 			true
 		else
 			false
@@ -1183,7 +1180,7 @@ interface UnitField extends DisplayElement {
     @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean hasCustomisedDisplayLabel
 
-	@OCL(derivation="if self.isInterfaceField = true then
+	@OCL(derivation="if self.isInterfaceField() = true then
 			self.oclAsType(InterfaceField).repeatedField
 		else
 			false
@@ -1191,18 +1188,18 @@ interface UnitField extends DisplayElement {
     @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean isRepeated
 
-	@OCL(derivation="if self.isFeatureField = true then
+	@OCL(derivation="if self.isFeatureField() = true then
 			let feature : UnitFeature = self.oclAsType(UnitFeature)
 				in if feature.titleOverride.trim() <> '' then
 						feature.titleOverride.trim()
 					else if feature.displayLabel.trim() <> '' then
 						feature.displayLabel.trim()
-					else if feature.persistentFeature.displayLabel.trim() <> '' then
-						feature.persistentFeature.displayLabel.trim()
+					else if feature.leafFeature().displayLabel.trim() <> '' then
+						feature.leafFeature().displayLabel.trim()
 					else
-						feature.persistentFeature.name
+						feature.leafFeature().name
 					endif endif endif
-		else if self.isInterfaceField = true then
+		else if self.isInterfaceField() = true then
 			let field : InterfaceField = self.oclAsType(InterfaceField)
 				in if field.fieldTitle.trim() <> '' then
 						field.fieldTitle.trim()
@@ -1220,15 +1217,15 @@ interface UnitField extends DisplayElement {
     @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean hasTitle
 
-	@OCL(derivation="if self.isFeatureField = true then
-			title <> self.oclAsType(UnitFeature).persistentFeature.displayLabel.trim()
+	@OCL(derivation="if self.isFeatureField() = true then
+			title <> self.oclAsType(UnitFeature).leafFeature().displayLabel.trim()
 		else
 			title <> ''
 		endif")
     @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean hasCustomisedTitle
 
-	@OCL(derivation="if self.isInterfaceField and self.isRepeated then
+	@OCL(derivation="if self.isInterfaceField() and self.isRepeated then
 			self.oclAsType(InterfaceField).secondTitle.trim() <> ''
 		else
 			false
@@ -1236,18 +1233,18 @@ interface UnitField extends DisplayElement {
     @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean hasSecondTitle
 
-	@OCL(derivation="if self.isFeatureField = true then
+	@OCL(derivation="if self.isFeatureField() = true then
 			let feature : UnitFeature = self.oclAsType(UnitFeature)
 				in if feature.placeholderOverride.trim() <> '' then
 						feature.placeholderOverride.trim()
 					else if feature.displayLabel.trim() <> '' then
 						feature.displayLabel.trim()
-					else if feature.persistentFeature.displayLabel.trim() <> '' then
-						feature.persistentFeature.displayLabel.trim()
+					else if feature.leafFeature().displayLabel.trim() <> '' then
+						feature.leafFeature().displayLabel.trim()
 					else
-						feature.persistentFeature.name
+						feature.leafFeature().name
 					endif endif endif
-		else if self.isInterfaceField = true then
+		else if self.isInterfaceField() = true then
 			let field : InterfaceField = self.oclAsType(InterfaceField)
 				in if field.fieldPlaceholder.trim() <> '' then
 						field.fieldPlaceholder.trim()
@@ -1265,15 +1262,15 @@ interface UnitField extends DisplayElement {
     @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean hasPlaceholder
 
-	@OCL(derivation="if self.isFeatureField = true then
-			placeholder <> self.oclAsType(UnitFeature).persistentFeature.displayLabel.trim()
+	@OCL(derivation="if self.isFeatureField() = true then
+			placeholder <> self.oclAsType(UnitFeature).leafFeature().displayLabel.trim()
 		else
 			placeholder <> ''
 		endif")
     @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean hasCustomisedPlaceholder
 
-	@OCL(derivation="if self.isInterfaceField and self.isRepeated then
+	@OCL(derivation="if self.isInterfaceField() and self.isRepeated then
 			self.oclAsType(InterfaceField).secondPlaceholder.trim() <> ''
 		else
 			false
@@ -1307,203 +1304,140 @@ interface UnitField extends DisplayElement {
 
 	contains Predicate hideWhen
 
-	@OCL(derivation="if self.isAssociationField = true then
+	@OCL(derivation="if self.isAssociationField() = true then
 			self.oclAsType(UnitAssociation).association.isContains
 		else
 			false
 		endif")
     @GenModel(propertyCategory="Debug")
-	derived readonly transient volatile boolean isContains
+	derived readonly unsettable transient volatile boolean isContains
 
 	@OCL(derivation="disabledInput")
     @GenModel(propertyCategory="Debug")
-	derived readonly transient volatile boolean isDisabled
+	derived readonly unsettable transient volatile boolean isDisabled
 
-	@OCL(derivation="if self.isFeatureField = true then
-			self.oclAsType(UnitFeature).persistentFeature.isRequired
-		else if self.isInterfaceField = true then
-			self.oclAsType(InterfaceField).fieldRequired
-		else
-			false
-		endif endif")
-    @GenModel(propertyCategory="Debug")
-	derived readonly transient volatile boolean isRequired
+	String defaultDisplay
+	contains Predicate displayDefaultWhen
 
-	@OCL(derivation="if self.isFeatureField = true then
-			self.oclAsType(UnitFeature).persistentFeature.isSingleton
-		else if self.isInterfaceField = true then
-			true
-		else
-			false
-		endif endif")
-    @GenModel(propertyCategory="Debug")
-	derived readonly transient volatile boolean isSingleton
+ 	op Boolean isAssociationField() {
+		false
+	}
 
-	@OCL(derivation="self.oclIsTypeOf(UnitAssociation)")
-    @GenModel(propertyCategory="Debug")
-	derived readonly transient volatile boolean isAssociationField
+ 	op Boolean isAttributeField() {
+		false
+	}
 
-	@OCL(derivation="self.oclIsTypeOf(UnitAttribute)")
-    @GenModel(propertyCategory="Debug")
-	derived readonly transient volatile boolean isAttributeField
+  	op Boolean isBooleanField() {
+		false
+	}
 
-	@OCL(derivation="if self.isFeatureField = true then
-			self.oclAsType(UnitFeature).persistentFeature.isBooleanFeature
-		else if self.oclIsKindOf(DataTypeField) then
-			self.oclAsType(DataTypeField).dataType.isBooleanClassifier
-		else
-			false
-		endif endif")
-    @GenModel(propertyCategory="Debug")
-	derived readonly transient volatile boolean isBooleanField
+  	op Boolean isDataTypeField() {
+		false
+	}
 
-	@OCL(derivation="if self.isFeatureField = true then
-			self.oclAsType(UnitFeature).persistentFeature.isDataTypeFeature
-		else
-			self.oclIsKindOf(DataTypeField)
-		endif")
-    @GenModel(propertyCategory="Debug")
-	derived readonly transient volatile boolean isDataTypeField
+  	op Boolean isDateField() {
+		false
+	}
 
-	@OCL(derivation="if self.isFeatureField = true then
-			self.oclAsType(UnitFeature).persistentFeature.dataType
-		else if self.oclIsKindOf(DataTypeField) then
-			self.oclAsType(DataTypeField).fieldDataType
-		else
-			null
-		endif endif")
-    @GenModel(propertyCategory="Debug")
-	refers derived readonly transient volatile Classifier dataType
+   	op Boolean isEmailField() {
+		false
+	}
 
-	@OCL(derivation="if self.isFeatureField = true then
-			self.oclAsType(UnitFeature).persistentFeature.isDateFeature
-		else
-			false
-		endif")
-    @GenModel(propertyCategory="Debug")
-	derived readonly transient volatile boolean isDateField
+  	op Boolean isEncryptedField() {
+		false
+	}
 
-	@OCL(derivation="if self.isFeatureField = true then
-			self.oclAsType(UnitFeature).persistentFeature.dateDetails
-		else
-			null
-		endif")
-    @GenModel(propertyCategory="Debug")
-	derived readonly transient volatile DateDetails dateDetails
+  	op Boolean isEnumerationField() {
+		false
+	}
 
-	@OCL(derivation="if self.isFeatureField = true then
-			self.oclAsType(UnitFeature).persistentFeature.isEmailFeature
-		else if self.oclIsKindOf(DataTypeField) then
-			self.oclAsType(DataTypeField).dataType.isEmailClassifier
-		else
-			false
-		endif endif")
-    @GenModel(propertyCategory="Debug")
-	derived readonly transient volatile boolean isEmailField
+  	op Boolean isFeatureField() {
+		false
+	}
 
-	@OCL(derivation="if self.isFeatureField = true then
-			self.oclAsType(UnitFeature).persistentFeature.isEncrypted
-		else
-			false
-		endif")
-    @GenModel(propertyCategory="Debug")
-	derived readonly transient volatile boolean isEncryptedField
+  	op Boolean isInterfaceField() {
+		false
+	}
 
-	@OCL(derivation="if self.isFeatureField = true then
-			self.oclAsType(UnitFeature).persistentFeature.isEnumerationFeature
-		else
-			false
-		endif")
-    @GenModel(propertyCategory="Debug")
-	derived readonly transient volatile boolean isEnumerationField
+  	op Boolean isIntegerField() {
+		false
+	}
 
-	@OCL(derivation="if self.isFeatureField = true then
-			self.oclAsType(UnitFeature).persistentFeature.enumerationType
-		else
-			null
-		endif")
-    @GenModel(propertyCategory="Debug")
-	refers derived readonly transient volatile EnumerationType enumerationType
+  	op Boolean isLocationField() {
+		false
+	}
 
-	@OCL(derivation="self.oclIsKindOf(UnitFeature)")
-    @GenModel(propertyCategory="Debug")
-	derived readonly transient volatile boolean isFeatureField
+  	op Boolean isObfuscatedField() {
+		false
+	}
 
-	@OCL(derivation="self.oclIsKindOf(InterfaceField)")
-    @GenModel(propertyCategory="Debug")
-	derived readonly transient volatile boolean isInterfaceField
+ 	op Boolean isResourceField() {
+		false
+	}
 
-	@OCL(derivation="if self.isFeatureField = true then
-			self.oclAsType(UnitFeature).persistentFeature.isIntegerFeature
-		else if self.oclIsKindOf(DataTypeField) then
-			self.oclAsType(DataTypeField).dataType.isIntegerClassifier
-		else
-			false
-		endif endif")
-    @GenModel(propertyCategory="Debug")
-	derived readonly transient volatile boolean isIntegerField
+   	op Boolean isRequiredField() {
+		false
+	}
 
-	@OCL(derivation="if self.isFeatureField = true then
-			self.oclAsType(UnitFeature).persistentFeature.isLocationFeature
-		else
-			false
-		endif")
-    @GenModel(propertyCategory="Debug")
-	derived readonly transient volatile boolean isLocationField
+ 	op Boolean isSingletonField() {
+		true
+	}
 
-	@OCL(derivation="if self.isFeatureField = true then
-			self.oclAsType(UnitFeature).persistentFeature.isObfuscatedFeature
-		else
-			false
-		endif")
-    @GenModel(propertyCategory="Debug")
-	derived readonly transient volatile boolean isObfuscatedFeature
+ 	op Boolean isStringField() {
+		false
+	}
 
-	@OCL(derivation="if self.isAttributeField = true then
-			self.oclAsType(UnitAttribute).obfuscateFormFields or isObfuscatedFeature
-		else if self.oclIsKindOf(DataTypeField) then
-			self.oclAsType(DataTypeField).obfuscateFormFields
-		else
-			isObfuscatedFeature
-		endif endif")
-    @GenModel(propertyCategory="Debug")
-	derived readonly transient volatile boolean isObfuscatedField
+  	op Boolean isTextareaField() {
+		false
+	}
 
-	@OCL(derivation="self.oclIsTypeOf(UnitResource)")
-    @GenModel(propertyCategory="Debug")
-	derived readonly transient volatile boolean isResourceField
+  	op Boolean isUrlField() {
+		false
+	}
 
-	@OCL(derivation="if self.isFeatureField = true then
-			self.oclAsType(UnitFeature).persistentFeature.isStringFeature
-		else if self.oclIsKindOf(DataTypeField) then
-			self.oclAsType(DataTypeField).dataType.isStringClassifier
-		else
-			false
-		endif endif")
-    @GenModel(propertyCategory="Debug")
-	derived readonly transient volatile boolean isStringField
+  	op Boolean hasActions() {
+		false
+	}
 
-	@OCL(derivation="if self.isFeatureField = true then
-			self.oclAsType(UnitFeature).persistentFeature.isTextareaFeature
-		else if self.oclIsKindOf(DataTypeField) then
-			self.oclAsType(DataTypeField).dataType.isTextareaClassifier
-		else
-			false
-		endif endif")
-    @GenModel(propertyCategory="Debug")
-	derived readonly transient volatile boolean isTextareaField
+ 	op Boolean hasDefaultDisplay() {
+		defaultDisplay !== null
+	}
 
-	@OCL(derivation="if self.isFeatureField = true then
-			self.oclAsType(UnitFeature).persistentFeature.isUrlFeature
-		else
-			false
-		endif")
-    @GenModel(propertyCategory="Debug")
-	derived readonly transient volatile boolean isUrlField
+ 	op Boolean hasDisplayDefaultWhen() {
+		hasDefaultDisplay() && displayDefaultWhen !== null
+	}
 
-	@OCL(derivation="if self.isAttributeField = true then
+ 	op Boolean hasDefaultValue() {
+		defaultValue() !== null
+	}
+
+ 	op Boolean hasEmptyCollectionDisplay() {
+		false
+	}
+
+  	op Action[] actions() {
+		ECollections.emptyEList()
+	}
+
+ 	op Classifier dataType() {
+		null
+	}
+
+  	op DateDetails dateDetails() {
+		null
+	}
+
+  	op Expression defaultValue() {
+		null
+	}
+
+  	op EnumerationType enumerationType() {
+		null
+	}
+
+	@OCL(derivation="if self.isAttributeField() = true then
 			self.oclAsType(UnitAttribute).attributeDefaultValue
-		else if self.isInterfaceField = true then
+		else if self.isInterfaceField() = true then
 			self.oclAsType(InterfaceField).fieldDefaultValue
 		else
 			null
@@ -1515,7 +1449,7 @@ interface UnitField extends DisplayElement {
     @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean hasDefaultValue
 
-	@OCL(derivation="if self.isFeatureField = true then
+	@OCL(derivation="if self.isFeatureField() = true then
 			not self.oclAsType(UnitFeature).forcedValue.oclIsUndefined()
 		else
 			false
@@ -1587,24 +1521,190 @@ interface UnitField extends DisplayElement {
 	refers readonly transient volatile unsettable derived WafModel uiModel
 }
 
-abstract class UnitFeature extends UnitField, ActionContainer {
+abstract class UnitFeature extends UnitField, Path, ActionContainer {
 	String titleOverride = ''
 	String placeholderOverride = ''
 	contains Expression forcedValue
 	boolean collectionUiAllowAdd = "true"
 	boolean collectionUiAllowRemove = "true"
 	int collectionMaximumValues = "0"
-	String defaultDisplayValue
-	contains Predicate displayDefaultWhen
-	String emptyDisplayValue
+	String emptyCollectionDisplay
 	boolean autofocus
 	String footer
 
-	refers derived readonly transient volatile Feature persistentFeature get {
-		if (this instanceof InterfaceField) {
-			return null
+ 	op Boolean hasEmptyCollectionDisplay() {
+		emptyCollectionDisplay !== null
+	}
+
+  	op Boolean isAssociationField() {
+		if (leafFeature() === null) {
+			false
 		} else {
-			return (this as Path).leafFeature()
+			leafFeature() instanceof Association
+		}
+	}
+
+ 	op Boolean isAttributeField() {
+		if (leafFeature() === null) {
+			false
+		} else {
+			leafFeature() instanceof Attribute
+		}
+	}
+
+  	op Boolean isBooleanField() {
+		if (isDataTypeField()) {
+			leafFeature().isBooleanFeature
+		} else {
+			false
+		}
+	}
+
+  	op Boolean isDataTypeField() {
+		if (leafFeature() === null) {
+			false
+		} else {
+			leafFeature().isDataTypeFeature
+		}
+	}
+
+  	op Boolean isDateField() {
+		if (leafFeature() === null) {
+			false
+		} else {
+			leafFeature().isDateFeature
+		}
+	}
+
+  	op Boolean isEmailField() {
+		if (isDataTypeField()) {
+			leafFeature().isEmailFeature
+		} else {
+			false
+		}
+	}
+
+  	op Boolean isEncryptedField() {
+		if (isDataTypeField()) {
+			false
+		} else {
+			leafFeature().isEncrypted
+		}
+	}
+
+  	op Boolean isEnumerationField() {
+		if (isDataTypeField()) {
+			leafFeature().isEnumerationFeature
+		} else {
+			false
+		}
+	}
+
+   	op Boolean isFeatureField() {
+		true
+	}
+
+  	op Boolean isIntegerField() {
+		if (isDataTypeField()) {
+			leafFeature().isIntegerFeature
+		} else {
+			false
+		}
+	}
+
+  	op Boolean isLocationField() {
+		if (leafFeature() === null) {
+			false
+		} else {
+			leafFeature().isLocationFeature
+		}
+	}
+
+  	op Boolean isObfuscatedField() {
+		if (isDataTypeField()) {
+			leafFeature().isObfuscatedFeature
+		} else {
+			false
+		}
+	}
+
+   	op Boolean isRequiredField() {
+		if (leafFeature() === null) {
+			true
+		} else {
+			leafFeature().isRequired
+		}
+	}
+
+ 	op Boolean isResourceField() {
+		if (leafFeature() === null) {
+			false
+		} else {
+			leafFeature() instanceof ResourceFeature
+		}
+	}
+
+   	op Boolean isSingletonField() {
+		if (leafFeature() === null) {
+			true
+		} else {
+			leafFeature().isSingleton
+		}
+	}
+
+  	op Boolean isStringField() {
+		if (isDataTypeField()) {
+			leafFeature().isStringFeature
+		} else {
+			false
+		}
+	}
+
+  	op Boolean isTextareaField() {
+		if (isDataTypeField()) {
+			leafFeature().isTextareaFeature
+		} else {
+			false
+		}
+	}
+
+  	op Boolean isUrlField() {
+		if (isDataTypeField()) {
+			leafFeature().isUrlFeature
+		} else {
+			false
+		}
+	}
+
+  	op Boolean hasActions() {
+		(this as ActionContainer).hasActions
+	}
+
+  	op Action[] actions() {
+		(this as ActionContainer).actions
+	}
+
+  	op Classifier dataType() {
+		if (isDataTypeField()) {
+			leafFeature().dataType
+		} else {
+			null
+		}
+	}
+
+  	op DateDetails dateDetails() {
+		if (isDateField()) {
+			leafFeature().dateDetails
+		} else {
+			null
+		}
+	}
+
+  	op EnumerationType enumerationType() {
+		if (isEnumerationField()) {
+			leafFeature().enumerationType
+		} else {
+			null
 		}
 	}
 }
@@ -1613,6 +1713,14 @@ class UnitAssociation extends UnitFeature, AssociationPathElement {
 	refers Selection options
 	refers Attribute collectionSortBy
 	boolean useAutocomplete = "false"
+
+  	op Expression defaultValue() {
+		if (leafFeature() !== null) {
+			leafFeature().defaultValue
+		} else {
+			null
+		}
+	}
 }
 
 class UnitAttribute extends UnitFeature, AttributePathElement {
@@ -1652,18 +1760,102 @@ abstract class InterfaceField extends NamedElement, UnitField {
 	String secondTitle = ''
 	String secondPlaceholder = ''
 	String secondHelp = ''
+
+   	op Boolean isInterfaceField() {
+		true
+	}
+
+   	op Boolean isRequiredField() {
+		fieldRequired
+	}
+
+  	op Expression defaultValue() {
+		fieldDefaultValue
+	}
 }
 
 class DataTypeField extends InterfaceField {
-	refers DataType[1] fieldDataType
+	refers DataType[1] interfaceDataType
 	boolean caseInsensitive
 	boolean obfuscateFormFields
 	boolean encrypt
+
+  	op Boolean isBooleanField() {
+		if (interfaceDataType === null) {
+			false
+		} else {
+			interfaceDataType.isBooleanDataType
+		}
+	}
+
+  	op Boolean isDataTypeField() {
+		true
+	}
+
+  	op Boolean isEmailField() {
+		if (interfaceDataType === null) {
+			interfaceDataType.isEmailDataType
+		} else {
+			false
+		}
+	}
+	
+  	op Boolean isEncryptedField() {
+		encrypt
+	}
+
+  	op Boolean isEnumerationField() {
+		if (interfaceDataType === null) {
+			false
+		} else {
+			interfaceDataType.isEnumerationType
+		}
+	}
+
+  	op Boolean isIntegerField() {
+		if (interfaceDataType === null) {
+			false
+		} else {
+			interfaceDataType.isIntegerDataType
+		}
+	}
+
+  	op Boolean isObfuscatedField() {
+		obfuscateFormFields
+	}
+
+  	op Boolean isStringField() {
+		if (interfaceDataType === null) {
+			false
+		} else {
+			interfaceDataType.isStringDataType
+		}
+	}
+
+  	op Boolean isTextareaField() {
+		if (interfaceDataType === null) {
+			false
+		} else {
+			interfaceDataType.isTextareaDataType
+		}
+	}
+
+  	op Boolean isUrlField() {
+		if (interfaceDataType === null) {
+			false
+		} else {
+			interfaceDataType.isUrlDataType
+		}
+	}
 }
 
 class DateField extends InterfaceField {
 	DateDetails[1] details
 	String format
+
+  	op Boolean isDateField() {
+		true
+	}
 }
 
 interface SelectableUnit {

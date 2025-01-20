@@ -11,6 +11,12 @@ import work.andycarpenter.metamodel.waf.WafFactory;
  * <!-- begin-user-doc -->
  * A test case for the model object '<em><b>Date Field</b></em>'.
  * <!-- end-user-doc -->
+ * <p>
+ * The following operations are tested:
+ * <ul>
+ *   <li>{@link work.andycarpenter.metamodel.waf.DateField#isDateField() <em>Is Date Field</em>}</li>
+ * </ul>
+ * </p>
  * @generated
  */
 public class DateFieldTest extends InterfaceFieldTest {
@@ -65,6 +71,19 @@ public class DateFieldTest extends InterfaceFieldTest {
 	@Override
 	protected void tearDown() throws Exception {
 		setFixture(null);
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.DateField#isDateField() <em>Is Date Field</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.DateField#isDateField()
+	 * @generated
+	 */
+	public void testIsDateField() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
 	}
 
 } //DateFieldTest

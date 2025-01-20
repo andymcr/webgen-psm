@@ -18,6 +18,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 import work.andycarpenter.metamodel.base.BaseFactory;
 import work.andycarpenter.metamodel.expression.ExpressionFactory;
 import work.andycarpenter.metamodel.orm.OrmFactory;
+import work.andycarpenter.metamodel.orm.OrmPackage;
 import work.andycarpenter.metamodel.security.SecurityFactory;
 import work.andycarpenter.metamodel.waf.UnitFeature;
 import work.andycarpenter.metamodel.waf.WafFactory;
@@ -70,29 +71,7 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 			addHasSecondHelpPropertyDescriptor(object);
 			addIsContainsPropertyDescriptor(object);
 			addIsDisabledPropertyDescriptor(object);
-			addIsRequiredPropertyDescriptor(object);
-			addIsSingletonPropertyDescriptor(object);
-			addIsAssociationFieldPropertyDescriptor(object);
-			addIsAttributeFieldPropertyDescriptor(object);
-			addIsBooleanFieldPropertyDescriptor(object);
-			addIsDataTypeFieldPropertyDescriptor(object);
-			addDataTypePropertyDescriptor(object);
-			addIsDateFieldPropertyDescriptor(object);
-			addDateDetailsPropertyDescriptor(object);
-			addIsEmailFieldPropertyDescriptor(object);
-			addIsEncryptedFieldPropertyDescriptor(object);
-			addIsEnumerationFieldPropertyDescriptor(object);
-			addEnumerationTypePropertyDescriptor(object);
-			addIsFeatureFieldPropertyDescriptor(object);
-			addIsInterfaceFieldPropertyDescriptor(object);
-			addIsIntegerFieldPropertyDescriptor(object);
-			addIsLocationFieldPropertyDescriptor(object);
-			addIsObfuscatedFeaturePropertyDescriptor(object);
-			addIsObfuscatedFieldPropertyDescriptor(object);
-			addIsResourceFieldPropertyDescriptor(object);
-			addIsStringFieldPropertyDescriptor(object);
-			addIsTextareaFieldPropertyDescriptor(object);
-			addIsUrlFieldPropertyDescriptor(object);
+			addDefaultDisplayPropertyDescriptor(object);
 			addDefaultValuePropertyDescriptor(object);
 			addHasDefaultValuePropertyDescriptor(object);
 			addHasForcedValuePropertyDescriptor(object);
@@ -114,6 +93,7 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 			addFooterClassPropertyDescriptor(object);
 			addGenModelPropertyDescriptor(object);
 			addUiModelPropertyDescriptor(object);
+			addNamePropertyDescriptor(object);
 			addContainerActionsPlacementPropertyDescriptor(object);
 			addInstanceActionsPlacementPropertyDescriptor(object);
 			addActionsPropertyDescriptor(object);
@@ -141,11 +121,9 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 			addCollectionUiAllowAddPropertyDescriptor(object);
 			addCollectionUiAllowRemovePropertyDescriptor(object);
 			addCollectionMaximumValuesPropertyDescriptor(object);
-			addDefaultDisplayValuePropertyDescriptor(object);
-			addEmptyDisplayValuePropertyDescriptor(object);
+			addEmptyCollectionDisplayPropertyDescriptor(object);
 			addAutofocusPropertyDescriptor(object);
 			addFooterPropertyDescriptor(object);
-			addPersistentFeaturePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -569,28 +547,6 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Persistent Feature feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addPersistentFeaturePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_UnitFeature_persistentFeature_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UnitFeature_persistentFeature_feature", "_UI_UnitFeature_type"),
-				 WafPackage.eINSTANCE.getUnitFeature_PersistentFeature(),
-				 false,
-				 false,
-				 false,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Is Contains feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -635,508 +591,24 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Is Required feature.
+	 * This adds a property descriptor for the Default Display feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addIsRequiredPropertyDescriptor(Object object) {
+	protected void addDefaultDisplayPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_UnitField_isRequired_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_isRequired_feature", "_UI_UnitField_type"),
-				 WafPackage.eINSTANCE.getUnitField_IsRequired(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_DebugPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Is Singleton feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addIsSingletonPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_UnitField_isSingleton_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_isSingleton_feature", "_UI_UnitField_type"),
-				 WafPackage.eINSTANCE.getUnitField_IsSingleton(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_DebugPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Is Association Field feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addIsAssociationFieldPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_UnitField_isAssociationField_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_isAssociationField_feature", "_UI_UnitField_type"),
-				 WafPackage.eINSTANCE.getUnitField_IsAssociationField(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_DebugPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Is Attribute Field feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addIsAttributeFieldPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_UnitField_isAttributeField_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_isAttributeField_feature", "_UI_UnitField_type"),
-				 WafPackage.eINSTANCE.getUnitField_IsAttributeField(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_DebugPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Is Boolean Field feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addIsBooleanFieldPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_UnitField_isBooleanField_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_isBooleanField_feature", "_UI_UnitField_type"),
-				 WafPackage.eINSTANCE.getUnitField_IsBooleanField(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_DebugPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Is Data Type Field feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addIsDataTypeFieldPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_UnitField_isDataTypeField_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_isDataTypeField_feature", "_UI_UnitField_type"),
-				 WafPackage.eINSTANCE.getUnitField_IsDataTypeField(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_DebugPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Data Type feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addDataTypePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_UnitField_dataType_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_dataType_feature", "_UI_UnitField_type"),
-				 WafPackage.eINSTANCE.getUnitField_DataType(),
-				 false,
-				 false,
-				 false,
-				 null,
-				 getString("_UI_DebugPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Is Date Field feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addIsDateFieldPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_UnitField_isDateField_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_isDateField_feature", "_UI_UnitField_type"),
-				 WafPackage.eINSTANCE.getUnitField_IsDateField(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_DebugPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Date Details feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addDateDetailsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_UnitField_dateDetails_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_dateDetails_feature", "_UI_UnitField_type"),
-				 WafPackage.eINSTANCE.getUnitField_DateDetails(),
-				 false,
+				 getString("_UI_UnitField_defaultDisplay_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_defaultDisplay_feature", "_UI_UnitField_type"),
+				 WafPackage.eINSTANCE.getUnitField_DefaultDisplay(),
+				 true,
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 getString("_UI_DebugPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Is Email Field feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addIsEmailFieldPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_UnitField_isEmailField_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_isEmailField_feature", "_UI_UnitField_type"),
-				 WafPackage.eINSTANCE.getUnitField_IsEmailField(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_DebugPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Is Encrypted Field feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addIsEncryptedFieldPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_UnitField_isEncryptedField_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_isEncryptedField_feature", "_UI_UnitField_type"),
-				 WafPackage.eINSTANCE.getUnitField_IsEncryptedField(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_DebugPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Is Enumeration Field feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addIsEnumerationFieldPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_UnitField_isEnumerationField_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_isEnumerationField_feature", "_UI_UnitField_type"),
-				 WafPackage.eINSTANCE.getUnitField_IsEnumerationField(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_DebugPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Enumeration Type feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addEnumerationTypePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_UnitField_enumerationType_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_enumerationType_feature", "_UI_UnitField_type"),
-				 WafPackage.eINSTANCE.getUnitField_EnumerationType(),
-				 false,
-				 false,
-				 false,
 				 null,
-				 getString("_UI_DebugPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Is Feature Field feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addIsFeatureFieldPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_UnitField_isFeatureField_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_isFeatureField_feature", "_UI_UnitField_type"),
-				 WafPackage.eINSTANCE.getUnitField_IsFeatureField(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_DebugPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Is Interface Field feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addIsInterfaceFieldPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_UnitField_isInterfaceField_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_isInterfaceField_feature", "_UI_UnitField_type"),
-				 WafPackage.eINSTANCE.getUnitField_IsInterfaceField(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_DebugPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Is Integer Field feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addIsIntegerFieldPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_UnitField_isIntegerField_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_isIntegerField_feature", "_UI_UnitField_type"),
-				 WafPackage.eINSTANCE.getUnitField_IsIntegerField(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_DebugPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Is Location Field feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addIsLocationFieldPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_UnitField_isLocationField_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_isLocationField_feature", "_UI_UnitField_type"),
-				 WafPackage.eINSTANCE.getUnitField_IsLocationField(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_DebugPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Is Obfuscated Feature feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addIsObfuscatedFeaturePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_UnitField_isObfuscatedFeature_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_isObfuscatedFeature_feature", "_UI_UnitField_type"),
-				 WafPackage.eINSTANCE.getUnitField_IsObfuscatedFeature(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_DebugPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Is Obfuscated Field feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addIsObfuscatedFieldPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_UnitField_isObfuscatedField_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_isObfuscatedField_feature", "_UI_UnitField_type"),
-				 WafPackage.eINSTANCE.getUnitField_IsObfuscatedField(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_DebugPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Is Resource Field feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addIsResourceFieldPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_UnitField_isResourceField_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_isResourceField_feature", "_UI_UnitField_type"),
-				 WafPackage.eINSTANCE.getUnitField_IsResourceField(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_DebugPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Is String Field feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addIsStringFieldPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_UnitField_isStringField_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_isStringField_feature", "_UI_UnitField_type"),
-				 WafPackage.eINSTANCE.getUnitField_IsStringField(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_DebugPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Is Textarea Field feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addIsTextareaFieldPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_UnitField_isTextareaField_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_isTextareaField_feature", "_UI_UnitField_type"),
-				 WafPackage.eINSTANCE.getUnitField_IsTextareaField(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_DebugPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Is Url Field feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addIsUrlFieldPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_UnitField_isUrlField_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_isUrlField_feature", "_UI_UnitField_type"),
-				 WafPackage.eINSTANCE.getUnitField_IsUrlField(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -1599,6 +1071,28 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 				 false,
 				 null,
 				 getString("_UI_DebugPropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Path_name_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Path_name_feature", "_UI_Path_type"),
+				 OrmPackage.Literals.PATH__NAME,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_ModelPropertyCategory"),
 				 null));
 	}
 
@@ -2153,41 +1647,19 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Default Display Value feature.
+	 * This adds a property descriptor for the Empty Collection Display feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addDefaultDisplayValuePropertyDescriptor(Object object) {
+	protected void addEmptyCollectionDisplayPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_UnitFeature_defaultDisplayValue_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UnitFeature_defaultDisplayValue_feature", "_UI_UnitFeature_type"),
-				 WafPackage.eINSTANCE.getUnitFeature_DefaultDisplayValue(),
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Empty Display Value feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addEmptyDisplayValuePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_UnitFeature_emptyDisplayValue_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UnitFeature_emptyDisplayValue_feature", "_UI_UnitFeature_type"),
-				 WafPackage.eINSTANCE.getUnitFeature_EmptyDisplayValue(),
+				 getString("_UI_UnitFeature_emptyCollectionDisplay_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UnitFeature_emptyCollectionDisplay_feature", "_UI_UnitFeature_type"),
+				 WafPackage.eINSTANCE.getUnitFeature_EmptyCollectionDisplay(),
 				 true,
 				 false,
 				 false,
@@ -2254,9 +1726,9 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(WafPackage.eINSTANCE.getUnitField_Authorisation());
 			childrenFeatures.add(WafPackage.eINSTANCE.getUnitField_HideWhen());
+			childrenFeatures.add(WafPackage.eINSTANCE.getUnitField_DisplayDefaultWhen());
 			childrenFeatures.add(WafPackage.eINSTANCE.getActionContainer_AllActions());
 			childrenFeatures.add(WafPackage.eINSTANCE.getUnitFeature_ForcedValue());
-			childrenFeatures.add(WafPackage.eINSTANCE.getUnitFeature_DisplayDefaultWhen());
 		}
 		return childrenFeatures;
 	}
@@ -2282,7 +1754,7 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((UnitFeature)object).getFieldName();
+		String label = ((UnitFeature)object).getName();
 		return label == null || label.length() == 0 ?
 			getString("_UI_UnitFeature_type") :
 			getString("_UI_UnitFeature_type") + " " + label;
@@ -2319,27 +1791,7 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 			case WafPackage.UNIT_FEATURE__HAS_SECOND_HELP:
 			case WafPackage.UNIT_FEATURE__IS_CONTAINS:
 			case WafPackage.UNIT_FEATURE__IS_DISABLED:
-			case WafPackage.UNIT_FEATURE__IS_REQUIRED:
-			case WafPackage.UNIT_FEATURE__IS_SINGLETON:
-			case WafPackage.UNIT_FEATURE__IS_ASSOCIATION_FIELD:
-			case WafPackage.UNIT_FEATURE__IS_ATTRIBUTE_FIELD:
-			case WafPackage.UNIT_FEATURE__IS_BOOLEAN_FIELD:
-			case WafPackage.UNIT_FEATURE__IS_DATA_TYPE_FIELD:
-			case WafPackage.UNIT_FEATURE__IS_DATE_FIELD:
-			case WafPackage.UNIT_FEATURE__DATE_DETAILS:
-			case WafPackage.UNIT_FEATURE__IS_EMAIL_FIELD:
-			case WafPackage.UNIT_FEATURE__IS_ENCRYPTED_FIELD:
-			case WafPackage.UNIT_FEATURE__IS_ENUMERATION_FIELD:
-			case WafPackage.UNIT_FEATURE__IS_FEATURE_FIELD:
-			case WafPackage.UNIT_FEATURE__IS_INTERFACE_FIELD:
-			case WafPackage.UNIT_FEATURE__IS_INTEGER_FIELD:
-			case WafPackage.UNIT_FEATURE__IS_LOCATION_FIELD:
-			case WafPackage.UNIT_FEATURE__IS_OBFUSCATED_FEATURE:
-			case WafPackage.UNIT_FEATURE__IS_OBFUSCATED_FIELD:
-			case WafPackage.UNIT_FEATURE__IS_RESOURCE_FIELD:
-			case WafPackage.UNIT_FEATURE__IS_STRING_FIELD:
-			case WafPackage.UNIT_FEATURE__IS_TEXTAREA_FIELD:
-			case WafPackage.UNIT_FEATURE__IS_URL_FIELD:
+			case WafPackage.UNIT_FEATURE__DEFAULT_DISPLAY:
 			case WafPackage.UNIT_FEATURE__HAS_DEFAULT_VALUE:
 			case WafPackage.UNIT_FEATURE__HAS_FORCED_VALUE:
 			case WafPackage.UNIT_FEATURE__ESCAPE_HTML:
@@ -2358,6 +1810,7 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 			case WafPackage.UNIT_FEATURE__FIELD_VALUE_CLASS:
 			case WafPackage.UNIT_FEATURE__HAS_FIELD_VALUE_CLASS:
 			case WafPackage.UNIT_FEATURE__FOOTER_CLASS:
+			case WafPackage.UNIT_FEATURE__NAME:
 			case WafPackage.UNIT_FEATURE__CONTAINER_ACTIONS_PLACEMENT:
 			case WafPackage.UNIT_FEATURE__INSTANCE_ACTIONS_PLACEMENT:
 			case WafPackage.UNIT_FEATURE__HAS_ACTIONS:
@@ -2375,17 +1828,16 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 			case WafPackage.UNIT_FEATURE__COLLECTION_UI_ALLOW_ADD:
 			case WafPackage.UNIT_FEATURE__COLLECTION_UI_ALLOW_REMOVE:
 			case WafPackage.UNIT_FEATURE__COLLECTION_MAXIMUM_VALUES:
-			case WafPackage.UNIT_FEATURE__DEFAULT_DISPLAY_VALUE:
-			case WafPackage.UNIT_FEATURE__EMPTY_DISPLAY_VALUE:
+			case WafPackage.UNIT_FEATURE__EMPTY_COLLECTION_DISPLAY:
 			case WafPackage.UNIT_FEATURE__AUTOFOCUS:
 			case WafPackage.UNIT_FEATURE__FOOTER:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case WafPackage.UNIT_FEATURE__AUTHORISATION:
 			case WafPackage.UNIT_FEATURE__HIDE_WHEN:
+			case WafPackage.UNIT_FEATURE__DISPLAY_DEFAULT_WHEN:
 			case WafPackage.UNIT_FEATURE__ALL_ACTIONS:
 			case WafPackage.UNIT_FEATURE__FORCED_VALUE:
-			case WafPackage.UNIT_FEATURE__DISPLAY_DEFAULT_WHEN:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -2446,6 +1898,46 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.eINSTANCE.getUnitField_HideWhen(),
+				 ExpressionFactory.eINSTANCE.createPredicateIsNull()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.eINSTANCE.getUnitField_DisplayDefaultWhen(),
+				 ExpressionFactory.eINSTANCE.createPredicateBooleanVariable()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.eINSTANCE.getUnitField_DisplayDefaultWhen(),
+				 ExpressionFactory.eINSTANCE.createPredicateBooleanOperator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.eINSTANCE.getUnitField_DisplayDefaultWhen(),
+				 ExpressionFactory.eINSTANCE.createPredicateEqualityOperator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.eINSTANCE.getUnitField_DisplayDefaultWhen(),
+				 ExpressionFactory.eINSTANCE.createPredicateComparisonOperator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.eINSTANCE.getUnitField_DisplayDefaultWhen(),
+				 ExpressionFactory.eINSTANCE.createPredicateInOperator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.eINSTANCE.getUnitField_DisplayDefaultWhen(),
+				 ExpressionFactory.eINSTANCE.createPredicateLikeOperator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.eINSTANCE.getUnitField_DisplayDefaultWhen(),
+				 ExpressionFactory.eINSTANCE.createPredicateIsEmpty()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.eINSTANCE.getUnitField_DisplayDefaultWhen(),
 				 ExpressionFactory.eINSTANCE.createPredicateIsNull()));
 
 		newChildDescriptors.add
@@ -2602,46 +2094,6 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 			(createChildParameter
 				(WafPackage.eINSTANCE.getUnitFeature_ForcedValue(),
 				 ExpressionFactory.eINSTANCE.createArithmeticOperation()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.eINSTANCE.getUnitFeature_DisplayDefaultWhen(),
-				 ExpressionFactory.eINSTANCE.createPredicateBooleanVariable()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.eINSTANCE.getUnitFeature_DisplayDefaultWhen(),
-				 ExpressionFactory.eINSTANCE.createPredicateBooleanOperator()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.eINSTANCE.getUnitFeature_DisplayDefaultWhen(),
-				 ExpressionFactory.eINSTANCE.createPredicateEqualityOperator()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.eINSTANCE.getUnitFeature_DisplayDefaultWhen(),
-				 ExpressionFactory.eINSTANCE.createPredicateComparisonOperator()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.eINSTANCE.getUnitFeature_DisplayDefaultWhen(),
-				 ExpressionFactory.eINSTANCE.createPredicateInOperator()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.eINSTANCE.getUnitFeature_DisplayDefaultWhen(),
-				 ExpressionFactory.eINSTANCE.createPredicateLikeOperator()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.eINSTANCE.getUnitFeature_DisplayDefaultWhen(),
-				 ExpressionFactory.eINSTANCE.createPredicateIsEmpty()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.eINSTANCE.getUnitFeature_DisplayDefaultWhen(),
-				 ExpressionFactory.eINSTANCE.createPredicateIsNull()));
 	}
 
 	/**
@@ -2657,8 +2109,8 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 
 		boolean qualify =
 			childFeature == WafPackage.eINSTANCE.getUnitField_HideWhen() ||
-			childFeature == WafPackage.eINSTANCE.getUnitFeature_ForcedValue() ||
-			childFeature == WafPackage.eINSTANCE.getUnitFeature_DisplayDefaultWhen();
+			childFeature == WafPackage.eINSTANCE.getUnitField_DisplayDefaultWhen() ||
+			childFeature == WafPackage.eINSTANCE.getUnitFeature_ForcedValue();
 
 		if (qualify) {
 			return getString

@@ -166,6 +166,7 @@ public class DateFieldItemProvider extends InterfaceFieldItemProvider {
 
 		boolean qualify =
 			childFeature == WafPackage.eINSTANCE.getUnitField_HideWhen() ||
+			childFeature == WafPackage.eINSTANCE.getUnitField_DisplayDefaultWhen() ||
 			childFeature == WafPackage.eINSTANCE.getInterfaceField_FieldDefaultValue();
 
 		if (qualify) {

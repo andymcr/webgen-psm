@@ -863,6 +863,19 @@ public abstract class DynamicUnitTest extends ContentUnitTest {
 	}
 
 	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#isSetHasAssociationFields() <em>isSetHasAssociationFields()</em>}' method.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#isSetHasAssociationFields()
+	 * @generated
+	 */
+	public void testIsSetHasAssociationFields() {
+		// TODO: implement this test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
 	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#getAutocompleteFields() <em>Autocomplete Fields</em>}' feature getter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -889,6 +902,19 @@ public abstract class DynamicUnitTest extends ContentUnitTest {
 	}
 
 	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#isSetHasAutocompleteFields() <em>isSetHasAutocompleteFields()</em>}' method.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#isSetHasAutocompleteFields()
+	 * @generated
+	 */
+	public void testIsSetHasAutocompleteFields() {
+		// TODO: implement this test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
 	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#isHasBooleanFields() <em>Has Boolean Fields</em>}' feature getter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -897,6 +923,19 @@ public abstract class DynamicUnitTest extends ContentUnitTest {
 	 */
 	public void testIsHasBooleanFields() {
 		// TODO: implement this feature getter test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#isSetHasBooleanFields() <em>isSetHasBooleanFields()</em>}' method.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#isSetHasBooleanFields()
+	 * @generated
+	 */
+	public void testIsSetHasBooleanFields() {
+		// TODO: implement this test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}
@@ -936,6 +975,19 @@ public abstract class DynamicUnitTest extends ContentUnitTest {
 	 */
 	public void testIsHasChangableCollections() {
 		// TODO: implement this feature getter test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#isSetHasChangableCollections() <em>isSetHasChangableCollections()</em>}' method.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#isSetHasChangableCollections()
+	 * @generated
+	 */
+	public void testIsSetHasChangableCollections() {
+		// TODO: implement this test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}
@@ -1079,6 +1131,19 @@ public abstract class DynamicUnitTest extends ContentUnitTest {
 	 */
 	public void testIsHasDefaultValueFields() {
 		// TODO: implement this feature getter test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#isSetHasDefaultValueFields() <em>isSetHasDefaultValueFields()</em>}' method.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#isSetHasDefaultValueFields()
+	 * @generated
+	 */
+	public void testIsSetHasDefaultValueFields() {
+		// TODO: implement this test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}
