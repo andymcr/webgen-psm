@@ -55,6 +55,7 @@ import work.andycarpenter.metamodel.waf.UnitField;
  *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#isFeatureField() <em>Is Feature Field</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#isInterfaceField() <em>Is Interface Field</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#isIntegerField() <em>Is Integer Field</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#isLabelField() <em>Is Label Field</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#isLocationField() <em>Is Location Field</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#isObfuscatedField() <em>Is Obfuscated Field</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#isResourceField() <em>Is Resource Field</em>}</li>
@@ -849,6 +850,19 @@ public abstract class UnitFieldTest extends DisplayElementTest {
 	 * @generated
 	 */
 	public void testIsIntegerField() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.UnitField#isLabelField() <em>Is Label Field</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.UnitField#isLabelField()
+	 * @generated
+	 */
+	public void testIsLabelField() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

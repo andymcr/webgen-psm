@@ -804,7 +804,7 @@ abstract class DynamicUnit extends ContentUnit, ActionContainer {
 	refers readonly transient volatile unsettable derived UnitField[] defaultValueFields
 
 	derived readonly unsettable transient volatile boolean hasDefaultValueFields get {
-		defaultValueFields.isEmpty()
+		!defaultValueFields.isEmpty()
 	}
 
 	@OCL(derivation="displayFields->exists(f | f.isDisabled)")
@@ -1363,6 +1363,10 @@ interface UnitField extends DisplayElement {
 		false
 	}
 
+  	op Boolean isLabelField() {
+		false
+	}
+
   	op Boolean isLocationField() {
 		false
 	}
@@ -1746,6 +1750,10 @@ class UnitLabel extends UnitField {
 		endif")
     @GenModel(propertyCategory="Debug")
 	derived String[1] name
+
+  	op Boolean isLabelField() {
+		true
+	}
 }
 
 abstract class InterfaceField extends NamedElement, UnitField {

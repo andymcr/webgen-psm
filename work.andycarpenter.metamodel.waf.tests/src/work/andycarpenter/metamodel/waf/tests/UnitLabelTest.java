@@ -48,6 +48,7 @@ import work.andycarpenter.metamodel.waf.WafFactory;
  * <p>
  * The following operations are tested:
  * <ul>
+ *   <li>{@link work.andycarpenter.metamodel.waf.UnitLabel#isLabelField() <em>Is Label Field</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#isAssociationField() <em>Is Association Field</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#isAttributeField() <em>Is Attribute Field</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#isBooleanField() <em>Is Boolean Field</em>}</li>
@@ -768,6 +769,19 @@ public class UnitLabelTest extends DisplayElementTest {
 	 */
 	public void testSetName() {
 		// TODO: implement this feature setter test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.UnitLabel#isLabelField() <em>Is Label Field</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.UnitLabel#isLabelField()
+	 * @generated
+	 */
+	public void testIsLabelField() {
+		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}
