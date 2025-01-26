@@ -742,7 +742,7 @@ abstract class DynamicUnit extends ContentUnit, ActionContainer {
 		displayFields.filter[it.isAssociationField()].map[it as UnitAssociation].toEList()
 	}
 	derived readonly unsettable transient volatile boolean hasAssociationFields get {
-		associationFields.isEmpty()
+		!associationFields.isEmpty()
 	}
 
 	@OCL(derivation="if self.oclIsKindOf(EditUnit) then
@@ -781,7 +781,7 @@ abstract class DynamicUnit extends ContentUnit, ActionContainer {
 
     @GenModel(propertyCategory="Debug")
 	refers derived readonly unsettable transient volatile UnitField[] collectionFields get {
-		displayFields.filter[it.isSingletonField()].toEList()
+		displayFields.filter[!it.isSingletonField()].toEList()
 	}
 
     @GenModel(propertyCategory="Debug")
@@ -1897,6 +1897,30 @@ abstract class CollectionUnit extends DynamicUnit, SelectableUnit, ValueContext 
 		} else {
 			return contentType.containingType
 		}
+	}
+
+	op Entity[] referencableTypes() {
+		var entities = new BasicEList<Entity>() //
+		if (contentType!== null) {
+			if (findContainerSelection !== null) {
+				entities.add(contentType.containingAssociation.partOf);
+				entities.add(contentType);
+			} else {
+				if (selection === null) {
+					entities.add(contentType);
+				} else {
+					if (selection.selectPath === null) {
+						entities.add(contentType);
+					} else {
+						if (selection.selectPath.leafEntity() !== null) {
+							entities.add(selection.selectPath.leafEntity());
+							entities.add(contentType);
+						}
+					}
+				}
+			}
+		}
+		return entities
 	}
 
 	refers Filter filter

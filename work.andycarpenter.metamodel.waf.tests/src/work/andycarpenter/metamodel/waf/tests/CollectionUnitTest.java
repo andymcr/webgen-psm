@@ -24,6 +24,7 @@ import work.andycarpenter.metamodel.waf.CollectionUnit;
  * The following operations are tested:
  * <ul>
  *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#containingType() <em>Containing Type</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#referencableTypes() <em>Referencable Types</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -176,6 +177,19 @@ public abstract class CollectionUnitTest extends DynamicUnitTest {
 	 * @generated
 	 */
 	public void testContainingType() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.CollectionUnit#referencableTypes() <em>Referencable Types</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.CollectionUnit#referencableTypes()
+	 * @generated
+	 */
+	public void testReferencableTypes() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
