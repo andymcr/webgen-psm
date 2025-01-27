@@ -70,7 +70,6 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 			addUiModelRefPropertyDescriptor(object);
 			addContentTypePropertyDescriptor(object);
 			addContainingAssociationPropertyDescriptor(object);
-			addIsContainedPropertyDescriptor(object);
 			addHasExplicitlyEditedContainerPropertyDescriptor(object);
 			addServicesUsedPropertyDescriptor(object);
 			addHasServicesUsedPropertyDescriptor(object);
@@ -662,28 +661,6 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 				 false,
 				 false,
 				 null,
-				 getString("_UI_DebugPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Is Contained feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addIsContainedPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_DynamicUnit_isContained_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DynamicUnit_isContained_feature", "_UI_DynamicUnit_type"),
-				 WafPackage.eINSTANCE.getDynamicUnit_IsContained(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
@@ -2146,7 +2123,6 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 			case WafPackage.DYNAMIC_UNIT__HAS_TARGET_ACTIONS:
 			case WafPackage.DYNAMIC_UNIT__HAS_INSTANCE_ACTIONS:
 			case WafPackage.DYNAMIC_UNIT__HAS_OPERATION_ACTIONS:
-			case WafPackage.DYNAMIC_UNIT__IS_CONTAINED:
 			case WafPackage.DYNAMIC_UNIT__HAS_EXPLICITLY_EDITED_CONTAINER:
 			case WafPackage.DYNAMIC_UNIT__HAS_SERVICES_USED:
 			case WafPackage.DYNAMIC_UNIT__IS_CONDITIONALLY_DISPLAYED:

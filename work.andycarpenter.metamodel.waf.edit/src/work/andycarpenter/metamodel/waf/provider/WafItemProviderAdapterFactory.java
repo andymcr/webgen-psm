@@ -621,6 +621,29 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.waf.UnitAssociation} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected UnitAssociationItemProvider unitAssociationItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link work.andycarpenter.metamodel.waf.UnitAssociation}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createUnitAssociationAdapter() {
+		if (unitAssociationItemProvider == null) {
+			unitAssociationItemProvider = new UnitAssociationItemProvider(this);
+		}
+
+		return unitAssociationItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.waf.UnitAttribute} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -664,29 +687,6 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 		}
 
 		return unitResourceItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.waf.UnitAssociation} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected UnitAssociationItemProvider unitAssociationItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link work.andycarpenter.metamodel.waf.UnitAssociation}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createUnitAssociationAdapter() {
-		if (unitAssociationItemProvider == null) {
-			unitAssociationItemProvider = new UnitAssociationItemProvider(this);
-		}
-
-		return unitAssociationItemProvider;
 	}
 
 	/**

@@ -687,18 +687,23 @@ abstract class DynamicUnit extends ContentUnit, ActionContainer {
 	refers derived readonly unsettable transient volatile Association containingAssociation
 
 	op Entity containingType() {
-		return contentType.containingType
+		if (contentType === null) {
+			null
+		} else {
+			contentType.containingType
+		}
+	}
+
+	op boolean isContained() {
+		containingType() !== null
 	}
 
 	op Entity[] referencableTypes() {
-		var types = new BasicEList<Entity>() //
-		types.add(contentType.containingType)
+		var types = new BasicEList<Entity>()
+		if (contentType !== null) {
+			types.add(contentType)
+		}
 		return types
-	}
-
-    @GenModel(propertyCategory="Debug")
-	derived readonly unsettable transient volatile boolean isContained get {
-		containingType() !== null
 	}
 
 	@OCL(derivation="if self.oclIsKindOf(EditUnit) and not containingAssociation.oclIsUndefined() then
@@ -1885,39 +1890,27 @@ abstract class CollectionUnit extends DynamicUnit, SelectableUnit, ValueContext 
 	contains DisplayValue elementTitle
 	boolean truncateElementTitle = "false"
 	refers Selection selection
-	refers Entity containerType
 	refers Selection findContainerSelection
 	refers Selection findElementSelection
 
 	op Entity containingType() {
 		if (findContainerSelection !== null) {
-			return findContainerSelection.definedBy.serves
+			findContainerSelection.definedBy.serves
 		} else if (selection !== null) {
-			return selection.selectionType()
+			selection.selectionType()
+		} else if (contentType !== null) {
+			contentType.containingType
 		} else {
-			return contentType.containingType
+			null
 		}
 	}
 
 	op Entity[] referencableTypes() {
 		var entities = new BasicEList<Entity>() //
-		if (contentType!== null) {
-			if (findContainerSelection !== null) {
-				entities.add(contentType.containingAssociation.partOf);
-				entities.add(contentType);
-			} else {
-				if (selection === null) {
-					entities.add(contentType);
-				} else {
-					if (selection.selectPath === null) {
-						entities.add(contentType);
-					} else {
-						if (selection.selectPath.leafEntity() !== null) {
-							entities.add(selection.selectPath.leafEntity());
-							entities.add(contentType);
-						}
-					}
-				}
+		if (contentType !== null) {
+			entities.add(contentType);
+			if (isContained()) {
+				entities.add(containingType());
 			}
 		}
 		return entities
@@ -2236,18 +2229,6 @@ class MapUnit extends EditUnit, SelectableUnit {
 class DetailsUnit extends SingletonUnit, SelectableUnit {
 	refers Selection selection
 	boolean omitFieldLabels
-
-	op Entity containingType() {
-		if (selection !== null) {
-			if (selection.selectPath !== null) {
-				return null // selection.selectPath.leafFeature().targetType
-			} else {
-				return contentType.containingType
-			}
-		} else {
-			return contentType.containingType
-		}
-	}
 
 	@OCL(derivation="if sectionClassOverride.trim() <> '' then
 			sectionClassOverride.trim()

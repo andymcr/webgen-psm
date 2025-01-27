@@ -34,12 +34,6 @@ import work.andycarpenter.metamodel.waf.WafFactory;
  *   <li>{@link work.andycarpenter.metamodel.waf.DetailsUnit#isHasAnchorClass() <em>Has Anchor Class</em>}</li>
  * </ul>
  * </p>
- * <p>
- * The following operations are tested:
- * <ul>
- *   <li>{@link work.andycarpenter.metamodel.waf.DetailsUnit#containingType() <em>Containing Type</em>}</li>
- * </ul>
- * </p>
  * @generated
  */
 public class DetailsUnitTest extends SingletonUnitTest {
@@ -326,19 +320,6 @@ public class DetailsUnitTest extends SingletonUnitTest {
 	 */
 	public void testIsHasAnchorClass() {
 		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DetailsUnit#containingType() <em>Containing Type</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DetailsUnit#containingType()
-	 * @generated
-	 */
-	public void testContainingType() {
-		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}

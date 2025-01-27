@@ -52,7 +52,6 @@ public class CollectionUnitItemProvider extends DynamicUnitItemProvider {
 			addUnitTitlePropertyDescriptor(object);
 			addTruncateElementTitlePropertyDescriptor(object);
 			addSelectionPropertyDescriptor(object);
-			addContainerTypePropertyDescriptor(object);
 			addFindContainerSelectionPropertyDescriptor(object);
 			addFindElementSelectionPropertyDescriptor(object);
 			addFilterPropertyDescriptor(object);
@@ -170,28 +169,6 @@ public class CollectionUnitItemProvider extends DynamicUnitItemProvider {
 				 getString("_UI_CollectionUnit_selection_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_selection_feature", "_UI_CollectionUnit_type"),
 				 WafPackage.eINSTANCE.getCollectionUnit_Selection(),
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Container Type feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addContainerTypePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_CollectionUnit_containerType_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_containerType_feature", "_UI_CollectionUnit_type"),
-				 WafPackage.eINSTANCE.getCollectionUnit_ContainerType(),
 				 true,
 				 false,
 				 true,
