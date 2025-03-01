@@ -60,7 +60,6 @@ public class SelectionItemProvider extends NamedElementItemProvider {
 			addJoinsPropertyDescriptor(object);
 			addGroupingPropertyDescriptor(object);
 			addMethodNamePropertyDescriptor(object);
-			addHasFormalsPropertyDescriptor(object);
 			addHasPaginationSupportPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -221,28 +220,6 @@ public class SelectionItemProvider extends NamedElementItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Has Formals feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addHasFormalsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Selection_hasFormals_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Selection_hasFormals_feature", "_UI_Selection_type"),
-				 OrmPackage.Literals.SELECTION__HAS_FORMALS,
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_DebugPropertyCategory"),
-				 null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Has Pagination Support feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -339,7 +316,6 @@ public class SelectionItemProvider extends NamedElementItemProvider {
 			case OrmPackage.SELECTION__LIMIT:
 			case OrmPackage.SELECTION__DISTINCT:
 			case OrmPackage.SELECTION__METHOD_NAME:
-			case OrmPackage.SELECTION__HAS_FORMALS:
 			case OrmPackage.SELECTION__HAS_PAGINATION_SUPPORT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;

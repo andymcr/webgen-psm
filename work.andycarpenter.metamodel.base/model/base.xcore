@@ -152,6 +152,10 @@ class EnumerationLiteral extends NamedDisplayElement {
 
 interface FormalParameterList {
 	contains FormalParameter[] parameters
+
+ 	op Boolean hasFormals() {
+		!parameters.isEmpty()
+	}
 }
 
 class FormalParameter extends NamedElement {

@@ -791,19 +791,47 @@ class Selection extends NamedElement, FormalParameterList {
 	@GenModel(propertyCategory="Data Access")
 	refers Feature[] fields
 
+ 	op Boolean hasFields() {
+		!fields.isEmpty()
+	}
+
 	@GenModel(propertyCategory="Data Access")
 	refers Association[] joins
 
+ 	op Boolean hasJoins() {
+		!joins.isEmpty()
+	}
+
 	contains Predicate condition
+
+ 	op Boolean hasCondition() {
+		condition !== null
+	}
 
 	contains Order[] ordering
 
+ 	op Boolean hasOrdering() {
+		!ordering.isEmpty()
+	}
+
 	contains Filter[] filters opposite selection
+
+ 	op Boolean hasFilters() {
+		!filters.isEmpty()
+	}
 
 	@GenModel(propertyCategory="Data Access")
 	refers Feature[] grouping
 
+ 	op Boolean hasGrouping() {
+		!grouping.isEmpty()
+	}
+
 	contains SelectionPath selectPath opposite selection
+
+ 	op Boolean hasSelectPath() {
+		selectPath !== null
+	}
 
 	@GenModel(propertyCategory="Implementation")
 	String methodName
@@ -822,9 +850,6 @@ class Selection extends NamedElement, FormalParameterList {
 		return types
 	}
 
-	@OCL(derivation="parameters->notEmpty()")
-    @GenModel(propertyCategory="Debug")
-	derived readonly unsettable transient volatile boolean hasFormals
 	@OCL(derivation="(limit = 0 or limit > 1) and (joins->isEmpty() or fields->isEmpty())")
     @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean hasPaginationSupport
