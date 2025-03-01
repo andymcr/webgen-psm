@@ -48,12 +48,6 @@ public class ControlUnitItemProvider extends DynamicUnitItemProvider {
 			addSubmitLabelPropertyDescriptor(object);
 			addCancelDestinationPropertyDescriptor(object);
 			addCancelLabelPropertyDescriptor(object);
-			addSectionClassPropertyDescriptor(object);
-			addHasSectionClassPropertyDescriptor(object);
-			addCaptionClassPropertyDescriptor(object);
-			addHasCaptionClassPropertyDescriptor(object);
-			addContentClassPropertyDescriptor(object);
-			addHasContentClassPropertyDescriptor(object);
 			addFieldListClassPropertyDescriptor(object);
 			addHasFieldListClassPropertyDescriptor(object);
 			addDefinitionFieldListClassPropertyDescriptor(object);
@@ -132,138 +126,6 @@ public class ControlUnitItemProvider extends DynamicUnitItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Section Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addSectionClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ControlUnit_sectionClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ControlUnit_sectionClass_feature", "_UI_ControlUnit_type"),
-				 WafPackage.eINSTANCE.getControlUnit_SectionClass(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Has Section Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addHasSectionClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ControlUnit_hasSectionClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ControlUnit_hasSectionClass_feature", "_UI_ControlUnit_type"),
-				 WafPackage.eINSTANCE.getControlUnit_HasSectionClass(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Caption Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addCaptionClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ControlUnit_captionClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ControlUnit_captionClass_feature", "_UI_ControlUnit_type"),
-				 WafPackage.eINSTANCE.getControlUnit_CaptionClass(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Has Caption Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addHasCaptionClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ControlUnit_hasCaptionClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ControlUnit_hasCaptionClass_feature", "_UI_ControlUnit_type"),
-				 WafPackage.eINSTANCE.getControlUnit_HasCaptionClass(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Content Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addContentClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ControlUnit_contentClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ControlUnit_contentClass_feature", "_UI_ControlUnit_type"),
-				 WafPackage.eINSTANCE.getControlUnit_ContentClass(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Has Content Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addHasContentClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ControlUnit_hasContentClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ControlUnit_hasContentClass_feature", "_UI_ControlUnit_type"),
-				 WafPackage.eINSTANCE.getControlUnit_HasContentClass(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -561,12 +423,6 @@ public class ControlUnitItemProvider extends DynamicUnitItemProvider {
 		switch (notification.getFeatureID(ControlUnit.class)) {
 			case WafPackage.CONTROL_UNIT__SUBMIT_LABEL:
 			case WafPackage.CONTROL_UNIT__CANCEL_LABEL:
-			case WafPackage.CONTROL_UNIT__SECTION_CLASS:
-			case WafPackage.CONTROL_UNIT__HAS_SECTION_CLASS:
-			case WafPackage.CONTROL_UNIT__CAPTION_CLASS:
-			case WafPackage.CONTROL_UNIT__HAS_CAPTION_CLASS:
-			case WafPackage.CONTROL_UNIT__CONTENT_CLASS:
-			case WafPackage.CONTROL_UNIT__HAS_CONTENT_CLASS:
 			case WafPackage.CONTROL_UNIT__FIELD_LIST_CLASS:
 			case WafPackage.CONTROL_UNIT__HAS_FIELD_LIST_CLASS:
 			case WafPackage.CONTROL_UNIT__DEFINITION_FIELD_LIST_CLASS:

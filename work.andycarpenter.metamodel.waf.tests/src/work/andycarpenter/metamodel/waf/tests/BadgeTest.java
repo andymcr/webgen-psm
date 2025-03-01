@@ -14,15 +14,10 @@ import work.andycarpenter.metamodel.waf.WafFactory;
  * A test case for the model object '<em><b>Badge</b></em>'.
  * <!-- end-user-doc -->
  * <p>
- * The following features are tested:
- * <ul>
- *   <li>{@link work.andycarpenter.metamodel.waf.Badge#getBadgeClass() <em>Badge Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.Badge#isHasBadgeClass() <em>Has Badge Class</em>}</li>
- * </ul>
- * </p>
- * <p>
  * The following operations are tested:
  * <ul>
+ *   <li>{@link work.andycarpenter.metamodel.waf.Badge#badgeClass() <em>Badge Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.Badge#hasBadgeClass() <em>Has Badge Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.ValueContext#referencableTypes() <em>Referencable Types</em>}</li>
  * </ul>
  * </p>
@@ -100,53 +95,27 @@ public class BadgeTest extends TestCase {
 	}
 
 	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.Badge#getBadgeClass() <em>Badge Class</em>}' feature getter.
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.Badge#badgeClass() <em>Badge Class</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.Badge#getBadgeClass()
+	 * @see work.andycarpenter.metamodel.waf.Badge#badgeClass()
 	 * @generated
 	 */
-	public void testGetBadgeClass() {
-		// TODO: implement this feature getter test method
+	public void testBadgeClass() {
+		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}
 
 	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.Badge#isSetBadgeClass() <em>isSetBadgeClass()</em>}' method.
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.Badge#hasBadgeClass() <em>Has Badge Class</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.Badge#isSetBadgeClass()
+	 * @see work.andycarpenter.metamodel.waf.Badge#hasBadgeClass()
 	 * @generated
 	 */
-	public void testIsSetBadgeClass() {
-		// TODO: implement this test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.Badge#isHasBadgeClass() <em>Has Badge Class</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.Badge#isHasBadgeClass()
-	 * @generated
-	 */
-	public void testIsHasBadgeClass() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.Badge#isSetHasBadgeClass() <em>isSetHasBadgeClass()</em>}' method.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.Badge#isSetHasBadgeClass()
-	 * @generated
-	 */
-	public void testIsSetHasBadgeClass() {
-		// TODO: implement this test method
+	public void testHasBadgeClass() {
+		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}

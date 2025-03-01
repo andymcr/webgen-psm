@@ -51,12 +51,6 @@ public class GalleryUnitItemProvider extends CollectionUnitItemProvider {
 			addFullSizeFilterPropertyDescriptor(object);
 			addShowTimePropertyDescriptor(object);
 			addTransitionTimePropertyDescriptor(object);
-			addSectionClassPropertyDescriptor(object);
-			addHasSectionClassPropertyDescriptor(object);
-			addCaptionClassPropertyDescriptor(object);
-			addHasCaptionClassPropertyDescriptor(object);
-			addContentClassPropertyDescriptor(object);
-			addHasContentClassPropertyDescriptor(object);
 			addFieldListClassPropertyDescriptor(object);
 			addHasFieldListClassPropertyDescriptor(object);
 			addDefinitionFieldListClassPropertyDescriptor(object);
@@ -183,138 +177,6 @@ public class GalleryUnitItemProvider extends CollectionUnitItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Section Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addSectionClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_GalleryUnit_sectionClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_GalleryUnit_sectionClass_feature", "_UI_GalleryUnit_type"),
-				 WafPackage.eINSTANCE.getGalleryUnit_SectionClass(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Has Section Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addHasSectionClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_GalleryUnit_hasSectionClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_GalleryUnit_hasSectionClass_feature", "_UI_GalleryUnit_type"),
-				 WafPackage.eINSTANCE.getGalleryUnit_HasSectionClass(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Caption Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addCaptionClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_GalleryUnit_captionClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_GalleryUnit_captionClass_feature", "_UI_GalleryUnit_type"),
-				 WafPackage.eINSTANCE.getGalleryUnit_CaptionClass(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Has Caption Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addHasCaptionClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_GalleryUnit_hasCaptionClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_GalleryUnit_hasCaptionClass_feature", "_UI_GalleryUnit_type"),
-				 WafPackage.eINSTANCE.getGalleryUnit_HasCaptionClass(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Content Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addContentClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_GalleryUnit_contentClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_GalleryUnit_contentClass_feature", "_UI_GalleryUnit_type"),
-				 WafPackage.eINSTANCE.getGalleryUnit_ContentClass(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Has Content Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addHasContentClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_GalleryUnit_hasContentClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_GalleryUnit_hasContentClass_feature", "_UI_GalleryUnit_type"),
-				 WafPackage.eINSTANCE.getGalleryUnit_HasContentClass(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -743,12 +605,6 @@ public class GalleryUnitItemProvider extends CollectionUnitItemProvider {
 			case WafPackage.GALLERY_UNIT__MISSING_IMAGE_PATH:
 			case WafPackage.GALLERY_UNIT__SHOW_TIME:
 			case WafPackage.GALLERY_UNIT__TRANSITION_TIME:
-			case WafPackage.GALLERY_UNIT__SECTION_CLASS:
-			case WafPackage.GALLERY_UNIT__HAS_SECTION_CLASS:
-			case WafPackage.GALLERY_UNIT__CAPTION_CLASS:
-			case WafPackage.GALLERY_UNIT__HAS_CAPTION_CLASS:
-			case WafPackage.GALLERY_UNIT__CONTENT_CLASS:
-			case WafPackage.GALLERY_UNIT__HAS_CONTENT_CLASS:
 			case WafPackage.GALLERY_UNIT__FIELD_LIST_CLASS:
 			case WafPackage.GALLERY_UNIT__HAS_FIELD_LIST_CLASS:
 			case WafPackage.GALLERY_UNIT__DEFINITION_FIELD_LIST_CLASS:

@@ -50,12 +50,6 @@ public class SliderUnitItemProvider extends CollectionUnitItemProvider {
 			addImageFilterPropertyDescriptor(object);
 			addShowTimePropertyDescriptor(object);
 			addTransitionTimePropertyDescriptor(object);
-			addSectionClassPropertyDescriptor(object);
-			addHasSectionClassPropertyDescriptor(object);
-			addCaptionClassPropertyDescriptor(object);
-			addHasCaptionClassPropertyDescriptor(object);
-			addContentClassPropertyDescriptor(object);
-			addHasContentClassPropertyDescriptor(object);
 			addFieldListClassPropertyDescriptor(object);
 			addHasFieldListClassPropertyDescriptor(object);
 			addDefinitionFieldListClassPropertyDescriptor(object);
@@ -160,138 +154,6 @@ public class SliderUnitItemProvider extends CollectionUnitItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Section Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addSectionClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_SliderUnit_sectionClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_SliderUnit_sectionClass_feature", "_UI_SliderUnit_type"),
-				 WafPackage.eINSTANCE.getSliderUnit_SectionClass(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Has Section Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addHasSectionClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_SliderUnit_hasSectionClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_SliderUnit_hasSectionClass_feature", "_UI_SliderUnit_type"),
-				 WafPackage.eINSTANCE.getSliderUnit_HasSectionClass(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Caption Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addCaptionClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_SliderUnit_captionClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_SliderUnit_captionClass_feature", "_UI_SliderUnit_type"),
-				 WafPackage.eINSTANCE.getSliderUnit_CaptionClass(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Has Caption Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addHasCaptionClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_SliderUnit_hasCaptionClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_SliderUnit_hasCaptionClass_feature", "_UI_SliderUnit_type"),
-				 WafPackage.eINSTANCE.getSliderUnit_HasCaptionClass(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Content Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addContentClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_SliderUnit_contentClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_SliderUnit_contentClass_feature", "_UI_SliderUnit_type"),
-				 WafPackage.eINSTANCE.getSliderUnit_ContentClass(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Has Content Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addHasContentClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_SliderUnit_hasContentClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_SliderUnit_hasContentClass_feature", "_UI_SliderUnit_type"),
-				 WafPackage.eINSTANCE.getSliderUnit_HasContentClass(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -720,12 +582,6 @@ public class SliderUnitItemProvider extends CollectionUnitItemProvider {
 			case WafPackage.SLIDER_UNIT__MISSING_IMAGE_PATH:
 			case WafPackage.SLIDER_UNIT__SHOW_TIME:
 			case WafPackage.SLIDER_UNIT__TRANSITION_TIME:
-			case WafPackage.SLIDER_UNIT__SECTION_CLASS:
-			case WafPackage.SLIDER_UNIT__HAS_SECTION_CLASS:
-			case WafPackage.SLIDER_UNIT__CAPTION_CLASS:
-			case WafPackage.SLIDER_UNIT__HAS_CAPTION_CLASS:
-			case WafPackage.SLIDER_UNIT__CONTENT_CLASS:
-			case WafPackage.SLIDER_UNIT__HAS_CONTENT_CLASS:
 			case WafPackage.SLIDER_UNIT__FIELD_LIST_CLASS:
 			case WafPackage.SLIDER_UNIT__HAS_FIELD_LIST_CLASS:
 			case WafPackage.SLIDER_UNIT__DEFINITION_FIELD_LIST_CLASS:

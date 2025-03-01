@@ -58,9 +58,9 @@ public class ContentUnitItemProvider extends NamedDisplayElementItemProvider {
 			addAlternativePropertyDescriptor(object);
 			addOmitCaptionPropertyDescriptor(object);
 			addIsFormUnitPropertyDescriptor(object);
-			addSectionClassOverridePropertyDescriptor(object);
-			addCaptionClassOverridePropertyDescriptor(object);
-			addContentClassOverridePropertyDescriptor(object);
+			addLocalSectionClassPropertyDescriptor(object);
+			addLocalCaptionClassPropertyDescriptor(object);
+			addLocalContentClassPropertyDescriptor(object);
 			addGenModelPropertyDescriptor(object);
 			addUiModelPropertyDescriptor(object);
 		}
@@ -266,68 +266,68 @@ public class ContentUnitItemProvider extends NamedDisplayElementItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Section Class Override feature.
+	 * This adds a property descriptor for the Local Section Class feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addSectionClassOverridePropertyDescriptor(Object object) {
+	protected void addLocalSectionClassPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ContentUnit_sectionClassOverride_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ContentUnit_sectionClassOverride_feature", "_UI_ContentUnit_type"),
-				 WafPackage.eINSTANCE.getContentUnit_SectionClassOverride(),
+				 getString("_UI_ContentUnit_localSectionClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ContentUnit_localSectionClass_feature", "_UI_ContentUnit_type"),
+				 WafPackage.eINSTANCE.getContentUnit_LocalSectionClass(),
 				 true,
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_StylePropertyCategory"),
 				 null));
 	}
 
 	/**
-	 * This adds a property descriptor for the Caption Class Override feature.
+	 * This adds a property descriptor for the Local Caption Class feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addCaptionClassOverridePropertyDescriptor(Object object) {
+	protected void addLocalCaptionClassPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ContentUnit_captionClassOverride_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ContentUnit_captionClassOverride_feature", "_UI_ContentUnit_type"),
-				 WafPackage.eINSTANCE.getContentUnit_CaptionClassOverride(),
+				 getString("_UI_ContentUnit_localCaptionClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ContentUnit_localCaptionClass_feature", "_UI_ContentUnit_type"),
+				 WafPackage.eINSTANCE.getContentUnit_LocalCaptionClass(),
 				 true,
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_StylePropertyCategory"),
 				 null));
 	}
 
 	/**
-	 * This adds a property descriptor for the Content Class Override feature.
+	 * This adds a property descriptor for the Local Content Class feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addContentClassOverridePropertyDescriptor(Object object) {
+	protected void addLocalContentClassPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ContentUnit_contentClassOverride_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ContentUnit_contentClassOverride_feature", "_UI_ContentUnit_type"),
-				 WafPackage.eINSTANCE.getContentUnit_ContentClassOverride(),
+				 getString("_UI_ContentUnit_localContentClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ContentUnit_localContentClass_feature", "_UI_ContentUnit_type"),
+				 WafPackage.eINSTANCE.getContentUnit_LocalContentClass(),
 				 true,
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_StylePropertyCategory"),
 				 null));
 	}
 
@@ -439,9 +439,9 @@ public class ContentUnitItemProvider extends NamedDisplayElementItemProvider {
 			case WafPackage.CONTENT_UNIT__ALTERNATIVE:
 			case WafPackage.CONTENT_UNIT__OMIT_CAPTION:
 			case WafPackage.CONTENT_UNIT__IS_FORM_UNIT:
-			case WafPackage.CONTENT_UNIT__SECTION_CLASS_OVERRIDE:
-			case WafPackage.CONTENT_UNIT__CAPTION_CLASS_OVERRIDE:
-			case WafPackage.CONTENT_UNIT__CONTENT_CLASS_OVERRIDE:
+			case WafPackage.CONTENT_UNIT__LOCAL_SECTION_CLASS:
+			case WafPackage.CONTENT_UNIT__LOCAL_CAPTION_CLASS:
+			case WafPackage.CONTENT_UNIT__LOCAL_CONTENT_CLASS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case WafPackage.CONTENT_UNIT__AUTHORISATION:

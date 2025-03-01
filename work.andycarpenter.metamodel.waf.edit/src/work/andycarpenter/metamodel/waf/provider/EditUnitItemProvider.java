@@ -60,12 +60,6 @@ public class EditUnitItemProvider extends SingletonUnitItemProvider {
 			addCancelLabelPropertyDescriptor(object);
 			addHasCustomCancelLabelPropertyDescriptor(object);
 			addLocalInputGroupClassPropertyDescriptor(object);
-			addSectionClassPropertyDescriptor(object);
-			addHasSectionClassPropertyDescriptor(object);
-			addCaptionClassPropertyDescriptor(object);
-			addHasCaptionClassPropertyDescriptor(object);
-			addContentClassPropertyDescriptor(object);
-			addHasContentClassPropertyDescriptor(object);
 			addFieldListClassPropertyDescriptor(object);
 			addHasFieldListClassPropertyDescriptor(object);
 			addDefinitionFieldListClassPropertyDescriptor(object);
@@ -345,138 +339,6 @@ public class EditUnitItemProvider extends SingletonUnitItemProvider {
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Section Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addSectionClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_EditUnit_sectionClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_EditUnit_sectionClass_feature", "_UI_EditUnit_type"),
-				 WafPackage.eINSTANCE.getEditUnit_SectionClass(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 getString("_UI_DebugPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Has Section Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addHasSectionClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_EditUnit_hasSectionClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_EditUnit_hasSectionClass_feature", "_UI_EditUnit_type"),
-				 WafPackage.eINSTANCE.getEditUnit_HasSectionClass(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_DebugPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Caption Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addCaptionClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_EditUnit_captionClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_EditUnit_captionClass_feature", "_UI_EditUnit_type"),
-				 WafPackage.eINSTANCE.getEditUnit_CaptionClass(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 getString("_UI_DebugPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Has Caption Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addHasCaptionClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_EditUnit_hasCaptionClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_EditUnit_hasCaptionClass_feature", "_UI_EditUnit_type"),
-				 WafPackage.eINSTANCE.getEditUnit_HasCaptionClass(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_DebugPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Content Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addContentClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_EditUnit_contentClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_EditUnit_contentClass_feature", "_UI_EditUnit_type"),
-				 WafPackage.eINSTANCE.getEditUnit_ContentClass(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 getString("_UI_DebugPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Has Content Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addHasContentClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_EditUnit_hasContentClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_EditUnit_hasContentClass_feature", "_UI_EditUnit_type"),
-				 WafPackage.eINSTANCE.getEditUnit_HasContentClass(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -857,12 +719,6 @@ public class EditUnitItemProvider extends SingletonUnitItemProvider {
 			case WafPackage.EDIT_UNIT__CANCEL_LABEL:
 			case WafPackage.EDIT_UNIT__HAS_CUSTOM_CANCEL_LABEL:
 			case WafPackage.EDIT_UNIT__LOCAL_INPUT_GROUP_CLASS:
-			case WafPackage.EDIT_UNIT__SECTION_CLASS:
-			case WafPackage.EDIT_UNIT__HAS_SECTION_CLASS:
-			case WafPackage.EDIT_UNIT__CAPTION_CLASS:
-			case WafPackage.EDIT_UNIT__HAS_CAPTION_CLASS:
-			case WafPackage.EDIT_UNIT__CONTENT_CLASS:
-			case WafPackage.EDIT_UNIT__HAS_CONTENT_CLASS:
 			case WafPackage.EDIT_UNIT__FIELD_LIST_CLASS:
 			case WafPackage.EDIT_UNIT__HAS_FIELD_LIST_CLASS:
 			case WafPackage.EDIT_UNIT__DEFINITION_FIELD_LIST_CLASS:

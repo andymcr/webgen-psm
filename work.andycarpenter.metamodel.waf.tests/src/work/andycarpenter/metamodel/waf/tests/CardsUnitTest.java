@@ -11,12 +11,6 @@ import work.andycarpenter.metamodel.waf.CardsUnit;
  * <p>
  * The following features are tested:
  * <ul>
- *   <li>{@link work.andycarpenter.metamodel.waf.CardsUnit#getSectionClass() <em>Section Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.CardsUnit#isHasSectionClass() <em>Has Section Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.CardsUnit#getCaptionClass() <em>Caption Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.CardsUnit#isHasCaptionClass() <em>Has Caption Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.CardsUnit#getContentClass() <em>Content Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.CardsUnit#isHasContentClass() <em>Has Content Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.CardsUnit#getFieldListClass() <em>Field List Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.CardsUnit#isHasFieldListClass() <em>Has Field List Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.CardsUnit#getDefinitionFieldListClass() <em>Definition Field List Class</em>}</li>
@@ -33,20 +27,24 @@ import work.andycarpenter.metamodel.waf.CardsUnit;
  *   <li>{@link work.andycarpenter.metamodel.waf.CardsUnit#isHasInstanceControlClass() <em>Has Instance Control Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.CardsUnit#getInstanceActionClass() <em>Instance Action Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.CardsUnit#isHasInstanceActionClass() <em>Has Instance Action Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.CardsUnit#getRowClass() <em>Row Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.CardsUnit#isHasRowClass() <em>Has Row Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.CardsUnit#getColumnClass() <em>Column Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.CardsUnit#isHasColumnClass() <em>Has Column Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.CardsUnit#getCardClass() <em>Card Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.CardsUnit#isHasCardClass() <em>Has Card Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.CardsUnit#getCardHeaderClass() <em>Card Header Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.CardsUnit#isHasCardHeaderClass() <em>Has Card Header Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.CardsUnit#getCardBodyClass() <em>Card Body Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.CardsUnit#isHasCardBodyClass() <em>Has Card Body Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.CardsUnit#getCardFooterClass() <em>Card Footer Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.CardsUnit#isHasCardFooterClass() <em>Has Card Footer Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.CardsUnit#getBadgeClass() <em>Badge Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.CardsUnit#isHasBadgeClass() <em>Has Badge Class</em>}</li>
+ * </ul>
+ * </p>
+ * <p>
+ * The following operations are tested:
+ * <ul>
+ *   <li>{@link work.andycarpenter.metamodel.waf.CardsUnit#sectionClass() <em>Section Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.CardsUnit#captionClass() <em>Caption Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.CardsUnit#contentClass() <em>Content Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.CardsUnit#cardClass() <em>Card Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.CardsUnit#hasCardClass() <em>Has Card Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.CardsUnit#cardHeaderClass() <em>Card Header Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.CardsUnit#hasCardHeaderClass() <em>Has Card Header Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.CardsUnit#cardBodyClass() <em>Card Body Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.CardsUnit#hasCardBodyClass() <em>Has Card Body Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.CardsUnit#cardFooterClass() <em>Card Footer Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.CardsUnit#hasCardFooterClass() <em>Has Card Footer Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.CardsUnit#badgeClass() <em>Badge Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.CardsUnit#hasBadgeClass() <em>Has Badge Class</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -72,84 +70,6 @@ public abstract class CardsUnitTest extends CollectionUnitTest {
 	@Override
 	protected CardsUnit getFixture() {
 		return (CardsUnit)fixture;
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.CardsUnit#getSectionClass() <em>Section Class</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.CardsUnit#getSectionClass()
-	 * @generated
-	 */
-	public void testGetSectionClass() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.CardsUnit#isHasSectionClass() <em>Has Section Class</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.CardsUnit#isHasSectionClass()
-	 * @generated
-	 */
-	public void testIsHasSectionClass() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.CardsUnit#getCaptionClass() <em>Caption Class</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.CardsUnit#getCaptionClass()
-	 * @generated
-	 */
-	public void testGetCaptionClass() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.CardsUnit#isHasCaptionClass() <em>Has Caption Class</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.CardsUnit#isHasCaptionClass()
-	 * @generated
-	 */
-	public void testIsHasCaptionClass() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.CardsUnit#getContentClass() <em>Content Class</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.CardsUnit#getContentClass()
-	 * @generated
-	 */
-	public void testGetContentClass() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.CardsUnit#isHasContentClass() <em>Has Content Class</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.CardsUnit#isHasContentClass()
-	 * @generated
-	 */
-	public void testIsHasContentClass() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
 	}
 
 	/**
@@ -361,183 +281,170 @@ public abstract class CardsUnitTest extends CollectionUnitTest {
 	}
 
 	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.CardsUnit#getRowClass() <em>Row Class</em>}' feature getter.
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.CardsUnit#sectionClass() <em>Section Class</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.CardsUnit#getRowClass()
+	 * @see work.andycarpenter.metamodel.waf.CardsUnit#sectionClass()
 	 * @generated
 	 */
-	public void testGetRowClass() {
-		// TODO: implement this feature getter test method
+	public void testSectionClass() {
+		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}
 
 	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.CardsUnit#isHasRowClass() <em>Has Row Class</em>}' feature getter.
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.CardsUnit#captionClass() <em>Caption Class</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.CardsUnit#isHasRowClass()
+	 * @see work.andycarpenter.metamodel.waf.CardsUnit#captionClass()
 	 * @generated
 	 */
-	public void testIsHasRowClass() {
-		// TODO: implement this feature getter test method
+	public void testCaptionClass() {
+		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}
 
 	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.CardsUnit#getColumnClass() <em>Column Class</em>}' feature getter.
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.CardsUnit#contentClass() <em>Content Class</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.CardsUnit#getColumnClass()
+	 * @see work.andycarpenter.metamodel.waf.CardsUnit#contentClass()
 	 * @generated
 	 */
-	public void testGetColumnClass() {
-		// TODO: implement this feature getter test method
+	public void testContentClass() {
+		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}
 
 	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.CardsUnit#isHasColumnClass() <em>Has Column Class</em>}' feature getter.
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.CardsUnit#cardClass() <em>Card Class</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.CardsUnit#isHasColumnClass()
+	 * @see work.andycarpenter.metamodel.waf.CardsUnit#cardClass()
 	 * @generated
 	 */
-	public void testIsHasColumnClass() {
-		// TODO: implement this feature getter test method
+	public void testCardClass() {
+		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}
 
 	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.CardsUnit#getCardClass() <em>Card Class</em>}' feature getter.
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.CardsUnit#hasCardClass() <em>Has Card Class</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.CardsUnit#getCardClass()
+	 * @see work.andycarpenter.metamodel.waf.CardsUnit#hasCardClass()
 	 * @generated
 	 */
-	public void testGetCardClass() {
-		// TODO: implement this feature getter test method
+	public void testHasCardClass() {
+		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}
 
 	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.CardsUnit#isHasCardClass() <em>Has Card Class</em>}' feature getter.
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.CardsUnit#cardHeaderClass() <em>Card Header Class</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.CardsUnit#isHasCardClass()
+	 * @see work.andycarpenter.metamodel.waf.CardsUnit#cardHeaderClass()
 	 * @generated
 	 */
-	public void testIsHasCardClass() {
-		// TODO: implement this feature getter test method
+	public void testCardHeaderClass() {
+		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}
 
 	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.CardsUnit#getCardHeaderClass() <em>Card Header Class</em>}' feature getter.
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.CardsUnit#hasCardHeaderClass() <em>Has Card Header Class</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.CardsUnit#getCardHeaderClass()
+	 * @see work.andycarpenter.metamodel.waf.CardsUnit#hasCardHeaderClass()
 	 * @generated
 	 */
-	public void testGetCardHeaderClass() {
-		// TODO: implement this feature getter test method
+	public void testHasCardHeaderClass() {
+		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}
 
 	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.CardsUnit#isHasCardHeaderClass() <em>Has Card Header Class</em>}' feature getter.
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.CardsUnit#cardBodyClass() <em>Card Body Class</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.CardsUnit#isHasCardHeaderClass()
+	 * @see work.andycarpenter.metamodel.waf.CardsUnit#cardBodyClass()
 	 * @generated
 	 */
-	public void testIsHasCardHeaderClass() {
-		// TODO: implement this feature getter test method
+	public void testCardBodyClass() {
+		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}
 
 	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.CardsUnit#getCardBodyClass() <em>Card Body Class</em>}' feature getter.
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.CardsUnit#hasCardBodyClass() <em>Has Card Body Class</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.CardsUnit#getCardBodyClass()
+	 * @see work.andycarpenter.metamodel.waf.CardsUnit#hasCardBodyClass()
 	 * @generated
 	 */
-	public void testGetCardBodyClass() {
-		// TODO: implement this feature getter test method
+	public void testHasCardBodyClass() {
+		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}
 
 	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.CardsUnit#isHasCardBodyClass() <em>Has Card Body Class</em>}' feature getter.
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.CardsUnit#cardFooterClass() <em>Card Footer Class</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.CardsUnit#isHasCardBodyClass()
+	 * @see work.andycarpenter.metamodel.waf.CardsUnit#cardFooterClass()
 	 * @generated
 	 */
-	public void testIsHasCardBodyClass() {
-		// TODO: implement this feature getter test method
+	public void testCardFooterClass() {
+		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}
 
 	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.CardsUnit#getCardFooterClass() <em>Card Footer Class</em>}' feature getter.
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.CardsUnit#hasCardFooterClass() <em>Has Card Footer Class</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.CardsUnit#getCardFooterClass()
+	 * @see work.andycarpenter.metamodel.waf.CardsUnit#hasCardFooterClass()
 	 * @generated
 	 */
-	public void testGetCardFooterClass() {
-		// TODO: implement this feature getter test method
+	public void testHasCardFooterClass() {
+		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}
 
 	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.CardsUnit#isHasCardFooterClass() <em>Has Card Footer Class</em>}' feature getter.
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.CardsUnit#badgeClass() <em>Badge Class</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.CardsUnit#isHasCardFooterClass()
+	 * @see work.andycarpenter.metamodel.waf.CardsUnit#badgeClass()
 	 * @generated
 	 */
-	public void testIsHasCardFooterClass() {
-		// TODO: implement this feature getter test method
+	public void testBadgeClass() {
+		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}
 
 	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.CardsUnit#getBadgeClass() <em>Badge Class</em>}' feature getter.
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.CardsUnit#hasBadgeClass() <em>Has Badge Class</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.CardsUnit#getBadgeClass()
+	 * @see work.andycarpenter.metamodel.waf.CardsUnit#hasBadgeClass()
 	 * @generated
 	 */
-	public void testGetBadgeClass() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.CardsUnit#isHasBadgeClass() <em>Has Badge Class</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.CardsUnit#isHasBadgeClass()
-	 * @generated
-	 */
-	public void testIsHasBadgeClass() {
-		// TODO: implement this feature getter test method
+	public void testHasBadgeClass() {
+		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}

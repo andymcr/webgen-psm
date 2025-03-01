@@ -143,6 +143,7 @@ class WafModel {
 	String defaultPageClass = ''
     contains DefaultUnitStyles defaultUnitStyles
     contains CardsUnitStyles defaultCardsStyles
+    contains ImageCardsUnitStyles defaultImageCardsStyles
     contains ControlUnitStyles defaultControlStyles
     contains DetailsUnitStyles defaultDetailsStyles
     contains FormUnitStyles defaultFormStyles
@@ -258,13 +259,15 @@ class DefaultUnitStyles extends CollectionUnitStyles {
 }
 
 class CardsUnitStyles extends CollectionUnitStyles {
-	String rowClass = ''
-	String columnClass = ''
 	String cardClass = ''
 	String cardHeaderClass = ''
 	String cardBodyClass = ''
 	String cardFooterClass = ''
 	String badgeClass = ''
+}
+
+class ImageCardsUnitStyles extends CardsUnitStyles {
+	String imageActionClass = ''
 }
 
 class ControlUnitStyles extends DynamicUnitStyles {
@@ -613,9 +616,45 @@ abstract class ContentUnit extends NamedDisplayElement {
     @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean isFormUnit
 
-	String sectionClassOverride = ''
-	String captionClassOverride = ''
-	String contentClassOverride = ''
+	@GenModel(propertyCategory="Style")
+	String localSectionClass = ''
+	@GenModel(propertyCategory="Style")
+	String localCaptionClass = ''
+	@GenModel(propertyCategory="Style")
+	String localContentClass = ''
+
+	op String sectionClass() {
+		if (localSectionClass.trim() !== '') {
+			localSectionClass.trim()
+		} else {
+			''
+		}
+	}
+	op boolean hasSectionClass() {
+		sectionClass() !== ''
+	}
+
+	op String captiontClass() {
+		if (localCaptionClass.trim() !== '') {
+			localCaptionClass.trim()
+		} else {
+			''
+		}
+	}
+	op boolean hasCaptionClass() {
+		captiontClass() !== ''
+	}
+
+	op String contentClass() {
+		if (localContentClass.trim() !== '') {
+			localContentClass.trim()
+		} else {
+			''
+		}
+	}
+	op boolean hasContentClass() {
+		contentClass() !== ''
+	}
 
 	@OCL(derivation="controller.genModel")
     @GenModel(propertyCategory="Debug")
@@ -629,50 +668,41 @@ class StaticUnit extends ContentUnit {
 	refers Repository repository
 	String[1] content
 
-	@OCL(derivation="if sectionClassOverride.trim() <> '' then
-			sectionClassOverride.trim()
-		else if uiModel.defaultStaticStyles.sectionClass.trim() <> '' then
+	op String sectionClass() {
+		if (localSectionClass.trim() !== '') {
+			localSectionClass.trim()
+		} else if (uiModel.defaultStaticStyles.sectionClass.trim() !== '') {
 			uiModel.defaultStaticStyles.sectionClass.trim()
-		else if uiModel.defaultUnitStyles.sectionClass.trim() <> '' then
+		} else if (uiModel.defaultUnitStyles.sectionClass.trim() !== '') {
 			uiModel.defaultUnitStyles.sectionClass.trim()
-		else
+		} else {
 			''
-		endif endif endif")
-    @GenModel(propertyCategory="Debug")
-	derived readonly transient volatile String sectionClass
-	@OCL(derivation="sectionClass <> ''")
-    @GenModel(propertyCategory="Debug")
-	derived readonly transient volatile boolean hasSectionClass
+		}
+	}
 
-	@OCL(derivation="if captionClassOverride.trim() <> '' then
-			captionClassOverride.trim()
-		else if uiModel.defaultStaticStyles.captionClass.trim() <> '' then
+	op String captionClass() {
+		if (localCaptionClass.trim() !== '') {
+			localContentClass.trim()
+		} else if (uiModel.defaultStaticStyles.captionClass.trim() !== '') {
 			uiModel.defaultStaticStyles.captionClass.trim()
-		else if uiModel.defaultUnitStyles.captionClass.trim() <> '' then
+		} else if (uiModel.defaultUnitStyles.captionClass.trim() !== '') {
 			uiModel.defaultUnitStyles.captionClass.trim()
-		else
+		} else {
 			''
-		endif endif endif")
-    @GenModel(propertyCategory="Debug")
-	derived readonly transient volatile String captionClass
-	@OCL(derivation="captionClass <> ''")
-    @GenModel(propertyCategory="Debug")
-	derived readonly transient volatile boolean hasCaptionClass
+		}
+	}
 
-	@OCL(derivation="if contentClassOverride.trim() <> '' then
-			contentClassOverride.trim()
-		else if uiModel.defaultStaticStyles.contentClass.trim() <> '' then
+	op String contentClass() {
+		if (localContentClass.trim() !== '') {
+			localContentClass.trim()
+		} else if (uiModel.defaultStaticStyles.contentClass.trim() !== '') {
 			uiModel.defaultStaticStyles.contentClass.trim()
-		else if uiModel.defaultUnitStyles.contentClass.trim() <> '' then
+		} else if (uiModel.defaultUnitStyles.contentClass.trim() !== '') {
 			uiModel.defaultUnitStyles.contentClass.trim()
-		else
+		} else {
 			''
-		endif endif endif")
-    @GenModel(propertyCategory="Debug")
-	derived readonly transient volatile String contentClass
-	@OCL(derivation="contentClass <> ''")
-    @GenModel(propertyCategory="Debug")
-	derived readonly transient volatile boolean hasContentClass
+		}
+	}
 }
 
 abstract class DynamicUnit extends ContentUnit, ActionContainer {
@@ -2058,50 +2088,41 @@ abstract class EditUnit extends SingletonUnit {
 
 	String[1] localInputGroupClass = ''
 
-	@OCL(derivation="if sectionClassOverride.trim() <> '' then
-			sectionClassOverride.trim()
-		else if uiModel.defaultFormStyles.sectionClass.trim() <> '' then
+	op String sectionClass() {
+		if (localSectionClass.trim() !== '') {
+			localSectionClass.trim()
+		} else if (uiModel.defaultFormStyles.sectionClass.trim() !== '') {
 			uiModel.defaultFormStyles.sectionClass.trim()
-		else if uiModel.defaultUnitStyles.sectionClass.trim() <> '' then
+		} else if (uiModel.defaultUnitStyles.sectionClass.trim() !== '') {
 			uiModel.defaultUnitStyles.sectionClass.trim()
-		else
+		} else {
 			''
-		endif endif endif")
-    @GenModel(propertyCategory="Debug")
-	derived readonly transient volatile String sectionClass
-	@OCL(derivation="sectionClass <> ''")
-    @GenModel(propertyCategory="Debug")
-	derived readonly transient volatile boolean hasSectionClass
+		}
+	}
 
-	@OCL(derivation="if captionClassOverride.trim() <> '' then
-			captionClassOverride.trim()
-		else if uiModel.defaultFormStyles.captionClass.trim() <> '' then
+	op String captionClass() {
+		if (localCaptionClass.trim() !== '') {
+			localContentClass.trim()
+		} else if (uiModel.defaultFormStyles.captionClass.trim() !== '') {
 			uiModel.defaultFormStyles.captionClass.trim()
-		else if uiModel.defaultUnitStyles.captionClass.trim() <> '' then
+		} else if (uiModel.defaultUnitStyles.captionClass.trim() !== '') {
 			uiModel.defaultUnitStyles.captionClass.trim()
-		else
+		} else {
 			''
-		endif endif endif")
-    @GenModel(propertyCategory="Debug")
-	derived readonly transient volatile String captionClass
-	@OCL(derivation="captionClass <> ''")
-    @GenModel(propertyCategory="Debug")
-	derived readonly transient volatile boolean hasCaptionClass
+		}
+	}
 
-	@OCL(derivation="if contentClassOverride.trim() <> '' then
-			contentClassOverride.trim()
-		else if uiModel.defaultFormStyles.contentClass.trim() <> '' then
+	op String contentClass() {
+		if (localContentClass.trim() !== '') {
+			localContentClass.trim()
+		} else if (uiModel.defaultFormStyles.contentClass.trim() !== '') {
 			uiModel.defaultFormStyles.contentClass.trim()
-		else if uiModel.defaultUnitStyles.contentClass.trim() <> '' then
+		} else if (uiModel.defaultUnitStyles.contentClass.trim() !== '') {
 			uiModel.defaultUnitStyles.contentClass.trim()
-		else
+		} else {
 			''
-		endif endif endif")
-    @GenModel(propertyCategory="Debug")
-	derived readonly transient volatile String contentClass
-	@OCL(derivation="contentClass <> ''")
-    @GenModel(propertyCategory="Debug")
-	derived readonly transient volatile boolean hasContentClass
+		}
+	}
 
 	@OCL(derivation="if localFieldListClass.trim() <> '' then
 			localFieldListClass.trim()
@@ -2230,50 +2251,41 @@ class DetailsUnit extends SingletonUnit, SelectableUnit {
 	refers Selection selection
 	boolean omitFieldLabels
 
-	@OCL(derivation="if sectionClassOverride.trim() <> '' then
-			sectionClassOverride.trim()
-		else if uiModel.defaultDetailsStyles.sectionClass.trim() <> '' then
+	op String sectionClass() {
+		if (localSectionClass.trim() !== '') {
+			localSectionClass.trim()
+		} else if (uiModel.defaultDetailsStyles.sectionClass.trim() !== '') {
 			uiModel.defaultDetailsStyles.sectionClass.trim()
-		else if uiModel.defaultUnitStyles.sectionClass.trim() <> '' then
+		} else if (uiModel.defaultUnitStyles.sectionClass.trim() !== '') {
 			uiModel.defaultUnitStyles.sectionClass.trim()
-		else
+		} else {
 			''
-		endif endif endif")
-    @GenModel(propertyCategory="Debug")
-	derived readonly transient volatile String sectionClass
-	@OCL(derivation="sectionClass <> ''")
-    @GenModel(propertyCategory="Debug")
-	derived readonly transient volatile boolean hasSectionClass
+		}
+	}
 
-	@OCL(derivation="if captionClassOverride.trim() <> '' then
-			captionClassOverride.trim()
-		else if uiModel.defaultDetailsStyles.captionClass.trim() <> '' then
+	op String captionClass() {
+		if (localCaptionClass.trim() !== '') {
+			localContentClass.trim()
+		} else if (uiModel.defaultDetailsStyles.captionClass.trim() !== '') {
 			uiModel.defaultDetailsStyles.captionClass.trim()
-		else if uiModel.defaultUnitStyles.captionClass.trim() <> '' then
+		} else if (uiModel.defaultUnitStyles.captionClass.trim() !== '') {
 			uiModel.defaultUnitStyles.captionClass.trim()
-		else
+		} else {
 			''
-		endif endif endif")
-    @GenModel(propertyCategory="Debug")
-	derived readonly transient volatile String captionClass
-	@OCL(derivation="captionClass <> ''")
-    @GenModel(propertyCategory="Debug")
-	derived readonly transient volatile boolean hasCaptionClass
+		}
+	}
 
-	@OCL(derivation="if contentClassOverride.trim() <> '' then
-			contentClassOverride.trim()
-		else if uiModel.defaultDetailsStyles.contentClass.trim() <> '' then
+	op String contentClass() {
+		if (localContentClass.trim() !== '') {
+			localContentClass.trim()
+		} else if (uiModel.defaultDetailsStyles.contentClass.trim() !== '') {
 			uiModel.defaultDetailsStyles.contentClass.trim()
-		else if uiModel.defaultUnitStyles.contentClass.trim() <> '' then
+		} else if (uiModel.defaultUnitStyles.contentClass.trim() !== '') {
 			uiModel.defaultUnitStyles.contentClass.trim()
-		else
+		} else {
 			''
-		endif endif endif")
-    @GenModel(propertyCategory="Debug")
-	derived readonly transient volatile String contentClass
-	@OCL(derivation="contentClass <> ''")
-    @GenModel(propertyCategory="Debug")
-	derived readonly transient volatile boolean hasContentClass
+		}
+	}
 
 	@OCL(derivation="if localFieldListClass.trim() <> '' then
 			localFieldListClass.trim()
@@ -2372,44 +2384,41 @@ class TabularUnit extends CollectionUnit {
 	String localHeaderClass = ''
 	String localFooterClass = ''
 
-	@OCL(derivation="if sectionClassOverride.trim() <> '' then
-			sectionClassOverride.trim()
-		else if uiModel.defaultTabularStyles.sectionClass.trim() <> '' then
+	op String sectionClass() {
+		if (localSectionClass.trim() !== '') {
+			localSectionClass.trim()
+		} else if (uiModel.defaultTabularStyles.sectionClass.trim() !== '') {
 			uiModel.defaultTabularStyles.sectionClass.trim()
-		else if uiModel.defaultUnitStyles.sectionClass.trim() <> '' then
+		} else if (uiModel.defaultUnitStyles.sectionClass.trim() !== '') {
 			uiModel.defaultUnitStyles.sectionClass.trim()
-		else
+		} else {
 			''
-		endif endif endif")
-	derived readonly transient volatile String sectionClass
-	@OCL(derivation="sectionClass <> ''")
-	derived readonly transient volatile boolean hasSectionClass
+		}
+	}
 
-	@OCL(derivation="if captionClassOverride.trim() <> '' then
-			captionClassOverride.trim()
-		else if uiModel.defaultTabularStyles.captionClass.trim() <> '' then
+	op String captionClass() {
+		if (localCaptionClass.trim() !== '') {
+			localContentClass.trim()
+		} else if (uiModel.defaultTabularStyles.captionClass.trim() !== '') {
 			uiModel.defaultTabularStyles.captionClass.trim()
-		else if uiModel.defaultUnitStyles.captionClass.trim() <> '' then
+		} else if (uiModel.defaultUnitStyles.captionClass.trim() !== '') {
 			uiModel.defaultUnitStyles.captionClass.trim()
-		else
+		} else {
 			''
-		endif endif endif")
-	derived readonly transient volatile String captionClass
-	@OCL(derivation="captionClass <> ''")
-	derived readonly transient volatile boolean hasCaptionClass
+		}
+	}
 
-	@OCL(derivation="if contentClassOverride.trim() <> '' then
-			contentClassOverride.trim()
-		else if uiModel.defaultTabularStyles.contentClass.trim() <> '' then
+	op String contentClass() {
+		if (localContentClass.trim() !== '') {
+			localContentClass.trim()
+		} else if (uiModel.defaultTabularStyles.contentClass.trim() !== '') {
 			uiModel.defaultTabularStyles.contentClass.trim()
-		else if uiModel.defaultUnitStyles.contentClass.trim() <> '' then
+		} else if (uiModel.defaultUnitStyles.contentClass.trim() !== '') {
 			uiModel.defaultUnitStyles.contentClass.trim()
-		else
+		} else {
 			''
-		endif endif endif")
-	derived readonly transient volatile String contentClass
-	@OCL(derivation="contentClass <> ''")
-	derived readonly transient volatile boolean hasContentClass
+		}
+	}
 
 	@OCL(derivation="if localHeaderClass.trim() <> '' then
 			localHeaderClass.trim()
@@ -2542,52 +2551,52 @@ abstract class CardsUnit extends CollectionUnit {
 	contains Badge[] badges opposite displayedOn
 	boolean overlaySingleSelectAction
 
-	String[1] localRowClass = ''
-	String[1] localColumnClass = ''
+	@GenModel(propertyCategory="Style")
 	String[1] localCardClass = ''
+	@GenModel(propertyCategory="Style")
 	String[1] localCardHeaderClass = ''
+	@GenModel(propertyCategory="Style")
 	String[1] localCardBodyClass = ''
+	@GenModel(propertyCategory="Style")
 	String[1] localCardFooterClass = ''
+	@GenModel(propertyCategory="Style")
 	String[1] localBadgeClass = ''
 
-	@OCL(derivation="if sectionClassOverride.trim() <> '' then
-			sectionClassOverride.trim()
-		else if uiModel.defaultCardsStyles.sectionClass.trim() <> '' then
+	op String sectionClass() {
+		if (localSectionClass.trim() !== '') {
+			localSectionClass.trim()
+		} else if (uiModel.defaultCardsStyles.sectionClass.trim() !== '') {
 			uiModel.defaultCardsStyles.sectionClass.trim()
-		else if uiModel.defaultUnitStyles.sectionClass.trim() <> '' then
+		} else if (uiModel.defaultUnitStyles.sectionClass.trim() !== '') {
 			uiModel.defaultUnitStyles.sectionClass.trim()
-		else
+		} else {
 			''
-		endif endif endif")
-	derived readonly transient volatile String sectionClass
-	@OCL(derivation="sectionClass <> ''")
-	derived readonly transient volatile boolean hasSectionClass
+		}
+	}
 
-	@OCL(derivation="if captionClassOverride.trim() <> '' then
-			captionClassOverride.trim()
-		else if uiModel.defaultCardsStyles.captionClass.trim() <> '' then
+	op String captionClass() {
+		if (localCaptionClass.trim() !== '') {
+			localContentClass.trim()
+		} else if (uiModel.defaultCardsStyles.captionClass.trim() !== '') {
 			uiModel.defaultCardsStyles.captionClass.trim()
-		else if uiModel.defaultUnitStyles.captionClass.trim() <> '' then
+		} else if (uiModel.defaultUnitStyles.captionClass.trim() !== '') {
 			uiModel.defaultUnitStyles.captionClass.trim()
-		else
+		} else {
 			''
-		endif endif endif")
-	derived readonly transient volatile String captionClass
-	@OCL(derivation="captionClass <> ''")
-	derived readonly transient volatile boolean hasCaptionClass
+		}
+	}
 
-	@OCL(derivation="if contentClassOverride.trim() <> '' then
-			contentClassOverride.trim()
-		else if uiModel.defaultCardsStyles.contentClass.trim() <> '' then
+	op String contentClass() {
+		if (localContentClass.trim() !== '') {
+			localContentClass.trim()
+		} else if (uiModel.defaultCardsStyles.contentClass.trim() !== '') {
 			uiModel.defaultCardsStyles.contentClass.trim()
-		else if uiModel.defaultUnitStyles.contentClass.trim() <> '' then
+		} else if (uiModel.defaultUnitStyles.contentClass.trim() !== '') {
 			uiModel.defaultUnitStyles.contentClass.trim()
-		else
+		} else {
 			''
-		endif endif endif")
-	derived readonly transient volatile String contentClass
-	@OCL(derivation="contentClass <> ''")
-	derived readonly transient volatile boolean hasContentClass
+		}
+	}
 
 	@OCL(derivation="if localFieldListClass.trim() <> '' then
 			localFieldListClass.trim()
@@ -2694,82 +2703,71 @@ abstract class CardsUnit extends CollectionUnit {
 	@OCL(derivation="instanceActionClass <> ''")
 	derived readonly transient volatile boolean hasInstanceActionClass
 
-	@OCL(derivation="if localRowClass.trim() <> '' then
-			localRowClass.trim()
-		else if uiModel.defaultCardsStyles.rowClass.trim() <> '' then
-			uiModel.defaultCardsStyles.rowClass.trim()
-		else
-			''
-		endif endif")
-	derived readonly transient volatile String rowClass
-	@OCL(derivation="rowClass <> ''")
-	derived readonly transient volatile boolean hasRowClass
-
-	@OCL(derivation="if localColumnClass.trim() <> '' then
-			localColumnClass.trim()
-		else if uiModel.defaultCardsStyles.columnClass.trim() <> '' then
-			uiModel.defaultCardsStyles.columnClass.trim()
-		else
-			''
-		endif endif")
-	derived readonly transient volatile String columnClass
-	@OCL(derivation="columnClass <> ''")
-	derived readonly transient volatile boolean hasColumnClass
-
-	@OCL(derivation="if localCardClass.trim() <> '' then
+	op String cardClass() {
+		if (localCardClass.trim() !== '') {
 			localCardClass.trim()
-		else if uiModel.defaultCardsStyles.cardClass.trim() <> '' then
+		} else if (uiModel.defaultCardsStyles.cardClass.trim() !== '') {
 			uiModel.defaultCardsStyles.cardClass.trim()
-		else
+		} else {
 			''
-		endif endif")
-	derived readonly transient volatile String cardClass
-	@OCL(derivation="cardClass <> ''")
-	derived readonly transient volatile boolean hasCardClass
+		}
+	}
+	op boolean hasCardClass() {
+		cardClass() !== ''
+	}
 
-	@OCL(derivation="if localCardHeaderClass.trim() <> '' then
+	op String cardHeaderClass() {
+		if (localCardHeaderClass.trim() !== '') {
 			localCardHeaderClass.trim()
-		else if uiModel.defaultCardsStyles.cardHeaderClass.trim() <> '' then
+		} else if (uiModel.defaultCardsStyles.cardHeaderClass.trim() !== '') {
 			uiModel.defaultCardsStyles.cardHeaderClass.trim()
-		else
+		} else {
 			''
-		endif endif")
-	derived readonly transient volatile String cardHeaderClass
-	@OCL(derivation="cardHeaderClass <> ''")
-	derived readonly transient volatile boolean hasCardHeaderClass
+		}
+	}
+	op boolean hasCardHeaderClass() {
+		cardHeaderClass() !== ''
+	}
 
-	@OCL(derivation="if localCardBodyClass.trim() <> '' then
+	op String cardBodyClass() {
+		if (localCardBodyClass.trim() !== '') {
 			localCardBodyClass.trim()
-		else if uiModel.defaultCardsStyles.cardBodyClass.trim() <> '' then
+		} else if (uiModel.defaultCardsStyles.cardBodyClass.trim() !== '') {
 			uiModel.defaultCardsStyles.cardBodyClass.trim()
-		else
+		} else {
 			''
-		endif endif")
-	derived readonly transient volatile String cardBodyClass
-	@OCL(derivation="cardBodyClass <> ''")
-	derived readonly transient volatile boolean hasCardBodyClass
+		}
+	}
+	op boolean hasCardBodyClass() {
+		cardBodyClass() !== ''
+	}
 
-	@OCL(derivation="if localCardFooterClass.trim() <> '' then
+	op String cardFooterClass() {
+		if (localCardFooterClass.trim() !== '') {
 			localCardFooterClass.trim()
-		else if uiModel.defaultCardsStyles.cardFooterClass.trim() <> '' then
+		} else if (uiModel.defaultCardsStyles.cardFooterClass.trim() !== '') {
 			uiModel.defaultCardsStyles.cardFooterClass.trim()
-		else
+		} else {
 			''
-		endif endif")
-	derived readonly transient volatile String cardFooterClass
-	@OCL(derivation="cardFooterClass <> ''")
-	derived readonly transient volatile boolean hasCardFooterClass
+		}
+	}
+	op boolean hasCardFooterClass() {
+		cardFooterClass() !== ''
+	}
 
-	@OCL(derivation="if localBadgeClass.trim() <> '' then
+	op String badgeClass() {
+		if (localBadgeClass.trim() !== '') {
 			localBadgeClass.trim()
-		else if uiModel.defaultCardsStyles.badgeClass.trim() <> '' then
+		} else if (uiModel.defaultCardsStyles.badgeClass.trim() !== '') {
 			uiModel.defaultCardsStyles.badgeClass.trim()
-		else
+		} else {
 			''
-		endif endif")
-	derived readonly transient volatile String badgeClass
+		}
+	}
 	@OCL(derivation="badgeClass <> ''")
-	derived readonly transient volatile boolean hasBadgeClass
+	op boolean hasBadgeClass() {
+		badgeClass() !== ''
+	}
 }
 
 class Badge extends ValueContext {
@@ -2779,17 +2777,21 @@ class Badge extends ValueContext {
 	refers Attribute title
 	contains Predicate displayWhen
 
+	@GenModel(propertyCategory="Style")
 	String localBadgeClass
-	@OCL(derivation="if localBadgeClass.trim() <> '' then
+
+	op String badgeClass() {
+		if (localBadgeClass.trim() !== '') {
 			localBadgeClass.trim()
-		else if displayedOn.hasBadgeClass = true then
-			displayedOn.badgeClass.trim()
-		else
+		} else if (displayedOn.hasBadgeClass()) {
+			displayedOn.badgeClass()
+		} else {
 			''
-		endif endif")
-	derived readonly unsettable transient volatile String badgeClass
-	@OCL(derivation="badgeClass <> ''")
-	derived readonly unsettable transient volatile boolean hasBadgeClass
+		}
+	}
+	op boolean hasBadgeClass() {
+		badgeClass() !== ''
+	}
 }
 
 class TextCardsUnit extends CardsUnit {
@@ -2811,50 +2813,104 @@ class ImageCardsUnit extends CardsUnit, ImageUnit {
 	boolean enableImageEnlargement
 	boolean overlayTitle
 	boolean revealUntruncatedContent
+	@GenModel(propertyCategory="Style")
+	String imageActionClass = ''
+
+	op String sectionClass() {
+		if (localSectionClass.trim() !== '') {
+			localSectionClass.trim()
+		} else if (uiModel.defaultImageCardsStyles.sectionClass.trim() !== '') {
+			uiModel.defaultImageCardsStyles.sectionClass.trim()
+		} else if (uiModel.defaultCardsStyles.sectionClass.trim() !== '') {
+			uiModel.defaultCardsStyles.sectionClass.trim()
+		} else if (uiModel.defaultUnitStyles.sectionClass.trim() !== '') {
+			uiModel.defaultUnitStyles.sectionClass.trim()
+		} else {
+			''
+		}
+	}
+
+	op String captionClass() {
+		if (localCaptionClass.trim() !== '') {
+			localContentClass.trim()
+		} else if (uiModel.defaultImageCardsStyles.captionClass.trim() !== '') {
+			uiModel.defaultImageCardsStyles.captionClass.trim()
+		} else if (uiModel.defaultCardsStyles.captionClass.trim() !== '') {
+			uiModel.defaultCardsStyles.captionClass.trim()
+		} else if (uiModel.defaultUnitStyles.captionClass.trim() !== '') {
+			uiModel.defaultUnitStyles.captionClass.trim()
+		} else {
+			''
+		}
+	}
+
+	op String contentClass() {
+		if (localContentClass.trim() !== '') {
+			localContentClass.trim()
+		} else if (uiModel.defaultImageCardsStyles.contentClass.trim() !== '') {
+			uiModel.defaultImageCardsStyles.contentClass.trim()
+		} else if (uiModel.defaultCardsStyles.contentClass.trim() !== '') {
+			uiModel.defaultCardsStyles.contentClass.trim()
+		} else if (uiModel.defaultUnitStyles.contentClass.trim() !== '') {
+			uiModel.defaultUnitStyles.contentClass.trim()
+		} else {
+			''
+		}
+	}
+
+	op String imageActionClass() {
+		if (imageActionClass().trim() !== '') {
+			imageActionClass().trim()
+		} else if (uiModel.defaultImageCardsStyles.imageActionClass.trim() !== '') {
+			uiModel.defaultImageCardsStyles.imageActionClass.trim()
+		} else {
+			''
+		}
+	}
+	op boolean hasImageActionClass() {
+		imageActionClass() !== ''
+	}
 }
 
 class SliderUnit extends CollectionUnit, ImageUnit {
 	int showTime
 	int transitionTime
 
-	@OCL(derivation="if sectionClassOverride.trim() <> '' then
-			sectionClassOverride.trim()
-		else if uiModel.defaultSliderStyles.sectionClass.trim() <> '' then
+	op String sectionClass() {
+		if (localSectionClass.trim() !== '') {
+			localSectionClass.trim()
+		} else if (uiModel.defaultSliderStyles.sectionClass.trim() !== '') {
 			uiModel.defaultSliderStyles.sectionClass.trim()
-		else if uiModel.defaultUnitStyles.sectionClass.trim() <> '' then
+		} else if (uiModel.defaultUnitStyles.sectionClass.trim() !== '') {
 			uiModel.defaultUnitStyles.sectionClass.trim()
-		else
+		} else {
 			''
-		endif endif endif")
-	derived readonly transient volatile String sectionClass
-	@OCL(derivation="sectionClass <> ''")
-	derived readonly transient volatile boolean hasSectionClass
+		}
+	}
 
-	@OCL(derivation="if captionClassOverride.trim() <> '' then
-			captionClassOverride.trim()
-		else if uiModel.defaultSliderStyles.captionClass.trim() <> '' then
+	op String captionClass() {
+		if (localCaptionClass.trim() !== '') {
+			localContentClass.trim()
+		} else if (uiModel.defaultSliderStyles.captionClass.trim() !== '') {
 			uiModel.defaultSliderStyles.captionClass.trim()
-		else if uiModel.defaultUnitStyles.captionClass.trim() <> '' then
+		} else if (uiModel.defaultUnitStyles.captionClass.trim() !== '') {
 			uiModel.defaultUnitStyles.captionClass.trim()
-		else
+		} else {
 			''
-		endif endif endif")
-	derived readonly transient volatile String captionClass
-	@OCL(derivation="captionClass <> ''")
-	derived readonly transient volatile boolean hasCaptionClass
+		}
+	}
 
-	@OCL(derivation="if contentClassOverride.trim() <> '' then
-			contentClassOverride.trim()
-		else if uiModel.defaultSliderStyles.contentClass.trim() <> '' then
+	op String contentClass() {
+		if (localContentClass.trim() !== '') {
+			localContentClass.trim()
+		} else if (uiModel.defaultSliderStyles.contentClass.trim() !== '') {
 			uiModel.defaultSliderStyles.contentClass.trim()
-		else if uiModel.defaultUnitStyles.contentClass.trim() <> '' then
+		} else if (uiModel.defaultUnitStyles.contentClass.trim() !== '') {
 			uiModel.defaultUnitStyles.contentClass.trim()
-		else
+		} else {
 			''
-		endif endif endif")
-	derived readonly transient volatile String contentClass
-	@OCL(derivation="contentClass <> ''")
-	derived readonly transient volatile boolean hasContentClass
+		}
+	}
 
 	@OCL(derivation="if localFieldListClass.trim() <> '' then
 			localFieldListClass.trim()
@@ -2966,44 +3022,41 @@ class GalleryUnit extends CollectionUnit, ImageUnit {
 	int showTime
 	int transitionTime
 
-	@OCL(derivation="if sectionClassOverride.trim() <> '' then
-			sectionClassOverride.trim()
-		else if uiModel.defaultGalleryStyles.sectionClass.trim() <> '' then
+	op String sectionClass() {
+		if (localSectionClass.trim() !== '') {
+			localSectionClass.trim()
+		} else if (uiModel.defaultGalleryStyles.sectionClass.trim() !== '') {
 			uiModel.defaultGalleryStyles.sectionClass.trim()
-		else if uiModel.defaultUnitStyles.sectionClass.trim() <> '' then
+		} else if (uiModel.defaultUnitStyles.sectionClass.trim() !== '') {
 			uiModel.defaultUnitStyles.sectionClass.trim()
-		else
+		} else {
 			''
-		endif endif endif")
-	derived readonly transient volatile String sectionClass
-	@OCL(derivation="sectionClass <> ''")
-	derived readonly transient volatile boolean hasSectionClass
+		}
+	}
 
-	@OCL(derivation="if captionClassOverride.trim() <> '' then
-			captionClassOverride.trim()
-		else if uiModel.defaultGalleryStyles.captionClass.trim() <> '' then
+	op String captionClass() {
+		if (localCaptionClass.trim() !== '') {
+			localContentClass.trim()
+		} else if (uiModel.defaultGalleryStyles.captionClass.trim() !== '') {
 			uiModel.defaultGalleryStyles.captionClass.trim()
-		else if uiModel.defaultUnitStyles.captionClass.trim() <> '' then
+		} else if (uiModel.defaultUnitStyles.captionClass.trim() !== '') {
 			uiModel.defaultUnitStyles.captionClass.trim()
-		else
+		} else {
 			''
-		endif endif endif")
-	derived readonly transient volatile String captionClass
-	@OCL(derivation="captionClass <> ''")
-	derived readonly transient volatile boolean hasCaptionClass
+		}
+	}
 
-	@OCL(derivation="if contentClassOverride.trim() <> '' then
-			contentClassOverride.trim()
-		else if uiModel.defaultGalleryStyles.contentClass.trim() <> '' then
+	op String contentClass() {
+		if (localContentClass.trim() !== '') {
+			localContentClass.trim()
+		} else if (uiModel.defaultGalleryStyles.contentClass.trim() !== '') {
 			uiModel.defaultGalleryStyles.contentClass.trim()
-		else if uiModel.defaultUnitStyles.contentClass.trim() <> '' then
+		} else if (uiModel.defaultUnitStyles.contentClass.trim() !== '') {
 			uiModel.defaultUnitStyles.contentClass.trim()
-		else
+		} else {
 			''
-		endif endif endif")
-	derived readonly transient volatile String contentClass
-	@OCL(derivation="contentClass <> ''")
-	derived readonly transient volatile boolean hasContentClass
+		}
+	}
 
 	@OCL(derivation="if localFieldListClass.trim() <> '' then
 			localFieldListClass.trim()
@@ -3115,44 +3168,41 @@ abstract class ControlUnit extends DynamicUnit {
 	refers ContentUnit cancelDestination
 	String cancelLabel
 
-	@OCL(derivation="if sectionClassOverride.trim() <> '' then
-			sectionClassOverride.trim()
-		else if uiModel.defaultControlStyles.sectionClass.trim() <> '' then
+	op String sectionClass() {
+		if (localSectionClass.trim() !== '') {
+			localSectionClass.trim()
+		} else if (uiModel.defaultControlStyles.sectionClass.trim() !== '') {
 			uiModel.defaultControlStyles.sectionClass.trim()
-		else if uiModel.defaultUnitStyles.sectionClass.trim() <> '' then
+		} else if (uiModel.defaultUnitStyles.sectionClass.trim() !== '') {
 			uiModel.defaultUnitStyles.sectionClass.trim()
-		else
+		} else {
 			''
-		endif endif endif")
-	derived readonly transient volatile String sectionClass
-	@OCL(derivation="sectionClass <> ''")
-	derived readonly transient volatile boolean hasSectionClass
+		}
+	}
 
-	@OCL(derivation="if captionClassOverride.trim() <> '' then
-			captionClassOverride.trim()
-		else if uiModel.defaultControlStyles.captionClass.trim() <> '' then
+	op String captionClass() {
+		if (localCaptionClass.trim() !== '') {
+			localContentClass.trim()
+		} else if (uiModel.defaultControlStyles.captionClass.trim() !== '') {
 			uiModel.defaultControlStyles.captionClass.trim()
-		else if uiModel.defaultUnitStyles.captionClass.trim() <> '' then
+		} else if (uiModel.defaultUnitStyles.captionClass.trim() !== '') {
 			uiModel.defaultUnitStyles.captionClass.trim()
-		else
+		} else {
 			''
-		endif endif endif")
-	derived readonly transient volatile String captionClass
-	@OCL(derivation="captionClass <> ''")
-	derived readonly transient volatile boolean hasCaptionClass
+		}
+	}
 
-	@OCL(derivation="if contentClassOverride.trim() <> '' then
-			contentClassOverride.trim()
-		else if uiModel.defaultControlStyles.contentClass.trim() <> '' then
+	op String contentClass() {
+		if (localContentClass.trim() !== '') {
+			localContentClass.trim()
+		} else if (uiModel.defaultControlStyles.contentClass.trim() !== '') {
 			uiModel.defaultControlStyles.contentClass.trim()
-		else if uiModel.defaultUnitStyles.contentClass.trim() <> '' then
+		} else if (uiModel.defaultUnitStyles.contentClass.trim() !== '') {
 			uiModel.defaultUnitStyles.contentClass.trim()
-		else
+		} else {
 			''
-		endif endif endif")
-	derived readonly transient volatile String contentClass
-	@OCL(derivation="contentClass <> ''")
-	derived readonly transient volatile boolean hasContentClass
+		}
+	}
 
 	@OCL(derivation="if localFieldListClass.trim() <> '' then
 			localFieldListClass.trim()

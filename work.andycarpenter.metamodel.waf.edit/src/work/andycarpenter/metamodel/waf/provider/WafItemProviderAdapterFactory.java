@@ -299,6 +299,29 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.waf.ImageCardsUnitStyles} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ImageCardsUnitStylesItemProvider imageCardsUnitStylesItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link work.andycarpenter.metamodel.waf.ImageCardsUnitStyles}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createImageCardsUnitStylesAdapter() {
+		if (imageCardsUnitStylesItemProvider == null) {
+			imageCardsUnitStylesItemProvider = new ImageCardsUnitStylesItemProvider(this);
+		}
+
+		return imageCardsUnitStylesItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.waf.ControlUnitStyles} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1471,6 +1494,7 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 		if (collectionUnitStylesItemProvider != null) collectionUnitStylesItemProvider.dispose();
 		if (defaultUnitStylesItemProvider != null) defaultUnitStylesItemProvider.dispose();
 		if (cardsUnitStylesItemProvider != null) cardsUnitStylesItemProvider.dispose();
+		if (imageCardsUnitStylesItemProvider != null) imageCardsUnitStylesItemProvider.dispose();
 		if (controlUnitStylesItemProvider != null) controlUnitStylesItemProvider.dispose();
 		if (detailsUnitStylesItemProvider != null) detailsUnitStylesItemProvider.dispose();
 		if (formUnitStylesItemProvider != null) formUnitStylesItemProvider.dispose();

@@ -682,6 +682,7 @@ public class WafModelItemProvider
 			childrenFeatures.add(WafPackage.eINSTANCE.getWafModel_Controllers());
 			childrenFeatures.add(WafPackage.eINSTANCE.getWafModel_DefaultUnitStyles());
 			childrenFeatures.add(WafPackage.eINSTANCE.getWafModel_DefaultCardsStyles());
+			childrenFeatures.add(WafPackage.eINSTANCE.getWafModel_DefaultImageCardsStyles());
 			childrenFeatures.add(WafPackage.eINSTANCE.getWafModel_DefaultControlStyles());
 			childrenFeatures.add(WafPackage.eINSTANCE.getWafModel_DefaultDetailsStyles());
 			childrenFeatures.add(WafPackage.eINSTANCE.getWafModel_DefaultFormStyles());
@@ -766,6 +767,7 @@ public class WafModelItemProvider
 			case WafPackage.WAF_MODEL__CONTROLLERS:
 			case WafPackage.WAF_MODEL__DEFAULT_UNIT_STYLES:
 			case WafPackage.WAF_MODEL__DEFAULT_CARDS_STYLES:
+			case WafPackage.WAF_MODEL__DEFAULT_IMAGE_CARDS_STYLES:
 			case WafPackage.WAF_MODEL__DEFAULT_CONTROL_STYLES:
 			case WafPackage.WAF_MODEL__DEFAULT_DETAILS_STYLES:
 			case WafPackage.WAF_MODEL__DEFAULT_FORM_STYLES:
@@ -827,6 +829,16 @@ public class WafModelItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
+				(WafPackage.eINSTANCE.getWafModel_DefaultCardsStyles(),
+				 WafFactory.eINSTANCE.createImageCardsUnitStyles()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.eINSTANCE.getWafModel_DefaultImageCardsStyles(),
+				 WafFactory.eINSTANCE.createImageCardsUnitStyles()));
+
+		newChildDescriptors.add
+			(createChildParameter
 				(WafPackage.eINSTANCE.getWafModel_DefaultControlStyles(),
 				 WafFactory.eINSTANCE.createControlUnitStyles()));
 
@@ -859,6 +871,29 @@ public class WafModelItemProvider
 			(createChildParameter
 				(WafPackage.eINSTANCE.getWafModel_DefaultTabularStyles(),
 				 WafFactory.eINSTANCE.createTabularUnitStyles()));
+	}
+
+	/**
+	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
+		Object childFeature = feature;
+		Object childObject = child;
+
+		boolean qualify =
+			childFeature == WafPackage.eINSTANCE.getWafModel_DefaultCardsStyles() ||
+			childFeature == WafPackage.eINSTANCE.getWafModel_DefaultImageCardsStyles();
+
+		if (qualify) {
+			return getString
+				("_UI_CreateChild_text2",
+				 new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
+		}
+		return super.getCreateChildText(owner, feature, child, selection);
 	}
 
 	/**

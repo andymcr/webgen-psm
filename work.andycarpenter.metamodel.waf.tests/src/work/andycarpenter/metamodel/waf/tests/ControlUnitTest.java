@@ -11,12 +11,6 @@ import work.andycarpenter.metamodel.waf.ControlUnit;
  * <p>
  * The following features are tested:
  * <ul>
- *   <li>{@link work.andycarpenter.metamodel.waf.ControlUnit#getSectionClass() <em>Section Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.ControlUnit#isHasSectionClass() <em>Has Section Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.ControlUnit#getCaptionClass() <em>Caption Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.ControlUnit#isHasCaptionClass() <em>Has Caption Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.ControlUnit#getContentClass() <em>Content Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.ControlUnit#isHasContentClass() <em>Has Content Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.ControlUnit#getFieldListClass() <em>Field List Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.ControlUnit#isHasFieldListClass() <em>Has Field List Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.ControlUnit#getDefinitionFieldListClass() <em>Definition Field List Class</em>}</li>
@@ -29,6 +23,14 @@ import work.andycarpenter.metamodel.waf.ControlUnit;
  *   <li>{@link work.andycarpenter.metamodel.waf.ControlUnit#isHasControlClass() <em>Has Control Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.ControlUnit#getAnchorClass() <em>Anchor Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.ControlUnit#isHasAnchorClass() <em>Has Anchor Class</em>}</li>
+ * </ul>
+ * </p>
+ * <p>
+ * The following operations are tested:
+ * <ul>
+ *   <li>{@link work.andycarpenter.metamodel.waf.ControlUnit#sectionClass() <em>Section Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.ControlUnit#captionClass() <em>Caption Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.ControlUnit#contentClass() <em>Content Class</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -54,84 +56,6 @@ public abstract class ControlUnitTest extends DynamicUnitTest {
 	@Override
 	protected ControlUnit getFixture() {
 		return (ControlUnit)fixture;
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.ControlUnit#getSectionClass() <em>Section Class</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.ControlUnit#getSectionClass()
-	 * @generated
-	 */
-	public void testGetSectionClass() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.ControlUnit#isHasSectionClass() <em>Has Section Class</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.ControlUnit#isHasSectionClass()
-	 * @generated
-	 */
-	public void testIsHasSectionClass() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.ControlUnit#getCaptionClass() <em>Caption Class</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.ControlUnit#getCaptionClass()
-	 * @generated
-	 */
-	public void testGetCaptionClass() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.ControlUnit#isHasCaptionClass() <em>Has Caption Class</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.ControlUnit#isHasCaptionClass()
-	 * @generated
-	 */
-	public void testIsHasCaptionClass() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.ControlUnit#getContentClass() <em>Content Class</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.ControlUnit#getContentClass()
-	 * @generated
-	 */
-	public void testGetContentClass() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.ControlUnit#isHasContentClass() <em>Has Content Class</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.ControlUnit#isHasContentClass()
-	 * @generated
-	 */
-	public void testIsHasContentClass() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
 	}
 
 	/**
@@ -286,6 +210,45 @@ public abstract class ControlUnitTest extends DynamicUnitTest {
 	 */
 	public void testIsHasAnchorClass() {
 		// TODO: implement this feature getter test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.ControlUnit#sectionClass() <em>Section Class</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.ControlUnit#sectionClass()
+	 * @generated
+	 */
+	public void testSectionClass() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.ControlUnit#captionClass() <em>Caption Class</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.ControlUnit#captionClass()
+	 * @generated
+	 */
+	public void testCaptionClass() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.ControlUnit#contentClass() <em>Content Class</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.ControlUnit#contentClass()
+	 * @generated
+	 */
+	public void testContentClass() {
+		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}

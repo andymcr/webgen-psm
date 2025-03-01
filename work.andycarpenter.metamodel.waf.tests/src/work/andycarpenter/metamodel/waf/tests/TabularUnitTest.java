@@ -14,12 +14,6 @@ import work.andycarpenter.metamodel.waf.WafFactory;
  * <p>
  * The following features are tested:
  * <ul>
- *   <li>{@link work.andycarpenter.metamodel.waf.TabularUnit#getSectionClass() <em>Section Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.TabularUnit#isHasSectionClass() <em>Has Section Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.TabularUnit#getCaptionClass() <em>Caption Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.TabularUnit#isHasCaptionClass() <em>Has Caption Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.TabularUnit#getContentClass() <em>Content Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.TabularUnit#isHasContentClass() <em>Has Content Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.TabularUnit#getHeaderClass() <em>Header Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.TabularUnit#isHasHeaderClass() <em>Has Header Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.TabularUnit#getFooterClass() <em>Footer Class</em>}</li>
@@ -40,6 +34,14 @@ import work.andycarpenter.metamodel.waf.WafFactory;
  *   <li>{@link work.andycarpenter.metamodel.waf.TabularUnit#isHasInstanceControlClass() <em>Has Instance Control Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.TabularUnit#getInstanceActionClass() <em>Instance Action Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.TabularUnit#isHasInstanceActionClass() <em>Has Instance Action Class</em>}</li>
+ * </ul>
+ * </p>
+ * <p>
+ * The following operations are tested:
+ * <ul>
+ *   <li>{@link work.andycarpenter.metamodel.waf.TabularUnit#sectionClass() <em>Section Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.TabularUnit#captionClass() <em>Caption Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.TabularUnit#contentClass() <em>Content Class</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -96,84 +98,6 @@ public class TabularUnitTest extends CollectionUnitTest {
 	@Override
 	protected void tearDown() throws Exception {
 		setFixture(null);
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.TabularUnit#getSectionClass() <em>Section Class</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.TabularUnit#getSectionClass()
-	 * @generated
-	 */
-	public void testGetSectionClass() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.TabularUnit#isHasSectionClass() <em>Has Section Class</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.TabularUnit#isHasSectionClass()
-	 * @generated
-	 */
-	public void testIsHasSectionClass() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.TabularUnit#getCaptionClass() <em>Caption Class</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.TabularUnit#getCaptionClass()
-	 * @generated
-	 */
-	public void testGetCaptionClass() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.TabularUnit#isHasCaptionClass() <em>Has Caption Class</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.TabularUnit#isHasCaptionClass()
-	 * @generated
-	 */
-	public void testIsHasCaptionClass() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.TabularUnit#getContentClass() <em>Content Class</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.TabularUnit#getContentClass()
-	 * @generated
-	 */
-	public void testGetContentClass() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.TabularUnit#isHasContentClass() <em>Has Content Class</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.TabularUnit#isHasContentClass()
-	 * @generated
-	 */
-	public void testIsHasContentClass() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
 	}
 
 	/**
@@ -432,6 +356,45 @@ public class TabularUnitTest extends CollectionUnitTest {
 	 */
 	public void testIsHasInstanceActionClass() {
 		// TODO: implement this feature getter test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.TabularUnit#sectionClass() <em>Section Class</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.TabularUnit#sectionClass()
+	 * @generated
+	 */
+	public void testSectionClass() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.TabularUnit#captionClass() <em>Caption Class</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.TabularUnit#captionClass()
+	 * @generated
+	 */
+	public void testCaptionClass() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.TabularUnit#contentClass() <em>Content Class</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.TabularUnit#contentClass()
+	 * @generated
+	 */
+	public void testContentClass() {
+		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}

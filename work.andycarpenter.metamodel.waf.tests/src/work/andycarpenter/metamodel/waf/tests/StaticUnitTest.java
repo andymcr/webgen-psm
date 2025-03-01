@@ -12,14 +12,11 @@ import work.andycarpenter.metamodel.waf.WafFactory;
  * A test case for the model object '<em><b>Static Unit</b></em>'.
  * <!-- end-user-doc -->
  * <p>
- * The following features are tested:
+ * The following operations are tested:
  * <ul>
- *   <li>{@link work.andycarpenter.metamodel.waf.StaticUnit#getSectionClass() <em>Section Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.StaticUnit#isHasSectionClass() <em>Has Section Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.StaticUnit#getCaptionClass() <em>Caption Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.StaticUnit#isHasCaptionClass() <em>Has Caption Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.StaticUnit#getContentClass() <em>Content Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.StaticUnit#isHasContentClass() <em>Has Content Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.StaticUnit#sectionClass() <em>Section Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.StaticUnit#captionClass() <em>Caption Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.StaticUnit#contentClass() <em>Content Class</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -79,79 +76,40 @@ public class StaticUnitTest extends ContentUnitTest {
 	}
 
 	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.StaticUnit#getSectionClass() <em>Section Class</em>}' feature getter.
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.StaticUnit#sectionClass() <em>Section Class</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.StaticUnit#getSectionClass()
+	 * @see work.andycarpenter.metamodel.waf.StaticUnit#sectionClass()
 	 * @generated
 	 */
-	public void testGetSectionClass() {
-		// TODO: implement this feature getter test method
+	public void testSectionClass() {
+		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}
 
 	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.StaticUnit#isHasSectionClass() <em>Has Section Class</em>}' feature getter.
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.StaticUnit#captionClass() <em>Caption Class</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.StaticUnit#isHasSectionClass()
+	 * @see work.andycarpenter.metamodel.waf.StaticUnit#captionClass()
 	 * @generated
 	 */
-	public void testIsHasSectionClass() {
-		// TODO: implement this feature getter test method
+	public void testCaptionClass() {
+		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}
 
 	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.StaticUnit#getCaptionClass() <em>Caption Class</em>}' feature getter.
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.StaticUnit#contentClass() <em>Content Class</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.StaticUnit#getCaptionClass()
+	 * @see work.andycarpenter.metamodel.waf.StaticUnit#contentClass()
 	 * @generated
 	 */
-	public void testGetCaptionClass() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.StaticUnit#isHasCaptionClass() <em>Has Caption Class</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.StaticUnit#isHasCaptionClass()
-	 * @generated
-	 */
-	public void testIsHasCaptionClass() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.StaticUnit#getContentClass() <em>Content Class</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.StaticUnit#getContentClass()
-	 * @generated
-	 */
-	public void testGetContentClass() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.StaticUnit#isHasContentClass() <em>Has Content Class</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.StaticUnit#isHasContentClass()
-	 * @generated
-	 */
-	public void testIsHasContentClass() {
-		// TODO: implement this feature getter test method
+	public void testContentClass() {
+		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}

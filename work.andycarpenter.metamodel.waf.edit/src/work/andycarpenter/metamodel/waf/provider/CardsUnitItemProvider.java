@@ -49,19 +49,11 @@ public class CardsUnitItemProvider extends CollectionUnitItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addOverlaySingleSelectActionPropertyDescriptor(object);
-			addLocalRowClassPropertyDescriptor(object);
-			addLocalColumnClassPropertyDescriptor(object);
 			addLocalCardClassPropertyDescriptor(object);
 			addLocalCardHeaderClassPropertyDescriptor(object);
 			addLocalCardBodyClassPropertyDescriptor(object);
 			addLocalCardFooterClassPropertyDescriptor(object);
 			addLocalBadgeClassPropertyDescriptor(object);
-			addSectionClassPropertyDescriptor(object);
-			addHasSectionClassPropertyDescriptor(object);
-			addCaptionClassPropertyDescriptor(object);
-			addHasCaptionClassPropertyDescriptor(object);
-			addContentClassPropertyDescriptor(object);
-			addHasContentClassPropertyDescriptor(object);
 			addFieldListClassPropertyDescriptor(object);
 			addHasFieldListClassPropertyDescriptor(object);
 			addDefinitionFieldListClassPropertyDescriptor(object);
@@ -78,20 +70,6 @@ public class CardsUnitItemProvider extends CollectionUnitItemProvider {
 			addHasInstanceControlClassPropertyDescriptor(object);
 			addInstanceActionClassPropertyDescriptor(object);
 			addHasInstanceActionClassPropertyDescriptor(object);
-			addRowClassPropertyDescriptor(object);
-			addHasRowClassPropertyDescriptor(object);
-			addColumnClassPropertyDescriptor(object);
-			addHasColumnClassPropertyDescriptor(object);
-			addCardClassPropertyDescriptor(object);
-			addHasCardClassPropertyDescriptor(object);
-			addCardHeaderClassPropertyDescriptor(object);
-			addHasCardHeaderClassPropertyDescriptor(object);
-			addCardBodyClassPropertyDescriptor(object);
-			addHasCardBodyClassPropertyDescriptor(object);
-			addCardFooterClassPropertyDescriptor(object);
-			addHasCardFooterClassPropertyDescriptor(object);
-			addBadgeClassPropertyDescriptor(object);
-			addHasBadgeClassPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -119,50 +97,6 @@ public class CardsUnitItemProvider extends CollectionUnitItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Local Row Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addLocalRowClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_CardsUnit_localRowClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_CardsUnit_localRowClass_feature", "_UI_CardsUnit_type"),
-				 WafPackage.eINSTANCE.getCardsUnit_LocalRowClass(),
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Local Column Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addLocalColumnClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_CardsUnit_localColumnClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_CardsUnit_localColumnClass_feature", "_UI_CardsUnit_type"),
-				 WafPackage.eINSTANCE.getCardsUnit_LocalColumnClass(),
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Local Card Class feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -180,7 +114,7 @@ public class CardsUnitItemProvider extends CollectionUnitItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_StylePropertyCategory"),
 				 null));
 	}
 
@@ -202,7 +136,7 @@ public class CardsUnitItemProvider extends CollectionUnitItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_StylePropertyCategory"),
 				 null));
 	}
 
@@ -224,7 +158,7 @@ public class CardsUnitItemProvider extends CollectionUnitItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_StylePropertyCategory"),
 				 null));
 	}
 
@@ -246,7 +180,7 @@ public class CardsUnitItemProvider extends CollectionUnitItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_StylePropertyCategory"),
 				 null));
 	}
 
@@ -268,139 +202,7 @@ public class CardsUnitItemProvider extends CollectionUnitItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Section Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addSectionClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_CardsUnit_sectionClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_CardsUnit_sectionClass_feature", "_UI_CardsUnit_type"),
-				 WafPackage.eINSTANCE.getCardsUnit_SectionClass(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Has Section Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addHasSectionClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_CardsUnit_hasSectionClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_CardsUnit_hasSectionClass_feature", "_UI_CardsUnit_type"),
-				 WafPackage.eINSTANCE.getCardsUnit_HasSectionClass(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Caption Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addCaptionClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_CardsUnit_captionClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_CardsUnit_captionClass_feature", "_UI_CardsUnit_type"),
-				 WafPackage.eINSTANCE.getCardsUnit_CaptionClass(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Has Caption Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addHasCaptionClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_CardsUnit_hasCaptionClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_CardsUnit_hasCaptionClass_feature", "_UI_CardsUnit_type"),
-				 WafPackage.eINSTANCE.getCardsUnit_HasCaptionClass(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Content Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addContentClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_CardsUnit_contentClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_CardsUnit_contentClass_feature", "_UI_CardsUnit_type"),
-				 WafPackage.eINSTANCE.getCardsUnit_ContentClass(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Has Content Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addHasContentClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_CardsUnit_hasContentClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_CardsUnit_hasContentClass_feature", "_UI_CardsUnit_type"),
-				 WafPackage.eINSTANCE.getCardsUnit_HasContentClass(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
+				 getString("_UI_StylePropertyCategory"),
 				 null));
 	}
 
@@ -757,314 +559,6 @@ public class CardsUnitItemProvider extends CollectionUnitItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Row Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addRowClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_CardsUnit_rowClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_CardsUnit_rowClass_feature", "_UI_CardsUnit_type"),
-				 WafPackage.eINSTANCE.getCardsUnit_RowClass(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Has Row Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addHasRowClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_CardsUnit_hasRowClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_CardsUnit_hasRowClass_feature", "_UI_CardsUnit_type"),
-				 WafPackage.eINSTANCE.getCardsUnit_HasRowClass(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Column Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addColumnClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_CardsUnit_columnClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_CardsUnit_columnClass_feature", "_UI_CardsUnit_type"),
-				 WafPackage.eINSTANCE.getCardsUnit_ColumnClass(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Has Column Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addHasColumnClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_CardsUnit_hasColumnClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_CardsUnit_hasColumnClass_feature", "_UI_CardsUnit_type"),
-				 WafPackage.eINSTANCE.getCardsUnit_HasColumnClass(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Card Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addCardClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_CardsUnit_cardClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_CardsUnit_cardClass_feature", "_UI_CardsUnit_type"),
-				 WafPackage.eINSTANCE.getCardsUnit_CardClass(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Has Card Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addHasCardClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_CardsUnit_hasCardClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_CardsUnit_hasCardClass_feature", "_UI_CardsUnit_type"),
-				 WafPackage.eINSTANCE.getCardsUnit_HasCardClass(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Card Header Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addCardHeaderClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_CardsUnit_cardHeaderClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_CardsUnit_cardHeaderClass_feature", "_UI_CardsUnit_type"),
-				 WafPackage.eINSTANCE.getCardsUnit_CardHeaderClass(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Has Card Header Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addHasCardHeaderClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_CardsUnit_hasCardHeaderClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_CardsUnit_hasCardHeaderClass_feature", "_UI_CardsUnit_type"),
-				 WafPackage.eINSTANCE.getCardsUnit_HasCardHeaderClass(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Card Body Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addCardBodyClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_CardsUnit_cardBodyClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_CardsUnit_cardBodyClass_feature", "_UI_CardsUnit_type"),
-				 WafPackage.eINSTANCE.getCardsUnit_CardBodyClass(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Has Card Body Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addHasCardBodyClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_CardsUnit_hasCardBodyClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_CardsUnit_hasCardBodyClass_feature", "_UI_CardsUnit_type"),
-				 WafPackage.eINSTANCE.getCardsUnit_HasCardBodyClass(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Card Footer Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addCardFooterClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_CardsUnit_cardFooterClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_CardsUnit_cardFooterClass_feature", "_UI_CardsUnit_type"),
-				 WafPackage.eINSTANCE.getCardsUnit_CardFooterClass(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Has Card Footer Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addHasCardFooterClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_CardsUnit_hasCardFooterClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_CardsUnit_hasCardFooterClass_feature", "_UI_CardsUnit_type"),
-				 WafPackage.eINSTANCE.getCardsUnit_HasCardFooterClass(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Badge Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addBadgeClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_CardsUnit_badgeClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_CardsUnit_badgeClass_feature", "_UI_CardsUnit_type"),
-				 WafPackage.eINSTANCE.getCardsUnit_BadgeClass(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Has Badge Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addHasBadgeClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_CardsUnit_hasBadgeClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_CardsUnit_hasBadgeClass_feature", "_UI_CardsUnit_type"),
-				 WafPackage.eINSTANCE.getCardsUnit_HasBadgeClass(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -1122,19 +616,11 @@ public class CardsUnitItemProvider extends CollectionUnitItemProvider {
 
 		switch (notification.getFeatureID(CardsUnit.class)) {
 			case WafPackage.CARDS_UNIT__OVERLAY_SINGLE_SELECT_ACTION:
-			case WafPackage.CARDS_UNIT__LOCAL_ROW_CLASS:
-			case WafPackage.CARDS_UNIT__LOCAL_COLUMN_CLASS:
 			case WafPackage.CARDS_UNIT__LOCAL_CARD_CLASS:
 			case WafPackage.CARDS_UNIT__LOCAL_CARD_HEADER_CLASS:
 			case WafPackage.CARDS_UNIT__LOCAL_CARD_BODY_CLASS:
 			case WafPackage.CARDS_UNIT__LOCAL_CARD_FOOTER_CLASS:
 			case WafPackage.CARDS_UNIT__LOCAL_BADGE_CLASS:
-			case WafPackage.CARDS_UNIT__SECTION_CLASS:
-			case WafPackage.CARDS_UNIT__HAS_SECTION_CLASS:
-			case WafPackage.CARDS_UNIT__CAPTION_CLASS:
-			case WafPackage.CARDS_UNIT__HAS_CAPTION_CLASS:
-			case WafPackage.CARDS_UNIT__CONTENT_CLASS:
-			case WafPackage.CARDS_UNIT__HAS_CONTENT_CLASS:
 			case WafPackage.CARDS_UNIT__FIELD_LIST_CLASS:
 			case WafPackage.CARDS_UNIT__HAS_FIELD_LIST_CLASS:
 			case WafPackage.CARDS_UNIT__DEFINITION_FIELD_LIST_CLASS:
@@ -1151,20 +637,6 @@ public class CardsUnitItemProvider extends CollectionUnitItemProvider {
 			case WafPackage.CARDS_UNIT__HAS_INSTANCE_CONTROL_CLASS:
 			case WafPackage.CARDS_UNIT__INSTANCE_ACTION_CLASS:
 			case WafPackage.CARDS_UNIT__HAS_INSTANCE_ACTION_CLASS:
-			case WafPackage.CARDS_UNIT__ROW_CLASS:
-			case WafPackage.CARDS_UNIT__HAS_ROW_CLASS:
-			case WafPackage.CARDS_UNIT__COLUMN_CLASS:
-			case WafPackage.CARDS_UNIT__HAS_COLUMN_CLASS:
-			case WafPackage.CARDS_UNIT__CARD_CLASS:
-			case WafPackage.CARDS_UNIT__HAS_CARD_CLASS:
-			case WafPackage.CARDS_UNIT__CARD_HEADER_CLASS:
-			case WafPackage.CARDS_UNIT__HAS_CARD_HEADER_CLASS:
-			case WafPackage.CARDS_UNIT__CARD_BODY_CLASS:
-			case WafPackage.CARDS_UNIT__HAS_CARD_BODY_CLASS:
-			case WafPackage.CARDS_UNIT__CARD_FOOTER_CLASS:
-			case WafPackage.CARDS_UNIT__HAS_CARD_FOOTER_CLASS:
-			case WafPackage.CARDS_UNIT__BADGE_CLASS:
-			case WafPackage.CARDS_UNIT__HAS_BADGE_CLASS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case WafPackage.CARDS_UNIT__BADGES:

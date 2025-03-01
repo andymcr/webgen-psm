@@ -14,12 +14,6 @@ import work.andycarpenter.metamodel.waf.EditUnit;
  *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#isHasConfirmMessage() <em>Has Confirm Message</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#isHasSuccessMessage() <em>Has Success Message</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#isHasMessages() <em>Has Messages</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#getSectionClass() <em>Section Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#isHasSectionClass() <em>Has Section Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#getCaptionClass() <em>Caption Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#isHasCaptionClass() <em>Has Caption Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#getContentClass() <em>Content Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#isHasContentClass() <em>Has Content Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#getFieldListClass() <em>Field List Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#isHasFieldListClass() <em>Has Field List Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#getDefinitionFieldListClass() <em>Definition Field List Class</em>}</li>
@@ -34,6 +28,14 @@ import work.andycarpenter.metamodel.waf.EditUnit;
  *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#isHasAnchorClass() <em>Has Anchor Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#getInputGroupClass() <em>Input Group Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#isHasInputGroupClass() <em>Has Input Group Class</em>}</li>
+ * </ul>
+ * </p>
+ * <p>
+ * The following operations are tested:
+ * <ul>
+ *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#sectionClass() <em>Section Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#captionClass() <em>Caption Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#contentClass() <em>Content Class</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -95,84 +97,6 @@ public abstract class EditUnitTest extends SingletonUnitTest {
 	 * @generated
 	 */
 	public void testIsHasMessages() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.EditUnit#getSectionClass() <em>Section Class</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.EditUnit#getSectionClass()
-	 * @generated
-	 */
-	public void testGetSectionClass() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.EditUnit#isHasSectionClass() <em>Has Section Class</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.EditUnit#isHasSectionClass()
-	 * @generated
-	 */
-	public void testIsHasSectionClass() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.EditUnit#getCaptionClass() <em>Caption Class</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.EditUnit#getCaptionClass()
-	 * @generated
-	 */
-	public void testGetCaptionClass() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.EditUnit#isHasCaptionClass() <em>Has Caption Class</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.EditUnit#isHasCaptionClass()
-	 * @generated
-	 */
-	public void testIsHasCaptionClass() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.EditUnit#getContentClass() <em>Content Class</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.EditUnit#getContentClass()
-	 * @generated
-	 */
-	public void testGetContentClass() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.EditUnit#isHasContentClass() <em>Has Content Class</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.EditUnit#isHasContentClass()
-	 * @generated
-	 */
-	public void testIsHasContentClass() {
 		// TODO: implement this feature getter test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
@@ -356,6 +280,45 @@ public abstract class EditUnitTest extends SingletonUnitTest {
 	 */
 	public void testIsHasInputGroupClass() {
 		// TODO: implement this feature getter test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.EditUnit#sectionClass() <em>Section Class</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.EditUnit#sectionClass()
+	 * @generated
+	 */
+	public void testSectionClass() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.EditUnit#captionClass() <em>Caption Class</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.EditUnit#captionClass()
+	 * @generated
+	 */
+	public void testCaptionClass() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.EditUnit#contentClass() <em>Content Class</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.EditUnit#contentClass()
+	 * @generated
+	 */
+	public void testContentClass() {
+		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}

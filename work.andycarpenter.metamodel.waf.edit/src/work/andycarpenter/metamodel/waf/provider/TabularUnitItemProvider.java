@@ -49,12 +49,6 @@ public class TabularUnitItemProvider extends CollectionUnitItemProvider {
 			addRowClassesPropertyDescriptor(object);
 			addLocalHeaderClassPropertyDescriptor(object);
 			addLocalFooterClassPropertyDescriptor(object);
-			addSectionClassPropertyDescriptor(object);
-			addHasSectionClassPropertyDescriptor(object);
-			addCaptionClassPropertyDescriptor(object);
-			addHasCaptionClassPropertyDescriptor(object);
-			addContentClassPropertyDescriptor(object);
-			addHasContentClassPropertyDescriptor(object);
 			addHeaderClassPropertyDescriptor(object);
 			addHasHeaderClassPropertyDescriptor(object);
 			addFooterClassPropertyDescriptor(object);
@@ -163,138 +157,6 @@ public class TabularUnitItemProvider extends CollectionUnitItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Section Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addSectionClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_TabularUnit_sectionClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_TabularUnit_sectionClass_feature", "_UI_TabularUnit_type"),
-				 WafPackage.eINSTANCE.getTabularUnit_SectionClass(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Has Section Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addHasSectionClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_TabularUnit_hasSectionClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_TabularUnit_hasSectionClass_feature", "_UI_TabularUnit_type"),
-				 WafPackage.eINSTANCE.getTabularUnit_HasSectionClass(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Caption Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addCaptionClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_TabularUnit_captionClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_TabularUnit_captionClass_feature", "_UI_TabularUnit_type"),
-				 WafPackage.eINSTANCE.getTabularUnit_CaptionClass(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Has Caption Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addHasCaptionClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_TabularUnit_hasCaptionClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_TabularUnit_hasCaptionClass_feature", "_UI_TabularUnit_type"),
-				 WafPackage.eINSTANCE.getTabularUnit_HasCaptionClass(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Content Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addContentClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_TabularUnit_contentClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_TabularUnit_contentClass_feature", "_UI_TabularUnit_type"),
-				 WafPackage.eINSTANCE.getTabularUnit_ContentClass(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Has Content Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addHasContentClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_TabularUnit_hasContentClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_TabularUnit_hasContentClass_feature", "_UI_TabularUnit_type"),
-				 WafPackage.eINSTANCE.getTabularUnit_HasContentClass(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -780,12 +642,6 @@ public class TabularUnitItemProvider extends CollectionUnitItemProvider {
 			case WafPackage.TABULAR_UNIT__ROW_CLASSES:
 			case WafPackage.TABULAR_UNIT__LOCAL_HEADER_CLASS:
 			case WafPackage.TABULAR_UNIT__LOCAL_FOOTER_CLASS:
-			case WafPackage.TABULAR_UNIT__SECTION_CLASS:
-			case WafPackage.TABULAR_UNIT__HAS_SECTION_CLASS:
-			case WafPackage.TABULAR_UNIT__CAPTION_CLASS:
-			case WafPackage.TABULAR_UNIT__HAS_CAPTION_CLASS:
-			case WafPackage.TABULAR_UNIT__CONTENT_CLASS:
-			case WafPackage.TABULAR_UNIT__HAS_CONTENT_CLASS:
 			case WafPackage.TABULAR_UNIT__HEADER_CLASS:
 			case WafPackage.TABULAR_UNIT__HAS_HEADER_CLASS:
 			case WafPackage.TABULAR_UNIT__FOOTER_CLASS:
