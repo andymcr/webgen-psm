@@ -51,30 +51,15 @@ public class ActionItemProvider extends NamedDisplayElementItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addUsedByPropertyDescriptor(object);
-			addParentUnitPropertyDescriptor(object);
-			addAuthorisationPropertyDescriptor(object);
-			addIsAuthorisedPropertyDescriptor(object);
-			addHasCustomisedAuthorisationPropertyDescriptor(object);
-			addIsContainerActionPropertyDescriptor(object);
-			addIsGeneralActionPropertyDescriptor(object);
-			addIsInstanceActionPropertyDescriptor(object);
-			addIsTargetActionPropertyDescriptor(object);
 			addIconNamePropertyDescriptor(object);
 			addDisablePropertyDescriptor(object);
 			addConfirmMessagePropertyDescriptor(object);
-			addHasConfirmMessagePropertyDescriptor(object);
 			addSuccessMessagePropertyDescriptor(object);
-			addHasSuccessMessagePropertyDescriptor(object);
 			addFailureMessagePropertyDescriptor(object);
-			addHasFailureMessagePropertyDescriptor(object);
 			addDisabledMessagePropertyDescriptor(object);
-			addHasDisabledMessagePropertyDescriptor(object);
-			addHasMessagesPropertyDescriptor(object);
 			addLocalAnchorClassPropertyDescriptor(object);
 			addAnchorClassPropertyDescriptor(object);
 			addHasAnchorClassPropertyDescriptor(object);
-			addHeaderClassPropertyDescriptor(object);
-			addFooterClassPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -98,182 +83,6 @@ public class ActionItemProvider extends NamedDisplayElementItemProvider {
 				 true,
 				 null,
 				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Parent Unit feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addParentUnitPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Action_parentUnit_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Action_parentUnit_feature", "_UI_Action_type"),
-				 WafPackage.eINSTANCE.getAction_ParentUnit(),
-				 false,
-				 false,
-				 false,
-				 null,
-				 getString("_UI_DebugPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Authorisation feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addAuthorisationPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Action_authorisation_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Action_authorisation_feature", "_UI_Action_type"),
-				 WafPackage.eINSTANCE.getAction_Authorisation(),
-				 false,
-				 false,
-				 false,
-				 null,
-				 getString("_UI_DebugPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Is Authorised feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addIsAuthorisedPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Action_isAuthorised_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Action_isAuthorised_feature", "_UI_Action_type"),
-				 WafPackage.eINSTANCE.getAction_IsAuthorised(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_DebugPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Has Customised Authorisation feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addHasCustomisedAuthorisationPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Action_hasCustomisedAuthorisation_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Action_hasCustomisedAuthorisation_feature", "_UI_Action_type"),
-				 WafPackage.eINSTANCE.getAction_HasCustomisedAuthorisation(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_DebugPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Is Container Action feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addIsContainerActionPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Action_isContainerAction_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Action_isContainerAction_feature", "_UI_Action_type"),
-				 WafPackage.eINSTANCE.getAction_IsContainerAction(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_DebugPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Is General Action feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addIsGeneralActionPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Action_isGeneralAction_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Action_isGeneralAction_feature", "_UI_Action_type"),
-				 WafPackage.eINSTANCE.getAction_IsGeneralAction(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_DebugPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Is Instance Action feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addIsInstanceActionPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Action_isInstanceAction_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Action_isInstanceAction_feature", "_UI_Action_type"),
-				 WafPackage.eINSTANCE.getAction_IsInstanceAction(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_DebugPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Is Target Action feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addIsTargetActionPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Action_isTargetAction_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Action_isTargetAction_feature", "_UI_Action_type"),
-				 WafPackage.eINSTANCE.getAction_IsTargetAction(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -344,28 +153,6 @@ public class ActionItemProvider extends NamedDisplayElementItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Has Confirm Message feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addHasConfirmMessagePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Action_hasConfirmMessage_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Action_hasConfirmMessage_feature", "_UI_Action_type"),
-				 WafPackage.eINSTANCE.getAction_HasConfirmMessage(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_DebugPropertyCategory"),
-				 null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Success Message feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -384,28 +171,6 @@ public class ActionItemProvider extends NamedDisplayElementItemProvider {
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 getString("_UI_InterfacePropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Has Success Message feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addHasSuccessMessagePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Action_hasSuccessMessage_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Action_hasSuccessMessage_feature", "_UI_Action_type"),
-				 WafPackage.eINSTANCE.getAction_HasSuccessMessage(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -432,28 +197,6 @@ public class ActionItemProvider extends NamedDisplayElementItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Has Failure Message feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addHasFailureMessagePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Action_hasFailureMessage_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Action_hasFailureMessage_feature", "_UI_Action_type"),
-				 WafPackage.eINSTANCE.getAction_HasFailureMessage(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_DebugPropertyCategory"),
-				 null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Disabled Message feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -472,50 +215,6 @@ public class ActionItemProvider extends NamedDisplayElementItemProvider {
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 getString("_UI_InterfacePropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Has Disabled Message feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addHasDisabledMessagePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Action_hasDisabledMessage_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Action_hasDisabledMessage_feature", "_UI_Action_type"),
-				 WafPackage.eINSTANCE.getAction_HasDisabledMessage(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_DebugPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Has Messages feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addHasMessagesPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Action_hasMessages_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Action_hasMessages_feature", "_UI_Action_type"),
-				 WafPackage.eINSTANCE.getAction_HasMessages(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -586,50 +285,6 @@ public class ActionItemProvider extends NamedDisplayElementItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Header Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addHeaderClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Action_headerClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Action_headerClass_feature", "_UI_Action_type"),
-				 WafPackage.eINSTANCE.getAction_HeaderClass(),
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 getString("_UI_StylePropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Footer Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addFooterClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Action_footerClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Action_footerClass_feature", "_UI_Action_type"),
-				 WafPackage.eINSTANCE.getAction_FooterClass(),
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 getString("_UI_StylePropertyCategory"),
-				 null));
-	}
-
-	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -687,28 +342,15 @@ public class ActionItemProvider extends NamedDisplayElementItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Action.class)) {
-			case WafPackage.ACTION__IS_AUTHORISED:
-			case WafPackage.ACTION__HAS_CUSTOMISED_AUTHORISATION:
-			case WafPackage.ACTION__IS_CONTAINER_ACTION:
-			case WafPackage.ACTION__IS_GENERAL_ACTION:
-			case WafPackage.ACTION__IS_INSTANCE_ACTION:
-			case WafPackage.ACTION__IS_TARGET_ACTION:
 			case WafPackage.ACTION__ICON_NAME:
 			case WafPackage.ACTION__DISABLE:
 			case WafPackage.ACTION__CONFIRM_MESSAGE:
-			case WafPackage.ACTION__HAS_CONFIRM_MESSAGE:
 			case WafPackage.ACTION__SUCCESS_MESSAGE:
-			case WafPackage.ACTION__HAS_SUCCESS_MESSAGE:
 			case WafPackage.ACTION__FAILURE_MESSAGE:
-			case WafPackage.ACTION__HAS_FAILURE_MESSAGE:
 			case WafPackage.ACTION__DISABLED_MESSAGE:
-			case WafPackage.ACTION__HAS_DISABLED_MESSAGE:
-			case WafPackage.ACTION__HAS_MESSAGES:
 			case WafPackage.ACTION__LOCAL_ANCHOR_CLASS:
 			case WafPackage.ACTION__ANCHOR_CLASS:
 			case WafPackage.ACTION__HAS_ANCHOR_CLASS:
-			case WafPackage.ACTION__HEADER_CLASS:
-			case WafPackage.ACTION__FOOTER_CLASS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case WafPackage.ACTION__DISPLAY_WHEN:

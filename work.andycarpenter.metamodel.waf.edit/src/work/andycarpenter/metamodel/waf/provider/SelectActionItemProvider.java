@@ -48,7 +48,6 @@ public class SelectActionItemProvider extends ActionItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addTargetPropertyDescriptor(object);
-			addSelectAuthorisationPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -72,28 +71,6 @@ public class SelectActionItemProvider extends ActionItemProvider {
 				 true,
 				 null,
 				 getString("_UI_NavigationPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Select Authorisation feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addSelectAuthorisationPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_SelectAction_selectAuthorisation_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_SelectAction_selectAuthorisation_feature", "_UI_SelectAction_type"),
-				 WafPackage.eINSTANCE.getSelectAction_SelectAuthorisation(),
-				 false,
-				 false,
-				 false,
-				 null,
-				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 

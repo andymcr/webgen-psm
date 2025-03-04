@@ -13,7 +13,13 @@ import work.andycarpenter.metamodel.waf.OperationAction;
  * <ul>
  *   <li>{@link work.andycarpenter.metamodel.waf.OperationAction#getServicesUsed() <em>Services Used</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.OperationAction#isHasServicesUsed() <em>Has Services Used</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.OperationAction#getOperationAuthorisation() <em>Operation Authorisation</em>}</li>
+ * </ul>
+ * </p>
+ * <p>
+ * The following operations are tested:
+ * <ul>
+ *   <li>{@link work.andycarpenter.metamodel.waf.OperationAction#authorisation() <em>Authorisation</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.OperationAction#isOperationAction() <em>Is Operation Action</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -81,14 +87,27 @@ public abstract class OperationActionTest extends ActionTest {
 	}
 
 	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.OperationAction#getOperationAuthorisation() <em>Operation Authorisation</em>}' feature getter.
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.OperationAction#authorisation() <em>Authorisation</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.OperationAction#getOperationAuthorisation()
+	 * @see work.andycarpenter.metamodel.waf.OperationAction#authorisation()
 	 * @generated
 	 */
-	public void testGetOperationAuthorisation() {
-		// TODO: implement this feature getter test method
+	public void testAuthorisation() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.OperationAction#isOperationAction() <em>Is Operation Action</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.OperationAction#isOperationAction()
+	 * @generated
+	 */
+	public void testIsOperationAction() {
+		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}

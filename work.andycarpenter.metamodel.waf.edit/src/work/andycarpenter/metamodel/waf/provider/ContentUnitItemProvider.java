@@ -52,8 +52,6 @@ public class ContentUnitItemProvider extends NamedDisplayElementItemProvider {
 			addControllerPropertyDescriptor(object);
 			addUriElementPropertyDescriptor(object);
 			addUriParentPropertyDescriptor(object);
-			addIsAuthorisedPropertyDescriptor(object);
-			addHasAuthorisationPropertyDescriptor(object);
 			addPurposeSummaryPropertyDescriptor(object);
 			addAlternativePropertyDescriptor(object);
 			addOmitCaptionPropertyDescriptor(object);
@@ -130,50 +128,6 @@ public class ContentUnitItemProvider extends NamedDisplayElementItemProvider {
 				 true,
 				 null,
 				 getString("_UI_NavigationPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Is Authorised feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addIsAuthorisedPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ContentUnit_isAuthorised_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ContentUnit_isAuthorised_feature", "_UI_ContentUnit_type"),
-				 WafPackage.eINSTANCE.getContentUnit_IsAuthorised(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_DebugPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Has Authorisation feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addHasAuthorisationPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ContentUnit_hasAuthorisation_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ContentUnit_hasAuthorisation_feature", "_UI_ContentUnit_type"),
-				 WafPackage.eINSTANCE.getContentUnit_HasAuthorisation(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -433,8 +387,6 @@ public class ContentUnitItemProvider extends NamedDisplayElementItemProvider {
 
 		switch (notification.getFeatureID(ContentUnit.class)) {
 			case WafPackage.CONTENT_UNIT__URI_ELEMENT:
-			case WafPackage.CONTENT_UNIT__IS_AUTHORISED:
-			case WafPackage.CONTENT_UNIT__HAS_AUTHORISATION:
 			case WafPackage.CONTENT_UNIT__PURPOSE_SUMMARY:
 			case WafPackage.CONTENT_UNIT__ALTERNATIVE:
 			case WafPackage.CONTENT_UNIT__OMIT_CAPTION:

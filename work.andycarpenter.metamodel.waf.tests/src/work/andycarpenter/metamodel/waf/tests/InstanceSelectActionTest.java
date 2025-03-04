@@ -11,6 +11,12 @@ import work.andycarpenter.metamodel.waf.WafFactory;
  * <!-- begin-user-doc -->
  * A test case for the model object '<em><b>Instance Select Action</b></em>'.
  * <!-- end-user-doc -->
+ * <p>
+ * The following operations are tested:
+ * <ul>
+ *   <li>{@link work.andycarpenter.metamodel.waf.InstanceSelectAction#isInstanceAction() <em>Is Instance Action</em>}</li>
+ * </ul>
+ * </p>
  * @generated
  */
 public class InstanceSelectActionTest extends SelectActionTest {
@@ -65,6 +71,19 @@ public class InstanceSelectActionTest extends SelectActionTest {
 	@Override
 	protected void tearDown() throws Exception {
 		setFixture(null);
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.InstanceSelectAction#isInstanceAction() <em>Is Instance Action</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.InstanceSelectAction#isInstanceAction()
+	 * @generated
+	 */
+	public void testIsInstanceAction() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
 	}
 
 } //InstanceSelectActionTest

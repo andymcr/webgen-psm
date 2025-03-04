@@ -9,9 +9,10 @@ import work.andycarpenter.metamodel.waf.SelectAction;
  * A test case for the model object '<em><b>Select Action</b></em>'.
  * <!-- end-user-doc -->
  * <p>
- * The following features are tested:
+ * The following operations are tested:
  * <ul>
- *   <li>{@link work.andycarpenter.metamodel.waf.SelectAction#getSelectAuthorisation() <em>Select Authorisation</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.SelectAction#authorisation() <em>Authorisation</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.SelectAction#isSelectAction() <em>Is Select Action</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -40,14 +41,27 @@ public abstract class SelectActionTest extends ActionTest {
 	}
 
 	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.SelectAction#getSelectAuthorisation() <em>Select Authorisation</em>}' feature getter.
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.SelectAction#authorisation() <em>Authorisation</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.SelectAction#getSelectAuthorisation()
+	 * @see work.andycarpenter.metamodel.waf.SelectAction#authorisation()
 	 * @generated
 	 */
-	public void testGetSelectAuthorisation() {
-		// TODO: implement this feature getter test method
+	public void testAuthorisation() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.SelectAction#isSelectAction() <em>Is Select Action</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.SelectAction#isSelectAction()
+	 * @generated
+	 */
+	public void testIsSelectAction() {
+		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}

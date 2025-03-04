@@ -68,7 +68,6 @@ import work.andycarpenter.metamodel.waf.WafFactory;
  *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#isStringField() <em>Is String Field</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#isTextareaField() <em>Is Textarea Field</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#isUrlField() <em>Is Url Field</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#hasActions() <em>Has Actions</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#hasDefaultDisplay() <em>Has Default Display</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#hasDisplayDefaultWhen() <em>Has Display Default When</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#hasDefaultValue() <em>Has Default Value</em>}</li>
@@ -1028,19 +1027,6 @@ public class UnitLabelTest extends DisplayElementTest {
 	 * @generated
 	 */
 	public void testIsUrlField() {
-		// TODO: implement this operation test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.UnitField#hasActions() <em>Has Actions</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.UnitField#hasActions()
-	 * @generated
-	 */
-	public void testHasActions() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

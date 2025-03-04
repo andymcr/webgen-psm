@@ -19,7 +19,7 @@ package work.andycarpenter.metamodel.waf
 
 import org.eclipse.emf.common.util.BasicEList
 import org.eclipse.emf.common.util.ECollections
-
+import work.andycarpenter.metamodel.api.API
 import work.andycarpenter.metamodel.base.Classifier
 import work.andycarpenter.metamodel.base.DataType
 import work.andycarpenter.metamodel.base.EnumerationType
@@ -43,7 +43,6 @@ import work.andycarpenter.metamodel.orm.Repository
 import work.andycarpenter.metamodel.orm.ResourceFeature
 import work.andycarpenter.metamodel.orm.ResourcePathElement
 import work.andycarpenter.metamodel.orm.Selection
-import work.andycarpenter.metamodel.api.API
 import work.andycarpenter.metamodel.security.AuthorisationExpression
 import work.andycarpenter.metamodel.security.SecurityModel
 import work.andycarpenter.metamodel.service.BusinessOperation
@@ -78,7 +77,7 @@ class WafModel {
     @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean hasAPI
 
-	@OCL(derivation="controllers->collect(c | c.editUnits)->asOrderedSet()")
+	@OCL(derivation="controllers->collect(c | c.editUnits())->asOrderedSet()")
     @GenModel(propertyCategory="Debug")
 	refers derived readonly unsettable transient volatile EditUnit[] editUnits
 
@@ -86,7 +85,7 @@ class WafModel {
     @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean hasEditUnits
 
-	@OCL(derivation="controllers->collect(c | c.formUnits)->asOrderedSet()")
+	@OCL(derivation="controllers->collect(c | c.formUnits())->asOrderedSet()")
     @GenModel(propertyCategory="Debug")
 	refers derived readonly unsettable transient volatile SingletonUnit[] formUnits
 
@@ -94,7 +93,7 @@ class WafModel {
     @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean hasFormUnits
 
-	@OCL(derivation="controllers->collect(c | c.imageUnits)->asOrderedSet()")
+	@OCL(derivation="controllers->collect(c | c.imageUnits())->asOrderedSet()")
     @GenModel(propertyCategory="Debug")
 	refers derived readonly unsettable transient volatile ImageUnit[] imageUnits
 
@@ -102,7 +101,7 @@ class WafModel {
     @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean hasImageUnits
 
-	@OCL(derivation="controllers->collect(c | c.imageCardsUnits)->asOrderedSet()")
+	@OCL(derivation="controllers->collect(c | c.imageCardsUnits())->asOrderedSet()")
     @GenModel(propertyCategory="Debug")
 	refers derived readonly unsettable transient volatile ImageCardsUnit[] imageCardsUnits
 
@@ -129,7 +128,7 @@ class WafModel {
     @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean hasFormAssociations
 
-	@OCL(derivation="controllers->select(c | c.hasResourceFields)->notEmpty()")
+	@OCL(derivation="controllers->select(c | c.hasResourceFields())->notEmpty()")
     @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean hasResourceFields
 
@@ -137,7 +136,7 @@ class WafModel {
     @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean isAuthenticated
 
-	Boolean useFormFloatingLabels = 'false'
+	boolean useFormFloatingLabels = 'false'
 
     @GenModel(propertyCategory="Style")
 	String defaultPageClass = ''
@@ -347,6 +346,12 @@ abstract class Controller extends NamedDisplayElement {
 
 	refers Controller[] childControllers opposite parentController
 
+	contains ContentUnit[] units opposite controller
+
+	op boolean hasUnits() {
+		!units.isEmpty()
+	}
+
 	@OCL(derivation="self.oclIsTypeOf(SinglePageController)")
     @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean isSinglePage
@@ -356,50 +361,43 @@ abstract class Controller extends NamedDisplayElement {
     @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean isMultiPage
 	
-	@OCL(derivation="if units->isEmpty() then
+	op AuthorisationExpression commonAuthorisation() {
+		if (!hasUnits()) {
 			null
-		else if self.hasCommonUnitAuthorisation = true then
-			units->first().authorisation
-		else
+		} else if (hasCommonUnitAuthorisation) {
+			units.head.authorisation
+		} else {
 			null
-		endif endif")
-    @GenModel(propertyCategory="Debug")
-	refers derived readonly transient volatile AuthorisationExpression commonAuthorisation
+		}
+	}
 
-	@OCL(derivation="not commonAuthorisation.oclIsUndefined()")
-    @GenModel(propertyCategory="Debug")
-	derived readonly transient volatile boolean isAuthorised
+	op boolean isAuthorised() {
+		commonAuthorisation() !== null
+	}
 
-	@OCL(derivation="isAuthorised = true
-		or units->select(u | u.hasAuthorisation = true)->notEmpty()")
-    @GenModel(propertyCategory="Debug")
-	derived readonly transient unsettable volatile boolean hasAuthorisation
+	op boolean hasAuthorisation() {
+		isAuthorised() || units.exists[u | u.hasAuthorisation()]
+	}
 
-	@OCL(derivation="if units->forAll(u | u.authorisation.oclIsUndefined()) then
+	op boolean hasCommonUnitAuthorisation() {
+		if (units.forall[u | !u.isAuthorised()]) {
 			true
-		else if not units->forAll(u | not u.authorisation.oclIsUndefined()) then
+		} else if (!units.forall[u | u.isAuthorised()]) {
 			false
-		else if units->size() < 2 then
+		} else if (units.size < 2) {
 			true
-		else
-			units->subOrderedSet(2, units->size())->forAll(u | u.authorisation.areSame(units->first().authorisation))
-		endif endif endif")
-    @GenModel(propertyCategory="Debug")
-	derived readonly transient volatile boolean hasCommonUnitAuthorisation
+		} else {
+			units.drop(1).forall[u | u.authorisation.areSame(units.head.authorisation)]
+		}
+	}
 
-	contains ContentUnit[] units opposite controller
+	op boolean hasChangableCollections() {
+		!editUnits().filter[it.hasChangableCollections].isEmpty()
+	}
 
-	@OCL(derivation="units->notEmpty()")
-    @GenModel(propertyCategory="Debug")
-	derived readonly transient volatile boolean hasUnits
-
-	@OCL(derivation="editUnits->select(u | u.hasChangableCollections)->notEmpty()")
-    @GenModel(propertyCategory="Debug")
-	derived readonly transient volatile boolean hasChangableCollections
-
-	@OCL(derivation="editUnits->select(u | u.hasCaptcha)->notEmpty()")
-    @GenModel(propertyCategory="Debug")
-	derived readonly transient volatile boolean hasCaptchaUnits
+	op boolean hasCaptchaUnits() {
+		!editUnits().filter[it.hasCaptcha].isEmpty()
+	}
 
 	@OCL(derivation="units->select(u | u.oclIsKindOf(CollectionUnit)).oclAsType(CollectionUnit)->asOrderedSet()")
     @GenModel(propertyCategory="Debug")
@@ -408,139 +406,135 @@ abstract class Controller extends NamedDisplayElement {
     @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean hasCollectionUnits
 
-	@OCL(derivation="units->select(u | u.oclIsKindOf(DynamicUnit)).oclAsType(DynamicUnit)->asOrderedSet()")
-    @GenModel(propertyCategory="Debug")
-	refers readonly transient volatile unsettable derived DynamicUnit[] dynamicUnits
-	@OCL(derivation="dynamicUnits->notEmpty()")
-    @GenModel(propertyCategory="Debug")
-	derived readonly transient volatile boolean hasDynamicUnits
+	op DynamicUnit[] dynamicUnits() {
+		units.filter[it instanceof DynamicUnit].map[it as DynamicUnit].toEList()
+	}
+	op boolean hasDynamicUnits() {
+		!dynamicUnits().isEmpty()
+	}
 
-	@OCL(derivation="units->select(u | u.oclIsKindOf(EditUnit)).oclAsType(EditUnit)->asOrderedSet()")
-    @GenModel(propertyCategory="Debug")
-	refers readonly transient volatile unsettable derived EditUnit[] editUnits
-	@OCL(derivation="editUnits->notEmpty()")
-    @GenModel(propertyCategory="Debug")
-	derived readonly transient volatile boolean hasEditUnits
+	op EditUnit[] editUnits() {
+		dynamicUnits().filter[it instanceof EditUnit].map[it as EditUnit].toEList()
+	}
+	op boolean hasEditUnits() {
+		!editUnits().isEmpty()
+	}
 
-	@OCL(derivation="units->select(u | u.isFormUnit).oclAsType(SingletonUnit)->asOrderedSet()")
-    @GenModel(propertyCategory="Debug")
-	refers readonly transient volatile unsettable derived SingletonUnit[] formUnits
-	@OCL(derivation="formUnits->notEmpty()")
-    @GenModel(propertyCategory="Debug")
-	derived readonly transient volatile boolean hasFormUnits
+	op SingletonUnit[] formUnits() {
+		dynamicUnits().filter[it.isFormUnit].map[it as SingletonUnit].toEList()
+	}
+	op boolean hasFormUnits() {
+		!formUnits().isEmpty()
+	}
 
-	@OCL(derivation="collectionUnits->select(u | u.hasFilters)->notEmpty()")
-    @GenModel(propertyCategory="Debug")
-	derived readonly transient volatile boolean hasFilters
+	op boolean hasFilters() {
+		!collectionUnits.filter[it.hasFilters].isEmpty()
+	}
 
-	@OCL(derivation="units->select(u | u.oclIsKindOf(GalleryUnit)).oclAsType(GalleryUnit)->asOrderedSet()")
-    @GenModel(propertyCategory="Debug")
-	refers readonly transient volatile unsettable derived GalleryUnit[] galleryUnits
-	@OCL(derivation="galleryUnits->notEmpty()")
-    @GenModel(propertyCategory="Debug")
-	derived readonly transient volatile boolean hasGalleryUnits
+	op GalleryUnit[] galleryUnits() {
+		dynamicUnits().filter[it instanceof GalleryUnit].map[it as GalleryUnit].toEList()
+	}
+	op boolean hasGalleryUnits() {
+		!galleryUnits().isEmpty()
+	}
 
-	@OCL(derivation="units->select(u | u.oclIsKindOf(TabularUnit)).oclAsType(TabularUnit)->asOrderedSet()")
-    @GenModel(propertyCategory="Debug")
-	refers readonly transient volatile unsettable derived TabularUnit[] tabularUnits
-	@OCL(derivation="tabularUnits->notEmpty()")
-    @GenModel(propertyCategory="Debug")
-	derived readonly transient volatile boolean hasTabularUnits
+	op TabularUnit[] tabularUnits() {
+		dynamicUnits().filter[it instanceof TabularUnit].map[it as TabularUnit].toEList()
+	}
+	op boolean hasTabularUnits() {
+		!tabularUnits().isEmpty()
+	}
 
-	@OCL(derivation="units->select(u | u.oclIsKindOf(ImageUnit)).oclAsType(ImageUnit)->asOrderedSet()")
-    @GenModel(propertyCategory="Debug")
-	refers readonly transient volatile unsettable derived ImageUnit[] imageUnits
-	@OCL(derivation="imageUnits->notEmpty()")
-    @GenModel(propertyCategory="Debug")
-	derived readonly transient volatile boolean hasImageUnits
+	op ImageUnit[] imageUnits() {
+		dynamicUnits().filter[it instanceof ImageUnit].map[it as ImageUnit].toEList()
+	}
+	op boolean hasImageUnits() {
+		!imageUnits().isEmpty()
+	}
 
-	@OCL(derivation="units->select(u | u.oclIsKindOf(ImageCardsUnit)).oclAsType(ImageCardsUnit)->asOrderedSet()")
-    @GenModel(propertyCategory="Debug")
-	refers readonly transient volatile unsettable derived ImageCardsUnit[] imageCardsUnits
-	@OCL(derivation="imageCardsUnits->notEmpty()")
-    @GenModel(propertyCategory="Debug")
-	derived readonly transient volatile boolean hasImageCardsUnits
+	op ImageCardsUnit[] imageCardsUnits() {
+		imageUnits().filter[it instanceof ImageCardsUnit].map[it as ImageCardsUnit].toEList()
+	}
+	op boolean hasImageCardsUnits() {
+		!imageCardsUnits().isEmpty()
+	}
 
-	@OCL(derivation="units->select(u | u.oclIsKindOf(MapUnit)).oclAsType(MapUnit)->asOrderedSet()")
-    @GenModel(propertyCategory="Debug")
-	refers readonly transient volatile unsettable derived MapUnit[] mapUnits
-	@OCL(derivation="mapUnits->notEmpty()")
-    @GenModel(propertyCategory="Debug")
-	derived readonly transient volatile boolean hasMapUnits
+	op MapUnit[] mapUnits() {
+		dynamicUnits().filter[it instanceof MapUnit].map[it as MapUnit].toEList()
+	}
+	op boolean hasMapUnits() {
+		!mapUnits().isEmpty()
+	}
 
-	@OCL(derivation="units->select(u | u.oclIsKindOf(SliderUnit)).oclAsType(SliderUnit)->asOrderedSet()")
-    @GenModel(propertyCategory="Debug")
-	refers readonly transient volatile unsettable derived SliderUnit[] sliderUnits
-	@OCL(derivation="sliderUnits->notEmpty()")
-    @GenModel(propertyCategory="Debug")
-	derived readonly transient volatile boolean hasSliderUnits
+	op SliderUnit[] sliderUnits() {
+		dynamicUnits().filter[it instanceof SliderUnit].map[it as SliderUnit].toEList()
+	}
+	op boolean hasSliderUnits() {
+		!sliderUnits().isEmpty()
+	}
 
-	@OCL(derivation="dynamicUnits->collect(u | u.servicesUsed)->asOrderedSet()")
+	@OCL(derivation="dynamicUnits()->collect(u | u.servicesUsed)->asOrderedSet()")
     @GenModel(propertyCategory="Debug")
-	refers readonly transient volatile unsettable derived Service[] servicesUsed
-	@OCL(derivation="servicesUsed->notEmpty()")
-    @GenModel(propertyCategory="Debug")
-	derived readonly unsettable transient volatile boolean hasServicesUsed
+	refers derived readonly unsettable transient volatile Service[] servicesUsed
 
 	@OCL(derivation="collectionUnits->select(u | u.hasPagination)->notEmpty()")
     @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean hasPagination
 
-	@OCL(derivation="dynamicUnits->collect(u | u.associationFields)->asOrderedSet()")
+	@OCL(derivation="dynamicUnits()->collect(u | u.associationFields)->asOrderedSet()")
     @GenModel(propertyCategory="Debug")
 	refers derived readonly unsettable transient volatile UnitAssociation[] associationFields
 
-	@OCL(derivation="dynamicUnits->collect(u | u.autocompleteFields)->asOrderedSet()")
+	@OCL(derivation="dynamicUnits()->collect(u | u.autocompleteFields)->asOrderedSet()")
     @GenModel(propertyCategory="Debug")
 	refers derived readonly unsettable transient volatile UnitAssociation[] autocompleteFields
 	@OCL(derivation="autocompleteFields->notEmpty()")
     @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean hasAutocompleteFields
 
-	@OCL(derivation="dynamicUnits->collect(u | u.formFields)->asOrderedSet()")
+	@OCL(derivation="dynamicUnits()->collect(u | u.formFields)->asOrderedSet()")
     @GenModel(propertyCategory="Debug")
 	refers derived unsettable readonly transient volatile UnitField[] formFields
 
-	@OCL(derivation="dynamicUnits->select(u | u.hasImageFields)->notEmpty()")
-    @GenModel(propertyCategory="Debug")
-	derived readonly unsettable transient volatile boolean hasImageFields
+	op boolean hasImageFields() {
+		!dynamicUnits().filter[it.hasImageFields].isEmpty
+	}
 
-	@OCL(derivation="dynamicUnits->select(u | u.hasInterfaceFields)->notEmpty()")
-    @GenModel(propertyCategory="Debug")
-	derived readonly unsettable transient volatile boolean hasInterfaceFields
+	op boolean hasInterfaceFields() {
+		!dynamicUnits().filter[it.hasInterfaceFields].isEmpty
+	}
 
-	@OCL(derivation="dynamicUnits->select(u | u.hasRequiredInterfaceFields)->notEmpty()")
-    @GenModel(propertyCategory="Debug")
-	derived readonly unsettable transient volatile boolean hasRequiredInterfaceFields
+	op boolean hasRequiredInterfaceFields() {
+		!dynamicUnits().filter[it.hasRequiredInterfaceFields].isEmpty
+	}
 
-	@OCL(derivation="dynamicUnits->select(u | u.hasResourceFields)->notEmpty()")
-    @GenModel(propertyCategory="Debug")
-	derived readonly unsettable transient volatile boolean hasResourceFields
+	op boolean hasResourceFields() {
+		!dynamicUnits().filter[it.hasResourceFields].isEmpty
+	}
 
-	@OCL(derivation="dynamicUnits->collect(u | u.actionsWithoutTarget)->asOrderedSet()")
+	@OCL(derivation="dynamicUnits()->collect(u | u.actionsWithoutTarget())->asOrderedSet()")
     @GenModel(propertyCategory="Debug")
 	refers derived readonly unsettable transient volatile Action[] actionsWithoutTarget
 	
-	@OCL(derivation="dynamicUnits->collect(u | u.fileActions)->asOrderedSet()")
+	@OCL(derivation="dynamicUnits()->collect(u | u.fileActions())->asOrderedSet()")
     @GenModel(propertyCategory="Debug")
 	refers derived readonly unsettable transient volatile OperationAction[] fileActions
 	@OCL(derivation="fileActions->notEmpty()")
     @GenModel(propertyCategory="Debug")
 	derived readonly transient unsettable volatile boolean hasFileActions
 
-	@OCL(derivation="dynamicUnits->select(u | u.hasActionsWithDisabledMessage)->notEmpty()")
-    @GenModel(propertyCategory="Debug")
-	derived readonly unsettable transient volatile boolean hasActionsWithDisabledMessage
+	op boolean hasActionsWithDisabledMessage() {
+		!dynamicUnits().filter[it.hasActionsWithDisabledMessage()].isEmpty()
+	}
 
-	@OCL(derivation="editUnits->select(u | u.hasSuccessMessage)->notEmpty()
-		or dynamicUnits.oclAsType(ActionContainer)->select(c | c.hasActionsWithSuccessMessage)->notEmpty()")
-    @GenModel(propertyCategory="Debug")
-	derived readonly unsettable transient volatile boolean hasSuccessMessages
+	op boolean hasSuccessMessages() {
+		!dynamicUnits().filter[it.hasActionsWithSuccessMessage()].isEmpty()
+	}
 
-	@OCL(derivation="editUnits->select(u | u.hasMessages)->notEmpty()
-		or dynamicUnits.oclAsType(ActionContainer)->select(c | c.hasActionsWithMessages)->notEmpty()")
-    @GenModel(propertyCategory="Debug")
-	derived readonly unsettable transient volatile boolean hasMessages
+	op boolean hasMessages() {
+		!editUnits.filter[it.hasMessages].isEmpty()
+		|| !dynamicUnits().filter[it.hasActionsWithMessages()].isEmpty()
+	}
 
     @GenModel(propertyCategory="Navigation")
 	String uriElement = ''
@@ -593,20 +587,13 @@ abstract class ContentUnit extends NamedDisplayElement {
     refers ContentUnit uriParent
 
 	contains AuthorisationExpression authorisation
-	@OCL(derivation="not authorisation.oclIsUndefined()")
-    @GenModel(propertyCategory="Debug")
-	derived readonly transient volatile boolean isAuthorised
-	
-	@OCL(derivation="isAuthorised = true
-		or if self.oclIsKindOf(ActionContainer) then
-				self.oclAsType(ActionContainer).actions
-					->select(a | a.isAuthorised = true)
-					->notEmpty()
-			else
-				false
-			endif")
-    @GenModel(propertyCategory="Debug")
-	derived readonly transient unsettable volatile boolean hasAuthorisation
+	op boolean isAuthorised() {
+		authorisation !== null
+	}
+
+	op boolean hasAuthorisation() {
+		isAuthorised()
+	}
 
 	String purposeSummary
 	String alternative
@@ -716,6 +703,10 @@ abstract class DynamicUnit extends ContentUnit, ActionContainer {
     @GenModel(propertyCategory="Debug")
 	refers derived readonly unsettable transient volatile Association containingAssociation
 
+	op boolean hasAuthorisation() {
+		isAuthorised() || actions().exists[a | a.isAuthorised()]
+	}
+
 	op Entity containingType() {
 		if (contentType === null) {
 			null
@@ -744,7 +735,7 @@ abstract class DynamicUnit extends ContentUnit, ActionContainer {
     @GenModel(propertyCategory="Debug")
 	derived readonly unsettable transient volatile boolean hasExplicitlyEditedContainer
 
-	@OCL(derivation="operationActions->collect(u | u.servicesUsed)->asOrderedSet()")
+	@OCL(derivation="operationActions()->collect(u | u.servicesUsed)->asOrderedSet()")
     @GenModel(propertyCategory="Debug")
 	refers readonly transient volatile unsettable derived Service[] servicesUsed
 	@OCL(derivation="servicesUsed->notEmpty()")
@@ -762,13 +753,13 @@ abstract class DynamicUnit extends ContentUnit, ActionContainer {
 
 	@OCL(derivation="not hideWhen.oclIsUndefined()")
     @GenModel(propertyCategory="Debug")
-	derived readonly unsettable transient volatile Boolean isConditionallyDisplayed
+	derived readonly unsettable transient volatile boolean isConditionallyDisplayed
 
     @GenModel(propertyCategory="Interface")
 	String messageWhenHidden = ''
 	@OCL(derivation="self.isConditionallyDisplayed = true and messageWhenHidden.trim() <> ''")
     @GenModel(propertyCategory="Debug")
-	derived readonly unsettable transient volatile Boolean hasHiddenMessage
+	derived readonly unsettable transient volatile boolean hasHiddenMessage
 
 	String header
 	String footer
@@ -1354,103 +1345,99 @@ interface UnitField extends DisplayElement {
 	String defaultDisplay
 	contains Predicate displayDefaultWhen
 
- 	op Boolean isAssociationField() {
+ 	op boolean isAssociationField() {
 		false
 	}
 
- 	op Boolean isAttributeField() {
+ 	op boolean isAttributeField() {
 		false
 	}
 
-  	op Boolean isBooleanField() {
+  	op boolean isBooleanField() {
 		false
 	}
 
-  	op Boolean isDataTypeField() {
+  	op boolean isDataTypeField() {
 		false
 	}
 
-  	op Boolean isDateField() {
+  	op boolean isDateField() {
 		false
 	}
 
-   	op Boolean isEmailField() {
+   	op boolean isEmailField() {
 		false
 	}
 
-  	op Boolean isEncryptedField() {
+  	op boolean isEncryptedField() {
 		false
 	}
 
-  	op Boolean isEnumerationField() {
+  	op boolean isEnumerationField() {
 		false
 	}
 
-  	op Boolean isFeatureField() {
+  	op boolean isFeatureField() {
 		false
 	}
 
-  	op Boolean isInterfaceField() {
+  	op boolean isInterfaceField() {
 		false
 	}
 
-  	op Boolean isIntegerField() {
+  	op boolean isIntegerField() {
 		false
 	}
 
-  	op Boolean isLabelField() {
+  	op boolean isLabelField() {
 		false
 	}
 
-  	op Boolean isLocationField() {
+  	op boolean isLocationField() {
 		false
 	}
 
-  	op Boolean isObfuscatedField() {
+  	op boolean isObfuscatedField() {
 		false
 	}
 
- 	op Boolean isResourceField() {
+ 	op boolean isResourceField() {
 		false
 	}
 
-   	op Boolean isRequiredField() {
+   	op boolean isRequiredField() {
 		false
 	}
 
- 	op Boolean isSingletonField() {
+ 	op boolean isSingletonField() {
 		true
 	}
 
- 	op Boolean isStringField() {
+ 	op boolean isStringField() {
 		false
 	}
 
-  	op Boolean isTextareaField() {
+  	op boolean isTextareaField() {
 		false
 	}
 
-  	op Boolean isUrlField() {
+  	op boolean isUrlField() {
 		false
 	}
 
-  	op Boolean hasActions() {
-		false
-	}
-
- 	op Boolean hasDefaultDisplay() {
+ 	op boolean hasDefaultDisplay() {
 		defaultDisplay !== null
 	}
 
- 	op Boolean hasDisplayDefaultWhen() {
+ 	op boolean hasDisplayDefaultWhen() {
 		hasDefaultDisplay() && displayDefaultWhen !== null
 	}
 
- 	op Boolean hasDefaultValue() {
+ 	op boolean hasDefaultValue() {
 		defaultValue() !== null
 	}
 
- 	op Boolean hasEmptyCollectionDisplay() {
+ 	op boolean hasEmptyCollectionDisplay() {
 		false
 	}
 
@@ -1571,11 +1558,11 @@ abstract class UnitFeature extends UnitField, Path, ActionContainer {
 	boolean autofocus
 	String footer
 
- 	op Boolean hasEmptyCollectionDisplay() {
+ 	op boolean hasEmptyCollectionDisplay() {
 		emptyCollectionDisplay !== null
 	}
 
-  	op Boolean isAssociationField() {
+  	op boolean isAssociationField() {
 		if (leafFeature() === null) {
 			false
 		} else {
@@ -1583,7 +1570,7 @@ abstract class UnitFeature extends UnitField, Path, ActionContainer {
 		}
 	}
 
- 	op Boolean isAttributeField() {
+ 	op boolean isAttributeField() {
 		if (leafFeature() === null) {
 			false
 		} else {
@@ -1591,7 +1578,7 @@ abstract class UnitFeature extends UnitField, Path, ActionContainer {
 		}
 	}
 
-  	op Boolean isBooleanField() {
+  	op boolean isBooleanField() {
 		if (isDataTypeField()) {
 			leafFeature().isBooleanFeature
 		} else {
@@ -1599,7 +1586,7 @@ abstract class UnitFeature extends UnitField, Path, ActionContainer {
 		}
 	}
 
-  	op Boolean isDataTypeField() {
+  	op boolean isDataTypeField() {
 		if (leafFeature() === null) {
 			false
 		} else {
@@ -1607,7 +1594,7 @@ abstract class UnitFeature extends UnitField, Path, ActionContainer {
 		}
 	}
 
-  	op Boolean isDateField() {
+  	op boolean isDateField() {
 		if (leafFeature() === null) {
 			false
 		} else {
@@ -1615,7 +1602,7 @@ abstract class UnitFeature extends UnitField, Path, ActionContainer {
 		}
 	}
 
-  	op Boolean isEmailField() {
+  	op boolean isEmailField() {
 		if (isDataTypeField()) {
 			leafFeature().isEmailFeature
 		} else {
@@ -1623,7 +1610,7 @@ abstract class UnitFeature extends UnitField, Path, ActionContainer {
 		}
 	}
 
-  	op Boolean isEncryptedField() {
+  	op boolean isEncryptedField() {
 		if (isDataTypeField()) {
 			false
 		} else {
@@ -1631,7 +1618,7 @@ abstract class UnitFeature extends UnitField, Path, ActionContainer {
 		}
 	}
 
-  	op Boolean isEnumerationField() {
+  	op boolean isEnumerationField() {
 		if (isDataTypeField()) {
 			leafFeature().isEnumerationFeature
 		} else {
@@ -1639,11 +1626,11 @@ abstract class UnitFeature extends UnitField, Path, ActionContainer {
 		}
 	}
 
-   	op Boolean isFeatureField() {
+   	op boolean isFeatureField() {
 		true
 	}
 
-  	op Boolean isIntegerField() {
+  	op boolean isIntegerField() {
 		if (isDataTypeField()) {
 			leafFeature().isIntegerFeature
 		} else {
@@ -1651,7 +1638,7 @@ abstract class UnitFeature extends UnitField, Path, ActionContainer {
 		}
 	}
 
-  	op Boolean isLocationField() {
+  	op boolean isLocationField() {
 		if (leafFeature() === null) {
 			false
 		} else {
@@ -1659,7 +1646,7 @@ abstract class UnitFeature extends UnitField, Path, ActionContainer {
 		}
 	}
 
-  	op Boolean isObfuscatedField() {
+  	op boolean isObfuscatedField() {
 		if (isDataTypeField()) {
 			leafFeature().isObfuscatedFeature
 		} else {
@@ -1667,7 +1654,7 @@ abstract class UnitFeature extends UnitField, Path, ActionContainer {
 		}
 	}
 
-   	op Boolean isRequiredField() {
+   	op boolean isRequiredField() {
 		if (leafFeature() === null) {
 			true
 		} else {
@@ -1675,7 +1662,7 @@ abstract class UnitFeature extends UnitField, Path, ActionContainer {
 		}
 	}
 
- 	op Boolean isResourceField() {
+ 	op boolean isResourceField() {
 		if (leafFeature() === null) {
 			false
 		} else {
@@ -1683,7 +1670,7 @@ abstract class UnitFeature extends UnitField, Path, ActionContainer {
 		}
 	}
 
-   	op Boolean isSingletonField() {
+   	op boolean isSingletonField() {
 		if (leafFeature() === null) {
 			true
 		} else {
@@ -1691,7 +1678,7 @@ abstract class UnitFeature extends UnitField, Path, ActionContainer {
 		}
 	}
 
-  	op Boolean isStringField() {
+  	op boolean isStringField() {
 		if (isDataTypeField()) {
 			leafFeature().isStringFeature
 		} else {
@@ -1699,7 +1686,7 @@ abstract class UnitFeature extends UnitField, Path, ActionContainer {
 		}
 	}
 
-  	op Boolean isTextareaField() {
+  	op boolean isTextareaField() {
 		if (isDataTypeField()) {
 			leafFeature().isTextareaFeature
 		} else {
@@ -1707,20 +1694,12 @@ abstract class UnitFeature extends UnitField, Path, ActionContainer {
 		}
 	}
 
-  	op Boolean isUrlField() {
+  	op boolean isUrlField() {
 		if (isDataTypeField()) {
 			leafFeature().isUrlFeature
 		} else {
 			false
 		}
-	}
-
-  	op Boolean hasActions() {
-		(this as ActionContainer).hasActions
-	}
-
-  	op Action[] actions() {
-		(this as ActionContainer).actions
 	}
 
   	op Classifier dataType() {
@@ -1786,7 +1765,7 @@ class UnitLabel extends UnitField {
     @GenModel(propertyCategory="Debug")
 	derived String[1] name
 
-  	op Boolean isLabelField() {
+  	op boolean isLabelField() {
 		true
 	}
 }
@@ -1804,11 +1783,11 @@ abstract class InterfaceField extends NamedElement, UnitField {
 	String secondPlaceholder = ''
 	String secondHelp = ''
 
-   	op Boolean isInterfaceField() {
+   	op boolean isInterfaceField() {
 		true
 	}
 
-   	op Boolean isRequiredField() {
+   	op boolean isRequiredField() {
 		fieldRequired
 	}
 
@@ -1823,7 +1802,7 @@ class DataTypeField extends InterfaceField {
 	boolean obfuscateFormFields
 	boolean encrypt
 
-  	op Boolean isBooleanField() {
+  	op boolean isBooleanField() {
 		if (interfaceDataType === null) {
 			false
 		} else {
@@ -1831,11 +1810,11 @@ class DataTypeField extends InterfaceField {
 		}
 	}
 
-  	op Boolean isDataTypeField() {
+  	op boolean isDataTypeField() {
 		true
 	}
 
-  	op Boolean isEmailField() {
+  	op boolean isEmailField() {
 		if (interfaceDataType === null) {
 			interfaceDataType.isEmailDataType
 		} else {
@@ -1843,11 +1822,11 @@ class DataTypeField extends InterfaceField {
 		}
 	}
 	
-  	op Boolean isEncryptedField() {
+  	op boolean isEncryptedField() {
 		encrypt
 	}
 
-  	op Boolean isEnumerationField() {
+  	op boolean isEnumerationField() {
 		if (interfaceDataType === null) {
 			false
 		} else {
@@ -1855,7 +1834,7 @@ class DataTypeField extends InterfaceField {
 		}
 	}
 
-  	op Boolean isIntegerField() {
+  	op boolean isIntegerField() {
 		if (interfaceDataType === null) {
 			false
 		} else {
@@ -1863,11 +1842,11 @@ class DataTypeField extends InterfaceField {
 		}
 	}
 
-  	op Boolean isObfuscatedField() {
+  	op boolean isObfuscatedField() {
 		obfuscateFormFields
 	}
 
-  	op Boolean isStringField() {
+  	op boolean isStringField() {
 		if (interfaceDataType === null) {
 			false
 		} else {
@@ -1875,7 +1854,7 @@ class DataTypeField extends InterfaceField {
 		}
 	}
 
-  	op Boolean isTextareaField() {
+  	op boolean isTextareaField() {
 		if (interfaceDataType === null) {
 			false
 		} else {
@@ -1883,7 +1862,7 @@ class DataTypeField extends InterfaceField {
 		}
 	}
 
-  	op Boolean isUrlField() {
+  	op boolean isUrlField() {
 		if (interfaceDataType === null) {
 			false
 		} else {
@@ -1896,7 +1875,7 @@ class DateField extends InterfaceField {
 	DateDetails[1] details
 	String format
 
-  	op Boolean isDateField() {
+  	op boolean isDateField() {
 		true
 	}
 }
@@ -3356,74 +3335,71 @@ interface ActionContainer {
 
 	contains Action[] allActions opposite usedBy
 
-	@OCL(derivation="allActions->select(a | not a.disable)->asOrderedSet()")
-    @GenModel(propertyCategory="Debug")
-	refers derived readonly unsettable transient volatile Action[] actions
+	op Action[] actions() {
+		allActions.filter[!it.disable].toEList()
+	}
 
-	@OCL(derivation="actions->notEmpty()")
-    @GenModel(propertyCategory="Debug")
-	derived readonly unsettable transient volatile boolean hasActions
+	op boolean hasActions() {
+		!actions().isEmpty()
+	}
 
-	@OCL(derivation="actions->select(a | a.hasDisabledMessage)->notEmpty()")
-    @GenModel(propertyCategory="Debug")
-	derived readonly unsettable transient volatile boolean hasActionsWithDisabledMessage
+	op boolean hasActionsWithDisabledMessage() {
+		!actions().filter[it.hasDisabledMessage()].isEmpty()
+	}
 
-	@OCL(derivation="actions->select(a | a.hasSuccessMessage)->notEmpty()")
-    @GenModel(propertyCategory="Debug")
-	derived readonly unsettable transient volatile boolean hasActionsWithSuccessMessage
+	op boolean hasActionsWithSuccessMessage() {
+		!actions().filter[it.hasSuccessMessage()].isEmpty()
+	}
 
-	@OCL(derivation="actions->select(a | a.hasMessages)->notEmpty()")
-    @GenModel(propertyCategory="Debug")
-	derived readonly unsettable transient volatile boolean hasActionsWithMessages
+	op boolean hasActionsWithMessages() {
+		!actions().filter[it.hasMessages()].isEmpty()
+	}
 
-	@OCL(derivation="actions->select(a | a.oclIsKindOf(DeleteAction) or a.oclIsKindOf(OperationAction))->asOrderedSet()")
-    @GenModel(propertyCategory="Debug")
-	refers derived readonly unsettable transient volatile Action[] actionsWithoutTarget
+	op Action[] actionsWithoutTarget() {
+		actions().filter[!it.isSelectAction()].asEList()
+	}
 
-	@OCL(derivation="actions->select(a | a.isContainerAction = true)->asOrderedSet()")
-    @GenModel(propertyCategory="Debug")
-	refers derived readonly unsettable transient volatile Action[] containerActions
-	@OCL(derivation="containerActions->notEmpty()")
-    @GenModel(propertyCategory="Debug")
-	derived readonly unsettable transient volatile boolean hasContainerActions
+	op Action[] containerActions() {
+		actions().filter[it.isContainerAction()].asEList()
+	}
+	op boolean hasContainerActions() {
+		!containerActions().isEmpty()
+	}
 
-// TODO	@OCL(derivation="operationActions->select(a | a.operation.resultType = service::OperationResultTypes::File)->asOrderedSet()")
-// TODO	refers derived readonly unsettable transient volatile OperationAction[] fileActions
-    @GenModel(propertyCategory="Debug")
-	refers derived readonly unsettable transient volatile OperationAction[] fileActions get {
+	op OperationAction[] fileActions() {
 		operationActions.filter[it.operation.resultType.literal == 'File'].toEList()
 	}
-	@OCL(derivation="fileActions->notEmpty()")
-    @GenModel(propertyCategory="Debug")
-	derived readonly unsettable transient volatile boolean hasFileActions
+	op boolean hasFileActions() {
+		!fileActions().isEmpty()
+	}
 
-	@OCL(derivation="actions->select(a | a.isGeneralAction)->asOrderedSet()")
-    @GenModel(propertyCategory="Debug")
-	refers derived readonly unsettable transient volatile Action[] generalActions
-	@OCL(derivation="generalActions->notEmpty()")
-    @GenModel(propertyCategory="Debug")
-	derived readonly unsettable transient volatile boolean hasGeneralActions
+	op Action[] generalActions() {
+		actions().filter[it.isGeneralAction()].asEList()
+	}
+	op boolean hasGeneralActions() {
+		!generalActions().isEmpty()
+	}
 
-	@OCL(derivation="actions->select(a | a.isTargetAction)->asOrderedSet()")
-    @GenModel(propertyCategory="Debug")
-	refers derived readonly unsettable transient volatile Action[] targetActions
-	@OCL(derivation="targetActions->notEmpty()")
-    @GenModel(propertyCategory="Debug")
-	derived readonly unsettable transient volatile boolean hasTargetActions
+	op Action[] targetActions() {
+		actions().filter[it.isTargetAction()].asEList()
+	}
+	op boolean hasTargetActions() {
+		!targetActions().isEmpty()
+	}
 
-	@OCL(derivation="actions->select(a | a.isInstanceAction = true)->asOrderedSet()")
-    @GenModel(propertyCategory="Debug")
-	refers derived readonly unsettable transient volatile Action[] instanceActions
-	@OCL(derivation="instanceActions->notEmpty()")
-    @GenModel(propertyCategory="Debug")
-	derived readonly unsettable transient volatile boolean hasInstanceActions
+	op Action[] instanceActions() {
+		actions().filter[it.isInstanceAction()].asEList()
+	}
+	op boolean hasInstanceActions() {
+		!instanceActions().isEmpty()
+	}
 
-	@OCL(derivation="actions->select(a | a.oclIsKindOf(OperationAction)).oclAsType(OperationAction)->asOrderedSet()")
-    @GenModel(propertyCategory="Debug")
-	refers derived readonly unsettable transient volatile OperationAction[] operationActions
-	@OCL(derivation="operationActions->notEmpty()")
-    @GenModel(propertyCategory="Debug")
-	derived readonly unsettable transient volatile boolean hasOperationActions
+	op OperationAction[] operationActions() {
+		actions().filter[it.isOperationAction()].map[it as OperationAction].asEList()
+	}
+	op boolean hasOperationActions() {
+		!operationActions().isEmpty()
+	}
 
 	@OCL(derivation="if self.oclIsKindOf(DynamicUnit) then
 			self.oclAsType(DynamicUnit).genModel
@@ -3449,105 +3425,104 @@ interface ActionContainer {
 abstract class Action extends NamedDisplayElement {
 	refers ActionContainer[1]usedBy opposite allActions
 
-	@OCL(derivation="if usedBy.oclIsKindOf(DynamicUnit) then
-			usedBy.oclAsType(DynamicUnit)
-		else if usedBy.oclIsKindOf(UnitFeature) then
-			usedBy.oclAsType(UnitFeature).displayedOn
-		else
-			null
-		endif endif")
-    @GenModel(propertyCategory="Debug")
-	refers readonly transient volatile unsettable derived DynamicUnit parentUnit
-
-	@OCL(derivation="if self.oclIsKindOf(SelectAction) then
-			self.oclAsType(SelectAction).selectAuthorisation
-		else if self.oclIsKindOf(DeleteAction) then
-			self.oclAsType(DeleteAction).deleteAuthorisation
-		else if self.oclIsKindOf(OperationAction) then
-			self.oclAsType(OperationAction).operationAuthorisation
-		else
-			null
-		endif endif endif")
-    @GenModel(propertyCategory="Debug")
-	refers derived readonly transient unsettable volatile AuthorisationExpression authorisation
-
-	@OCL(derivation="not authorisation.oclIsUndefined()")
-    @GenModel(propertyCategory="Debug")
-	derived readonly transient unsettable volatile boolean isAuthorised
-
-	@OCL(derivation="if authorisation.oclIsUndefined() then
-			false
-		else if parentUnit.authorisation.oclIsUndefined() then
-			true
-		else
-			not authorisation.areSame(parentUnit.authorisation)
-		endif endif")
-    @GenModel(propertyCategory="Debug")
-	derived readonly transient unsettable volatile boolean hasCustomisedAuthorisation
-
-	@OCL(derivation="self.oclIsTypeOf(ContainerOperationAction)
-		or self.oclIsTypeOf(ContainerSelectAction)")
-    @GenModel(propertyCategory="Debug")
-	derived readonly transient unsettable volatile boolean isContainerAction
-
-	@OCL(derivation="self.oclIsTypeOf(GeneralOperationAction)")
-    @GenModel(propertyCategory="Debug")
-	derived readonly transient unsettable volatile boolean isGeneralAction
-
- 	@OCL(derivation="self.oclIsTypeOf(DeleteAction)
-		or self.oclIsTypeOf(InstanceOperationAction)
-		or self.oclIsTypeOf(InstanceSelectAction)")
-    @GenModel(propertyCategory="Debug")
-	derived readonly transient unsettable volatile boolean isInstanceAction
-
-	@OCL(derivation="self.oclIsTypeOf(TargetAction)")
-    @GenModel(propertyCategory="Debug")
-	derived readonly transient unsettable volatile boolean isTargetAction
-
     @GenModel(propertyCategory="Interface")
 	String iconName = ''
+
     @GenModel(propertyCategory="Business")
 	boolean disable
+
 	contains Predicate displayWhen
+
 	contains Predicate enableWhen
+
+	op DynamicUnit parentUnit() {
+		if (usedBy instanceof DynamicUnit) {
+			usedBy as DynamicUnit
+		} else if (usedBy instanceof UnitFeature) {
+			(usedBy as UnitFeature).displayedOn
+		} else {
+			return null
+		}
+	}
+
+	op AuthorisationExpression authorisation() {
+		null
+	}
+	op boolean isAuthorised() {
+		authorisation() !== null
+	}
+
+	op boolean hasCustomisedAuthorisation() {
+		if (authorisation() === null) {
+			false
+		} else if (parentUnit().authorisation === null) {
+			true
+		} else {
+			!authorisation().areSame(parentUnit().authorisation)
+		}
+	}
+
+	op boolean isContainerAction() {
+		false
+	}
+
+	op boolean isGeneralAction() {
+		false
+	}
+
+	op boolean isInstanceAction() {
+		false
+	}
+
+	op boolean isOperationAction() {
+		false
+	}
+
+	op boolean isSelectAction() {
+		false
+	}
+
+	op boolean isTargetAction() {
+		false
+	}
 
     @GenModel(propertyCategory="Interface")
 	String confirmMessage = ''
-	@OCL(derivation="confirmMessage.trim() <> ''")
-    @GenModel(propertyCategory="Debug")
-	derived readonly transient volatile boolean hasConfirmMessage
+	op boolean hasConfirmMessage() {
+		confirmMessage.trim() !== ''
+	}
 
     @GenModel(propertyCategory="Interface")
 	String successMessage = ''
-	@OCL(derivation="successMessage.trim() <> ''")
-    @GenModel(propertyCategory="Debug")
-	derived readonly transient volatile boolean hasSuccessMessage
+	op boolean hasSuccessMessage() {
+		successMessage.trim() !== ''
+	}
 
     @GenModel(propertyCategory="Interface")
 	String failureMessage = ''
-	@OCL(derivation="failureMessage.trim() <> ''")
-    @GenModel(propertyCategory="Debug")
-	derived readonly transient volatile boolean hasFailureMessage
+	op boolean hasFailureMessage() {
+		failureMessage.trim() !== ''
+	}
 
     @GenModel(propertyCategory="Interface")
 	String disabledMessage = ''
-	@OCL(derivation="disabledMessage.trim() <> ''")
-    @GenModel(propertyCategory="Debug")
-	derived readonly transient volatile boolean hasDisabledMessage
+	op boolean hasDisabledMessage() {
+		disabledMessage.trim() !== ''
+	}
 
-	@OCL(derivation="hasConfirmMessage = true or hasSuccessMessage = true or hasFailureMessage = true or hasDisabledMessage = true")
-    @GenModel(propertyCategory="Debug")
-	derived readonly transient volatile boolean hasMessages
+	op boolean hasMessages() {
+		hasConfirmMessage() || hasSuccessMessage() || hasFailureMessage() || hasDisabledMessage()
+	}
 
     @GenModel(propertyCategory="Style")
 	String localAnchorClass = ''
 	@OCL(derivation="if localAnchorClass.trim() <> '' then
 			localAnchorClass.trim()
 		else if usedBy.oclIsKindOf(DynamicUnit) then
-			if self.isInstanceAction = true then
-				if parentUnit.oclIsKindOf(CollectionUnit) then
-					if parentUnit.oclAsType(CollectionUnit).hasCommonInstanceActionClass = true then
-						parentUnit.oclAsType(CollectionUnit).commonInstanceActionClass
+			if self.isInstanceAction() = true then
+				if parentUnit().oclIsKindOf(CollectionUnit) then
+					if parentUnit().oclAsType(CollectionUnit).hasCommonInstanceActionClass = true then
+						parentUnit().oclAsType(CollectionUnit).commonInstanceActionClass
 					else
 						''
 					endif
@@ -3555,8 +3530,8 @@ abstract class Action extends NamedDisplayElement {
 					''
 				endif
 			else
-				if parentUnit.hasCommonAnchorClass= true then
-					parentUnit.commonAnchorClass
+				if parentUnit().hasCommonAnchorClass= true then
+					parentUnit().commonAnchorClass
 				else
 					''
 				endif
@@ -3569,11 +3544,6 @@ abstract class Action extends NamedDisplayElement {
 	@OCL(derivation="anchorClass.trim() <> ''")
     @GenModel(propertyCategory="Debug")
 	derived readonly transient volatile boolean hasAnchorClass
-
-    @GenModel(propertyCategory="Style")
-	String headerClass
-    @GenModel(propertyCategory="Style")
-	String footerClass
 }
 
 class DeleteAction extends Action {
@@ -3581,19 +3551,18 @@ class DeleteAction extends Action {
 	String[1] uriElement
 
 	contains AuthorisationExpression localAuthorisation
-	@OCL(derivation="if not localAuthorisation.oclIsUndefined() then
+
+	op AuthorisationExpression authorisation() {
+		if (localAuthorisation !== null) {
 			localAuthorisation
-		else
-			if usedBy.oclIsKindOf(DynamicUnit) then
-				usedBy.oclAsType(DynamicUnit).authorisation
-			else if usedBy.oclIsKindOf(UnitFeature) then
-				usedBy.oclAsType(UnitFeature).displayedOn.authorisation
-			else
-				null
-			endif endif
-		endif")
-    @GenModel(propertyCategory="Debug")
-	refers derived readonly transient volatile AuthorisationExpression deleteAuthorisation
+		} else {
+			parentUnit()?.authorisation
+		}
+	}
+
+	op boolean isInstanceAction() {
+		true
+	}
 }
 
 abstract class SelectAction extends Action {
@@ -3601,22 +3570,35 @@ abstract class SelectAction extends Action {
 	refers SelectableUnit[1] target opposite selectors
 	contains DisplayValue valuePath
 
-	@OCL(derivation="if not target.oclIsUndefined() then
-			target.oclAsType(DynamicUnit).authorisation
-		else
+	op AuthorisationExpression authorisation() {
+		if (target === null) {
 			null
-		endif")
-    @GenModel(propertyCategory="Debug")
-	refers derived readonly transient volatile AuthorisationExpression selectAuthorisation
+		} else {
+			(target as DynamicUnit).authorisation
+		}
+	}
+
+	op boolean isSelectAction() {
+		true
+	}
 }
 
 class ContainerSelectAction extends SelectAction {
+	op boolean isContainerAction() {
+		true
+	}
 }
 
 class InstanceSelectAction extends SelectAction {
+	op boolean isInstanceAction() {
+		true
+	}
 }
 
 class TargetAction extends SelectAction {
+	op boolean isTargetAction() {
+		true
+	}
 }
 
 abstract class OperationAction extends Action {
@@ -3639,28 +3621,32 @@ abstract class OperationAction extends Action {
 
 	contains AuthorisationExpression localAuthorisation
 
-	@OCL(derivation="if not localAuthorisation.oclIsUndefined() then
+	op AuthorisationExpression authorisation() {
+		if (localAuthorisation !== null) {
 			localAuthorisation
-		else
-			if usedBy.oclIsKindOf(DynamicUnit) then
-				usedBy.oclAsType(DynamicUnit).authorisation
-			else if usedBy.oclIsKindOf(UnitFeature) then
-				usedBy.oclAsType(UnitFeature).displayedOn.authorisation
-			else
-				null
-			endif endif
-		endif")
-    @GenModel(propertyCategory="Debug")
-	refers derived readonly transient volatile AuthorisationExpression operationAuthorisation
+		} else {
+			parentUnit()?.authorisation
+		}
+	}
+
+	op boolean isOperationAction() {
+		true
+	}
 }
 
 class InstanceOperationAction extends OperationAction {
+	op boolean isInstanceAction() {
+		true
+	}
 }
 
 class ContainerOperationAction extends OperationAction {
 }
 
 class GeneralOperationAction extends OperationAction {
+	op boolean isGeneralAction() {
+		true
+	}
 }
 
 

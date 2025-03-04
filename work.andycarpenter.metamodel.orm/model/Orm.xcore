@@ -791,45 +791,45 @@ class Selection extends NamedElement, FormalParameterList {
 	@GenModel(propertyCategory="Data Access")
 	refers Feature[] fields
 
- 	op Boolean hasFields() {
+ 	op boolean hasFields() {
 		!fields.isEmpty()
 	}
 
 	@GenModel(propertyCategory="Data Access")
 	refers Association[] joins
 
- 	op Boolean hasJoins() {
+ 	op boolean hasJoins() {
 		!joins.isEmpty()
 	}
 
 	contains Predicate condition
 
- 	op Boolean hasCondition() {
+ 	op boolean hasCondition() {
 		condition !== null
 	}
 
 	contains Order[] ordering
 
- 	op Boolean hasOrdering() {
+ 	op boolean hasOrdering() {
 		!ordering.isEmpty()
 	}
 
 	contains Filter[] filters opposite selection
 
- 	op Boolean hasFilters() {
+ 	op boolean hasFilters() {
 		!filters.isEmpty()
 	}
 
 	@GenModel(propertyCategory="Data Access")
 	refers Feature[] grouping
 
- 	op Boolean hasGrouping() {
+ 	op boolean hasGrouping() {
 		!grouping.isEmpty()
 	}
 
 	contains SelectionPath selectPath opposite selection
 
- 	op Boolean hasSelectPath() {
+ 	op boolean hasSelectPath() {
 		selectPath !== null
 	}
 

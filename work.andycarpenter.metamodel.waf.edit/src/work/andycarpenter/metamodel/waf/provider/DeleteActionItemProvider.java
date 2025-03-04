@@ -47,7 +47,6 @@ public class DeleteActionItemProvider extends ActionItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addUriElementPropertyDescriptor(object);
-			addDeleteAuthorisationPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -71,28 +70,6 @@ public class DeleteActionItemProvider extends ActionItemProvider {
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 getString("_UI_NavigationPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Delete Authorisation feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addDeleteAuthorisationPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_DeleteAction_deleteAuthorisation_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DeleteAction_deleteAuthorisation_feature", "_UI_DeleteAction_type"),
-				 WafPackage.eINSTANCE.getDeleteAction_DeleteAuthorisation(),
-				 false,
-				 false,
-				 false,
-				 null,
-				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 

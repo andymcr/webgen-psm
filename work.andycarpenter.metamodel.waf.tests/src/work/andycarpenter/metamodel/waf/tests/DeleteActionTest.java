@@ -12,9 +12,10 @@ import work.andycarpenter.metamodel.waf.WafFactory;
  * A test case for the model object '<em><b>Delete Action</b></em>'.
  * <!-- end-user-doc -->
  * <p>
- * The following features are tested:
+ * The following operations are tested:
  * <ul>
- *   <li>{@link work.andycarpenter.metamodel.waf.DeleteAction#getDeleteAuthorisation() <em>Delete Authorisation</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.DeleteAction#authorisation() <em>Authorisation</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.DeleteAction#isInstanceAction() <em>Is Instance Action</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -74,14 +75,27 @@ public class DeleteActionTest extends ActionTest {
 	}
 
 	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DeleteAction#getDeleteAuthorisation() <em>Delete Authorisation</em>}' feature getter.
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.DeleteAction#authorisation() <em>Authorisation</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DeleteAction#getDeleteAuthorisation()
+	 * @see work.andycarpenter.metamodel.waf.DeleteAction#authorisation()
 	 * @generated
 	 */
-	public void testGetDeleteAuthorisation() {
-		// TODO: implement this feature getter test method
+	public void testAuthorisation() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.DeleteAction#isInstanceAction() <em>Is Instance Action</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.DeleteAction#isInstanceAction()
+	 * @generated
+	 */
+	public void testIsInstanceAction() {
+		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}

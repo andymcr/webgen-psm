@@ -11,32 +11,14 @@ import work.andycarpenter.metamodel.waf.DynamicUnit;
  * <p>
  * The following features are tested:
  * <ul>
- *   <li>{@link work.andycarpenter.metamodel.waf.ActionContainer#getActions() <em>Actions</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.ActionContainer#isHasActions() <em>Has Actions</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.ActionContainer#isHasActionsWithDisabledMessage() <em>Has Actions With Disabled Message</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.ActionContainer#isHasActionsWithSuccessMessage() <em>Has Actions With Success Message</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.ActionContainer#isHasActionsWithMessages() <em>Has Actions With Messages</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.ActionContainer#getActionsWithoutTarget() <em>Actions Without Target</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.ActionContainer#getContainerActions() <em>Container Actions</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.ActionContainer#isHasContainerActions() <em>Has Container Actions</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.ActionContainer#getFileActions() <em>File Actions</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.ActionContainer#isHasFileActions() <em>Has File Actions</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.ActionContainer#getGeneralActions() <em>General Actions</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.ActionContainer#isHasGeneralActions() <em>Has General Actions</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.ActionContainer#getTargetActions() <em>Target Actions</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.ActionContainer#isHasTargetActions() <em>Has Target Actions</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.ActionContainer#getInstanceActions() <em>Instance Actions</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.ActionContainer#isHasInstanceActions() <em>Has Instance Actions</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.ActionContainer#getOperationActions() <em>Operation Actions</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.ActionContainer#isHasOperationActions() <em>Has Operation Actions</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.ActionContainer#getGenModelRef() <em>Gen Model Ref</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.ActionContainer#getUiModelRef() <em>Ui Model Ref</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#getContainingAssociation() <em>Containing Association</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#isHasExplicitlyEditedContainer() <em>Has Explicitly Edited Container</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#getServicesUsed() <em>Services Used</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#isHasServicesUsed() <em>Has Services Used</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#getIsConditionallyDisplayed() <em>Is Conditionally Displayed</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#getHasHiddenMessage() <em>Has Hidden Message</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#isIsConditionallyDisplayed() <em>Is Conditionally Displayed</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#isHasHiddenMessage() <em>Has Hidden Message</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#getAssociationFields() <em>Association Fields</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#isHasAssociationFields() <em>Has Association Fields</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#getAutocompleteFields() <em>Autocomplete Fields</em>}</li>
@@ -91,9 +73,28 @@ import work.andycarpenter.metamodel.waf.DynamicUnit;
  * <p>
  * The following operations are tested:
  * <ul>
+ *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#hasAuthorisation() <em>Has Authorisation</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#containingType() <em>Containing Type</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#isContained() <em>Is Contained</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#referencableTypes() <em>Referencable Types</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.ActionContainer#actions() <em>Actions</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.ActionContainer#hasActions() <em>Has Actions</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.ActionContainer#hasActionsWithDisabledMessage() <em>Has Actions With Disabled Message</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.ActionContainer#hasActionsWithSuccessMessage() <em>Has Actions With Success Message</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.ActionContainer#hasActionsWithMessages() <em>Has Actions With Messages</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.ActionContainer#actionsWithoutTarget() <em>Actions Without Target</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.ActionContainer#containerActions() <em>Container Actions</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.ActionContainer#hasContainerActions() <em>Has Container Actions</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.ActionContainer#fileActions() <em>File Actions</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.ActionContainer#hasFileActions() <em>Has File Actions</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.ActionContainer#generalActions() <em>General Actions</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.ActionContainer#hasGeneralActions() <em>Has General Actions</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.ActionContainer#targetActions() <em>Target Actions</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.ActionContainer#hasTargetActions() <em>Has Target Actions</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.ActionContainer#instanceActions() <em>Instance Actions</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.ActionContainer#hasInstanceActions() <em>Has Instance Actions</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.ActionContainer#operationActions() <em>Operation Actions</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.ActionContainer#hasOperationActions() <em>Has Operation Actions</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -119,474 +120,6 @@ public abstract class DynamicUnitTest extends ContentUnitTest {
 	@Override
 	protected DynamicUnit getFixture() {
 		return (DynamicUnit)fixture;
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.ActionContainer#getActions() <em>Actions</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.ActionContainer#getActions()
-	 * @generated
-	 */
-	public void testGetActions() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.ActionContainer#isSetActions() <em>isSetActions()</em>}' method.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.ActionContainer#isSetActions()
-	 * @generated
-	 */
-	public void testIsSetActions() {
-		// TODO: implement this test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.ActionContainer#isHasActions() <em>Has Actions</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.ActionContainer#isHasActions()
-	 * @generated
-	 */
-	public void testIsHasActions() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.ActionContainer#isSetHasActions() <em>isSetHasActions()</em>}' method.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.ActionContainer#isSetHasActions()
-	 * @generated
-	 */
-	public void testIsSetHasActions() {
-		// TODO: implement this test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.ActionContainer#isHasActionsWithDisabledMessage() <em>Has Actions With Disabled Message</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.ActionContainer#isHasActionsWithDisabledMessage()
-	 * @generated
-	 */
-	public void testIsHasActionsWithDisabledMessage() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.ActionContainer#isSetHasActionsWithDisabledMessage() <em>isSetHasActionsWithDisabledMessage()</em>}' method.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.ActionContainer#isSetHasActionsWithDisabledMessage()
-	 * @generated
-	 */
-	public void testIsSetHasActionsWithDisabledMessage() {
-		// TODO: implement this test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.ActionContainer#isHasActionsWithSuccessMessage() <em>Has Actions With Success Message</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.ActionContainer#isHasActionsWithSuccessMessage()
-	 * @generated
-	 */
-	public void testIsHasActionsWithSuccessMessage() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.ActionContainer#isSetHasActionsWithSuccessMessage() <em>isSetHasActionsWithSuccessMessage()</em>}' method.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.ActionContainer#isSetHasActionsWithSuccessMessage()
-	 * @generated
-	 */
-	public void testIsSetHasActionsWithSuccessMessage() {
-		// TODO: implement this test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.ActionContainer#isHasActionsWithMessages() <em>Has Actions With Messages</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.ActionContainer#isHasActionsWithMessages()
-	 * @generated
-	 */
-	public void testIsHasActionsWithMessages() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.ActionContainer#isSetHasActionsWithMessages() <em>isSetHasActionsWithMessages()</em>}' method.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.ActionContainer#isSetHasActionsWithMessages()
-	 * @generated
-	 */
-	public void testIsSetHasActionsWithMessages() {
-		// TODO: implement this test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.ActionContainer#getActionsWithoutTarget() <em>Actions Without Target</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.ActionContainer#getActionsWithoutTarget()
-	 * @generated
-	 */
-	public void testGetActionsWithoutTarget() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.ActionContainer#isSetActionsWithoutTarget() <em>isSetActionsWithoutTarget()</em>}' method.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.ActionContainer#isSetActionsWithoutTarget()
-	 * @generated
-	 */
-	public void testIsSetActionsWithoutTarget() {
-		// TODO: implement this test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.ActionContainer#getContainerActions() <em>Container Actions</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.ActionContainer#getContainerActions()
-	 * @generated
-	 */
-	public void testGetContainerActions() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.ActionContainer#isSetContainerActions() <em>isSetContainerActions()</em>}' method.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.ActionContainer#isSetContainerActions()
-	 * @generated
-	 */
-	public void testIsSetContainerActions() {
-		// TODO: implement this test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.ActionContainer#isHasContainerActions() <em>Has Container Actions</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.ActionContainer#isHasContainerActions()
-	 * @generated
-	 */
-	public void testIsHasContainerActions() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.ActionContainer#isSetHasContainerActions() <em>isSetHasContainerActions()</em>}' method.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.ActionContainer#isSetHasContainerActions()
-	 * @generated
-	 */
-	public void testIsSetHasContainerActions() {
-		// TODO: implement this test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.ActionContainer#getFileActions() <em>File Actions</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.ActionContainer#getFileActions()
-	 * @generated
-	 */
-	public void testGetFileActions() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.ActionContainer#isSetFileActions() <em>isSetFileActions()</em>}' method.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.ActionContainer#isSetFileActions()
-	 * @generated
-	 */
-	public void testIsSetFileActions() {
-		// TODO: implement this test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.ActionContainer#isHasFileActions() <em>Has File Actions</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.ActionContainer#isHasFileActions()
-	 * @generated
-	 */
-	public void testIsHasFileActions() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.ActionContainer#isSetHasFileActions() <em>isSetHasFileActions()</em>}' method.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.ActionContainer#isSetHasFileActions()
-	 * @generated
-	 */
-	public void testIsSetHasFileActions() {
-		// TODO: implement this test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.ActionContainer#getGeneralActions() <em>General Actions</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.ActionContainer#getGeneralActions()
-	 * @generated
-	 */
-	public void testGetGeneralActions() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.ActionContainer#isSetGeneralActions() <em>isSetGeneralActions()</em>}' method.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.ActionContainer#isSetGeneralActions()
-	 * @generated
-	 */
-	public void testIsSetGeneralActions() {
-		// TODO: implement this test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.ActionContainer#isHasGeneralActions() <em>Has General Actions</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.ActionContainer#isHasGeneralActions()
-	 * @generated
-	 */
-	public void testIsHasGeneralActions() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.ActionContainer#isSetHasGeneralActions() <em>isSetHasGeneralActions()</em>}' method.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.ActionContainer#isSetHasGeneralActions()
-	 * @generated
-	 */
-	public void testIsSetHasGeneralActions() {
-		// TODO: implement this test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.ActionContainer#getTargetActions() <em>Target Actions</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.ActionContainer#getTargetActions()
-	 * @generated
-	 */
-	public void testGetTargetActions() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.ActionContainer#isSetTargetActions() <em>isSetTargetActions()</em>}' method.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.ActionContainer#isSetTargetActions()
-	 * @generated
-	 */
-	public void testIsSetTargetActions() {
-		// TODO: implement this test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.ActionContainer#isHasTargetActions() <em>Has Target Actions</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.ActionContainer#isHasTargetActions()
-	 * @generated
-	 */
-	public void testIsHasTargetActions() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.ActionContainer#isSetHasTargetActions() <em>isSetHasTargetActions()</em>}' method.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.ActionContainer#isSetHasTargetActions()
-	 * @generated
-	 */
-	public void testIsSetHasTargetActions() {
-		// TODO: implement this test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.ActionContainer#getInstanceActions() <em>Instance Actions</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.ActionContainer#getInstanceActions()
-	 * @generated
-	 */
-	public void testGetInstanceActions() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.ActionContainer#isSetInstanceActions() <em>isSetInstanceActions()</em>}' method.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.ActionContainer#isSetInstanceActions()
-	 * @generated
-	 */
-	public void testIsSetInstanceActions() {
-		// TODO: implement this test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.ActionContainer#isHasInstanceActions() <em>Has Instance Actions</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.ActionContainer#isHasInstanceActions()
-	 * @generated
-	 */
-	public void testIsHasInstanceActions() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.ActionContainer#isSetHasInstanceActions() <em>isSetHasInstanceActions()</em>}' method.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.ActionContainer#isSetHasInstanceActions()
-	 * @generated
-	 */
-	public void testIsSetHasInstanceActions() {
-		// TODO: implement this test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.ActionContainer#getOperationActions() <em>Operation Actions</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.ActionContainer#getOperationActions()
-	 * @generated
-	 */
-	public void testGetOperationActions() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.ActionContainer#isSetOperationActions() <em>isSetOperationActions()</em>}' method.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.ActionContainer#isSetOperationActions()
-	 * @generated
-	 */
-	public void testIsSetOperationActions() {
-		// TODO: implement this test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.ActionContainer#isHasOperationActions() <em>Has Operation Actions</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.ActionContainer#isHasOperationActions()
-	 * @generated
-	 */
-	public void testIsHasOperationActions() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.ActionContainer#isSetHasOperationActions() <em>isSetHasOperationActions()</em>}' method.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.ActionContainer#isSetHasOperationActions()
-	 * @generated
-	 */
-	public void testIsSetHasOperationActions() {
-		// TODO: implement this test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
 	}
 
 	/**
@@ -746,13 +279,13 @@ public abstract class DynamicUnitTest extends ContentUnitTest {
 	}
 
 	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#getIsConditionallyDisplayed() <em>Is Conditionally Displayed</em>}' feature getter.
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#isIsConditionallyDisplayed() <em>Is Conditionally Displayed</em>}' feature getter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#getIsConditionallyDisplayed()
+	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#isIsConditionallyDisplayed()
 	 * @generated
 	 */
-	public void testGetIsConditionallyDisplayed() {
+	public void testIsIsConditionallyDisplayed() {
 		// TODO: implement this feature getter test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
@@ -772,13 +305,13 @@ public abstract class DynamicUnitTest extends ContentUnitTest {
 	}
 
 	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#getHasHiddenMessage() <em>Has Hidden Message</em>}' feature getter.
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#isHasHiddenMessage() <em>Has Hidden Message</em>}' feature getter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#getHasHiddenMessage()
+	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#isHasHiddenMessage()
 	 * @generated
 	 */
-	public void testGetHasHiddenMessage() {
+	public void testIsHasHiddenMessage() {
 		// TODO: implement this feature getter test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
@@ -1877,6 +1410,19 @@ public abstract class DynamicUnitTest extends ContentUnitTest {
 	}
 
 	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#hasAuthorisation() <em>Has Authorisation</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#hasAuthorisation()
+	 * @generated
+	 */
+	public void testHasAuthorisation() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
 	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#containingType() <em>Containing Type</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1910,6 +1456,240 @@ public abstract class DynamicUnitTest extends ContentUnitTest {
 	 * @generated
 	 */
 	public void testReferencableTypes() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.ActionContainer#actions() <em>Actions</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.ActionContainer#actions()
+	 * @generated
+	 */
+	public void testActions() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.ActionContainer#hasActions() <em>Has Actions</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.ActionContainer#hasActions()
+	 * @generated
+	 */
+	public void testHasActions() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.ActionContainer#hasActionsWithDisabledMessage() <em>Has Actions With Disabled Message</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.ActionContainer#hasActionsWithDisabledMessage()
+	 * @generated
+	 */
+	public void testHasActionsWithDisabledMessage() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.ActionContainer#hasActionsWithSuccessMessage() <em>Has Actions With Success Message</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.ActionContainer#hasActionsWithSuccessMessage()
+	 * @generated
+	 */
+	public void testHasActionsWithSuccessMessage() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.ActionContainer#hasActionsWithMessages() <em>Has Actions With Messages</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.ActionContainer#hasActionsWithMessages()
+	 * @generated
+	 */
+	public void testHasActionsWithMessages() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.ActionContainer#actionsWithoutTarget() <em>Actions Without Target</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.ActionContainer#actionsWithoutTarget()
+	 * @generated
+	 */
+	public void testActionsWithoutTarget() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.ActionContainer#containerActions() <em>Container Actions</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.ActionContainer#containerActions()
+	 * @generated
+	 */
+	public void testContainerActions() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.ActionContainer#hasContainerActions() <em>Has Container Actions</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.ActionContainer#hasContainerActions()
+	 * @generated
+	 */
+	public void testHasContainerActions() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.ActionContainer#fileActions() <em>File Actions</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.ActionContainer#fileActions()
+	 * @generated
+	 */
+	public void testFileActions() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.ActionContainer#hasFileActions() <em>Has File Actions</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.ActionContainer#hasFileActions()
+	 * @generated
+	 */
+	public void testHasFileActions() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.ActionContainer#generalActions() <em>General Actions</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.ActionContainer#generalActions()
+	 * @generated
+	 */
+	public void testGeneralActions() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.ActionContainer#hasGeneralActions() <em>Has General Actions</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.ActionContainer#hasGeneralActions()
+	 * @generated
+	 */
+	public void testHasGeneralActions() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.ActionContainer#targetActions() <em>Target Actions</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.ActionContainer#targetActions()
+	 * @generated
+	 */
+	public void testTargetActions() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.ActionContainer#hasTargetActions() <em>Has Target Actions</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.ActionContainer#hasTargetActions()
+	 * @generated
+	 */
+	public void testHasTargetActions() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.ActionContainer#instanceActions() <em>Instance Actions</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.ActionContainer#instanceActions()
+	 * @generated
+	 */
+	public void testInstanceActions() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.ActionContainer#hasInstanceActions() <em>Has Instance Actions</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.ActionContainer#hasInstanceActions()
+	 * @generated
+	 */
+	public void testHasInstanceActions() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.ActionContainer#operationActions() <em>Operation Actions</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.ActionContainer#operationActions()
+	 * @generated
+	 */
+	public void testOperationActions() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.ActionContainer#hasOperationActions() <em>Has Operation Actions</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.ActionContainer#hasOperationActions()
+	 * @generated
+	 */
+	public void testHasOperationActions() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

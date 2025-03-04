@@ -50,7 +50,6 @@ public class OperationActionItemProvider extends ActionItemProvider {
 			addHasServicesUsedPropertyDescriptor(object);
 			addOperationPropertyDescriptor(object);
 			addUriElementPropertyDescriptor(object);
-			addOperationAuthorisationPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -140,28 +139,6 @@ public class OperationActionItemProvider extends ActionItemProvider {
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 getString("_UI_NavigationPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Operation Authorisation feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addOperationAuthorisationPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_OperationAction_operationAuthorisation_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_OperationAction_operationAuthorisation_feature", "_UI_OperationAction_type"),
-				 WafPackage.eINSTANCE.getOperationAction_OperationAuthorisation(),
-				 false,
-				 false,
-				 false,
-				 null,
-				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
