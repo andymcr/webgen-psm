@@ -65,10 +65,8 @@ public class NavigationItemProvider
 
 			addPartOfPropertyDescriptor(object);
 			addNavbarClassPropertyDescriptor(object);
-			addHasNavbarClassPropertyDescriptor(object);
 			addAuthenticationMenuPlacementPropertyDescriptor(object);
 			addAuthenticationBarClassPropertyDescriptor(object);
-			addHasAuthenticationBarClassPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -118,28 +116,6 @@ public class NavigationItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Has Navbar Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addHasNavbarClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Navigation_hasNavbarClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Navigation_hasNavbarClass_feature", "_UI_Navigation_type"),
-				 WafPackage.eINSTANCE.getNavigation_HasNavbarClass(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_DebugPropertyCategory"),
-				 null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Authentication Menu Placement feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -180,28 +156,6 @@ public class NavigationItemProvider
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Has Authentication Bar Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addHasAuthenticationBarClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Navigation_hasAuthenticationBarClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Navigation_hasAuthenticationBarClass_feature", "_UI_Navigation_type"),
-				 WafPackage.eINSTANCE.getNavigation_HasAuthenticationBarClass(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -274,10 +228,8 @@ public class NavigationItemProvider
 
 		switch (notification.getFeatureID(Navigation.class)) {
 			case WafPackage.NAVIGATION__NAVBAR_CLASS:
-			case WafPackage.NAVIGATION__HAS_NAVBAR_CLASS:
 			case WafPackage.NAVIGATION__AUTHENTICATION_MENU_PLACEMENT:
 			case WafPackage.NAVIGATION__AUTHENTICATION_BAR_CLASS:
-			case WafPackage.NAVIGATION__HAS_AUTHENTICATION_BAR_CLASS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case WafPackage.NAVIGATION__MENUS:

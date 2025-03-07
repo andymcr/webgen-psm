@@ -51,25 +51,14 @@ public class ControllerItemProvider extends NamedDisplayElementItemProvider {
 			addPartOfPropertyDescriptor(object);
 			addParentControllerPropertyDescriptor(object);
 			addChildControllersPropertyDescriptor(object);
-			addIsSinglePagePropertyDescriptor(object);
-			addIsMultiPagePropertyDescriptor(object);
-			addCollectionUnitsPropertyDescriptor(object);
-			addHasCollectionUnitsPropertyDescriptor(object);
 			addServicesUsedPropertyDescriptor(object);
-			addHasPaginationPropertyDescriptor(object);
 			addAssociationFieldsPropertyDescriptor(object);
 			addAutocompleteFieldsPropertyDescriptor(object);
-			addHasAutocompleteFieldsPropertyDescriptor(object);
 			addFormFieldsPropertyDescriptor(object);
 			addActionsWithoutTargetPropertyDescriptor(object);
 			addFileActionsPropertyDescriptor(object);
-			addHasFileActionsPropertyDescriptor(object);
 			addUriElementPropertyDescriptor(object);
-			addPageClassOverridePropertyDescriptor(object);
-			addPageClassPropertyDescriptor(object);
-			addHasPageClassPropertyDescriptor(object);
-			addGenModelPropertyDescriptor(object);
-			addUiModelPropertyDescriptor(object);
+			addLocalPageClassPropertyDescriptor(object);
 			addRootControllerPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -142,94 +131,6 @@ public class ControllerItemProvider extends NamedDisplayElementItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Is Single Page feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addIsSinglePagePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Controller_isSinglePage_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Controller_isSinglePage_feature", "_UI_Controller_type"),
-				 WafPackage.eINSTANCE.getController_IsSinglePage(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_DebugPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Is Multi Page feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addIsMultiPagePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Controller_isMultiPage_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Controller_isMultiPage_feature", "_UI_Controller_type"),
-				 WafPackage.eINSTANCE.getController_IsMultiPage(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_DebugPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Collection Units feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addCollectionUnitsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Controller_collectionUnits_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Controller_collectionUnits_feature", "_UI_Controller_type"),
-				 WafPackage.eINSTANCE.getController_CollectionUnits(),
-				 false,
-				 false,
-				 false,
-				 null,
-				 getString("_UI_DebugPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Has Collection Units feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addHasCollectionUnitsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Controller_hasCollectionUnits_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Controller_hasCollectionUnits_feature", "_UI_Controller_type"),
-				 WafPackage.eINSTANCE.getController_HasCollectionUnits(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_DebugPropertyCategory"),
-				 null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Services Used feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -247,28 +148,6 @@ public class ControllerItemProvider extends NamedDisplayElementItemProvider {
 				 false,
 				 false,
 				 null,
-				 getString("_UI_DebugPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Has Pagination feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addHasPaginationPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Controller_hasPagination_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Controller_hasPagination_feature", "_UI_Controller_type"),
-				 WafPackage.eINSTANCE.getController_HasPagination(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
@@ -313,28 +192,6 @@ public class ControllerItemProvider extends NamedDisplayElementItemProvider {
 				 false,
 				 false,
 				 null,
-				 getString("_UI_DebugPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Has Autocomplete Fields feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addHasAutocompleteFieldsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Controller_hasAutocompleteFields_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Controller_hasAutocompleteFields_feature", "_UI_Controller_type"),
-				 WafPackage.eINSTANCE.getController_HasAutocompleteFields(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
@@ -406,28 +263,6 @@ public class ControllerItemProvider extends NamedDisplayElementItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Has File Actions feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addHasFileActionsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Controller_hasFileActions_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Controller_hasFileActions_feature", "_UI_Controller_type"),
-				 WafPackage.eINSTANCE.getController_HasFileActions(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_DebugPropertyCategory"),
-				 null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Uri Element feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -450,112 +285,24 @@ public class ControllerItemProvider extends NamedDisplayElementItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Page Class Override feature.
+	 * This adds a property descriptor for the Local Page Class feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addPageClassOverridePropertyDescriptor(Object object) {
+	protected void addLocalPageClassPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Controller_pageClassOverride_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Controller_pageClassOverride_feature", "_UI_Controller_type"),
-				 WafPackage.eINSTANCE.getController_PageClassOverride(),
+				 getString("_UI_Controller_localPageClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Controller_localPageClass_feature", "_UI_Controller_type"),
+				 WafPackage.eINSTANCE.getController_LocalPageClass(),
 				 true,
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 getString("_UI_StylePropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Page Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addPageClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Controller_pageClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Controller_pageClass_feature", "_UI_Controller_type"),
-				 WafPackage.eINSTANCE.getController_PageClass(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 getString("_UI_DebugPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Has Page Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addHasPageClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Controller_hasPageClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Controller_hasPageClass_feature", "_UI_Controller_type"),
-				 WafPackage.eINSTANCE.getController_HasPageClass(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_DebugPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Gen Model feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addGenModelPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Controller_genModel_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Controller_genModel_feature", "_UI_Controller_type"),
-				 WafPackage.eINSTANCE.getController_GenModel(),
-				 false,
-				 false,
-				 false,
-				 null,
-				 getString("_UI_DebugPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Ui Model feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addUiModelPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Controller_uiModel_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Controller_uiModel_feature", "_UI_Controller_type"),
-				 WafPackage.eINSTANCE.getController_UiModel(),
-				 false,
-				 false,
-				 false,
-				 null,
-				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -638,16 +385,8 @@ public class ControllerItemProvider extends NamedDisplayElementItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Controller.class)) {
-			case WafPackage.CONTROLLER__IS_SINGLE_PAGE:
-			case WafPackage.CONTROLLER__IS_MULTI_PAGE:
-			case WafPackage.CONTROLLER__HAS_COLLECTION_UNITS:
-			case WafPackage.CONTROLLER__HAS_PAGINATION:
-			case WafPackage.CONTROLLER__HAS_AUTOCOMPLETE_FIELDS:
-			case WafPackage.CONTROLLER__HAS_FILE_ACTIONS:
 			case WafPackage.CONTROLLER__URI_ELEMENT:
-			case WafPackage.CONTROLLER__PAGE_CLASS_OVERRIDE:
-			case WafPackage.CONTROLLER__PAGE_CLASS:
-			case WafPackage.CONTROLLER__HAS_PAGE_CLASS:
+			case WafPackage.CONTROLLER__LOCAL_PAGE_CLASS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case WafPackage.CONTROLLER__UNITS:

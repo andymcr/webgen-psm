@@ -13,23 +13,12 @@ import work.andycarpenter.metamodel.waf.Controller;
  * <p>
  * The following features are tested:
  * <ul>
- *   <li>{@link work.andycarpenter.metamodel.waf.Controller#isIsSinglePage() <em>Is Single Page</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.Controller#isIsMultiPage() <em>Is Multi Page</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.Controller#getCollectionUnits() <em>Collection Units</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.Controller#isHasCollectionUnits() <em>Has Collection Units</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.Controller#getServicesUsed() <em>Services Used</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.Controller#isHasPagination() <em>Has Pagination</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.Controller#getAssociationFields() <em>Association Fields</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.Controller#getAutocompleteFields() <em>Autocomplete Fields</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.Controller#isHasAutocompleteFields() <em>Has Autocomplete Fields</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.Controller#getFormFields() <em>Form Fields</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.Controller#getActionsWithoutTarget() <em>Actions Without Target</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.Controller#getFileActions() <em>File Actions</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.Controller#isHasFileActions() <em>Has File Actions</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.Controller#getPageClass() <em>Page Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.Controller#isHasPageClass() <em>Has Page Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.Controller#getGenModel() <em>Gen Model</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.Controller#getUiModel() <em>Ui Model</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.Controller#getRootController() <em>Root Controller</em>}</li>
  * </ul>
  * </p>
@@ -37,12 +26,16 @@ import work.andycarpenter.metamodel.waf.Controller;
  * The following operations are tested:
  * <ul>
  *   <li>{@link work.andycarpenter.metamodel.waf.Controller#hasUnits() <em>Has Units</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.Controller#isSinglePage() <em>Is Single Page</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.Controller#isMultiPage() <em>Is Multi Page</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.Controller#commonAuthorisation() <em>Common Authorisation</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.Controller#isAuthorised() <em>Is Authorised</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.Controller#hasAuthorisation() <em>Has Authorisation</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.Controller#hasCommonUnitAuthorisation() <em>Has Common Unit Authorisation</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.Controller#hasChangableCollections() <em>Has Changable Collections</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.Controller#hasCaptchaUnits() <em>Has Captcha Units</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.Controller#collectionUnits() <em>Collection Units</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.Controller#hasCollectionUnits() <em>Has Collection Units</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.Controller#dynamicUnits() <em>Dynamic Units</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.Controller#hasDynamicUnits() <em>Has Dynamic Units</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.Controller#editUnits() <em>Edit Units</em>}</li>
@@ -62,13 +55,20 @@ import work.andycarpenter.metamodel.waf.Controller;
  *   <li>{@link work.andycarpenter.metamodel.waf.Controller#hasMapUnits() <em>Has Map Units</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.Controller#sliderUnits() <em>Slider Units</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.Controller#hasSliderUnits() <em>Has Slider Units</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.Controller#hasPagination() <em>Has Pagination</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.Controller#hasAutocompleteFields() <em>Has Autocomplete Fields</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.Controller#hasImageFields() <em>Has Image Fields</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.Controller#hasInterfaceFields() <em>Has Interface Fields</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.Controller#hasRequiredInterfaceFields() <em>Has Required Interface Fields</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.Controller#hasResourceFields() <em>Has Resource Fields</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.Controller#hasFileActions() <em>Has File Actions</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.Controller#hasActionsWithDisabledMessage() <em>Has Actions With Disabled Message</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.Controller#hasSuccessMessages() <em>Has Success Messages</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.Controller#hasMessages() <em>Has Messages</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.Controller#pageClass() <em>Page Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.Controller#hasPageClass() <em>Has Page Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.Controller#genModel() <em>Gen Model</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.Controller#uiModel() <em>Ui Model</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -114,71 +114,6 @@ public abstract class ControllerTest extends TestCase {
 	}
 
 	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.Controller#isIsSinglePage() <em>Is Single Page</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.Controller#isIsSinglePage()
-	 * @generated
-	 */
-	public void testIsIsSinglePage() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.Controller#isIsMultiPage() <em>Is Multi Page</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.Controller#isIsMultiPage()
-	 * @generated
-	 */
-	public void testIsIsMultiPage() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.Controller#getCollectionUnits() <em>Collection Units</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.Controller#getCollectionUnits()
-	 * @generated
-	 */
-	public void testGetCollectionUnits() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.Controller#isSetCollectionUnits() <em>isSetCollectionUnits()</em>}' method.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.Controller#isSetCollectionUnits()
-	 * @generated
-	 */
-	public void testIsSetCollectionUnits() {
-		// TODO: implement this test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.Controller#isHasCollectionUnits() <em>Has Collection Units</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.Controller#isHasCollectionUnits()
-	 * @generated
-	 */
-	public void testIsHasCollectionUnits() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
 	 * Tests the '{@link work.andycarpenter.metamodel.waf.Controller#getServicesUsed() <em>Services Used</em>}' feature getter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -199,32 +134,6 @@ public abstract class ControllerTest extends TestCase {
 	 * @generated
 	 */
 	public void testIsSetServicesUsed() {
-		// TODO: implement this test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.Controller#isHasPagination() <em>Has Pagination</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.Controller#isHasPagination()
-	 * @generated
-	 */
-	public void testIsHasPagination() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.Controller#isSetHasPagination() <em>isSetHasPagination()</em>}' method.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.Controller#isSetHasPagination()
-	 * @generated
-	 */
-	public void testIsSetHasPagination() {
 		// TODO: implement this test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
@@ -277,32 +186,6 @@ public abstract class ControllerTest extends TestCase {
 	 * @generated
 	 */
 	public void testIsSetAutocompleteFields() {
-		// TODO: implement this test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.Controller#isHasAutocompleteFields() <em>Has Autocomplete Fields</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.Controller#isHasAutocompleteFields()
-	 * @generated
-	 */
-	public void testIsHasAutocompleteFields() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.Controller#isSetHasAutocompleteFields() <em>isSetHasAutocompleteFields()</em>}' method.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.Controller#isSetHasAutocompleteFields()
-	 * @generated
-	 */
-	public void testIsSetHasAutocompleteFields() {
 		// TODO: implement this test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
@@ -387,110 +270,6 @@ public abstract class ControllerTest extends TestCase {
 	}
 
 	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.Controller#isHasFileActions() <em>Has File Actions</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.Controller#isHasFileActions()
-	 * @generated
-	 */
-	public void testIsHasFileActions() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.Controller#isSetHasFileActions() <em>isSetHasFileActions()</em>}' method.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.Controller#isSetHasFileActions()
-	 * @generated
-	 */
-	public void testIsSetHasFileActions() {
-		// TODO: implement this test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.Controller#getPageClass() <em>Page Class</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.Controller#getPageClass()
-	 * @generated
-	 */
-	public void testGetPageClass() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.Controller#isHasPageClass() <em>Has Page Class</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.Controller#isHasPageClass()
-	 * @generated
-	 */
-	public void testIsHasPageClass() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.Controller#getGenModel() <em>Gen Model</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.Controller#getGenModel()
-	 * @generated
-	 */
-	public void testGetGenModel() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.Controller#isSetGenModel() <em>isSetGenModel()</em>}' method.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.Controller#isSetGenModel()
-	 * @generated
-	 */
-	public void testIsSetGenModel() {
-		// TODO: implement this test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.Controller#getUiModel() <em>Ui Model</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.Controller#getUiModel()
-	 * @generated
-	 */
-	public void testGetUiModel() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.Controller#isSetUiModel() <em>isSetUiModel()</em>}' method.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.Controller#isSetUiModel()
-	 * @generated
-	 */
-	public void testIsSetUiModel() {
-		// TODO: implement this test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
 	 * Tests the '{@link work.andycarpenter.metamodel.waf.Controller#getRootController() <em>Root Controller</em>}' feature getter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -524,6 +303,32 @@ public abstract class ControllerTest extends TestCase {
 	 * @generated
 	 */
 	public void testHasUnits() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.Controller#isSinglePage() <em>Is Single Page</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.Controller#isSinglePage()
+	 * @generated
+	 */
+	public void testIsSinglePage() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.Controller#isMultiPage() <em>Is Multi Page</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.Controller#isMultiPage()
+	 * @generated
+	 */
+	public void testIsMultiPage() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
@@ -602,6 +407,32 @@ public abstract class ControllerTest extends TestCase {
 	 * @generated
 	 */
 	public void testHasCaptchaUnits() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.Controller#collectionUnits() <em>Collection Units</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.Controller#collectionUnits()
+	 * @generated
+	 */
+	public void testCollectionUnits() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.Controller#hasCollectionUnits() <em>Has Collection Units</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.Controller#hasCollectionUnits()
+	 * @generated
+	 */
+	public void testHasCollectionUnits() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
@@ -855,6 +686,32 @@ public abstract class ControllerTest extends TestCase {
 	}
 
 	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.Controller#hasPagination() <em>Has Pagination</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.Controller#hasPagination()
+	 * @generated
+	 */
+	public void testHasPagination() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.Controller#hasAutocompleteFields() <em>Has Autocomplete Fields</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.Controller#hasAutocompleteFields()
+	 * @generated
+	 */
+	public void testHasAutocompleteFields() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
 	 * Tests the '{@link work.andycarpenter.metamodel.waf.Controller#hasImageFields() <em>Has Image Fields</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -907,6 +764,19 @@ public abstract class ControllerTest extends TestCase {
 	}
 
 	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.Controller#hasFileActions() <em>Has File Actions</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.Controller#hasFileActions()
+	 * @generated
+	 */
+	public void testHasFileActions() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
 	 * Tests the '{@link work.andycarpenter.metamodel.waf.Controller#hasActionsWithDisabledMessage() <em>Has Actions With Disabled Message</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -940,6 +810,58 @@ public abstract class ControllerTest extends TestCase {
 	 * @generated
 	 */
 	public void testHasMessages() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.Controller#pageClass() <em>Page Class</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.Controller#pageClass()
+	 * @generated
+	 */
+	public void testPageClass() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.Controller#hasPageClass() <em>Has Page Class</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.Controller#hasPageClass()
+	 * @generated
+	 */
+	public void testHasPageClass() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.Controller#genModel() <em>Gen Model</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.Controller#genModel()
+	 * @generated
+	 */
+	public void testGenModel() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.Controller#uiModel() <em>Ui Model</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.Controller#uiModel()
+	 * @generated
+	 */
+	public void testUiModel() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

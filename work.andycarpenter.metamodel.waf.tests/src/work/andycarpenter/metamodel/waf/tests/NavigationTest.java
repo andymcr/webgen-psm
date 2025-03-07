@@ -14,10 +14,10 @@ import work.andycarpenter.metamodel.waf.WafFactory;
  * A test case for the model object '<em><b>Navigation</b></em>'.
  * <!-- end-user-doc -->
  * <p>
- * The following features are tested:
+ * The following operations are tested:
  * <ul>
- *   <li>{@link work.andycarpenter.metamodel.waf.Navigation#isHasNavbarClass() <em>Has Navbar Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.Navigation#isHasAuthenticationBarClass() <em>Has Authentication Bar Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.Navigation#hasNavbarClass() <em>Has Navbar Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.Navigation#hasAuthenticationBarClass() <em>Has Authentication Bar Class</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -94,53 +94,27 @@ public class NavigationTest extends TestCase {
 	}
 
 	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.Navigation#isHasNavbarClass() <em>Has Navbar Class</em>}' feature getter.
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.Navigation#hasNavbarClass() <em>Has Navbar Class</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.Navigation#isHasNavbarClass()
+	 * @see work.andycarpenter.metamodel.waf.Navigation#hasNavbarClass()
 	 * @generated
 	 */
-	public void testIsHasNavbarClass() {
-		// TODO: implement this feature getter test method
+	public void testHasNavbarClass() {
+		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}
 
 	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.Navigation#isSetHasNavbarClass() <em>isSetHasNavbarClass()</em>}' method.
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.Navigation#hasAuthenticationBarClass() <em>Has Authentication Bar Class</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.Navigation#isSetHasNavbarClass()
+	 * @see work.andycarpenter.metamodel.waf.Navigation#hasAuthenticationBarClass()
 	 * @generated
 	 */
-	public void testIsSetHasNavbarClass() {
-		// TODO: implement this test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.Navigation#isHasAuthenticationBarClass() <em>Has Authentication Bar Class</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.Navigation#isHasAuthenticationBarClass()
-	 * @generated
-	 */
-	public void testIsHasAuthenticationBarClass() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.Navigation#isSetHasAuthenticationBarClass() <em>isSetHasAuthenticationBarClass()</em>}' method.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.Navigation#isSetHasAuthenticationBarClass()
-	 * @generated
-	 */
-	public void testIsSetHasAuthenticationBarClass() {
-		// TODO: implement this test method
+	public void testHasAuthenticationBarClass() {
+		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}

@@ -16,24 +16,29 @@ import work.andycarpenter.metamodel.waf.WafModel;
  * <p>
  * The following features are tested:
  * <ul>
- *   <li>{@link work.andycarpenter.metamodel.waf.WafModel#isHasAPI() <em>Has API</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.WafModel#getEditUnits() <em>Edit Units</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.WafModel#isHasEditUnits() <em>Has Edit Units</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.WafModel#getFormUnits() <em>Form Units</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.WafModel#isHasFormUnits() <em>Has Form Units</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.WafModel#getImageUnits() <em>Image Units</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.WafModel#isHasImageUnits() <em>Has Image Units</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.WafModel#getImageCardsUnits() <em>Image Cards Units</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.WafModel#isHasImageCardsUnits() <em>Has Image Cards Units</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.WafModel#getAutocompleteFields() <em>Autocomplete Fields</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.WafModel#isHasAutocompleteFields() <em>Has Autocomplete Fields</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.WafModel#getFormFields() <em>Form Fields</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.WafModel#isHasFormFields() <em>Has Form Fields</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.WafModel#isHasFormAssociations() <em>Has Form Associations</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.WafModel#isHasResourceFields() <em>Has Resource Fields</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.WafModel#isIsAuthenticated() <em>Is Authenticated</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.WafModel#getGenModel() <em>Gen Model</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.WafModel#getUiModel() <em>Ui Model</em>}</li>
+ * </ul>
+ * </p>
+ * <p>
+ * The following operations are tested:
+ * <ul>
+ *   <li>{@link work.andycarpenter.metamodel.waf.WafModel#hasAPI() <em>Has API</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.WafModel#hasEditUnits() <em>Has Edit Units</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.WafModel#hasFormUnits() <em>Has Form Units</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.WafModel#hasImageUnits() <em>Has Image Units</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.WafModel#hasImageCardsUnits() <em>Has Image Cards Units</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.WafModel#hasAutocompleteFields() <em>Has Autocomplete Fields</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.WafModel#hasFormFields() <em>Has Form Fields</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.WafModel#hasFormAssociations() <em>Has Form Associations</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.WafModel#hasResourceFields() <em>Has Resource Fields</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.WafModel#genModel() <em>Gen Model</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.WafModel#uiModel() <em>Ui Model</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -110,32 +115,6 @@ public class WafModelTest extends TestCase {
 	}
 
 	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.WafModel#isHasAPI() <em>Has API</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.WafModel#isHasAPI()
-	 * @generated
-	 */
-	public void testIsHasAPI() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.WafModel#isSetHasAPI() <em>isSetHasAPI()</em>}' method.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.WafModel#isSetHasAPI()
-	 * @generated
-	 */
-	public void testIsSetHasAPI() {
-		// TODO: implement this test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
 	 * Tests the '{@link work.andycarpenter.metamodel.waf.WafModel#getEditUnits() <em>Edit Units</em>}' feature getter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -156,32 +135,6 @@ public class WafModelTest extends TestCase {
 	 * @generated
 	 */
 	public void testIsSetEditUnits() {
-		// TODO: implement this test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.WafModel#isHasEditUnits() <em>Has Edit Units</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.WafModel#isHasEditUnits()
-	 * @generated
-	 */
-	public void testIsHasEditUnits() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.WafModel#isSetHasEditUnits() <em>isSetHasEditUnits()</em>}' method.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.WafModel#isSetHasEditUnits()
-	 * @generated
-	 */
-	public void testIsSetHasEditUnits() {
 		// TODO: implement this test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
@@ -214,32 +167,6 @@ public class WafModelTest extends TestCase {
 	}
 
 	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.WafModel#isHasFormUnits() <em>Has Form Units</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.WafModel#isHasFormUnits()
-	 * @generated
-	 */
-	public void testIsHasFormUnits() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.WafModel#isSetHasFormUnits() <em>isSetHasFormUnits()</em>}' method.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.WafModel#isSetHasFormUnits()
-	 * @generated
-	 */
-	public void testIsSetHasFormUnits() {
-		// TODO: implement this test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
 	 * Tests the '{@link work.andycarpenter.metamodel.waf.WafModel#getImageUnits() <em>Image Units</em>}' feature getter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -260,32 +187,6 @@ public class WafModelTest extends TestCase {
 	 * @generated
 	 */
 	public void testIsSetImageUnits() {
-		// TODO: implement this test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.WafModel#isHasImageUnits() <em>Has Image Units</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.WafModel#isHasImageUnits()
-	 * @generated
-	 */
-	public void testIsHasImageUnits() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.WafModel#isSetHasImageUnits() <em>isSetHasImageUnits()</em>}' method.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.WafModel#isSetHasImageUnits()
-	 * @generated
-	 */
-	public void testIsSetHasImageUnits() {
 		// TODO: implement this test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
@@ -318,32 +219,6 @@ public class WafModelTest extends TestCase {
 	}
 
 	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.WafModel#isHasImageCardsUnits() <em>Has Image Cards Units</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.WafModel#isHasImageCardsUnits()
-	 * @generated
-	 */
-	public void testIsHasImageCardsUnits() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.WafModel#isSetHasImageCardsUnits() <em>isSetHasImageCardsUnits()</em>}' method.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.WafModel#isSetHasImageCardsUnits()
-	 * @generated
-	 */
-	public void testIsSetHasImageCardsUnits() {
-		// TODO: implement this test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
 	 * Tests the '{@link work.andycarpenter.metamodel.waf.WafModel#getAutocompleteFields() <em>Autocomplete Fields</em>}' feature getter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -364,32 +239,6 @@ public class WafModelTest extends TestCase {
 	 * @generated
 	 */
 	public void testIsSetAutocompleteFields() {
-		// TODO: implement this test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.WafModel#isHasAutocompleteFields() <em>Has Autocomplete Fields</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.WafModel#isHasAutocompleteFields()
-	 * @generated
-	 */
-	public void testIsHasAutocompleteFields() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.WafModel#isSetHasAutocompleteFields() <em>isSetHasAutocompleteFields()</em>}' method.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.WafModel#isSetHasAutocompleteFields()
-	 * @generated
-	 */
-	public void testIsSetHasAutocompleteFields() {
 		// TODO: implement this test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
@@ -422,84 +271,6 @@ public class WafModelTest extends TestCase {
 	}
 
 	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.WafModel#isHasFormFields() <em>Has Form Fields</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.WafModel#isHasFormFields()
-	 * @generated
-	 */
-	public void testIsHasFormFields() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.WafModel#isSetHasFormFields() <em>isSetHasFormFields()</em>}' method.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.WafModel#isSetHasFormFields()
-	 * @generated
-	 */
-	public void testIsSetHasFormFields() {
-		// TODO: implement this test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.WafModel#isHasFormAssociations() <em>Has Form Associations</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.WafModel#isHasFormAssociations()
-	 * @generated
-	 */
-	public void testIsHasFormAssociations() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.WafModel#isSetHasFormAssociations() <em>isSetHasFormAssociations()</em>}' method.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.WafModel#isSetHasFormAssociations()
-	 * @generated
-	 */
-	public void testIsSetHasFormAssociations() {
-		// TODO: implement this test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.WafModel#isHasResourceFields() <em>Has Resource Fields</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.WafModel#isHasResourceFields()
-	 * @generated
-	 */
-	public void testIsHasResourceFields() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.WafModel#isSetHasResourceFields() <em>isSetHasResourceFields()</em>}' method.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.WafModel#isSetHasResourceFields()
-	 * @generated
-	 */
-	public void testIsSetHasResourceFields() {
-		// TODO: implement this test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
 	 * Tests the '{@link work.andycarpenter.metamodel.waf.WafModel#isIsAuthenticated() <em>Is Authenticated</em>}' feature getter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -526,53 +297,144 @@ public class WafModelTest extends TestCase {
 	}
 
 	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.WafModel#getGenModel() <em>Gen Model</em>}' feature getter.
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.WafModel#hasAPI() <em>Has API</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.WafModel#getGenModel()
+	 * @see work.andycarpenter.metamodel.waf.WafModel#hasAPI()
 	 * @generated
 	 */
-	public void testGetGenModel() {
-		// TODO: implement this feature getter test method
+	public void testHasAPI() {
+		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}
 
 	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.WafModel#isSetGenModel() <em>isSetGenModel()</em>}' method.
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.WafModel#hasEditUnits() <em>Has Edit Units</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.WafModel#isSetGenModel()
+	 * @see work.andycarpenter.metamodel.waf.WafModel#hasEditUnits()
 	 * @generated
 	 */
-	public void testIsSetGenModel() {
-		// TODO: implement this test method
+	public void testHasEditUnits() {
+		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}
 
 	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.WafModel#getUiModel() <em>Ui Model</em>}' feature getter.
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.WafModel#hasFormUnits() <em>Has Form Units</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.WafModel#getUiModel()
+	 * @see work.andycarpenter.metamodel.waf.WafModel#hasFormUnits()
 	 * @generated
 	 */
-	public void testGetUiModel() {
-		// TODO: implement this feature getter test method
+	public void testHasFormUnits() {
+		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}
 
 	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.WafModel#isSetUiModel() <em>isSetUiModel()</em>}' method.
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.WafModel#hasImageUnits() <em>Has Image Units</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.WafModel#isSetUiModel()
+	 * @see work.andycarpenter.metamodel.waf.WafModel#hasImageUnits()
 	 * @generated
 	 */
-	public void testIsSetUiModel() {
-		// TODO: implement this test method
+	public void testHasImageUnits() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.WafModel#hasImageCardsUnits() <em>Has Image Cards Units</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.WafModel#hasImageCardsUnits()
+	 * @generated
+	 */
+	public void testHasImageCardsUnits() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.WafModel#hasAutocompleteFields() <em>Has Autocomplete Fields</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.WafModel#hasAutocompleteFields()
+	 * @generated
+	 */
+	public void testHasAutocompleteFields() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.WafModel#hasFormFields() <em>Has Form Fields</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.WafModel#hasFormFields()
+	 * @generated
+	 */
+	public void testHasFormFields() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.WafModel#hasFormAssociations() <em>Has Form Associations</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.WafModel#hasFormAssociations()
+	 * @generated
+	 */
+	public void testHasFormAssociations() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.WafModel#hasResourceFields() <em>Has Resource Fields</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.WafModel#hasResourceFields()
+	 * @generated
+	 */
+	public void testHasResourceFields() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.WafModel#genModel() <em>Gen Model</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.WafModel#genModel()
+	 * @generated
+	 */
+	public void testGenModel() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.WafModel#uiModel() <em>Ui Model</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.WafModel#uiModel()
+	 * @generated
+	 */
+	public void testUiModel() {
+		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}

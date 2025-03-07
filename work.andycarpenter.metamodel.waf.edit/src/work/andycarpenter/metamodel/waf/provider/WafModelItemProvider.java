@@ -68,26 +68,15 @@ public class WafModelItemProvider
 			addApiPropertyDescriptor(object);
 			addDefaultSaveLabelPropertyDescriptor(object);
 			addDefaultCancelLabelPropertyDescriptor(object);
-			addHasAPIPropertyDescriptor(object);
 			addEditUnitsPropertyDescriptor(object);
-			addHasEditUnitsPropertyDescriptor(object);
 			addFormUnitsPropertyDescriptor(object);
-			addHasFormUnitsPropertyDescriptor(object);
 			addImageUnitsPropertyDescriptor(object);
-			addHasImageUnitsPropertyDescriptor(object);
 			addImageCardsUnitsPropertyDescriptor(object);
-			addHasImageCardsUnitsPropertyDescriptor(object);
 			addAutocompleteFieldsPropertyDescriptor(object);
-			addHasAutocompleteFieldsPropertyDescriptor(object);
 			addFormFieldsPropertyDescriptor(object);
-			addHasFormFieldsPropertyDescriptor(object);
-			addHasFormAssociationsPropertyDescriptor(object);
-			addHasResourceFieldsPropertyDescriptor(object);
 			addIsAuthenticatedPropertyDescriptor(object);
 			addUseFormFloatingLabelsPropertyDescriptor(object);
 			addDefaultPageClassPropertyDescriptor(object);
-			addGenModelPropertyDescriptor(object);
-			addUiModelPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -225,28 +214,6 @@ public class WafModelItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Has API feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addHasAPIPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_WafModel_hasAPI_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafModel_hasAPI_feature", "_UI_WafModel_type"),
-				 WafPackage.eINSTANCE.getWafModel_HasAPI(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_DebugPropertyCategory"),
-				 null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Edit Units feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -264,28 +231,6 @@ public class WafModelItemProvider
 				 false,
 				 false,
 				 null,
-				 getString("_UI_DebugPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Has Edit Units feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addHasEditUnitsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_WafModel_hasEditUnits_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafModel_hasEditUnits_feature", "_UI_WafModel_type"),
-				 WafPackage.eINSTANCE.getWafModel_HasEditUnits(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
@@ -313,28 +258,6 @@ public class WafModelItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Has Form Units feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addHasFormUnitsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_WafModel_hasFormUnits_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafModel_hasFormUnits_feature", "_UI_WafModel_type"),
-				 WafPackage.eINSTANCE.getWafModel_HasFormUnits(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_DebugPropertyCategory"),
-				 null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Image Units feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -352,28 +275,6 @@ public class WafModelItemProvider
 				 false,
 				 false,
 				 null,
-				 getString("_UI_DebugPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Has Image Units feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addHasImageUnitsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_WafModel_hasImageUnits_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafModel_hasImageUnits_feature", "_UI_WafModel_type"),
-				 WafPackage.eINSTANCE.getWafModel_HasImageUnits(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
@@ -401,28 +302,6 @@ public class WafModelItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Has Image Cards Units feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addHasImageCardsUnitsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_WafModel_hasImageCardsUnits_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafModel_hasImageCardsUnits_feature", "_UI_WafModel_type"),
-				 WafPackage.eINSTANCE.getWafModel_HasImageCardsUnits(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_DebugPropertyCategory"),
-				 null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Autocomplete Fields feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -445,28 +324,6 @@ public class WafModelItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Has Autocomplete Fields feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addHasAutocompleteFieldsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_WafModel_hasAutocompleteFields_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafModel_hasAutocompleteFields_feature", "_UI_WafModel_type"),
-				 WafPackage.eINSTANCE.getWafModel_HasAutocompleteFields(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_DebugPropertyCategory"),
-				 null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Form Fields feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -484,72 +341,6 @@ public class WafModelItemProvider
 				 false,
 				 false,
 				 null,
-				 getString("_UI_DebugPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Has Form Fields feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addHasFormFieldsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_WafModel_hasFormFields_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafModel_hasFormFields_feature", "_UI_WafModel_type"),
-				 WafPackage.eINSTANCE.getWafModel_HasFormFields(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_DebugPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Has Form Associations feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addHasFormAssociationsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_WafModel_hasFormAssociations_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafModel_hasFormAssociations_feature", "_UI_WafModel_type"),
-				 WafPackage.eINSTANCE.getWafModel_HasFormAssociations(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_DebugPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Has Resource Fields feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addHasResourceFieldsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_WafModel_hasResourceFields_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafModel_hasResourceFields_feature", "_UI_WafModel_type"),
-				 WafPackage.eINSTANCE.getWafModel_HasResourceFields(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
@@ -617,50 +408,6 @@ public class WafModelItemProvider
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 getString("_UI_StylePropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Gen Model feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addGenModelPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_WafModel_genModel_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafModel_genModel_feature", "_UI_WafModel_type"),
-				 WafPackage.eINSTANCE.getWafModel_GenModel(),
-				 false,
-				 false,
-				 false,
-				 null,
-				 getString("_UI_DebugPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Ui Model feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addUiModelPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_WafModel_uiModel_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafModel_uiModel_feature", "_UI_WafModel_type"),
-				 WafPackage.eINSTANCE.getWafModel_UiModel(),
-				 false,
-				 false,
-				 false,
-				 null,
-				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -747,15 +494,6 @@ public class WafModelItemProvider
 		switch (notification.getFeatureID(WafModel.class)) {
 			case WafPackage.WAF_MODEL__DEFAULT_SAVE_LABEL:
 			case WafPackage.WAF_MODEL__DEFAULT_CANCEL_LABEL:
-			case WafPackage.WAF_MODEL__HAS_API:
-			case WafPackage.WAF_MODEL__HAS_EDIT_UNITS:
-			case WafPackage.WAF_MODEL__HAS_FORM_UNITS:
-			case WafPackage.WAF_MODEL__HAS_IMAGE_UNITS:
-			case WafPackage.WAF_MODEL__HAS_IMAGE_CARDS_UNITS:
-			case WafPackage.WAF_MODEL__HAS_AUTOCOMPLETE_FIELDS:
-			case WafPackage.WAF_MODEL__HAS_FORM_FIELDS:
-			case WafPackage.WAF_MODEL__HAS_FORM_ASSOCIATIONS:
-			case WafPackage.WAF_MODEL__HAS_RESOURCE_FIELDS:
 			case WafPackage.WAF_MODEL__IS_AUTHENTICATED:
 			case WafPackage.WAF_MODEL__USE_FORM_FLOATING_LABELS:
 			case WafPackage.WAF_MODEL__DEFAULT_PAGE_CLASS:

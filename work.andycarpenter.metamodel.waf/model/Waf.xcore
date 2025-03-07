@@ -73,64 +73,63 @@ class WafModel {
 	String defaultSaveLabel
 	String defaultCancelLabel
 
-	@OCL(derivation="not api.oclIsUndefined()")
-    @GenModel(propertyCategory="Debug")
-	derived readonly unsettable transient volatile boolean hasAPI
+	op boolean hasAPI() {
+		api !== null
+	}
 
 	@OCL(derivation="controllers->collect(c | c.editUnits())->asOrderedSet()")
     @GenModel(propertyCategory="Debug")
 	refers derived readonly unsettable transient volatile EditUnit[] editUnits
 
-	@OCL(derivation="editUnits->notEmpty()")
-    @GenModel(propertyCategory="Debug")
-	derived readonly unsettable transient volatile boolean hasEditUnits
+	op boolean hasEditUnits() {
+		!editUnits.isEmpty()
+	}
 
 	@OCL(derivation="controllers->collect(c | c.formUnits())->asOrderedSet()")
     @GenModel(propertyCategory="Debug")
 	refers derived readonly unsettable transient volatile SingletonUnit[] formUnits
 
-	@OCL(derivation="formUnits->notEmpty()")
-    @GenModel(propertyCategory="Debug")
-	derived readonly unsettable transient volatile boolean hasFormUnits
+	op boolean hasFormUnits() {
+		!formUnits.isEmpty()
+	}
 
 	@OCL(derivation="controllers->collect(c | c.imageUnits())->asOrderedSet()")
     @GenModel(propertyCategory="Debug")
 	refers derived readonly unsettable transient volatile ImageUnit[] imageUnits
 
-	@OCL(derivation="imageUnits->notEmpty()")
-    @GenModel(propertyCategory="Debug")
-	derived readonly unsettable transient volatile boolean hasImageUnits
+	op boolean hasImageUnits() {
+		!imageUnits.isEmpty()
+	}
 
 	@OCL(derivation="controllers->collect(c | c.imageCardsUnits())->asOrderedSet()")
     @GenModel(propertyCategory="Debug")
 	refers derived readonly unsettable transient volatile ImageCardsUnit[] imageCardsUnits
 
-	@OCL(derivation="imageCardsUnits->notEmpty()")
-    @GenModel(propertyCategory="Debug")
-	derived readonly unsettable transient volatile boolean hasImageCardsUnits
+	op boolean hasImageCardsUnits() {
+		!imageCardsUnits.isEmpty()
+	}
 
 	@OCL(derivation="controllers->collect(c | c.autocompleteFields)->asOrderedSet()")
     @GenModel(propertyCategory="Debug")
 	refers derived readonly unsettable transient volatile UnitAssociation[] autocompleteFields
-	@OCL(derivation="autocompleteFields->notEmpty()")
-    @GenModel(propertyCategory="Debug")
-	derived readonly unsettable transient volatile boolean hasAutocompleteFields
+	op boolean hasAutocompleteFields() {
+		!autocompleteFields.isEmpty()
+	}
 
 	@OCL(derivation="controllers->collect(c | c.formFields)->asOrderedSet()")
     @GenModel(propertyCategory="Debug")
 	refers derived readonly unsettable transient volatile UnitField[] formFields
+	op boolean hasFormFields() {
+		!formFields.isEmpty()
+	}
 
-	@OCL(derivation="formFields->notEmpty()")
-    @GenModel(propertyCategory="Debug")
-	derived readonly unsettable transient volatile boolean hasFormFields
+	op boolean hasFormAssociations() {
+		formFields.exists[f | f.isAssociationField()]
+	}
 
-	@OCL(derivation="formFields->select(f | f.isAssociationField())->notEmpty()")
-    @GenModel(propertyCategory="Debug")
-	derived readonly unsettable transient volatile boolean hasFormAssociations
-
-	@OCL(derivation="controllers->select(c | c.hasResourceFields())->notEmpty()")
-    @GenModel(propertyCategory="Debug")
-	derived readonly unsettable transient volatile boolean hasResourceFields
+	op boolean hasResourceFields() {
+		controllers.exists[c | c.hasResourceFields()]
+	}
 
 	@OCL(derivation="if self.security.oclIsUndefined() then false else security.isAuthenticated endif")
     @GenModel(propertyCategory="Debug")
@@ -151,13 +150,13 @@ class WafModel {
     contains StaticUnitStyles defaultStaticStyles
     contains TabularUnitStyles defaultTabularStyles
 
-	@OCL(derivation="self")
-     @GenModel(propertyCategory="Debug")
-   	refers readonly transient volatile unsettable derived WafModel genModel
+   	op WafModel genModel() {
+		this
+	}
 
-	@OCL(derivation="self")
-    @GenModel(propertyCategory="Debug")
-	refers readonly transient volatile unsettable derived WafModel uiModel
+	op WafModel uiModel() {
+		this
+	}
 }
 
 class SiteProperties {
@@ -183,15 +182,15 @@ class Navigation {
 	contains Menu[] menus opposite definedBy
 	
 	String navbarClass = "navbar"
-	@OCL(derivation="navbarClass.trim() <> ''")
-    @GenModel(propertyCategory="Debug")
-	derived readonly unsettable transient volatile boolean hasNavbarClass
+	op boolean hasNavbarClass() {
+		navbarClass.trim() !== ''
+	}
 
 	AuthenticationMenuPlacement authenticationMenuPlacement
 	String authenticationBarClass = "nav"
-	@OCL(derivation="authenticationBarClass.trim() <> ''")
-    @GenModel(propertyCategory="Debug")
-	derived readonly unsettable transient volatile boolean hasAuthenticationBarClass
+	op boolean hasAuthenticationBarClass() {
+		authenticationBarClass.trim() !== ''
+	}
 }
 
 enum AuthenticationMenuPlacement {
@@ -352,15 +351,14 @@ abstract class Controller extends NamedDisplayElement {
 		!units.isEmpty()
 	}
 
-	@OCL(derivation="self.oclIsTypeOf(SinglePageController)")
-    @GenModel(propertyCategory="Debug")
-	derived readonly transient volatile boolean isSinglePage
-	
+	op boolean isSinglePage() {
+		false
+	}
 
-	@OCL(derivation="self.oclIsTypeOf(MultiPageController)")
-    @GenModel(propertyCategory="Debug")
-	derived readonly transient volatile boolean isMultiPage
-	
+	op boolean isMultiPage() {
+		false
+	}
+
 	op AuthorisationExpression commonAuthorisation() {
 		if (!hasUnits()) {
 			null
@@ -399,12 +397,12 @@ abstract class Controller extends NamedDisplayElement {
 		!editUnits().filter[it.hasCaptcha].isEmpty()
 	}
 
-	@OCL(derivation="units->select(u | u.oclIsKindOf(CollectionUnit)).oclAsType(CollectionUnit)->asOrderedSet()")
-    @GenModel(propertyCategory="Debug")
-	refers readonly transient volatile unsettable derived CollectionUnit[] collectionUnits
-	@OCL(derivation="collectionUnits->notEmpty()")
-    @GenModel(propertyCategory="Debug")
-	derived readonly transient volatile boolean hasCollectionUnits
+	op CollectionUnit[] collectionUnits() {
+		units.filter[it instanceof CollectionUnit].map[it as CollectionUnit].asEList()
+	}
+	op boolean hasCollectionUnits() {
+		!collectionUnits().isEmpty()
+	}
 
 	op DynamicUnit[] dynamicUnits() {
 		units.filter[it instanceof DynamicUnit].map[it as DynamicUnit].toEList()
@@ -428,7 +426,7 @@ abstract class Controller extends NamedDisplayElement {
 	}
 
 	op boolean hasFilters() {
-		!collectionUnits.filter[it.hasFilters].isEmpty()
+		!collectionUnits().filter[it.hasFilters].isEmpty()
 	}
 
 	op GalleryUnit[] galleryUnits() {
@@ -477,9 +475,9 @@ abstract class Controller extends NamedDisplayElement {
     @GenModel(propertyCategory="Debug")
 	refers derived readonly unsettable transient volatile Service[] servicesUsed
 
-	@OCL(derivation="collectionUnits->select(u | u.hasPagination)->notEmpty()")
-    @GenModel(propertyCategory="Debug")
-	derived readonly unsettable transient volatile boolean hasPagination
+	op boolean hasPagination() {
+		collectionUnits().exists[u | u.hasPagination]
+	}
 
 	@OCL(derivation="dynamicUnits()->collect(u | u.associationFields)->asOrderedSet()")
     @GenModel(propertyCategory="Debug")
@@ -488,9 +486,9 @@ abstract class Controller extends NamedDisplayElement {
 	@OCL(derivation="dynamicUnits()->collect(u | u.autocompleteFields)->asOrderedSet()")
     @GenModel(propertyCategory="Debug")
 	refers derived readonly unsettable transient volatile UnitAssociation[] autocompleteFields
-	@OCL(derivation="autocompleteFields->notEmpty()")
-    @GenModel(propertyCategory="Debug")
-	derived readonly unsettable transient volatile boolean hasAutocompleteFields
+	op boolean hasAutocompleteFields() {
+		!autocompleteFields.isEmpty()
+	}
 
 	@OCL(derivation="dynamicUnits()->collect(u | u.formFields)->asOrderedSet()")
     @GenModel(propertyCategory="Debug")
@@ -519,9 +517,9 @@ abstract class Controller extends NamedDisplayElement {
 	@OCL(derivation="dynamicUnits()->collect(u | u.fileActions())->asOrderedSet()")
     @GenModel(propertyCategory="Debug")
 	refers derived readonly unsettable transient volatile OperationAction[] fileActions
-	@OCL(derivation="fileActions->notEmpty()")
-    @GenModel(propertyCategory="Debug")
-	derived readonly transient unsettable volatile boolean hasFileActions
+	op boolean hasFileActions() {
+		!fileActions.isEmpty()
+	}
 
 	op boolean hasActionsWithDisabledMessage() {
 		!dynamicUnits().filter[it.hasActionsWithDisabledMessage()].isEmpty()
@@ -540,27 +538,27 @@ abstract class Controller extends NamedDisplayElement {
 	String uriElement = ''
 
     @GenModel(propertyCategory="Style")
-	String[1] pageClassOverride = ''
-	@OCL(derivation="if pageClassOverride.trim() <> '' then
-			pageClassOverride.trim()
-		else if uiModel.defaultPageClass.trim() <> '' then
+	String[1] localPageClass = ''
+	op String pageClass() {
+		if (localPageClass.trim() !== '') {
+			localPageClass.trim()
+		} else if (uiModel.defaultPageClass.trim() !== '') {
 			uiModel.defaultPageClass.trim()
-		else
+		} else {
 			''
-		endif endif")
-    @GenModel(propertyCategory="Debug")
-	derived readonly transient volatile String pageClass
-	@OCL(derivation="pageClass <> ''")
-    @GenModel(propertyCategory="Debug")
-	derived readonly transient volatile boolean hasPageClass
+		}
+	}
+	op boolean hasPageClass() {
+		pageClass() !== ''
+	}
 
-	@OCL(derivation="partOf.genModel")
-    @GenModel(propertyCategory="Debug")
-	refers readonly transient volatile unsettable derived WafModel genModel
+   	op WafModel genModel() {
+		partOf.genModel()
+	}
 
-	@OCL(derivation="partOf.uiModel")
-    @GenModel(propertyCategory="Debug")
-	refers readonly transient volatile unsettable derived WafModel uiModel
+   	op WafModel uiModel() {
+		partOf.uiModel()
+	}
 
 	@OCL(derivation="if parentController = null then
 			self
@@ -572,9 +570,15 @@ abstract class Controller extends NamedDisplayElement {
 }
 
 class SinglePageController extends Controller {
+	op boolean isSinglePage() {
+		true
+	}
 }
 
 class MultiPageController extends Controller {
+	op boolean isMultiPage() {
+		true
+	}
 }
 
 abstract class ContentUnit extends NamedDisplayElement {
@@ -643,10 +647,10 @@ abstract class ContentUnit extends NamedDisplayElement {
 		contentClass() !== ''
 	}
 
-	@OCL(derivation="controller.genModel")
+	@OCL(derivation="controller.genModel()")
     @GenModel(propertyCategory="Debug")
 	refers readonly transient volatile unsettable derived WafModel genModel
-	@OCL(derivation="controller.uiModel")
+	@OCL(derivation="controller.uiModel()")
     @GenModel(propertyCategory="Debug")
 	refers readonly transient volatile unsettable derived WafModel uiModel
 }

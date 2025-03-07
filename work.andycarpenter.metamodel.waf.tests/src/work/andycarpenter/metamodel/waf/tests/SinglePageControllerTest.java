@@ -11,6 +11,12 @@ import work.andycarpenter.metamodel.waf.WafFactory;
  * <!-- begin-user-doc -->
  * A test case for the model object '<em><b>Single Page Controller</b></em>'.
  * <!-- end-user-doc -->
+ * <p>
+ * The following operations are tested:
+ * <ul>
+ *   <li>{@link work.andycarpenter.metamodel.waf.SinglePageController#isSinglePage() <em>Is Single Page</em>}</li>
+ * </ul>
+ * </p>
  * @generated
  */
 public class SinglePageControllerTest extends ControllerTest {
@@ -65,6 +71,19 @@ public class SinglePageControllerTest extends ControllerTest {
 	@Override
 	protected void tearDown() throws Exception {
 		setFixture(null);
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.SinglePageController#isSinglePage() <em>Is Single Page</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.SinglePageController#isSinglePage()
+	 * @generated
+	 */
+	public void testIsSinglePage() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
 	}
 
 } //SinglePageControllerTest
