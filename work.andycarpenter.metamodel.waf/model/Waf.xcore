@@ -1846,32 +1846,32 @@ abstract class CollectionUnit extends DynamicUnit, SelectableUnit, ValueContext 
 abstract class CollectionFilter {
 }
 
-abstract class ArrayFilter extends CollectionFilter {
+class ArrayFilter extends CollectionFilter {
 }
 
-abstract class BooleanFilter extends CollectionFilter {
+class BooleanFilter extends CollectionFilter {
 	refers Feature feature
 }
 
-abstract class ChoiceFilter extends CollectionFilter {
+class ChoiceFilter extends CollectionFilter {
 }
 
-abstract class ComparisonFilter extends CollectionFilter {
+class ComparisonFilter extends CollectionFilter {
 }
 
-abstract class DateTimeFilter extends CollectionFilter {
+class DateTimeFilter extends CollectionFilter {
 }
 
-abstract class EntityFilter extends CollectionFilter {
+class EntityFilter extends CollectionFilter {
 }
 
-abstract class NullFilter extends CollectionFilter {
+class NullFilter extends CollectionFilter {
 }
 
-abstract class NumericFilter extends CollectionFilter {
+class NumericFilter extends CollectionFilter {
 }
 
-abstract class TextFilter extends CollectionFilter {
+class TextFilter extends CollectionFilter {
 }
 
 abstract class EditUnit extends SingletonUnit {

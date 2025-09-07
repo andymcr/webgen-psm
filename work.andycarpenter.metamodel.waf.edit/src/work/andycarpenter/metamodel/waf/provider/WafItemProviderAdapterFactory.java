@@ -805,6 +805,213 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.waf.ArrayFilter} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ArrayFilterItemProvider arrayFilterItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link work.andycarpenter.metamodel.waf.ArrayFilter}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createArrayFilterAdapter() {
+		if (arrayFilterItemProvider == null) {
+			arrayFilterItemProvider = new ArrayFilterItemProvider(this);
+		}
+
+		return arrayFilterItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.waf.BooleanFilter} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected BooleanFilterItemProvider booleanFilterItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link work.andycarpenter.metamodel.waf.BooleanFilter}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createBooleanFilterAdapter() {
+		if (booleanFilterItemProvider == null) {
+			booleanFilterItemProvider = new BooleanFilterItemProvider(this);
+		}
+
+		return booleanFilterItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.waf.ChoiceFilter} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ChoiceFilterItemProvider choiceFilterItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link work.andycarpenter.metamodel.waf.ChoiceFilter}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createChoiceFilterAdapter() {
+		if (choiceFilterItemProvider == null) {
+			choiceFilterItemProvider = new ChoiceFilterItemProvider(this);
+		}
+
+		return choiceFilterItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.waf.ComparisonFilter} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ComparisonFilterItemProvider comparisonFilterItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link work.andycarpenter.metamodel.waf.ComparisonFilter}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createComparisonFilterAdapter() {
+		if (comparisonFilterItemProvider == null) {
+			comparisonFilterItemProvider = new ComparisonFilterItemProvider(this);
+		}
+
+		return comparisonFilterItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.waf.DateTimeFilter} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected DateTimeFilterItemProvider dateTimeFilterItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link work.andycarpenter.metamodel.waf.DateTimeFilter}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createDateTimeFilterAdapter() {
+		if (dateTimeFilterItemProvider == null) {
+			dateTimeFilterItemProvider = new DateTimeFilterItemProvider(this);
+		}
+
+		return dateTimeFilterItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.waf.EntityFilter} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected EntityFilterItemProvider entityFilterItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link work.andycarpenter.metamodel.waf.EntityFilter}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createEntityFilterAdapter() {
+		if (entityFilterItemProvider == null) {
+			entityFilterItemProvider = new EntityFilterItemProvider(this);
+		}
+
+		return entityFilterItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.waf.NullFilter} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected NullFilterItemProvider nullFilterItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link work.andycarpenter.metamodel.waf.NullFilter}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createNullFilterAdapter() {
+		if (nullFilterItemProvider == null) {
+			nullFilterItemProvider = new NullFilterItemProvider(this);
+		}
+
+		return nullFilterItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.waf.NumericFilter} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected NumericFilterItemProvider numericFilterItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link work.andycarpenter.metamodel.waf.NumericFilter}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createNumericFilterAdapter() {
+		if (numericFilterItemProvider == null) {
+			numericFilterItemProvider = new NumericFilterItemProvider(this);
+		}
+
+		return numericFilterItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.waf.TextFilter} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected TextFilterItemProvider textFilterItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link work.andycarpenter.metamodel.waf.TextFilter}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createTextFilterAdapter() {
+		if (textFilterItemProvider == null) {
+			textFilterItemProvider = new TextFilterItemProvider(this);
+		}
+
+		return textFilterItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.waf.CreateUnit} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1516,6 +1723,15 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 		if (dataTypeFieldItemProvider != null) dataTypeFieldItemProvider.dispose();
 		if (dateFieldItemProvider != null) dateFieldItemProvider.dispose();
 		if (singletonUnitItemProvider != null) singletonUnitItemProvider.dispose();
+		if (arrayFilterItemProvider != null) arrayFilterItemProvider.dispose();
+		if (booleanFilterItemProvider != null) booleanFilterItemProvider.dispose();
+		if (choiceFilterItemProvider != null) choiceFilterItemProvider.dispose();
+		if (comparisonFilterItemProvider != null) comparisonFilterItemProvider.dispose();
+		if (dateTimeFilterItemProvider != null) dateTimeFilterItemProvider.dispose();
+		if (entityFilterItemProvider != null) entityFilterItemProvider.dispose();
+		if (nullFilterItemProvider != null) nullFilterItemProvider.dispose();
+		if (numericFilterItemProvider != null) numericFilterItemProvider.dispose();
+		if (textFilterItemProvider != null) textFilterItemProvider.dispose();
 		if (createUnitItemProvider != null) createUnitItemProvider.dispose();
 		if (updateUnitItemProvider != null) updateUnitItemProvider.dispose();
 		if (createUpdateUnitItemProvider != null) createUpdateUnitItemProvider.dispose();

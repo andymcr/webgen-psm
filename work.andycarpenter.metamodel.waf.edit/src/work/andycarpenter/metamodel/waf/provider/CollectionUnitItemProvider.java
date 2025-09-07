@@ -551,6 +551,51 @@ public class CollectionUnitItemProvider extends DynamicUnitItemProvider {
 			(createChildParameter
 				(WafPackage.eINSTANCE.getCollectionUnit_ElementTitle(),
 				 WafFactory.eINSTANCE.createLabelDisplayValue()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.eINSTANCE.getCollectionUnit_Filters(),
+				 WafFactory.eINSTANCE.createArrayFilter()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.eINSTANCE.getCollectionUnit_Filters(),
+				 WafFactory.eINSTANCE.createBooleanFilter()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.eINSTANCE.getCollectionUnit_Filters(),
+				 WafFactory.eINSTANCE.createChoiceFilter()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.eINSTANCE.getCollectionUnit_Filters(),
+				 WafFactory.eINSTANCE.createComparisonFilter()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.eINSTANCE.getCollectionUnit_Filters(),
+				 WafFactory.eINSTANCE.createDateTimeFilter()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.eINSTANCE.getCollectionUnit_Filters(),
+				 WafFactory.eINSTANCE.createEntityFilter()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.eINSTANCE.getCollectionUnit_Filters(),
+				 WafFactory.eINSTANCE.createNullFilter()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.eINSTANCE.getCollectionUnit_Filters(),
+				 WafFactory.eINSTANCE.createNumericFilter()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.eINSTANCE.getCollectionUnit_Filters(),
+				 WafFactory.eINSTANCE.createTextFilter()));
 	}
 
 }

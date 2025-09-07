@@ -2,7 +2,9 @@
  */
 package work.andycarpenter.metamodel.waf.tests;
 
+import junit.textui.TestRunner;
 import work.andycarpenter.metamodel.waf.NumericFilter;
+import work.andycarpenter.metamodel.waf.WafFactory;
 
 /**
  * <!-- begin-user-doc -->
@@ -10,7 +12,16 @@ import work.andycarpenter.metamodel.waf.NumericFilter;
  * <!-- end-user-doc -->
  * @generated
  */
-public abstract class NumericFilterTest extends CollectionFilterTest {
+public class NumericFilterTest extends CollectionFilterTest {
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static void main(String[] args) {
+		TestRunner.run(NumericFilterTest.class);
+	}
 
 	/**
 	 * Constructs a new Numeric Filter test case with the given name.
@@ -31,6 +42,28 @@ public abstract class NumericFilterTest extends CollectionFilterTest {
 	@Override
 	protected NumericFilter getFixture() {
 		return (NumericFilter)fixture;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see junit.framework.TestCase#setUp()
+	 * @generated
+	 */
+	@Override
+	protected void setUp() throws Exception {
+		setFixture(WafFactory.eINSTANCE.createNumericFilter());
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see junit.framework.TestCase#tearDown()
+	 * @generated
+	 */
+	@Override
+	protected void tearDown() throws Exception {
+		setFixture(null);
 	}
 
 } //NumericFilterTest
