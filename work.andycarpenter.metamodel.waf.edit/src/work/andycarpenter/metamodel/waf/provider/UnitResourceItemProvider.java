@@ -183,7 +183,7 @@ public class UnitResourceItemProvider extends UnitFeatureItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((UnitResource)object).getName();
+		String label = ((UnitResource)object).getDisplayLabel();
 		return label == null || label.length() == 0 ?
 			getString("_UI_UnitResource_type") :
 			getString("_UI_UnitResource_type") + " " + label;

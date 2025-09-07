@@ -48,8 +48,6 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 
 			addContainerActionsPlacementPropertyDescriptor(object);
 			addInstanceActionsPlacementPropertyDescriptor(object);
-			addGenModelRefPropertyDescriptor(object);
-			addUiModelRefPropertyDescriptor(object);
 			addContentTypePropertyDescriptor(object);
 			addContainingAssociationPropertyDescriptor(object);
 			addHasExplicitlyEditedContainerPropertyDescriptor(object);
@@ -104,17 +102,7 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 			addLocalFieldLabelClassPropertyDescriptor(object);
 			addLocalFieldValueClassPropertyDescriptor(object);
 			addLocalControlClassPropertyDescriptor(object);
-			addLocalAnchorClassPropertyDescriptor(object);
-			addCommonFieldListClassPropertyDescriptor(object);
-			addHasCommonFieldListClassPropertyDescriptor(object);
-			addCommonDefinitionFieldListClassPropertyDescriptor(object);
-			addHasCommonDefinitionFieldListClassPropertyDescriptor(object);
-			addCommonFieldLabelClassPropertyDescriptor(object);
-			addHasCommonFieldLabelClassPropertyDescriptor(object);
-			addCommonFieldValueClassPropertyDescriptor(object);
-			addHasCommonFieldValueClassPropertyDescriptor(object);
-			addCommonAnchorClassPropertyDescriptor(object);
-			addHasCommonAnchorClassPropertyDescriptor(object);
+			addLocalActionClassPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -160,50 +148,6 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 getString("_UI_InterfacePropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Gen Model Ref feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addGenModelRefPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ActionContainer_genModelRef_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ActionContainer_genModelRef_feature", "_UI_ActionContainer_type"),
-				 WafPackage.eINSTANCE.getActionContainer_GenModelRef(),
-				 false,
-				 false,
-				 false,
-				 null,
-				 getString("_UI_DebugPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Ui Model Ref feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addUiModelRefPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ActionContainer_uiModelRef_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ActionContainer_uiModelRef_feature", "_UI_ActionContainer_type"),
-				 WafPackage.eINSTANCE.getActionContainer_UiModelRef(),
-				 false,
-				 false,
-				 false,
-				 null,
-				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -1303,7 +1247,7 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_StylePropertyCategory"),
 				 null));
 	}
 
@@ -1325,7 +1269,7 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_StylePropertyCategory"),
 				 null));
 	}
 
@@ -1347,7 +1291,7 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_StylePropertyCategory"),
 				 null));
 	}
 
@@ -1369,7 +1313,7 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_StylePropertyCategory"),
 				 null));
 	}
 
@@ -1391,249 +1335,29 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_StylePropertyCategory"),
 				 null));
 	}
 
 	/**
-	 * This adds a property descriptor for the Local Anchor Class feature.
+	 * This adds a property descriptor for the Local Action Class feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addLocalAnchorClassPropertyDescriptor(Object object) {
+	protected void addLocalActionClassPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_DynamicUnit_localAnchorClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DynamicUnit_localAnchorClass_feature", "_UI_DynamicUnit_type"),
-				 WafPackage.eINSTANCE.getDynamicUnit_LocalAnchorClass(),
+				 getString("_UI_DynamicUnit_localActionClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DynamicUnit_localActionClass_feature", "_UI_DynamicUnit_type"),
+				 WafPackage.eINSTANCE.getDynamicUnit_LocalActionClass(),
 				 true,
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Common Field List Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addCommonFieldListClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_DynamicUnit_commonFieldListClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DynamicUnit_commonFieldListClass_feature", "_UI_DynamicUnit_type"),
-				 WafPackage.eINSTANCE.getDynamicUnit_CommonFieldListClass(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 getString("_UI_DebugPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Has Common Field List Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addHasCommonFieldListClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_DynamicUnit_hasCommonFieldListClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DynamicUnit_hasCommonFieldListClass_feature", "_UI_DynamicUnit_type"),
-				 WafPackage.eINSTANCE.getDynamicUnit_HasCommonFieldListClass(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_DebugPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Common Definition Field List Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addCommonDefinitionFieldListClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_DynamicUnit_commonDefinitionFieldListClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DynamicUnit_commonDefinitionFieldListClass_feature", "_UI_DynamicUnit_type"),
-				 WafPackage.eINSTANCE.getDynamicUnit_CommonDefinitionFieldListClass(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 getString("_UI_DebugPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Has Common Definition Field List Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addHasCommonDefinitionFieldListClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_DynamicUnit_hasCommonDefinitionFieldListClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DynamicUnit_hasCommonDefinitionFieldListClass_feature", "_UI_DynamicUnit_type"),
-				 WafPackage.eINSTANCE.getDynamicUnit_HasCommonDefinitionFieldListClass(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_DebugPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Common Field Label Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addCommonFieldLabelClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_DynamicUnit_commonFieldLabelClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DynamicUnit_commonFieldLabelClass_feature", "_UI_DynamicUnit_type"),
-				 WafPackage.eINSTANCE.getDynamicUnit_CommonFieldLabelClass(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 getString("_UI_DebugPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Has Common Field Label Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addHasCommonFieldLabelClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_DynamicUnit_hasCommonFieldLabelClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DynamicUnit_hasCommonFieldLabelClass_feature", "_UI_DynamicUnit_type"),
-				 WafPackage.eINSTANCE.getDynamicUnit_HasCommonFieldLabelClass(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_DebugPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Common Field Value Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addCommonFieldValueClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_DynamicUnit_commonFieldValueClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DynamicUnit_commonFieldValueClass_feature", "_UI_DynamicUnit_type"),
-				 WafPackage.eINSTANCE.getDynamicUnit_CommonFieldValueClass(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 getString("_UI_DebugPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Has Common Field Value Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addHasCommonFieldValueClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_DynamicUnit_hasCommonFieldValueClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DynamicUnit_hasCommonFieldValueClass_feature", "_UI_DynamicUnit_type"),
-				 WafPackage.eINSTANCE.getDynamicUnit_HasCommonFieldValueClass(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_DebugPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Common Anchor Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addCommonAnchorClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_DynamicUnit_commonAnchorClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DynamicUnit_commonAnchorClass_feature", "_UI_DynamicUnit_type"),
-				 WafPackage.eINSTANCE.getDynamicUnit_CommonAnchorClass(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 getString("_UI_DebugPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Has Common Anchor Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addHasCommonAnchorClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_DynamicUnit_hasCommonAnchorClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DynamicUnit_hasCommonAnchorClass_feature", "_UI_DynamicUnit_type"),
-				 WafPackage.eINSTANCE.getDynamicUnit_HasCommonAnchorClass(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_DebugPropertyCategory"),
+				 getString("_UI_StylePropertyCategory"),
 				 null));
 	}
 
@@ -1734,17 +1458,7 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 			case WafPackage.DYNAMIC_UNIT__LOCAL_FIELD_LABEL_CLASS:
 			case WafPackage.DYNAMIC_UNIT__LOCAL_FIELD_VALUE_CLASS:
 			case WafPackage.DYNAMIC_UNIT__LOCAL_CONTROL_CLASS:
-			case WafPackage.DYNAMIC_UNIT__LOCAL_ANCHOR_CLASS:
-			case WafPackage.DYNAMIC_UNIT__COMMON_FIELD_LIST_CLASS:
-			case WafPackage.DYNAMIC_UNIT__HAS_COMMON_FIELD_LIST_CLASS:
-			case WafPackage.DYNAMIC_UNIT__COMMON_DEFINITION_FIELD_LIST_CLASS:
-			case WafPackage.DYNAMIC_UNIT__HAS_COMMON_DEFINITION_FIELD_LIST_CLASS:
-			case WafPackage.DYNAMIC_UNIT__COMMON_FIELD_LABEL_CLASS:
-			case WafPackage.DYNAMIC_UNIT__HAS_COMMON_FIELD_LABEL_CLASS:
-			case WafPackage.DYNAMIC_UNIT__COMMON_FIELD_VALUE_CLASS:
-			case WafPackage.DYNAMIC_UNIT__HAS_COMMON_FIELD_VALUE_CLASS:
-			case WafPackage.DYNAMIC_UNIT__COMMON_ANCHOR_CLASS:
-			case WafPackage.DYNAMIC_UNIT__HAS_COMMON_ANCHOR_CLASS:
+			case WafPackage.DYNAMIC_UNIT__LOCAL_ACTION_CLASS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case WafPackage.DYNAMIC_UNIT__ALL_ACTIONS:

@@ -50,7 +50,7 @@ public class DynamicUnitStylesItemProvider extends ContentUnitStylesItemProvider
 			addFieldLabelClassPropertyDescriptor(object);
 			addFieldValueClassPropertyDescriptor(object);
 			addControlClassPropertyDescriptor(object);
-			addAnchorClassPropertyDescriptor(object);
+			addActionClassPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -166,19 +166,19 @@ public class DynamicUnitStylesItemProvider extends ContentUnitStylesItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Anchor Class feature.
+	 * This adds a property descriptor for the Action Class feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addAnchorClassPropertyDescriptor(Object object) {
+	protected void addActionClassPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_DynamicUnitStyles_anchorClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DynamicUnitStyles_anchorClass_feature", "_UI_DynamicUnitStyles_type"),
-				 WafPackage.eINSTANCE.getDynamicUnitStyles_AnchorClass(),
+				 getString("_UI_DynamicUnitStyles_actionClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DynamicUnitStyles_actionClass_feature", "_UI_DynamicUnitStyles_type"),
+				 WafPackage.eINSTANCE.getDynamicUnitStyles_ActionClass(),
 				 true,
 				 false,
 				 false,
@@ -219,7 +219,7 @@ public class DynamicUnitStylesItemProvider extends ContentUnitStylesItemProvider
 			case WafPackage.DYNAMIC_UNIT_STYLES__FIELD_LABEL_CLASS:
 			case WafPackage.DYNAMIC_UNIT_STYLES__FIELD_VALUE_CLASS:
 			case WafPackage.DYNAMIC_UNIT_STYLES__CONTROL_CLASS:
-			case WafPackage.DYNAMIC_UNIT_STYLES__ANCHOR_CLASS:
+			case WafPackage.DYNAMIC_UNIT_STYLES__ACTION_CLASS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

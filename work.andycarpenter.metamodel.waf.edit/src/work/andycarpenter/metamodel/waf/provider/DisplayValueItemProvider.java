@@ -102,14 +102,12 @@ public class DisplayValueItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((DisplayValue)object).getName();
-		return label == null || label.length() == 0 ?
-			getString("_UI_DisplayValue_type") :
-			getString("_UI_DisplayValue_type") + " " + label;
+		DisplayValue displayValue = (DisplayValue)object;
+		return getString("_UI_DisplayValue_type") + " " + displayValue.name();
 	}
 
 

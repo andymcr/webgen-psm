@@ -84,14 +84,12 @@ public class ResourcePathElementItemProvider extends PathItemProvider {
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ResourcePathElement)object).getName();
-		return label == null || label.length() == 0 ?
-			getString("_UI_ResourcePathElement_type") :
-			getString("_UI_ResourcePathElement_type") + " " + label;
+		ResourcePathElement element = (ResourcePathElement) object;
+		return getString("_UI_ResourcePathElement_type") + " " + element.name();
 	}
 
 

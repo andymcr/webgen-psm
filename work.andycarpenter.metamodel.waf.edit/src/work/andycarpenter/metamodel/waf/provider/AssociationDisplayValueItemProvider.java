@@ -112,14 +112,12 @@ public class AssociationDisplayValueItemProvider extends AssociationPathElementI
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((AssociationDisplayValue)object).getName();
-		return label == null || label.length() == 0 ?
-			getString("_UI_AssociationDisplayValue_type") :
-			getString("_UI_AssociationDisplayValue_type") + " " + label;
+		AssociationDisplayValue associationDisplayValue = (AssociationDisplayValue)object;
+		return getString("_UI_AssociationDisplayValue_type") + " " + associationDisplayValue.name();
 	}
 
 

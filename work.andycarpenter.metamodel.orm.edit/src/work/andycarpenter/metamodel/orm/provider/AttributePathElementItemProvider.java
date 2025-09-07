@@ -82,14 +82,12 @@ public class AttributePathElementItemProvider extends PathItemProvider {
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((AttributePathElement)object).getName();
-		return label == null || label.length() == 0 ?
-			getString("_UI_AttributePathElement_type") :
-			getString("_UI_AttributePathElement_type") + " " + label;
+		AttributePathElement element = (AttributePathElement) object;
+		return getString("_UI_AttributePathElement_type") + " " + element.name();
 	}
 
 

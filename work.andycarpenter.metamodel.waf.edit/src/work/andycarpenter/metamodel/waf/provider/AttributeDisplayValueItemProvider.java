@@ -112,14 +112,12 @@ public class AttributeDisplayValueItemProvider extends AttributePathElementItemP
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((AttributeDisplayValue)object).getName();
-		return label == null || label.length() == 0 ?
-			getString("_UI_AttributeDisplayValue_type") :
-			getString("_UI_AttributeDisplayValue_type") + " " + label;
+		AttributeDisplayValue attributeDisplayValue = (AttributeDisplayValue)object;
+		return getString("_UI_AttributeDisplayValue_type") + " " + attributeDisplayValue.name();
 	}
 
 

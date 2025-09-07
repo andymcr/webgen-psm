@@ -11,13 +11,6 @@ import work.andycarpenter.metamodel.waf.Action;
  * A test case for the model object '<em><b>Action</b></em>'.
  * <!-- end-user-doc -->
  * <p>
- * The following features are tested:
- * <ul>
- *   <li>{@link work.andycarpenter.metamodel.waf.Action#getAnchorClass() <em>Anchor Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.Action#isHasAnchorClass() <em>Has Anchor Class</em>}</li>
- * </ul>
- * </p>
- * <p>
  * The following operations are tested:
  * <ul>
  *   <li>{@link work.andycarpenter.metamodel.waf.Action#parentUnit() <em>Parent Unit</em>}</li>
@@ -35,6 +28,8 @@ import work.andycarpenter.metamodel.waf.Action;
  *   <li>{@link work.andycarpenter.metamodel.waf.Action#hasFailureMessage() <em>Has Failure Message</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.Action#hasDisabledMessage() <em>Has Disabled Message</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.Action#hasMessages() <em>Has Messages</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.Action#actionClass() <em>Action Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.Action#hasActionClass() <em>Has Action Class</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -77,32 +72,6 @@ public abstract class ActionTest extends TestCase {
 	 */
 	protected Action getFixture() {
 		return fixture;
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.Action#getAnchorClass() <em>Anchor Class</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.Action#getAnchorClass()
-	 * @generated
-	 */
-	public void testGetAnchorClass() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.Action#isHasAnchorClass() <em>Has Anchor Class</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.Action#isHasAnchorClass()
-	 * @generated
-	 */
-	public void testIsHasAnchorClass() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
 	}
 
 	/**
@@ -295,6 +264,32 @@ public abstract class ActionTest extends TestCase {
 	 * @generated
 	 */
 	public void testHasMessages() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.Action#actionClass() <em>Action Class</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.Action#actionClass()
+	 * @generated
+	 */
+	public void testActionClass() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.Action#hasActionClass() <em>Has Action Class</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.Action#hasActionClass()
+	 * @generated
+	 */
+	public void testHasActionClass() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

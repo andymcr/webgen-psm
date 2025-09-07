@@ -14,10 +14,6 @@ import work.andycarpenter.metamodel.waf.CollectionUnit;
  *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#isHasFilters() <em>Has Filters</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#isHasGroupedResults() <em>Has Grouped Results</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#isHasPagination() <em>Has Pagination</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#getCommonInstanceControlClass() <em>Common Instance Control Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#isHasCommonInstanceControlClass() <em>Has Common Instance Control Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#getCommonInstanceActionClass() <em>Common Instance Action Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#isHasCommonInstanceActionClass() <em>Has Common Instance Action Class</em>}</li>
  * </ul>
  * </p>
  * <p>
@@ -25,6 +21,10 @@ import work.andycarpenter.metamodel.waf.CollectionUnit;
  * <ul>
  *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#containingType() <em>Containing Type</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#referencableTypes() <em>Referencable Types</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#instanceControlClass() <em>Instance Control Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#hasInstanceControlClass() <em>Has Instance Control Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#instanceActionClass() <em>Instance Action Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#hasInstanceActionClass() <em>Has Instance Action Class</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -92,84 +92,6 @@ public abstract class CollectionUnitTest extends DynamicUnitTest {
 	}
 
 	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.CollectionUnit#getCommonInstanceControlClass() <em>Common Instance Control Class</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.CollectionUnit#getCommonInstanceControlClass()
-	 * @generated
-	 */
-	public void testGetCommonInstanceControlClass() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.CollectionUnit#isSetCommonInstanceControlClass() <em>isSetCommonInstanceControlClass()</em>}' method.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.CollectionUnit#isSetCommonInstanceControlClass()
-	 * @generated
-	 */
-	public void testIsSetCommonInstanceControlClass() {
-		// TODO: implement this test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.CollectionUnit#isHasCommonInstanceControlClass() <em>Has Common Instance Control Class</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.CollectionUnit#isHasCommonInstanceControlClass()
-	 * @generated
-	 */
-	public void testIsHasCommonInstanceControlClass() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.CollectionUnit#getCommonInstanceActionClass() <em>Common Instance Action Class</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.CollectionUnit#getCommonInstanceActionClass()
-	 * @generated
-	 */
-	public void testGetCommonInstanceActionClass() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.CollectionUnit#isSetCommonInstanceActionClass() <em>isSetCommonInstanceActionClass()</em>}' method.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.CollectionUnit#isSetCommonInstanceActionClass()
-	 * @generated
-	 */
-	public void testIsSetCommonInstanceActionClass() {
-		// TODO: implement this test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.CollectionUnit#isHasCommonInstanceActionClass() <em>Has Common Instance Action Class</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.CollectionUnit#isHasCommonInstanceActionClass()
-	 * @generated
-	 */
-	public void testIsHasCommonInstanceActionClass() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
 	 * Tests the '{@link work.andycarpenter.metamodel.waf.CollectionUnit#containingType() <em>Containing Type</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -190,6 +112,58 @@ public abstract class CollectionUnitTest extends DynamicUnitTest {
 	 * @generated
 	 */
 	public void testReferencableTypes() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.CollectionUnit#instanceControlClass() <em>Instance Control Class</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.CollectionUnit#instanceControlClass()
+	 * @generated
+	 */
+	public void testInstanceControlClass() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.CollectionUnit#hasInstanceControlClass() <em>Has Instance Control Class</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.CollectionUnit#hasInstanceControlClass()
+	 * @generated
+	 */
+	public void testHasInstanceControlClass() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.CollectionUnit#instanceActionClass() <em>Instance Action Class</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.CollectionUnit#instanceActionClass()
+	 * @generated
+	 */
+	public void testInstanceActionClass() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.CollectionUnit#hasInstanceActionClass() <em>Has Instance Action Class</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.CollectionUnit#hasInstanceActionClass()
+	 * @generated
+	 */
+	public void testHasInstanceActionClass() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

@@ -172,7 +172,7 @@ public class UnitAttributeItemProvider extends UnitFeatureItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((UnitAttribute)object).getName();
+		String label = ((UnitAttribute)object).getDisplayLabel();
 		return label == null || label.length() == 0 ?
 			getString("_UI_UnitAttribute_type") :
 			getString("_UI_UnitAttribute_type") + " " + label;

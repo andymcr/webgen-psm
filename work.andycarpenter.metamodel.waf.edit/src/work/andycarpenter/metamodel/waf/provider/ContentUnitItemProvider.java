@@ -59,8 +59,6 @@ public class ContentUnitItemProvider extends NamedDisplayElementItemProvider {
 			addLocalSectionClassPropertyDescriptor(object);
 			addLocalCaptionClassPropertyDescriptor(object);
 			addLocalContentClassPropertyDescriptor(object);
-			addGenModelPropertyDescriptor(object);
-			addUiModelPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -282,50 +280,6 @@ public class ContentUnitItemProvider extends NamedDisplayElementItemProvider {
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 getString("_UI_StylePropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Gen Model feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addGenModelPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ContentUnit_genModel_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ContentUnit_genModel_feature", "_UI_ContentUnit_type"),
-				 WafPackage.eINSTANCE.getContentUnit_GenModel(),
-				 false,
-				 false,
-				 false,
-				 null,
-				 getString("_UI_DebugPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Ui Model feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addUiModelPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ContentUnit_uiModel_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ContentUnit_uiModel_feature", "_UI_ContentUnit_type"),
-				 WafPackage.eINSTANCE.getContentUnit_UiModel(),
-				 false,
-				 false,
-				 false,
-				 null,
-				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 

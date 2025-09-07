@@ -11,8 +11,6 @@ import work.andycarpenter.metamodel.waf.DynamicUnit;
  * <p>
  * The following features are tested:
  * <ul>
- *   <li>{@link work.andycarpenter.metamodel.waf.ActionContainer#getGenModelRef() <em>Gen Model Ref</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.ActionContainer#getUiModelRef() <em>Ui Model Ref</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#getContainingAssociation() <em>Containing Association</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#isHasExplicitlyEditedContainer() <em>Has Explicitly Edited Container</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#getServicesUsed() <em>Services Used</em>}</li>
@@ -58,16 +56,6 @@ import work.andycarpenter.metamodel.waf.DynamicUnit;
  *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#isHasStringFields() <em>Has String Fields</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#isHasTextareaFields() <em>Has Textarea Fields</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#isHasUrlFields() <em>Has Url Fields</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#getCommonFieldListClass() <em>Common Field List Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#isHasCommonFieldListClass() <em>Has Common Field List Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#getCommonDefinitionFieldListClass() <em>Common Definition Field List Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#isHasCommonDefinitionFieldListClass() <em>Has Common Definition Field List Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#getCommonFieldLabelClass() <em>Common Field Label Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#isHasCommonFieldLabelClass() <em>Has Common Field Label Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#getCommonFieldValueClass() <em>Common Field Value Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#isHasCommonFieldValueClass() <em>Has Common Field Value Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#getCommonAnchorClass() <em>Common Anchor Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#isHasCommonAnchorClass() <em>Has Common Anchor Class</em>}</li>
  * </ul>
  * </p>
  * <p>
@@ -77,6 +65,18 @@ import work.andycarpenter.metamodel.waf.DynamicUnit;
  *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#containingType() <em>Containing Type</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#isContained() <em>Is Contained</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#referencableTypes() <em>Referencable Types</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#fieldListClass() <em>Field List Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#hasFieldListClass() <em>Has Field List Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#definitionFieldListClass() <em>Definition Field List Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#hasDefinitionFieldListClass() <em>Has Definition Field List Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#fieldLabelClass() <em>Field Label Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#hasFieldLabelClass() <em>Has Field Label Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#fieldValueClass() <em>Field Value Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#hasFieldValueClass() <em>Has Field Value Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#controlClass() <em>Control Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#hasControlClass() <em>Has Control Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#actionClass() <em>Action Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#hasActionClass() <em>Has Action Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.ActionContainer#actions() <em>Actions</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.ActionContainer#hasActions() <em>Has Actions</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.ActionContainer#hasActionsWithDisabledMessage() <em>Has Actions With Disabled Message</em>}</li>
@@ -120,58 +120,6 @@ public abstract class DynamicUnitTest extends ContentUnitTest {
 	@Override
 	protected DynamicUnit getFixture() {
 		return (DynamicUnit)fixture;
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.ActionContainer#getGenModelRef() <em>Gen Model Ref</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.ActionContainer#getGenModelRef()
-	 * @generated
-	 */
-	public void testGetGenModelRef() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.ActionContainer#isSetGenModelRef() <em>isSetGenModelRef()</em>}' method.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.ActionContainer#isSetGenModelRef()
-	 * @generated
-	 */
-	public void testIsSetGenModelRef() {
-		// TODO: implement this test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.ActionContainer#getUiModelRef() <em>Ui Model Ref</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.ActionContainer#getUiModelRef()
-	 * @generated
-	 */
-	public void testGetUiModelRef() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.ActionContainer#isSetUiModelRef() <em>isSetUiModelRef()</em>}' method.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.ActionContainer#isSetUiModelRef()
-	 * @generated
-	 */
-	public void testIsSetUiModelRef() {
-		// TODO: implement this test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
 	}
 
 	/**
@@ -1215,201 +1163,6 @@ public abstract class DynamicUnitTest extends ContentUnitTest {
 	}
 
 	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#getCommonFieldListClass() <em>Common Field List Class</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#getCommonFieldListClass()
-	 * @generated
-	 */
-	public void testGetCommonFieldListClass() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#isSetCommonFieldListClass() <em>isSetCommonFieldListClass()</em>}' method.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#isSetCommonFieldListClass()
-	 * @generated
-	 */
-	public void testIsSetCommonFieldListClass() {
-		// TODO: implement this test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#isHasCommonFieldListClass() <em>Has Common Field List Class</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#isHasCommonFieldListClass()
-	 * @generated
-	 */
-	public void testIsHasCommonFieldListClass() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#getCommonDefinitionFieldListClass() <em>Common Definition Field List Class</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#getCommonDefinitionFieldListClass()
-	 * @generated
-	 */
-	public void testGetCommonDefinitionFieldListClass() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#isSetCommonDefinitionFieldListClass() <em>isSetCommonDefinitionFieldListClass()</em>}' method.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#isSetCommonDefinitionFieldListClass()
-	 * @generated
-	 */
-	public void testIsSetCommonDefinitionFieldListClass() {
-		// TODO: implement this test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#isHasCommonDefinitionFieldListClass() <em>Has Common Definition Field List Class</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#isHasCommonDefinitionFieldListClass()
-	 * @generated
-	 */
-	public void testIsHasCommonDefinitionFieldListClass() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#getCommonFieldLabelClass() <em>Common Field Label Class</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#getCommonFieldLabelClass()
-	 * @generated
-	 */
-	public void testGetCommonFieldLabelClass() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#isSetCommonFieldLabelClass() <em>isSetCommonFieldLabelClass()</em>}' method.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#isSetCommonFieldLabelClass()
-	 * @generated
-	 */
-	public void testIsSetCommonFieldLabelClass() {
-		// TODO: implement this test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#isHasCommonFieldLabelClass() <em>Has Common Field Label Class</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#isHasCommonFieldLabelClass()
-	 * @generated
-	 */
-	public void testIsHasCommonFieldLabelClass() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#getCommonFieldValueClass() <em>Common Field Value Class</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#getCommonFieldValueClass()
-	 * @generated
-	 */
-	public void testGetCommonFieldValueClass() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#isSetCommonFieldValueClass() <em>isSetCommonFieldValueClass()</em>}' method.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#isSetCommonFieldValueClass()
-	 * @generated
-	 */
-	public void testIsSetCommonFieldValueClass() {
-		// TODO: implement this test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#isHasCommonFieldValueClass() <em>Has Common Field Value Class</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#isHasCommonFieldValueClass()
-	 * @generated
-	 */
-	public void testIsHasCommonFieldValueClass() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#getCommonAnchorClass() <em>Common Anchor Class</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#getCommonAnchorClass()
-	 * @generated
-	 */
-	public void testGetCommonAnchorClass() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#isSetCommonAnchorClass() <em>isSetCommonAnchorClass()</em>}' method.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#isSetCommonAnchorClass()
-	 * @generated
-	 */
-	public void testIsSetCommonAnchorClass() {
-		// TODO: implement this test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#isHasCommonAnchorClass() <em>Has Common Anchor Class</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#isHasCommonAnchorClass()
-	 * @generated
-	 */
-	public void testIsHasCommonAnchorClass() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
 	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#hasAuthorisation() <em>Has Authorisation</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1456,6 +1209,162 @@ public abstract class DynamicUnitTest extends ContentUnitTest {
 	 * @generated
 	 */
 	public void testReferencableTypes() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#fieldListClass() <em>Field List Class</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#fieldListClass()
+	 * @generated
+	 */
+	public void testFieldListClass() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#hasFieldListClass() <em>Has Field List Class</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#hasFieldListClass()
+	 * @generated
+	 */
+	public void testHasFieldListClass() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#definitionFieldListClass() <em>Definition Field List Class</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#definitionFieldListClass()
+	 * @generated
+	 */
+	public void testDefinitionFieldListClass() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#hasDefinitionFieldListClass() <em>Has Definition Field List Class</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#hasDefinitionFieldListClass()
+	 * @generated
+	 */
+	public void testHasDefinitionFieldListClass() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#fieldLabelClass() <em>Field Label Class</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#fieldLabelClass()
+	 * @generated
+	 */
+	public void testFieldLabelClass() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#hasFieldLabelClass() <em>Has Field Label Class</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#hasFieldLabelClass()
+	 * @generated
+	 */
+	public void testHasFieldLabelClass() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#fieldValueClass() <em>Field Value Class</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#fieldValueClass()
+	 * @generated
+	 */
+	public void testFieldValueClass() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#hasFieldValueClass() <em>Has Field Value Class</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#hasFieldValueClass()
+	 * @generated
+	 */
+	public void testHasFieldValueClass() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#controlClass() <em>Control Class</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#controlClass()
+	 * @generated
+	 */
+	public void testControlClass() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#hasControlClass() <em>Has Control Class</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#hasControlClass()
+	 * @generated
+	 */
+	public void testHasControlClass() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#actionClass() <em>Action Class</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#actionClass()
+	 * @generated
+	 */
+	public void testActionClass() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#hasActionClass() <em>Has Action Class</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#hasActionClass()
+	 * @generated
+	 */
+	public void testHasActionClass() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

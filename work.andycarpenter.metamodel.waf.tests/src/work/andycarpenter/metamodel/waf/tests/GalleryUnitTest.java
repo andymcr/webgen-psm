@@ -12,32 +12,19 @@ import work.andycarpenter.metamodel.waf.WafFactory;
  * A test case for the model object '<em><b>Gallery Unit</b></em>'.
  * <!-- end-user-doc -->
  * <p>
- * The following features are tested:
- * <ul>
- *   <li>{@link work.andycarpenter.metamodel.waf.GalleryUnit#getFieldListClass() <em>Field List Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.GalleryUnit#isHasFieldListClass() <em>Has Field List Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.GalleryUnit#getDefinitionFieldListClass() <em>Definition Field List Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.GalleryUnit#isHasDefinitionFieldListClass() <em>Has Definition Field List Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.GalleryUnit#getFieldLabelClass() <em>Field Label Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.GalleryUnit#isHasFieldLabelClass() <em>Has Field Label Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.GalleryUnit#getFieldValueClass() <em>Field Value Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.GalleryUnit#isHasFieldValueClass() <em>Has Field Value Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.GalleryUnit#getControlClass() <em>Control Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.GalleryUnit#isHasControlClass() <em>Has Control Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.GalleryUnit#getAnchorClass() <em>Anchor Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.GalleryUnit#isHasAnchorClass() <em>Has Anchor Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.GalleryUnit#getInstanceControlClass() <em>Instance Control Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.GalleryUnit#isHasInstanceControlClass() <em>Has Instance Control Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.GalleryUnit#getInstanceActionClass() <em>Instance Action Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.GalleryUnit#isHasInstanceActionClass() <em>Has Instance Action Class</em>}</li>
- * </ul>
- * </p>
- * <p>
  * The following operations are tested:
  * <ul>
  *   <li>{@link work.andycarpenter.metamodel.waf.GalleryUnit#sectionClass() <em>Section Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.GalleryUnit#captionClass() <em>Caption Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.GalleryUnit#contentClass() <em>Content Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.GalleryUnit#fieldListClass() <em>Field List Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.GalleryUnit#definitionFieldListClass() <em>Definition Field List Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.GalleryUnit#fieldLabelClass() <em>Field Label Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.GalleryUnit#fieldValueClass() <em>Field Value Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.GalleryUnit#controlClass() <em>Control Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.GalleryUnit#actionClass() <em>Action Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.GalleryUnit#instanceControlClass() <em>Instance Control Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.GalleryUnit#instanceActionClass() <em>Instance Action Class</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -97,214 +84,6 @@ public class GalleryUnitTest extends CollectionUnitTest {
 	}
 
 	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.GalleryUnit#getFieldListClass() <em>Field List Class</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.GalleryUnit#getFieldListClass()
-	 * @generated
-	 */
-	public void testGetFieldListClass() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.GalleryUnit#isHasFieldListClass() <em>Has Field List Class</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.GalleryUnit#isHasFieldListClass()
-	 * @generated
-	 */
-	public void testIsHasFieldListClass() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.GalleryUnit#getDefinitionFieldListClass() <em>Definition Field List Class</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.GalleryUnit#getDefinitionFieldListClass()
-	 * @generated
-	 */
-	public void testGetDefinitionFieldListClass() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.GalleryUnit#isHasDefinitionFieldListClass() <em>Has Definition Field List Class</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.GalleryUnit#isHasDefinitionFieldListClass()
-	 * @generated
-	 */
-	public void testIsHasDefinitionFieldListClass() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.GalleryUnit#getFieldLabelClass() <em>Field Label Class</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.GalleryUnit#getFieldLabelClass()
-	 * @generated
-	 */
-	public void testGetFieldLabelClass() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.GalleryUnit#isHasFieldLabelClass() <em>Has Field Label Class</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.GalleryUnit#isHasFieldLabelClass()
-	 * @generated
-	 */
-	public void testIsHasFieldLabelClass() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.GalleryUnit#getFieldValueClass() <em>Field Value Class</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.GalleryUnit#getFieldValueClass()
-	 * @generated
-	 */
-	public void testGetFieldValueClass() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.GalleryUnit#isHasFieldValueClass() <em>Has Field Value Class</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.GalleryUnit#isHasFieldValueClass()
-	 * @generated
-	 */
-	public void testIsHasFieldValueClass() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.GalleryUnit#getControlClass() <em>Control Class</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.GalleryUnit#getControlClass()
-	 * @generated
-	 */
-	public void testGetControlClass() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.GalleryUnit#isHasControlClass() <em>Has Control Class</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.GalleryUnit#isHasControlClass()
-	 * @generated
-	 */
-	public void testIsHasControlClass() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.GalleryUnit#getAnchorClass() <em>Anchor Class</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.GalleryUnit#getAnchorClass()
-	 * @generated
-	 */
-	public void testGetAnchorClass() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.GalleryUnit#isHasAnchorClass() <em>Has Anchor Class</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.GalleryUnit#isHasAnchorClass()
-	 * @generated
-	 */
-	public void testIsHasAnchorClass() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.GalleryUnit#getInstanceControlClass() <em>Instance Control Class</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.GalleryUnit#getInstanceControlClass()
-	 * @generated
-	 */
-	public void testGetInstanceControlClass() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.GalleryUnit#isHasInstanceControlClass() <em>Has Instance Control Class</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.GalleryUnit#isHasInstanceControlClass()
-	 * @generated
-	 */
-	public void testIsHasInstanceControlClass() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.GalleryUnit#getInstanceActionClass() <em>Instance Action Class</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.GalleryUnit#getInstanceActionClass()
-	 * @generated
-	 */
-	public void testGetInstanceActionClass() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.GalleryUnit#isHasInstanceActionClass() <em>Has Instance Action Class</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.GalleryUnit#isHasInstanceActionClass()
-	 * @generated
-	 */
-	public void testIsHasInstanceActionClass() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
 	 * Tests the '{@link work.andycarpenter.metamodel.waf.GalleryUnit#sectionClass() <em>Section Class</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -338,6 +117,110 @@ public class GalleryUnitTest extends CollectionUnitTest {
 	 * @generated
 	 */
 	public void testContentClass() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.GalleryUnit#fieldListClass() <em>Field List Class</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.GalleryUnit#fieldListClass()
+	 * @generated
+	 */
+	public void testFieldListClass() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.GalleryUnit#definitionFieldListClass() <em>Definition Field List Class</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.GalleryUnit#definitionFieldListClass()
+	 * @generated
+	 */
+	public void testDefinitionFieldListClass() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.GalleryUnit#fieldLabelClass() <em>Field Label Class</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.GalleryUnit#fieldLabelClass()
+	 * @generated
+	 */
+	public void testFieldLabelClass() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.GalleryUnit#fieldValueClass() <em>Field Value Class</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.GalleryUnit#fieldValueClass()
+	 * @generated
+	 */
+	public void testFieldValueClass() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.GalleryUnit#controlClass() <em>Control Class</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.GalleryUnit#controlClass()
+	 * @generated
+	 */
+	public void testControlClass() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.GalleryUnit#actionClass() <em>Action Class</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.GalleryUnit#actionClass()
+	 * @generated
+	 */
+	public void testActionClass() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.GalleryUnit#instanceControlClass() <em>Instance Control Class</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.GalleryUnit#instanceControlClass()
+	 * @generated
+	 */
+	public void testInstanceControlClass() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.GalleryUnit#instanceActionClass() <em>Instance Action Class</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.GalleryUnit#instanceActionClass()
+	 * @generated
+	 */
+	public void testInstanceActionClass() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

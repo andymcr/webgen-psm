@@ -14,20 +14,6 @@ import work.andycarpenter.metamodel.waf.EditUnit;
  *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#isHasConfirmMessage() <em>Has Confirm Message</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#isHasSuccessMessage() <em>Has Success Message</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#isHasMessages() <em>Has Messages</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#getFieldListClass() <em>Field List Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#isHasFieldListClass() <em>Has Field List Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#getDefinitionFieldListClass() <em>Definition Field List Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#isHasDefinitionFieldListClass() <em>Has Definition Field List Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#getFieldLabelClass() <em>Field Label Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#isHasFieldLabelClass() <em>Has Field Label Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#getFieldValueClass() <em>Field Value Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#isHasFieldValueClass() <em>Has Field Value Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#getControlClass() <em>Control Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#isHasControlClass() <em>Has Control Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#getAnchorClass() <em>Anchor Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#isHasAnchorClass() <em>Has Anchor Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#getInputGroupClass() <em>Input Group Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#isHasInputGroupClass() <em>Has Input Group Class</em>}</li>
  * </ul>
  * </p>
  * <p>
@@ -36,6 +22,14 @@ import work.andycarpenter.metamodel.waf.EditUnit;
  *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#sectionClass() <em>Section Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#captionClass() <em>Caption Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#contentClass() <em>Content Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#fieldListClass() <em>Field List Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#definitionFieldListClass() <em>Definition Field List Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#fieldLabelClass() <em>Field Label Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#fieldValueClass() <em>Field Value Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#controlClass() <em>Control Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#actionClass() <em>Action Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#inputGroupClass() <em>Input Group Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#hasInputGroupClass() <em>Has Input Group Class</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -103,188 +97,6 @@ public abstract class EditUnitTest extends SingletonUnitTest {
 	}
 
 	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.EditUnit#getFieldListClass() <em>Field List Class</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.EditUnit#getFieldListClass()
-	 * @generated
-	 */
-	public void testGetFieldListClass() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.EditUnit#isHasFieldListClass() <em>Has Field List Class</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.EditUnit#isHasFieldListClass()
-	 * @generated
-	 */
-	public void testIsHasFieldListClass() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.EditUnit#getDefinitionFieldListClass() <em>Definition Field List Class</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.EditUnit#getDefinitionFieldListClass()
-	 * @generated
-	 */
-	public void testGetDefinitionFieldListClass() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.EditUnit#isHasDefinitionFieldListClass() <em>Has Definition Field List Class</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.EditUnit#isHasDefinitionFieldListClass()
-	 * @generated
-	 */
-	public void testIsHasDefinitionFieldListClass() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.EditUnit#getFieldLabelClass() <em>Field Label Class</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.EditUnit#getFieldLabelClass()
-	 * @generated
-	 */
-	public void testGetFieldLabelClass() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.EditUnit#isHasFieldLabelClass() <em>Has Field Label Class</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.EditUnit#isHasFieldLabelClass()
-	 * @generated
-	 */
-	public void testIsHasFieldLabelClass() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.EditUnit#getFieldValueClass() <em>Field Value Class</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.EditUnit#getFieldValueClass()
-	 * @generated
-	 */
-	public void testGetFieldValueClass() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.EditUnit#isHasFieldValueClass() <em>Has Field Value Class</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.EditUnit#isHasFieldValueClass()
-	 * @generated
-	 */
-	public void testIsHasFieldValueClass() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.EditUnit#getControlClass() <em>Control Class</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.EditUnit#getControlClass()
-	 * @generated
-	 */
-	public void testGetControlClass() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.EditUnit#isHasControlClass() <em>Has Control Class</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.EditUnit#isHasControlClass()
-	 * @generated
-	 */
-	public void testIsHasControlClass() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.EditUnit#getAnchorClass() <em>Anchor Class</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.EditUnit#getAnchorClass()
-	 * @generated
-	 */
-	public void testGetAnchorClass() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.EditUnit#isHasAnchorClass() <em>Has Anchor Class</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.EditUnit#isHasAnchorClass()
-	 * @generated
-	 */
-	public void testIsHasAnchorClass() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.EditUnit#getInputGroupClass() <em>Input Group Class</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.EditUnit#getInputGroupClass()
-	 * @generated
-	 */
-	public void testGetInputGroupClass() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.EditUnit#isHasInputGroupClass() <em>Has Input Group Class</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.EditUnit#isHasInputGroupClass()
-	 * @generated
-	 */
-	public void testIsHasInputGroupClass() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
 	 * Tests the '{@link work.andycarpenter.metamodel.waf.EditUnit#sectionClass() <em>Section Class</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -318,6 +130,110 @@ public abstract class EditUnitTest extends SingletonUnitTest {
 	 * @generated
 	 */
 	public void testContentClass() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.EditUnit#fieldListClass() <em>Field List Class</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.EditUnit#fieldListClass()
+	 * @generated
+	 */
+	public void testFieldListClass() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.EditUnit#definitionFieldListClass() <em>Definition Field List Class</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.EditUnit#definitionFieldListClass()
+	 * @generated
+	 */
+	public void testDefinitionFieldListClass() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.EditUnit#fieldLabelClass() <em>Field Label Class</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.EditUnit#fieldLabelClass()
+	 * @generated
+	 */
+	public void testFieldLabelClass() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.EditUnit#fieldValueClass() <em>Field Value Class</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.EditUnit#fieldValueClass()
+	 * @generated
+	 */
+	public void testFieldValueClass() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.EditUnit#controlClass() <em>Control Class</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.EditUnit#controlClass()
+	 * @generated
+	 */
+	public void testControlClass() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.EditUnit#actionClass() <em>Action Class</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.EditUnit#actionClass()
+	 * @generated
+	 */
+	public void testActionClass() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.EditUnit#inputGroupClass() <em>Input Group Class</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.EditUnit#inputGroupClass()
+	 * @generated
+	 */
+	public void testInputGroupClass() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.EditUnit#hasInputGroupClass() <em>Has Input Group Class</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.EditUnit#hasInputGroupClass()
+	 * @generated
+	 */
+	public void testHasInputGroupClass() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

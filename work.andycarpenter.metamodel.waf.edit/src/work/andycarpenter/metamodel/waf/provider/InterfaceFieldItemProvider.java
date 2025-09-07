@@ -55,7 +55,6 @@ public class InterfaceFieldItemProvider extends NamedElementItemProvider {
 
 			addDisplayLabelPropertyDescriptor(object);
 			addDisplayedOnPropertyDescriptor(object);
-			addFieldNamePropertyDescriptor(object);
 			addIsAuthorisedPropertyDescriptor(object);
 			addHasCustomisedDisplayLabelPropertyDescriptor(object);
 			addIsRepeatedPropertyDescriptor(object);
@@ -83,18 +82,9 @@ public class InterfaceFieldItemProvider extends NamedElementItemProvider {
 			addDateFormatPropertyDescriptor(object);
 			addDisabledInputPropertyDescriptor(object);
 			addHeaderClassPropertyDescriptor(object);
-			addInputGroupClassOverridePropertyDescriptor(object);
-			addInputGroupClassPropertyDescriptor(object);
-			addHasInputGroupClassPropertyDescriptor(object);
-			addFieldLabelClassOverridePropertyDescriptor(object);
-			addFieldLabelClassPropertyDescriptor(object);
-			addHasFieldLabelClassPropertyDescriptor(object);
-			addFieldValueClassOverridePropertyDescriptor(object);
-			addFieldValueClassPropertyDescriptor(object);
-			addHasFieldValueClassPropertyDescriptor(object);
-			addFooterClassPropertyDescriptor(object);
-			addGenModelPropertyDescriptor(object);
-			addUiModelPropertyDescriptor(object);
+			addLocalInputGroupClassPropertyDescriptor(object);
+			addLocalFieldLabelClassPropertyDescriptor(object);
+			addLocalFieldValueClassPropertyDescriptor(object);
 			addFieldTitlePropertyDescriptor(object);
 			addFieldPlaceholderPropertyDescriptor(object);
 			addFieldRequiredPropertyDescriptor(object);
@@ -150,28 +140,6 @@ public class InterfaceFieldItemProvider extends NamedElementItemProvider {
 				 true,
 				 null,
 				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Field Name feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addFieldNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_UnitField_fieldName_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_fieldName_feature", "_UI_UnitField_type"),
-				 WafPackage.eINSTANCE.getUnitField_FieldName(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -770,266 +738,68 @@ public class InterfaceFieldItemProvider extends NamedElementItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Input Group Class Override feature.
+	 * This adds a property descriptor for the Local Input Group Class feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addInputGroupClassOverridePropertyDescriptor(Object object) {
+	protected void addLocalInputGroupClassPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_UnitField_inputGroupClassOverride_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_inputGroupClassOverride_feature", "_UI_UnitField_type"),
-				 WafPackage.eINSTANCE.getUnitField_InputGroupClassOverride(),
+				 getString("_UI_UnitField_localInputGroupClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_localInputGroupClass_feature", "_UI_UnitField_type"),
+				 WafPackage.eINSTANCE.getUnitField_LocalInputGroupClass(),
 				 true,
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_StylePropertyCategory"),
 				 null));
 	}
 
 	/**
-	 * This adds a property descriptor for the Input Group Class feature.
+	 * This adds a property descriptor for the Local Field Label Class feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addInputGroupClassPropertyDescriptor(Object object) {
+	protected void addLocalFieldLabelClassPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_UnitField_inputGroupClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_inputGroupClass_feature", "_UI_UnitField_type"),
-				 WafPackage.eINSTANCE.getUnitField_InputGroupClass(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 getString("_UI_DebugPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Has Input Group Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addHasInputGroupClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_UnitField_hasInputGroupClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_hasInputGroupClass_feature", "_UI_UnitField_type"),
-				 WafPackage.eINSTANCE.getUnitField_HasInputGroupClass(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_DebugPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Field Label Class Override feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addFieldLabelClassOverridePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_UnitField_fieldLabelClassOverride_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_fieldLabelClassOverride_feature", "_UI_UnitField_type"),
-				 WafPackage.eINSTANCE.getUnitField_FieldLabelClassOverride(),
+				 getString("_UI_UnitField_localFieldLabelClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_localFieldLabelClass_feature", "_UI_UnitField_type"),
+				 WafPackage.eINSTANCE.getUnitField_LocalFieldLabelClass(),
 				 true,
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_StylePropertyCategory"),
 				 null));
 	}
 
 	/**
-	 * This adds a property descriptor for the Field Label Class feature.
+	 * This adds a property descriptor for the Local Field Value Class feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addFieldLabelClassPropertyDescriptor(Object object) {
+	protected void addLocalFieldValueClassPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_UnitField_fieldLabelClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_fieldLabelClass_feature", "_UI_UnitField_type"),
-				 WafPackage.eINSTANCE.getUnitField_FieldLabelClass(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 getString("_UI_DebugPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Has Field Label Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addHasFieldLabelClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_UnitField_hasFieldLabelClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_hasFieldLabelClass_feature", "_UI_UnitField_type"),
-				 WafPackage.eINSTANCE.getUnitField_HasFieldLabelClass(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_DebugPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Field Value Class Override feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addFieldValueClassOverridePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_UnitField_fieldValueClassOverride_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_fieldValueClassOverride_feature", "_UI_UnitField_type"),
-				 WafPackage.eINSTANCE.getUnitField_FieldValueClassOverride(),
+				 getString("_UI_UnitField_localFieldValueClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_localFieldValueClass_feature", "_UI_UnitField_type"),
+				 WafPackage.eINSTANCE.getUnitField_LocalFieldValueClass(),
 				 true,
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Field Value Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addFieldValueClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_UnitField_fieldValueClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_fieldValueClass_feature", "_UI_UnitField_type"),
-				 WafPackage.eINSTANCE.getUnitField_FieldValueClass(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 getString("_UI_DebugPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Has Field Value Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addHasFieldValueClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_UnitField_hasFieldValueClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_hasFieldValueClass_feature", "_UI_UnitField_type"),
-				 WafPackage.eINSTANCE.getUnitField_HasFieldValueClass(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_DebugPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Footer Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addFooterClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_UnitField_footerClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_footerClass_feature", "_UI_UnitField_type"),
-				 WafPackage.eINSTANCE.getUnitField_FooterClass(),
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Gen Model feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addGenModelPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_UnitField_genModel_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_genModel_feature", "_UI_UnitField_type"),
-				 WafPackage.eINSTANCE.getUnitField_GenModel(),
-				 false,
-				 false,
-				 false,
-				 null,
-				 getString("_UI_DebugPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Ui Model feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addUiModelPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_UnitField_uiModel_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_uiModel_feature", "_UI_UnitField_type"),
-				 WafPackage.eINSTANCE.getUnitField_UiModel(),
-				 false,
-				 false,
-				 false,
-				 null,
-				 getString("_UI_DebugPropertyCategory"),
+				 getString("_UI_StylePropertyCategory"),
 				 null));
 	}
 
@@ -1314,7 +1084,6 @@ public class InterfaceFieldItemProvider extends NamedElementItemProvider {
 
 		switch (notification.getFeatureID(InterfaceField.class)) {
 			case WafPackage.INTERFACE_FIELD__DISPLAY_LABEL:
-			case WafPackage.INTERFACE_FIELD__FIELD_NAME:
 			case WafPackage.INTERFACE_FIELD__IS_AUTHORISED:
 			case WafPackage.INTERFACE_FIELD__HAS_CUSTOMISED_DISPLAY_LABEL:
 			case WafPackage.INTERFACE_FIELD__IS_REPEATED:
@@ -1341,16 +1110,9 @@ public class InterfaceFieldItemProvider extends NamedElementItemProvider {
 			case WafPackage.INTERFACE_FIELD__DATE_FORMAT:
 			case WafPackage.INTERFACE_FIELD__DISABLED_INPUT:
 			case WafPackage.INTERFACE_FIELD__HEADER_CLASS:
-			case WafPackage.INTERFACE_FIELD__INPUT_GROUP_CLASS_OVERRIDE:
-			case WafPackage.INTERFACE_FIELD__INPUT_GROUP_CLASS:
-			case WafPackage.INTERFACE_FIELD__HAS_INPUT_GROUP_CLASS:
-			case WafPackage.INTERFACE_FIELD__FIELD_LABEL_CLASS_OVERRIDE:
-			case WafPackage.INTERFACE_FIELD__FIELD_LABEL_CLASS:
-			case WafPackage.INTERFACE_FIELD__HAS_FIELD_LABEL_CLASS:
-			case WafPackage.INTERFACE_FIELD__FIELD_VALUE_CLASS_OVERRIDE:
-			case WafPackage.INTERFACE_FIELD__FIELD_VALUE_CLASS:
-			case WafPackage.INTERFACE_FIELD__HAS_FIELD_VALUE_CLASS:
-			case WafPackage.INTERFACE_FIELD__FOOTER_CLASS:
+			case WafPackage.INTERFACE_FIELD__LOCAL_INPUT_GROUP_CLASS:
+			case WafPackage.INTERFACE_FIELD__LOCAL_FIELD_LABEL_CLASS:
+			case WafPackage.INTERFACE_FIELD__LOCAL_FIELD_VALUE_CLASS:
 			case WafPackage.INTERFACE_FIELD__FIELD_TITLE:
 			case WafPackage.INTERFACE_FIELD__FIELD_PLACEHOLDER:
 			case WafPackage.INTERFACE_FIELD__FIELD_REQUIRED:

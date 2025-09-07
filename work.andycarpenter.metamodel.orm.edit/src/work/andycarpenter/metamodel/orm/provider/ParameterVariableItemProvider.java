@@ -108,14 +108,12 @@ public class ParameterVariableItemProvider extends PathRootItemProvider {
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ParameterVariable)object).getName();
-		return label == null || label.length() == 0 ?
-			getString("_UI_ParameterVariable_type") :
-			getString("_UI_ParameterVariable_type") + " " + label;
+		ParameterVariable variable = (ParameterVariable)object;
+		return getString("_UI_ParameterVariable_type") + " " + variable.name();
 	}
 
 

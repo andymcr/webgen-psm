@@ -604,11 +604,6 @@ abstract class Path {
 		''
 	}
 
-    @GenModel(propertyCategory="Model")
-	derived readonly unsettable transient volatile String name get {
-		name()
-	}
-
 	op Entity contextEntity() {
 		null
 	}

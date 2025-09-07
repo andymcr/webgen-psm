@@ -14,8 +14,6 @@ import work.andycarpenter.metamodel.waf.ContentUnit;
  * The following features are tested:
  * <ul>
  *   <li>{@link work.andycarpenter.metamodel.waf.ContentUnit#isIsFormUnit() <em>Is Form Unit</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.ContentUnit#getGenModel() <em>Gen Model</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.ContentUnit#getUiModel() <em>Ui Model</em>}</li>
  * </ul>
  * </p>
  * <p>
@@ -29,6 +27,8 @@ import work.andycarpenter.metamodel.waf.ContentUnit;
  *   <li>{@link work.andycarpenter.metamodel.waf.ContentUnit#hasCaptionClass() <em>Has Caption Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.ContentUnit#contentClass() <em>Content Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.ContentUnit#hasContentClass() <em>Has Content Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.ContentUnit#genModel() <em>Gen Model</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.ContentUnit#uiModel() <em>Ui Model</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -82,58 +82,6 @@ public abstract class ContentUnitTest extends TestCase {
 	 */
 	public void testIsIsFormUnit() {
 		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.ContentUnit#getGenModel() <em>Gen Model</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.ContentUnit#getGenModel()
-	 * @generated
-	 */
-	public void testGetGenModel() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.ContentUnit#isSetGenModel() <em>isSetGenModel()</em>}' method.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.ContentUnit#isSetGenModel()
-	 * @generated
-	 */
-	public void testIsSetGenModel() {
-		// TODO: implement this test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.ContentUnit#getUiModel() <em>Ui Model</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.ContentUnit#getUiModel()
-	 * @generated
-	 */
-	public void testGetUiModel() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.ContentUnit#isSetUiModel() <em>isSetUiModel()</em>}' method.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.ContentUnit#isSetUiModel()
-	 * @generated
-	 */
-	public void testIsSetUiModel() {
-		// TODO: implement this test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}
@@ -237,6 +185,32 @@ public abstract class ContentUnitTest extends TestCase {
 	 * @generated
 	 */
 	public void testHasContentClass() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.ContentUnit#genModel() <em>Gen Model</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.ContentUnit#genModel()
+	 * @generated
+	 */
+	public void testGenModel() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.ContentUnit#uiModel() <em>Ui Model</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.ContentUnit#uiModel()
+	 * @generated
+	 */
+	public void testUiModel() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
