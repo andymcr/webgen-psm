@@ -456,6 +456,7 @@ public class CollectionUnitItemProvider extends DynamicUnitItemProvider {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(WafPackage.eINSTANCE.getCollectionUnit_ElementTitle());
+			childrenFeatures.add(WafPackage.eINSTANCE.getCollectionUnit_Filters());
 		}
 		return childrenFeatures;
 	}
@@ -513,6 +514,7 @@ public class CollectionUnitItemProvider extends DynamicUnitItemProvider {
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case WafPackage.COLLECTION_UNIT__ELEMENT_TITLE:
+			case WafPackage.COLLECTION_UNIT__FILTERS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}

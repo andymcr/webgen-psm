@@ -33,6 +33,7 @@ import work.andycarpenter.metamodel.orm.Attribute
 import work.andycarpenter.metamodel.orm.AttributePathElement
 import work.andycarpenter.metamodel.orm.DateDetails
 import work.andycarpenter.metamodel.orm.Entity
+import work.andycarpenter.metamodel.orm.Feature
 import work.andycarpenter.metamodel.orm.Filter
 import work.andycarpenter.metamodel.orm.Label
 import work.andycarpenter.metamodel.orm.LocationFeature
@@ -302,6 +303,7 @@ class ImageManipulation extends NamedElement {
 	int jpegQuality = "-1"
 	contains ImageFilter[] filters
 }
+
 
 abstract class ImageFilter {
 }
@@ -1758,6 +1760,7 @@ abstract class CollectionUnit extends DynamicUnit, SelectableUnit, ValueContext 
 	contains DisplayValue elementTitle
 	boolean truncateElementTitle = "false"
 	refers Selection selection
+	contains CollectionFilter[] filters
 	refers Selection findContainerSelection
 	refers Selection findElementSelection
 
@@ -1838,6 +1841,37 @@ abstract class CollectionUnit extends DynamicUnit, SelectableUnit, ValueContext 
 	op boolean hasInstanceActionClass() {
 		instanceActionClass() !== ''
 	}
+}
+
+abstract class CollectionFilter {
+}
+
+abstract class ArrayFilter extends CollectionFilter {
+}
+
+abstract class BooleanFilter extends CollectionFilter {
+	refers Feature feature
+}
+
+abstract class ChoiceFilter extends CollectionFilter {
+}
+
+abstract class ComparisonFilter extends CollectionFilter {
+}
+
+abstract class DateTimeFilter extends CollectionFilter {
+}
+
+abstract class EntityFilter extends CollectionFilter {
+}
+
+abstract class NullFilter extends CollectionFilter {
+}
+
+abstract class NumericFilter extends CollectionFilter {
+}
+
+abstract class TextFilter extends CollectionFilter {
 }
 
 abstract class EditUnit extends SingletonUnit {
