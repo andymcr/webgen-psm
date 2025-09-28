@@ -10,6 +10,7 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import work.andycarpenter.metamodel.waf.ArrayFilter;
 
 /**
  * This is the item provider adapter for a {@link work.andycarpenter.metamodel.waf.ArrayFilter} object.
@@ -62,7 +63,10 @@ public class ArrayFilterItemProvider extends CollectionFilterItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_ArrayFilter_type");
+		String label = ((ArrayFilter)object).getName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_ArrayFilter_type") :
+			getString("_UI_ArrayFilter_type") + " " + label;
 	}
 
 

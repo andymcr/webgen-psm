@@ -19,6 +19,7 @@ import work.andycarpenter.metamodel.waf.CollectionUnit;
  * <p>
  * The following operations are tested:
  * <ul>
+ *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#hasFilters2() <em>Has Filters2</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#containingType() <em>Containing Type</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#referencableTypes() <em>Referencable Types</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#instanceControlClass() <em>Instance Control Class</em>}</li>
@@ -87,6 +88,19 @@ public abstract class CollectionUnitTest extends DynamicUnitTest {
 	 */
 	public void testIsHasPagination() {
 		// TODO: implement this feature getter test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.CollectionUnit#hasFilters2() <em>Has Filters2</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.CollectionUnit#hasFilters2()
+	 * @generated
+	 */
+	public void testHasFilters2() {
+		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}

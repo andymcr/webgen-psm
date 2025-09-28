@@ -11,6 +11,7 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import work.andycarpenter.metamodel.waf.BooleanFilter;
 import work.andycarpenter.metamodel.waf.WafPackage;
 
 /**
@@ -87,7 +88,10 @@ public class BooleanFilterItemProvider extends CollectionFilterItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_BooleanFilter_type");
+		String label = ((BooleanFilter)object).getName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_BooleanFilter_type") :
+			getString("_UI_BooleanFilter_type") + " " + label;
 	}
 
 

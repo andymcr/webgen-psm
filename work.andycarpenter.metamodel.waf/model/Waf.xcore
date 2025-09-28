@@ -1760,9 +1760,14 @@ abstract class CollectionUnit extends DynamicUnit, SelectableUnit, ValueContext 
 	contains DisplayValue elementTitle
 	boolean truncateElementTitle = "false"
 	refers Selection selection
-	contains CollectionFilter[] filters
 	refers Selection findContainerSelection
 	refers Selection findElementSelection
+	contains CollectionFilter[] filters
+
+	op boolean hasFilters2() {
+		return !filters.isEmpty()
+	}
+
 
 	op Entity containingType() {
 		if (findContainerSelection !== null) {
@@ -1843,7 +1848,7 @@ abstract class CollectionUnit extends DynamicUnit, SelectableUnit, ValueContext 
 	}
 }
 
-abstract class CollectionFilter {
+abstract class CollectionFilter extends NamedElement {
 }
 
 class ArrayFilter extends CollectionFilter {
@@ -1872,6 +1877,10 @@ class NumericFilter extends CollectionFilter {
 }
 
 class TextFilter extends CollectionFilter {
+    @GenModel(propertyCategory="Business")
+	refers Attribute[1] attribute
+    @GenModel(propertyCategory="Interface")
+	String placeholder = ''
 }
 
 abstract class EditUnit extends SingletonUnit {

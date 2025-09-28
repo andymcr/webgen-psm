@@ -10,6 +10,7 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import work.andycarpenter.metamodel.waf.NumericFilter;
 
 /**
  * This is the item provider adapter for a {@link work.andycarpenter.metamodel.waf.NumericFilter} object.
@@ -62,7 +63,10 @@ public class NumericFilterItemProvider extends CollectionFilterItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_NumericFilter_type");
+		String label = ((NumericFilter)object).getName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_NumericFilter_type") :
+			getString("_UI_NumericFilter_type") + " " + label;
 	}
 
 
