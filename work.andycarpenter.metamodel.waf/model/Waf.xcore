@@ -1773,7 +1773,11 @@ abstract class CollectionUnit extends DynamicUnit, SelectableUnit, ValueContext 
 		if (findContainerSelection !== null) {
 			findContainerSelection.definedBy.serves
 		} else if (selection !== null) {
-			selection.selectionType()
+			if (selection.hasSelectPath()) {
+				selection.selectionType()
+			} else {
+				null
+			} 
 		} else if (contentType !== null) {
 			contentType.containingType
 		} else {
