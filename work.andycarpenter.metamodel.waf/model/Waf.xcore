@@ -1413,6 +1413,10 @@ abstract class UnitFeature extends UnitField, Path, ActionContainer {
 	boolean autofocus
 	String footer
 
+	op Entity contextEntity() {
+		displayedOn.contentType
+	}
+
  	op boolean hasEmptyCollectionDisplay() {
 		emptyCollectionDisplay !== null
 	}

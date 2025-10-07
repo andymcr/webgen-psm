@@ -4,6 +4,7 @@ package work.andycarpenter.metamodel.waf.provider;
 
 
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -64,19 +65,27 @@ public class UnitAttributeItemProvider extends UnitFeatureItemProvider {
 	 * @generated
 	 */
 	protected void addAttributePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_AttributePathElement_attribute_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_AttributePathElement_attribute_feature", "_UI_AttributePathElement_type"),
-				 OrmPackage.Literals.ATTRIBUTE_PATH_ELEMENT__ATTRIBUTE,
-				 true,
-				 false,
-				 true,
-				 null,
-				 getString("_UI_ModelPropertyCategory"),
-				 null));
+		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
+			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+			getResourceLocator(),
+			getString("_UI_AttributePathElement_attribute_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_AttributePathElement_attribute_feature", "_UI_AttributePathElement_type"),
+			OrmPackage.Literals.ATTRIBUTE_PATH_ELEMENT__ATTRIBUTE,
+			true, false, true, null,
+			getString("_UI_ModelPropertyCategory"),
+			null) {
+				@Override
+				public Collection<?> getChoiceOfValues(Object object) {
+					if (object instanceof UnitAttribute) {
+						final UnitAttribute attribute = (UnitAttribute) object;
+						if (attribute.contextEntity() != null) {
+							return attribute.contextEntity().getAttributes();
+						}
+					}
+
+					return Collections.emptyList();
+				}
+		});
 	}
 
 	/**

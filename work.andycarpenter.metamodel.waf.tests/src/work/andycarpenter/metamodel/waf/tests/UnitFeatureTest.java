@@ -36,6 +36,7 @@ import work.andycarpenter.metamodel.waf.UnitFeature;
  * The following operations are tested:
  * <ul>
  *   <li>{@link work.andycarpenter.metamodel.waf.UnitFeature#fieldName() <em>Field Name</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.UnitFeature#contextEntity() <em>Context Entity</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.UnitFeature#hasEmptyCollectionDisplay() <em>Has Empty Collection Display</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.UnitFeature#isAssociationField() <em>Is Association Field</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.UnitFeature#isAttributeField() <em>Is Attribute Field</em>}</li>
@@ -77,7 +78,6 @@ import work.andycarpenter.metamodel.waf.UnitFeature;
  *   <li>{@link work.andycarpenter.metamodel.waf.ActionContainer#operationActions() <em>Operation Actions</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.ActionContainer#hasOperationActions() <em>Has Operation Actions</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.orm.Path#name() <em>Name</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.orm.Path#contextEntity() <em>Context Entity</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.orm.Path#leafElement() <em>Leaf Element</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.orm.Path#leafFeature() <em>Leaf Feature</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#isInterfaceField() <em>Is Interface Field</em>}</li>
@@ -876,10 +876,10 @@ public abstract class UnitFeatureTest extends DisplayElementTest {
 	}
 
 	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.orm.Path#contextEntity() <em>Context Entity</em>}' operation.
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.UnitFeature#contextEntity() <em>Context Entity</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.orm.Path#contextEntity()
+	 * @see work.andycarpenter.metamodel.waf.UnitFeature#contextEntity()
 	 * @generated
 	 */
 	public void testContextEntity() {
