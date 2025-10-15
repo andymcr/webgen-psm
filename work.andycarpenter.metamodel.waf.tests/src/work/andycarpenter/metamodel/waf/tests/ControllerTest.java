@@ -43,6 +43,7 @@ import work.andycarpenter.metamodel.waf.Controller;
  *   <li>{@link work.andycarpenter.metamodel.waf.Controller#formUnits() <em>Form Units</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.Controller#hasFormUnits() <em>Has Form Units</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.Controller#hasFilters() <em>Has Filters</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.Controller#collectionUnitsWithFilters() <em>Collection Units With Filters</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.Controller#galleryUnits() <em>Gallery Units</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.Controller#hasGalleryUnits() <em>Has Gallery Units</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.Controller#tabularUnits() <em>Tabular Units</em>}</li>
@@ -524,6 +525,19 @@ public abstract class ControllerTest extends TestCase {
 	 * @generated
 	 */
 	public void testHasFilters() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.Controller#collectionUnitsWithFilters() <em>Collection Units With Filters</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.Controller#collectionUnitsWithFilters()
+	 * @generated
+	 */
+	public void testCollectionUnitsWithFilters() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

@@ -70,6 +70,7 @@ public class WafModelItemProvider
 			addDefaultCancelLabelPropertyDescriptor(object);
 			addEditUnitsPropertyDescriptor(object);
 			addFormUnitsPropertyDescriptor(object);
+			addCollectionUnitsWithFiltersPropertyDescriptor(object);
 			addImageUnitsPropertyDescriptor(object);
 			addImageCardsUnitsPropertyDescriptor(object);
 			addAutocompleteFieldsPropertyDescriptor(object);
@@ -249,6 +250,28 @@ public class WafModelItemProvider
 				 getString("_UI_WafModel_formUnits_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_WafModel_formUnits_feature", "_UI_WafModel_type"),
 				 WafPackage.eINSTANCE.getWafModel_FormUnits(),
+				 false,
+				 false,
+				 false,
+				 null,
+				 getString("_UI_DebugPropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Collection Units With Filters feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCollectionUnitsWithFiltersPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_WafModel_collectionUnitsWithFilters_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WafModel_collectionUnitsWithFilters_feature", "_UI_WafModel_type"),
+				 WafPackage.eINSTANCE.getWafModel_CollectionUnitsWithFilters(),
 				 false,
 				 false,
 				 false,

@@ -94,6 +94,10 @@ class WafModel {
 		!formUnits.isEmpty()
 	}
 
+	@OCL(derivation="controllers->collect(c | c.collectionUnitsWithFilters())->asOrderedSet()")
+    @GenModel(propertyCategory="Debug")
+	refers derived readonly unsettable transient volatile CollectionUnit[] collectionUnitsWithFilters
+
 	@OCL(derivation="controllers->collect(c | c.imageUnits())->asOrderedSet()")
     @GenModel(propertyCategory="Debug")
 	refers derived readonly unsettable transient volatile ImageUnit[] imageUnits
@@ -429,6 +433,10 @@ abstract class Controller extends NamedDisplayElement {
 
 	op boolean hasFilters() {
 		!collectionUnits().filter[it.hasFilters].isEmpty()
+	}
+
+	op CollectionUnit[] collectionUnitsWithFilters() {
+		collectionUnits().filter[it.hasFilters2()].toEList()
 	}
 
 	op GalleryUnit[] galleryUnits() {
@@ -1766,7 +1774,7 @@ abstract class CollectionUnit extends DynamicUnit, SelectableUnit, ValueContext 
 	refers Selection selection
 	refers Selection findContainerSelection
 	refers Selection findElementSelection
-	contains CollectionFilter[] filters
+	contains CollectionFilter[] filters opposite affects
 
 	op boolean hasFilters2() {
 		return !filters.isEmpty()
@@ -1857,6 +1865,59 @@ abstract class CollectionUnit extends DynamicUnit, SelectableUnit, ValueContext 
 }
 
 abstract class CollectionFilter extends NamedElement {
+	refers CollectionUnit[1] affects opposite filters
+    @GenModel(propertyCategory="Business")
+	refers Attribute[1] attribute
+    @GenModel(propertyCategory="Interface")
+	String help = ''
+    @GenModel(propertyCategory="Interface")
+	String placeholderOverride = ''
+    @GenModel(propertyCategory="Interface")
+	String titleOverride = ''
+
+	op boolean hasHelp() {
+		help.trim() !== ''
+	}
+	
+	op String placeholder() {
+		if (placeholderOverride.trim() !== '') {
+			placeholderOverride.trim()
+		} else {
+			if (attribute !== null) {
+				attribute.displayLabel
+			} else {
+				''
+			}
+		}
+	}
+	
+	op boolean hasCustomisedPlaceholder() {
+		if (attribute !== null) {
+			placeholder() !== attribute.displayLabel
+		} else {
+			placeholderOverride.trim() !== ''
+		}
+	}
+
+	op String title() {
+		if (titleOverride.trim() !== '') {
+			titleOverride.trim()
+		} else {
+			if (attribute !== null) {
+				attribute.displayLabel
+			} else {
+				''
+			}
+		}
+	}
+	
+	op boolean hasCustomisedTitle() {
+		if (title() === '' || attribute === null) {
+			false
+		} else {
+			titleOverride.trim() !== attribute.displayLabel
+		}
+	}
 }
 
 class ArrayFilter extends CollectionFilter {
@@ -1885,10 +1946,6 @@ class NumericFilter extends CollectionFilter {
 }
 
 class TextFilter extends CollectionFilter {
-    @GenModel(propertyCategory="Business")
-	refers Attribute[1] attribute
-    @GenModel(propertyCategory="Interface")
-	String placeholder = ''
 }
 
 abstract class EditUnit extends SingletonUnit {

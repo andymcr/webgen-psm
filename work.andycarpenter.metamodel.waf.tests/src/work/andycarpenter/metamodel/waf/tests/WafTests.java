@@ -44,6 +44,15 @@ public class WafTests extends TestSuite {
 		suite.addTestSuite(DataTypeFieldTest.class);
 		suite.addTestSuite(DateFieldTest.class);
 		suite.addTestSuite(SingletonUnitTest.class);
+		suite.addTestSuite(ArrayFilterTest.class);
+		suite.addTestSuite(BooleanFilterTest.class);
+		suite.addTestSuite(ChoiceFilterTest.class);
+		suite.addTestSuite(ComparisonFilterTest.class);
+		suite.addTestSuite(DateTimeFilterTest.class);
+		suite.addTestSuite(EntityFilterTest.class);
+		suite.addTestSuite(NullFilterTest.class);
+		suite.addTestSuite(NumericFilterTest.class);
+		suite.addTestSuite(TextFilterTest.class);
 		suite.addTestSuite(CreateUnitTest.class);
 		suite.addTestSuite(UpdateUnitTest.class);
 		suite.addTestSuite(CreateUpdateUnitTest.class);
