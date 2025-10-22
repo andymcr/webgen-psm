@@ -22,6 +22,8 @@ import work.andycarpenter.metamodel.waf.CollectionUnit;
  *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#hasFilters2() <em>Has Filters2</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#containingType() <em>Containing Type</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#referencableTypes() <em>Referencable Types</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#hasNumericFilters() <em>Has Numeric Filters</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#hasTextFilters() <em>Has Text Filters</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#instanceControlClass() <em>Instance Control Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#hasInstanceControlClass() <em>Has Instance Control Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#instanceActionClass() <em>Instance Action Class</em>}</li>
@@ -126,6 +128,32 @@ public abstract class CollectionUnitTest extends DynamicUnitTest {
 	 * @generated
 	 */
 	public void testReferencableTypes() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.CollectionUnit#hasNumericFilters() <em>Has Numeric Filters</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.CollectionUnit#hasNumericFilters()
+	 * @generated
+	 */
+	public void testHasNumericFilters() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.CollectionUnit#hasTextFilters() <em>Has Text Filters</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.CollectionUnit#hasTextFilters()
+	 * @generated
+	 */
+	public void testHasTextFilters() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

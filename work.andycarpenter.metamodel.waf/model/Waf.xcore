@@ -1777,7 +1777,7 @@ abstract class CollectionUnit extends DynamicUnit, SelectableUnit, ValueContext 
 	contains CollectionFilter[] filters opposite affects
 
 	op boolean hasFilters2() {
-		return !filters.isEmpty()
+		!filters.isEmpty()
 	}
 
 
@@ -1806,6 +1806,14 @@ abstract class CollectionUnit extends DynamicUnit, SelectableUnit, ValueContext 
 			}
 		}
 		return entities
+	}
+
+	op boolean hasNumericFilters() {
+		!filters.filter[it instanceof NumericFilter].isEmpty()
+	}
+
+	op boolean hasTextFilters() {
+		!filters.filter[it instanceof TextFilter].isEmpty()
 	}
 
 	refers Filter filter
@@ -1865,7 +1873,7 @@ abstract class CollectionUnit extends DynamicUnit, SelectableUnit, ValueContext 
 }
 
 abstract class CollectionFilter extends NamedElement {
-	refers CollectionUnit[1] affects opposite filters
+	container CollectionUnit[1] affects opposite filters
     @GenModel(propertyCategory="Business")
 	refers Attribute[1] attribute
     @GenModel(propertyCategory="Interface")
@@ -1892,10 +1900,10 @@ abstract class CollectionFilter extends NamedElement {
 	}
 	
 	op boolean hasCustomisedPlaceholder() {
-		if (attribute !== null) {
-			placeholder() !== attribute.displayLabel
+		if (placeholderOverride.trim() === '' || attribute !== null) {
+			false
 		} else {
-			placeholderOverride.trim() !== ''
+			placeholderOverride.trim() !== attribute.displayLabel
 		}
 	}
 
@@ -1912,7 +1920,7 @@ abstract class CollectionFilter extends NamedElement {
 	}
 	
 	op boolean hasCustomisedTitle() {
-		if (title() === '' || attribute === null) {
+		if (titleOverride.trim() === '' || attribute === null) {
 			false
 		} else {
 			titleOverride.trim() !== attribute.displayLabel
