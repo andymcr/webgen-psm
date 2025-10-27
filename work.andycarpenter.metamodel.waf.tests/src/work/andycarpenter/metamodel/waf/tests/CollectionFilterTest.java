@@ -13,6 +13,7 @@ import work.andycarpenter.metamodel.waf.CollectionFilter;
  * <p>
  * The following operations are tested:
  * <ul>
+ *   <li>{@link work.andycarpenter.metamodel.waf.CollectionFilter#referencableTypes() <em>Referencable Types</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.CollectionFilter#hasHelp() <em>Has Help</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.CollectionFilter#placeholder() <em>Placeholder</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.CollectionFilter#hasCustomisedPlaceholder() <em>Has Customised Placeholder</em>}</li>
@@ -60,6 +61,19 @@ public abstract class CollectionFilterTest extends TestCase {
 	 */
 	protected CollectionFilter getFixture() {
 		return fixture;
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.CollectionFilter#referencableTypes() <em>Referencable Types</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.CollectionFilter#referencableTypes()
+	 * @generated
+	 */
+	public void testReferencableTypes() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
 	}
 
 	/**

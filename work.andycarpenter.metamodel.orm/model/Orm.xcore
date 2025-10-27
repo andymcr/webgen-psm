@@ -842,6 +842,8 @@ class Selection extends NamedElement, FormalParameterList {
 	op Entity[] referencableTypes() {
 		var types = new BasicEList<Entity>() //
 		types.add(definedBy.serves)
+		types.addAll(joins.map[it.partOf])
+		types.addAll(joins.map[it.opposite.partOf])
 		return types
 	}
 

@@ -436,7 +436,15 @@ abstract class Controller extends NamedDisplayElement {
 	}
 
 	op CollectionUnit[] collectionUnitsWithFilters() {
-		collectionUnits().filter[it.hasFilters2()].toEList()
+		collectionUnits().filter[it.hasCollectionFilters()].toEList()
+	}
+
+	op boolean hasCollectionFilters() {
+		!collectionUnitsWithFilters().isEmpty()
+	}
+
+	op boolean hasTextFilters() {
+		collectionUnits().exists[u | u.hasTextFilters]
 	}
 
 	op GalleryUnit[] galleryUnits() {
@@ -1776,7 +1784,7 @@ abstract class CollectionUnit extends DynamicUnit, SelectableUnit, ValueContext 
 	refers Selection findElementSelection
 	contains CollectionFilter[] filters opposite affects
 
-	op boolean hasFilters2() {
+	op boolean hasCollectionFilters() {
 		!filters.isEmpty()
 	}
 
@@ -1882,6 +1890,17 @@ abstract class CollectionFilter extends NamedElement {
 	String placeholderOverride = ''
     @GenModel(propertyCategory="Interface")
 	String titleOverride = ''
+
+	op Entity[] referencableTypes() {
+		var entities = new BasicEList<Entity>()
+		if (affects.selection !== null) {
+			entities.addAll(affects.selection.referencableTypes());
+		} else {
+			entities.add(affects.contentType);
+		}
+
+		return entities
+	}
 
 	op boolean hasHelp() {
 		help.trim() !== ''

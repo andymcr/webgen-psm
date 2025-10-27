@@ -44,6 +44,8 @@ import work.andycarpenter.metamodel.waf.Controller;
  *   <li>{@link work.andycarpenter.metamodel.waf.Controller#hasFormUnits() <em>Has Form Units</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.Controller#hasFilters() <em>Has Filters</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.Controller#collectionUnitsWithFilters() <em>Collection Units With Filters</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.Controller#hasCollectionFilters() <em>Has Collection Filters</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.Controller#hasTextFilters() <em>Has Text Filters</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.Controller#galleryUnits() <em>Gallery Units</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.Controller#hasGalleryUnits() <em>Has Gallery Units</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.Controller#tabularUnits() <em>Tabular Units</em>}</li>
@@ -707,6 +709,32 @@ public abstract class ControllerTest extends TestCase {
 	 * @generated
 	 */
 	public void testHasPagination() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.Controller#hasCollectionFilters() <em>Has Collection Filters</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.Controller#hasCollectionFilters()
+	 * @generated
+	 */
+	public void testHasCollectionFilters() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.Controller#hasTextFilters() <em>Has Text Filters</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.Controller#hasTextFilters()
+	 * @generated
+	 */
+	public void testHasTextFilters() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

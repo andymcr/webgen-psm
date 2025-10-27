@@ -19,7 +19,7 @@ import work.andycarpenter.metamodel.waf.CollectionUnit;
  * <p>
  * The following operations are tested:
  * <ul>
- *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#hasFilters2() <em>Has Filters2</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#hasCollectionFilters() <em>Has Collection Filters</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#containingType() <em>Containing Type</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#referencableTypes() <em>Referencable Types</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#hasNumericFilters() <em>Has Numeric Filters</em>}</li>
@@ -95,13 +95,13 @@ public abstract class CollectionUnitTest extends DynamicUnitTest {
 	}
 
 	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.CollectionUnit#hasFilters2() <em>Has Filters2</em>}' operation.
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.CollectionUnit#hasCollectionFilters() <em>Has Collection Filters</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.CollectionUnit#hasFilters2()
+	 * @see work.andycarpenter.metamodel.waf.CollectionUnit#hasCollectionFilters()
 	 * @generated
 	 */
-	public void testHasFilters2() {
+	public void testHasCollectionFilters() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
