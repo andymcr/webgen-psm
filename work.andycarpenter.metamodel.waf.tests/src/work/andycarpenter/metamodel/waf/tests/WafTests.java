@@ -33,7 +33,6 @@ public class WafTests extends TestSuite {
 		TestSuite suite = new WafTests("waf Tests");
 		suite.addTestSuite(WafModelTest.class);
 		suite.addTestSuite(NavigationTest.class);
-		suite.addTestSuite(SubmenuEntryTest.class);
 		suite.addTestSuite(SinglePageControllerTest.class);
 		suite.addTestSuite(MultiPageControllerTest.class);
 		suite.addTestSuite(StaticUnitTest.class);

@@ -8,13 +8,10 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import work.andycarpenter.metamodel.security.SecurityFactory;
 import work.andycarpenter.metamodel.waf.SubmenuEntry;
 import work.andycarpenter.metamodel.waf.WafPackage;
 
@@ -47,7 +44,6 @@ public class SubmenuEntryItemProvider extends MenuItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addPartOfPropertyDescriptor(object);
-			addIsAuthorisedPropertyDescriptor(object);
 			addAlwaysVisiblePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -76,28 +72,6 @@ public class SubmenuEntryItemProvider extends MenuItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Is Authorised feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addIsAuthorisedPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_SubmenuEntry_isAuthorised_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_SubmenuEntry_isAuthorised_feature", "_UI_SubmenuEntry_type"),
-				 WafPackage.eINSTANCE.getSubmenuEntry_IsAuthorised(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_DebugPropertyCategory"),
-				 null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Always Visible feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -117,36 +91,6 @@ public class SubmenuEntryItemProvider extends MenuItemProvider {
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 getString("_UI_DebugPropertyCategory"),
 				 null));
-	}
-
-	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
-	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null) {
-			super.getChildrenFeatures(object);
-			childrenFeatures.add(WafPackage.eINSTANCE.getSubmenuEntry_Authorisation());
-		}
-		return childrenFeatures;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected EStructuralFeature getChildFeature(Object object, Object child) {
-		// Check the type of the specified child object and return the proper feature to use for
-		// adding (see {@link AddCommand}) it as a child.
-
-		return super.getChildFeature(object, child);
 	}
 
 	/**
@@ -187,12 +131,8 @@ public class SubmenuEntryItemProvider extends MenuItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(SubmenuEntry.class)) {
-			case WafPackage.SUBMENU_ENTRY__IS_AUTHORISED:
 			case WafPackage.SUBMENU_ENTRY__ALWAYS_VISIBLE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-			case WafPackage.SUBMENU_ENTRY__AUTHORISATION:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
 		super.notifyChanged(notification);
@@ -208,11 +148,6 @@ public class SubmenuEntryItemProvider extends MenuItemProvider {
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.eINSTANCE.getSubmenuEntry_Authorisation(),
-				 SecurityFactory.eINSTANCE.createIsGrantedRole()));
 	}
 
 }

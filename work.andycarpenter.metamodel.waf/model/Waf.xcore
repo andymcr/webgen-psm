@@ -218,10 +218,6 @@ abstract class MenuEntry {
 }
 
 class SubmenuEntry extends Menu, MenuEntry {
-	contains AuthorisationExpression authorisation
-	@OCL(derivation="not authorisation.oclIsUndefined()")
-    @GenModel(propertyCategory="Debug")
-	derived readonly transient volatile boolean isAuthorised
 	@OCL(derivation="entries
 		->select(e | e.oclIsTypeOf(ActionMenuEntry)).oclAsType(ActionMenuEntry)
 		->exists(e | e.alwaysVisible = true)")
@@ -3257,6 +3253,7 @@ abstract class Action extends NamedDisplayElement {
 	op AuthorisationExpression authorisation() {
 		null
 	}
+
 	op boolean isAuthorised() {
 		authorisation() !== null
 	}

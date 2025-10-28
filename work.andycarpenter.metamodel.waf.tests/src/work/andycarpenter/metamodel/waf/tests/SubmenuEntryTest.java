@@ -11,12 +11,6 @@ import work.andycarpenter.metamodel.waf.WafFactory;
  * <!-- begin-user-doc -->
  * A test case for the model object '<em><b>Submenu Entry</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * The following features are tested:
- * <ul>
- *   <li>{@link work.andycarpenter.metamodel.waf.SubmenuEntry#isIsAuthorised() <em>Is Authorised</em>}</li>
- * </ul>
- * </p>
  * @generated
  */
 public class SubmenuEntryTest extends MenuTest {
@@ -71,19 +65,6 @@ public class SubmenuEntryTest extends MenuTest {
 	@Override
 	protected void tearDown() throws Exception {
 		setFixture(null);
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.SubmenuEntry#isIsAuthorised() <em>Is Authorised</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.SubmenuEntry#isIsAuthorised()
-	 * @generated
-	 */
-	public void testIsIsAuthorised() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
 	}
 
 } //SubmenuEntryTest
