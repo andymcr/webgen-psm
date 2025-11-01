@@ -55,8 +55,6 @@ public class CollectionUnitItemProvider extends DynamicUnitItemProvider {
 			addFindContainerSelectionPropertyDescriptor(object);
 			addFindElementSelectionPropertyDescriptor(object);
 			addFilterPropertyDescriptor(object);
-			addSupportedFiltersPropertyDescriptor(object);
-			addHasFiltersPropertyDescriptor(object);
 			addHasGroupedResultsPropertyDescriptor(object);
 			addHasPaginationPropertyDescriptor(object);
 			addEmptyMessagePropertyDescriptor(object);
@@ -220,50 +218,6 @@ public class CollectionUnitItemProvider extends DynamicUnitItemProvider {
 				 true,
 				 null,
 				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Supported Filters feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addSupportedFiltersPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_CollectionUnit_supportedFilters_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_supportedFilters_feature", "_UI_CollectionUnit_type"),
-				 WafPackage.eINSTANCE.getCollectionUnit_SupportedFilters(),
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Has Filters feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addHasFiltersPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_CollectionUnit_hasFilters_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_hasFilters_feature", "_UI_CollectionUnit_type"),
-				 WafPackage.eINSTANCE.getCollectionUnit_HasFilters(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -502,7 +456,6 @@ public class CollectionUnitItemProvider extends DynamicUnitItemProvider {
 
 		switch (notification.getFeatureID(CollectionUnit.class)) {
 			case WafPackage.COLLECTION_UNIT__TRUNCATE_ELEMENT_TITLE:
-			case WafPackage.COLLECTION_UNIT__HAS_FILTERS:
 			case WafPackage.COLLECTION_UNIT__HAS_GROUPED_RESULTS:
 			case WafPackage.COLLECTION_UNIT__HAS_PAGINATION:
 			case WafPackage.COLLECTION_UNIT__EMPTY_MESSAGE:

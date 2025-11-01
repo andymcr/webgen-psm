@@ -427,16 +427,16 @@ abstract class Controller extends NamedDisplayElement {
 		!formUnits().isEmpty()
 	}
 
-	op boolean hasFilters() {
-		!collectionUnits().filter[it.hasFilters].isEmpty()
-	}
-
 	op CollectionUnit[] collectionUnitsWithFilters() {
 		collectionUnits().filter[it.hasCollectionFilters()].toEList()
 	}
 
 	op boolean hasCollectionFilters() {
 		!collectionUnitsWithFilters().isEmpty()
+	}
+
+	op boolean hasNumericFilters() {
+		collectionUnits().exists[u | u.hasNumericFilters]
 	}
 
 	op boolean hasTextFilters() {
@@ -1821,10 +1821,6 @@ abstract class CollectionUnit extends DynamicUnit, SelectableUnit, ValueContext 
 	}
 
 	refers Filter filter
-	refers Filter[] supportedFilters
-	@OCL(derivation="supportedFilters->notEmpty()")
-    @GenModel(propertyCategory="Debug")
-	derived readonly transient volatile boolean hasFilters
 
 	@OCL(derivation="if not selection.oclIsUndefined() then
 			selection.grouping->notEmpty()

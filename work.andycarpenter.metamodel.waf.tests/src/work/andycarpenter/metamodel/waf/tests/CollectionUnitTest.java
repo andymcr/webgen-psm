@@ -11,7 +11,6 @@ import work.andycarpenter.metamodel.waf.CollectionUnit;
  * <p>
  * The following features are tested:
  * <ul>
- *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#isHasFilters() <em>Has Filters</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#isHasGroupedResults() <em>Has Grouped Results</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#isHasPagination() <em>Has Pagination</em>}</li>
  * </ul>
@@ -53,19 +52,6 @@ public abstract class CollectionUnitTest extends DynamicUnitTest {
 	@Override
 	protected CollectionUnit getFixture() {
 		return (CollectionUnit)fixture;
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.CollectionUnit#isHasFilters() <em>Has Filters</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.CollectionUnit#isHasFilters()
-	 * @generated
-	 */
-	public void testIsHasFilters() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
 	}
 
 	/**
