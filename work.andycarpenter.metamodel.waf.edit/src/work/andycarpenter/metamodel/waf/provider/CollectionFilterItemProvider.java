@@ -4,7 +4,11 @@ package work.andycarpenter.metamodel.waf.provider;
 
 
 import java.util.Collection;
+import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
+
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
@@ -14,6 +18,8 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import work.andycarpenter.metamodel.base.provider.NamedElementItemProvider;
+import work.andycarpenter.metamodel.orm.Entity;
+import work.andycarpenter.metamodel.orm.Feature;
 import work.andycarpenter.metamodel.waf.CollectionFilter;
 import work.andycarpenter.metamodel.waf.WafPackage;
 
@@ -81,22 +87,33 @@ public class CollectionFilterItemProvider
 	 * This adds a property descriptor for the Attribute feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected void addAttributePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_CollectionFilter_attribute_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionFilter_attribute_feature", "_UI_CollectionFilter_type"),
-				 WafPackage.eINSTANCE.getCollectionFilter_Attribute(),
-				 true,
-				 false,
-				 true,
-				 null,
-				 getString("_UI_BusinessPropertyCategory"),
-				 null));
+		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
+			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+			getResourceLocator(),
+			getString("_UI_CollectionFilter_attribute_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_CollectionFilter_attribute_feature", "_UI_CollectionFilter_type"),
+			WafPackage.eINSTANCE.getCollectionFilter_Attribute(),
+			true, false, true, null,
+			getString("_UI_BusinessPropertyCategory"),
+			null) {
+				@Override
+				public Collection<?> getChoiceOfValues(Object object) {
+					if (object instanceof CollectionFilter) {
+						final CollectionFilter filter = (CollectionFilter) object;
+						final Set<Feature> features = new HashSet<Feature>();
+						for (Entity entity : filter.getAffects().referencableTypes()) {
+							features.addAll(entity.getAttributes());
+						}
+
+						return features;
+					}
+
+					return Collections.emptySet();
+				}
+			});
 	}
 
 	/**
