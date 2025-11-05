@@ -14,6 +14,7 @@ import work.andycarpenter.metamodel.waf.WafFactory;
  * <p>
  * The following operations are tested:
  * <ul>
+ *   <li>{@link work.andycarpenter.metamodel.waf.UnitAttribute#defaultValue() <em>Default Value</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.orm.AttributePathElement#name() <em>Name</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.orm.AttributePathElement#leafElement() <em>Leaf Element</em>}</li>
  * </ul>
@@ -72,6 +73,19 @@ public class UnitAttributeTest extends UnitFeatureTest {
 	@Override
 	protected void tearDown() throws Exception {
 		setFixture(null);
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.UnitAttribute#defaultValue() <em>Default Value</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.UnitAttribute#defaultValue()
+	 * @generated
+	 */
+	public void testDefaultValue() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
 	}
 
 	/**

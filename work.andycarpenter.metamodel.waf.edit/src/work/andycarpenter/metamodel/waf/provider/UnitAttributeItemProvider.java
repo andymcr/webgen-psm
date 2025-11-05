@@ -348,7 +348,7 @@ public class UnitAttributeItemProvider extends UnitFeatureItemProvider {
 		boolean qualify =
 			childFeature == WafPackage.eINSTANCE.getUnitField_HideWhen() ||
 			childFeature == WafPackage.eINSTANCE.getUnitField_DisplayDefaultWhen() ||
-			childFeature == WafPackage.eINSTANCE.getUnitFeature_ForcedValue() ||
+			childFeature == WafPackage.eINSTANCE.getUnitFeature_FieldForcedValue() ||
 			childFeature == WafPackage.eINSTANCE.getUnitAttribute_AttributeDefaultValue();
 
 		if (qualify) {

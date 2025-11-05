@@ -62,12 +62,7 @@ public class UnitLabelItemProvider extends DisplayElementItemProvider {
 			addHelpPropertyDescriptor(object);
 			addHasHelpPropertyDescriptor(object);
 			addHasSecondHelpPropertyDescriptor(object);
-			addIsContainsPropertyDescriptor(object);
-			addIsDisabledPropertyDescriptor(object);
 			addDefaultDisplayPropertyDescriptor(object);
-			addDefaultValuePropertyDescriptor(object);
-			addHasDefaultValuePropertyDescriptor(object);
-			addHasForcedValuePropertyDescriptor(object);
 			addEscapeHTMLPropertyDescriptor(object);
 			addCollectionDisplayOptionPropertyDescriptor(object);
 			addTruncatePropertyDescriptor(object);
@@ -435,50 +430,6 @@ public class UnitLabelItemProvider extends DisplayElementItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Is Contains feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addIsContainsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_UnitField_isContains_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_isContains_feature", "_UI_UnitField_type"),
-				 WafPackage.eINSTANCE.getUnitField_IsContains(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_DebugPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Is Disabled feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addIsDisabledPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_UnitField_isDisabled_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_isDisabled_feature", "_UI_UnitField_type"),
-				 WafPackage.eINSTANCE.getUnitField_IsDisabled(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_DebugPropertyCategory"),
-				 null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Default Display feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -497,72 +448,6 @@ public class UnitLabelItemProvider extends DisplayElementItemProvider {
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Default Value feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addDefaultValuePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_UnitField_defaultValue_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_defaultValue_feature", "_UI_UnitField_type"),
-				 WafPackage.eINSTANCE.getUnitField_DefaultValue(),
-				 false,
-				 false,
-				 false,
-				 null,
-				 getString("_UI_DebugPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Has Default Value feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addHasDefaultValuePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_UnitField_hasDefaultValue_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_hasDefaultValue_feature", "_UI_UnitField_type"),
-				 WafPackage.eINSTANCE.getUnitField_HasDefaultValue(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_DebugPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Has Forced Value feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addHasForcedValuePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_UnitField_hasForcedValue_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_hasForcedValue_feature", "_UI_UnitField_type"),
-				 WafPackage.eINSTANCE.getUnitField_HasForcedValue(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -871,11 +756,7 @@ public class UnitLabelItemProvider extends DisplayElementItemProvider {
 			case WafPackage.UNIT_LABEL__HELP:
 			case WafPackage.UNIT_LABEL__HAS_HELP:
 			case WafPackage.UNIT_LABEL__HAS_SECOND_HELP:
-			case WafPackage.UNIT_LABEL__IS_CONTAINS:
-			case WafPackage.UNIT_LABEL__IS_DISABLED:
 			case WafPackage.UNIT_LABEL__DEFAULT_DISPLAY:
-			case WafPackage.UNIT_LABEL__HAS_DEFAULT_VALUE:
-			case WafPackage.UNIT_LABEL__HAS_FORCED_VALUE:
 			case WafPackage.UNIT_LABEL__ESCAPE_HTML:
 			case WafPackage.UNIT_LABEL__COLLECTION_DISPLAY_OPTION:
 			case WafPackage.UNIT_LABEL__TRUNCATE:

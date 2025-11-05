@@ -15,7 +15,7 @@ import work.andycarpenter.metamodel.waf.WafFactory;
  * <p>
  * The following operations are tested:
  * <ul>
- *   <li>{@link work.andycarpenter.metamodel.waf.UnitAssociation#defaultValue() <em>Default Value</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.UnitAssociation#isContains() <em>Is Contains</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.orm.AssociationPathElement#name() <em>Name</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.orm.AssociationPathElement#associationTarget() <em>Association Target</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.orm.AssociationPathElement#leafElement() <em>Leaf Element</em>}</li>
@@ -79,13 +79,13 @@ public class UnitAssociationTest extends UnitFeatureTest {
 	}
 
 	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.UnitAssociation#defaultValue() <em>Default Value</em>}' operation.
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.UnitAssociation#isContains() <em>Is Contains</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.UnitAssociation#defaultValue()
+	 * @see work.andycarpenter.metamodel.waf.UnitAssociation#isContains()
 	 * @generated
 	 */
-	public void testDefaultValue() {
+	public void testIsContains() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

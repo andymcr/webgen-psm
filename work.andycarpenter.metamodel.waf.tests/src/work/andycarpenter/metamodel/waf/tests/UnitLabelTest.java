@@ -28,11 +28,6 @@ import work.andycarpenter.metamodel.waf.WafFactory;
  *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#getHelp() <em>Help</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#isHasHelp() <em>Has Help</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#isHasSecondHelp() <em>Has Second Help</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#isIsContains() <em>Is Contains</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#isIsDisabled() <em>Is Disabled</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#getDefaultValue() <em>Default Value</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#isHasDefaultValue() <em>Has Default Value</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#isHasForcedValue() <em>Has Forced Value</em>}</li>
  * </ul>
  * </p>
  * <p>
@@ -41,6 +36,19 @@ import work.andycarpenter.metamodel.waf.WafFactory;
  *   <li>{@link work.andycarpenter.metamodel.waf.UnitLabel#name() <em>Name</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.UnitLabel#fieldName() <em>Field Name</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.UnitLabel#isLabelField() <em>Is Label Field</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#actions() <em>Actions</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#isContains() <em>Is Contains</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#dataType() <em>Data Type</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#dateDetails() <em>Date Details</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#defaultValue() <em>Default Value</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#hasDefaultValue() <em>Has Default Value</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#hasDefaultDisplay() <em>Has Default Display</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#isDisabled() <em>Is Disabled</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#hasDisplayDefaultWhen() <em>Has Display Default When</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#hasEmptyCollectionDisplay() <em>Has Empty Collection Display</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#enumerationType() <em>Enumeration Type</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#forcedValue() <em>Forced Value</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#hasForcedValue() <em>Has Forced Value</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#isAssociationField() <em>Is Association Field</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#isAttributeField() <em>Is Attribute Field</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#isBooleanField() <em>Is Boolean Field</em>}</li>
@@ -60,15 +68,6 @@ import work.andycarpenter.metamodel.waf.WafFactory;
  *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#isStringField() <em>Is String Field</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#isTextareaField() <em>Is Textarea Field</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#isUrlField() <em>Is Url Field</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#hasDefaultDisplay() <em>Has Default Display</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#hasDisplayDefaultWhen() <em>Has Display Default When</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#hasDefaultValue() <em>Has Default Value</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#hasEmptyCollectionDisplay() <em>Has Empty Collection Display</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#actions() <em>Actions</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#dataType() <em>Data Type</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#dateDetails() <em>Date Details</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#defaultValue() <em>Default Value</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#enumerationType() <em>Enumeration Type</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#inputGroupClass() <em>Input Group Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#hasInputGroupClass() <em>Has Input Group Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.UnitField#fieldLabelClass() <em>Field Label Class</em>}</li>
@@ -500,97 +499,6 @@ public class UnitLabelTest extends DisplayElementTest {
 	}
 
 	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.UnitField#isIsContains() <em>Is Contains</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.UnitField#isIsContains()
-	 * @generated
-	 */
-	public void testIsIsContains() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.UnitField#isSetIsContains() <em>isSetIsContains()</em>}' method.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.UnitField#isSetIsContains()
-	 * @generated
-	 */
-	public void testIsSetIsContains() {
-		// TODO: implement this test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.UnitField#isIsDisabled() <em>Is Disabled</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.UnitField#isIsDisabled()
-	 * @generated
-	 */
-	public void testIsIsDisabled() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.UnitField#isSetIsDisabled() <em>isSetIsDisabled()</em>}' method.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.UnitField#isSetIsDisabled()
-	 * @generated
-	 */
-	public void testIsSetIsDisabled() {
-		// TODO: implement this test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.UnitField#getDefaultValue() <em>Default Value</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.UnitField#getDefaultValue()
-	 * @generated
-	 */
-	public void testGetDefaultValue() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.UnitField#isHasDefaultValue() <em>Has Default Value</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.UnitField#isHasDefaultValue()
-	 * @generated
-	 */
-	public void testIsHasDefaultValue() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.UnitField#isHasForcedValue() <em>Has Forced Value</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.UnitField#isHasForcedValue()
-	 * @generated
-	 */
-	public void testIsHasForcedValue() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
 	 * Tests the '{@link work.andycarpenter.metamodel.waf.UnitLabel#name() <em>Name</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -890,6 +798,19 @@ public class UnitLabelTest extends DisplayElementTest {
 	}
 
 	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.UnitField#isDisabled() <em>Is Disabled</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.UnitField#isDisabled()
+	 * @generated
+	 */
+	public void testIsDisabled() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
 	 * Tests the '{@link work.andycarpenter.metamodel.waf.UnitField#hasDisplayDefaultWhen() <em>Has Display Default When</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -942,6 +863,19 @@ public class UnitLabelTest extends DisplayElementTest {
 	}
 
 	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.UnitField#isContains() <em>Is Contains</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.UnitField#isContains()
+	 * @generated
+	 */
+	public void testIsContains() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
 	 * Tests the '{@link work.andycarpenter.metamodel.waf.UnitField#dataType() <em>Data Type</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -988,6 +922,32 @@ public class UnitLabelTest extends DisplayElementTest {
 	 * @generated
 	 */
 	public void testEnumerationType() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.UnitField#forcedValue() <em>Forced Value</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.UnitField#forcedValue()
+	 * @generated
+	 */
+	public void testForcedValue() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.UnitField#hasForcedValue() <em>Has Forced Value</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.UnitField#hasForcedValue()
+	 * @generated
+	 */
+	public void testHasForcedValue() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

@@ -15,47 +15,7 @@ import work.andycarpenter.metamodel.waf.DynamicUnit;
  *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#isHasExplicitlyEditedContainer() <em>Has Explicitly Edited Container</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#getServicesUsed() <em>Services Used</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#isHasServicesUsed() <em>Has Services Used</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#isIsConditionallyDisplayed() <em>Is Conditionally Displayed</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#isHasHiddenMessage() <em>Has Hidden Message</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#getAssociationFields() <em>Association Fields</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#isHasAssociationFields() <em>Has Association Fields</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#getAutocompleteFields() <em>Autocomplete Fields</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#isHasAutocompleteFields() <em>Has Autocomplete Fields</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#isHasBooleanFields() <em>Has Boolean Fields</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#isHasCaptcha() <em>Has Captcha</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#isHasChangableCollections() <em>Has Changable Collections</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#getCollectionFields() <em>Collection Fields</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#getCollectionFeatures() <em>Collection Features</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#getDataTypeFields() <em>Data Type Fields</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#getDateFields() <em>Date Fields</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#getDefaultValueFields() <em>Default Value Fields</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#isHasDefaultValueFields() <em>Has Default Value Fields</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#isHasDisabledFields() <em>Has Disabled Fields</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#isHasEmailFields() <em>Has Email Fields</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#getEncryptedFields() <em>Encrypted Fields</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#isHasEncryptedFields() <em>Has Encrypted Fields</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#getEnumerationFields() <em>Enumeration Fields</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#isHasEnumerationFields() <em>Has Enumeration Fields</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#getFeatureFields() <em>Feature Fields</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#isHasFeatureFields() <em>Has Feature Fields</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#getFileFields() <em>File Fields</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#isHasFileFields() <em>Has File Fields</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#getForcedValueFields() <em>Forced Value Fields</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#isHasForcedValueFields() <em>Has Forced Value Fields</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#getFormFields() <em>Form Fields</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#getImageFields() <em>Image Fields</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#isHasImageFields() <em>Has Image Fields</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#isHasIntegerFields() <em>Has Integer Fields</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#getInterfaceFields() <em>Interface Fields</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#isHasInterfaceFields() <em>Has Interface Fields</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#isHasRequiredInterfaceFields() <em>Has Required Interface Fields</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#isHasObfuscatedFields() <em>Has Obfuscated Fields</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#isHasRepeatedFields() <em>Has Repeated Fields</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#getResourceFields() <em>Resource Fields</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#isHasResourceFields() <em>Has Resource Fields</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#isHasStringFields() <em>Has String Fields</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#isHasTextareaFields() <em>Has Textarea Fields</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#isHasUrlFields() <em>Has Url Fields</em>}</li>
  * </ul>
  * </p>
  * <p>
@@ -65,6 +25,46 @@ import work.andycarpenter.metamodel.waf.DynamicUnit;
  *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#containingType() <em>Containing Type</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#isContained() <em>Is Contained</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#referencableTypes() <em>Referencable Types</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#isConditionallyDisplayed() <em>Is Conditionally Displayed</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#hasHiddenMessage() <em>Has Hidden Message</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#associationFields() <em>Association Fields</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#hasAssociationFields() <em>Has Association Fields</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#autocompleteFields() <em>Autocomplete Fields</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#hasAutocompleteFields() <em>Has Autocomplete Fields</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#hasBooleanFields() <em>Has Boolean Fields</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#hasCaptcha() <em>Has Captcha</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#hasChangableCollections() <em>Has Changable Collections</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#collectionFields() <em>Collection Fields</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#collectionFeatures() <em>Collection Features</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#dataTypeFields() <em>Data Type Fields</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#dateFields() <em>Date Fields</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#defaultValueFields() <em>Default Value Fields</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#hasDefaultValueFields() <em>Has Default Value Fields</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#hasDisabledFields() <em>Has Disabled Fields</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#hasEmailFields() <em>Has Email Fields</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#encryptedFields() <em>Encrypted Fields</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#hasEncryptedFields() <em>Has Encrypted Fields</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#enumerationFields() <em>Enumeration Fields</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#hasEnumerationFields() <em>Has Enumeration Fields</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#featureFields() <em>Feature Fields</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#hasFeatureFields() <em>Has Feature Fields</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#fileFields() <em>File Fields</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#hasFileFields() <em>Has File Fields</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#forcedValueFields() <em>Forced Value Fields</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#hasForcedValueFields() <em>Has Forced Value Fields</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#imageFields() <em>Image Fields</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#hasImageFields() <em>Has Image Fields</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#hasIntegerFields() <em>Has Integer Fields</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#interfaceFields() <em>Interface Fields</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#hasInterfaceFields() <em>Has Interface Fields</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#hasRequiredInterfaceFields() <em>Has Required Interface Fields</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#hasObfuscatedFields() <em>Has Obfuscated Fields</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#hasRepeatedFields() <em>Has Repeated Fields</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#resourceFields() <em>Resource Fields</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#hasResourceFields() <em>Has Resource Fields</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#hasStringFields() <em>Has String Fields</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#hasTextareaFields() <em>Has Textarea Fields</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#hasUrlFields() <em>Has Url Fields</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#fieldListClass() <em>Field List Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#hasFieldListClass() <em>Has Field List Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#definitionFieldListClass() <em>Definition Field List Class</em>}</li>
@@ -227,604 +227,6 @@ public abstract class DynamicUnitTest extends ContentUnitTest {
 	}
 
 	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#isIsConditionallyDisplayed() <em>Is Conditionally Displayed</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#isIsConditionallyDisplayed()
-	 * @generated
-	 */
-	public void testIsIsConditionallyDisplayed() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#isSetIsConditionallyDisplayed() <em>isSetIsConditionallyDisplayed()</em>}' method.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#isSetIsConditionallyDisplayed()
-	 * @generated
-	 */
-	public void testIsSetIsConditionallyDisplayed() {
-		// TODO: implement this test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#isHasHiddenMessage() <em>Has Hidden Message</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#isHasHiddenMessage()
-	 * @generated
-	 */
-	public void testIsHasHiddenMessage() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#isSetHasHiddenMessage() <em>isSetHasHiddenMessage()</em>}' method.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#isSetHasHiddenMessage()
-	 * @generated
-	 */
-	public void testIsSetHasHiddenMessage() {
-		// TODO: implement this test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#getAssociationFields() <em>Association Fields</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#getAssociationFields()
-	 * @generated
-	 */
-	public void testGetAssociationFields() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#isSetAssociationFields() <em>isSetAssociationFields()</em>}' method.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#isSetAssociationFields()
-	 * @generated
-	 */
-	public void testIsSetAssociationFields() {
-		// TODO: implement this test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#isHasAssociationFields() <em>Has Association Fields</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#isHasAssociationFields()
-	 * @generated
-	 */
-	public void testIsHasAssociationFields() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#isSetHasAssociationFields() <em>isSetHasAssociationFields()</em>}' method.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#isSetHasAssociationFields()
-	 * @generated
-	 */
-	public void testIsSetHasAssociationFields() {
-		// TODO: implement this test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#getAutocompleteFields() <em>Autocomplete Fields</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#getAutocompleteFields()
-	 * @generated
-	 */
-	public void testGetAutocompleteFields() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#isHasAutocompleteFields() <em>Has Autocomplete Fields</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#isHasAutocompleteFields()
-	 * @generated
-	 */
-	public void testIsHasAutocompleteFields() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#isSetHasAutocompleteFields() <em>isSetHasAutocompleteFields()</em>}' method.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#isSetHasAutocompleteFields()
-	 * @generated
-	 */
-	public void testIsSetHasAutocompleteFields() {
-		// TODO: implement this test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#isHasBooleanFields() <em>Has Boolean Fields</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#isHasBooleanFields()
-	 * @generated
-	 */
-	public void testIsHasBooleanFields() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#isSetHasBooleanFields() <em>isSetHasBooleanFields()</em>}' method.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#isSetHasBooleanFields()
-	 * @generated
-	 */
-	public void testIsSetHasBooleanFields() {
-		// TODO: implement this test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#isHasCaptcha() <em>Has Captcha</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#isHasCaptcha()
-	 * @generated
-	 */
-	public void testIsHasCaptcha() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#isSetHasCaptcha() <em>isSetHasCaptcha()</em>}' method.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#isSetHasCaptcha()
-	 * @generated
-	 */
-	public void testIsSetHasCaptcha() {
-		// TODO: implement this test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#isHasChangableCollections() <em>Has Changable Collections</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#isHasChangableCollections()
-	 * @generated
-	 */
-	public void testIsHasChangableCollections() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#isSetHasChangableCollections() <em>isSetHasChangableCollections()</em>}' method.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#isSetHasChangableCollections()
-	 * @generated
-	 */
-	public void testIsSetHasChangableCollections() {
-		// TODO: implement this test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#getCollectionFields() <em>Collection Fields</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#getCollectionFields()
-	 * @generated
-	 */
-	public void testGetCollectionFields() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#isSetCollectionFields() <em>isSetCollectionFields()</em>}' method.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#isSetCollectionFields()
-	 * @generated
-	 */
-	public void testIsSetCollectionFields() {
-		// TODO: implement this test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#getCollectionFeatures() <em>Collection Features</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#getCollectionFeatures()
-	 * @generated
-	 */
-	public void testGetCollectionFeatures() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#isSetCollectionFeatures() <em>isSetCollectionFeatures()</em>}' method.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#isSetCollectionFeatures()
-	 * @generated
-	 */
-	public void testIsSetCollectionFeatures() {
-		// TODO: implement this test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#getDataTypeFields() <em>Data Type Fields</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#getDataTypeFields()
-	 * @generated
-	 */
-	public void testGetDataTypeFields() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#isSetDataTypeFields() <em>isSetDataTypeFields()</em>}' method.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#isSetDataTypeFields()
-	 * @generated
-	 */
-	public void testIsSetDataTypeFields() {
-		// TODO: implement this test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#getDateFields() <em>Date Fields</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#getDateFields()
-	 * @generated
-	 */
-	public void testGetDateFields() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#isSetDateFields() <em>isSetDateFields()</em>}' method.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#isSetDateFields()
-	 * @generated
-	 */
-	public void testIsSetDateFields() {
-		// TODO: implement this test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#getDefaultValueFields() <em>Default Value Fields</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#getDefaultValueFields()
-	 * @generated
-	 */
-	public void testGetDefaultValueFields() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#isSetDefaultValueFields() <em>isSetDefaultValueFields()</em>}' method.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#isSetDefaultValueFields()
-	 * @generated
-	 */
-	public void testIsSetDefaultValueFields() {
-		// TODO: implement this test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#isHasDefaultValueFields() <em>Has Default Value Fields</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#isHasDefaultValueFields()
-	 * @generated
-	 */
-	public void testIsHasDefaultValueFields() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#isSetHasDefaultValueFields() <em>isSetHasDefaultValueFields()</em>}' method.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#isSetHasDefaultValueFields()
-	 * @generated
-	 */
-	public void testIsSetHasDefaultValueFields() {
-		// TODO: implement this test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#isHasDisabledFields() <em>Has Disabled Fields</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#isHasDisabledFields()
-	 * @generated
-	 */
-	public void testIsHasDisabledFields() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#isHasEmailFields() <em>Has Email Fields</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#isHasEmailFields()
-	 * @generated
-	 */
-	public void testIsHasEmailFields() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#getEncryptedFields() <em>Encrypted Fields</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#getEncryptedFields()
-	 * @generated
-	 */
-	public void testGetEncryptedFields() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#isSetEncryptedFields() <em>isSetEncryptedFields()</em>}' method.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#isSetEncryptedFields()
-	 * @generated
-	 */
-	public void testIsSetEncryptedFields() {
-		// TODO: implement this test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#isHasEncryptedFields() <em>Has Encrypted Fields</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#isHasEncryptedFields()
-	 * @generated
-	 */
-	public void testIsHasEncryptedFields() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#getEnumerationFields() <em>Enumeration Fields</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#getEnumerationFields()
-	 * @generated
-	 */
-	public void testGetEnumerationFields() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#isSetEnumerationFields() <em>isSetEnumerationFields()</em>}' method.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#isSetEnumerationFields()
-	 * @generated
-	 */
-	public void testIsSetEnumerationFields() {
-		// TODO: implement this test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#isHasEnumerationFields() <em>Has Enumeration Fields</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#isHasEnumerationFields()
-	 * @generated
-	 */
-	public void testIsHasEnumerationFields() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#getFeatureFields() <em>Feature Fields</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#getFeatureFields()
-	 * @generated
-	 */
-	public void testGetFeatureFields() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#isSetFeatureFields() <em>isSetFeatureFields()</em>}' method.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#isSetFeatureFields()
-	 * @generated
-	 */
-	public void testIsSetFeatureFields() {
-		// TODO: implement this test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#isHasFeatureFields() <em>Has Feature Fields</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#isHasFeatureFields()
-	 * @generated
-	 */
-	public void testIsHasFeatureFields() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#getFileFields() <em>File Fields</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#getFileFields()
-	 * @generated
-	 */
-	public void testGetFileFields() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#isSetFileFields() <em>isSetFileFields()</em>}' method.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#isSetFileFields()
-	 * @generated
-	 */
-	public void testIsSetFileFields() {
-		// TODO: implement this test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#isHasFileFields() <em>Has File Fields</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#isHasFileFields()
-	 * @generated
-	 */
-	public void testIsHasFileFields() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#getForcedValueFields() <em>Forced Value Fields</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#getForcedValueFields()
-	 * @generated
-	 */
-	public void testGetForcedValueFields() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#isSetForcedValueFields() <em>isSetForcedValueFields()</em>}' method.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#isSetForcedValueFields()
-	 * @generated
-	 */
-	public void testIsSetForcedValueFields() {
-		// TODO: implement this test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#isHasForcedValueFields() <em>Has Forced Value Fields</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#isHasForcedValueFields()
-	 * @generated
-	 */
-	public void testIsHasForcedValueFields() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
 	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#getFormFields() <em>Form Fields</em>}' feature getter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -845,318 +247,6 @@ public abstract class DynamicUnitTest extends ContentUnitTest {
 	 * @generated
 	 */
 	public void testIsSetFormFields() {
-		// TODO: implement this test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#getImageFields() <em>Image Fields</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#getImageFields()
-	 * @generated
-	 */
-	public void testGetImageFields() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#isSetImageFields() <em>isSetImageFields()</em>}' method.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#isSetImageFields()
-	 * @generated
-	 */
-	public void testIsSetImageFields() {
-		// TODO: implement this test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#isHasImageFields() <em>Has Image Fields</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#isHasImageFields()
-	 * @generated
-	 */
-	public void testIsHasImageFields() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#isHasIntegerFields() <em>Has Integer Fields</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#isHasIntegerFields()
-	 * @generated
-	 */
-	public void testIsHasIntegerFields() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#getInterfaceFields() <em>Interface Fields</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#getInterfaceFields()
-	 * @generated
-	 */
-	public void testGetInterfaceFields() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#isSetInterfaceFields() <em>isSetInterfaceFields()</em>}' method.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#isSetInterfaceFields()
-	 * @generated
-	 */
-	public void testIsSetInterfaceFields() {
-		// TODO: implement this test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#isHasInterfaceFields() <em>Has Interface Fields</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#isHasInterfaceFields()
-	 * @generated
-	 */
-	public void testIsHasInterfaceFields() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#isSetHasInterfaceFields() <em>isSetHasInterfaceFields()</em>}' method.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#isSetHasInterfaceFields()
-	 * @generated
-	 */
-	public void testIsSetHasInterfaceFields() {
-		// TODO: implement this test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#isHasRequiredInterfaceFields() <em>Has Required Interface Fields</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#isHasRequiredInterfaceFields()
-	 * @generated
-	 */
-	public void testIsHasRequiredInterfaceFields() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#isSetHasRequiredInterfaceFields() <em>isSetHasRequiredInterfaceFields()</em>}' method.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#isSetHasRequiredInterfaceFields()
-	 * @generated
-	 */
-	public void testIsSetHasRequiredInterfaceFields() {
-		// TODO: implement this test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#isHasObfuscatedFields() <em>Has Obfuscated Fields</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#isHasObfuscatedFields()
-	 * @generated
-	 */
-	public void testIsHasObfuscatedFields() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#isSetHasObfuscatedFields() <em>isSetHasObfuscatedFields()</em>}' method.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#isSetHasObfuscatedFields()
-	 * @generated
-	 */
-	public void testIsSetHasObfuscatedFields() {
-		// TODO: implement this test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#isHasRepeatedFields() <em>Has Repeated Fields</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#isHasRepeatedFields()
-	 * @generated
-	 */
-	public void testIsHasRepeatedFields() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#isSetHasRepeatedFields() <em>isSetHasRepeatedFields()</em>}' method.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#isSetHasRepeatedFields()
-	 * @generated
-	 */
-	public void testIsSetHasRepeatedFields() {
-		// TODO: implement this test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#getResourceFields() <em>Resource Fields</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#getResourceFields()
-	 * @generated
-	 */
-	public void testGetResourceFields() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#isSetResourceFields() <em>isSetResourceFields()</em>}' method.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#isSetResourceFields()
-	 * @generated
-	 */
-	public void testIsSetResourceFields() {
-		// TODO: implement this test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#isHasResourceFields() <em>Has Resource Fields</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#isHasResourceFields()
-	 * @generated
-	 */
-	public void testIsHasResourceFields() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#isSetHasResourceFields() <em>isSetHasResourceFields()</em>}' method.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#isSetHasResourceFields()
-	 * @generated
-	 */
-	public void testIsSetHasResourceFields() {
-		// TODO: implement this test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#isHasStringFields() <em>Has String Fields</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#isHasStringFields()
-	 * @generated
-	 */
-	public void testIsHasStringFields() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#isSetHasStringFields() <em>isSetHasStringFields()</em>}' method.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#isSetHasStringFields()
-	 * @generated
-	 */
-	public void testIsSetHasStringFields() {
-		// TODO: implement this test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#isHasTextareaFields() <em>Has Textarea Fields</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#isHasTextareaFields()
-	 * @generated
-	 */
-	public void testIsHasTextareaFields() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#isSetHasTextareaFields() <em>isSetHasTextareaFields()</em>}' method.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#isSetHasTextareaFields()
-	 * @generated
-	 */
-	public void testIsSetHasTextareaFields() {
-		// TODO: implement this test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#isHasUrlFields() <em>Has Url Fields</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#isHasUrlFields()
-	 * @generated
-	 */
-	public void testIsHasUrlFields() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#isSetHasUrlFields() <em>isSetHasUrlFields()</em>}' method.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#isSetHasUrlFields()
-	 * @generated
-	 */
-	public void testIsSetHasUrlFields() {
 		// TODO: implement this test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
@@ -1209,6 +299,526 @@ public abstract class DynamicUnitTest extends ContentUnitTest {
 	 * @generated
 	 */
 	public void testReferencableTypes() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#isConditionallyDisplayed() <em>Is Conditionally Displayed</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#isConditionallyDisplayed()
+	 * @generated
+	 */
+	public void testIsConditionallyDisplayed() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#hasHiddenMessage() <em>Has Hidden Message</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#hasHiddenMessage()
+	 * @generated
+	 */
+	public void testHasHiddenMessage() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#associationFields() <em>Association Fields</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#associationFields()
+	 * @generated
+	 */
+	public void testAssociationFields() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#hasAssociationFields() <em>Has Association Fields</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#hasAssociationFields()
+	 * @generated
+	 */
+	public void testHasAssociationFields() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#autocompleteFields() <em>Autocomplete Fields</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#autocompleteFields()
+	 * @generated
+	 */
+	public void testAutocompleteFields() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#hasAutocompleteFields() <em>Has Autocomplete Fields</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#hasAutocompleteFields()
+	 * @generated
+	 */
+	public void testHasAutocompleteFields() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#hasBooleanFields() <em>Has Boolean Fields</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#hasBooleanFields()
+	 * @generated
+	 */
+	public void testHasBooleanFields() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#hasCaptcha() <em>Has Captcha</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#hasCaptcha()
+	 * @generated
+	 */
+	public void testHasCaptcha() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#hasChangableCollections() <em>Has Changable Collections</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#hasChangableCollections()
+	 * @generated
+	 */
+	public void testHasChangableCollections() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#collectionFields() <em>Collection Fields</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#collectionFields()
+	 * @generated
+	 */
+	public void testCollectionFields() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#collectionFeatures() <em>Collection Features</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#collectionFeatures()
+	 * @generated
+	 */
+	public void testCollectionFeatures() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#dataTypeFields() <em>Data Type Fields</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#dataTypeFields()
+	 * @generated
+	 */
+	public void testDataTypeFields() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#dateFields() <em>Date Fields</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#dateFields()
+	 * @generated
+	 */
+	public void testDateFields() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#defaultValueFields() <em>Default Value Fields</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#defaultValueFields()
+	 * @generated
+	 */
+	public void testDefaultValueFields() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#hasDefaultValueFields() <em>Has Default Value Fields</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#hasDefaultValueFields()
+	 * @generated
+	 */
+	public void testHasDefaultValueFields() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#hasDisabledFields() <em>Has Disabled Fields</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#hasDisabledFields()
+	 * @generated
+	 */
+	public void testHasDisabledFields() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#hasEmailFields() <em>Has Email Fields</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#hasEmailFields()
+	 * @generated
+	 */
+	public void testHasEmailFields() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#encryptedFields() <em>Encrypted Fields</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#encryptedFields()
+	 * @generated
+	 */
+	public void testEncryptedFields() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#hasEncryptedFields() <em>Has Encrypted Fields</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#hasEncryptedFields()
+	 * @generated
+	 */
+	public void testHasEncryptedFields() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#enumerationFields() <em>Enumeration Fields</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#enumerationFields()
+	 * @generated
+	 */
+	public void testEnumerationFields() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#hasEnumerationFields() <em>Has Enumeration Fields</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#hasEnumerationFields()
+	 * @generated
+	 */
+	public void testHasEnumerationFields() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#featureFields() <em>Feature Fields</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#featureFields()
+	 * @generated
+	 */
+	public void testFeatureFields() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#hasFeatureFields() <em>Has Feature Fields</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#hasFeatureFields()
+	 * @generated
+	 */
+	public void testHasFeatureFields() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#fileFields() <em>File Fields</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#fileFields()
+	 * @generated
+	 */
+	public void testFileFields() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#hasFileFields() <em>Has File Fields</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#hasFileFields()
+	 * @generated
+	 */
+	public void testHasFileFields() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#forcedValueFields() <em>Forced Value Fields</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#forcedValueFields()
+	 * @generated
+	 */
+	public void testForcedValueFields() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#hasForcedValueFields() <em>Has Forced Value Fields</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#hasForcedValueFields()
+	 * @generated
+	 */
+	public void testHasForcedValueFields() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#imageFields() <em>Image Fields</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#imageFields()
+	 * @generated
+	 */
+	public void testImageFields() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#hasImageFields() <em>Has Image Fields</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#hasImageFields()
+	 * @generated
+	 */
+	public void testHasImageFields() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#hasIntegerFields() <em>Has Integer Fields</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#hasIntegerFields()
+	 * @generated
+	 */
+	public void testHasIntegerFields() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#interfaceFields() <em>Interface Fields</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#interfaceFields()
+	 * @generated
+	 */
+	public void testInterfaceFields() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#hasInterfaceFields() <em>Has Interface Fields</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#hasInterfaceFields()
+	 * @generated
+	 */
+	public void testHasInterfaceFields() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#hasRequiredInterfaceFields() <em>Has Required Interface Fields</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#hasRequiredInterfaceFields()
+	 * @generated
+	 */
+	public void testHasRequiredInterfaceFields() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#hasObfuscatedFields() <em>Has Obfuscated Fields</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#hasObfuscatedFields()
+	 * @generated
+	 */
+	public void testHasObfuscatedFields() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#hasRepeatedFields() <em>Has Repeated Fields</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#hasRepeatedFields()
+	 * @generated
+	 */
+	public void testHasRepeatedFields() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#resourceFields() <em>Resource Fields</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#resourceFields()
+	 * @generated
+	 */
+	public void testResourceFields() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#hasResourceFields() <em>Has Resource Fields</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#hasResourceFields()
+	 * @generated
+	 */
+	public void testHasResourceFields() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#hasStringFields() <em>Has String Fields</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#hasStringFields()
+	 * @generated
+	 */
+	public void testHasStringFields() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#hasTextareaFields() <em>Has Textarea Fields</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#hasTextareaFields()
+	 * @generated
+	 */
+	public void testHasTextareaFields() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#hasUrlFields() <em>Has Url Fields</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#hasUrlFields()
+	 * @generated
+	 */
+	public void testHasUrlFields() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
