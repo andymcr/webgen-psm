@@ -296,7 +296,7 @@ public class UnitAssociationItemProvider extends UnitFeatureItemProvider {
 		boolean qualify =
 			childFeature == WafPackage.eINSTANCE.getUnitField_HideWhen() ||
 			childFeature == WafPackage.eINSTANCE.getUnitField_DisplayDefaultWhen() ||
-			childFeature == WafPackage.eINSTANCE.getUnitFeature_FieldForcedValue();
+			childFeature == WafPackage.eINSTANCE.getUnitFeature_FeatureForcedValue();
 
 		if (qualify) {
 			return getString

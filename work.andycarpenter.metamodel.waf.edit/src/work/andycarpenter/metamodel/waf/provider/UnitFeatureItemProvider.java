@@ -899,7 +899,7 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 			childrenFeatures.add(WafPackage.eINSTANCE.getUnitField_HideWhen());
 			childrenFeatures.add(WafPackage.eINSTANCE.getUnitField_DisplayDefaultWhen());
 			childrenFeatures.add(WafPackage.eINSTANCE.getActionContainer_AllActions());
-			childrenFeatures.add(WafPackage.eINSTANCE.getUnitFeature_FieldForcedValue());
+			childrenFeatures.add(WafPackage.eINSTANCE.getUnitFeature_FeatureForcedValue());
 		}
 		return childrenFeatures;
 	}
@@ -985,7 +985,7 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 			case WafPackage.UNIT_FEATURE__HIDE_WHEN:
 			case WafPackage.UNIT_FEATURE__DISPLAY_DEFAULT_WHEN:
 			case WafPackage.UNIT_FEATURE__ALL_ACTIONS:
-			case WafPackage.UNIT_FEATURE__FIELD_FORCED_VALUE:
+			case WafPackage.UNIT_FEATURE__FEATURE_FORCED_VALUE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -1125,122 +1125,122 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.eINSTANCE.getUnitFeature_FieldForcedValue(),
+				(WafPackage.eINSTANCE.getUnitFeature_FeatureForcedValue(),
 				 OrmFactory.eINSTANCE.createAssociationVariable()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.eINSTANCE.getUnitFeature_FieldForcedValue(),
+				(WafPackage.eINSTANCE.getUnitFeature_FeatureForcedValue(),
 				 OrmFactory.eINSTANCE.createAttributeVariable()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.eINSTANCE.getUnitFeature_FieldForcedValue(),
+				(WafPackage.eINSTANCE.getUnitFeature_FeatureForcedValue(),
 				 OrmFactory.eINSTANCE.createResourceVariable()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.eINSTANCE.getUnitFeature_FieldForcedValue(),
+				(WafPackage.eINSTANCE.getUnitFeature_FeatureForcedValue(),
 				 OrmFactory.eINSTANCE.createParameterVariable()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.eINSTANCE.getUnitFeature_FieldForcedValue(),
+				(WafPackage.eINSTANCE.getUnitFeature_FeatureForcedValue(),
 				 BaseFactory.eINSTANCE.createNullLiteral()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.eINSTANCE.getUnitFeature_FieldForcedValue(),
+				(WafPackage.eINSTANCE.getUnitFeature_FeatureForcedValue(),
 				 BaseFactory.eINSTANCE.createBooleanLiteral()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.eINSTANCE.getUnitFeature_FieldForcedValue(),
+				(WafPackage.eINSTANCE.getUnitFeature_FeatureForcedValue(),
 				 BaseFactory.eINSTANCE.createIntegerLiteral()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.eINSTANCE.getUnitFeature_FieldForcedValue(),
+				(WafPackage.eINSTANCE.getUnitFeature_FeatureForcedValue(),
 				 BaseFactory.eINSTANCE.createStringLiteral()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.eINSTANCE.getUnitFeature_FieldForcedValue(),
+				(WafPackage.eINSTANCE.getUnitFeature_FeatureForcedValue(),
 				 BaseFactory.eINSTANCE.createTimeLiteral()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.eINSTANCE.getUnitFeature_FieldForcedValue(),
+				(WafPackage.eINSTANCE.getUnitFeature_FeatureForcedValue(),
 				 BaseFactory.eINSTANCE.createCurrentTime()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.eINSTANCE.getUnitFeature_FieldForcedValue(),
+				(WafPackage.eINSTANCE.getUnitFeature_FeatureForcedValue(),
 				 BaseFactory.eINSTANCE.createCurrentUser()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.eINSTANCE.getUnitFeature_FieldForcedValue(),
+				(WafPackage.eINSTANCE.getUnitFeature_FeatureForcedValue(),
 				 BaseFactory.eINSTANCE.createConstantReference()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.eINSTANCE.getUnitFeature_FieldForcedValue(),
+				(WafPackage.eINSTANCE.getUnitFeature_FeatureForcedValue(),
 				 BaseFactory.eINSTANCE.createCallable()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.eINSTANCE.getUnitFeature_FieldForcedValue(),
+				(WafPackage.eINSTANCE.getUnitFeature_FeatureForcedValue(),
 				 BaseFactory.eINSTANCE.createReduceFunction()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.eINSTANCE.getUnitFeature_FieldForcedValue(),
+				(WafPackage.eINSTANCE.getUnitFeature_FeatureForcedValue(),
 				 BaseFactory.eINSTANCE.createSizeFunction()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.eINSTANCE.getUnitFeature_FieldForcedValue(),
+				(WafPackage.eINSTANCE.getUnitFeature_FeatureForcedValue(),
 				 ExpressionFactory.eINSTANCE.createPredicateBooleanVariable()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.eINSTANCE.getUnitFeature_FieldForcedValue(),
+				(WafPackage.eINSTANCE.getUnitFeature_FeatureForcedValue(),
 				 ExpressionFactory.eINSTANCE.createPredicateBooleanOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.eINSTANCE.getUnitFeature_FieldForcedValue(),
+				(WafPackage.eINSTANCE.getUnitFeature_FeatureForcedValue(),
 				 ExpressionFactory.eINSTANCE.createPredicateEqualityOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.eINSTANCE.getUnitFeature_FieldForcedValue(),
+				(WafPackage.eINSTANCE.getUnitFeature_FeatureForcedValue(),
 				 ExpressionFactory.eINSTANCE.createPredicateComparisonOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.eINSTANCE.getUnitFeature_FieldForcedValue(),
+				(WafPackage.eINSTANCE.getUnitFeature_FeatureForcedValue(),
 				 ExpressionFactory.eINSTANCE.createPredicateInOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.eINSTANCE.getUnitFeature_FieldForcedValue(),
+				(WafPackage.eINSTANCE.getUnitFeature_FeatureForcedValue(),
 				 ExpressionFactory.eINSTANCE.createPredicateLikeOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.eINSTANCE.getUnitFeature_FieldForcedValue(),
+				(WafPackage.eINSTANCE.getUnitFeature_FeatureForcedValue(),
 				 ExpressionFactory.eINSTANCE.createPredicateIsEmpty()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.eINSTANCE.getUnitFeature_FieldForcedValue(),
+				(WafPackage.eINSTANCE.getUnitFeature_FeatureForcedValue(),
 				 ExpressionFactory.eINSTANCE.createPredicateIsNull()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.eINSTANCE.getUnitFeature_FieldForcedValue(),
+				(WafPackage.eINSTANCE.getUnitFeature_FeatureForcedValue(),
 				 ExpressionFactory.eINSTANCE.createArithmeticOperation()));
 	}
 
@@ -1258,7 +1258,7 @@ public class UnitFeatureItemProvider extends DisplayElementItemProvider {
 		boolean qualify =
 			childFeature == WafPackage.eINSTANCE.getUnitField_HideWhen() ||
 			childFeature == WafPackage.eINSTANCE.getUnitField_DisplayDefaultWhen() ||
-			childFeature == WafPackage.eINSTANCE.getUnitFeature_FieldForcedValue();
+			childFeature == WafPackage.eINSTANCE.getUnitFeature_FeatureForcedValue();
 
 		if (qualify) {
 			return getString

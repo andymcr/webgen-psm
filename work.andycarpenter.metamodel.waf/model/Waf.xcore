@@ -1404,7 +1404,7 @@ abstract class UnitFeature extends UnitField, Path, ActionContainer {
 
 	String titleOverride = ''
 	String placeholderOverride = ''
-	contains Expression fieldForcedValue
+	contains Expression featureForcedValue
 	boolean collectionUiAllowAdd = "true"
 	boolean collectionUiAllowRemove = "true"
 	int collectionMaximumValues = "0"
@@ -1421,7 +1421,7 @@ abstract class UnitFeature extends UnitField, Path, ActionContainer {
 	}
 
   	op Expression forcedValue() {
-		fieldForcedValue
+		featureForcedValue
 	}
 
   	op boolean isAssociationField() {
