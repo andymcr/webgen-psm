@@ -51,14 +51,11 @@ public class EditUnitItemProvider extends SingletonUnitItemProvider {
 			addUseCaptchaPropertyDescriptor(object);
 			addOnSaveContinueEditingPropertyDescriptor(object);
 			addConfirmDestinationPropertyDescriptor(object);
-			addConfirmLabelPropertyDescriptor(object);
-			addHasCustomConfirmLabelPropertyDescriptor(object);
-			addHasConfirmMessagePropertyDescriptor(object);
-			addHasSuccessMessagePropertyDescriptor(object);
-			addHasMessagesPropertyDescriptor(object);
 			addCancelDestinationPropertyDescriptor(object);
-			addCancelLabelPropertyDescriptor(object);
-			addHasCustomCancelLabelPropertyDescriptor(object);
+			addCancelLabelOverridePropertyDescriptor(object);
+			addCancelIconOverridePropertyDescriptor(object);
+			addSaveLabelOverridePropertyDescriptor(object);
+			addSaveIconOverridePropertyDescriptor(object);
 			addLocalInputGroupClassPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -82,7 +79,7 @@ public class EditUnitItemProvider extends SingletonUnitItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
+				 getString("_UI_BusinessPropertyCategory"),
 				 null));
 	}
 
@@ -104,7 +101,7 @@ public class EditUnitItemProvider extends SingletonUnitItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
+				 getString("_UI_ModelPropertyCategory"),
 				 null));
 	}
 
@@ -126,117 +123,7 @@ public class EditUnitItemProvider extends SingletonUnitItemProvider {
 				 false,
 				 true,
 				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Confirm Label feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addConfirmLabelPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_EditUnit_confirmLabel_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_EditUnit_confirmLabel_feature", "_UI_EditUnit_type"),
-				 WafPackage.eINSTANCE.getEditUnit_ConfirmLabel(),
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Has Custom Confirm Label feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addHasCustomConfirmLabelPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_EditUnit_hasCustomConfirmLabel_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_EditUnit_hasCustomConfirmLabel_feature", "_UI_EditUnit_type"),
-				 WafPackage.eINSTANCE.getEditUnit_HasCustomConfirmLabel(),
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Has Confirm Message feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addHasConfirmMessagePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_EditUnit_hasConfirmMessage_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_EditUnit_hasConfirmMessage_feature", "_UI_EditUnit_type"),
-				 WafPackage.eINSTANCE.getEditUnit_HasConfirmMessage(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_DebugPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Has Success Message feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addHasSuccessMessagePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_EditUnit_hasSuccessMessage_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_EditUnit_hasSuccessMessage_feature", "_UI_EditUnit_type"),
-				 WafPackage.eINSTANCE.getEditUnit_HasSuccessMessage(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_DebugPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Has Messages feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addHasMessagesPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_EditUnit_hasMessages_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_EditUnit_hasMessages_feature", "_UI_EditUnit_type"),
-				 WafPackage.eINSTANCE.getEditUnit_HasMessages(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_DebugPropertyCategory"),
+				 getString("_UI_ModelPropertyCategory"),
 				 null));
 	}
 
@@ -258,51 +145,95 @@ public class EditUnitItemProvider extends SingletonUnitItemProvider {
 				 false,
 				 true,
 				 null,
-				 null,
+				 getString("_UI_ModelPropertyCategory"),
 				 null));
 	}
 
 	/**
-	 * This adds a property descriptor for the Cancel Label feature.
+	 * This adds a property descriptor for the Save Label Override feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addCancelLabelPropertyDescriptor(Object object) {
+	protected void addSaveLabelOverridePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_EditUnit_cancelLabel_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_EditUnit_cancelLabel_feature", "_UI_EditUnit_type"),
-				 WafPackage.eINSTANCE.getEditUnit_CancelLabel(),
+				 getString("_UI_EditUnit_saveLabelOverride_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EditUnit_saveLabelOverride_feature", "_UI_EditUnit_type"),
+				 WafPackage.eINSTANCE.getEditUnit_SaveLabelOverride(),
 				 true,
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_InterfacePropertyCategory"),
 				 null));
 	}
 
 	/**
-	 * This adds a property descriptor for the Has Custom Cancel Label feature.
+	 * This adds a property descriptor for the Save Icon Override feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addHasCustomCancelLabelPropertyDescriptor(Object object) {
+	protected void addSaveIconOverridePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_EditUnit_hasCustomCancelLabel_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_EditUnit_hasCustomCancelLabel_feature", "_UI_EditUnit_type"),
-				 WafPackage.eINSTANCE.getEditUnit_HasCustomCancelLabel(),
+				 getString("_UI_EditUnit_saveIconOverride_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EditUnit_saveIconOverride_feature", "_UI_EditUnit_type"),
+				 WafPackage.eINSTANCE.getEditUnit_SaveIconOverride(),
 				 true,
 				 false,
 				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_InterfacePropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Cancel Label Override feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCancelLabelOverridePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EditUnit_cancelLabelOverride_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EditUnit_cancelLabelOverride_feature", "_UI_EditUnit_type"),
+				 WafPackage.eINSTANCE.getEditUnit_CancelLabelOverride(),
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_InterfacePropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Cancel Icon Override feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCancelIconOverridePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EditUnit_cancelIconOverride_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EditUnit_cancelIconOverride_feature", "_UI_EditUnit_type"),
+				 WafPackage.eINSTANCE.getEditUnit_CancelIconOverride(),
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_InterfacePropertyCategory"),
 				 null));
 	}
 
@@ -389,13 +320,10 @@ public class EditUnitItemProvider extends SingletonUnitItemProvider {
 		switch (notification.getFeatureID(EditUnit.class)) {
 			case WafPackage.EDIT_UNIT__USE_CAPTCHA:
 			case WafPackage.EDIT_UNIT__ON_SAVE_CONTINUE_EDITING:
-			case WafPackage.EDIT_UNIT__CONFIRM_LABEL:
-			case WafPackage.EDIT_UNIT__HAS_CUSTOM_CONFIRM_LABEL:
-			case WafPackage.EDIT_UNIT__HAS_CONFIRM_MESSAGE:
-			case WafPackage.EDIT_UNIT__HAS_SUCCESS_MESSAGE:
-			case WafPackage.EDIT_UNIT__HAS_MESSAGES:
-			case WafPackage.EDIT_UNIT__CANCEL_LABEL:
-			case WafPackage.EDIT_UNIT__HAS_CUSTOM_CANCEL_LABEL:
+			case WafPackage.EDIT_UNIT__CANCEL_LABEL_OVERRIDE:
+			case WafPackage.EDIT_UNIT__CANCEL_ICON_OVERRIDE:
+			case WafPackage.EDIT_UNIT__SAVE_LABEL_OVERRIDE:
+			case WafPackage.EDIT_UNIT__SAVE_ICON_OVERRIDE:
 			case WafPackage.EDIT_UNIT__LOCAL_INPUT_GROUP_CLASS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;

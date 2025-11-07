@@ -71,8 +71,22 @@ class WafModel {
 	contains ImageManipulation[] imageManipulations
 	contains Navigation navigation opposite partOf
 	contains Controller[] controllers opposite partOf
-	String defaultSaveLabel
-	String defaultCancelLabel
+	@GenModel(propertyCategory="Interface")
+	String defaultCancelLabel = ''
+	@GenModel(propertyCategory="Interface")
+	String defaultCancelIcon = ''
+	@GenModel(propertyCategory="Interface")
+	String defaultClearLabel = ''
+	@GenModel(propertyCategory="Interface")
+	String defaultClearIcon = ''
+	@GenModel(propertyCategory="Interface")
+	String defaultSaveLabel = ''
+	@GenModel(propertyCategory="Interface")
+	String defaultSaveIcon = ''
+	@GenModel(propertyCategory="Interface")
+	String defaultSearchLabel = ''
+	@GenModel(propertyCategory="Interface")
+	String defaultSearchIcon = ''
 
 	op boolean hasAPI() {
 		api !== null
@@ -250,6 +264,7 @@ abstract class DynamicUnitStyles extends ContentUnitStyles {
 }
 
 class CollectionUnitStyles extends DynamicUnitStyles {
+	String filtersClass = ''
 	String instanceControlClass = ''
 	String instanceActionClass = ''
 }
@@ -1769,11 +1784,81 @@ class SingletonUnit extends DynamicUnit {
 abstract class CollectionUnit extends DynamicUnit, SelectableUnit, ValueContext {
 	refers Label unitTitle
 	contains DisplayValue elementTitle
+	@GenModel(propertyCategory="Interface")
 	boolean truncateElementTitle = "false"
+    @GenModel(propertyCategory="Business")
 	refers Selection selection
+    @GenModel(propertyCategory="Business")
 	refers Selection findContainerSelection
+    @GenModel(propertyCategory="Business")
 	refers Selection findElementSelection
 	contains CollectionFilter[] filters opposite affects
+
+	@GenModel(propertyCategory="Interface")
+	String clearLabelOverride = ''
+	op boolean hasCustomClearLabel() {
+		clearLabelOverride.trim() !== ''
+		&& clearLabelOverride.trim() !== controller.partOf.defaultClearLabel.trim()
+	}
+	op String clearLabel() {
+		if (hasCustomClearLabel()) {
+			clearLabelOverride.trim()
+		} else {
+			controller.partOf.defaultClearLabel.trim()
+		} 
+	}
+
+	@GenModel(propertyCategory="Interface")
+	String clearIconOverride = ''
+	op boolean hasCustomClearIcon() {
+		clearIconOverride.trim() !== ''
+		&& clearIconOverride.trim() !== controller.partOf.defaultClearIcon.trim()
+	}
+	op String clearIcon() {
+		if (hasCustomClearIcon()) {
+			clearIconOverride.trim()
+		} else {
+			controller.partOf.defaultClearIcon.trim()
+		} 
+	}
+	op boolean hasClearIcon() {
+		clearIconOverride.trim() !== ''
+		|| controller.partOf.defaultClearIcon.trim() !== ''
+	}
+
+	@GenModel(propertyCategory="Interface")
+	String searchLabelOverride = ''
+	op boolean hasCustomSearchLabel() {
+		searchLabelOverride.trim() !== ''
+		&& searchLabelOverride.trim() !== controller.partOf.defaultSearchLabel.trim()
+	}
+	op String searchLabel() {
+		if (hasCustomSearchLabel()) {
+			searchLabelOverride.trim()
+		} else if (controller.partOf.defaultSearchLabel.trim() !== '') {
+			controller.partOf.defaultSearchLabel.trim()
+		} else {
+			'Search'
+		} 
+	}
+
+	@GenModel(propertyCategory="Interface")
+	String searchIconOverride = ''
+	op boolean hasCustomSearchIcon() {
+		searchIconOverride.trim() !== ''
+		&& searchIconOverride.trim() !== controller.partOf.defaultSearchIcon.trim()
+	}
+	op String searchIcon() {
+		if (hasCustomSearchIcon()) {
+			searchIconOverride.trim()
+		} else {
+			controller.partOf.defaultSearchIcon.trim()
+		} 
+	}
+	op boolean hasSearchIcon() {
+		searchIconOverride.trim() !== ''
+		|| controller.partOf.defaultSearchIcon.trim() !== ''
+	}
 
 	op boolean hasCollectionFilters() {
 		!filters.isEmpty()
@@ -1840,16 +1925,21 @@ abstract class CollectionUnit extends DynamicUnit, SelectableUnit, ValueContext 
 	int maximumPaginationSize
 
 	@GenModel(propertyCategory="Style")
+	String[1] filtersClassOverride = ''
+	@GenModel(propertyCategory="Style")
 	String[1] localInstanceControlClass = ''
 	@GenModel(propertyCategory="Style")
 	String[1] localInstanceActionClass = ''
 
+	op String filtersClass() {
+		filtersClass.trim()
+	}
+	op boolean hasFiltersClass() {
+		filtersClass() !== ''
+	}
+
 	op String instanceControlClass() {
-		if (localInstanceControlClass.trim() !== '') {
-			localInstanceControlClass.trim()
-		} else {
-			''
-		}
+		localInstanceControlClass.trim()
 	}
 	op boolean hasInstanceControlClass() {
 		instanceControlClass() !== ''
@@ -1963,30 +2053,107 @@ class TextFilter extends CollectionFilter {
 }
 
 abstract class EditUnit extends SingletonUnit {
+   @GenModel(propertyCategory="Business")
 	boolean useCaptcha = 'false'
+   @GenModel(propertyCategory="Model")
 	boolean onSaveContinueEditing = 'false'
 	contains Predicate disableWhen
+
+   @GenModel(propertyCategory="Model")
 	refers ContentUnit confirmDestination
-	String[1] confirmLabel
-	boolean hasCustomConfirmLabel
+
+	@GenModel(propertyCategory="Model")
+	refers ContentUnit cancelDestination
+
+	@GenModel(propertyCategory="Interface")
+	String cancelLabelOverride = ''
+	op boolean hasCustomCancelLabel() {
+		cancelLabelOverride.trim() !== ''
+		&& cancelLabelOverride.trim() !== controller.partOf.defaultCancelLabel.trim()
+	}
+	op String cancelLabel() {
+		if (hasCustomCancelLabel()) {
+			cancelLabelOverride.trim()
+		} else {
+			controller.partOf.defaultCancelLabel.trim()
+		} 
+	}
+
+	@GenModel(propertyCategory="Interface")
+	String cancelIconOverride = ''
+	op boolean hasCustomCancelIcon() {
+		cancelIconOverride.trim() !== ''
+		&& cancelIconOverride.trim() !== controller.partOf.defaultCancelIcon.trim()
+	}
+	op String cancelIcon() {
+		if (hasCustomCancelIcon()) {
+			cancelIconOverride.trim()
+		} else {
+			controller.partOf.defaultCancelIcon.trim()
+		} 
+	}
+	op boolean hasCancelIcon() {
+		cancelIconOverride.trim() !== ''
+		|| controller.partOf.defaultCancelIcon.trim() !== ''
+	}
+
+	@GenModel(propertyCategory="Interface")
+	String[1] saveLabelOverride = ''
+	op boolean hasCustomSaveLabel() {
+		saveLabelOverride.trim() !== ''
+		&& saveLabelOverride.trim() !== controller.partOf.defaultSaveLabel.trim()
+	}
+	op String saveLabel() {
+		if (hasCustomSaveLabel()) {
+			saveLabelOverride.trim()
+		} else if (controller.partOf.defaultSaveLabel.trim() !== '') {
+			controller.partOf.defaultSaveLabel.trim()
+		} else {
+			if (this instanceof CreateUnit) {
+				'Create'
+			} else if (this instanceof CreateUpdateUnit) {
+				'Save'
+			} else if (this instanceof UpdateUnit) {
+				'Update'
+			} else if (this instanceof MapUnit) {
+				'Save'
+			} else {
+				'Edit'
+			} 
+		} 
+	}
+
+	@GenModel(propertyCategory="Interface")
+	String saveIconOverride = ''
+	op boolean hasCustomSaveIcon() {
+		saveIconOverride.trim() !== ''
+		&& saveIconOverride.trim() !== controller.partOf.defaultSaveIcon.trim()
+	}
+	op String saveIcon() {
+		if (hasCustomSaveIcon()) {
+			saveIconOverride.trim()
+		} else {
+			controller.partOf.defaultSaveIcon.trim()
+		} 
+	}
+	op boolean hasSaveIcon() {
+		saveIconOverride.trim() !== ''
+		|| controller.partOf.defaultSaveIcon.trim() !== ''
+	}
 
 	contains Message confirmMessage
-	@OCL(derivation="not confirmMessage.oclIsUndefined()")
-    @GenModel(propertyCategory="Debug")
-	derived readonly transient volatile boolean hasConfirmMessage
+	op boolean hasConfirmMessage() {
+		confirmMessage !== null
+	}
 
 	contains Message successMessage
-	@OCL(derivation="not successMessage.oclIsUndefined()")
-    @GenModel(propertyCategory="Debug")
-	derived readonly transient volatile boolean hasSuccessMessage
+	op boolean hasSuccessMessage() {
+		successMessage !== null
+	}
 
-	@OCL(derivation="hasConfirmMessage or hasSuccessMessage")
-    @GenModel(propertyCategory="Debug")
-	derived readonly transient volatile boolean hasMessages
-
-	refers ContentUnit cancelDestination
-	String cancelLabel
-	boolean hasCustomCancelLabel
+	op boolean hasMessages() {
+		hasConfirmMessage() || hasSuccessMessage()
+	}
 
 	String[1] localInputGroupClass = ''
 
@@ -2508,6 +2675,14 @@ abstract class CardsUnit extends CollectionUnit {
 		}
 	}
 
+	op String filtersClass() {
+		if (filtersClassOverride.trim() !== '') {
+			filtersClassOverride.trim()
+		} else {
+			uiModel().defaultCardsStyles.filtersClass.trim()
+		}
+	}
+
 	op String instanceControlClass() {
 		if (localInstanceControlClass.trim() !== '') {
 			localInstanceControlClass.trim()
@@ -2809,13 +2984,19 @@ class SliderUnit extends CollectionUnit, ImageUnit {
 		}
 	}
 
+	op String filtersClass() {
+		if (filtersClassOverride.trim() !== '') {
+			filtersClassOverride.trim()
+		} else {
+			uiModel().defaultSliderStyles.filtersClass.trim()
+		}
+	}
+
 	op String instanceControlClass() {
 		if (localInstanceControlClass.trim() !== '') {
 			localInstanceControlClass.trim()
-		} else if (uiModel().defaultSliderStyles.instanceControlClass.trim() !== '') {
-			uiModel().defaultSliderStyles.instanceControlClass.trim()
 		} else {
-			''
+			uiModel().defaultSliderStyles.instanceControlClass.trim()
 		}
 	}
 
@@ -2940,6 +3121,14 @@ class GalleryUnit extends CollectionUnit, ImageUnit {
 			uiModel().defaultUnitStyles.actionClass.trim()
 		} else {
 			''
+		}
+	}
+
+	op String filterslClass() {
+		if (filtersClassOverride.trim() !== '') {
+			filtersClassOverride.trim()
+		} else {
+			uiModel().defaultGalleryStyles.filtersClass.trim()
 		}
 	}
 

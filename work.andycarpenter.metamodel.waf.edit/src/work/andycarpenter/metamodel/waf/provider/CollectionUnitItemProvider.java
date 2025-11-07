@@ -54,6 +54,10 @@ public class CollectionUnitItemProvider extends DynamicUnitItemProvider {
 			addSelectionPropertyDescriptor(object);
 			addFindContainerSelectionPropertyDescriptor(object);
 			addFindElementSelectionPropertyDescriptor(object);
+			addClearLabelOverridePropertyDescriptor(object);
+			addClearIconOverridePropertyDescriptor(object);
+			addSearchLabelOverridePropertyDescriptor(object);
+			addSearchIconOverridePropertyDescriptor(object);
 			addFilterPropertyDescriptor(object);
 			addHasGroupedResultsPropertyDescriptor(object);
 			addHasPaginationPropertyDescriptor(object);
@@ -61,6 +65,7 @@ public class CollectionUnitItemProvider extends DynamicUnitItemProvider {
 			addOmitFieldLabelsPropertyDescriptor(object);
 			addDefaultPaginationSizePropertyDescriptor(object);
 			addMaximumPaginationSizePropertyDescriptor(object);
+			addFiltersClassOverridePropertyDescriptor(object);
 			addLocalInstanceControlClassPropertyDescriptor(object);
 			addLocalInstanceActionClassPropertyDescriptor(object);
 		}
@@ -129,7 +134,7 @@ public class CollectionUnitItemProvider extends DynamicUnitItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
+				 getString("_UI_InterfacePropertyCategory"),
 				 null));
 	}
 
@@ -151,7 +156,7 @@ public class CollectionUnitItemProvider extends DynamicUnitItemProvider {
 				 false,
 				 true,
 				 null,
-				 null,
+				 getString("_UI_BusinessPropertyCategory"),
 				 null));
 	}
 
@@ -173,7 +178,7 @@ public class CollectionUnitItemProvider extends DynamicUnitItemProvider {
 				 false,
 				 true,
 				 null,
-				 null,
+				 getString("_UI_BusinessPropertyCategory"),
 				 null));
 	}
 
@@ -195,7 +200,95 @@ public class CollectionUnitItemProvider extends DynamicUnitItemProvider {
 				 false,
 				 true,
 				 null,
-				 null,
+				 getString("_UI_BusinessPropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Clear Label Override feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addClearLabelOverridePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_CollectionUnit_clearLabelOverride_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_clearLabelOverride_feature", "_UI_CollectionUnit_type"),
+				 WafPackage.eINSTANCE.getCollectionUnit_ClearLabelOverride(),
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_InterfacePropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Clear Icon Override feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addClearIconOverridePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_CollectionUnit_clearIconOverride_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_clearIconOverride_feature", "_UI_CollectionUnit_type"),
+				 WafPackage.eINSTANCE.getCollectionUnit_ClearIconOverride(),
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_InterfacePropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Search Label Override feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSearchLabelOverridePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_CollectionUnit_searchLabelOverride_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_searchLabelOverride_feature", "_UI_CollectionUnit_type"),
+				 WafPackage.eINSTANCE.getCollectionUnit_SearchLabelOverride(),
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_InterfacePropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Search Icon Override feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSearchIconOverridePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_CollectionUnit_searchIconOverride_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_searchIconOverride_feature", "_UI_CollectionUnit_type"),
+				 WafPackage.eINSTANCE.getCollectionUnit_SearchIconOverride(),
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_InterfacePropertyCategory"),
 				 null));
 	}
 
@@ -354,6 +447,28 @@ public class CollectionUnitItemProvider extends DynamicUnitItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Filters Class Override feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addFiltersClassOverridePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_CollectionUnit_filtersClassOverride_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_filtersClassOverride_feature", "_UI_CollectionUnit_type"),
+				 WafPackage.eINSTANCE.getCollectionUnit_FiltersClassOverride(),
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_StylePropertyCategory"),
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Local Instance Control Class feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -456,12 +571,17 @@ public class CollectionUnitItemProvider extends DynamicUnitItemProvider {
 
 		switch (notification.getFeatureID(CollectionUnit.class)) {
 			case WafPackage.COLLECTION_UNIT__TRUNCATE_ELEMENT_TITLE:
+			case WafPackage.COLLECTION_UNIT__CLEAR_LABEL_OVERRIDE:
+			case WafPackage.COLLECTION_UNIT__CLEAR_ICON_OVERRIDE:
+			case WafPackage.COLLECTION_UNIT__SEARCH_LABEL_OVERRIDE:
+			case WafPackage.COLLECTION_UNIT__SEARCH_ICON_OVERRIDE:
 			case WafPackage.COLLECTION_UNIT__HAS_GROUPED_RESULTS:
 			case WafPackage.COLLECTION_UNIT__HAS_PAGINATION:
 			case WafPackage.COLLECTION_UNIT__EMPTY_MESSAGE:
 			case WafPackage.COLLECTION_UNIT__OMIT_FIELD_LABELS:
 			case WafPackage.COLLECTION_UNIT__DEFAULT_PAGINATION_SIZE:
 			case WafPackage.COLLECTION_UNIT__MAXIMUM_PAGINATION_SIZE:
+			case WafPackage.COLLECTION_UNIT__FILTERS_CLASS_OVERRIDE:
 			case WafPackage.COLLECTION_UNIT__LOCAL_INSTANCE_CONTROL_CLASS:
 			case WafPackage.COLLECTION_UNIT__LOCAL_INSTANCE_ACTION_CLASS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));

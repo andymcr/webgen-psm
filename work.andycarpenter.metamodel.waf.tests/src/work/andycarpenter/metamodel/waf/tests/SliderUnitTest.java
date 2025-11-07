@@ -23,6 +23,7 @@ import work.andycarpenter.metamodel.waf.WafFactory;
  *   <li>{@link work.andycarpenter.metamodel.waf.SliderUnit#fieldValueClass() <em>Field Value Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.SliderUnit#controlClass() <em>Control Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.SliderUnit#actionClass() <em>Action Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.SliderUnit#filtersClass() <em>Filters Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.SliderUnit#instanceControlClass() <em>Instance Control Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.SliderUnit#instanceActionClass() <em>Instance Action Class</em>}</li>
  * </ul>
@@ -195,6 +196,19 @@ public class SliderUnitTest extends CollectionUnitTest {
 	 * @generated
 	 */
 	public void testActionClass() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.SliderUnit#filtersClass() <em>Filters Class</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.SliderUnit#filtersClass()
+	 * @generated
+	 */
+	public void testFiltersClass() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

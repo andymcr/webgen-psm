@@ -23,6 +23,7 @@ import work.andycarpenter.metamodel.waf.WafFactory;
  *   <li>{@link work.andycarpenter.metamodel.waf.GalleryUnit#fieldValueClass() <em>Field Value Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.GalleryUnit#controlClass() <em>Control Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.GalleryUnit#actionClass() <em>Action Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.GalleryUnit#filterslClass() <em>Filtersl Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.GalleryUnit#instanceControlClass() <em>Instance Control Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.GalleryUnit#instanceActionClass() <em>Instance Action Class</em>}</li>
  * </ul>
@@ -195,6 +196,19 @@ public class GalleryUnitTest extends CollectionUnitTest {
 	 * @generated
 	 */
 	public void testActionClass() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.GalleryUnit#filterslClass() <em>Filtersl Class</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.GalleryUnit#filterslClass()
+	 * @generated
+	 */
+	public void testFilterslClass() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

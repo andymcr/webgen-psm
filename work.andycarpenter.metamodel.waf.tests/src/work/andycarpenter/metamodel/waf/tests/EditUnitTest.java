@@ -9,16 +9,21 @@ import work.andycarpenter.metamodel.waf.EditUnit;
  * A test case for the model object '<em><b>Edit Unit</b></em>'.
  * <!-- end-user-doc -->
  * <p>
- * The following features are tested:
- * <ul>
- *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#isHasConfirmMessage() <em>Has Confirm Message</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#isHasSuccessMessage() <em>Has Success Message</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#isHasMessages() <em>Has Messages</em>}</li>
- * </ul>
- * </p>
- * <p>
  * The following operations are tested:
  * <ul>
+ *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#hasCustomCancelLabel() <em>Has Custom Cancel Label</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#cancelLabel() <em>Cancel Label</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#hasCustomCancelIcon() <em>Has Custom Cancel Icon</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#cancelIcon() <em>Cancel Icon</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#hasCancelIcon() <em>Has Cancel Icon</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#hasCustomSaveLabel() <em>Has Custom Save Label</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#saveLabel() <em>Save Label</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#hasCustomSaveIcon() <em>Has Custom Save Icon</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#saveIcon() <em>Save Icon</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#hasSaveIcon() <em>Has Save Icon</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#hasConfirmMessage() <em>Has Confirm Message</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#hasSuccessMessage() <em>Has Success Message</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#hasMessages() <em>Has Messages</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#sectionClass() <em>Section Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#captionClass() <em>Caption Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#contentClass() <em>Content Class</em>}</li>
@@ -58,40 +63,170 @@ public abstract class EditUnitTest extends SingletonUnitTest {
 	}
 
 	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.EditUnit#isHasConfirmMessage() <em>Has Confirm Message</em>}' feature getter.
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.EditUnit#hasCustomSaveLabel() <em>Has Custom Save Label</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.EditUnit#isHasConfirmMessage()
+	 * @see work.andycarpenter.metamodel.waf.EditUnit#hasCustomSaveLabel()
 	 * @generated
 	 */
-	public void testIsHasConfirmMessage() {
-		// TODO: implement this feature getter test method
+	public void testHasCustomSaveLabel() {
+		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}
 
 	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.EditUnit#isHasSuccessMessage() <em>Has Success Message</em>}' feature getter.
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.EditUnit#saveLabel() <em>Save Label</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.EditUnit#isHasSuccessMessage()
+	 * @see work.andycarpenter.metamodel.waf.EditUnit#saveLabel()
 	 * @generated
 	 */
-	public void testIsHasSuccessMessage() {
-		// TODO: implement this feature getter test method
+	public void testSaveLabel() {
+		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}
 
 	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.EditUnit#isHasMessages() <em>Has Messages</em>}' feature getter.
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.EditUnit#hasCustomSaveIcon() <em>Has Custom Save Icon</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.EditUnit#isHasMessages()
+	 * @see work.andycarpenter.metamodel.waf.EditUnit#hasCustomSaveIcon()
 	 * @generated
 	 */
-	public void testIsHasMessages() {
-		// TODO: implement this feature getter test method
+	public void testHasCustomSaveIcon() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.EditUnit#saveIcon() <em>Save Icon</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.EditUnit#saveIcon()
+	 * @generated
+	 */
+	public void testSaveIcon() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.EditUnit#hasSaveIcon() <em>Has Save Icon</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.EditUnit#hasSaveIcon()
+	 * @generated
+	 */
+	public void testHasSaveIcon() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.EditUnit#hasCustomCancelLabel() <em>Has Custom Cancel Label</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.EditUnit#hasCustomCancelLabel()
+	 * @generated
+	 */
+	public void testHasCustomCancelLabel() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.EditUnit#cancelLabel() <em>Cancel Label</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.EditUnit#cancelLabel()
+	 * @generated
+	 */
+	public void testCancelLabel() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.EditUnit#hasCustomCancelIcon() <em>Has Custom Cancel Icon</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.EditUnit#hasCustomCancelIcon()
+	 * @generated
+	 */
+	public void testHasCustomCancelIcon() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.EditUnit#cancelIcon() <em>Cancel Icon</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.EditUnit#cancelIcon()
+	 * @generated
+	 */
+	public void testCancelIcon() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.EditUnit#hasCancelIcon() <em>Has Cancel Icon</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.EditUnit#hasCancelIcon()
+	 * @generated
+	 */
+	public void testHasCancelIcon() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.EditUnit#hasConfirmMessage() <em>Has Confirm Message</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.EditUnit#hasConfirmMessage()
+	 * @generated
+	 */
+	public void testHasConfirmMessage() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.EditUnit#hasSuccessMessage() <em>Has Success Message</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.EditUnit#hasSuccessMessage()
+	 * @generated
+	 */
+	public void testHasSuccessMessage() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.EditUnit#hasMessages() <em>Has Messages</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.EditUnit#hasMessages()
+	 * @generated
+	 */
+	public void testHasMessages() {
+		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}

@@ -20,6 +20,7 @@ import work.andycarpenter.metamodel.waf.CardsUnit;
  *   <li>{@link work.andycarpenter.metamodel.waf.CardsUnit#fieldValueClass() <em>Field Value Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.CardsUnit#controlClass() <em>Control Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.CardsUnit#actionClass() <em>Action Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.CardsUnit#filtersClass() <em>Filters Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.CardsUnit#instanceControlClass() <em>Instance Control Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.CardsUnit#instanceActionClass() <em>Instance Action Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.CardsUnit#cardClass() <em>Card Class</em>}</li>
@@ -171,6 +172,19 @@ public abstract class CardsUnitTest extends CollectionUnitTest {
 	 * @generated
 	 */
 	public void testActionClass() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.CardsUnit#filtersClass() <em>Filters Class</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.CardsUnit#filtersClass()
+	 * @generated
+	 */
+	public void testFiltersClass() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
