@@ -71,6 +71,7 @@ class WafModel {
 	contains ImageManipulation[] imageManipulations
 	contains Navigation navigation opposite partOf
 	contains Controller[] controllers opposite partOf
+
 	@GenModel(propertyCategory="Interface")
 	String defaultCancelLabel = ''
 	@GenModel(propertyCategory="Interface")
@@ -79,6 +80,10 @@ class WafModel {
 	String defaultClearLabel = ''
 	@GenModel(propertyCategory="Interface")
 	String defaultClearIcon = ''
+	@GenModel(propertyCategory="Interface")
+	String defaultResetLabel = ''
+	@GenModel(propertyCategory="Interface")
+	String defaultResetIcon = ''
 	@GenModel(propertyCategory="Interface")
 	String defaultSaveLabel = ''
 	@GenModel(propertyCategory="Interface")
@@ -156,18 +161,16 @@ class WafModel {
 
 	boolean useFormFloatingLabels = 'false'
 
-    @GenModel(propertyCategory="Style")
+	@GenModel(propertyCategory="Style")
 	String defaultPageClass = ''
-    contains DefaultUnitStyles defaultUnitStyles
-    contains CardsUnitStyles defaultCardsStyles
-    contains ImageCardsUnitStyles defaultImageCardsStyles
-    contains ControlUnitStyles defaultControlStyles
-    contains DetailsUnitStyles defaultDetailsStyles
-    contains FormUnitStyles defaultFormStyles
-    contains GalleryUnitStyles defaultGalleryStyles
-    contains SliderUnitStyles defaultSliderStyles
-    contains StaticUnitStyles defaultStaticStyles
-    contains TabularUnitStyles defaultTabularStyles
+	contains CardsUnitStyles defaultCardsStyles
+	contains CollectionUnitStyles defaultCollectionStyles
+	contains DefaultUnitStyles defaultControlStyles
+	contains DefaultUnitStyles defaultDetailsStyles
+	contains EditUnitStyles defaultEditStyles
+	contains ContentUnitStyles defaultStaticStyles
+	contains TabularUnitStyles defaultTabularStyles
+	contains DefaultUnitStyles defaultUnitStyles
 
    	op WafModel genModel() {
 		this
@@ -248,64 +251,74 @@ class EditStaticTextMenuEntry extends MenuEntry, NamedDisplayElement {
 }
 
 
+class CardsUnitStyles extends CollectionStyles {
+	@GenModel(propertyCategory="Style")
+	String badgeClass = ''
+	@GenModel(propertyCategory="Style")
+	String cardClass = ''
+	@GenModel(propertyCategory="Style")
+	String cardBodyClass = ''
+	@GenModel(propertyCategory="Style")
+	String cardFooterClass = ''
+	@GenModel(propertyCategory="Style")
+	String cardHeaderClass = ''
+}
+
 abstract class ContentUnitStyles {
-	String sectionClass = ''
+	@GenModel(propertyCategory="Style")
 	String captionClass = ''
+	@GenModel(propertyCategory="Style")
 	String contentClass = ''
+	@GenModel(propertyCategory="Style")
+	String sectionClass = ''
 }
 
-abstract class DynamicUnitStyles extends ContentUnitStyles {
-	String fieldListClass = ''
-	String definitionFieldListClass = ''
-	String fieldLabelClass = ''
-	String fieldValueClass = ''
-	String controlClass = ''
-	String actionClass = ''
-}
-
-class CollectionUnitStyles extends DynamicUnitStyles {
+abstract class CollectionStyles extends DynamicUnitStyles {
+	@GenModel(propertyCategory="Style")
 	String filtersClass = ''
+	@GenModel(propertyCategory="Style")
+	String filtersControlClass = ''
+	@GenModel(propertyCategory="Style")
+	String filtersActionClass = ''
+	@GenModel(propertyCategory="Style")
 	String instanceControlClass = ''
+	@GenModel(propertyCategory="Style")
 	String instanceActionClass = ''
 }
 
-class DefaultUnitStyles extends CollectionUnitStyles {
+class CollectionUnitStyles extends CollectionStyles {
 }
 
-class CardsUnitStyles extends CollectionUnitStyles {
-	String cardClass = ''
-	String cardHeaderClass = ''
-	String cardBodyClass = ''
-	String cardFooterClass = ''
-	String badgeClass = ''
+class DefaultUnitStyles extends DynamicUnitStyles {
 }
 
-class ImageCardsUnitStyles extends CardsUnitStyles {
-	String imageActionClass = ''
+abstract class DynamicUnitStyles extends ContentUnitStyles {
+	@GenModel(propertyCategory="Style")
+	String actionClass = ''
+	@GenModel(propertyCategory="Style")
+	String controlClass = ''
+	@GenModel(propertyCategory="Style")
+	String fieldDefinitionListClass = ''
+	@GenModel(propertyCategory="Style")
+	String fieldLabelClass = ''
+	@GenModel(propertyCategory="Style")
+	String fieldListClass = ''
+	@GenModel(propertyCategory="Style")
+	String fieldValueClass = ''
 }
 
-class ControlUnitStyles extends DynamicUnitStyles {
-}
-
-class DetailsUnitStyles extends DynamicUnitStyles {
-}
-
-class FormUnitStyles extends DynamicUnitStyles {
+class EditUnitStyles extends DynamicUnitStyles {
+	@GenModel(propertyCategory="Style")
 	String inputGroupClass = ''
 }
 
-class GalleryUnitStyles extends CollectionUnitStyles {
-}
-
-class SliderUnitStyles extends CollectionUnitStyles {
-}
-
-class StaticUnitStyles extends ContentUnitStyles {
-}
-
-class TabularUnitStyles extends CollectionUnitStyles {
-	String headerClass = ''
+class TabularUnitStyles extends CollectionStyles {
+	@GenModel(propertyCategory="Style")
 	String footerClass = ''
+	@GenModel(propertyCategory="Style")
+	String headerClass = ''
+	@GenModel(propertyCategory="Style")
+	String rowClasses = ''
 }
 
 
@@ -637,43 +650,31 @@ abstract class ContentUnit extends NamedDisplayElement {
 	derived readonly transient volatile boolean isFormUnit
 
 	@GenModel(propertyCategory="Style")
-	String localSectionClass = ''
+	String captionClassOverride = ''
 	@GenModel(propertyCategory="Style")
-	String localCaptionClass = ''
+	String contentClassOverride = ''
 	@GenModel(propertyCategory="Style")
-	String localContentClass = ''
+	String sectionClassOverride = ''
 
-	op String sectionClass() {
-		if (localSectionClass.trim() !== '') {
-			localSectionClass.trim()
-		} else {
-			''
-		}
-	}
-	op boolean hasSectionClass() {
-		sectionClass() !== ''
-	}
-
-	op String captiontClass() {
-		if (localCaptionClass.trim() !== '') {
-			localCaptionClass.trim()
-		} else {
-			''
-		}
+	op String captionClass() {
+		captionClassOverride.trim()
 	}
 	op boolean hasCaptionClass() {
-		captiontClass() !== ''
+		captionClass() !== ''
 	}
 
 	op String contentClass() {
-		if (localContentClass.trim() !== '') {
-			localContentClass.trim()
-		} else {
-			''
-		}
+		contentClassOverride.trim()
 	}
 	op boolean hasContentClass() {
 		contentClass() !== ''
+	}
+
+	op String sectionClass() {
+		sectionClassOverride.trim()
+	}
+	op boolean hasSectionClass() {
+		sectionClass() !== ''
 	}
 
 	op WafModel genModel() {
@@ -686,24 +687,14 @@ abstract class ContentUnit extends NamedDisplayElement {
 }
 
 class StaticUnit extends ContentUnit {
+	@GenModel(propertyCategory="Business")
 	refers Repository repository
+	@GenModel(propertyCategory="Business")
 	String[1] content
 
-	op String sectionClass() {
-		if (localSectionClass.trim() !== '') {
-			localSectionClass.trim()
-		} else if (uiModel().defaultStaticStyles.sectionClass.trim() !== '') {
-			uiModel().defaultStaticStyles.sectionClass.trim()
-		} else if (uiModel().defaultUnitStyles.sectionClass.trim() !== '') {
-			uiModel().defaultUnitStyles.sectionClass.trim()
-		} else {
-			''
-		}
-	}
-
 	op String captionClass() {
-		if (localCaptionClass.trim() !== '') {
-			localContentClass.trim()
+		if (captionClassOverride.trim() !== '') {
+			contentClassOverride.trim()
 		} else if (uiModel().defaultStaticStyles.captionClass.trim() !== '') {
 			uiModel().defaultStaticStyles.captionClass.trim()
 		} else if (uiModel().defaultUnitStyles.captionClass.trim() !== '') {
@@ -714,8 +705,8 @@ class StaticUnit extends ContentUnit {
 	}
 
 	op String contentClass() {
-		if (localContentClass.trim() !== '') {
-			localContentClass.trim()
+		if (contentClassOverride.trim() !== '') {
+			contentClassOverride.trim()
 		} else if (uiModel().defaultStaticStyles.contentClass.trim() !== '') {
 			uiModel().defaultStaticStyles.contentClass.trim()
 		} else if (uiModel().defaultUnitStyles.contentClass.trim() !== '') {
@@ -724,10 +715,24 @@ class StaticUnit extends ContentUnit {
 			''
 		}
 	}
+
+	op String sectionClass() {
+		if (sectionClassOverride.trim() !== '') {
+			sectionClassOverride.trim()
+		} else if (uiModel().defaultStaticStyles.sectionClass.trim() !== '') {
+			uiModel().defaultStaticStyles.sectionClass.trim()
+		} else {
+			uiModel().defaultUnitStyles.sectionClass.trim()
+		}
+	}
 }
 
 abstract class DynamicUnit extends ContentUnit, ActionContainer {
 	refers Entity[1] contentType
+
+	op boolean hasAuthorisation() {
+		isAuthorised() || actions().exists[a | a.isAuthorised()]
+	}
 
 	@OCL(derivation="if not contentType.oclIsUndefined() then
 			contentType.containingAssociation
@@ -736,10 +741,6 @@ abstract class DynamicUnit extends ContentUnit, ActionContainer {
 		endif")
     @GenModel(propertyCategory="Debug")
 	refers derived readonly unsettable transient volatile Association containingAssociation
-
-	op boolean hasAuthorisation() {
-		isAuthorised() || actions().exists[a | a.isAuthorised()]
-	}
 
 	op Entity containingType() {
 		if (contentType === null) {
@@ -974,83 +975,58 @@ abstract class DynamicUnit extends ContentUnit, ActionContainer {
 	}
 
 	@GenModel(propertyCategory="Style")
-	String localFieldListClass = ''
+	String actionClassOverride = ''
 	@GenModel(propertyCategory="Style")
-	String localDefinitionFieldListClass = ''
+	String controlClassOverride = ''
 	@GenModel(propertyCategory="Style")
-	String localFieldLabelClass = ''
+	String fieldDefinitionListClassOverride = ''
 	@GenModel(propertyCategory="Style")
-	String localFieldValueClass = ''
+	String fieldLabelClassOverride = ''
 	@GenModel(propertyCategory="Style")
-	String localControlClass = ''
+	String fieldListClassOverride = ''
 	@GenModel(propertyCategory="Style")
-	String localActionClass = ''
+	String fieldValueClassOverride = ''
 
-	op String fieldListClass() {
-		if (localFieldListClass.trim() !== '') {
-			localFieldListClass.trim()
-		}  else {
-			''
-		}
+	op String actionClass() {
+		actionClassOverride.trim()
 	}
- 	op boolean hasFieldListClass() {
-		fieldListClass() !== ''
-	}
-	
-
-	op String definitionFieldListClass() {
-		if (localDefinitionFieldListClass.trim() !== '') {
-			localDefinitionFieldListClass.trim()
-		}  else {
-			''
-		}
-	}
-	op boolean hasDefinitionFieldListClass() {
-		definitionFieldListClass() !== ''
-	}
-
-	op String fieldLabelClass() {
-		if (localFieldLabelClass.trim() !== '') {
-			localFieldLabelClass.trim()
-		}  else {
-			''
-		}
-	}
-	op boolean hasFieldLabelClass() {
-		fieldLabelClass() !== ''
-	}
-
-	op String fieldValueClass() {
-		if (localFieldValueClass.trim() !== '') {
-			localFieldValueClass.trim()
-		}  else {
-			''
-		}
-	}
-	op boolean hasFieldValueClass() {
-		fieldValueClass() !== ''
+	op boolean hasActionClass() {
+		actionClass() !== ''
 	}
 
 	op String controlClass() {
-		if (localControlClass.trim() !== '') {
-			localControlClass.trim()
-		}  else {
-			''
-		}
+		controlClassOverride.trim()
 	}
 	op boolean hasControlClass() {
 		controlClass() !== ''
 	}
 
-	op String actionClass() {
-		if (localActionClass.trim() !== '') {
-			localActionClass.trim()
-		}  else {
-			''
-		}
+	op String fieldDefinitionListClass() {
+		fieldDefinitionListClassOverride.trim()
 	}
-	op boolean hasActionClass() {
-		actionClass() !== ''
+	op boolean hasFieldDefinitionListClass() {
+		fieldDefinitionListClass() !== ''
+	}
+
+	op String fieldLabelClass() {
+		fieldLabelClassOverride.trim()
+	}
+	op boolean hasFieldLabelClass() {
+		fieldLabelClass() !== ''
+	}
+
+	op String fieldListClass() {
+		fieldListClassOverride.trim()
+	}
+ 	op boolean hasFieldListClass() {
+		fieldListClass() !== ''
+	}
+
+	op String fieldValueClass() {
+		fieldValueClassOverride.trim()
+	}
+	op boolean hasFieldValueClass() {
+		fieldValueClass() !== ''
 	}
 }
 
@@ -1774,6 +1750,7 @@ class DateField extends InterfaceField {
 }
 
 interface SelectableUnit {
+	@GenModel(propertyCategory="Business")
 	refers SelectAction[] selectors opposite target
 }
 
@@ -1782,88 +1759,20 @@ class SingletonUnit extends DynamicUnit {
 }
 
 abstract class CollectionUnit extends DynamicUnit, SelectableUnit, ValueContext {
+	@GenModel(propertyCategory="Interface")
 	refers Label unitTitle
 	contains DisplayValue elementTitle
 	@GenModel(propertyCategory="Interface")
 	boolean truncateElementTitle = "false"
-    @GenModel(propertyCategory="Business")
+
+	@GenModel(propertyCategory="Business")
 	refers Selection selection
-    @GenModel(propertyCategory="Business")
+	@GenModel(propertyCategory="Business")
+	refers Filter filter
+	@GenModel(propertyCategory="Business")
 	refers Selection findContainerSelection
-    @GenModel(propertyCategory="Business")
+	@GenModel(propertyCategory="Business")
 	refers Selection findElementSelection
-	contains CollectionFilter[] filters opposite affects
-
-	@GenModel(propertyCategory="Interface")
-	String clearLabelOverride = ''
-	op boolean hasCustomClearLabel() {
-		clearLabelOverride.trim() !== ''
-		&& clearLabelOverride.trim() !== controller.partOf.defaultClearLabel.trim()
-	}
-	op String clearLabel() {
-		if (hasCustomClearLabel()) {
-			clearLabelOverride.trim()
-		} else {
-			controller.partOf.defaultClearLabel.trim()
-		} 
-	}
-
-	@GenModel(propertyCategory="Interface")
-	String clearIconOverride = ''
-	op boolean hasCustomClearIcon() {
-		clearIconOverride.trim() !== ''
-		&& clearIconOverride.trim() !== controller.partOf.defaultClearIcon.trim()
-	}
-	op String clearIcon() {
-		if (hasCustomClearIcon()) {
-			clearIconOverride.trim()
-		} else {
-			controller.partOf.defaultClearIcon.trim()
-		} 
-	}
-	op boolean hasClearIcon() {
-		clearIconOverride.trim() !== ''
-		|| controller.partOf.defaultClearIcon.trim() !== ''
-	}
-
-	@GenModel(propertyCategory="Interface")
-	String searchLabelOverride = ''
-	op boolean hasCustomSearchLabel() {
-		searchLabelOverride.trim() !== ''
-		&& searchLabelOverride.trim() !== controller.partOf.defaultSearchLabel.trim()
-	}
-	op String searchLabel() {
-		if (hasCustomSearchLabel()) {
-			searchLabelOverride.trim()
-		} else if (controller.partOf.defaultSearchLabel.trim() !== '') {
-			controller.partOf.defaultSearchLabel.trim()
-		} else {
-			'Search'
-		} 
-	}
-
-	@GenModel(propertyCategory="Interface")
-	String searchIconOverride = ''
-	op boolean hasCustomSearchIcon() {
-		searchIconOverride.trim() !== ''
-		&& searchIconOverride.trim() !== controller.partOf.defaultSearchIcon.trim()
-	}
-	op String searchIcon() {
-		if (hasCustomSearchIcon()) {
-			searchIconOverride.trim()
-		} else {
-			controller.partOf.defaultSearchIcon.trim()
-		} 
-	}
-	op boolean hasSearchIcon() {
-		searchIconOverride.trim() !== ''
-		|| controller.partOf.defaultSearchIcon.trim() !== ''
-	}
-
-	op boolean hasCollectionFilters() {
-		!filters.isEmpty()
-	}
-
 
 	op Entity containingType() {
 		if (findContainerSelection !== null) {
@@ -1892,6 +1801,34 @@ abstract class CollectionUnit extends DynamicUnit, SelectableUnit, ValueContext 
 		return entities
 	}
 
+	@GenModel(propertyCategory="Pagination")
+	int defaultPaginationSize = '0'
+	@GenModel(propertyCategory="Pagination")
+	int maximumPaginationSize
+
+	op boolean hasPagination() {
+		defaultPaginationSize > 0
+		&& if (selection !== null) {
+				selection.hasPaginationSupport
+			} else {
+				true
+			} 
+	}
+
+	op boolean hasGroupedResults() {
+		if (selection !== null) {
+				!selection.grouping.isEmpty()
+			} else {
+				false
+			} 
+	}
+
+	contains CollectionFilter[] filters opposite affects
+
+	op boolean hasCollectionFilters() {
+		!filters.isEmpty()
+	}
+
 	op boolean hasNumericFilters() {
 		!filters.filter[it instanceof NumericFilter].isEmpty()
 	}
@@ -1900,57 +1837,121 @@ abstract class CollectionUnit extends DynamicUnit, SelectableUnit, ValueContext 
 		!filters.filter[it instanceof TextFilter].isEmpty()
 	}
 
-	refers Filter filter
+	@GenModel(propertyCategory="Interface")
+	String clearLabelOverride = ''
+	@GenModel(propertyCategory="Interface")
+	String clearIconOverride = ''
+	@GenModel(propertyCategory="Interface")
+	String searchLabelOverride = ''
+	@GenModel(propertyCategory="Interface")
+	String searchIconOverride = ''
 
-	@OCL(derivation="if not selection.oclIsUndefined() then
-			selection.grouping->notEmpty()
-		else
-			false
-		endif")
-    @GenModel(propertyCategory="Debug")
-	derived readonly transient volatile boolean hasGroupedResults
+	op boolean hasCustomClearLabel() {
+		clearLabelOverride.trim() !== ''
+		&& clearLabelOverride.trim() !== controller.partOf.defaultClearLabel.trim()
+	}
+	op String clearLabel() {
+		if (hasCustomClearLabel()) {
+			clearLabelOverride.trim()
+		} else if (controller.partOf.defaultClearLabel.trim() !== '') {
+			controller.partOf.defaultClearLabel.trim()
+		} else {
+			'Clear'
+		} 
+	}
 
-	@OCL(derivation="defaultPaginationSize > 0
-		and if selection.oclIsUndefined() then
-				true
-			else
-				selection.hasPaginationSupport = true
-			endif")
-    @GenModel(propertyCategory="Debug")
-	derived readonly transient volatile boolean hasPagination
+	op boolean hasCustomClearIcon() {
+		clearIconOverride.trim() !== ''
+		&& clearIconOverride.trim() !== controller.partOf.defaultClearIcon.trim()
+	}
+	op String clearIcon() {
+		if (hasCustomClearIcon()) {
+			clearIconOverride.trim()
+		} else {
+			controller.partOf.defaultClearIcon.trim()
+		} 
+	}
+	op boolean hasClearIcon() {
+		clearIconOverride.trim() !== ''
+		|| controller.partOf.defaultClearIcon.trim() !== ''
+	}
 
-	String emptyMessage
+	op boolean hasCustomSearchLabel() {
+		searchLabelOverride.trim() !== ''
+		&& searchLabelOverride.trim() !== controller.partOf.defaultSearchLabel.trim()
+	}
+	op String searchLabel() {
+		if (hasCustomSearchLabel()) {
+			searchLabelOverride.trim()
+		} else if (controller.partOf.defaultSearchLabel.trim() !== '') {
+			controller.partOf.defaultSearchLabel.trim()
+		} else {
+			'Search'
+		} 
+	}
+
+	op boolean hasCustomSearchIcon() {
+		searchIconOverride.trim() !== ''
+		&& searchIconOverride.trim() !== controller.partOf.defaultSearchIcon.trim()
+	}
+	op String searchIcon() {
+		if (hasCustomSearchIcon()) {
+			searchIconOverride.trim()
+		} else {
+			controller.partOf.defaultSearchIcon.trim()
+		} 
+	}
+	op boolean hasSearchIcon() {
+		searchIconOverride.trim() !== ''
+		|| controller.partOf.defaultSearchIcon.trim() !== ''
+	}
+
+	@GenModel(propertyCategory="Interface")
+	String emptyMessage = ''
+	@GenModel(propertyCategory="Interface")
 	boolean omitFieldLabels
-	int defaultPaginationSize
-	int maximumPaginationSize
 
 	@GenModel(propertyCategory="Style")
 	String[1] filtersClassOverride = ''
 	@GenModel(propertyCategory="Style")
-	String[1] localInstanceControlClass = ''
+	String[1] filtersControlClassOverride = ''
 	@GenModel(propertyCategory="Style")
-	String[1] localInstanceActionClass = ''
+	String[1] filtersActionClassOverride = ''
+	@GenModel(propertyCategory="Style")
+	String[1] instanceControlClassOverride = ''
+	@GenModel(propertyCategory="Style")
+	String[1] instanceActionClassOverride = ''
 
 	op String filtersClass() {
-		filtersClass.trim()
+		filtersClassOverride.trim()
 	}
 	op boolean hasFiltersClass() {
 		filtersClass() !== ''
 	}
 
+	op String filtersControlClass() {
+		filtersControlClassOverride.trim()
+	}
+	op boolean hasFiltersControlClass() {
+		filtersControlClass() !== ''
+	}
+
+	op String filtersActionClass() {
+		filtersActionClassOverride.trim()
+	}
+	op boolean hasFiltersActionClass() {
+		filtersActionClass() !== ''
+	}
+
 	op String instanceControlClass() {
-		localInstanceControlClass.trim()
+		instanceControlClassOverride.trim()
 	}
 	op boolean hasInstanceControlClass() {
 		instanceControlClass() !== ''
 	}
 
 	op String instanceActionClass() {
-		if (localInstanceActionClass.trim() !== '') {
-			localInstanceActionClass.trim()
-		} else {
-			''
-		}
+		instanceActionClassOverride.trim()
 	}
 	op boolean hasInstanceActionClass() {
 		instanceActionClass() !== ''
@@ -1959,7 +1960,7 @@ abstract class CollectionUnit extends DynamicUnit, SelectableUnit, ValueContext 
 
 abstract class CollectionFilter extends NamedElement {
 	container CollectionUnit[1] affects opposite filters
-    @GenModel(propertyCategory="Business")
+    @GenModel(propertyCategory="Model")
 	refers Attribute[1] attribute
     @GenModel(propertyCategory="Interface")
 	String help = ''
@@ -1982,44 +1983,42 @@ abstract class CollectionFilter extends NamedElement {
 	op boolean hasHelp() {
 		help.trim() !== ''
 	}
-	
+
+	op boolean hasCustomisedPlaceholder() {
+		if (placeholderOverride.trim() === '' || attribute === null) {
+			false
+		} else {
+			placeholderOverride.trim() !== attribute.displayLabel.trim()
+		}
+	}
 	op String placeholder() {
-		if (placeholderOverride.trim() !== '') {
+		if (hasCustomisedPlaceholder()) {
 			placeholderOverride.trim()
 		} else {
 			if (attribute !== null) {
-				attribute.displayLabel
+				attribute.displayLabel.trim()
 			} else {
 				''
 			}
-		}
-	}
-	
-	op boolean hasCustomisedPlaceholder() {
-		if (placeholderOverride.trim() === '' || attribute !== null) {
-			false
-		} else {
-			placeholderOverride.trim() !== attribute.displayLabel
 		}
 	}
 
-	op String title() {
-		if (titleOverride.trim() !== '') {
-			titleOverride.trim()
-		} else {
-			if (attribute !== null) {
-				attribute.displayLabel
-			} else {
-				''
-			}
-		}
-	}
-	
 	op boolean hasCustomisedTitle() {
 		if (titleOverride.trim() === '' || attribute === null) {
 			false
 		} else {
-			titleOverride.trim() !== attribute.displayLabel
+			titleOverride.trim() !== attribute.displayLabel.trim()
+		}
+	}
+	op String title() {
+		if (hasCustomisedTitle()) {
+			titleOverride.trim()
+		} else {
+			if (attribute !== null) {
+				attribute.displayLabel.trim()
+			} else {
+				''
+			}
 		}
 	}
 }
@@ -2053,20 +2052,30 @@ class TextFilter extends CollectionFilter {
 }
 
 abstract class EditUnit extends SingletonUnit {
-   @GenModel(propertyCategory="Business")
+	@GenModel(propertyCategory="Business")
 	boolean useCaptcha = 'false'
-   @GenModel(propertyCategory="Model")
+	@GenModel(propertyCategory="Model")
 	boolean onSaveContinueEditing = 'false'
 	contains Predicate disableWhen
 
-   @GenModel(propertyCategory="Model")
+	@GenModel(propertyCategory="Model")
 	refers ContentUnit confirmDestination
-
 	@GenModel(propertyCategory="Model")
 	refers ContentUnit cancelDestination
 
 	@GenModel(propertyCategory="Interface")
 	String cancelLabelOverride = ''
+	@GenModel(propertyCategory="Interface")
+	String cancelIconOverride = ''
+	@GenModel(propertyCategory="Interface")
+	String resetLabelOverride = ''
+	@GenModel(propertyCategory="Interface")
+	String resetIconOverride = ''
+	@GenModel(propertyCategory="Interface")
+	String[1] saveLabelOverride = ''
+	@GenModel(propertyCategory="Interface")
+	String saveIconOverride = ''
+
 	op boolean hasCustomCancelLabel() {
 		cancelLabelOverride.trim() !== ''
 		&& cancelLabelOverride.trim() !== controller.partOf.defaultCancelLabel.trim()
@@ -2079,8 +2088,6 @@ abstract class EditUnit extends SingletonUnit {
 		} 
 	}
 
-	@GenModel(propertyCategory="Interface")
-	String cancelIconOverride = ''
 	op boolean hasCustomCancelIcon() {
 		cancelIconOverride.trim() !== ''
 		&& cancelIconOverride.trim() !== controller.partOf.defaultCancelIcon.trim()
@@ -2097,8 +2104,34 @@ abstract class EditUnit extends SingletonUnit {
 		|| controller.partOf.defaultCancelIcon.trim() !== ''
 	}
 
-	@GenModel(propertyCategory="Interface")
-	String[1] saveLabelOverride = ''
+	op boolean hasCustomResetLabel() {
+		resetLabelOverride.trim() !== ''
+		&& resetLabelOverride.trim() !== controller.partOf.defaultResetLabel.trim()
+	}
+	op String resetLabel() {
+		if (hasCustomResetLabel()) {
+			resetLabelOverride.trim()
+		} else {
+			controller.partOf.defaultResetLabel.trim()
+		} 
+	}
+
+	op boolean hasCustomResetIcon() {
+		resetIconOverride.trim() !== ''
+		&& resetIconOverride.trim() !== controller.partOf.defaultResetIcon.trim()
+	}
+	op String resetIcon() {
+		if (hasCustomResetIcon()) {
+			resetIconOverride.trim()
+		} else {
+			controller.partOf.defaultResetIcon.trim()
+		} 
+	}
+	op boolean hasResetIcon() {
+		resetIconOverride.trim() !== ''
+		|| controller.partOf.defaultResetIcon.trim() !== ''
+	}
+
 	op boolean hasCustomSaveLabel() {
 		saveLabelOverride.trim() !== ''
 		&& saveLabelOverride.trim() !== controller.partOf.defaultSaveLabel.trim()
@@ -2123,8 +2156,6 @@ abstract class EditUnit extends SingletonUnit {
 		} 
 	}
 
-	@GenModel(propertyCategory="Interface")
-	String saveIconOverride = ''
 	op boolean hasCustomSaveIcon() {
 		saveIconOverride.trim() !== ''
 		&& saveIconOverride.trim() !== controller.partOf.defaultSaveIcon.trim()
@@ -2141,12 +2172,16 @@ abstract class EditUnit extends SingletonUnit {
 		|| controller.partOf.defaultSaveIcon.trim() !== ''
 	}
 
+
+	@GenModel(propertyCategory="Interface")
 	contains Message confirmMessage
+	@GenModel(propertyCategory="Interface")
+	contains Message successMessage
+
 	op boolean hasConfirmMessage() {
 		confirmMessage !== null
 	}
 
-	contains Message successMessage
 	op boolean hasSuccessMessage() {
 		successMessage !== null
 	}
@@ -2155,127 +2190,108 @@ abstract class EditUnit extends SingletonUnit {
 		hasConfirmMessage() || hasSuccessMessage()
 	}
 
-	String[1] localInputGroupClass = ''
+	@GenModel(propertyCategory="Style")
+	String[1] inputGroupClassOverride = ''
 
-	op String sectionClass() {
-		if (localSectionClass.trim() !== '') {
-			localSectionClass.trim()
-		} else if (uiModel().defaultFormStyles.sectionClass.trim() !== '') {
-			uiModel().defaultFormStyles.sectionClass.trim()
-		} else if (uiModel().defaultUnitStyles.sectionClass.trim() !== '') {
-			uiModel().defaultUnitStyles.sectionClass.trim()
+	op String actionClass() {
+		if (actionClassOverride.trim() !== '') {
+			actionClassOverride.trim()
+		} else if (uiModel().defaultEditStyles.actionClass.trim() !== '') {
+			uiModel().defaultEditStyles.actionClass.trim()
 		} else {
-			''
+			uiModel().defaultUnitStyles.actionClass.trim()
 		}
 	}
 
 	op String captionClass() {
-		if (localCaptionClass.trim() !== '') {
-			localContentClass.trim()
-		} else if (uiModel().defaultFormStyles.captionClass.trim() !== '') {
-			uiModel().defaultFormStyles.captionClass.trim()
-		} else if (uiModel().defaultUnitStyles.captionClass.trim() !== '') {
-			uiModel().defaultUnitStyles.captionClass.trim()
+		if (captionClassOverride.trim() !== '') {
+			contentClassOverride.trim()
+		} else if (uiModel().defaultEditStyles.captionClass.trim() !== '') {
+			uiModel().defaultEditStyles.captionClass.trim()
 		} else {
-			''
+			uiModel().defaultUnitStyles.captionClass.trim()
 		}
 	}
 
 	op String contentClass() {
-		if (localContentClass.trim() !== '') {
-			localContentClass.trim()
-		} else if (uiModel().defaultFormStyles.contentClass.trim() !== '') {
-			uiModel().defaultFormStyles.contentClass.trim()
-		} else if (uiModel().defaultUnitStyles.contentClass.trim() !== '') {
+		if (contentClassOverride.trim() !== '') {
+			contentClassOverride.trim()
+		} else if (uiModel().defaultEditStyles.contentClass.trim() !== '') {
+			uiModel().defaultEditStyles.contentClass.trim()
+		} else {
 			uiModel().defaultUnitStyles.contentClass.trim()
-		} else {
-			''
-		}
-	}
-
-	op String fieldListClass() {
-		if (localFieldListClass.trim() !== '') {
-			localFieldListClass.trim()
-		} else if (uiModel().defaultFormStyles.fieldListClass.trim() !== '') {
-			uiModel().defaultFormStyles.fieldListClass.trim()
-		} else if (uiModel().defaultUnitStyles.fieldListClass.trim() !== '') {
-			uiModel().defaultUnitStyles.fieldListClass.trim()
-		} else {
-			''
-		}
-	}
-
-	op String definitionFieldListClass() {
-		if (localDefinitionFieldListClass.trim() !== '') {
-			localDefinitionFieldListClass.trim()
-		} else if (uiModel().defaultFormStyles.definitionFieldListClass.trim() !== '') {
-			uiModel().defaultFormStyles.definitionFieldListClass.trim()
-		} else if (uiModel().defaultUnitStyles.definitionFieldListClass.trim() !== '') {
-			uiModel().defaultUnitStyles.definitionFieldListClass.trim()
-		} else {
-			''
-		}
-	}
-
-	op String fieldLabelClass() {
-		if (localFieldLabelClass.trim() !== '') {
-			localFieldLabelClass.trim()
-		} else if (uiModel().defaultFormStyles.fieldLabelClass.trim() !== '') {
-			uiModel().defaultFormStyles.fieldLabelClass.trim()
-		} else if (uiModel().defaultUnitStyles.fieldLabelClass.trim() !== '') {
-			uiModel().defaultUnitStyles.fieldLabelClass.trim()
-		} else {
-			''
-		}
-	}
-
-	op String fieldValueClass() {
-		if (localFieldValueClass.trim() !== '') {
-			localFieldValueClass.trim()
-		} else if (uiModel().defaultFormStyles.fieldValueClass.trim() !== '') {
-			uiModel().defaultFormStyles.fieldValueClass.trim()
-		} else if (uiModel().defaultUnitStyles.fieldValueClass.trim() !== '') {
-			uiModel().defaultUnitStyles.fieldValueClass.trim()
-		} else {
-			''
 		}
 	}
 
 	op String controlClass() {
-		if (localControlClass.trim() !== '') {
-			localControlClass.trim()
-		} else if (uiModel().defaultFormStyles.controlClass.trim() !== '') {
-			uiModel().defaultFormStyles.controlClass.trim()
-		} else if (uiModel().defaultUnitStyles.controlClass.trim() !== '') {
-			uiModel().defaultUnitStyles.controlClass.trim()
+		if (controlClassOverride.trim() !== '') {
+			controlClassOverride.trim()
+		} else if (uiModel().defaultEditStyles.controlClass.trim() !== '') {
+			uiModel().defaultEditStyles.controlClass.trim()
 		} else {
-			''
+			uiModel().defaultUnitStyles.controlClass.trim()
 		}
 	}
 
-	op String actionClass() {
-		if (localActionClass.trim() !== '') {
-			localActionClass.trim()
-		} else if (uiModel().defaultFormStyles.actionClass.trim() !== '') {
-			uiModel().defaultFormStyles.actionClass.trim()
-		} else if (uiModel().defaultUnitStyles.actionClass.trim() !== '') {
-			uiModel().defaultUnitStyles.actionClass.trim()
+	op String fieldDefinitionListClass() {
+		if (fieldDefinitionListClassOverride.trim() !== '') {
+			fieldDefinitionListClassOverride.trim()
+		} else if (uiModel().defaultEditStyles.fieldDefinitionListClass.trim() !== '') {
+			uiModel().defaultEditStyles.fieldDefinitionListClass.trim()
 		} else {
-			''
+			uiModel().defaultUnitStyles.fieldDefinitionListClass.trim()
+		}
+	}
+
+	op String fieldLabelClass() {
+		if (fieldLabelClassOverride.trim() !== '') {
+			fieldLabelClassOverride.trim()
+		} else if (uiModel().defaultEditStyles.fieldLabelClass.trim() !== '') {
+			uiModel().defaultEditStyles.fieldLabelClass.trim()
+		} else {
+			uiModel().defaultUnitStyles.fieldLabelClass.trim()
+		}
+	}
+
+	op String fieldListClass() {
+		if (fieldListClassOverride.trim() !== '') {
+			fieldListClassOverride.trim()
+		} else if (uiModel().defaultEditStyles.fieldListClass.trim() !== '') {
+			uiModel().defaultEditStyles.fieldListClass.trim()
+		} else {
+			uiModel().defaultUnitStyles.fieldListClass.trim()
+		}
+	}
+
+	op String fieldValueClass() {
+		if (fieldValueClassOverride.trim() !== '') {
+			fieldValueClassOverride.trim()
+		} else if (uiModel().defaultEditStyles.fieldValueClass.trim() !== '') {
+			uiModel().defaultEditStyles.fieldValueClass.trim()
+		} else {
+			uiModel().defaultUnitStyles.fieldValueClass.trim()
 		}
 	}
 
 	op String inputGroupClass() {
-		if (localInputGroupClass.trim() !== '') {
-			localInputGroupClass.trim()
-		} else if (uiModel().defaultFormStyles.inputGroupClass.trim() !== '') {
-			uiModel().defaultFormStyles.inputGroupClass.trim()
+		if (inputGroupClassOverride.trim() !== '') {
+			inputGroupClassOverride.trim()
 		} else {
-			''
+			uiModel().defaultEditStyles.inputGroupClass.trim()
 		}
 	}
 	op boolean hasInputGroupClass() {
 		inputGroupClass() !== ''
+	}
+
+	op String sectionClass() {
+		if (sectionClassOverride.trim() !== '') {
+			sectionClassOverride.trim()
+		} else if (uiModel().defaultEditStyles.sectionClass.trim() !== '') {
+			uiModel().defaultEditStyles.sectionClass.trim()
+		} else {
+			uiModel().defaultUnitStyles.sectionClass.trim()
+		}
 	}
 }
 
@@ -2299,256 +2315,282 @@ class MapUnit extends EditUnit, SelectableUnit {
 }
 
 class DetailsUnit extends SingletonUnit, SelectableUnit {
+	@GenModel(propertyCategory="Business")
 	refers Selection selection
+	@GenModel(propertyCategory="Interface")
 	boolean omitFieldLabels
 
-	op String sectionClass() {
-		if (localSectionClass.trim() !== '') {
-			localSectionClass.trim()
-		} else if (uiModel().defaultDetailsStyles.sectionClass.trim() !== '') {
-			uiModel().defaultDetailsStyles.sectionClass.trim()
-		} else if (uiModel().defaultUnitStyles.sectionClass.trim() !== '') {
-			uiModel().defaultUnitStyles.sectionClass.trim()
+	op String actionClass() {
+		if (actionClassOverride.trim() !== '') {
+			actionClassOverride.trim()
+		} else if (uiModel().defaultDetailsStyles.actionClass.trim() !== '') {
+			uiModel().defaultDetailsStyles.actionClass.trim()
 		} else {
-			''
+			uiModel().defaultUnitStyles.actionClass.trim()
 		}
 	}
 
 	op String captionClass() {
-		if (localCaptionClass.trim() !== '') {
-			localContentClass.trim()
+		if (captionClassOverride.trim() !== '') {
+			contentClassOverride.trim()
 		} else if (uiModel().defaultDetailsStyles.captionClass.trim() !== '') {
 			uiModel().defaultDetailsStyles.captionClass.trim()
-		} else if (uiModel().defaultUnitStyles.captionClass.trim() !== '') {
-			uiModel().defaultUnitStyles.captionClass.trim()
 		} else {
-			''
+			uiModel().defaultUnitStyles.captionClass.trim()
 		}
 	}
 
 	op String contentClass() {
-		if (localContentClass.trim() !== '') {
-			localContentClass.trim()
+		if (contentClassOverride.trim() !== '') {
+			contentClassOverride.trim()
 		} else if (uiModel().defaultDetailsStyles.contentClass.trim() !== '') {
 			uiModel().defaultDetailsStyles.contentClass.trim()
-		} else if (uiModel().defaultUnitStyles.contentClass.trim() !== '') {
+		} else {
 			uiModel().defaultUnitStyles.contentClass.trim()
-		} else {
-			''
-		}
-	}
-
-	op String fieldListClass() {
-		if (localFieldListClass.trim() !== '') {
-			localFieldListClass.trim()
-		} else if (uiModel().defaultDetailsStyles.fieldListClass.trim() !== '') {
-			uiModel().defaultDetailsStyles.fieldListClass.trim()
-		} else if (uiModel().defaultUnitStyles.fieldListClass.trim() !== '') {
-			uiModel().defaultUnitStyles.fieldListClass.trim()
-		} else {
-			''
-		}
-	}
-
-	op String definitionFieldListClass() {
-		if (localDefinitionFieldListClass.trim() !== '') {
-			localDefinitionFieldListClass.trim()
-		} else if (uiModel().defaultDetailsStyles.definitionFieldListClass.trim() !== '') {
-			uiModel().defaultDetailsStyles.definitionFieldListClass.trim()
-		} else if (uiModel().defaultUnitStyles.definitionFieldListClass.trim() !== '') {
-			uiModel().defaultUnitStyles.definitionFieldListClass.trim()
-		} else {
-			''
-		}
-	}
-
-	op String fieldLabelClass() {
-		if (localFieldLabelClass.trim() !== '') {
-			localFieldLabelClass.trim()
-		} else if (uiModel().defaultDetailsStyles.fieldLabelClass.trim() !== '') {
-			uiModel().defaultDetailsStyles.fieldLabelClass.trim()
-		} else if (uiModel().defaultUnitStyles.fieldLabelClass.trim() !== '') {
-			uiModel().defaultUnitStyles.fieldLabelClass.trim()
-		} else {
-			''
-		}
-	}
-
-	op String fieldValueClass() {
-		if (localFieldValueClass.trim() !== '') {
-			localFieldValueClass.trim()
-		} else if (uiModel().defaultDetailsStyles.fieldValueClass.trim() !== '') {
-			uiModel().defaultDetailsStyles.fieldValueClass.trim()
-		} else if (uiModel().defaultUnitStyles.fieldValueClass.trim() !== '') {
-			uiModel().defaultUnitStyles.fieldValueClass.trim()
-		} else {
-			''
 		}
 	}
 
 	op String controlClass() {
-		if (localControlClass.trim() !== '') {
-			localControlClass.trim()
+		if (controlClassOverride.trim() !== '') {
+			controlClassOverride.trim()
 		} else if (uiModel().defaultDetailsStyles.controlClass.trim() !== '') {
 			uiModel().defaultDetailsStyles.controlClass.trim()
-		} else if (uiModel().defaultUnitStyles.controlClass.trim() !== '') {
-			uiModel().defaultUnitStyles.controlClass.trim()
 		} else {
-			''
+			uiModel().defaultUnitStyles.controlClass.trim()
 		}
 	}
 
-	op String actionClass() {
-		if (localActionClass.trim() !== '') {
-			localActionClass.trim()
-		} else if (uiModel().defaultDetailsStyles.actionClass.trim() !== '') {
-			uiModel().defaultDetailsStyles.actionClass.trim()
-		} else if (uiModel().defaultUnitStyles.actionClass.trim() !== '') {
-			uiModel().defaultUnitStyles.actionClass.trim()
+	op String definitionFieldListClass() {
+		if (fieldDefinitionListClassOverride.trim() !== '') {
+			fieldDefinitionListClassOverride.trim()
+		} else if (uiModel().defaultDetailsStyles.fieldDefinitionListClass.trim() !== '') {
+			uiModel().defaultDetailsStyles.fieldDefinitionListClass.trim()
 		} else {
-			''
+			uiModel().defaultUnitStyles.fieldDefinitionListClass.trim()
+		}
+	}
+
+	op String fieldLabelClass() {
+		if (fieldLabelClassOverride.trim() !== '') {
+			fieldLabelClassOverride.trim()
+		} else if (uiModel().defaultDetailsStyles.fieldLabelClass.trim() !== '') {
+			uiModel().defaultDetailsStyles.fieldLabelClass.trim()
+		} else {
+			uiModel().defaultUnitStyles.fieldLabelClass.trim()
+		}
+	}
+
+	op String fieldListClass() {
+		if (fieldListClassOverride.trim() !== '') {
+			fieldListClassOverride.trim()
+		} else if (uiModel().defaultDetailsStyles.fieldListClass.trim() !== '') {
+			uiModel().defaultDetailsStyles.fieldListClass.trim()
+		} else {
+			uiModel().defaultUnitStyles.fieldListClass.trim()
+		}
+	}
+
+	op String fieldValueClass() {
+		if (fieldValueClassOverride.trim() !== '') {
+			fieldValueClassOverride.trim()
+		} else if (uiModel().defaultDetailsStyles.fieldValueClass.trim() !== '') {
+			uiModel().defaultDetailsStyles.fieldValueClass.trim()
+		} else {
+			uiModel().defaultUnitStyles.fieldValueClass.trim()
+		}
+	}
+
+	op String sectionClass() {
+		if (sectionClassOverride.trim() !== '') {
+			sectionClassOverride.trim()
+		} else if (uiModel().defaultDetailsStyles.sectionClass.trim() !== '') {
+			uiModel().defaultDetailsStyles.sectionClass.trim()
+		} else {
+			uiModel().defaultUnitStyles.sectionClass.trim()
 		}
 	}
 }
 
 class TabularUnit extends CollectionUnit {
+	@GenModel(propertyCategory="Debug")
 	refers SearchUnit targettingSearches opposite resultsDestination
-	String rowClasses
-	String localHeaderClass = ''
-	String localFooterClass = ''
 
-	op String sectionClass() {
-		if (localSectionClass.trim() !== '') {
-			localSectionClass.trim()
-		} else if (uiModel().defaultTabularStyles.sectionClass.trim() !== '') {
-			uiModel().defaultTabularStyles.sectionClass.trim()
-		} else if (uiModel().defaultUnitStyles.sectionClass.trim() !== '') {
-			uiModel().defaultUnitStyles.sectionClass.trim()
+	@GenModel(propertyCategory="Style")
+	String footerClassOverride = ''
+	@GenModel(propertyCategory="Style")
+	String headerClassOverride = ''
+	@GenModel(propertyCategory="Style")
+	String rowClassesOverride
+
+	op String actionClass() {
+		if (actionClassOverride.trim() !== '') {
+			actionClassOverride.trim()
+		} else if (uiModel().defaultTabularStyles.actionClass.trim() !== '') {
+			uiModel().defaultTabularStyles.actionClass.trim()
+		} else if (uiModel().defaultCollectionStyles.actionClass.trim() !== '') {
+			uiModel().defaultCollectionStyles.actionClass.trim()
 		} else {
-			''
+			uiModel().defaultUnitStyles.actionClass.trim()
 		}
 	}
 
 	op String captionClass() {
-		if (localCaptionClass.trim() !== '') {
-			localContentClass.trim()
+		if (captionClassOverride.trim() !== '') {
+			contentClassOverride.trim()
 		} else if (uiModel().defaultTabularStyles.captionClass.trim() !== '') {
 			uiModel().defaultTabularStyles.captionClass.trim()
-		} else if (uiModel().defaultUnitStyles.captionClass.trim() !== '') {
-			uiModel().defaultUnitStyles.captionClass.trim()
+		} else if (uiModel().defaultCollectionStyles.captionClass.trim() !== '') {
+			uiModel().defaultCollectionStyles.captionClass.trim()
 		} else {
-			''
+			uiModel().defaultUnitStyles.captionClass.trim()
 		}
 	}
 
 	op String contentClass() {
-		if (localContentClass.trim() !== '') {
-			localContentClass.trim()
+		if (contentClassOverride.trim() !== '') {
+			contentClassOverride.trim()
 		} else if (uiModel().defaultTabularStyles.contentClass.trim() !== '') {
 			uiModel().defaultTabularStyles.contentClass.trim()
-		} else if (uiModel().defaultUnitStyles.contentClass.trim() !== '') {
+		} else if (uiModel().defaultCollectionStyles.contentClass.trim() !== '') {
+			uiModel().defaultCollectionStyles.contentClass.trim()
+		} else {
 			uiModel().defaultUnitStyles.contentClass.trim()
-		} else {
-			''
-		}
-	}
-
-	op String fieldListClass() {
-		if (localFieldListClass.trim() !== '') {
-			localFieldListClass.trim()
-		} else if (uiModel().defaultTabularStyles.fieldListClass.trim() !== '') {
-			uiModel().defaultTabularStyles.fieldListClass.trim()
-		} else if (uiModel().defaultUnitStyles.fieldListClass.trim() !== '') {
-			uiModel().defaultUnitStyles.fieldListClass.trim()
-		} else {
-			''
-		}
-	}
-
-	op String definitionFieldListClass() {
-		if (localDefinitionFieldListClass.trim() !== '') {
-			localDefinitionFieldListClass.trim()
-		} else if (uiModel().defaultTabularStyles.definitionFieldListClass.trim() !== '') {
-			uiModel().defaultTabularStyles.definitionFieldListClass.trim()
-		} else if (uiModel().defaultUnitStyles.definitionFieldListClass.trim() !== '') {
-			uiModel().defaultUnitStyles.definitionFieldListClass.trim()
-		} else {
-			''
-		}
-	}
-
-	op String fieldLabelClass() {
-		if (localFieldLabelClass.trim() !== '') {
-			localFieldLabelClass.trim()
-		} else if (uiModel().defaultTabularStyles.fieldLabelClass.trim() !== '') {
-			uiModel().defaultTabularStyles.fieldLabelClass.trim()
-		} else if (uiModel().defaultUnitStyles.fieldLabelClass.trim() !== '') {
-			uiModel().defaultUnitStyles.fieldLabelClass.trim()
-		} else {
-			''
-		}
-	}
-
-	op String fieldValueClass() {
-		if (localFieldValueClass.trim() !== '') {
-			localFieldValueClass.trim()
-		} else if (uiModel().defaultTabularStyles.fieldValueClass.trim() !== '') {
-			uiModel().defaultTabularStyles.fieldValueClass.trim()
-		} else if (uiModel().defaultUnitStyles.fieldValueClass.trim() !== '') {
-			uiModel().defaultUnitStyles.fieldValueClass.trim()
-		} else {
-			''
 		}
 	}
 
 	op String controlClass() {
-		if (localControlClass.trim() !== '') {
-			localControlClass.trim()
+		if (controlClassOverride.trim() !== '') {
+			controlClassOverride.trim()
 		} else if (uiModel().defaultTabularStyles.controlClass.trim() !== '') {
 			uiModel().defaultTabularStyles.controlClass.trim()
-		} else if (uiModel().defaultUnitStyles.controlClass.trim() !== '') {
-			uiModel().defaultUnitStyles.controlClass.trim()
+		} else if (uiModel().defaultCollectionStyles.controlClass.trim() !== '') {
+			uiModel().defaultCollectionStyles.controlClass.trim()
 		} else {
-			''
+			uiModel().defaultUnitStyles.controlClass.trim()
 		}
 	}
 
-	op String actionClass() {
-		if (localActionClass.trim() !== '') {
-			localActionClass.trim()
-		} else if (uiModel().defaultTabularStyles.actionClass.trim() !== '') {
-			uiModel().defaultTabularStyles.actionClass.trim()
-		} else if (uiModel().defaultUnitStyles.actionClass.trim() !== '') {
-			uiModel().defaultUnitStyles.actionClass.trim()
+	op String fielddefinitionListClass() {
+		if (fieldDefinitionListClassOverride.trim() !== '') {
+			fieldDefinitionListClassOverride.trim()
+		} else if (uiModel().defaultTabularStyles.fieldDefinitionListClass.trim() !== '') {
+			uiModel().defaultTabularStyles.fieldDefinitionListClass.trim()
+		} else if (uiModel().defaultCollectionStyles.fieldDefinitionListClass.trim() !== '') {
+			uiModel().defaultCollectionStyles.fieldDefinitionListClass.trim()
 		} else {
-			''
+			uiModel().defaultUnitStyles.fieldDefinitionListClass.trim()
 		}
+	}
+
+	op String fieldLabelClass() {
+		if (fieldLabelClassOverride.trim() !== '') {
+			fieldLabelClassOverride.trim()
+		} else if (uiModel().defaultTabularStyles.fieldLabelClass.trim() !== '') {
+			uiModel().defaultTabularStyles.fieldLabelClass.trim()
+		} else if (uiModel().defaultCollectionStyles.fieldLabelClass.trim() !== '') {
+			uiModel().defaultCollectionStyles.fieldLabelClass.trim()
+		} else {
+			uiModel().defaultUnitStyles.fieldLabelClass.trim()
+		}
+	}
+
+	op String fieldListClass() {
+		if (fieldListClassOverride.trim() !== '') {
+			fieldListClassOverride.trim()
+		} else if (uiModel().defaultTabularStyles.fieldListClass.trim() !== '') {
+			uiModel().defaultTabularStyles.fieldListClass.trim()
+		} else if (uiModel().defaultCollectionStyles.fieldListClass.trim() !== '') {
+			uiModel().defaultCollectionStyles.fieldListClass.trim()
+		} else {
+			uiModel().defaultUnitStyles.fieldListClass.trim()
+		}
+	}
+
+	op String fieldValueClass() {
+		if (fieldValueClassOverride.trim() !== '') {
+			fieldValueClassOverride.trim()
+		} else if (uiModel().defaultTabularStyles.fieldValueClass.trim() !== '') {
+			uiModel().defaultTabularStyles.fieldValueClass.trim()
+		} else if (uiModel().defaultCollectionStyles.fieldValueClass.trim() !== '') {
+			uiModel().defaultCollectionStyles.fieldValueClass.trim()
+		} else {
+			uiModel().defaultUnitStyles.fieldValueClass.trim()
+		}
+	}
+
+	op String filtersClass() {
+		if (filtersClassOverride.trim() !== '') {
+			filtersClassOverride.trim()
+		} else if (uiModel().defaultTabularStyles.filtersClass.trim() !== '') {
+			uiModel().defaultTabularStyles.filtersClass.trim()
+		} else {
+			uiModel().defaultCollectionStyles.filtersClass.trim()
+		}
+	}
+
+	op String filtersControlClass() {
+		if (filtersControlClassOverride.trim() !== '') {
+			filtersControlClassOverride.trim()
+		} else if (uiModel().defaultTabularStyles.filtersControlClass.trim() !== '') {
+			uiModel().defaultTabularStyles.filtersControlClass.trim()
+		} else {
+			uiModel().defaultCollectionStyles.filtersControlClass.trim()
+		}
+	}
+
+	op String filtersActionClass() {
+		if (filtersActionClassOverride.trim() !== '') {
+			filtersActionClassOverride.trim()
+		} else if (uiModel().defaultTabularStyles.filtersActionClass.trim() !== '') {
+			uiModel().defaultTabularStyles.filtersActionClass.trim()
+		} else {
+			uiModel().defaultCollectionStyles.filtersActionClass.trim()
+		}
+	}
+
+	op String footerClass() {
+		if (footerClassOverride.trim() !== '') {
+			footerClassOverride.trim()
+		} else {
+			uiModel().defaultTabularStyles.footerClass.trim()
+		}
+	}
+	op boolean hasFooterClass() {
+		footerClass() !== ''
 	}
 
 	op String headerClass() {
-		if (localHeaderClass.trim() !== '') {
-			localHeaderClass.trim()
-		} else if (uiModel().defaultTabularStyles.headerClass.trim() !== '') {
-			uiModel().defaultTabularStyles.headerClass.trim()
+		if (headerClassOverride.trim() !== '') {
+			headerClassOverride.trim()
 		} else {
-			''
+			uiModel().defaultTabularStyles.headerClass.trim()
 		}
 	}
 	op boolean hasHeaderClass() {
 		headerClass() !== ''
 	}
 
-	op String footerClass() {
-		if (localFooterClass.trim() !== '') {
-			localFooterClass.trim()
-		} else if (uiModel().defaultTabularStyles.footerClass.trim() !== '') {
-			uiModel().defaultTabularStyles.footerClass.trim()
+	op String rowClasses() {
+		if (rowClassesOverride.trim() !== '') {
+			rowClassesOverride.trim()
 		} else {
-			''
+			uiModel().defaultTabularStyles.rowClasses.trim()
 		}
 	}
-	op boolean hasFooterClass() {
-		footerClass() !== ''
+	op boolean hasRowClasses() {
+		rowClasses() !== ''
+	}
+
+	op String sectionClass() {
+		if (sectionClassOverride.trim() !== '') {
+			sectionClassOverride.trim()
+		} else if (uiModel().defaultTabularStyles.sectionClass.trim() !== '') {
+			uiModel().defaultTabularStyles.sectionClass.trim()
+		} else if (uiModel().defaultCollectionStyles.sectionClass.trim() !== '') {
+			uiModel().defaultCollectionStyles.sectionClass.trim()
+		} else {
+			uiModel().defaultUnitStyles.sectionClass.trim()
+		}
 	}
 }
 
@@ -2557,236 +2599,250 @@ abstract class CardsUnit extends CollectionUnit {
 	boolean overlaySingleSelectAction
 
 	@GenModel(propertyCategory="Style")
-	String[1] localCardClass = ''
+	String[1] badgeClassOverride = ''
 	@GenModel(propertyCategory="Style")
-	String[1] localCardHeaderClass = ''
+	String[1] cardClassOverride = ''
 	@GenModel(propertyCategory="Style")
-	String[1] localCardBodyClass = ''
+	String[1] cardBodyClassOverride = ''
 	@GenModel(propertyCategory="Style")
-	String[1] localCardFooterClass = ''
+	String[1] cardFooterClassOverride = ''
 	@GenModel(propertyCategory="Style")
-	String[1] localBadgeClass = ''
+	String[1] cardHeaderClassOverride = ''
 
-	op String sectionClass() {
-		if (localSectionClass.trim() !== '') {
-			localSectionClass.trim()
-		} else if (uiModel().defaultCardsStyles.sectionClass.trim() !== '') {
-			uiModel().defaultCardsStyles.sectionClass.trim()
-		} else if (uiModel().defaultUnitStyles.sectionClass.trim() !== '') {
-			uiModel().defaultUnitStyles.sectionClass.trim()
+	op String actionClass() {
+		if (actionClassOverride.trim() !== '') {
+			actionClassOverride.trim()
+		} else if (uiModel().defaultCardsStyles.actionClass.trim() !== '') {
+			uiModel().defaultCardsStyles.actionClass.trim()
+		} else if (uiModel().defaultCollectionStyles.actionClass.trim() !== '') {
+			uiModel().defaultCollectionStyles.actionClass.trim()
 		} else {
-			''
+			uiModel().defaultUnitStyles.actionClass.trim()
 		}
+	}
+
+	op String badgeClass() {
+		if (badgeClassOverride.trim() !== '') {
+			badgeClassOverride.trim()
+		} else {
+			uiModel().defaultCardsStyles.badgeClass.trim()
+		}
+	}
+	op boolean hasBadgeClass() {
+		badgeClass() !== ''
 	}
 
 	op String captionClass() {
-		if (localCaptionClass.trim() !== '') {
-			localContentClass.trim()
+		if (captionClassOverride.trim() !== '') {
+			contentClassOverride.trim()
 		} else if (uiModel().defaultCardsStyles.captionClass.trim() !== '') {
 			uiModel().defaultCardsStyles.captionClass.trim()
-		} else if (uiModel().defaultUnitStyles.captionClass.trim() !== '') {
+		} else if (uiModel().defaultCollectionStyles.captionClass.trim() !== '') {
+			uiModel().defaultCollectionStyles.captionClass.trim()
+		} else {
 			uiModel().defaultUnitStyles.captionClass.trim()
-		} else {
-			''
-		}
-	}
-
-	op String contentClass() {
-		if (localContentClass.trim() !== '') {
-			localContentClass.trim()
-		} else if (uiModel().defaultCardsStyles.contentClass.trim() !== '') {
-			uiModel().defaultCardsStyles.contentClass.trim()
-		} else if (uiModel().defaultUnitStyles.contentClass.trim() !== '') {
-			uiModel().defaultUnitStyles.contentClass.trim()
-		} else {
-			''
-		}
-	}
-
-	op String fieldListClass() {
-		if (localFieldListClass.trim() !== '') {
-			localFieldListClass.trim()
-		} else if (uiModel().defaultCardsStyles.fieldListClass.trim() !== '') {
-			uiModel().defaultCardsStyles.fieldListClass.trim()
-		} else if (uiModel().defaultUnitStyles.fieldListClass.trim() !== '') {
-			uiModel().defaultUnitStyles.fieldListClass.trim()
-		} else {
-			''
-		}
-	}
-
-	op String definitionFieldListClass() {
-		if (localDefinitionFieldListClass.trim() !== '') {
-			localDefinitionFieldListClass.trim()
-		} else if (uiModel().defaultCardsStyles.definitionFieldListClass.trim() !== '') {
-			uiModel().defaultCardsStyles.definitionFieldListClass.trim()
-		} else if (uiModel().defaultUnitStyles.definitionFieldListClass.trim() !== '') {
-			uiModel().defaultUnitStyles.definitionFieldListClass.trim()
-		} else {
-			''
-		}
-	}
-
-	op String fieldLabelClass() {
-		if (localFieldLabelClass.trim() !== '') {
-			localFieldLabelClass.trim()
-		} else if (uiModel().defaultCardsStyles.fieldLabelClass.trim() !== '') {
-			uiModel().defaultCardsStyles.fieldLabelClass.trim()
-		} else if (uiModel().defaultUnitStyles.fieldLabelClass.trim() !== '') {
-			uiModel().defaultUnitStyles.fieldLabelClass.trim()
-		} else {
-			''
-		}
-	}
-
-	op String fieldValueClass() {
-		if (localFieldValueClass.trim() !== '') {
-			localFieldValueClass.trim()
-		} else if (uiModel().defaultCardsStyles.fieldValueClass.trim() !== '') {
-			uiModel().defaultCardsStyles.fieldValueClass.trim()
-		} else if (uiModel().defaultUnitStyles.fieldValueClass.trim() !== '') {
-			uiModel().defaultUnitStyles.fieldValueClass.trim()
-		} else {
-			''
-		}
-	}
-
-	op String controlClass() {
-		if (localControlClass.trim() !== '') {
-			localControlClass.trim()
-		} else if (uiModel().defaultCardsStyles.controlClass.trim() !== '') {
-			uiModel().defaultCardsStyles.controlClass.trim()
-		} else if (uiModel().defaultUnitStyles.controlClass.trim() !== '') {
-			uiModel().defaultUnitStyles.controlClass.trim()
-		} else {
-			''
-		}
-	}
-
-	op String actionClass() {
-		if (localActionClass.trim() !== '') {
-			localActionClass.trim()
-		} else if (uiModel().defaultCardsStyles.actionClass.trim() !== '') {
-			uiModel().defaultCardsStyles.actionClass.trim()
-		} else if (uiModel().defaultUnitStyles.actionClass.trim() !== '') {
-			uiModel().defaultUnitStyles.actionClass.trim()
-		} else {
-			''
-		}
-	}
-
-	op String filtersClass() {
-		if (filtersClassOverride.trim() !== '') {
-			filtersClassOverride.trim()
-		} else {
-			uiModel().defaultCardsStyles.filtersClass.trim()
-		}
-	}
-
-	op String instanceControlClass() {
-		if (localInstanceControlClass.trim() !== '') {
-			localInstanceControlClass.trim()
-		} else if (uiModel().defaultCardsStyles.instanceControlClass.trim() !== '') {
-			uiModel().defaultCardsStyles.instanceControlClass.trim()
-		} else {
-			''
-		}
-	}
-
-	op String instanceActionClass() {
-		if (localInstanceActionClass.trim() !== '') {
-			localInstanceActionClass.trim()
-		} else if (uiModel().defaultCardsStyles.instanceActionClass.trim() !== '') {
-			uiModel().defaultCardsStyles.instanceActionClass.trim()
-		} else {
-			''
 		}
 	}
 
 	op String cardClass() {
-		if (localCardClass.trim() !== '') {
-			localCardClass.trim()
-		} else if (uiModel().defaultCardsStyles.cardClass.trim() !== '') {
-			uiModel().defaultCardsStyles.cardClass.trim()
+		if (cardClassOverride.trim() !== '') {
+			cardClassOverride.trim()
 		} else {
-			''
+			uiModel().defaultCardsStyles.cardClass.trim()
 		}
 	}
 	op boolean hasCardClass() {
 		cardClass() !== ''
 	}
 
-	op String cardHeaderClass() {
-		if (localCardHeaderClass.trim() !== '') {
-			localCardHeaderClass.trim()
-		} else if (uiModel().defaultCardsStyles.cardHeaderClass.trim() !== '') {
-			uiModel().defaultCardsStyles.cardHeaderClass.trim()
-		} else {
-			''
-		}
-	}
-	op boolean hasCardHeaderClass() {
-		cardHeaderClass() !== ''
-	}
-
-	op String cardBodyClass() {
-		if (localCardBodyClass.trim() !== '') {
-			localCardBodyClass.trim()
-		} else if (uiModel().defaultCardsStyles.cardBodyClass.trim() !== '') {
-			uiModel().defaultCardsStyles.cardBodyClass.trim()
-		} else {
-			''
-		}
-	}
-	op boolean hasCardBodyClass() {
-		cardBodyClass() !== ''
-	}
-
 	op String cardFooterClass() {
-		if (localCardFooterClass.trim() !== '') {
-			localCardFooterClass.trim()
-		} else if (uiModel().defaultCardsStyles.cardFooterClass.trim() !== '') {
-			uiModel().defaultCardsStyles.cardFooterClass.trim()
+		if (cardFooterClassOverride.trim() !== '') {
+			cardFooterClassOverride.trim()
 		} else {
-			''
+			uiModel().defaultCardsStyles.cardFooterClass.trim()
 		}
 	}
 	op boolean hasCardFooterClass() {
 		cardFooterClass() !== ''
 	}
 
-	op String badgeClass() {
-		if (localBadgeClass.trim() !== '') {
-			localBadgeClass.trim()
-		} else if (uiModel().defaultCardsStyles.badgeClass.trim() !== '') {
-			uiModel().defaultCardsStyles.badgeClass.trim()
+	op String cardBodyClass() {
+		if (cardBodyClassOverride.trim() !== '') {
+			cardBodyClassOverride.trim()
 		} else {
-			''
+			uiModel().defaultCardsStyles.cardBodyClass.trim()
 		}
 	}
-	@OCL(derivation="badgeClass <> ''")
-	op boolean hasBadgeClass() {
-		badgeClass() !== ''
+	op boolean hasCardBodyClass() {
+		cardBodyClass() !== ''
+	}
+
+	op String cardHeaderClass() {
+		if (cardHeaderClassOverride.trim() !== '') {
+			cardHeaderClassOverride.trim()
+		} else {
+			uiModel().defaultCardsStyles.cardHeaderClass.trim()
+		}
+	}
+	op boolean hasCardHeaderClass() {
+		cardHeaderClass() !== ''
+	}
+
+	op String contentClass() {
+		if (contentClassOverride.trim() !== '') {
+			contentClassOverride.trim()
+		} else if (uiModel().defaultCardsStyles.contentClass.trim() !== '') {
+			uiModel().defaultCardsStyles.contentClass.trim()
+		} else if (uiModel().defaultCollectionStyles.contentClass.trim() !== '') {
+			uiModel().defaultCollectionStyles.contentClass.trim()
+		} else {
+			uiModel().defaultUnitStyles.contentClass.trim()
+		}
+	}
+
+	op String controlClass() {
+		if (controlClassOverride.trim() !== '') {
+			controlClassOverride.trim()
+		} else if (uiModel().defaultCardsStyles.controlClass.trim() !== '') {
+			uiModel().defaultCardsStyles.controlClass.trim()
+		} else if (uiModel().defaultCollectionStyles.controlClass.trim() !== '') {
+			uiModel().defaultCollectionStyles.controlClass.trim()
+		} else {
+			uiModel().defaultUnitStyles.controlClass.trim()
+		}
+	}
+
+	op String definitionFieldListClass() {
+		if (fieldDefinitionListClassOverride.trim() !== '') {
+			fieldDefinitionListClassOverride.trim()
+		} else if (uiModel().defaultCardsStyles.fieldDefinitionListClass.trim() !== '') {
+			uiModel().defaultCardsStyles.fieldDefinitionListClass.trim()
+		} else if (uiModel().defaultCollectionStyles.fieldDefinitionListClass.trim() !== '') {
+			uiModel().defaultCollectionStyles.fieldDefinitionListClass.trim()
+		} else {
+			uiModel().defaultUnitStyles.fieldDefinitionListClass.trim()
+		}
+	}
+
+	op String fieldLabelClass() {
+		if (fieldLabelClassOverride.trim() !== '') {
+			fieldLabelClassOverride.trim()
+		} else if (uiModel().defaultCardsStyles.fieldLabelClass.trim() !== '') {
+			uiModel().defaultCardsStyles.fieldLabelClass.trim()
+		} else if (uiModel().defaultCollectionStyles.fieldLabelClass.trim() !== '') {
+			uiModel().defaultCollectionStyles.fieldLabelClass.trim()
+		} else {
+			uiModel().defaultUnitStyles.fieldLabelClass.trim()
+		}
+	}
+
+	op String fieldListClass() {
+		if (fieldListClassOverride.trim() !== '') {
+			fieldListClassOverride.trim()
+		} else if (uiModel().defaultCardsStyles.fieldListClass.trim() !== '') {
+			uiModel().defaultCardsStyles.fieldListClass.trim()
+		} else if (uiModel().defaultCollectionStyles.fieldListClass.trim() !== '') {
+			uiModel().defaultCollectionStyles.fieldListClass.trim()
+		} else {
+			uiModel().defaultUnitStyles.fieldListClass.trim()
+		}
+	}
+
+	op String fieldValueClass() {
+		if (fieldValueClassOverride.trim() !== '') {
+			fieldValueClassOverride.trim()
+		} else if (uiModel().defaultCardsStyles.fieldValueClass.trim() !== '') {
+			uiModel().defaultCardsStyles.fieldValueClass.trim()
+		} else if (uiModel().defaultCollectionStyles.fieldValueClass.trim() !== '') {
+			uiModel().defaultCollectionStyles.fieldValueClass.trim()
+		} else {
+			uiModel().defaultUnitStyles.fieldValueClass.trim()
+		}
+	}
+
+	op String filtersClass() {
+		if (filtersClassOverride.trim() !== '') {
+			filtersClassOverride.trim()
+		} else if (uiModel().defaultCardsStyles.filtersClass.trim() !== '') {
+			uiModel().defaultCardsStyles.filtersClass.trim()
+		} else {
+			uiModel().defaultCollectionStyles.filtersClass.trim()
+		}
+	}
+
+	op String filtersControlClass() {
+		if (filtersControlClassOverride.trim() !== '') {
+			filtersControlClassOverride.trim()
+		} else if (uiModel().defaultCardsStyles.filtersControlClass.trim() !== '') {
+			uiModel().defaultCardsStyles.filtersControlClass.trim()
+		} else {
+			uiModel().defaultCollectionStyles.filtersControlClass.trim()
+		}
+	}
+
+	op String filtersActionClass() {
+		if (filtersActionClassOverride.trim() !== '') {
+			filtersActionClassOverride.trim()
+		} else if (uiModel().defaultCardsStyles.filtersActionClass.trim() !== '') {
+			uiModel().defaultCardsStyles.filtersActionClass.trim()
+		} else {
+			uiModel().defaultCollectionStyles.filtersActionClass.trim()
+		}
+	}
+
+	op String instanceActionClass() {
+		if (instanceActionClassOverride.trim() !== '') {
+			instanceActionClassOverride.trim()
+		} else if (uiModel().defaultCardsStyles.instanceActionClass.trim() !== '') {
+			uiModel().defaultCardsStyles.instanceActionClass.trim()
+		} else {
+			uiModel().defaultCollectionStyles.instanceActionClass.trim()
+		}
+	}
+
+	op String instanceControlClass() {
+		if (instanceControlClassOverride.trim() !== '') {
+			instanceControlClassOverride.trim()
+		} else if (uiModel().defaultCardsStyles.instanceControlClass.trim() !== '') {
+			uiModel().defaultCardsStyles.instanceControlClass.trim()
+		} else {
+			uiModel().defaultCollectionStyles.instanceControlClass.trim()
+		}
+	}
+
+	op String sectionClass() {
+		if (sectionClassOverride.trim() !== '') {
+			sectionClassOverride.trim()
+		} else if (uiModel().defaultCardsStyles.sectionClass.trim() !== '') {
+			uiModel().defaultCardsStyles.sectionClass.trim()
+		} else if (uiModel().defaultCollectionStyles.sectionClass.trim() !== '') {
+			uiModel().defaultCollectionStyles.sectionClass.trim()
+		} else {
+			uiModel().defaultUnitStyles.sectionClass.trim()
+		}
 	}
 }
 
 class Badge extends ValueContext {
-	refers CardsUnit[1] displayedOn opposite badges
-	String iconName
-	contains DisplayValue value
+	container CardsUnit[1] displayedOn opposite badges
+
+	@GenModel(propertyCategory="Interface")
 	refers Attribute title
+	@GenModel(propertyCategory="Interface")
+	String iconName
+	@GenModel(propertyCategory="Interface")
+	contains DisplayValue value
+
 	contains Predicate displayWhen
 
 	@GenModel(propertyCategory="Style")
-	String localBadgeClass
+	String bdgeClassOverride
 
 	op String badgeClass() {
-		if (localBadgeClass.trim() !== '') {
-			localBadgeClass.trim()
-		} else if (displayedOn.hasBadgeClass()) {
-			displayedOn.badgeClass()
+		if (bdgeClassOverride.trim() !== '') {
+			bdgeClassOverride.trim()
 		} else {
-			''
+			displayedOn.badgeClass()
 		}
 	}
 	op boolean hasBadgeClass() {
@@ -2803,354 +2859,40 @@ class DateCardsUnit extends CardsUnit, ValueContext {
 
 interface ImageUnit extends ValueContext {
 	contains DisplayValue[1] imageFeaturePath
+
+	@GenModel(propertyCategory="Image")
+	refers ImageManipulation imageFilter
+
+	@GenModel(propertyCategory="Image")
 	String missingImagePath
 	contains Predicate showMissingImageWhen
-	refers ImageManipulation imageFilter
 }
 
 
 class ImageCardsUnit extends CardsUnit, ImageUnit {
-	boolean enableImageEnlargement
+	@GenModel(propertyCategory="Interface")
 	boolean overlayTitle
-	boolean revealUntruncatedContent
-	@GenModel(propertyCategory="Style")
-	String imageActionClass = ''
 
-	op String sectionClass() {
-		if (localSectionClass.trim() !== '') {
-			localSectionClass.trim()
-		} else if (uiModel().defaultImageCardsStyles.sectionClass.trim() !== '') {
-			uiModel().defaultImageCardsStyles.sectionClass.trim()
-		} else if (uiModel().defaultCardsStyles.sectionClass.trim() !== '') {
-			uiModel().defaultCardsStyles.sectionClass.trim()
-		} else if (uiModel().defaultUnitStyles.sectionClass.trim() !== '') {
-			uiModel().defaultUnitStyles.sectionClass.trim()
-		} else {
-			''
-		}
-	}
-
-	op String captionClass() {
-		if (localCaptionClass.trim() !== '') {
-			localContentClass.trim()
-		} else if (uiModel().defaultImageCardsStyles.captionClass.trim() !== '') {
-			uiModel().defaultImageCardsStyles.captionClass.trim()
-		} else if (uiModel().defaultCardsStyles.captionClass.trim() !== '') {
-			uiModel().defaultCardsStyles.captionClass.trim()
-		} else if (uiModel().defaultUnitStyles.captionClass.trim() !== '') {
-			uiModel().defaultUnitStyles.captionClass.trim()
-		} else {
-			''
-		}
-	}
-
-	op String contentClass() {
-		if (localContentClass.trim() !== '') {
-			localContentClass.trim()
-		} else if (uiModel().defaultImageCardsStyles.contentClass.trim() !== '') {
-			uiModel().defaultImageCardsStyles.contentClass.trim()
-		} else if (uiModel().defaultCardsStyles.contentClass.trim() !== '') {
-			uiModel().defaultCardsStyles.contentClass.trim()
-		} else if (uiModel().defaultUnitStyles.contentClass.trim() !== '') {
-			uiModel().defaultUnitStyles.contentClass.trim()
-		} else {
-			''
-		}
-	}
-
-	op String imageActionClass() {
-		if (imageActionClass().trim() !== '') {
-			imageActionClass().trim()
-		} else if (uiModel().defaultImageCardsStyles.imageActionClass.trim() !== '') {
-			uiModel().defaultImageCardsStyles.imageActionClass.trim()
-		} else {
-			''
-		}
-	}
-	op boolean hasImageActionClass() {
-		imageActionClass() !== ''
-	}
+	@GenModel(propertyCategory="Interface")
+	boolean enableImageEnlargement
 }
 
 class SliderUnit extends CollectionUnit, ImageUnit {
+	@GenModel(propertyCategory="Interface")
 	int showTime
+	@GenModel(propertyCategory="Interface")
 	int transitionTime
 
-	op String sectionClass() {
-		if (localSectionClass.trim() !== '') {
-			localSectionClass.trim()
-		} else if (uiModel().defaultSliderStyles.sectionClass.trim() !== '') {
-			uiModel().defaultSliderStyles.sectionClass.trim()
-		} else if (uiModel().defaultUnitStyles.sectionClass.trim() !== '') {
-			uiModel().defaultUnitStyles.sectionClass.trim()
-		} else {
-			''
-		}
-	}
-
-	op String captionClass() {
-		if (localCaptionClass.trim() !== '') {
-			localContentClass.trim()
-		} else if (uiModel().defaultSliderStyles.captionClass.trim() !== '') {
-			uiModel().defaultSliderStyles.captionClass.trim()
-		} else if (uiModel().defaultUnitStyles.captionClass.trim() !== '') {
-			uiModel().defaultUnitStyles.captionClass.trim()
-		} else {
-			''
-		}
-	}
-
-	op String contentClass() {
-		if (localContentClass.trim() !== '') {
-			localContentClass.trim()
-		} else if (uiModel().defaultSliderStyles.contentClass.trim() !== '') {
-			uiModel().defaultSliderStyles.contentClass.trim()
-		} else if (uiModel().defaultUnitStyles.contentClass.trim() !== '') {
-			uiModel().defaultUnitStyles.contentClass.trim()
-		} else {
-			''
-		}
-	}
-
-	op String fieldListClass() {
-		if (localFieldListClass.trim() !== '') {
-			localFieldListClass.trim()
-		} else if (uiModel().defaultSliderStyles.fieldListClass.trim() !== '') {
-			uiModel().defaultSliderStyles.fieldListClass.trim()
-		} else if (uiModel().defaultUnitStyles.fieldListClass.trim() !== '') {
-			uiModel().defaultUnitStyles.fieldListClass.trim()
-		} else {
-			''
-		}
-	}
-
-	op String definitionFieldListClass() {
-		if (localDefinitionFieldListClass.trim() !== '') {
-			localDefinitionFieldListClass.trim()
-		} else if (uiModel().defaultSliderStyles.definitionFieldListClass.trim() !== '') {
-			uiModel().defaultSliderStyles.definitionFieldListClass.trim()
-		} else if (uiModel().defaultUnitStyles.definitionFieldListClass.trim() !== '') {
-			uiModel().defaultUnitStyles.definitionFieldListClass.trim()
-		} else {
-			''
-		}
-	}
-
-	op String fieldLabelClass() {
-		if (localFieldLabelClass.trim() !== '') {
-			localFieldLabelClass.trim()
-		} else if (uiModel().defaultSliderStyles.fieldLabelClass.trim() !== '') {
-			uiModel().defaultSliderStyles.fieldLabelClass.trim()
-		} else if (uiModel().defaultUnitStyles.fieldLabelClass.trim() !== '') {
-			uiModel().defaultUnitStyles.fieldLabelClass.trim()
-		} else {
-			''
-		}
-	}
-
-	op String fieldValueClass() {
-		if (localFieldValueClass.trim() !== '') {
-			localFieldValueClass.trim()
-		} else if (uiModel().defaultSliderStyles.fieldValueClass.trim() !== '') {
-			uiModel().defaultSliderStyles.fieldValueClass.trim()
-		} else if (uiModel().defaultUnitStyles.fieldValueClass.trim() !== '') {
-			uiModel().defaultUnitStyles.fieldValueClass.trim()
-		} else {
-			''
-		}
-	}
-
-	op String controlClass() {
-		if (localControlClass.trim() !== '') {
-			localControlClass.trim()
-		} else if (uiModel().defaultSliderStyles.controlClass.trim() !== '') {
-			uiModel().defaultSliderStyles.controlClass.trim()
-		} else if (uiModel().defaultUnitStyles.controlClass.trim() !== '') {
-			uiModel().defaultUnitStyles.controlClass.trim()
-		} else {
-			''
-		}
-	}
-
-	op String actionClass() {
-		if (localActionClass.trim() !== '') {
-			localActionClass.trim()
-		} else if (uiModel().defaultSliderStyles.actionClass.trim() !== '') {
-			uiModel().defaultSliderStyles.actionClass.trim()
-		} else if (uiModel().defaultUnitStyles.actionClass.trim() !== '') {
-			uiModel().defaultUnitStyles.actionClass.trim()
-		} else {
-			''
-		}
-	}
-
-	op String filtersClass() {
-		if (filtersClassOverride.trim() !== '') {
-			filtersClassOverride.trim()
-		} else {
-			uiModel().defaultSliderStyles.filtersClass.trim()
-		}
-	}
-
-	op String instanceControlClass() {
-		if (localInstanceControlClass.trim() !== '') {
-			localInstanceControlClass.trim()
-		} else {
-			uiModel().defaultSliderStyles.instanceControlClass.trim()
-		}
-	}
-
-	op String instanceActionClass() {
-		if (localInstanceActionClass.trim() !== '') {
-			localInstanceActionClass.trim()
-		} else if (uiModel().defaultSliderStyles.instanceActionClass.trim() !== '') {
-			uiModel().defaultSliderStyles.instanceActionClass.trim()
-		} else {
-			''
-		}
-	}
 }
 
 class GalleryUnit extends CollectionUnit, ImageUnit {
-	refers ImageManipulation fullSizeFilter
+	@GenModel(propertyCategory="Interface")
 	int showTime
+	@GenModel(propertyCategory="Interface")
 	int transitionTime
 
-	op String sectionClass() {
-		if (localSectionClass.trim() !== '') {
-			localSectionClass.trim()
-		} else if (uiModel().defaultGalleryStyles.sectionClass.trim() !== '') {
-			uiModel().defaultGalleryStyles.sectionClass.trim()
-		} else if (uiModel().defaultUnitStyles.sectionClass.trim() !== '') {
-			uiModel().defaultUnitStyles.sectionClass.trim()
-		} else {
-			''
-		}
-	}
-
-	op String captionClass() {
-		if (localCaptionClass.trim() !== '') {
-			localContentClass.trim()
-		} else if (uiModel().defaultGalleryStyles.captionClass.trim() !== '') {
-			uiModel().defaultGalleryStyles.captionClass.trim()
-		} else if (uiModel().defaultUnitStyles.captionClass.trim() !== '') {
-			uiModel().defaultUnitStyles.captionClass.trim()
-		} else {
-			''
-		}
-	}
-
-	op String contentClass() {
-		if (localContentClass.trim() !== '') {
-			localContentClass.trim()
-		} else if (uiModel().defaultGalleryStyles.contentClass.trim() !== '') {
-			uiModel().defaultGalleryStyles.contentClass.trim()
-		} else if (uiModel().defaultUnitStyles.contentClass.trim() !== '') {
-			uiModel().defaultUnitStyles.contentClass.trim()
-		} else {
-			''
-		}
-	}
-
-	op String fieldListClass() {
-		if (localFieldListClass.trim() !== '') {
-			localFieldListClass.trim()
-		} else if (uiModel().defaultGalleryStyles.fieldListClass.trim() !== '') {
-			uiModel().defaultGalleryStyles.fieldListClass.trim()
-		} else if (uiModel().defaultUnitStyles.fieldListClass.trim() !== '') {
-			uiModel().defaultUnitStyles.fieldListClass.trim()
-		} else {
-			''
-		}
-	}
-
-	op String definitionFieldListClass() {
-		if (localDefinitionFieldListClass.trim() !== '') {
-			localDefinitionFieldListClass.trim()
-		} else if (uiModel().defaultGalleryStyles.definitionFieldListClass.trim() !== '') {
-			uiModel().defaultGalleryStyles.definitionFieldListClass.trim()
-		} else if (uiModel().defaultUnitStyles.definitionFieldListClass.trim() !== '') {
-			uiModel().defaultUnitStyles.definitionFieldListClass.trim()
-		} else {
-			''
-		}
-	}
-
-	op String fieldLabelClass() {
-		if (localFieldLabelClass.trim() !== '') {
-			localFieldLabelClass.trim()
-		} else if (uiModel().defaultGalleryStyles.fieldLabelClass.trim() !== '') {
-			uiModel().defaultGalleryStyles.fieldLabelClass.trim()
-		} else if (uiModel().defaultUnitStyles.fieldLabelClass.trim() !== '') {
-			uiModel().defaultUnitStyles.fieldLabelClass.trim()
-		} else {
-			''
-		}
-	}
-
-	op String fieldValueClass() {
-		if (localFieldValueClass.trim() !== '') {
-			localFieldValueClass.trim()
-		} else if (uiModel().defaultGalleryStyles.fieldValueClass.trim() !== '') {
-			uiModel().defaultGalleryStyles.fieldValueClass.trim()
-		} else if (uiModel().defaultUnitStyles.fieldValueClass.trim() !== '') {
-			uiModel().defaultUnitStyles.fieldValueClass.trim()
-		} else {
-			''
-		}
-	}
-
-	op String controlClass() {
-		if (localControlClass.trim() !== '') {
-			localControlClass.trim()
-		} else if (uiModel().defaultGalleryStyles.controlClass.trim() !== '') {
-			uiModel().defaultGalleryStyles.controlClass.trim()
-		} else if (uiModel().defaultUnitStyles.controlClass.trim() !== '') {
-			uiModel().defaultUnitStyles.controlClass.trim()
-		} else {
-			''
-		}
-	}
-
-	op String actionClass() {
-		if (localActionClass.trim() !== '') {
-			localActionClass.trim()
-		} else if (uiModel().defaultGalleryStyles.actionClass.trim() !== '') {
-			uiModel().defaultGalleryStyles.actionClass.trim()
-		} else if (uiModel().defaultUnitStyles.actionClass.trim() !== '') {
-			uiModel().defaultUnitStyles.actionClass.trim()
-		} else {
-			''
-		}
-	}
-
-	op String filterslClass() {
-		if (filtersClassOverride.trim() !== '') {
-			filtersClassOverride.trim()
-		} else {
-			uiModel().defaultGalleryStyles.filtersClass.trim()
-		}
-	}
-
-	op String instanceControlClass() {
-		if (localInstanceControlClass.trim() !== '') {
-			localInstanceControlClass.trim()
-		} else if (uiModel().defaultGalleryStyles.instanceControlClass.trim() !== '') {
-			uiModel().defaultGalleryStyles.instanceControlClass.trim()
-		} else {
-			''
-		}
-	}
-
-	op String instanceActionClass() {
-		if (localInstanceActionClass.trim() !== '') {
-			localInstanceActionClass.trim()
-		} else if (uiModel().defaultGalleryStyles.instanceActionClass.trim() !== '') {
-			uiModel().defaultGalleryStyles.instanceActionClass.trim()
-		} else {
-			''
-		}
-	}
+	@GenModel(propertyCategory="Image")
+	refers ImageManipulation fullSizeFilter
 }
 
 abstract class ControlUnit extends DynamicUnit {
@@ -3158,111 +2900,93 @@ abstract class ControlUnit extends DynamicUnit {
 	refers ContentUnit cancelDestination
 	String cancelLabel
 
-	op String sectionClass() {
-		if (localSectionClass.trim() !== '') {
-			localSectionClass.trim()
-		} else if (uiModel().defaultControlStyles.sectionClass.trim() !== '') {
-			uiModel().defaultControlStyles.sectionClass.trim()
-		} else if (uiModel().defaultUnitStyles.sectionClass.trim() !== '') {
-			uiModel().defaultUnitStyles.sectionClass.trim()
+	op String actionClass() {
+		if (actionClassOverride.trim() !== '') {
+			actionClassOverride.trim()
+		} else if (uiModel().defaultControlStyles.actionClass.trim() !== '') {
+			uiModel().defaultControlStyles.actionClass.trim()
 		} else {
-			''
+			uiModel().defaultUnitStyles.actionClass.trim()
 		}
 	}
 
 	op String captionClass() {
-		if (localCaptionClass.trim() !== '') {
-			localContentClass.trim()
+		if (captionClass.trim() !== '') {
+			contentClass.trim()
 		} else if (uiModel().defaultControlStyles.captionClass.trim() !== '') {
 			uiModel().defaultControlStyles.captionClass.trim()
-		} else if (uiModel().defaultUnitStyles.captionClass.trim() !== '') {
-			uiModel().defaultUnitStyles.captionClass.trim()
 		} else {
-			''
+			uiModel().defaultUnitStyles.captionClass.trim()
 		}
 	}
 
 	op String contentClass() {
-		if (localContentClass.trim() !== '') {
-			localContentClass.trim()
+		if (contentClassOverride.trim() !== '') {
+			contentClassOverride.trim()
 		} else if (uiModel().defaultControlStyles.contentClass.trim() !== '') {
 			uiModel().defaultControlStyles.contentClass.trim()
-		} else if (uiModel().defaultUnitStyles.contentClass.trim() !== '') {
+		} else {
 			uiModel().defaultUnitStyles.contentClass.trim()
-		} else {
-			''
-		}
-	}
-
-	op String fieldListClass() {
-		if (localFieldListClass.trim() !== '') {
-			localFieldListClass.trim()
-		} else if (uiModel().defaultControlStyles.fieldListClass.trim() !== '') {
-			uiModel().defaultControlStyles.fieldListClass.trim()
-		} else if (uiModel().defaultUnitStyles.fieldListClass.trim() !== '') {
-			uiModel().defaultUnitStyles.fieldListClass.trim()
-		} else {
-			''
-		}
-	}
-
-	op String definitionFieldListClass() {
-		if (localDefinitionFieldListClass.trim() !== '') {
-			localDefinitionFieldListClass.trim()
-		} else if (uiModel().defaultControlStyles.definitionFieldListClass.trim() !== '') {
-			uiModel().defaultControlStyles.definitionFieldListClass.trim()
-		} else if (uiModel().defaultUnitStyles.definitionFieldListClass.trim() !== '') {
-			uiModel().defaultUnitStyles.definitionFieldListClass.trim()
-		} else {
-			''
-		}
-	}
-
-	op String fieldLabelClass() {
-		if (localFieldLabelClass.trim() !== '') {
-			localFieldLabelClass.trim()
-		} else if (uiModel().defaultControlStyles.fieldLabelClass.trim() !== '') {
-			uiModel().defaultControlStyles.fieldLabelClass.trim()
-		} else if (uiModel().defaultUnitStyles.fieldLabelClass.trim() !== '') {
-			uiModel().defaultUnitStyles.fieldLabelClass.trim()
-		} else {
-			''
-		}
-	}
-
-	op String fieldValueClass() {
-		if (localFieldValueClass.trim() !== '') {
-			localFieldValueClass.trim()
-		} else if (uiModel().defaultControlStyles.fieldValueClass.trim() !== '') {
-			uiModel().defaultControlStyles.fieldValueClass.trim()
-		} else if (uiModel().defaultUnitStyles.fieldValueClass.trim() !== '') {
-			uiModel().defaultUnitStyles.fieldValueClass.trim()
-		} else {
-			''
 		}
 	}
 
 	op String controlClass() {
-		if (localControlClass.trim() !== '') {
-			localControlClass.trim()
+		if (controlClassOverride.trim() !== '') {
+			controlClassOverride.trim()
 		} else if (uiModel().defaultControlStyles.controlClass.trim() !== '') {
 			uiModel().defaultControlStyles.controlClass.trim()
-		} else if (uiModel().defaultUnitStyles.controlClass.trim() !== '') {
-			uiModel().defaultUnitStyles.controlClass.trim()
 		} else {
-			''
+			uiModel().defaultUnitStyles.controlClass.trim()
 		}
 	}
 
-	op String actionClass() {
-		if (localActionClass.trim() !== '') {
-			localActionClass.trim()
-		} else if (uiModel().defaultControlStyles.actionClass.trim() !== '') {
-			uiModel().defaultControlStyles.actionClass.trim()
-		} else if (uiModel().defaultUnitStyles.actionClass.trim() !== '') {
-			uiModel().defaultUnitStyles.actionClass.trim()
+	op String fieldListClass() {
+		if (fieldListClassOverride.trim() !== '') {
+			fieldListClassOverride.trim()
+		} else if (uiModel().defaultControlStyles.fieldListClass.trim() !== '') {
+			uiModel().defaultControlStyles.fieldListClass.trim()
 		} else {
-			''
+			uiModel().defaultUnitStyles.fieldListClass.trim()
+		}
+	}
+
+	op String fieldDefinitionListClass() {
+		if (fieldDefinitionListClassOverride.trim() !== '') {
+			fieldDefinitionListClassOverride.trim()
+		} else if (uiModel().defaultControlStyles.fieldDefinitionListClass.trim() !== '') {
+			uiModel().defaultControlStyles.fieldDefinitionListClass.trim()
+		} else {
+			uiModel().defaultUnitStyles.fieldDefinitionListClass.trim()
+		}
+	}
+
+	op String fieldLabelClass() {
+		if (fieldLabelClassOverride.trim() !== '') {
+			fieldLabelClassOverride.trim()
+		} else if (uiModel().defaultControlStyles.fieldLabelClass.trim() !== '') {
+			uiModel().defaultControlStyles.fieldLabelClass.trim()
+		} else {
+			uiModel().defaultUnitStyles.fieldLabelClass.trim()
+		}
+	}
+
+	op String fieldValueClass() {
+		if (fieldValueClassOverride.trim() !== '') {
+			fieldValueClassOverride.trim()
+		} else if (uiModel().defaultControlStyles.fieldValueClass.trim() !== '') {
+			uiModel().defaultControlStyles.fieldValueClass.trim()
+		} else {
+			uiModel().defaultUnitStyles.fieldValueClass.trim()
+		}
+	}
+
+	op String sectionClass() {
+		if (sectionClassOverride.trim() !== '') {
+			sectionClassOverride.trim()
+		} else if (uiModel().defaultControlStyles.sectionClass.trim() !== '') {
+			uiModel().defaultControlStyles.sectionClass.trim()
+		} else {
+			uiModel().defaultUnitStyles.sectionClass.trim()
 		}
 	}
 }

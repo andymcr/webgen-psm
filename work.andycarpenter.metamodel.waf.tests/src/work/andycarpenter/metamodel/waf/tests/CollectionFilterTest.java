@@ -15,10 +15,10 @@ import work.andycarpenter.metamodel.waf.CollectionFilter;
  * <ul>
  *   <li>{@link work.andycarpenter.metamodel.waf.CollectionFilter#referencableTypes() <em>Referencable Types</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.CollectionFilter#hasHelp() <em>Has Help</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.CollectionFilter#placeholder() <em>Placeholder</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.CollectionFilter#hasCustomisedPlaceholder() <em>Has Customised Placeholder</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.CollectionFilter#title() <em>Title</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.CollectionFilter#placeholder() <em>Placeholder</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.CollectionFilter#hasCustomisedTitle() <em>Has Customised Title</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.CollectionFilter#title() <em>Title</em>}</li>
  * </ul>
  * </p>
  * @generated

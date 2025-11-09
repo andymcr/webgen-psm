@@ -54,9 +54,11 @@ public class EditUnitItemProvider extends SingletonUnitItemProvider {
 			addCancelDestinationPropertyDescriptor(object);
 			addCancelLabelOverridePropertyDescriptor(object);
 			addCancelIconOverridePropertyDescriptor(object);
+			addResetLabelOverridePropertyDescriptor(object);
+			addResetIconOverridePropertyDescriptor(object);
 			addSaveLabelOverridePropertyDescriptor(object);
 			addSaveIconOverridePropertyDescriptor(object);
-			addLocalInputGroupClassPropertyDescriptor(object);
+			addInputGroupClassOverridePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -194,6 +196,28 @@ public class EditUnitItemProvider extends SingletonUnitItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Input Group Class Override feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addInputGroupClassOverridePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EditUnit_inputGroupClassOverride_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EditUnit_inputGroupClassOverride_feature", "_UI_EditUnit_type"),
+				 WafPackage.eINSTANCE.getEditUnit_InputGroupClassOverride(),
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_StylePropertyCategory"),
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Cancel Label Override feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -238,24 +262,46 @@ public class EditUnitItemProvider extends SingletonUnitItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Local Input Group Class feature.
+	 * This adds a property descriptor for the Reset Label Override feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addLocalInputGroupClassPropertyDescriptor(Object object) {
+	protected void addResetLabelOverridePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_EditUnit_localInputGroupClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_EditUnit_localInputGroupClass_feature", "_UI_EditUnit_type"),
-				 WafPackage.eINSTANCE.getEditUnit_LocalInputGroupClass(),
+				 getString("_UI_EditUnit_resetLabelOverride_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EditUnit_resetLabelOverride_feature", "_UI_EditUnit_type"),
+				 WafPackage.eINSTANCE.getEditUnit_ResetLabelOverride(),
 				 true,
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_InterfacePropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Reset Icon Override feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addResetIconOverridePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EditUnit_resetIconOverride_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EditUnit_resetIconOverride_feature", "_UI_EditUnit_type"),
+				 WafPackage.eINSTANCE.getEditUnit_ResetIconOverride(),
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_InterfacePropertyCategory"),
 				 null));
 	}
 
@@ -322,9 +368,11 @@ public class EditUnitItemProvider extends SingletonUnitItemProvider {
 			case WafPackage.EDIT_UNIT__ON_SAVE_CONTINUE_EDITING:
 			case WafPackage.EDIT_UNIT__CANCEL_LABEL_OVERRIDE:
 			case WafPackage.EDIT_UNIT__CANCEL_ICON_OVERRIDE:
+			case WafPackage.EDIT_UNIT__RESET_LABEL_OVERRIDE:
+			case WafPackage.EDIT_UNIT__RESET_ICON_OVERRIDE:
 			case WafPackage.EDIT_UNIT__SAVE_LABEL_OVERRIDE:
 			case WafPackage.EDIT_UNIT__SAVE_ICON_OVERRIDE:
-			case WafPackage.EDIT_UNIT__LOCAL_INPUT_GROUP_CLASS:
+			case WafPackage.EDIT_UNIT__INPUT_GROUP_CLASS_OVERRIDE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case WafPackage.EDIT_UNIT__DISABLE_WHEN:

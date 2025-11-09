@@ -9,15 +9,15 @@ import work.andycarpenter.metamodel.waf.CollectionUnit;
  * A test case for the model object '<em><b>Collection Unit</b></em>'.
  * <!-- end-user-doc -->
  * <p>
- * The following features are tested:
- * <ul>
- *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#isHasGroupedResults() <em>Has Grouped Results</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#isHasPagination() <em>Has Pagination</em>}</li>
- * </ul>
- * </p>
- * <p>
  * The following operations are tested:
  * <ul>
+ *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#containingType() <em>Containing Type</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#referencableTypes() <em>Referencable Types</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#hasPagination() <em>Has Pagination</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#hasGroupedResults() <em>Has Grouped Results</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#hasCollectionFilters() <em>Has Collection Filters</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#hasNumericFilters() <em>Has Numeric Filters</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#hasTextFilters() <em>Has Text Filters</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#hasCustomClearLabel() <em>Has Custom Clear Label</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#clearLabel() <em>Clear Label</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#hasCustomClearIcon() <em>Has Custom Clear Icon</em>}</li>
@@ -28,13 +28,12 @@ import work.andycarpenter.metamodel.waf.CollectionUnit;
  *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#hasCustomSearchIcon() <em>Has Custom Search Icon</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#searchIcon() <em>Search Icon</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#hasSearchIcon() <em>Has Search Icon</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#hasCollectionFilters() <em>Has Collection Filters</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#containingType() <em>Containing Type</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#referencableTypes() <em>Referencable Types</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#hasNumericFilters() <em>Has Numeric Filters</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#hasTextFilters() <em>Has Text Filters</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#filtersClass() <em>Filters Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#hasFiltersClass() <em>Has Filters Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#filtersControlClass() <em>Filters Control Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#hasFiltersControlClass() <em>Has Filters Control Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#filtersActionClass() <em>Filters Action Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#hasFiltersActionClass() <em>Has Filters Action Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#instanceControlClass() <em>Instance Control Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#hasInstanceControlClass() <em>Has Instance Control Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#instanceActionClass() <em>Instance Action Class</em>}</li>
@@ -64,32 +63,6 @@ public abstract class CollectionUnitTest extends DynamicUnitTest {
 	@Override
 	protected CollectionUnit getFixture() {
 		return (CollectionUnit)fixture;
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.CollectionUnit#isHasGroupedResults() <em>Has Grouped Results</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.CollectionUnit#isHasGroupedResults()
-	 * @generated
-	 */
-	public void testIsHasGroupedResults() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.CollectionUnit#isHasPagination() <em>Has Pagination</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.CollectionUnit#isHasPagination()
-	 * @generated
-	 */
-	public void testIsHasPagination() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
 	}
 
 	/**
@@ -262,6 +235,32 @@ public abstract class CollectionUnitTest extends DynamicUnitTest {
 	}
 
 	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.CollectionUnit#hasPagination() <em>Has Pagination</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.CollectionUnit#hasPagination()
+	 * @generated
+	 */
+	public void testHasPagination() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.CollectionUnit#hasGroupedResults() <em>Has Grouped Results</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.CollectionUnit#hasGroupedResults()
+	 * @generated
+	 */
+	public void testHasGroupedResults() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
 	 * Tests the '{@link work.andycarpenter.metamodel.waf.CollectionUnit#hasNumericFilters() <em>Has Numeric Filters</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -308,6 +307,58 @@ public abstract class CollectionUnitTest extends DynamicUnitTest {
 	 * @generated
 	 */
 	public void testHasFiltersClass() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.CollectionUnit#filtersControlClass() <em>Filters Control Class</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.CollectionUnit#filtersControlClass()
+	 * @generated
+	 */
+	public void testFiltersControlClass() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.CollectionUnit#hasFiltersControlClass() <em>Has Filters Control Class</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.CollectionUnit#hasFiltersControlClass()
+	 * @generated
+	 */
+	public void testHasFiltersControlClass() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.CollectionUnit#filtersActionClass() <em>Filters Action Class</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.CollectionUnit#filtersActionClass()
+	 * @generated
+	 */
+	public void testFiltersActionClass() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.CollectionUnit#hasFiltersActionClass() <em>Has Filters Action Class</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.CollectionUnit#hasFiltersActionClass()
+	 * @generated
+	 */
+	public void testHasFiltersActionClass() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

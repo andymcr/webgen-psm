@@ -13,7 +13,7 @@ import work.andycarpenter.metamodel.waf.WafFactory;
  * <!-- end-user-doc -->
  * @generated
  */
-public class DefaultUnitStylesTest extends CollectionUnitStylesTest {
+public class DefaultUnitStylesTest extends DynamicUnitStylesTest {
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -64,9 +64,9 @@ public class BadgeItemProvider
 			super.getPropertyDescriptors(object);
 
 			addDisplayedOnPropertyDescriptor(object);
-			addIconNamePropertyDescriptor(object);
 			addTitlePropertyDescriptor(object);
-			addLocalBadgeClassPropertyDescriptor(object);
+			addIconNamePropertyDescriptor(object);
+			addBdgeClassOverridePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -111,7 +111,7 @@ public class BadgeItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_InterfacePropertyCategory"),
 				 null));
 	}
 
@@ -133,24 +133,24 @@ public class BadgeItemProvider
 				 false,
 				 true,
 				 null,
-				 null,
+				 getString("_UI_InterfacePropertyCategory"),
 				 null));
 	}
 
 	/**
-	 * This adds a property descriptor for the Local Badge Class feature.
+	 * This adds a property descriptor for the Bdge Class Override feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addLocalBadgeClassPropertyDescriptor(Object object) {
+	protected void addBdgeClassOverridePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Badge_localBadgeClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Badge_localBadgeClass_feature", "_UI_Badge_type"),
-				 WafPackage.eINSTANCE.getBadge_LocalBadgeClass(),
+				 getString("_UI_Badge_bdgeClassOverride_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Badge_bdgeClassOverride_feature", "_UI_Badge_type"),
+				 WafPackage.eINSTANCE.getBadge_BdgeClassOverride(),
 				 true,
 				 false,
 				 false,
@@ -229,7 +229,7 @@ public class BadgeItemProvider
 
 		switch (notification.getFeatureID(Badge.class)) {
 			case WafPackage.BADGE__ICON_NAME:
-			case WafPackage.BADGE__LOCAL_BADGE_CLASS:
+			case WafPackage.BADGE__BDGE_CLASS_OVERRIDE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case WafPackage.BADGE__VALUE:

@@ -57,12 +57,12 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 			addHeaderPropertyDescriptor(object);
 			addFooterPropertyDescriptor(object);
 			addFormFieldsPropertyDescriptor(object);
-			addLocalFieldListClassPropertyDescriptor(object);
-			addLocalDefinitionFieldListClassPropertyDescriptor(object);
-			addLocalFieldLabelClassPropertyDescriptor(object);
-			addLocalFieldValueClassPropertyDescriptor(object);
-			addLocalControlClassPropertyDescriptor(object);
-			addLocalActionClassPropertyDescriptor(object);
+			addActionClassOverridePropertyDescriptor(object);
+			addControlClassOverridePropertyDescriptor(object);
+			addFieldDefinitionListClassOverridePropertyDescriptor(object);
+			addFieldLabelClassOverridePropertyDescriptor(object);
+			addFieldListClassOverridePropertyDescriptor(object);
+			addFieldValueClassOverridePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -310,19 +310,19 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Local Field List Class feature.
+	 * This adds a property descriptor for the Field List Class Override feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addLocalFieldListClassPropertyDescriptor(Object object) {
+	protected void addFieldListClassOverridePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_DynamicUnit_localFieldListClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DynamicUnit_localFieldListClass_feature", "_UI_DynamicUnit_type"),
-				 WafPackage.eINSTANCE.getDynamicUnit_LocalFieldListClass(),
+				 getString("_UI_DynamicUnit_fieldListClassOverride_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DynamicUnit_fieldListClassOverride_feature", "_UI_DynamicUnit_type"),
+				 WafPackage.eINSTANCE.getDynamicUnit_FieldListClassOverride(),
 				 true,
 				 false,
 				 false,
@@ -332,19 +332,19 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Local Definition Field List Class feature.
+	 * This adds a property descriptor for the Field Value Class Override feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addLocalDefinitionFieldListClassPropertyDescriptor(Object object) {
+	protected void addFieldValueClassOverridePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_DynamicUnit_localDefinitionFieldListClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DynamicUnit_localDefinitionFieldListClass_feature", "_UI_DynamicUnit_type"),
-				 WafPackage.eINSTANCE.getDynamicUnit_LocalDefinitionFieldListClass(),
+				 getString("_UI_DynamicUnit_fieldValueClassOverride_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DynamicUnit_fieldValueClassOverride_feature", "_UI_DynamicUnit_type"),
+				 WafPackage.eINSTANCE.getDynamicUnit_FieldValueClassOverride(),
 				 true,
 				 false,
 				 false,
@@ -354,19 +354,19 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Local Field Label Class feature.
+	 * This adds a property descriptor for the Control Class Override feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addLocalFieldLabelClassPropertyDescriptor(Object object) {
+	protected void addControlClassOverridePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_DynamicUnit_localFieldLabelClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DynamicUnit_localFieldLabelClass_feature", "_UI_DynamicUnit_type"),
-				 WafPackage.eINSTANCE.getDynamicUnit_LocalFieldLabelClass(),
+				 getString("_UI_DynamicUnit_controlClassOverride_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DynamicUnit_controlClassOverride_feature", "_UI_DynamicUnit_type"),
+				 WafPackage.eINSTANCE.getDynamicUnit_ControlClassOverride(),
 				 true,
 				 false,
 				 false,
@@ -376,19 +376,19 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Local Field Value Class feature.
+	 * This adds a property descriptor for the Field Definition List Class Override feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addLocalFieldValueClassPropertyDescriptor(Object object) {
+	protected void addFieldDefinitionListClassOverridePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_DynamicUnit_localFieldValueClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DynamicUnit_localFieldValueClass_feature", "_UI_DynamicUnit_type"),
-				 WafPackage.eINSTANCE.getDynamicUnit_LocalFieldValueClass(),
+				 getString("_UI_DynamicUnit_fieldDefinitionListClassOverride_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DynamicUnit_fieldDefinitionListClassOverride_feature", "_UI_DynamicUnit_type"),
+				 WafPackage.eINSTANCE.getDynamicUnit_FieldDefinitionListClassOverride(),
 				 true,
 				 false,
 				 false,
@@ -398,19 +398,19 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Local Control Class feature.
+	 * This adds a property descriptor for the Field Label Class Override feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addLocalControlClassPropertyDescriptor(Object object) {
+	protected void addFieldLabelClassOverridePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_DynamicUnit_localControlClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DynamicUnit_localControlClass_feature", "_UI_DynamicUnit_type"),
-				 WafPackage.eINSTANCE.getDynamicUnit_LocalControlClass(),
+				 getString("_UI_DynamicUnit_fieldLabelClassOverride_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DynamicUnit_fieldLabelClassOverride_feature", "_UI_DynamicUnit_type"),
+				 WafPackage.eINSTANCE.getDynamicUnit_FieldLabelClassOverride(),
 				 true,
 				 false,
 				 false,
@@ -420,19 +420,19 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Local Action Class feature.
+	 * This adds a property descriptor for the Action Class Override feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addLocalActionClassPropertyDescriptor(Object object) {
+	protected void addActionClassOverridePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_DynamicUnit_localActionClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DynamicUnit_localActionClass_feature", "_UI_DynamicUnit_type"),
-				 WafPackage.eINSTANCE.getDynamicUnit_LocalActionClass(),
+				 getString("_UI_DynamicUnit_actionClassOverride_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DynamicUnit_actionClassOverride_feature", "_UI_DynamicUnit_type"),
+				 WafPackage.eINSTANCE.getDynamicUnit_ActionClassOverride(),
 				 true,
 				 false,
 				 false,
@@ -508,12 +508,12 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 			case WafPackage.DYNAMIC_UNIT__MESSAGE_WHEN_HIDDEN:
 			case WafPackage.DYNAMIC_UNIT__HEADER:
 			case WafPackage.DYNAMIC_UNIT__FOOTER:
-			case WafPackage.DYNAMIC_UNIT__LOCAL_FIELD_LIST_CLASS:
-			case WafPackage.DYNAMIC_UNIT__LOCAL_DEFINITION_FIELD_LIST_CLASS:
-			case WafPackage.DYNAMIC_UNIT__LOCAL_FIELD_LABEL_CLASS:
-			case WafPackage.DYNAMIC_UNIT__LOCAL_FIELD_VALUE_CLASS:
-			case WafPackage.DYNAMIC_UNIT__LOCAL_CONTROL_CLASS:
-			case WafPackage.DYNAMIC_UNIT__LOCAL_ACTION_CLASS:
+			case WafPackage.DYNAMIC_UNIT__ACTION_CLASS_OVERRIDE:
+			case WafPackage.DYNAMIC_UNIT__CONTROL_CLASS_OVERRIDE:
+			case WafPackage.DYNAMIC_UNIT__FIELD_DEFINITION_LIST_CLASS_OVERRIDE:
+			case WafPackage.DYNAMIC_UNIT__FIELD_LABEL_CLASS_OVERRIDE:
+			case WafPackage.DYNAMIC_UNIT__FIELD_LIST_CLASS_OVERRIDE:
+			case WafPackage.DYNAMIC_UNIT__FIELD_VALUE_CLASS_OVERRIDE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case WafPackage.DYNAMIC_UNIT__ALL_ACTIONS:

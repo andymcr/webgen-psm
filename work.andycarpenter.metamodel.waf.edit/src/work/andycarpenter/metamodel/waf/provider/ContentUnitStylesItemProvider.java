@@ -60,9 +60,9 @@ public class ContentUnitStylesItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addSectionClassPropertyDescriptor(object);
 			addCaptionClassPropertyDescriptor(object);
 			addContentClassPropertyDescriptor(object);
+			addSectionClassPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -85,7 +85,7 @@ public class ContentUnitStylesItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_StylePropertyCategory"),
 				 null));
 	}
 
@@ -107,7 +107,7 @@ public class ContentUnitStylesItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_StylePropertyCategory"),
 				 null));
 	}
 
@@ -129,7 +129,7 @@ public class ContentUnitStylesItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_StylePropertyCategory"),
 				 null));
 	}
 
@@ -141,7 +141,7 @@ public class ContentUnitStylesItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ContentUnitStyles)object).getSectionClass();
+		String label = ((ContentUnitStyles)object).getCaptionClass();
 		return label == null || label.length() == 0 ?
 			getString("_UI_ContentUnitStyles_type") :
 			getString("_UI_ContentUnitStyles_type") + " " + label;
@@ -160,9 +160,9 @@ public class ContentUnitStylesItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ContentUnitStyles.class)) {
-			case WafPackage.CONTENT_UNIT_STYLES__SECTION_CLASS:
 			case WafPackage.CONTENT_UNIT_STYLES__CAPTION_CLASS:
 			case WafPackage.CONTENT_UNIT_STYLES__CONTENT_CLASS:
+			case WafPackage.CONTENT_UNIT_STYLES__SECTION_CLASS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

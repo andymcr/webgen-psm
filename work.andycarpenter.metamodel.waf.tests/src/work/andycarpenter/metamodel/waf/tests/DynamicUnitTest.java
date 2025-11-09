@@ -65,18 +65,18 @@ import work.andycarpenter.metamodel.waf.DynamicUnit;
  *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#hasStringFields() <em>Has String Fields</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#hasTextareaFields() <em>Has Textarea Fields</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#hasUrlFields() <em>Has Url Fields</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#fieldListClass() <em>Field List Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#hasFieldListClass() <em>Has Field List Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#definitionFieldListClass() <em>Definition Field List Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#hasDefinitionFieldListClass() <em>Has Definition Field List Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#fieldLabelClass() <em>Field Label Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#hasFieldLabelClass() <em>Has Field Label Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#fieldValueClass() <em>Field Value Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#hasFieldValueClass() <em>Has Field Value Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#controlClass() <em>Control Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#hasControlClass() <em>Has Control Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#actionClass() <em>Action Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#hasActionClass() <em>Has Action Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#controlClass() <em>Control Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#hasControlClass() <em>Has Control Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#fieldDefinitionListClass() <em>Field Definition List Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#hasFieldDefinitionListClass() <em>Has Field Definition List Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#fieldLabelClass() <em>Field Label Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#hasFieldLabelClass() <em>Has Field Label Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#fieldListClass() <em>Field List Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#hasFieldListClass() <em>Has Field List Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#fieldValueClass() <em>Field Value Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.DynamicUnit#hasFieldValueClass() <em>Has Field Value Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.ActionContainer#actions() <em>Actions</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.ActionContainer#hasActions() <em>Has Actions</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.ActionContainer#hasActionsWithDisabledMessage() <em>Has Actions With Disabled Message</em>}</li>
@@ -825,6 +825,19 @@ public abstract class DynamicUnitTest extends ContentUnitTest {
 	}
 
 	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#fieldDefinitionListClass() <em>Field Definition List Class</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#fieldDefinitionListClass()
+	 * @generated
+	 */
+	public void testFieldDefinitionListClass() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
 	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#fieldListClass() <em>Field List Class</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -851,26 +864,13 @@ public abstract class DynamicUnitTest extends ContentUnitTest {
 	}
 
 	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#definitionFieldListClass() <em>Definition Field List Class</em>}' operation.
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#hasFieldDefinitionListClass() <em>Has Field Definition List Class</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#definitionFieldListClass()
+	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#hasFieldDefinitionListClass()
 	 * @generated
 	 */
-	public void testDefinitionFieldListClass() {
-		// TODO: implement this operation test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#hasDefinitionFieldListClass() <em>Has Definition Field List Class</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#hasDefinitionFieldListClass()
-	 * @generated
-	 */
-	public void testHasDefinitionFieldListClass() {
+	public void testHasFieldDefinitionListClass() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
@@ -923,58 +923,6 @@ public abstract class DynamicUnitTest extends ContentUnitTest {
 	 * @generated
 	 */
 	public void testHasFieldValueClass() {
-		// TODO: implement this operation test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#controlClass() <em>Control Class</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#controlClass()
-	 * @generated
-	 */
-	public void testControlClass() {
-		// TODO: implement this operation test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#hasControlClass() <em>Has Control Class</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#hasControlClass()
-	 * @generated
-	 */
-	public void testHasControlClass() {
-		// TODO: implement this operation test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#actionClass() <em>Action Class</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#actionClass()
-	 * @generated
-	 */
-	public void testActionClass() {
-		// TODO: implement this operation test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#hasActionClass() <em>Has Action Class</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#hasActionClass()
-	 * @generated
-	 */
-	public void testHasActionClass() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
@@ -1209,6 +1157,58 @@ public abstract class DynamicUnitTest extends ContentUnitTest {
 	 * @generated
 	 */
 	public void testHasOperationActions() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#controlClass() <em>Control Class</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#controlClass()
+	 * @generated
+	 */
+	public void testControlClass() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#hasControlClass() <em>Has Control Class</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#hasControlClass()
+	 * @generated
+	 */
+	public void testHasControlClass() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#actionClass() <em>Action Class</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#actionClass()
+	 * @generated
+	 */
+	public void testActionClass() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.DynamicUnit#hasActionClass() <em>Has Action Class</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.DynamicUnit#hasActionClass()
+	 * @generated
+	 */
+	public void testHasActionClass() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

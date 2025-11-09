@@ -23,7 +23,7 @@ import work.andycarpenter.metamodel.waf.WafPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class CardsUnitStylesItemProvider extends CollectionUnitStylesItemProvider {
+public class CardsUnitStylesItemProvider extends CollectionStylesItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -45,11 +45,11 @@ public class CardsUnitStylesItemProvider extends CollectionUnitStylesItemProvide
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addBadgeClassPropertyDescriptor(object);
 			addCardClassPropertyDescriptor(object);
-			addCardHeaderClassPropertyDescriptor(object);
 			addCardBodyClassPropertyDescriptor(object);
 			addCardFooterClassPropertyDescriptor(object);
-			addBadgeClassPropertyDescriptor(object);
+			addCardHeaderClassPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -72,7 +72,7 @@ public class CardsUnitStylesItemProvider extends CollectionUnitStylesItemProvide
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_StylePropertyCategory"),
 				 null));
 	}
 
@@ -94,7 +94,7 @@ public class CardsUnitStylesItemProvider extends CollectionUnitStylesItemProvide
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_StylePropertyCategory"),
 				 null));
 	}
 
@@ -116,7 +116,7 @@ public class CardsUnitStylesItemProvider extends CollectionUnitStylesItemProvide
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_StylePropertyCategory"),
 				 null));
 	}
 
@@ -138,7 +138,7 @@ public class CardsUnitStylesItemProvider extends CollectionUnitStylesItemProvide
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_StylePropertyCategory"),
 				 null));
 	}
 
@@ -160,7 +160,7 @@ public class CardsUnitStylesItemProvider extends CollectionUnitStylesItemProvide
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_StylePropertyCategory"),
 				 null));
 	}
 
@@ -183,7 +183,7 @@ public class CardsUnitStylesItemProvider extends CollectionUnitStylesItemProvide
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((CardsUnitStyles)object).getSectionClass();
+		String label = ((CardsUnitStyles)object).getCaptionClass();
 		return label == null || label.length() == 0 ?
 			getString("_UI_CardsUnitStyles_type") :
 			getString("_UI_CardsUnitStyles_type") + " " + label;
@@ -202,11 +202,11 @@ public class CardsUnitStylesItemProvider extends CollectionUnitStylesItemProvide
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(CardsUnitStyles.class)) {
+			case WafPackage.CARDS_UNIT_STYLES__BADGE_CLASS:
 			case WafPackage.CARDS_UNIT_STYLES__CARD_CLASS:
-			case WafPackage.CARDS_UNIT_STYLES__CARD_HEADER_CLASS:
 			case WafPackage.CARDS_UNIT_STYLES__CARD_BODY_CLASS:
 			case WafPackage.CARDS_UNIT_STYLES__CARD_FOOTER_CLASS:
-			case WafPackage.CARDS_UNIT_STYLES__BADGE_CLASS:
+			case WafPackage.CARDS_UNIT_STYLES__CARD_HEADER_CLASS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

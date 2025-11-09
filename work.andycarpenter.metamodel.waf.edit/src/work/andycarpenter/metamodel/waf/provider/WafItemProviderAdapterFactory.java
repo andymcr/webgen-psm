@@ -299,164 +299,26 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.waf.ImageCardsUnitStyles} instances.
+	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.waf.EditUnitStyles} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ImageCardsUnitStylesItemProvider imageCardsUnitStylesItemProvider;
+	protected EditUnitStylesItemProvider editUnitStylesItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link work.andycarpenter.metamodel.waf.ImageCardsUnitStyles}.
+	 * This creates an adapter for a {@link work.andycarpenter.metamodel.waf.EditUnitStyles}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createImageCardsUnitStylesAdapter() {
-		if (imageCardsUnitStylesItemProvider == null) {
-			imageCardsUnitStylesItemProvider = new ImageCardsUnitStylesItemProvider(this);
+	public Adapter createEditUnitStylesAdapter() {
+		if (editUnitStylesItemProvider == null) {
+			editUnitStylesItemProvider = new EditUnitStylesItemProvider(this);
 		}
 
-		return imageCardsUnitStylesItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.waf.ControlUnitStyles} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ControlUnitStylesItemProvider controlUnitStylesItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link work.andycarpenter.metamodel.waf.ControlUnitStyles}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createControlUnitStylesAdapter() {
-		if (controlUnitStylesItemProvider == null) {
-			controlUnitStylesItemProvider = new ControlUnitStylesItemProvider(this);
-		}
-
-		return controlUnitStylesItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.waf.DetailsUnitStyles} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected DetailsUnitStylesItemProvider detailsUnitStylesItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link work.andycarpenter.metamodel.waf.DetailsUnitStyles}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createDetailsUnitStylesAdapter() {
-		if (detailsUnitStylesItemProvider == null) {
-			detailsUnitStylesItemProvider = new DetailsUnitStylesItemProvider(this);
-		}
-
-		return detailsUnitStylesItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.waf.FormUnitStyles} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected FormUnitStylesItemProvider formUnitStylesItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link work.andycarpenter.metamodel.waf.FormUnitStyles}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createFormUnitStylesAdapter() {
-		if (formUnitStylesItemProvider == null) {
-			formUnitStylesItemProvider = new FormUnitStylesItemProvider(this);
-		}
-
-		return formUnitStylesItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.waf.GalleryUnitStyles} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected GalleryUnitStylesItemProvider galleryUnitStylesItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link work.andycarpenter.metamodel.waf.GalleryUnitStyles}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createGalleryUnitStylesAdapter() {
-		if (galleryUnitStylesItemProvider == null) {
-			galleryUnitStylesItemProvider = new GalleryUnitStylesItemProvider(this);
-		}
-
-		return galleryUnitStylesItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.waf.SliderUnitStyles} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected SliderUnitStylesItemProvider sliderUnitStylesItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link work.andycarpenter.metamodel.waf.SliderUnitStyles}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createSliderUnitStylesAdapter() {
-		if (sliderUnitStylesItemProvider == null) {
-			sliderUnitStylesItemProvider = new SliderUnitStylesItemProvider(this);
-		}
-
-		return sliderUnitStylesItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link work.andycarpenter.metamodel.waf.StaticUnitStyles} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected StaticUnitStylesItemProvider staticUnitStylesItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link work.andycarpenter.metamodel.waf.StaticUnitStyles}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createStaticUnitStylesAdapter() {
-		if (staticUnitStylesItemProvider == null) {
-			staticUnitStylesItemProvider = new StaticUnitStylesItemProvider(this);
-		}
-
-		return staticUnitStylesItemProvider;
+		return editUnitStylesItemProvider;
 	}
 
 	/**
@@ -1698,16 +1560,10 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 		if (submenuEntryItemProvider != null) submenuEntryItemProvider.dispose();
 		if (actionMenuEntryItemProvider != null) actionMenuEntryItemProvider.dispose();
 		if (editStaticTextMenuEntryItemProvider != null) editStaticTextMenuEntryItemProvider.dispose();
+		if (cardsUnitStylesItemProvider != null) cardsUnitStylesItemProvider.dispose();
 		if (collectionUnitStylesItemProvider != null) collectionUnitStylesItemProvider.dispose();
 		if (defaultUnitStylesItemProvider != null) defaultUnitStylesItemProvider.dispose();
-		if (cardsUnitStylesItemProvider != null) cardsUnitStylesItemProvider.dispose();
-		if (imageCardsUnitStylesItemProvider != null) imageCardsUnitStylesItemProvider.dispose();
-		if (controlUnitStylesItemProvider != null) controlUnitStylesItemProvider.dispose();
-		if (detailsUnitStylesItemProvider != null) detailsUnitStylesItemProvider.dispose();
-		if (formUnitStylesItemProvider != null) formUnitStylesItemProvider.dispose();
-		if (galleryUnitStylesItemProvider != null) galleryUnitStylesItemProvider.dispose();
-		if (sliderUnitStylesItemProvider != null) sliderUnitStylesItemProvider.dispose();
-		if (staticUnitStylesItemProvider != null) staticUnitStylesItemProvider.dispose();
+		if (editUnitStylesItemProvider != null) editUnitStylesItemProvider.dispose();
 		if (tabularUnitStylesItemProvider != null) tabularUnitStylesItemProvider.dispose();
 		if (imageManipulationItemProvider != null) imageManipulationItemProvider.dispose();
 		if (backgroundFilterItemProvider != null) backgroundFilterItemProvider.dispose();

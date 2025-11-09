@@ -14,23 +14,23 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import work.andycarpenter.metamodel.waf.ImageCardsUnitStyles;
+import work.andycarpenter.metamodel.waf.EditUnitStyles;
 import work.andycarpenter.metamodel.waf.WafPackage;
 
 /**
- * This is the item provider adapter for a {@link work.andycarpenter.metamodel.waf.ImageCardsUnitStyles} object.
+ * This is the item provider adapter for a {@link work.andycarpenter.metamodel.waf.EditUnitStyles} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ImageCardsUnitStylesItemProvider extends CardsUnitStylesItemProvider {
+public class EditUnitStylesItemProvider extends DynamicUnitStylesItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ImageCardsUnitStylesItemProvider(AdapterFactory adapterFactory) {
+	public EditUnitStylesItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -45,42 +45,42 @@ public class ImageCardsUnitStylesItemProvider extends CardsUnitStylesItemProvide
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addImageActionClassPropertyDescriptor(object);
+			addInputGroupClassPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Image Action Class feature.
+	 * This adds a property descriptor for the Input Group Class feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addImageActionClassPropertyDescriptor(Object object) {
+	protected void addInputGroupClassPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ImageCardsUnitStyles_imageActionClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ImageCardsUnitStyles_imageActionClass_feature", "_UI_ImageCardsUnitStyles_type"),
-				 WafPackage.eINSTANCE.getImageCardsUnitStyles_ImageActionClass(),
+				 getString("_UI_EditUnitStyles_inputGroupClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EditUnitStyles_inputGroupClass_feature", "_UI_EditUnitStyles_type"),
+				 WafPackage.eINSTANCE.getEditUnitStyles_InputGroupClass(),
 				 true,
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_StylePropertyCategory"),
 				 null));
 	}
 
 	/**
-	 * This returns ImageCardsUnitStyles.gif.
+	 * This returns EditUnitStyles.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/ImageCardsUnitStyles"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/EditUnitStyles"));
 	}
 
 	/**
@@ -91,10 +91,10 @@ public class ImageCardsUnitStylesItemProvider extends CardsUnitStylesItemProvide
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ImageCardsUnitStyles)object).getSectionClass();
+		String label = ((EditUnitStyles)object).getCaptionClass();
 		return label == null || label.length() == 0 ?
-			getString("_UI_ImageCardsUnitStyles_type") :
-			getString("_UI_ImageCardsUnitStyles_type") + " " + label;
+			getString("_UI_EditUnitStyles_type") :
+			getString("_UI_EditUnitStyles_type") + " " + label;
 	}
 
 
@@ -109,8 +109,8 @@ public class ImageCardsUnitStylesItemProvider extends CardsUnitStylesItemProvide
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(ImageCardsUnitStyles.class)) {
-			case WafPackage.IMAGE_CARDS_UNIT_STYLES__IMAGE_ACTION_CLASS:
+		switch (notification.getFeatureID(EditUnitStyles.class)) {
+			case WafPackage.EDIT_UNIT_STYLES__INPUT_GROUP_CLASS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

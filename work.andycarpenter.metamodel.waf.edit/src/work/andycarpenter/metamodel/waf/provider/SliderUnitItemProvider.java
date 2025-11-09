@@ -46,8 +46,8 @@ public class SliderUnitItemProvider extends CollectionUnitItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addMissingImagePathPropertyDescriptor(object);
 			addImageFilterPropertyDescriptor(object);
+			addMissingImagePathPropertyDescriptor(object);
 			addShowTimePropertyDescriptor(object);
 			addTransitionTimePropertyDescriptor(object);
 		}
@@ -72,7 +72,7 @@ public class SliderUnitItemProvider extends CollectionUnitItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_ImagePropertyCategory"),
 				 null));
 	}
 
@@ -94,7 +94,7 @@ public class SliderUnitItemProvider extends CollectionUnitItemProvider {
 				 false,
 				 true,
 				 null,
-				 null,
+				 getString("_UI_ImagePropertyCategory"),
 				 null));
 	}
 
@@ -116,7 +116,7 @@ public class SliderUnitItemProvider extends CollectionUnitItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
-				 null,
+				 getString("_UI_InterfacePropertyCategory"),
 				 null));
 	}
 
@@ -138,7 +138,7 @@ public class SliderUnitItemProvider extends CollectionUnitItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
-				 null,
+				 getString("_UI_InterfacePropertyCategory"),
 				 null));
 	}
 

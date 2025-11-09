@@ -46,9 +46,9 @@ public class TabularUnitItemProvider extends CollectionUnitItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addTargettingSearchesPropertyDescriptor(object);
-			addRowClassesPropertyDescriptor(object);
-			addLocalHeaderClassPropertyDescriptor(object);
-			addLocalFooterClassPropertyDescriptor(object);
+			addFooterClassOverridePropertyDescriptor(object);
+			addHeaderClassOverridePropertyDescriptor(object);
+			addRowClassesOverridePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -71,73 +71,73 @@ public class TabularUnitItemProvider extends CollectionUnitItemProvider {
 				 false,
 				 true,
 				 null,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
 	/**
-	 * This adds a property descriptor for the Row Classes feature.
+	 * This adds a property descriptor for the Row Classes Override feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addRowClassesPropertyDescriptor(Object object) {
+	protected void addRowClassesOverridePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_TabularUnit_rowClasses_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_TabularUnit_rowClasses_feature", "_UI_TabularUnit_type"),
-				 WafPackage.eINSTANCE.getTabularUnit_RowClasses(),
+				 getString("_UI_TabularUnit_rowClassesOverride_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_TabularUnit_rowClassesOverride_feature", "_UI_TabularUnit_type"),
+				 WafPackage.eINSTANCE.getTabularUnit_RowClassesOverride(),
 				 true,
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_StylePropertyCategory"),
 				 null));
 	}
 
 	/**
-	 * This adds a property descriptor for the Local Header Class feature.
+	 * This adds a property descriptor for the Header Class Override feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addLocalHeaderClassPropertyDescriptor(Object object) {
+	protected void addHeaderClassOverridePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_TabularUnit_localHeaderClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_TabularUnit_localHeaderClass_feature", "_UI_TabularUnit_type"),
-				 WafPackage.eINSTANCE.getTabularUnit_LocalHeaderClass(),
+				 getString("_UI_TabularUnit_headerClassOverride_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_TabularUnit_headerClassOverride_feature", "_UI_TabularUnit_type"),
+				 WafPackage.eINSTANCE.getTabularUnit_HeaderClassOverride(),
 				 true,
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_StylePropertyCategory"),
 				 null));
 	}
 
 	/**
-	 * This adds a property descriptor for the Local Footer Class feature.
+	 * This adds a property descriptor for the Footer Class Override feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addLocalFooterClassPropertyDescriptor(Object object) {
+	protected void addFooterClassOverridePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_TabularUnit_localFooterClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_TabularUnit_localFooterClass_feature", "_UI_TabularUnit_type"),
-				 WafPackage.eINSTANCE.getTabularUnit_LocalFooterClass(),
+				 getString("_UI_TabularUnit_footerClassOverride_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_TabularUnit_footerClassOverride_feature", "_UI_TabularUnit_type"),
+				 WafPackage.eINSTANCE.getTabularUnit_FooterClassOverride(),
 				 true,
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_StylePropertyCategory"),
 				 null));
 	}
 
@@ -179,9 +179,9 @@ public class TabularUnitItemProvider extends CollectionUnitItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(TabularUnit.class)) {
-			case WafPackage.TABULAR_UNIT__ROW_CLASSES:
-			case WafPackage.TABULAR_UNIT__LOCAL_HEADER_CLASS:
-			case WafPackage.TABULAR_UNIT__LOCAL_FOOTER_CLASS:
+			case WafPackage.TABULAR_UNIT__FOOTER_CLASS_OVERRIDE:
+			case WafPackage.TABULAR_UNIT__HEADER_CLASS_OVERRIDE:
+			case WafPackage.TABULAR_UNIT__ROW_CLASSES_OVERRIDE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

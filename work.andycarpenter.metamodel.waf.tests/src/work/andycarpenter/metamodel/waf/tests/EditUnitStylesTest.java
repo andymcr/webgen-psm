@@ -4,16 +4,16 @@ package work.andycarpenter.metamodel.waf.tests;
 
 import junit.textui.TestRunner;
 
-import work.andycarpenter.metamodel.waf.ImageCardsUnitStyles;
+import work.andycarpenter.metamodel.waf.EditUnitStyles;
 import work.andycarpenter.metamodel.waf.WafFactory;
 
 /**
  * <!-- begin-user-doc -->
- * A test case for the model object '<em><b>Image Cards Unit Styles</b></em>'.
+ * A test case for the model object '<em><b>Edit Unit Styles</b></em>'.
  * <!-- end-user-doc -->
  * @generated
  */
-public class ImageCardsUnitStylesTest extends CardsUnitStylesTest {
+public class EditUnitStylesTest extends DynamicUnitStylesTest {
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -21,28 +21,28 @@ public class ImageCardsUnitStylesTest extends CardsUnitStylesTest {
 	 * @generated
 	 */
 	public static void main(String[] args) {
-		TestRunner.run(ImageCardsUnitStylesTest.class);
+		TestRunner.run(EditUnitStylesTest.class);
 	}
 
 	/**
-	 * Constructs a new Image Cards Unit Styles test case with the given name.
+	 * Constructs a new Edit Unit Styles test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ImageCardsUnitStylesTest(String name) {
+	public EditUnitStylesTest(String name) {
 		super(name);
 	}
 
 	/**
-	 * Returns the fixture for this Image Cards Unit Styles test case.
+	 * Returns the fixture for this Edit Unit Styles test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	protected ImageCardsUnitStyles getFixture() {
-		return (ImageCardsUnitStyles)fixture;
+	protected EditUnitStyles getFixture() {
+		return (EditUnitStyles)fixture;
 	}
 
 	/**
@@ -53,7 +53,7 @@ public class ImageCardsUnitStylesTest extends CardsUnitStylesTest {
 	 */
 	@Override
 	protected void setUp() throws Exception {
-		setFixture(WafFactory.eINSTANCE.createImageCardsUnitStyles());
+		setFixture(WafFactory.eINSTANCE.createEditUnitStyles());
 	}
 
 	/**
@@ -67,4 +67,4 @@ public class ImageCardsUnitStylesTest extends CardsUnitStylesTest {
 		setFixture(null);
 	}
 
-} //ImageCardsUnitStylesTest
+} //EditUnitStylesTest

@@ -21,12 +21,12 @@ import work.andycarpenter.metamodel.waf.ContentUnit;
  * <ul>
  *   <li>{@link work.andycarpenter.metamodel.waf.ContentUnit#isAuthorised() <em>Is Authorised</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.ContentUnit#hasAuthorisation() <em>Has Authorisation</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.ContentUnit#sectionClass() <em>Section Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.ContentUnit#hasSectionClass() <em>Has Section Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.ContentUnit#captiontClass() <em>Captiont Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.ContentUnit#captionClass() <em>Caption Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.ContentUnit#hasCaptionClass() <em>Has Caption Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.ContentUnit#contentClass() <em>Content Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.ContentUnit#hasContentClass() <em>Has Content Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.ContentUnit#sectionClass() <em>Section Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.ContentUnit#hasSectionClass() <em>Has Section Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.ContentUnit#genModel() <em>Gen Model</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.ContentUnit#uiModel() <em>Ui Model</em>}</li>
  * </ul>
@@ -113,6 +113,19 @@ public abstract class ContentUnitTest extends TestCase {
 	}
 
 	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.ContentUnit#captionClass() <em>Caption Class</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.ContentUnit#captionClass()
+	 * @generated
+	 */
+	public void testCaptionClass() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
 	 * Tests the '{@link work.andycarpenter.metamodel.waf.ContentUnit#sectionClass() <em>Section Class</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -133,19 +146,6 @@ public abstract class ContentUnitTest extends TestCase {
 	 * @generated
 	 */
 	public void testHasSectionClass() {
-		// TODO: implement this operation test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.ContentUnit#captiontClass() <em>Captiont Class</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.ContentUnit#captiontClass()
-	 * @generated
-	 */
-	public void testCaptiontClass() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

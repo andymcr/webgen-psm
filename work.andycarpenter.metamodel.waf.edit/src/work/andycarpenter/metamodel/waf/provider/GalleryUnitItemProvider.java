@@ -46,11 +46,11 @@ public class GalleryUnitItemProvider extends CollectionUnitItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addMissingImagePathPropertyDescriptor(object);
 			addImageFilterPropertyDescriptor(object);
-			addFullSizeFilterPropertyDescriptor(object);
+			addMissingImagePathPropertyDescriptor(object);
 			addShowTimePropertyDescriptor(object);
 			addTransitionTimePropertyDescriptor(object);
+			addFullSizeFilterPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -73,7 +73,7 @@ public class GalleryUnitItemProvider extends CollectionUnitItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_ImagePropertyCategory"),
 				 null));
 	}
 
@@ -95,7 +95,7 @@ public class GalleryUnitItemProvider extends CollectionUnitItemProvider {
 				 false,
 				 true,
 				 null,
-				 null,
+				 getString("_UI_ImagePropertyCategory"),
 				 null));
 	}
 
@@ -117,7 +117,7 @@ public class GalleryUnitItemProvider extends CollectionUnitItemProvider {
 				 false,
 				 true,
 				 null,
-				 null,
+				 getString("_UI_ImagePropertyCategory"),
 				 null));
 	}
 
@@ -139,7 +139,7 @@ public class GalleryUnitItemProvider extends CollectionUnitItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
-				 null,
+				 getString("_UI_InterfacePropertyCategory"),
 				 null));
 	}
 
@@ -161,7 +161,7 @@ public class GalleryUnitItemProvider extends CollectionUnitItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
-				 null,
+				 getString("_UI_InterfacePropertyCategory"),
 				 null));
 	}
 

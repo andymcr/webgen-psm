@@ -8,7 +8,6 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EStructuralFeature;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
@@ -48,12 +47,10 @@ public class ImageCardsUnitItemProvider extends CardsUnitItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addMissingImagePathPropertyDescriptor(object);
 			addImageFilterPropertyDescriptor(object);
-			addEnableImageEnlargementPropertyDescriptor(object);
+			addMissingImagePathPropertyDescriptor(object);
 			addOverlayTitlePropertyDescriptor(object);
-			addRevealUntruncatedContentPropertyDescriptor(object);
-			addImageActionClassPropertyDescriptor(object);
+			addEnableImageEnlargementPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -76,7 +73,7 @@ public class ImageCardsUnitItemProvider extends CardsUnitItemProvider {
 				 false,
 				 true,
 				 null,
-				 null,
+				 getString("_UI_ImagePropertyCategory"),
 				 null));
 	}
 
@@ -98,7 +95,7 @@ public class ImageCardsUnitItemProvider extends CardsUnitItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_ImagePropertyCategory"),
 				 null));
 	}
 
@@ -120,7 +117,7 @@ public class ImageCardsUnitItemProvider extends CardsUnitItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
+				 getString("_UI_InterfacePropertyCategory"),
 				 null));
 	}
 
@@ -142,51 +139,7 @@ public class ImageCardsUnitItemProvider extends CardsUnitItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Reveal Untruncated Content feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addRevealUntruncatedContentPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ImageCardsUnit_revealUntruncatedContent_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ImageCardsUnit_revealUntruncatedContent_feature", "_UI_ImageCardsUnit_type"),
-				 WafPackage.eINSTANCE.getImageCardsUnit_RevealUntruncatedContent(),
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Image Action Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addImageActionClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ImageCardsUnit_imageActionClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ImageCardsUnit_imageActionClass_feature", "_UI_ImageCardsUnit_type"),
-				 WafPackage.eINSTANCE.getImageCardsUnit_ImageActionClass(),
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 getString("_UI_StylePropertyCategory"),
+				 getString("_UI_InterfacePropertyCategory"),
 				 null));
 	}
 
@@ -260,10 +213,8 @@ public class ImageCardsUnitItemProvider extends CardsUnitItemProvider {
 
 		switch (notification.getFeatureID(ImageCardsUnit.class)) {
 			case WafPackage.IMAGE_CARDS_UNIT__MISSING_IMAGE_PATH:
-			case WafPackage.IMAGE_CARDS_UNIT__ENABLE_IMAGE_ENLARGEMENT:
 			case WafPackage.IMAGE_CARDS_UNIT__OVERLAY_TITLE:
-			case WafPackage.IMAGE_CARDS_UNIT__REVEAL_UNTRUNCATED_CONTENT:
-			case WafPackage.IMAGE_CARDS_UNIT__IMAGE_ACTION_CLASS:
+			case WafPackage.IMAGE_CARDS_UNIT__ENABLE_IMAGE_ENLARGEMENT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case WafPackage.IMAGE_CARDS_UNIT__IMAGE_FEATURE_PATH:

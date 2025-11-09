@@ -45,12 +45,12 @@ public class DynamicUnitStylesItemProvider extends ContentUnitStylesItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addFieldListClassPropertyDescriptor(object);
-			addDefinitionFieldListClassPropertyDescriptor(object);
-			addFieldLabelClassPropertyDescriptor(object);
-			addFieldValueClassPropertyDescriptor(object);
-			addControlClassPropertyDescriptor(object);
 			addActionClassPropertyDescriptor(object);
+			addControlClassPropertyDescriptor(object);
+			addFieldDefinitionListClassPropertyDescriptor(object);
+			addFieldLabelClassPropertyDescriptor(object);
+			addFieldListClassPropertyDescriptor(object);
+			addFieldValueClassPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -73,29 +73,7 @@ public class DynamicUnitStylesItemProvider extends ContentUnitStylesItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Definition Field List Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addDefinitionFieldListClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_DynamicUnitStyles_definitionFieldListClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DynamicUnitStyles_definitionFieldListClass_feature", "_UI_DynamicUnitStyles_type"),
-				 WafPackage.eINSTANCE.getDynamicUnitStyles_DefinitionFieldListClass(),
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_StylePropertyCategory"),
 				 null));
 	}
 
@@ -117,7 +95,7 @@ public class DynamicUnitStylesItemProvider extends ContentUnitStylesItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_StylePropertyCategory"),
 				 null));
 	}
 
@@ -139,7 +117,7 @@ public class DynamicUnitStylesItemProvider extends ContentUnitStylesItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_StylePropertyCategory"),
 				 null));
 	}
 
@@ -161,7 +139,29 @@ public class DynamicUnitStylesItemProvider extends ContentUnitStylesItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_StylePropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Field Definition List Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addFieldDefinitionListClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DynamicUnitStyles_fieldDefinitionListClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DynamicUnitStyles_fieldDefinitionListClass_feature", "_UI_DynamicUnitStyles_type"),
+				 WafPackage.eINSTANCE.getDynamicUnitStyles_FieldDefinitionListClass(),
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_StylePropertyCategory"),
 				 null));
 	}
 
@@ -183,7 +183,7 @@ public class DynamicUnitStylesItemProvider extends ContentUnitStylesItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_StylePropertyCategory"),
 				 null));
 	}
 
@@ -195,7 +195,7 @@ public class DynamicUnitStylesItemProvider extends ContentUnitStylesItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((DynamicUnitStyles)object).getSectionClass();
+		String label = ((DynamicUnitStyles)object).getCaptionClass();
 		return label == null || label.length() == 0 ?
 			getString("_UI_DynamicUnitStyles_type") :
 			getString("_UI_DynamicUnitStyles_type") + " " + label;
@@ -214,12 +214,12 @@ public class DynamicUnitStylesItemProvider extends ContentUnitStylesItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(DynamicUnitStyles.class)) {
-			case WafPackage.DYNAMIC_UNIT_STYLES__FIELD_LIST_CLASS:
-			case WafPackage.DYNAMIC_UNIT_STYLES__DEFINITION_FIELD_LIST_CLASS:
-			case WafPackage.DYNAMIC_UNIT_STYLES__FIELD_LABEL_CLASS:
-			case WafPackage.DYNAMIC_UNIT_STYLES__FIELD_VALUE_CLASS:
-			case WafPackage.DYNAMIC_UNIT_STYLES__CONTROL_CLASS:
 			case WafPackage.DYNAMIC_UNIT_STYLES__ACTION_CLASS:
+			case WafPackage.DYNAMIC_UNIT_STYLES__CONTROL_CLASS:
+			case WafPackage.DYNAMIC_UNIT_STYLES__FIELD_DEFINITION_LIST_CLASS:
+			case WafPackage.DYNAMIC_UNIT_STYLES__FIELD_LABEL_CLASS:
+			case WafPackage.DYNAMIC_UNIT_STYLES__FIELD_LIST_CLASS:
+			case WafPackage.DYNAMIC_UNIT_STYLES__FIELD_VALUE_CLASS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

@@ -70,7 +70,7 @@ public class DetailsUnitItemProvider extends SingletonUnitItemProvider {
 				 false,
 				 true,
 				 null,
-				 null,
+				 getString("_UI_BusinessPropertyCategory"),
 				 null));
 	}
 
@@ -92,7 +92,7 @@ public class DetailsUnitItemProvider extends SingletonUnitItemProvider {
 				 false,
 				 true,
 				 null,
-				 null,
+				 getString("_UI_BusinessPropertyCategory"),
 				 null));
 	}
 
@@ -114,7 +114,7 @@ public class DetailsUnitItemProvider extends SingletonUnitItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
+				 getString("_UI_InterfacePropertyCategory"),
 				 null));
 	}
 

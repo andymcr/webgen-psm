@@ -14,19 +14,24 @@ import work.andycarpenter.metamodel.waf.WafFactory;
  * <p>
  * The following operations are tested:
  * <ul>
- *   <li>{@link work.andycarpenter.metamodel.waf.TabularUnit#sectionClass() <em>Section Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.TabularUnit#actionClass() <em>Action Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.TabularUnit#captionClass() <em>Caption Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.TabularUnit#contentClass() <em>Content Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.TabularUnit#fieldListClass() <em>Field List Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.TabularUnit#definitionFieldListClass() <em>Definition Field List Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.TabularUnit#fieldLabelClass() <em>Field Label Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.TabularUnit#fieldValueClass() <em>Field Value Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.TabularUnit#controlClass() <em>Control Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.TabularUnit#actionClass() <em>Action Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.TabularUnit#headerClass() <em>Header Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.TabularUnit#hasHeaderClass() <em>Has Header Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.TabularUnit#fielddefinitionListClass() <em>Fielddefinition List Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.TabularUnit#fieldLabelClass() <em>Field Label Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.TabularUnit#fieldListClass() <em>Field List Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.TabularUnit#fieldValueClass() <em>Field Value Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.TabularUnit#filtersClass() <em>Filters Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.TabularUnit#filtersControlClass() <em>Filters Control Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.TabularUnit#filtersActionClass() <em>Filters Action Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.TabularUnit#footerClass() <em>Footer Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.TabularUnit#hasFooterClass() <em>Has Footer Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.TabularUnit#headerClass() <em>Header Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.TabularUnit#hasHeaderClass() <em>Has Header Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.TabularUnit#rowClasses() <em>Row Classes</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.TabularUnit#hasRowClasses() <em>Has Row Classes</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.TabularUnit#sectionClass() <em>Section Class</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -151,6 +156,32 @@ public class TabularUnitTest extends CollectionUnitTest {
 	}
 
 	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.TabularUnit#rowClasses() <em>Row Classes</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.TabularUnit#rowClasses()
+	 * @generated
+	 */
+	public void testRowClasses() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.TabularUnit#hasRowClasses() <em>Has Row Classes</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.TabularUnit#hasRowClasses()
+	 * @generated
+	 */
+	public void testHasRowClasses() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
 	 * Tests the '{@link work.andycarpenter.metamodel.waf.TabularUnit#footerClass() <em>Footer Class</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -190,19 +221,6 @@ public class TabularUnitTest extends CollectionUnitTest {
 	}
 
 	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.TabularUnit#definitionFieldListClass() <em>Definition Field List Class</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.TabularUnit#definitionFieldListClass()
-	 * @generated
-	 */
-	public void testDefinitionFieldListClass() {
-		// TODO: implement this operation test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
 	 * Tests the '{@link work.andycarpenter.metamodel.waf.TabularUnit#fieldLabelClass() <em>Field Label Class</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -229,6 +247,45 @@ public class TabularUnitTest extends CollectionUnitTest {
 	}
 
 	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.TabularUnit#filtersClass() <em>Filters Class</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.TabularUnit#filtersClass()
+	 * @generated
+	 */
+	public void testFiltersClass() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.TabularUnit#filtersControlClass() <em>Filters Control Class</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.TabularUnit#filtersControlClass()
+	 * @generated
+	 */
+	public void testFiltersControlClass() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.TabularUnit#filtersActionClass() <em>Filters Action Class</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.TabularUnit#filtersActionClass()
+	 * @generated
+	 */
+	public void testFiltersActionClass() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
 	 * Tests the '{@link work.andycarpenter.metamodel.waf.TabularUnit#controlClass() <em>Control Class</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -236,6 +293,19 @@ public class TabularUnitTest extends CollectionUnitTest {
 	 * @generated
 	 */
 	public void testControlClass() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.TabularUnit#fielddefinitionListClass() <em>Fielddefinition List Class</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.TabularUnit#fielddefinitionListClass()
+	 * @generated
+	 */
+	public void testFielddefinitionListClass() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

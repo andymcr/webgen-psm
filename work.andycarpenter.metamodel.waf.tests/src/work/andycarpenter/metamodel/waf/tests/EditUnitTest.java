@@ -16,6 +16,11 @@ import work.andycarpenter.metamodel.waf.EditUnit;
  *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#hasCustomCancelIcon() <em>Has Custom Cancel Icon</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#cancelIcon() <em>Cancel Icon</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#hasCancelIcon() <em>Has Cancel Icon</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#hasCustomResetLabel() <em>Has Custom Reset Label</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#resetLabel() <em>Reset Label</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#hasCustomResetIcon() <em>Has Custom Reset Icon</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#resetIcon() <em>Reset Icon</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#hasResetIcon() <em>Has Reset Icon</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#hasCustomSaveLabel() <em>Has Custom Save Label</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#saveLabel() <em>Save Label</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#hasCustomSaveIcon() <em>Has Custom Save Icon</em>}</li>
@@ -24,17 +29,17 @@ import work.andycarpenter.metamodel.waf.EditUnit;
  *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#hasConfirmMessage() <em>Has Confirm Message</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#hasSuccessMessage() <em>Has Success Message</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#hasMessages() <em>Has Messages</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#sectionClass() <em>Section Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#actionClass() <em>Action Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#captionClass() <em>Caption Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#contentClass() <em>Content Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#fieldListClass() <em>Field List Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#definitionFieldListClass() <em>Definition Field List Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#fieldLabelClass() <em>Field Label Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#fieldValueClass() <em>Field Value Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#controlClass() <em>Control Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#actionClass() <em>Action Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#fieldDefinitionListClass() <em>Field Definition List Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#fieldLabelClass() <em>Field Label Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#fieldListClass() <em>Field List Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#fieldValueClass() <em>Field Value Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#inputGroupClass() <em>Input Group Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#hasInputGroupClass() <em>Has Input Group Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#sectionClass() <em>Section Class</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -193,6 +198,71 @@ public abstract class EditUnitTest extends SingletonUnitTest {
 	}
 
 	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.EditUnit#hasCustomResetLabel() <em>Has Custom Reset Label</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.EditUnit#hasCustomResetLabel()
+	 * @generated
+	 */
+	public void testHasCustomResetLabel() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.EditUnit#resetLabel() <em>Reset Label</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.EditUnit#resetLabel()
+	 * @generated
+	 */
+	public void testResetLabel() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.EditUnit#hasCustomResetIcon() <em>Has Custom Reset Icon</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.EditUnit#hasCustomResetIcon()
+	 * @generated
+	 */
+	public void testHasCustomResetIcon() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.EditUnit#resetIcon() <em>Reset Icon</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.EditUnit#resetIcon()
+	 * @generated
+	 */
+	public void testResetIcon() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.EditUnit#hasResetIcon() <em>Has Reset Icon</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.EditUnit#hasResetIcon()
+	 * @generated
+	 */
+	public void testHasResetIcon() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
 	 * Tests the '{@link work.andycarpenter.metamodel.waf.EditUnit#hasConfirmMessage() <em>Has Confirm Message</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -284,19 +354,6 @@ public abstract class EditUnitTest extends SingletonUnitTest {
 	}
 
 	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.EditUnit#definitionFieldListClass() <em>Definition Field List Class</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.EditUnit#definitionFieldListClass()
-	 * @generated
-	 */
-	public void testDefinitionFieldListClass() {
-		// TODO: implement this operation test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
 	 * Tests the '{@link work.andycarpenter.metamodel.waf.EditUnit#fieldLabelClass() <em>Field Label Class</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -330,6 +387,19 @@ public abstract class EditUnitTest extends SingletonUnitTest {
 	 * @generated
 	 */
 	public void testControlClass() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.EditUnit#fieldDefinitionListClass() <em>Field Definition List Class</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.EditUnit#fieldDefinitionListClass()
+	 * @generated
+	 */
+	public void testFieldDefinitionListClass() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

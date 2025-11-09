@@ -8,7 +8,9 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+
 import work.andycarpenter.metamodel.waf.DefaultUnitStyles;
 
 /**
@@ -17,7 +19,7 @@ import work.andycarpenter.metamodel.waf.DefaultUnitStyles;
  * <!-- end-user-doc -->
  * @generated
  */
-public class DefaultUnitStylesItemProvider extends CollectionUnitStylesItemProvider {
+public class DefaultUnitStylesItemProvider extends DynamicUnitStylesItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -62,7 +64,7 @@ public class DefaultUnitStylesItemProvider extends CollectionUnitStylesItemProvi
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((DefaultUnitStyles)object).getSectionClass();
+		String label = ((DefaultUnitStyles)object).getCaptionClass();
 		return label == null || label.length() == 0 ?
 			getString("_UI_DefaultUnitStyles_type") :
 			getString("_UI_DefaultUnitStyles_type") + " " + label;

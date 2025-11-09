@@ -14,15 +14,15 @@ import work.andycarpenter.metamodel.waf.WafFactory;
  * <p>
  * The following operations are tested:
  * <ul>
- *   <li>{@link work.andycarpenter.metamodel.waf.DetailsUnit#sectionClass() <em>Section Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.DetailsUnit#actionClass() <em>Action Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.DetailsUnit#captionClass() <em>Caption Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.DetailsUnit#contentClass() <em>Content Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.DetailsUnit#fieldListClass() <em>Field List Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.DetailsUnit#controlClass() <em>Control Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.DetailsUnit#definitionFieldListClass() <em>Definition Field List Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.DetailsUnit#fieldLabelClass() <em>Field Label Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.DetailsUnit#fieldListClass() <em>Field List Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.DetailsUnit#fieldValueClass() <em>Field Value Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.DetailsUnit#controlClass() <em>Control Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.DetailsUnit#actionClass() <em>Action Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.DetailsUnit#sectionClass() <em>Section Class</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -82,13 +82,13 @@ public class DetailsUnitTest extends SingletonUnitTest {
 	}
 
 	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DetailsUnit#sectionClass() <em>Section Class</em>}' operation.
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.DetailsUnit#actionClass() <em>Action Class</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DetailsUnit#sectionClass()
+	 * @see work.andycarpenter.metamodel.waf.DetailsUnit#actionClass()
 	 * @generated
 	 */
-	public void testSectionClass() {
+	public void testActionClass() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
@@ -121,13 +121,13 @@ public class DetailsUnitTest extends SingletonUnitTest {
 	}
 
 	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DetailsUnit#fieldListClass() <em>Field List Class</em>}' operation.
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.DetailsUnit#controlClass() <em>Control Class</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DetailsUnit#fieldListClass()
+	 * @see work.andycarpenter.metamodel.waf.DetailsUnit#controlClass()
 	 * @generated
 	 */
-	public void testFieldListClass() {
+	public void testControlClass() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
@@ -160,6 +160,19 @@ public class DetailsUnitTest extends SingletonUnitTest {
 	}
 
 	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.DetailsUnit#fieldListClass() <em>Field List Class</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.DetailsUnit#fieldListClass()
+	 * @generated
+	 */
+	public void testFieldListClass() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
 	 * Tests the '{@link work.andycarpenter.metamodel.waf.DetailsUnit#fieldValueClass() <em>Field Value Class</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -173,26 +186,13 @@ public class DetailsUnitTest extends SingletonUnitTest {
 	}
 
 	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DetailsUnit#controlClass() <em>Control Class</em>}' operation.
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.DetailsUnit#sectionClass() <em>Section Class</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DetailsUnit#controlClass()
+	 * @see work.andycarpenter.metamodel.waf.DetailsUnit#sectionClass()
 	 * @generated
 	 */
-	public void testControlClass() {
-		// TODO: implement this operation test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.DetailsUnit#actionClass() <em>Action Class</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.DetailsUnit#actionClass()
-	 * @generated
-	 */
-	public void testActionClass() {
+	public void testSectionClass() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

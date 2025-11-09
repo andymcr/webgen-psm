@@ -14,9 +14,9 @@ import work.andycarpenter.metamodel.waf.WafFactory;
  * <p>
  * The following operations are tested:
  * <ul>
- *   <li>{@link work.andycarpenter.metamodel.waf.StaticUnit#sectionClass() <em>Section Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.StaticUnit#captionClass() <em>Caption Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.StaticUnit#contentClass() <em>Content Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.StaticUnit#sectionClass() <em>Section Class</em>}</li>
  * </ul>
  * </p>
  * @generated

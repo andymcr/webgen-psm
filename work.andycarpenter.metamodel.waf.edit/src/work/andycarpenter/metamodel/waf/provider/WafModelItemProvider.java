@@ -70,6 +70,8 @@ public class WafModelItemProvider
 			addDefaultCancelIconPropertyDescriptor(object);
 			addDefaultClearLabelPropertyDescriptor(object);
 			addDefaultClearIconPropertyDescriptor(object);
+			addDefaultResetLabelPropertyDescriptor(object);
+			addDefaultResetIconPropertyDescriptor(object);
 			addDefaultSaveLabelPropertyDescriptor(object);
 			addDefaultSaveIconPropertyDescriptor(object);
 			addDefaultSearchLabelPropertyDescriptor(object);
@@ -256,6 +258,50 @@ public class WafModelItemProvider
 				 getString("_UI_WafModel_defaultClearIcon_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_WafModel_defaultClearIcon_feature", "_UI_WafModel_type"),
 				 WafPackage.eINSTANCE.getWafModel_DefaultClearIcon(),
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_InterfacePropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Default Reset Label feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDefaultResetLabelPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_WafModel_defaultResetLabel_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WafModel_defaultResetLabel_feature", "_UI_WafModel_type"),
+				 WafPackage.eINSTANCE.getWafModel_DefaultResetLabel(),
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_InterfacePropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Default Reset Icon feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDefaultResetIconPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_WafModel_defaultResetIcon_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WafModel_defaultResetIcon_feature", "_UI_WafModel_type"),
+				 WafPackage.eINSTANCE.getWafModel_DefaultResetIcon(),
 				 true,
 				 false,
 				 false,
@@ -588,16 +634,14 @@ public class WafModelItemProvider
 			childrenFeatures.add(WafPackage.eINSTANCE.getWafModel_ImageManipulations());
 			childrenFeatures.add(WafPackage.eINSTANCE.getWafModel_Navigation());
 			childrenFeatures.add(WafPackage.eINSTANCE.getWafModel_Controllers());
-			childrenFeatures.add(WafPackage.eINSTANCE.getWafModel_DefaultUnitStyles());
 			childrenFeatures.add(WafPackage.eINSTANCE.getWafModel_DefaultCardsStyles());
-			childrenFeatures.add(WafPackage.eINSTANCE.getWafModel_DefaultImageCardsStyles());
+			childrenFeatures.add(WafPackage.eINSTANCE.getWafModel_DefaultCollectionStyles());
 			childrenFeatures.add(WafPackage.eINSTANCE.getWafModel_DefaultControlStyles());
 			childrenFeatures.add(WafPackage.eINSTANCE.getWafModel_DefaultDetailsStyles());
-			childrenFeatures.add(WafPackage.eINSTANCE.getWafModel_DefaultFormStyles());
-			childrenFeatures.add(WafPackage.eINSTANCE.getWafModel_DefaultGalleryStyles());
-			childrenFeatures.add(WafPackage.eINSTANCE.getWafModel_DefaultSliderStyles());
+			childrenFeatures.add(WafPackage.eINSTANCE.getWafModel_DefaultEditStyles());
 			childrenFeatures.add(WafPackage.eINSTANCE.getWafModel_DefaultStaticStyles());
 			childrenFeatures.add(WafPackage.eINSTANCE.getWafModel_DefaultTabularStyles());
+			childrenFeatures.add(WafPackage.eINSTANCE.getWafModel_DefaultUnitStyles());
 		}
 		return childrenFeatures;
 	}
@@ -657,6 +701,8 @@ public class WafModelItemProvider
 			case WafPackage.WAF_MODEL__DEFAULT_CANCEL_ICON:
 			case WafPackage.WAF_MODEL__DEFAULT_CLEAR_LABEL:
 			case WafPackage.WAF_MODEL__DEFAULT_CLEAR_ICON:
+			case WafPackage.WAF_MODEL__DEFAULT_RESET_LABEL:
+			case WafPackage.WAF_MODEL__DEFAULT_RESET_ICON:
 			case WafPackage.WAF_MODEL__DEFAULT_SAVE_LABEL:
 			case WafPackage.WAF_MODEL__DEFAULT_SAVE_ICON:
 			case WafPackage.WAF_MODEL__DEFAULT_SEARCH_LABEL:
@@ -670,16 +716,14 @@ public class WafModelItemProvider
 			case WafPackage.WAF_MODEL__IMAGE_MANIPULATIONS:
 			case WafPackage.WAF_MODEL__NAVIGATION:
 			case WafPackage.WAF_MODEL__CONTROLLERS:
-			case WafPackage.WAF_MODEL__DEFAULT_UNIT_STYLES:
 			case WafPackage.WAF_MODEL__DEFAULT_CARDS_STYLES:
-			case WafPackage.WAF_MODEL__DEFAULT_IMAGE_CARDS_STYLES:
+			case WafPackage.WAF_MODEL__DEFAULT_COLLECTION_STYLES:
 			case WafPackage.WAF_MODEL__DEFAULT_CONTROL_STYLES:
 			case WafPackage.WAF_MODEL__DEFAULT_DETAILS_STYLES:
-			case WafPackage.WAF_MODEL__DEFAULT_FORM_STYLES:
-			case WafPackage.WAF_MODEL__DEFAULT_GALLERY_STYLES:
-			case WafPackage.WAF_MODEL__DEFAULT_SLIDER_STYLES:
+			case WafPackage.WAF_MODEL__DEFAULT_EDIT_STYLES:
 			case WafPackage.WAF_MODEL__DEFAULT_STATIC_STYLES:
 			case WafPackage.WAF_MODEL__DEFAULT_TABULAR_STYLES:
+			case WafPackage.WAF_MODEL__DEFAULT_UNIT_STYLES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -724,58 +768,63 @@ public class WafModelItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.eINSTANCE.getWafModel_DefaultUnitStyles(),
-				 WafFactory.eINSTANCE.createDefaultUnitStyles()));
-
-		newChildDescriptors.add
-			(createChildParameter
 				(WafPackage.eINSTANCE.getWafModel_DefaultCardsStyles(),
 				 WafFactory.eINSTANCE.createCardsUnitStyles()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.eINSTANCE.getWafModel_DefaultCardsStyles(),
-				 WafFactory.eINSTANCE.createImageCardsUnitStyles()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.eINSTANCE.getWafModel_DefaultImageCardsStyles(),
-				 WafFactory.eINSTANCE.createImageCardsUnitStyles()));
+				(WafPackage.eINSTANCE.getWafModel_DefaultCollectionStyles(),
+				 WafFactory.eINSTANCE.createCollectionUnitStyles()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.eINSTANCE.getWafModel_DefaultControlStyles(),
-				 WafFactory.eINSTANCE.createControlUnitStyles()));
+				 WafFactory.eINSTANCE.createDefaultUnitStyles()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.eINSTANCE.getWafModel_DefaultDetailsStyles(),
-				 WafFactory.eINSTANCE.createDetailsUnitStyles()));
+				 WafFactory.eINSTANCE.createDefaultUnitStyles()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.eINSTANCE.getWafModel_DefaultFormStyles(),
-				 WafFactory.eINSTANCE.createFormUnitStyles()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.eINSTANCE.getWafModel_DefaultGalleryStyles(),
-				 WafFactory.eINSTANCE.createGalleryUnitStyles()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.eINSTANCE.getWafModel_DefaultSliderStyles(),
-				 WafFactory.eINSTANCE.createSliderUnitStyles()));
+				(WafPackage.eINSTANCE.getWafModel_DefaultEditStyles(),
+				 WafFactory.eINSTANCE.createEditUnitStyles()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.eINSTANCE.getWafModel_DefaultStaticStyles(),
-				 WafFactory.eINSTANCE.createStaticUnitStyles()));
+				 WafFactory.eINSTANCE.createCardsUnitStyles()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.eINSTANCE.getWafModel_DefaultStaticStyles(),
+				 WafFactory.eINSTANCE.createCollectionUnitStyles()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.eINSTANCE.getWafModel_DefaultStaticStyles(),
+				 WafFactory.eINSTANCE.createDefaultUnitStyles()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.eINSTANCE.getWafModel_DefaultStaticStyles(),
+				 WafFactory.eINSTANCE.createEditUnitStyles()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.eINSTANCE.getWafModel_DefaultStaticStyles(),
+				 WafFactory.eINSTANCE.createTabularUnitStyles()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.eINSTANCE.getWafModel_DefaultTabularStyles(),
 				 WafFactory.eINSTANCE.createTabularUnitStyles()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.eINSTANCE.getWafModel_DefaultUnitStyles(),
+				 WafFactory.eINSTANCE.createDefaultUnitStyles()));
 	}
 
 	/**
@@ -791,7 +840,13 @@ public class WafModelItemProvider
 
 		boolean qualify =
 			childFeature == WafPackage.eINSTANCE.getWafModel_DefaultCardsStyles() ||
-			childFeature == WafPackage.eINSTANCE.getWafModel_DefaultImageCardsStyles();
+			childFeature == WafPackage.eINSTANCE.getWafModel_DefaultStaticStyles() ||
+			childFeature == WafPackage.eINSTANCE.getWafModel_DefaultCollectionStyles() ||
+			childFeature == WafPackage.eINSTANCE.getWafModel_DefaultControlStyles() ||
+			childFeature == WafPackage.eINSTANCE.getWafModel_DefaultDetailsStyles() ||
+			childFeature == WafPackage.eINSTANCE.getWafModel_DefaultUnitStyles() ||
+			childFeature == WafPackage.eINSTANCE.getWafModel_DefaultEditStyles() ||
+			childFeature == WafPackage.eINSTANCE.getWafModel_DefaultTabularStyles();
 
 		if (qualify) {
 			return getString

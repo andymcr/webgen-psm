@@ -8,14 +8,8 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ViewerNotification;
-
 import work.andycarpenter.metamodel.waf.CollectionUnitStyles;
-import work.andycarpenter.metamodel.waf.WafPackage;
 
 /**
  * This is the item provider adapter for a {@link work.andycarpenter.metamodel.waf.CollectionUnitStyles} object.
@@ -23,7 +17,7 @@ import work.andycarpenter.metamodel.waf.WafPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class CollectionUnitStylesItemProvider extends DynamicUnitStylesItemProvider {
+public class CollectionUnitStylesItemProvider extends CollectionStylesItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -45,77 +39,8 @@ public class CollectionUnitStylesItemProvider extends DynamicUnitStylesItemProvi
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addFiltersClassPropertyDescriptor(object);
-			addInstanceControlClassPropertyDescriptor(object);
-			addInstanceActionClassPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Filters Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addFiltersClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_CollectionUnitStyles_filtersClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnitStyles_filtersClass_feature", "_UI_CollectionUnitStyles_type"),
-				 WafPackage.eINSTANCE.getCollectionUnitStyles_FiltersClass(),
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Instance Control Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addInstanceControlClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_CollectionUnitStyles_instanceControlClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnitStyles_instanceControlClass_feature", "_UI_CollectionUnitStyles_type"),
-				 WafPackage.eINSTANCE.getCollectionUnitStyles_InstanceControlClass(),
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Instance Action Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addInstanceActionClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_CollectionUnitStyles_instanceActionClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnitStyles_instanceActionClass_feature", "_UI_CollectionUnitStyles_type"),
-				 WafPackage.eINSTANCE.getCollectionUnitStyles_InstanceActionClass(),
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
 	}
 
 	/**
@@ -137,7 +62,7 @@ public class CollectionUnitStylesItemProvider extends DynamicUnitStylesItemProvi
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((CollectionUnitStyles)object).getSectionClass();
+		String label = ((CollectionUnitStyles)object).getCaptionClass();
 		return label == null || label.length() == 0 ?
 			getString("_UI_CollectionUnitStyles_type") :
 			getString("_UI_CollectionUnitStyles_type") + " " + label;
@@ -154,14 +79,6 @@ public class CollectionUnitStylesItemProvider extends DynamicUnitStylesItemProvi
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-
-		switch (notification.getFeatureID(CollectionUnitStyles.class)) {
-			case WafPackage.COLLECTION_UNIT_STYLES__FILTERS_CLASS:
-			case WafPackage.COLLECTION_UNIT_STYLES__INSTANCE_CONTROL_CLASS:
-			case WafPackage.COLLECTION_UNIT_STYLES__INSTANCE_ACTION_CLASS:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-		}
 		super.notifyChanged(notification);
 	}
 

@@ -11,15 +11,15 @@ import work.andycarpenter.metamodel.waf.ControlUnit;
  * <p>
  * The following operations are tested:
  * <ul>
- *   <li>{@link work.andycarpenter.metamodel.waf.ControlUnit#sectionClass() <em>Section Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.ControlUnit#actionClass() <em>Action Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.ControlUnit#captionClass() <em>Caption Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.ControlUnit#contentClass() <em>Content Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.ControlUnit#controlClass() <em>Control Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.ControlUnit#fieldListClass() <em>Field List Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.ControlUnit#definitionFieldListClass() <em>Definition Field List Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.ControlUnit#fieldDefinitionListClass() <em>Field Definition List Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.ControlUnit#fieldLabelClass() <em>Field Label Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.ControlUnit#fieldValueClass() <em>Field Value Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.ControlUnit#controlClass() <em>Control Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.ControlUnit#actionClass() <em>Action Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.ControlUnit#sectionClass() <em>Section Class</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -100,13 +100,13 @@ public abstract class ControlUnitTest extends DynamicUnitTest {
 	}
 
 	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.ControlUnit#definitionFieldListClass() <em>Definition Field List Class</em>}' operation.
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.ControlUnit#fieldDefinitionListClass() <em>Field Definition List Class</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.ControlUnit#definitionFieldListClass()
+	 * @see work.andycarpenter.metamodel.waf.ControlUnit#fieldDefinitionListClass()
 	 * @generated
 	 */
-	public void testDefinitionFieldListClass() {
+	public void testFieldDefinitionListClass() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

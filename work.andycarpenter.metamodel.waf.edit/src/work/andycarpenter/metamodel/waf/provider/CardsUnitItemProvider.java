@@ -49,11 +49,11 @@ public class CardsUnitItemProvider extends CollectionUnitItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addOverlaySingleSelectActionPropertyDescriptor(object);
-			addLocalCardClassPropertyDescriptor(object);
-			addLocalCardHeaderClassPropertyDescriptor(object);
-			addLocalCardBodyClassPropertyDescriptor(object);
-			addLocalCardFooterClassPropertyDescriptor(object);
-			addLocalBadgeClassPropertyDescriptor(object);
+			addBadgeClassOverridePropertyDescriptor(object);
+			addCardClassOverridePropertyDescriptor(object);
+			addCardBodyClassOverridePropertyDescriptor(object);
+			addCardFooterClassOverridePropertyDescriptor(object);
+			addCardHeaderClassOverridePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -81,19 +81,19 @@ public class CardsUnitItemProvider extends CollectionUnitItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Local Card Class feature.
+	 * This adds a property descriptor for the Badge Class Override feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addLocalCardClassPropertyDescriptor(Object object) {
+	protected void addBadgeClassOverridePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_CardsUnit_localCardClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_CardsUnit_localCardClass_feature", "_UI_CardsUnit_type"),
-				 WafPackage.eINSTANCE.getCardsUnit_LocalCardClass(),
+				 getString("_UI_CardsUnit_badgeClassOverride_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CardsUnit_badgeClassOverride_feature", "_UI_CardsUnit_type"),
+				 WafPackage.eINSTANCE.getCardsUnit_BadgeClassOverride(),
 				 true,
 				 false,
 				 false,
@@ -103,19 +103,19 @@ public class CardsUnitItemProvider extends CollectionUnitItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Local Card Header Class feature.
+	 * This adds a property descriptor for the Card Class Override feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addLocalCardHeaderClassPropertyDescriptor(Object object) {
+	protected void addCardClassOverridePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_CardsUnit_localCardHeaderClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_CardsUnit_localCardHeaderClass_feature", "_UI_CardsUnit_type"),
-				 WafPackage.eINSTANCE.getCardsUnit_LocalCardHeaderClass(),
+				 getString("_UI_CardsUnit_cardClassOverride_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CardsUnit_cardClassOverride_feature", "_UI_CardsUnit_type"),
+				 WafPackage.eINSTANCE.getCardsUnit_CardClassOverride(),
 				 true,
 				 false,
 				 false,
@@ -125,19 +125,19 @@ public class CardsUnitItemProvider extends CollectionUnitItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Local Card Body Class feature.
+	 * This adds a property descriptor for the Card Body Class Override feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addLocalCardBodyClassPropertyDescriptor(Object object) {
+	protected void addCardBodyClassOverridePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_CardsUnit_localCardBodyClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_CardsUnit_localCardBodyClass_feature", "_UI_CardsUnit_type"),
-				 WafPackage.eINSTANCE.getCardsUnit_LocalCardBodyClass(),
+				 getString("_UI_CardsUnit_cardBodyClassOverride_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CardsUnit_cardBodyClassOverride_feature", "_UI_CardsUnit_type"),
+				 WafPackage.eINSTANCE.getCardsUnit_CardBodyClassOverride(),
 				 true,
 				 false,
 				 false,
@@ -147,19 +147,19 @@ public class CardsUnitItemProvider extends CollectionUnitItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Local Card Footer Class feature.
+	 * This adds a property descriptor for the Card Footer Class Override feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addLocalCardFooterClassPropertyDescriptor(Object object) {
+	protected void addCardFooterClassOverridePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_CardsUnit_localCardFooterClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_CardsUnit_localCardFooterClass_feature", "_UI_CardsUnit_type"),
-				 WafPackage.eINSTANCE.getCardsUnit_LocalCardFooterClass(),
+				 getString("_UI_CardsUnit_cardFooterClassOverride_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CardsUnit_cardFooterClassOverride_feature", "_UI_CardsUnit_type"),
+				 WafPackage.eINSTANCE.getCardsUnit_CardFooterClassOverride(),
 				 true,
 				 false,
 				 false,
@@ -169,19 +169,19 @@ public class CardsUnitItemProvider extends CollectionUnitItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Local Badge Class feature.
+	 * This adds a property descriptor for the Card Header Class Override feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addLocalBadgeClassPropertyDescriptor(Object object) {
+	protected void addCardHeaderClassOverridePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_CardsUnit_localBadgeClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_CardsUnit_localBadgeClass_feature", "_UI_CardsUnit_type"),
-				 WafPackage.eINSTANCE.getCardsUnit_LocalBadgeClass(),
+				 getString("_UI_CardsUnit_cardHeaderClassOverride_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CardsUnit_cardHeaderClassOverride_feature", "_UI_CardsUnit_type"),
+				 WafPackage.eINSTANCE.getCardsUnit_CardHeaderClassOverride(),
 				 true,
 				 false,
 				 false,
@@ -248,11 +248,11 @@ public class CardsUnitItemProvider extends CollectionUnitItemProvider {
 
 		switch (notification.getFeatureID(CardsUnit.class)) {
 			case WafPackage.CARDS_UNIT__OVERLAY_SINGLE_SELECT_ACTION:
-			case WafPackage.CARDS_UNIT__LOCAL_CARD_CLASS:
-			case WafPackage.CARDS_UNIT__LOCAL_CARD_HEADER_CLASS:
-			case WafPackage.CARDS_UNIT__LOCAL_CARD_BODY_CLASS:
-			case WafPackage.CARDS_UNIT__LOCAL_CARD_FOOTER_CLASS:
-			case WafPackage.CARDS_UNIT__LOCAL_BADGE_CLASS:
+			case WafPackage.CARDS_UNIT__BADGE_CLASS_OVERRIDE:
+			case WafPackage.CARDS_UNIT__CARD_CLASS_OVERRIDE:
+			case WafPackage.CARDS_UNIT__CARD_BODY_CLASS_OVERRIDE:
+			case WafPackage.CARDS_UNIT__CARD_FOOTER_CLASS_OVERRIDE:
+			case WafPackage.CARDS_UNIT__CARD_HEADER_CLASS_OVERRIDE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case WafPackage.CARDS_UNIT__BADGES:

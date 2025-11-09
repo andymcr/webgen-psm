@@ -23,7 +23,7 @@ import work.andycarpenter.metamodel.waf.WafPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class TabularUnitStylesItemProvider extends CollectionUnitStylesItemProvider {
+public class TabularUnitStylesItemProvider extends CollectionStylesItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -45,8 +45,9 @@ public class TabularUnitStylesItemProvider extends CollectionUnitStylesItemProvi
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addHeaderClassPropertyDescriptor(object);
 			addFooterClassPropertyDescriptor(object);
+			addHeaderClassPropertyDescriptor(object);
+			addRowClassesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -69,7 +70,29 @@ public class TabularUnitStylesItemProvider extends CollectionUnitStylesItemProvi
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_StylePropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Row Classes feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRowClassesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_TabularUnitStyles_rowClasses_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_TabularUnitStyles_rowClasses_feature", "_UI_TabularUnitStyles_type"),
+				 WafPackage.eINSTANCE.getTabularUnitStyles_RowClasses(),
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_StylePropertyCategory"),
 				 null));
 	}
 
@@ -91,7 +114,7 @@ public class TabularUnitStylesItemProvider extends CollectionUnitStylesItemProvi
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_StylePropertyCategory"),
 				 null));
 	}
 
@@ -114,7 +137,7 @@ public class TabularUnitStylesItemProvider extends CollectionUnitStylesItemProvi
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((TabularUnitStyles)object).getSectionClass();
+		String label = ((TabularUnitStyles)object).getCaptionClass();
 		return label == null || label.length() == 0 ?
 			getString("_UI_TabularUnitStyles_type") :
 			getString("_UI_TabularUnitStyles_type") + " " + label;
@@ -133,8 +156,9 @@ public class TabularUnitStylesItemProvider extends CollectionUnitStylesItemProvi
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(TabularUnitStyles.class)) {
-			case WafPackage.TABULAR_UNIT_STYLES__HEADER_CLASS:
 			case WafPackage.TABULAR_UNIT_STYLES__FOOTER_CLASS:
+			case WafPackage.TABULAR_UNIT_STYLES__HEADER_CLASS:
+			case WafPackage.TABULAR_UNIT_STYLES__ROW_CLASSES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}
