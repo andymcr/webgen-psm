@@ -30,10 +30,12 @@ import work.andycarpenter.metamodel.waf.CollectionUnit;
  *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#hasSearchIcon() <em>Has Search Icon</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#filtersClass() <em>Filters Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#hasFiltersClass() <em>Has Filters Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#filtersControlClass() <em>Filters Control Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#hasFiltersControlClass() <em>Has Filters Control Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#filtersActionClass() <em>Filters Action Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#hasFiltersActionClass() <em>Has Filters Action Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#filtersBodyClass() <em>Filters Body Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#hasFiltersBodyClass() <em>Has Filters Body Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#filtersControlClass() <em>Filters Control Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#hasFiltersControlClass() <em>Has Filters Control Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#instanceControlClass() <em>Instance Control Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#hasInstanceControlClass() <em>Has Instance Control Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#instanceActionClass() <em>Instance Action Class</em>}</li>
@@ -307,6 +309,32 @@ public abstract class CollectionUnitTest extends DynamicUnitTest {
 	 * @generated
 	 */
 	public void testHasFiltersClass() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.CollectionUnit#filtersBodyClass() <em>Filters Body Class</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.CollectionUnit#filtersBodyClass()
+	 * @generated
+	 */
+	public void testFiltersBodyClass() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.CollectionUnit#hasFiltersBodyClass() <em>Has Filters Body Class</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.CollectionUnit#hasFiltersBodyClass()
+	 * @generated
+	 */
+	public void testHasFiltersBodyClass() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

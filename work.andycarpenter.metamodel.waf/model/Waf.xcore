@@ -73,25 +73,25 @@ class WafModel {
 	contains Controller[] controllers opposite partOf
 
 	@GenModel(propertyCategory="Interface")
-	String defaultCancelLabel = ''
+	String defaultCancelLabel = 'Cancel'
 	@GenModel(propertyCategory="Interface")
 	String defaultCancelIcon = ''
 	@GenModel(propertyCategory="Interface")
-	String defaultClearLabel = ''
+	String defaultClearLabel = 'Clear'
 	@GenModel(propertyCategory="Interface")
 	String defaultClearIcon = ''
 	@GenModel(propertyCategory="Interface")
-	String defaultResetLabel = ''
+	String defaultResetLabel = 'Reset'
 	@GenModel(propertyCategory="Interface")
 	String defaultResetIcon = ''
 	@GenModel(propertyCategory="Interface")
-	String defaultSaveLabel = ''
+	String defaultSaveLabel = 'Save'
 	@GenModel(propertyCategory="Interface")
 	String defaultSaveIcon = ''
 	@GenModel(propertyCategory="Interface")
 	String defaultSearchLabel = ''
 	@GenModel(propertyCategory="Interface")
-	String defaultSearchIcon = ''
+	String defaultSearchIcon = 'Search'
 
 	op boolean hasAPI() {
 		api !== null
@@ -276,6 +276,8 @@ abstract class ContentUnitStyles {
 abstract class CollectionStyles extends DynamicUnitStyles {
 	@GenModel(propertyCategory="Style")
 	String filtersClass = ''
+	@GenModel(propertyCategory="Style")
+	String filtersBodyClass = ''
 	@GenModel(propertyCategory="Style")
 	String filtersControlClass = ''
 	@GenModel(propertyCategory="Style")
@@ -1914,13 +1916,15 @@ abstract class CollectionUnit extends DynamicUnit, SelectableUnit, ValueContext 
 	@GenModel(propertyCategory="Style")
 	String[1] filtersClassOverride = ''
 	@GenModel(propertyCategory="Style")
-	String[1] filtersControlClassOverride = ''
-	@GenModel(propertyCategory="Style")
 	String[1] filtersActionClassOverride = ''
 	@GenModel(propertyCategory="Style")
-	String[1] instanceControlClassOverride = ''
+	String[1] filtersBodyClassOverride = ''
+	@GenModel(propertyCategory="Style")
+	String[1] filtersControlClassOverride = ''
 	@GenModel(propertyCategory="Style")
 	String[1] instanceActionClassOverride = ''
+	@GenModel(propertyCategory="Style")
+	String[1] instanceControlClassOverride = ''
 
 	op String filtersClass() {
 		filtersClassOverride.trim()
@@ -1929,18 +1933,25 @@ abstract class CollectionUnit extends DynamicUnit, SelectableUnit, ValueContext 
 		filtersClass() !== ''
 	}
 
-	op String filtersControlClass() {
-		filtersControlClassOverride.trim()
-	}
-	op boolean hasFiltersControlClass() {
-		filtersControlClass() !== ''
-	}
-
 	op String filtersActionClass() {
 		filtersActionClassOverride.trim()
 	}
 	op boolean hasFiltersActionClass() {
 		filtersActionClass() !== ''
+	}
+
+	op String filtersBodyClass() {
+		filtersBodyClassOverride.trim()
+	}
+	op boolean hasFiltersBodyClass() {
+		filtersBodyClass() !== ''
+	}
+
+	op String filtersControlClass() {
+		filtersControlClassOverride.trim()
+	}
+	op boolean hasFiltersControlClass() {
+		filtersControlClass() !== ''
 	}
 
 	op String instanceControlClass() {
@@ -2528,16 +2539,6 @@ class TabularUnit extends CollectionUnit {
 		}
 	}
 
-	op String filtersControlClass() {
-		if (filtersControlClassOverride.trim() !== '') {
-			filtersControlClassOverride.trim()
-		} else if (uiModel().defaultTabularStyles.filtersControlClass.trim() !== '') {
-			uiModel().defaultTabularStyles.filtersControlClass.trim()
-		} else {
-			uiModel().defaultCollectionStyles.filtersControlClass.trim()
-		}
-	}
-
 	op String filtersActionClass() {
 		if (filtersActionClassOverride.trim() !== '') {
 			filtersActionClassOverride.trim()
@@ -2545,6 +2546,26 @@ class TabularUnit extends CollectionUnit {
 			uiModel().defaultTabularStyles.filtersActionClass.trim()
 		} else {
 			uiModel().defaultCollectionStyles.filtersActionClass.trim()
+		}
+	}
+
+	op String filtersBodyClass() {
+		if (filtersBodyClassOverride.trim() !== '') {
+			filtersBodyClassOverride.trim()
+		} else if (uiModel().defaultTabularStyles.filtersBodyClass.trim() !== '') {
+			uiModel().defaultTabularStyles.filtersBodyClass.trim()
+		} else {
+			uiModel().defaultCollectionStyles.filtersBodyClass.trim()
+		}
+	}
+
+	op String filtersControlClass() {
+		if (filtersControlClassOverride.trim() !== '') {
+			filtersControlClassOverride.trim()
+		} else if (uiModel().defaultTabularStyles.filtersControlClass.trim() !== '') {
+			uiModel().defaultTabularStyles.filtersControlClass.trim()
+		} else {
+			uiModel().defaultCollectionStyles.filtersControlClass.trim()
 		}
 	}
 
@@ -2770,16 +2791,6 @@ abstract class CardsUnit extends CollectionUnit {
 		}
 	}
 
-	op String filtersControlClass() {
-		if (filtersControlClassOverride.trim() !== '') {
-			filtersControlClassOverride.trim()
-		} else if (uiModel().defaultCardsStyles.filtersControlClass.trim() !== '') {
-			uiModel().defaultCardsStyles.filtersControlClass.trim()
-		} else {
-			uiModel().defaultCollectionStyles.filtersControlClass.trim()
-		}
-	}
-
 	op String filtersActionClass() {
 		if (filtersActionClassOverride.trim() !== '') {
 			filtersActionClassOverride.trim()
@@ -2787,6 +2798,26 @@ abstract class CardsUnit extends CollectionUnit {
 			uiModel().defaultCardsStyles.filtersActionClass.trim()
 		} else {
 			uiModel().defaultCollectionStyles.filtersActionClass.trim()
+		}
+	}
+
+	op String filtersBodyClass() {
+		if (filtersBodyClassOverride.trim() !== '') {
+			filtersBodyClassOverride.trim()
+		} else if (uiModel().defaultCardsStyles.filtersBodyClass.trim() !== '') {
+			uiModel().defaultCardsStyles.filtersBodyClass.trim()
+		} else {
+			uiModel().defaultCollectionStyles.filtersBodyClass.trim()
+		}
+	}
+
+	op String filtersControlClass() {
+		if (filtersControlClassOverride.trim() !== '') {
+			filtersControlClassOverride.trim()
+		} else if (uiModel().defaultCardsStyles.filtersControlClass.trim() !== '') {
+			uiModel().defaultCardsStyles.filtersControlClass.trim()
+		} else {
+			uiModel().defaultCollectionStyles.filtersControlClass.trim()
 		}
 	}
 

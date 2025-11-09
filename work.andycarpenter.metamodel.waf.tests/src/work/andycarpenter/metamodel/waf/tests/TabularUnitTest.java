@@ -23,8 +23,9 @@ import work.andycarpenter.metamodel.waf.WafFactory;
  *   <li>{@link work.andycarpenter.metamodel.waf.TabularUnit#fieldListClass() <em>Field List Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.TabularUnit#fieldValueClass() <em>Field Value Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.TabularUnit#filtersClass() <em>Filters Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.TabularUnit#filtersControlClass() <em>Filters Control Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.TabularUnit#filtersActionClass() <em>Filters Action Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.TabularUnit#filtersBodyClass() <em>Filters Body Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.TabularUnit#filtersControlClass() <em>Filters Control Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.TabularUnit#footerClass() <em>Footer Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.TabularUnit#hasFooterClass() <em>Has Footer Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.TabularUnit#headerClass() <em>Header Class</em>}</li>
@@ -280,6 +281,19 @@ public class TabularUnitTest extends CollectionUnitTest {
 	 * @generated
 	 */
 	public void testFiltersActionClass() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.TabularUnit#filtersBodyClass() <em>Filters Body Class</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.TabularUnit#filtersBodyClass()
+	 * @generated
+	 */
+	public void testFiltersBodyClass() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

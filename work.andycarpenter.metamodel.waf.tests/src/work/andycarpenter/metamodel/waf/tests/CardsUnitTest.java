@@ -30,8 +30,9 @@ import work.andycarpenter.metamodel.waf.CardsUnit;
  *   <li>{@link work.andycarpenter.metamodel.waf.CardsUnit#fieldListClass() <em>Field List Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.CardsUnit#fieldValueClass() <em>Field Value Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.CardsUnit#filtersClass() <em>Filters Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.CardsUnit#filtersControlClass() <em>Filters Control Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.CardsUnit#filtersActionClass() <em>Filters Action Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.CardsUnit#filtersBodyClass() <em>Filters Body Class</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.CardsUnit#filtersControlClass() <em>Filters Control Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.CardsUnit#instanceActionClass() <em>Instance Action Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.CardsUnit#instanceControlClass() <em>Instance Control Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.CardsUnit#sectionClass() <em>Section Class</em>}</li>
@@ -213,6 +214,19 @@ public abstract class CardsUnitTest extends CollectionUnitTest {
 	 * @generated
 	 */
 	public void testFiltersActionClass() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.CardsUnit#filtersBodyClass() <em>Filters Body Class</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.CardsUnit#filtersBodyClass()
+	 * @generated
+	 */
+	public void testFiltersBodyClass() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

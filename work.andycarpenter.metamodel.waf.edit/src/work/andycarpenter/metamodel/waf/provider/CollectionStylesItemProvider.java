@@ -46,6 +46,7 @@ public class CollectionStylesItemProvider extends DynamicUnitStylesItemProvider 
 			super.getPropertyDescriptors(object);
 
 			addFiltersClassPropertyDescriptor(object);
+			addFiltersBodyClassPropertyDescriptor(object);
 			addFiltersControlClassPropertyDescriptor(object);
 			addFiltersActionClassPropertyDescriptor(object);
 			addInstanceControlClassPropertyDescriptor(object);
@@ -68,6 +69,28 @@ public class CollectionStylesItemProvider extends DynamicUnitStylesItemProvider 
 				 getString("_UI_CollectionStyles_filtersClass_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionStyles_filtersClass_feature", "_UI_CollectionStyles_type"),
 				 WafPackage.eINSTANCE.getCollectionStyles_FiltersClass(),
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_StylePropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Filters Body Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addFiltersBodyClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_CollectionStyles_filtersBodyClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionStyles_filtersBodyClass_feature", "_UI_CollectionStyles_type"),
+				 WafPackage.eINSTANCE.getCollectionStyles_FiltersBodyClass(),
 				 true,
 				 false,
 				 false,
@@ -192,6 +215,7 @@ public class CollectionStylesItemProvider extends DynamicUnitStylesItemProvider 
 
 		switch (notification.getFeatureID(CollectionStyles.class)) {
 			case WafPackage.COLLECTION_STYLES__FILTERS_CLASS:
+			case WafPackage.COLLECTION_STYLES__FILTERS_BODY_CLASS:
 			case WafPackage.COLLECTION_STYLES__FILTERS_CONTROL_CLASS:
 			case WafPackage.COLLECTION_STYLES__FILTERS_ACTION_CLASS:
 			case WafPackage.COLLECTION_STYLES__INSTANCE_CONTROL_CLASS:

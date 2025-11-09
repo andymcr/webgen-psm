@@ -64,10 +64,11 @@ public class CollectionUnitItemProvider extends DynamicUnitItemProvider {
 			addEmptyMessagePropertyDescriptor(object);
 			addOmitFieldLabelsPropertyDescriptor(object);
 			addFiltersClassOverridePropertyDescriptor(object);
-			addFiltersControlClassOverridePropertyDescriptor(object);
 			addFiltersActionClassOverridePropertyDescriptor(object);
-			addInstanceControlClassOverridePropertyDescriptor(object);
+			addFiltersBodyClassOverridePropertyDescriptor(object);
+			addFiltersControlClassOverridePropertyDescriptor(object);
 			addInstanceActionClassOverridePropertyDescriptor(object);
+			addInstanceControlClassOverridePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -469,6 +470,28 @@ public class CollectionUnitItemProvider extends DynamicUnitItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Filters Body Class Override feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addFiltersBodyClassOverridePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_CollectionUnit_filtersBodyClassOverride_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_filtersBodyClassOverride_feature", "_UI_CollectionUnit_type"),
+				 WafPackage.eINSTANCE.getCollectionUnit_FiltersBodyClassOverride(),
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_StylePropertyCategory"),
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Instance Control Class Override feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -580,10 +603,11 @@ public class CollectionUnitItemProvider extends DynamicUnitItemProvider {
 			case WafPackage.COLLECTION_UNIT__EMPTY_MESSAGE:
 			case WafPackage.COLLECTION_UNIT__OMIT_FIELD_LABELS:
 			case WafPackage.COLLECTION_UNIT__FILTERS_CLASS_OVERRIDE:
-			case WafPackage.COLLECTION_UNIT__FILTERS_CONTROL_CLASS_OVERRIDE:
 			case WafPackage.COLLECTION_UNIT__FILTERS_ACTION_CLASS_OVERRIDE:
-			case WafPackage.COLLECTION_UNIT__INSTANCE_CONTROL_CLASS_OVERRIDE:
+			case WafPackage.COLLECTION_UNIT__FILTERS_BODY_CLASS_OVERRIDE:
+			case WafPackage.COLLECTION_UNIT__FILTERS_CONTROL_CLASS_OVERRIDE:
 			case WafPackage.COLLECTION_UNIT__INSTANCE_ACTION_CLASS_OVERRIDE:
+			case WafPackage.COLLECTION_UNIT__INSTANCE_CONTROL_CLASS_OVERRIDE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case WafPackage.COLLECTION_UNIT__ELEMENT_TITLE:
