@@ -1583,9 +1583,14 @@ abstract class UnitFeature extends UnitField, Path, ActionContainer {
 }
 
 class UnitAssociation extends UnitFeature, AssociationPathElement {
+	@GenModel(propertyCategory="Business")
 	refers Selection options
+	@GenModel(propertyCategory="Business")
 	refers Attribute collectionSortBy
+	@GenModel(propertyCategory="Interface")
 	boolean useAutocomplete = "false"
+	@GenModel(propertyCategory="Interface")
+	refers Attribute[] autocompleteKeys
 
  	op boolean isContains() {
 		if (isAssociationField()) {
@@ -1826,6 +1831,9 @@ abstract class CollectionUnit extends DynamicUnit, SelectableUnit, ValueContext 
 	}
 
 	contains CollectionFilter[] filters opposite affects
+
+	@GenModel(propertyCategory="Interface")
+	boolean filtersUseAutoSubmit = 'true'
 
 	op boolean hasCollectionFilters() {
 		!filters.isEmpty()
