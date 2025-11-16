@@ -23,11 +23,17 @@ import work.andycarpenter.metamodel.waf.CollectionUnit;
  *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#hasCustomClearIcon() <em>Has Custom Clear Icon</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#clearIcon() <em>Clear Icon</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#hasClearIcon() <em>Has Clear Icon</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#hasCustomClearTitle() <em>Has Custom Clear Title</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#clearTitle() <em>Clear Title</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#hasClearTitle() <em>Has Clear Title</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#hasCustomSearchLabel() <em>Has Custom Search Label</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#searchLabel() <em>Search Label</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#hasCustomSearchIcon() <em>Has Custom Search Icon</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#searchIcon() <em>Search Icon</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#hasSearchIcon() <em>Has Search Icon</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#hasCustomSearchTitle() <em>Has Custom Search Title</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#searchTitle() <em>Search Title</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#hasSearchTitle() <em>Has Search Title</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#filtersClass() <em>Filters Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#hasFiltersClass() <em>Has Filters Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#filtersActionClass() <em>Filters Action Class</em>}</li>
@@ -133,6 +139,45 @@ public abstract class CollectionUnitTest extends DynamicUnitTest {
 	}
 
 	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.CollectionUnit#hasCustomClearTitle() <em>Has Custom Clear Title</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.CollectionUnit#hasCustomClearTitle()
+	 * @generated
+	 */
+	public void testHasCustomClearTitle() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.CollectionUnit#clearTitle() <em>Clear Title</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.CollectionUnit#clearTitle()
+	 * @generated
+	 */
+	public void testClearTitle() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.CollectionUnit#hasClearTitle() <em>Has Clear Title</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.CollectionUnit#hasClearTitle()
+	 * @generated
+	 */
+	public void testHasClearTitle() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
 	 * Tests the '{@link work.andycarpenter.metamodel.waf.CollectionUnit#hasCustomSearchLabel() <em>Has Custom Search Label</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -192,6 +237,45 @@ public abstract class CollectionUnitTest extends DynamicUnitTest {
 	 * @generated
 	 */
 	public void testHasSearchIcon() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.CollectionUnit#hasCustomSearchTitle() <em>Has Custom Search Title</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.CollectionUnit#hasCustomSearchTitle()
+	 * @generated
+	 */
+	public void testHasCustomSearchTitle() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.CollectionUnit#searchTitle() <em>Search Title</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.CollectionUnit#searchTitle()
+	 * @generated
+	 */
+	public void testSearchTitle() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.CollectionUnit#hasSearchTitle() <em>Has Search Title</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.CollectionUnit#hasSearchTitle()
+	 * @generated
+	 */
+	public void testHasSearchTitle() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

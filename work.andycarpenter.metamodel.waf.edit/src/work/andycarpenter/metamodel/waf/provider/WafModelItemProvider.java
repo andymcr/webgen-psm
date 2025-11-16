@@ -68,14 +68,19 @@ public class WafModelItemProvider
 			addApiPropertyDescriptor(object);
 			addDefaultCancelLabelPropertyDescriptor(object);
 			addDefaultCancelIconPropertyDescriptor(object);
+			addDefaultCancelTitlePropertyDescriptor(object);
 			addDefaultClearLabelPropertyDescriptor(object);
 			addDefaultClearIconPropertyDescriptor(object);
+			addDefaultClearTitlePropertyDescriptor(object);
 			addDefaultResetLabelPropertyDescriptor(object);
 			addDefaultResetIconPropertyDescriptor(object);
+			addDefaultResetTitlePropertyDescriptor(object);
 			addDefaultSaveLabelPropertyDescriptor(object);
+			addDefaultSaveTitlePropertyDescriptor(object);
 			addDefaultSaveIconPropertyDescriptor(object);
 			addDefaultSearchLabelPropertyDescriptor(object);
 			addDefaultSearchIconPropertyDescriptor(object);
+			addDefaultSearchTitlePropertyDescriptor(object);
 			addEditUnitsPropertyDescriptor(object);
 			addFormUnitsPropertyDescriptor(object);
 			addCollectionUnitsWithFiltersPropertyDescriptor(object);
@@ -223,6 +228,28 @@ public class WafModelItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Default Cancel Title feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDefaultCancelTitlePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_WafModel_defaultCancelTitle_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WafModel_defaultCancelTitle_feature", "_UI_WafModel_type"),
+				 WafPackage.eINSTANCE.getWafModel_DefaultCancelTitle(),
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_InterfacePropertyCategory"),
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Default Clear Label feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -258,6 +285,28 @@ public class WafModelItemProvider
 				 getString("_UI_WafModel_defaultClearIcon_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_WafModel_defaultClearIcon_feature", "_UI_WafModel_type"),
 				 WafPackage.eINSTANCE.getWafModel_DefaultClearIcon(),
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_InterfacePropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Default Clear Title feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDefaultClearTitlePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_WafModel_defaultClearTitle_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WafModel_defaultClearTitle_feature", "_UI_WafModel_type"),
+				 WafPackage.eINSTANCE.getWafModel_DefaultClearTitle(),
 				 true,
 				 false,
 				 false,
@@ -311,6 +360,28 @@ public class WafModelItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Default Reset Title feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDefaultResetTitlePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_WafModel_defaultResetTitle_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WafModel_defaultResetTitle_feature", "_UI_WafModel_type"),
+				 WafPackage.eINSTANCE.getWafModel_DefaultResetTitle(),
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_InterfacePropertyCategory"),
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Default Save Label feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -324,6 +395,28 @@ public class WafModelItemProvider
 				 getString("_UI_WafModel_defaultSaveLabel_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_WafModel_defaultSaveLabel_feature", "_UI_WafModel_type"),
 				 WafPackage.eINSTANCE.getWafModel_DefaultSaveLabel(),
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_InterfacePropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Default Save Title feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDefaultSaveTitlePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_WafModel_defaultSaveTitle_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WafModel_defaultSaveTitle_feature", "_UI_WafModel_type"),
+				 WafPackage.eINSTANCE.getWafModel_DefaultSaveTitle(),
 				 true,
 				 false,
 				 false,
@@ -390,6 +483,28 @@ public class WafModelItemProvider
 				 getString("_UI_WafModel_defaultSearchIcon_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_WafModel_defaultSearchIcon_feature", "_UI_WafModel_type"),
 				 WafPackage.eINSTANCE.getWafModel_DefaultSearchIcon(),
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_InterfacePropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Default Search Title feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDefaultSearchTitlePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_WafModel_defaultSearchTitle_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WafModel_defaultSearchTitle_feature", "_UI_WafModel_type"),
+				 WafPackage.eINSTANCE.getWafModel_DefaultSearchTitle(),
 				 true,
 				 false,
 				 false,
@@ -699,14 +814,19 @@ public class WafModelItemProvider
 		switch (notification.getFeatureID(WafModel.class)) {
 			case WafPackage.WAF_MODEL__DEFAULT_CANCEL_LABEL:
 			case WafPackage.WAF_MODEL__DEFAULT_CANCEL_ICON:
+			case WafPackage.WAF_MODEL__DEFAULT_CANCEL_TITLE:
 			case WafPackage.WAF_MODEL__DEFAULT_CLEAR_LABEL:
 			case WafPackage.WAF_MODEL__DEFAULT_CLEAR_ICON:
+			case WafPackage.WAF_MODEL__DEFAULT_CLEAR_TITLE:
 			case WafPackage.WAF_MODEL__DEFAULT_RESET_LABEL:
 			case WafPackage.WAF_MODEL__DEFAULT_RESET_ICON:
+			case WafPackage.WAF_MODEL__DEFAULT_RESET_TITLE:
 			case WafPackage.WAF_MODEL__DEFAULT_SAVE_LABEL:
+			case WafPackage.WAF_MODEL__DEFAULT_SAVE_TITLE:
 			case WafPackage.WAF_MODEL__DEFAULT_SAVE_ICON:
 			case WafPackage.WAF_MODEL__DEFAULT_SEARCH_LABEL:
 			case WafPackage.WAF_MODEL__DEFAULT_SEARCH_ICON:
+			case WafPackage.WAF_MODEL__DEFAULT_SEARCH_TITLE:
 			case WafPackage.WAF_MODEL__IS_AUTHENTICATED:
 			case WafPackage.WAF_MODEL__USE_FORM_FLOATING_LABELS:
 			case WafPackage.WAF_MODEL__DEFAULT_PAGE_CLASS:

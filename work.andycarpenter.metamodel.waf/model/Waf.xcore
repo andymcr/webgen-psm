@@ -77,21 +77,31 @@ class WafModel {
 	@GenModel(propertyCategory="Interface")
 	String defaultCancelIcon = ''
 	@GenModel(propertyCategory="Interface")
+	String defaultCancelTitle = ''
+	@GenModel(propertyCategory="Interface")
 	String defaultClearLabel = 'Clear'
 	@GenModel(propertyCategory="Interface")
 	String defaultClearIcon = ''
+	@GenModel(propertyCategory="Interface")
+	String defaultClearTitle = ''
 	@GenModel(propertyCategory="Interface")
 	String defaultResetLabel = 'Reset'
 	@GenModel(propertyCategory="Interface")
 	String defaultResetIcon = ''
 	@GenModel(propertyCategory="Interface")
+	String defaultResetTitle = ''
+	@GenModel(propertyCategory="Interface")
 	String defaultSaveLabel = 'Save'
+	@GenModel(propertyCategory="Interface")
+	String defaultSaveTitle = ''
 	@GenModel(propertyCategory="Interface")
 	String defaultSaveIcon = ''
 	@GenModel(propertyCategory="Interface")
 	String defaultSearchLabel = ''
 	@GenModel(propertyCategory="Interface")
 	String defaultSearchIcon = 'Search'
+	@GenModel(propertyCategory="Interface")
+	String defaultSearchTitle = 'Search'
 
 	op boolean hasAPI() {
 		api !== null
@@ -1852,9 +1862,13 @@ abstract class CollectionUnit extends DynamicUnit, SelectableUnit, ValueContext 
 	@GenModel(propertyCategory="Interface")
 	String clearIconOverride = ''
 	@GenModel(propertyCategory="Interface")
+	String clearTitleOverride = ''
+	@GenModel(propertyCategory="Interface")
 	String searchLabelOverride = ''
 	@GenModel(propertyCategory="Interface")
 	String searchIconOverride = ''
+	@GenModel(propertyCategory="Interface")
+	String searchTitleOverride = ''
 
 	op boolean hasCustomClearLabel() {
 		clearLabelOverride.trim() !== ''
@@ -1886,6 +1900,22 @@ abstract class CollectionUnit extends DynamicUnit, SelectableUnit, ValueContext 
 		|| controller.partOf.defaultClearIcon.trim() !== ''
 	}
 
+	op boolean hasCustomClearTitle() {
+		clearTitleOverride.trim() !== ''
+		&& clearTitleOverride.trim() !== controller.partOf.defaultClearTitle.trim()
+	}
+	op String clearTitle() {
+		if (hasCustomClearTitle()) {
+			clearTitleOverride.trim()
+		} else {
+			controller.partOf.defaultClearTitle.trim()
+		} 
+	}
+	op boolean hasClearTitle() {
+		clearTitleOverride.trim() !== ''
+		|| controller.partOf.defaultClearTitle.trim() !== ''
+	}
+
 	op boolean hasCustomSearchLabel() {
 		searchLabelOverride.trim() !== ''
 		&& searchLabelOverride.trim() !== controller.partOf.defaultSearchLabel.trim()
@@ -1914,6 +1944,22 @@ abstract class CollectionUnit extends DynamicUnit, SelectableUnit, ValueContext 
 	op boolean hasSearchIcon() {
 		searchIconOverride.trim() !== ''
 		|| controller.partOf.defaultSearchIcon.trim() !== ''
+	}
+
+	op boolean hasCustomSearchTitle() {
+		searchTitleOverride.trim() !== ''
+		&& searchTitleOverride.trim() !== controller.partOf.defaultSearchTitle.trim()
+	}
+	op String searchTitle() {
+		if (hasCustomSearchTitle()) {
+			searchTitleOverride.trim()
+		} else {
+			controller.partOf.defaultSearchTitle.trim()
+		} 
+	}
+	op boolean hasSearchTitle() {
+		searchTitleOverride.trim() !== ''
+		|| controller.partOf.defaultSearchTitle.trim() !== ''
 	}
 
 	@GenModel(propertyCategory="Interface")
@@ -2087,13 +2133,19 @@ abstract class EditUnit extends SingletonUnit {
 	@GenModel(propertyCategory="Interface")
 	String cancelIconOverride = ''
 	@GenModel(propertyCategory="Interface")
+	String cancelTitleOverride = ''
+	@GenModel(propertyCategory="Interface")
 	String resetLabelOverride = ''
 	@GenModel(propertyCategory="Interface")
 	String resetIconOverride = ''
 	@GenModel(propertyCategory="Interface")
+	String resetTitleOverride = ''
+	@GenModel(propertyCategory="Interface")
 	String[1] saveLabelOverride = ''
 	@GenModel(propertyCategory="Interface")
 	String saveIconOverride = ''
+	@GenModel(propertyCategory="Interface")
+	String saveTitleOverride = ''
 
 	op boolean hasCustomCancelLabel() {
 		cancelLabelOverride.trim() !== ''
@@ -2123,6 +2175,22 @@ abstract class EditUnit extends SingletonUnit {
 		|| controller.partOf.defaultCancelIcon.trim() !== ''
 	}
 
+	op boolean hasCustomCancelTitle() {
+		cancelTitleOverride.trim() !== ''
+		&& cancelTitleOverride.trim() !== controller.partOf.defaultCancelTitle.trim()
+	}
+	op String cancelTitle() {
+		if (hasCustomCancelTitle()) {
+			cancelTitleOverride.trim()
+		} else {
+			controller.partOf.defaultCancelTitle.trim()
+		} 
+	}
+	op boolean hasCancelTitle() {
+		cancelTitleOverride.trim() !== ''
+		|| controller.partOf.defaultCancelTitle.trim() !== ''
+	}
+
 	op boolean hasCustomResetLabel() {
 		resetLabelOverride.trim() !== ''
 		&& resetLabelOverride.trim() !== controller.partOf.defaultResetLabel.trim()
@@ -2149,6 +2217,22 @@ abstract class EditUnit extends SingletonUnit {
 	op boolean hasResetIcon() {
 		resetIconOverride.trim() !== ''
 		|| controller.partOf.defaultResetIcon.trim() !== ''
+	}
+
+	op boolean hasCustomResetTitle() {
+		resetTitleOverride.trim() !== ''
+		&& resetTitleOverride.trim() !== controller.partOf.defaultResetTitle.trim()
+	}
+	op String resetTitle() {
+		if (hasCustomResetTitle()) {
+			resetTitleOverride.trim()
+		} else {
+			controller.partOf.defaultResetTitle.trim()
+		} 
+	}
+	op boolean hasResetTitle() {
+		resetTitleOverride.trim() !== ''
+		|| controller.partOf.defaultResetTitle.trim() !== ''
 	}
 
 	op boolean hasCustomSaveLabel() {
@@ -2189,6 +2273,22 @@ abstract class EditUnit extends SingletonUnit {
 	op boolean hasSaveIcon() {
 		saveIconOverride.trim() !== ''
 		|| controller.partOf.defaultSaveIcon.trim() !== ''
+	}
+
+	op boolean hasCustomSaveTitle() {
+		saveTitleOverride.trim() !== ''
+		&& saveTitleOverride.trim() !== controller.partOf.defaultSaveTitle.trim()
+	}
+	op String saveTitle() {
+		if (hasCustomSaveTitle()) {
+			saveTitleOverride.trim()
+		} else {
+			controller.partOf.defaultSaveTitle.trim()
+		} 
+	}
+	op boolean hasSaveTitle() {
+		saveTitleOverride.trim() !== ''
+		|| controller.partOf.defaultSaveTitle.trim() !== ''
 	}
 
 

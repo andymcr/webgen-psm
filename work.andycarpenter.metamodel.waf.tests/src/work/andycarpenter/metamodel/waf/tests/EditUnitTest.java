@@ -16,16 +16,25 @@ import work.andycarpenter.metamodel.waf.EditUnit;
  *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#hasCustomCancelIcon() <em>Has Custom Cancel Icon</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#cancelIcon() <em>Cancel Icon</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#hasCancelIcon() <em>Has Cancel Icon</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#hasCustomCancelTitle() <em>Has Custom Cancel Title</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#cancelTitle() <em>Cancel Title</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#hasCancelTitle() <em>Has Cancel Title</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#hasCustomResetLabel() <em>Has Custom Reset Label</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#resetLabel() <em>Reset Label</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#hasCustomResetIcon() <em>Has Custom Reset Icon</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#resetIcon() <em>Reset Icon</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#hasResetIcon() <em>Has Reset Icon</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#hasCustomResetTitle() <em>Has Custom Reset Title</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#resetTitle() <em>Reset Title</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#hasResetTitle() <em>Has Reset Title</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#hasCustomSaveLabel() <em>Has Custom Save Label</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#saveLabel() <em>Save Label</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#hasCustomSaveIcon() <em>Has Custom Save Icon</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#saveIcon() <em>Save Icon</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#hasSaveIcon() <em>Has Save Icon</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#hasCustomSaveTitle() <em>Has Custom Save Title</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#saveTitle() <em>Save Title</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#hasSaveTitle() <em>Has Save Title</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#hasConfirmMessage() <em>Has Confirm Message</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#hasSuccessMessage() <em>Has Success Message</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#hasMessages() <em>Has Messages</em>}</li>
@@ -133,6 +142,45 @@ public abstract class EditUnitTest extends SingletonUnitTest {
 	}
 
 	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.EditUnit#hasCustomSaveTitle() <em>Has Custom Save Title</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.EditUnit#hasCustomSaveTitle()
+	 * @generated
+	 */
+	public void testHasCustomSaveTitle() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.EditUnit#saveTitle() <em>Save Title</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.EditUnit#saveTitle()
+	 * @generated
+	 */
+	public void testSaveTitle() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.EditUnit#hasSaveTitle() <em>Has Save Title</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.EditUnit#hasSaveTitle()
+	 * @generated
+	 */
+	public void testHasSaveTitle() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
 	 * Tests the '{@link work.andycarpenter.metamodel.waf.EditUnit#hasCustomCancelLabel() <em>Has Custom Cancel Label</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -198,6 +246,45 @@ public abstract class EditUnitTest extends SingletonUnitTest {
 	}
 
 	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.EditUnit#hasCustomCancelTitle() <em>Has Custom Cancel Title</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.EditUnit#hasCustomCancelTitle()
+	 * @generated
+	 */
+	public void testHasCustomCancelTitle() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.EditUnit#cancelTitle() <em>Cancel Title</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.EditUnit#cancelTitle()
+	 * @generated
+	 */
+	public void testCancelTitle() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.EditUnit#hasCancelTitle() <em>Has Cancel Title</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.EditUnit#hasCancelTitle()
+	 * @generated
+	 */
+	public void testHasCancelTitle() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
 	 * Tests the '{@link work.andycarpenter.metamodel.waf.EditUnit#hasCustomResetLabel() <em>Has Custom Reset Label</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -257,6 +344,45 @@ public abstract class EditUnitTest extends SingletonUnitTest {
 	 * @generated
 	 */
 	public void testHasResetIcon() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.EditUnit#hasCustomResetTitle() <em>Has Custom Reset Title</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.EditUnit#hasCustomResetTitle()
+	 * @generated
+	 */
+	public void testHasCustomResetTitle() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.EditUnit#resetTitle() <em>Reset Title</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.EditUnit#resetTitle()
+	 * @generated
+	 */
+	public void testResetTitle() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.EditUnit#hasResetTitle() <em>Has Reset Title</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.EditUnit#hasResetTitle()
+	 * @generated
+	 */
+	public void testHasResetTitle() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
