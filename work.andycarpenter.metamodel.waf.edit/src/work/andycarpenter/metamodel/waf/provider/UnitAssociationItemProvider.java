@@ -5,7 +5,10 @@ package work.andycarpenter.metamodel.waf.provider;
 
 import java.util.Collection;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
+
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EStructuralFeature;
@@ -13,6 +16,9 @@ import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+
+import work.andycarpenter.metamodel.orm.Attribute;
+import work.andycarpenter.metamodel.orm.Entity;
 import work.andycarpenter.metamodel.orm.OrmFactory;
 import work.andycarpenter.metamodel.orm.OrmPackage;
 import work.andycarpenter.metamodel.waf.UnitAssociation;
@@ -184,22 +190,41 @@ public class UnitAssociationItemProvider extends UnitFeatureItemProvider {
 	 * This adds a property descriptor for the Autocomplete Keys feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected void addAutocompleteKeysPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_UnitAssociation_autocompleteKeys_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UnitAssociation_autocompleteKeys_feature", "_UI_UnitAssociation_type"),
-				 WafPackage.eINSTANCE.getUnitAssociation_AutocompleteKeys(),
-				 true,
-				 false,
-				 true,
-				 null,
-				 getString("_UI_InterfacePropertyCategory"),
-				 null));
+		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
+			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+			getResourceLocator(),
+			getString("_UI_UnitAssociation_autocompleteKeys_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_UnitAssociation_autocompleteKeys_feature", "_UI_UnitAssociation_type"),
+			WafPackage.eINSTANCE.getUnitAssociation_AutocompleteKeys(),
+			true, false, true, null,
+			getString("_UI_InterfacePropertyCategory"),
+			null) {
+				@Override
+				public Collection<?> getChoiceOfValues(Object object) {
+					if (object instanceof UnitAssociation) {
+						final UnitAssociation association = (UnitAssociation) object;
+						if (association.associationTarget() != null) {
+							final Entity target = association.associationTarget();
+							return containedAttributes(target);
+						}
+					}
+
+					return Collections.emptyList();
+				}
+			});
+	}
+
+	protected Set<Attribute> containedAttributes(final Entity type) {
+		final Set<Attribute> attributes = new HashSet<Attribute>();
+		attributes.addAll(type.getAttributes());
+		if (type.getContainingAssociation() != null) {
+			attributes.addAll(containedAttributes(type.getContainingType()));
+		}
+
+		return attributes;
 	}
 
 	/**
