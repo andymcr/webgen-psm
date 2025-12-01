@@ -45,34 +45,11 @@ public class TabularUnitItemProvider extends CollectionUnitItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addTargettingSearchesPropertyDescriptor(object);
 			addFooterClassOverridePropertyDescriptor(object);
 			addHeaderClassOverridePropertyDescriptor(object);
 			addRowClassesOverridePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Targetting Searches feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addTargettingSearchesPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_TabularUnit_targettingSearches_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_TabularUnit_targettingSearches_feature", "_UI_TabularUnit_type"),
-				 WafPackage.eINSTANCE.getTabularUnit_TargettingSearches(),
-				 true,
-				 false,
-				 true,
-				 null,
-				 getString("_UI_DebugPropertyCategory"),
-				 null));
 	}
 
 	/**

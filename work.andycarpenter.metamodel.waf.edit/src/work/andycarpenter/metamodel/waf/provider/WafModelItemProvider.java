@@ -83,7 +83,7 @@ public class WafModelItemProvider
 			addDefaultSearchTitlePropertyDescriptor(object);
 			addEditUnitsPropertyDescriptor(object);
 			addFormUnitsPropertyDescriptor(object);
-			addCollectionUnitsWithFiltersPropertyDescriptor(object);
+			addCollectionUnitsPropertyDescriptor(object);
 			addImageUnitsPropertyDescriptor(object);
 			addImageCardsUnitsPropertyDescriptor(object);
 			addAutocompleteFieldsPropertyDescriptor(object);
@@ -558,19 +558,19 @@ public class WafModelItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Collection Units With Filters feature.
+	 * This adds a property descriptor for the Collection Units feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addCollectionUnitsWithFiltersPropertyDescriptor(Object object) {
+	protected void addCollectionUnitsPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_WafModel_collectionUnitsWithFilters_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafModel_collectionUnitsWithFilters_feature", "_UI_WafModel_type"),
-				 WafPackage.eINSTANCE.getWafModel_CollectionUnitsWithFilters(),
+				 getString("_UI_WafModel_collectionUnits_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WafModel_collectionUnits_feature", "_UI_WafModel_type"),
+				 WafPackage.eINSTANCE.getWafModel_CollectionUnits(),
 				 false,
 				 false,
 				 false,

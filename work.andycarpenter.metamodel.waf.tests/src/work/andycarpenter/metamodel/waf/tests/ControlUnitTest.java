@@ -11,6 +11,7 @@ import work.andycarpenter.metamodel.waf.ControlUnit;
  * <p>
  * The following operations are tested:
  * <ul>
+ *   <li>{@link work.andycarpenter.metamodel.waf.ControlUnit#isFormUnit() <em>Is Form Unit</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.ControlUnit#actionClass() <em>Action Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.ControlUnit#captionClass() <em>Caption Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.ControlUnit#contentClass() <em>Content Class</em>}</li>
@@ -45,6 +46,19 @@ public abstract class ControlUnitTest extends DynamicUnitTest {
 	@Override
 	protected ControlUnit getFixture() {
 		return (ControlUnit)fixture;
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.ControlUnit#isFormUnit() <em>Is Form Unit</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.ControlUnit#isFormUnit()
+	 * @generated
+	 */
+	public void testIsFormUnit() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
 	}
 
 	/**

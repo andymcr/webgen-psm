@@ -48,7 +48,6 @@ public class CollectionStylesItemProvider extends DynamicUnitStylesItemProvider 
 			addFiltersClassPropertyDescriptor(object);
 			addFiltersBodyClassPropertyDescriptor(object);
 			addFiltersControlClassPropertyDescriptor(object);
-			addFiltersActionClassPropertyDescriptor(object);
 			addInstanceControlClassPropertyDescriptor(object);
 			addInstanceActionClassPropertyDescriptor(object);
 		}
@@ -113,28 +112,6 @@ public class CollectionStylesItemProvider extends DynamicUnitStylesItemProvider 
 				 getString("_UI_CollectionStyles_filtersControlClass_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionStyles_filtersControlClass_feature", "_UI_CollectionStyles_type"),
 				 WafPackage.eINSTANCE.getCollectionStyles_FiltersControlClass(),
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 getString("_UI_StylePropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Filters Action Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addFiltersActionClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_CollectionStyles_filtersActionClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionStyles_filtersActionClass_feature", "_UI_CollectionStyles_type"),
-				 WafPackage.eINSTANCE.getCollectionStyles_FiltersActionClass(),
 				 true,
 				 false,
 				 false,
@@ -217,7 +194,6 @@ public class CollectionStylesItemProvider extends DynamicUnitStylesItemProvider 
 			case WafPackage.COLLECTION_STYLES__FILTERS_CLASS:
 			case WafPackage.COLLECTION_STYLES__FILTERS_BODY_CLASS:
 			case WafPackage.COLLECTION_STYLES__FILTERS_CONTROL_CLASS:
-			case WafPackage.COLLECTION_STYLES__FILTERS_ACTION_CLASS:
 			case WafPackage.COLLECTION_STYLES__INSTANCE_CONTROL_CLASS:
 			case WafPackage.COLLECTION_STYLES__INSTANCE_ACTION_CLASS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));

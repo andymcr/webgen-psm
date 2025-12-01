@@ -55,7 +55,6 @@ public class ContentUnitItemProvider extends NamedDisplayElementItemProvider {
 			addPurposeSummaryPropertyDescriptor(object);
 			addAlternativePropertyDescriptor(object);
 			addOmitCaptionPropertyDescriptor(object);
-			addIsFormUnitPropertyDescriptor(object);
 			addCaptionClassOverridePropertyDescriptor(object);
 			addContentClassOverridePropertyDescriptor(object);
 			addSectionClassOverridePropertyDescriptor(object);
@@ -196,28 +195,6 @@ public class ContentUnitItemProvider extends NamedDisplayElementItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Is Form Unit feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addIsFormUnitPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ContentUnit_isFormUnit_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ContentUnit_isFormUnit_feature", "_UI_ContentUnit_type"),
-				 WafPackage.eINSTANCE.getContentUnit_IsFormUnit(),
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_DebugPropertyCategory"),
-				 null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Section Class Override feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -344,7 +321,6 @@ public class ContentUnitItemProvider extends NamedDisplayElementItemProvider {
 			case WafPackage.CONTENT_UNIT__PURPOSE_SUMMARY:
 			case WafPackage.CONTENT_UNIT__ALTERNATIVE:
 			case WafPackage.CONTENT_UNIT__OMIT_CAPTION:
-			case WafPackage.CONTENT_UNIT__IS_FORM_UNIT:
 			case WafPackage.CONTENT_UNIT__CAPTION_CLASS_OVERRIDE:
 			case WafPackage.CONTENT_UNIT__CONTENT_CLASS_OVERRIDE:
 			case WafPackage.CONTENT_UNIT__SECTION_CLASS_OVERRIDE:

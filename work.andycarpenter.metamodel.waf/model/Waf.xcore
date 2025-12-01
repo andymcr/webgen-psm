@@ -123,9 +123,9 @@ class WafModel {
 		!formUnits.isEmpty()
 	}
 
-	@OCL(derivation="controllers->collect(c | c.collectionUnitsWithFilters())->asOrderedSet()")
+	@OCL(derivation="controllers->collect(c | c.collectionUnits())->asOrderedSet()")
     @GenModel(propertyCategory="Debug")
-	refers derived readonly unsettable transient volatile CollectionUnit[] collectionUnitsWithFilters
+	refers derived readonly unsettable transient volatile CollectionUnit[] collectionUnits
 
 	@OCL(derivation="controllers->collect(c | c.imageUnits())->asOrderedSet()")
     @GenModel(propertyCategory="Debug")
@@ -291,8 +291,6 @@ abstract class CollectionStyles extends DynamicUnitStyles {
 	@GenModel(propertyCategory="Style")
 	String filtersControlClass = ''
 	@GenModel(propertyCategory="Style")
-	String filtersActionClass = ''
-	@GenModel(propertyCategory="Style")
 	String instanceControlClass = ''
 	@GenModel(propertyCategory="Style")
 	String instanceActionClass = ''
@@ -446,6 +444,14 @@ abstract class Controller extends NamedDisplayElement {
 		!collectionUnits().isEmpty()
 	}
 
+	op CollectionUnit[] collectionUnitsWithFilters() {
+		collectionUnits().filter[it.hasCollectionFilters()].toEList()
+	}
+
+	op boolean hasCollectionFilters() {
+		!collectionUnitsWithFilters().isEmpty()
+	}
+
 	op DynamicUnit[] dynamicUnits() {
 		units.filter[it instanceof DynamicUnit].map[it as DynamicUnit].toEList()
 	}
@@ -465,22 +471,6 @@ abstract class Controller extends NamedDisplayElement {
 	}
 	op boolean hasFormUnits() {
 		!formUnits().isEmpty()
-	}
-
-	op CollectionUnit[] collectionUnitsWithFilters() {
-		collectionUnits().filter[it.hasCollectionFilters()].toEList()
-	}
-
-	op boolean hasCollectionFilters() {
-		!collectionUnitsWithFilters().isEmpty()
-	}
-
-	op boolean hasNumericFilters() {
-		collectionUnits().exists[u | u.hasNumericFilters]
-	}
-
-	op boolean hasTextFilters() {
-		collectionUnits().exists[u | u.hasTextFilters]
 	}
 
 	op GalleryUnit[] galleryUnits() {
@@ -657,9 +647,9 @@ abstract class ContentUnit extends NamedDisplayElement {
 	String alternative
 	boolean omitCaption
 
-	@OCL(derivation="self.oclIsKindOf(EditUnit) or self.oclIsKindOf(ControlUnit)")
-    @GenModel(propertyCategory="Debug")
-	derived readonly transient volatile boolean isFormUnit
+	op boolean isFormUnit() {
+		false
+	}
 
 	@GenModel(propertyCategory="Style")
 	String captionClassOverride = ''
@@ -1776,6 +1766,8 @@ class SingletonUnit extends DynamicUnit {
 }
 
 abstract class CollectionUnit extends DynamicUnit, SelectableUnit, ValueContext {
+	refers SearchUnit targettingSearches opposite resultsDestination
+
 	@GenModel(propertyCategory="Interface")
 	refers Label unitTitle
 	contains DisplayValue elementTitle
@@ -1849,26 +1841,12 @@ abstract class CollectionUnit extends DynamicUnit, SelectableUnit, ValueContext 
 		!filters.isEmpty()
 	}
 
-	op boolean hasNumericFilters() {
-		!filters.filter[it instanceof NumericFilter].isEmpty()
-	}
-
-	op boolean hasTextFilters() {
-		!filters.filter[it instanceof TextFilter].isEmpty()
-	}
-
 	@GenModel(propertyCategory="Interface")
 	String clearLabelOverride = ''
 	@GenModel(propertyCategory="Interface")
 	String clearIconOverride = ''
 	@GenModel(propertyCategory="Interface")
 	String clearTitleOverride = ''
-	@GenModel(propertyCategory="Interface")
-	String searchLabelOverride = ''
-	@GenModel(propertyCategory="Interface")
-	String searchIconOverride = ''
-	@GenModel(propertyCategory="Interface")
-	String searchTitleOverride = ''
 
 	op boolean hasCustomClearLabel() {
 		clearLabelOverride.trim() !== ''
@@ -1916,52 +1894,6 @@ abstract class CollectionUnit extends DynamicUnit, SelectableUnit, ValueContext 
 		|| controller.partOf.defaultClearTitle.trim() !== ''
 	}
 
-	op boolean hasCustomSearchLabel() {
-		searchLabelOverride.trim() !== ''
-		&& searchLabelOverride.trim() !== controller.partOf.defaultSearchLabel.trim()
-	}
-	op String searchLabel() {
-		if (hasCustomSearchLabel()) {
-			searchLabelOverride.trim()
-		} else if (controller.partOf.defaultSearchLabel.trim() !== '') {
-			controller.partOf.defaultSearchLabel.trim()
-		} else {
-			'Search'
-		} 
-	}
-
-	op boolean hasCustomSearchIcon() {
-		searchIconOverride.trim() !== ''
-		&& searchIconOverride.trim() !== controller.partOf.defaultSearchIcon.trim()
-	}
-	op String searchIcon() {
-		if (hasCustomSearchIcon()) {
-			searchIconOverride.trim()
-		} else {
-			controller.partOf.defaultSearchIcon.trim()
-		} 
-	}
-	op boolean hasSearchIcon() {
-		searchIconOverride.trim() !== ''
-		|| controller.partOf.defaultSearchIcon.trim() !== ''
-	}
-
-	op boolean hasCustomSearchTitle() {
-		searchTitleOverride.trim() !== ''
-		&& searchTitleOverride.trim() !== controller.partOf.defaultSearchTitle.trim()
-	}
-	op String searchTitle() {
-		if (hasCustomSearchTitle()) {
-			searchTitleOverride.trim()
-		} else {
-			controller.partOf.defaultSearchTitle.trim()
-		} 
-	}
-	op boolean hasSearchTitle() {
-		searchTitleOverride.trim() !== ''
-		|| controller.partOf.defaultSearchTitle.trim() !== ''
-	}
-
 	@GenModel(propertyCategory="Interface")
 	String emptyMessage = ''
 	@GenModel(propertyCategory="Interface")
@@ -1969,8 +1901,6 @@ abstract class CollectionUnit extends DynamicUnit, SelectableUnit, ValueContext 
 
 	@GenModel(propertyCategory="Style")
 	String[1] filtersClassOverride = ''
-	@GenModel(propertyCategory="Style")
-	String[1] filtersActionClassOverride = ''
 	@GenModel(propertyCategory="Style")
 	String[1] filtersBodyClassOverride = ''
 	@GenModel(propertyCategory="Style")
@@ -1985,13 +1915,6 @@ abstract class CollectionUnit extends DynamicUnit, SelectableUnit, ValueContext 
 	}
 	op boolean hasFiltersClass() {
 		filtersClass() !== ''
-	}
-
-	op String filtersActionClass() {
-		filtersActionClassOverride.trim()
-	}
-	op boolean hasFiltersActionClass() {
-		filtersActionClass() !== ''
 	}
 
 	op String filtersBodyClass() {
@@ -2127,6 +2050,10 @@ abstract class EditUnit extends SingletonUnit {
 	refers ContentUnit confirmDestination
 	@GenModel(propertyCategory="Model")
 	refers ContentUnit cancelDestination
+
+	op boolean isFormUnit() {
+		true
+	}
 
 	@GenModel(propertyCategory="Interface")
 	String cancelLabelOverride = ''
@@ -2532,7 +2459,6 @@ class DetailsUnit extends SingletonUnit, SelectableUnit {
 
 class TabularUnit extends CollectionUnit {
 	@GenModel(propertyCategory="Debug")
-	refers SearchUnit targettingSearches opposite resultsDestination
 
 	@GenModel(propertyCategory="Style")
 	String footerClassOverride = ''
@@ -2644,16 +2570,6 @@ class TabularUnit extends CollectionUnit {
 			uiModel().defaultTabularStyles.filtersClass.trim()
 		} else {
 			uiModel().defaultCollectionStyles.filtersClass.trim()
-		}
-	}
-
-	op String filtersActionClass() {
-		if (filtersActionClassOverride.trim() !== '') {
-			filtersActionClassOverride.trim()
-		} else if (uiModel().defaultTabularStyles.filtersActionClass.trim() !== '') {
-			uiModel().defaultTabularStyles.filtersActionClass.trim()
-		} else {
-			uiModel().defaultCollectionStyles.filtersActionClass.trim()
 		}
 	}
 
@@ -2899,16 +2815,6 @@ abstract class CardsUnit extends CollectionUnit {
 		}
 	}
 
-	op String filtersActionClass() {
-		if (filtersActionClassOverride.trim() !== '') {
-			filtersActionClassOverride.trim()
-		} else if (uiModel().defaultCardsStyles.filtersActionClass.trim() !== '') {
-			uiModel().defaultCardsStyles.filtersActionClass.trim()
-		} else {
-			uiModel().defaultCollectionStyles.filtersActionClass.trim()
-		}
-	}
-
 	op String filtersBodyClass() {
 		if (filtersBodyClassOverride.trim() !== '') {
 			filtersBodyClassOverride.trim()
@@ -3039,6 +2945,10 @@ abstract class ControlUnit extends DynamicUnit {
 	refers ContentUnit cancelDestination
 	String cancelLabel
 
+	op boolean isFormUnit() {
+		true
+	}
+
 	op String actionClass() {
 		if (actionClassOverride.trim() !== '') {
 			actionClassOverride.trim()
@@ -3131,7 +3041,7 @@ abstract class ControlUnit extends DynamicUnit {
 }
 
 class SearchUnit extends ControlUnit {
-	refers TabularUnit[1] resultsDestination opposite targettingSearches
+	refers CollectionUnit[1] resultsDestination opposite targettingSearches
 }
 
 

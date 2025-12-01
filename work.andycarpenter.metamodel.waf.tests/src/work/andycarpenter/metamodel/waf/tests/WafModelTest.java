@@ -18,7 +18,7 @@ import work.andycarpenter.metamodel.waf.WafModel;
  * <ul>
  *   <li>{@link work.andycarpenter.metamodel.waf.WafModel#getEditUnits() <em>Edit Units</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.WafModel#getFormUnits() <em>Form Units</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.WafModel#getCollectionUnitsWithFilters() <em>Collection Units With Filters</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.WafModel#getCollectionUnits() <em>Collection Units</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.WafModel#getImageUnits() <em>Image Units</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.WafModel#getImageCardsUnits() <em>Image Cards Units</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.WafModel#getAutocompleteFields() <em>Autocomplete Fields</em>}</li>
@@ -168,26 +168,26 @@ public class WafModelTest extends TestCase {
 	}
 
 	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.WafModel#getCollectionUnitsWithFilters() <em>Collection Units With Filters</em>}' feature getter.
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.WafModel#getCollectionUnits() <em>Collection Units</em>}' feature getter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.WafModel#getCollectionUnitsWithFilters()
+	 * @see work.andycarpenter.metamodel.waf.WafModel#getCollectionUnits()
 	 * @generated
 	 */
-	public void testGetCollectionUnitsWithFilters() {
+	public void testGetCollectionUnits() {
 		// TODO: implement this feature getter test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}
 
 	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.WafModel#isSetCollectionUnitsWithFilters() <em>isSetCollectionUnitsWithFilters()</em>}' method.
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.WafModel#isSetCollectionUnits() <em>isSetCollectionUnits()</em>}' method.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.WafModel#isSetCollectionUnitsWithFilters()
+	 * @see work.andycarpenter.metamodel.waf.WafModel#isSetCollectionUnits()
 	 * @generated
 	 */
-	public void testIsSetCollectionUnitsWithFilters() {
+	public void testIsSetCollectionUnits() {
 		// TODO: implement this test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

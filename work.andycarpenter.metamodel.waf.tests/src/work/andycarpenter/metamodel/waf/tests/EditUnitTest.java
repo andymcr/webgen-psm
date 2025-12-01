@@ -11,6 +11,7 @@ import work.andycarpenter.metamodel.waf.EditUnit;
  * <p>
  * The following operations are tested:
  * <ul>
+ *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#isFormUnit() <em>Is Form Unit</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#hasCustomCancelLabel() <em>Has Custom Cancel Label</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#cancelLabel() <em>Cancel Label</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.EditUnit#hasCustomCancelIcon() <em>Has Custom Cancel Icon</em>}</li>
@@ -74,6 +75,19 @@ public abstract class EditUnitTest extends SingletonUnitTest {
 	@Override
 	protected EditUnit getFixture() {
 		return (EditUnit)fixture;
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.EditUnit#isFormUnit() <em>Is Form Unit</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.EditUnit#isFormUnit()
+	 * @generated
+	 */
+	public void testIsFormUnit() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
 	}
 
 	/**

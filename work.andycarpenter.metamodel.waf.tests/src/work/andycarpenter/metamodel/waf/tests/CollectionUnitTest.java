@@ -16,8 +16,6 @@ import work.andycarpenter.metamodel.waf.CollectionUnit;
  *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#hasPagination() <em>Has Pagination</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#hasGroupedResults() <em>Has Grouped Results</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#hasCollectionFilters() <em>Has Collection Filters</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#hasNumericFilters() <em>Has Numeric Filters</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#hasTextFilters() <em>Has Text Filters</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#hasCustomClearLabel() <em>Has Custom Clear Label</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#clearLabel() <em>Clear Label</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#hasCustomClearIcon() <em>Has Custom Clear Icon</em>}</li>
@@ -26,18 +24,8 @@ import work.andycarpenter.metamodel.waf.CollectionUnit;
  *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#hasCustomClearTitle() <em>Has Custom Clear Title</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#clearTitle() <em>Clear Title</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#hasClearTitle() <em>Has Clear Title</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#hasCustomSearchLabel() <em>Has Custom Search Label</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#searchLabel() <em>Search Label</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#hasCustomSearchIcon() <em>Has Custom Search Icon</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#searchIcon() <em>Search Icon</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#hasSearchIcon() <em>Has Search Icon</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#hasCustomSearchTitle() <em>Has Custom Search Title</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#searchTitle() <em>Search Title</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#hasSearchTitle() <em>Has Search Title</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#filtersClass() <em>Filters Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#hasFiltersClass() <em>Has Filters Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#filtersActionClass() <em>Filters Action Class</em>}</li>
- *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#hasFiltersActionClass() <em>Has Filters Action Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#filtersBodyClass() <em>Filters Body Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#hasFiltersBodyClass() <em>Has Filters Body Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.CollectionUnit#filtersControlClass() <em>Filters Control Class</em>}</li>
@@ -178,110 +166,6 @@ public abstract class CollectionUnitTest extends DynamicUnitTest {
 	}
 
 	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.CollectionUnit#hasCustomSearchLabel() <em>Has Custom Search Label</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.CollectionUnit#hasCustomSearchLabel()
-	 * @generated
-	 */
-	public void testHasCustomSearchLabel() {
-		// TODO: implement this operation test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.CollectionUnit#searchLabel() <em>Search Label</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.CollectionUnit#searchLabel()
-	 * @generated
-	 */
-	public void testSearchLabel() {
-		// TODO: implement this operation test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.CollectionUnit#hasCustomSearchIcon() <em>Has Custom Search Icon</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.CollectionUnit#hasCustomSearchIcon()
-	 * @generated
-	 */
-	public void testHasCustomSearchIcon() {
-		// TODO: implement this operation test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.CollectionUnit#searchIcon() <em>Search Icon</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.CollectionUnit#searchIcon()
-	 * @generated
-	 */
-	public void testSearchIcon() {
-		// TODO: implement this operation test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.CollectionUnit#hasSearchIcon() <em>Has Search Icon</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.CollectionUnit#hasSearchIcon()
-	 * @generated
-	 */
-	public void testHasSearchIcon() {
-		// TODO: implement this operation test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.CollectionUnit#hasCustomSearchTitle() <em>Has Custom Search Title</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.CollectionUnit#hasCustomSearchTitle()
-	 * @generated
-	 */
-	public void testHasCustomSearchTitle() {
-		// TODO: implement this operation test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.CollectionUnit#searchTitle() <em>Search Title</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.CollectionUnit#searchTitle()
-	 * @generated
-	 */
-	public void testSearchTitle() {
-		// TODO: implement this operation test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.CollectionUnit#hasSearchTitle() <em>Has Search Title</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.CollectionUnit#hasSearchTitle()
-	 * @generated
-	 */
-	public void testHasSearchTitle() {
-		// TODO: implement this operation test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
 	 * Tests the '{@link work.andycarpenter.metamodel.waf.CollectionUnit#hasCollectionFilters() <em>Has Collection Filters</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -341,32 +225,6 @@ public abstract class CollectionUnitTest extends DynamicUnitTest {
 	 * @generated
 	 */
 	public void testHasGroupedResults() {
-		// TODO: implement this operation test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.CollectionUnit#hasNumericFilters() <em>Has Numeric Filters</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.CollectionUnit#hasNumericFilters()
-	 * @generated
-	 */
-	public void testHasNumericFilters() {
-		// TODO: implement this operation test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.CollectionUnit#hasTextFilters() <em>Has Text Filters</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.CollectionUnit#hasTextFilters()
-	 * @generated
-	 */
-	public void testHasTextFilters() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
@@ -445,32 +303,6 @@ public abstract class CollectionUnitTest extends DynamicUnitTest {
 	 * @generated
 	 */
 	public void testHasFiltersControlClass() {
-		// TODO: implement this operation test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.CollectionUnit#filtersActionClass() <em>Filters Action Class</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.CollectionUnit#filtersActionClass()
-	 * @generated
-	 */
-	public void testFiltersActionClass() {
-		// TODO: implement this operation test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.CollectionUnit#hasFiltersActionClass() <em>Has Filters Action Class</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.CollectionUnit#hasFiltersActionClass()
-	 * @generated
-	 */
-	public void testHasFiltersActionClass() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

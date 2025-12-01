@@ -11,16 +11,11 @@ import work.andycarpenter.metamodel.waf.ContentUnit;
  * A test case for the model object '<em><b>Content Unit</b></em>'.
  * <!-- end-user-doc -->
  * <p>
- * The following features are tested:
- * <ul>
- *   <li>{@link work.andycarpenter.metamodel.waf.ContentUnit#isIsFormUnit() <em>Is Form Unit</em>}</li>
- * </ul>
- * </p>
- * <p>
  * The following operations are tested:
  * <ul>
  *   <li>{@link work.andycarpenter.metamodel.waf.ContentUnit#isAuthorised() <em>Is Authorised</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.ContentUnit#hasAuthorisation() <em>Has Authorisation</em>}</li>
+ *   <li>{@link work.andycarpenter.metamodel.waf.ContentUnit#isFormUnit() <em>Is Form Unit</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.ContentUnit#captionClass() <em>Caption Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.ContentUnit#hasCaptionClass() <em>Has Caption Class</em>}</li>
  *   <li>{@link work.andycarpenter.metamodel.waf.ContentUnit#contentClass() <em>Content Class</em>}</li>
@@ -74,19 +69,6 @@ public abstract class ContentUnitTest extends TestCase {
 	}
 
 	/**
-	 * Tests the '{@link work.andycarpenter.metamodel.waf.ContentUnit#isIsFormUnit() <em>Is Form Unit</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see work.andycarpenter.metamodel.waf.ContentUnit#isIsFormUnit()
-	 * @generated
-	 */
-	public void testIsIsFormUnit() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
 	 * Tests the '{@link work.andycarpenter.metamodel.waf.ContentUnit#isAuthorised() <em>Is Authorised</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -107,6 +89,19 @@ public abstract class ContentUnitTest extends TestCase {
 	 * @generated
 	 */
 	public void testHasAuthorisation() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link work.andycarpenter.metamodel.waf.ContentUnit#isFormUnit() <em>Is Form Unit</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see work.andycarpenter.metamodel.waf.ContentUnit#isFormUnit()
+	 * @generated
+	 */
+	public void testIsFormUnit() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
